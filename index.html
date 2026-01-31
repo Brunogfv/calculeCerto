@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Calculadoras online simples e gratuitas: IMC, porcentagem, juros e muito mais.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+
     <link rel="stylesheet" href="./css/style.css">
     <title>Portal das Contas | Calculadora Online</title>
 </head>
+
 <body data-theme="light">
     <header class="header">
         <h1>Portal das Contas</h1>
@@ -15,7 +29,7 @@
         <button class="toggle-theme" onclick="alternarTema()">
             🌙 Modo Escuro
         </button>
-    
+
     </header>
     <main class="container">
         <h2>Escolha uma calculadora</h2>
@@ -24,7 +38,7 @@
                 <h3>IMC</h3>
                 <p>Calcule seu Índice de Massa Corporal</p>
             </a>
-            
+
             <a href="calculadoras/porcentagem.html" class="card">
                 <h3>Porcentagem</h3>
                 <p>Calcule porcentagens rapidamente</p>
@@ -35,7 +49,7 @@
                 <p>Em Breve</p>
             </div>
         </div>
-        
+
     </main>
 
     <footer>
@@ -47,4 +61,5 @@
 
     <script src="./js/theme.js"></script>
 </body>
+
 </html>
