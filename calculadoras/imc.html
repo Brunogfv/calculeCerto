@@ -1,31 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calcule seu IMC online de forma simples e rápida. Saiba se está no peso ideal.">
+    <meta name="description"
+        content="Calcule seu IMC online de forma rápida e gratuita. Descubra seu Índice de Massa Corporal e saiba se está abaixo do peso, no peso ideal, com sobrepeso ou obesidade.">
+    <meta name="keywords"
+        content="calculadora de imc, imc online, índice de massa corporal, calcular imc, imc feminino, imc masculino, imc adulto">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="https://strong-entremet-998544.netlify.app/">
     <link rel="stylesheet" href="../css/style.css">
     <title>Calculadora de IMC Online Grátis | CalculaCerto</title>
 </head>
+
 <body data-theme="light">
     <header>
         <h1>Calculadora de IMC</h1>
-    
-        <p>Calcule o seu Índice de Massa Corpórea (IMC) de forma rápida e gratuita</p>
+
+        <p>Calcule o seu Índice de Massa Corpórea (IMC) de forma rápida e gratuita. Basta informar seu peso e altura
+            para descobrir sua classificação.</p>
     </header>
 
     <main class="container">
         <label for="">Peso (kg)</label>
         <input type="text" id="peso" step="0.1" placeholder="Ex: 70,5 ou 70.5">
-    
+
         <label for="">Altura (m)</label>
         <input type="text" id="altura" step="0.01" placeholder="Ex: 1,75 ou 1.75">
-    
+
         <button onclick="calcularIMC()">Calcular</button>
-    
+
         <p id="resultado"></p>
-    
+
         <p class="aviso">Os resultados são apenas estimativas e não substituem um profissional de saúde.</p>
+
+        <h2>O que é IMC?</h2>
+
+        <p>
+            O IMC (Índice de Massa Corporal) é uma medida usada para avaliar se uma pessoa
+            está dentro do peso ideal em relação à sua altura.
+        </p>
+
+        <h2>Como calcular o IMC?</h2>
+
+        <p>
+            O cálculo do IMC é feito dividindo o peso (em kg) pela altura ao quadrado (em metros).
+        </p>
+
+        <h2>Classificação do IMC</h2>
+        <p>
+            Após calcular o IMC, o resultado é classificado de acordo com faixas
+            definidas pela Organização Mundial da Saúde (OMS).
+            Veja abaixo as classificações:
+        </p>
+
+        <ul>
+            <li><strong>Abaixo de 18,5:</strong> Abaixo do peso</li>
+            <li><strong>Entre 18,5 e 24,9:</strong> Peso normal</li>
+            <li><strong>Entre 25,0 e 29,9:</strong> Sobrepeso</li>
+            <li><strong>Entre 30,0 e 34,9:</strong> Obesidade grau I</li>
+            <li><strong>Entre 35,0 e 39,9:</strong> Obesidade grau II</li>
+            <li><strong>Acima de 40,0:</strong> Obesidade grau III (obesidade mórbida)</li>
+        </ul>
+
+        <p>
+            Manter o IMC dentro da faixa considerada normal pode ajudar a reduzir
+            riscos de doenças cardiovasculares, diabetes e outros problemas de saúde.
+        </p>
+        <section>
+            <h2>Por que calcular o IMC?</h2>
+            <p>
+                Calcular o IMC ajuda a identificar possíveis riscos à saúde relacionados
+                ao baixo peso, sobrepeso ou obesidade. Apesar de não substituir uma avaliação
+                médica, o IMC é uma referência importante para o cuidado com a saúde.
+            </p>
+
+            <h2>O IMC é confiável?</h2>
+            <p>
+                O IMC é um método amplamente utilizado, porém não leva em consideração
+                fatores como massa muscular, idade e sexo. Para uma análise completa,
+                consulte um profissional de saúde.
+            </p>
+        </section>
+
     </main>
 
     <footer>
@@ -35,5 +93,16 @@
 
     <script src="../js/imc.js"></script>
     <script src="../js/theme.js"></script>
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Calculadora de IMC",
+        "description": "Ferramenta online para calcular o Índice de Massa Corporal (IMC).",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All"
+        }
+</script>
 </body>
+
 </html>
