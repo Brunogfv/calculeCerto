@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calcule seu IMC online de forma simples e rápida. Saiba se está no peso ideal.">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Calculadora de IMC Online Grátis | CalculaCerto</title>
+</head>
+<body data-theme="light">
+    <header>
+        <h1>Calculadora de IMC</h1>
+    
+        <p>Calcule o seu Índice de Massa Corpórea (IMC) de forma rápida e gratuita</p>
+    </header>
+
+    <main class="container">
+        <label for="">Peso (kg)</label>
+        <input type="text" id="peso" step="0.1" placeholder="Ex: 70,5 ou 70.5">
+    
+        <label for="">Altura (m)</label>
+        <input type="text" id="altura" step="0.01" placeholder="Ex: 1,75 ou 1.75">
+    
+        <button onclick="calcularIMC()">Calcular</button>
+    
+        <p id="resultado"></p>
+    
+        <p class="aviso">Os resultados são apenas estimativas e não substituem um profissional de saúde.</p>
+    </main>
+
+    <footer>
+        <p>© 2026 CalculaCerto</p>
+        <a href="../paginas/privacidade.html">Privacidade</a>
+    </footer>
+
+    <script src="../js/imc.js"></script>
+    <script src="../js/theme.js"></script>
+</body>
+</html>

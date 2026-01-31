@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de porcentagem online simples e gratuita.">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Calculadora de Porcentagem | CalculaCerto</title>
+</head>
+<body data-theme="light">
+    <header>
+        <h1>Calculadora de Porcentagem</h1>
+        <p>Calcule porcentagens de forma simples e rápida</p>
+
+        <button class="toggle-theme" onclick="alternarTema()">🌙 Modo Escuro</button>
+    </header>
+
+    <main class="container">
+        <h2>Escolha o tipo de cálculo</h2>
+
+        <select name="" id="tipo" onchange="atualizarTextoBotao()">
+            <option value="parte">X% de um valor</option>
+            <option value="aumento">Aumentar X%</option>
+            <option value="desconto">Descontar X%</option>
+        </select>
+
+        <label for="">Porcentagem (%)</label>
+        <input type="number" id="percentual" placeholder="Ex: 10">
+
+        <label for="">Valor</label>
+        <input type="number" id="valor" placeholder="Ex: 200">
+
+        <button id="btnCalcular" onclick="calcularPorcentagem()">Calcular Porcentagem</button>
+        <button type="button" class="btn-limpar" onclick="limparCampos()">Limpar</button>
+
+        <p id="resultado"></p>
+    </main>
+
+    <footer>
+        <p>© 2026 CalculaCerto</p>
+        <a href="../paginas/privacidade.html">Privacidade</a>
+    </footer>
+
+    <script src="../js/porcentagem.js"></script>
+    <script src="../js/theme.js"></script>
+</body>
+</html>
