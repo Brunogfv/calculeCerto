@@ -242,6 +242,28 @@ footer {
     padding: 20px;
 }
 
+/* CANVAS */
+
+.grafico-container {
+    position: relative;
+    height: 320px;
+    margin-top: 25px;
+    display: none;
+}
+
+#graficoINSS {
+    width: 100% !important;
+    height: 100% !important;
+
+}
+
+@media (max-width: 600px) {
+    input, button, select {
+        font-size: 18px;
+        padding: 14px;
+    }
+}
+
 @media (max-width: 480px) {
     header h1 {
         font-size: 26px;

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calcule o desconto do INSS com faixas reais atualizadas em 2026 e descubra seu salário líquido.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Calculadora de INSS Online | Portal das Contas</title>
+</head>
+
+<body data-theme="light">
+
+    <header>
+        <h1>Calculadora de INSS (2026)</h1>
+        <p>Calcule o desconto do INSS com as faixas reais de 2026 e descubra seu salário líquido</p>
+
+        <button class="toggle-theme" onclick="alternarTema()">🌙 Modo Escuro</button>
+    </header>
+
+    <main class="container">
+        <label for="">Salário Bruto</label>
+        <input type="text" id="salario" placeholder="Ex: 3500">
+
+        <button onclick="calcularINSS()">Calcular</button>
+        <button class="btn-secundario" onclick="limparCampos()">Limpar</button>
+
+        <div id="resultado-juros"></div>
+        <div class="grafico-container">
+            <canvas id="graficoINSS" width="400" height="300" style="display: none;"></canvas>
+        </div>
+
+
+        <section>
+            <h2>Entendendo as faixas de contribuição do INSS (2026)</h2>
+
+            <p>
+                O cálculo do INSS no Brasil é feito de forma <strong>progressiva</strong>. Isso
+                significa que diferentes partes do salário são tributadas em faixas diferentes,
+                e cada faixa tem sua própria alíquota (percentual de contribuição).
+            </p>
+
+            <h3>Faixa 1 — até R$ 1.621,00 (7,5%)</h3>
+            <p>
+                Esta é a primeira faixa de contribuição. Os primeiros R$ 1.621,00 do seu salário
+                são tributados com alíquota de 7,5%. Se o seu salário é igual ou inferior a esse
+                valor, você paga apenas essa alíquota.
+            </p>
+
+            <h3>Faixa 2 — de R$ 1.621,01 até R$ 2.902,84 (9%)</h3>
+            <p>
+                Se o seu salário ultrapassa R$ 1.621,00, a parte que excede esse valor até R$ 2.902,84
+                paga 9%. Essa alíquota só se aplica à diferença entre os dois valores.
+            </p>
+
+            <h3>Faixa 3 — de R$ 2.902,85 até R$ 4.354,27 (12%)</h3>
+            <p>
+                Esta faixa é cobrada sobre a parte do salário que está entre R$ 2.902,85 e R$ 4.354,27,
+                com alíquota de 12%. Novamente, apenas a diferença entra nesse cálculo.
+            </p>
+
+            <h3>Faixa 4 — de R$ 4.354,28 até R$ 8.475,55 (14%)</h3>
+            <p>
+                A faixa mais alta aplica alíquota de 14% sobre a parte do salário entre R$ 4.354,28
+                e o teto previdenciário de R$ 8.475,55. Mesmo que seu salário seja maior que o teto,
+                o desconto do INSS só incide até esse limite.
+            </p>
+
+            <p>
+                Esses valores e faixas refletem a legislação de 2026. Eles são usados para calcular
+                o desconto total do INSS de forma justa e proporcional ao seu salário.
+            </p>
+        </section>
+
+        <section>
+            <h2>Exemplos de cálculo do INSS</h2>
+
+            <p>
+                Vamos ver alguns exemplos práticos para entender como o INSS é calculado com
+                base nas faixas progressivas.
+            </p>
+
+            <h3>Exemplo 1 — Salário de R$ 1.500,00</h3>
+            <p>
+                O salário está dentro da primeira faixa, então aplica-se 7,5% sobre o total:
+            </p>
+            <ul>
+                <li>7,5% de R$ 1.500,00 = R$ 112,50</li>
+                <li><strong>Desconto do INSS: R$ 112,50</strong></li>
+            </ul>
+
+            <h3>Exemplo 2 — Salário de R$ 3.000,00</h3>
+            <p>
+                Aqui o cálculo é progressivo:
+            </p>
+            <ul>
+                <li>7,5% sobre os primeiros R$ 1.621,00 = R$ 121,58</li>
+                <li>9% sobre (R$ 2.902,84 − R$ 1.621,00) = R$ 116,70</li>
+                <li>12% sobre (R$ 3.000,00 − R$ 2.902,84) = R$ 11,08</li>
+                <li><strong>Total INSS: R$ 121,58 + 116,70 + 11,08 = R$ 249,36</strong></li>
+            </ul>
+
+            <h3>Exemplo 3 — Salário de R$ 10.000,00</h3>
+            <p>
+                Como o salário ultrapassa o teto previdenciário do INSS, o cálculo usa o limite:
+            </p>
+            <ul>
+                <li>7,5% sobre R$ 1.621,00 = R$ 121,58</li>
+                <li>9% sobre (R$ 2.902,84 − R$ 1.621,00) = R$ 116,70</li>
+                <li>12% sobre (R$ 4.354,27 − R$ 2.902,84) = R$ 174,18</li>
+                <li>14% sobre (R$ 8.475,55 − R$ 4.354,27) = R$ 582,31</li>
+                <li><strong>Total INSS: R$ 994,77</strong></li>
+            </ul>
+
+            <p>
+                Esses exemplos ajudam a ver como cada parte do salário contribui separadamente.
+            </p>
+        </section>
+
+
+        <p class="aviso">
+            Os valores mostrados são estimativas com base na legislação vigente e podem mudar caso haja atualização das
+            regras.
+        </p>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Portal das Contas</p>
+        <a href="../paginas/privacidade.html">Privacidade</a>
+        <a href="../paginas/sobre.html">Sobre</a>
+        <a href="../index.html">Início</a>
+    </footer>
+
+    <script src="../js/inss.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+
+</html>
