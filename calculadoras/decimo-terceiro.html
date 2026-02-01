@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calcule o 13º salário online de forma simples. Saiba o valor bruto, primeira parcela, segunda parcela e descontos do INSS.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Calculadora de 13º Salário Online | Portal das Contas</title>
+</head>
+
+<body data-theme="light">
+    <header>
+        <h1>Calculadora de 13º Salário</h1>
+        <p>Descubra o valor do seu décimo terceiro de forma rápida e gratuita</p>
+
+        <button class="toggle-theme" onclick="alternarTema()">🌙 Modo Escuro</button>
+    </header>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-7285637994208303">
+    </amp-auto-ads>
+    <main class="container">
+
+        <label for="">Salário Bruto</label>
+        <input type="text" id="salario" placeholder="2500">
+
+        <label for="">Meses trabalhados no ano</label>
+        <input type="number" id="meses" min="1" max="12" placeholder="Ex: 12">
+
+        <button onclick="calcularDecimoTerceiro()">Calcular</button>
+        <button class="btn-secundario" onclick="limparCampos()">Limpar</button>
+
+        <div id="resultado-juros"></div>
+
+        <h2>Como funciona o cálculo do 13º salário?</h2>
+        <p>
+            O 13º salário corresponde a 1/12 do salário bruto para cada mês trabalhado no ano.
+            Caso o trabalhador tenha atuado por pelo menos 15 dias no mês, ele conta como mês
+            completo para o cálculo.
+        </p>
+
+        <p class="aviso">
+            Os valores apresentados são estimativas e podem variar conforme convenção coletiva
+            e legislação vigente.
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2026 Portal das Contas</p>
+        <a href="../paginas/privacidade.html">Privacidade</a>
+        <a href="../paginas/sobre.html">Sobre</a>
+        <a href="../index.html">Início</a>
+    </footer>
+
+    <script src="../js/decimo-terceiro.js"></script>
+    <script src="../js/theme.js"></script>
+</body>
+
+</html>
