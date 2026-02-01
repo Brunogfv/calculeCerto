@@ -158,6 +158,11 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+.btn-secundario {
+    background-color: #9ca3af;
+    margin-top: 10px;
+}
+
 /* RESULTADO */
 
 #resultado {
@@ -171,6 +176,15 @@ button:hover {
     font-size: 18px;
     display: none;
     transition: 0.3s;
+}
+
+#resultado-juros {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 /* ESTADOS DO IMC */

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calcule juros simples online de forma rápida e gratuita. Descubra o valor dos juros e o montante final.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Calculadora de Juros Online | Portal das Contas</title>
+</head>
+<body data-theme="light">
+    <header>
+        <h1>Calculadora de Juros Simples</h1>
+        <p>Calcule juros e montante de uma forma simples e rápida</p>
+
+        <button class="toggle-theme" onclick="alternarTema()">🌙 Modo Escuro</button>
+    </header>
+    <main class="container">
+        <label>Capital Inicial (R$)</label>
+        <input type="text" id="capital" placeholder="Ex: 1000">
+
+        <label>Taxa de juros (% mês)</label>
+        <input type="text" id="taxa" placeholder="Ex: 2,5">
+
+        <label for="">Tempo (meses)</label>
+        <input type="number" id="tempo" placeholder="Ex: 12">
+
+        <label for="">Tipo de Juros</label>
+        <select name="" id="tipo">
+            <option value="simples">Juros Simples</option>
+            <option value="composto">Juros Compostos</option>
+        </select>
+
+        <button onclick="calcularJuros()">Calcular</button>
+        <button class="btn-secundario" onclick="limparCampos()">Limpar</button>
+
+        <div id="resultado-juros"></div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Portal das Contas</p>
+        <a href="../paginas/privacidade.html">Privacidade</a>
+        <a href="../paginas/sobre.html">Sobre</a>
+        <a href="../index.html">Início</a>
+    </footer>
+
+    <script src="../js/juros.js"></script>
+    <script src="../js/theme.js"></script>
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Calculadora de IMC",
+        "description": "Ferramenta online para calcular o Índice de Massa Corporal (IMC).",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All"
+        }
+</script>
+</body>
+</html>
