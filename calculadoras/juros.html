@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calcule juros simples online de forma rápida e gratuita. Descubra o valor dos juros e o montante final.">
+    <meta name="description"
+        content="Calcule juros simples e compostos online. Descubra juros e montante final de forma rápida, gratuita e confiável.">
+
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -16,27 +19,25 @@
         gtag('config', 'G-STVR24Q61S');
     </script>
 
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
     </script>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/style.css">
     <title>Calculadora de Juros Online | Portal das Contas</title>
 </head>
+
 <body data-theme="light">
     <header>
-        <h1>Calculadora de Juros Simples</h1>
+        <h1>Calculadora de Juros Simples e Compostos</h1>
         <p>Calcule juros e montante de uma forma simples e rápida</p>
 
         <button class="toggle-theme" onclick="alternarTema()">🌙 Modo Escuro</button>
     </header>
-    <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-7285637994208303">
-    </amp-auto-ads>
+
     <main class="container">
         <label>Capital Inicial (R$)</label>
         <input type="text" id="capital" placeholder="Ex: 1000">
@@ -57,6 +58,50 @@
         <button class="btn-secundario" onclick="limparCampos()">Limpar</button>
 
         <div id="resultado-juros"></div>
+        <div class="grafico-container" id="grafico-container">
+            <canvas id="graficoJuros"></canvas>
+        </div>
+        <div class="cta">
+            <p>Quer saber onde investir para alcançar esse valor?</p>
+            <button>Ver opções de investimento</button>
+        </div>
+
+        <h2>Entenda o resultado</h2>
+
+        <section class="explicacao">
+            <h2>Como funciona o cálculo de juros?</h2>
+
+            <p>
+                Juros são o valor pago pelo uso do dinheiro ao longo do tempo.
+                Eles podem ser <strong>juros simples</strong> ou <strong>juros compostos</strong>.
+            </p>
+
+            <h3>Juros simples</h3>
+            <p>
+                Calculados apenas sobre o valor inicial.
+                Fórmula: <strong>J = C × i × t</strong>
+            </p>
+
+            <h3>Juros compostos</h3>
+            <p>
+                Os juros crescem sobre juros anteriores.
+                Muito usados em financiamentos e investimentos.
+            </p>
+        </section>
+
+        <section class="faq">
+            <h2>Perguntas frequentes</h2>
+
+            <h3>Qual a diferença entre juros simples e compostos?</h3>
+            <p>Nos juros simples, o valor cresce de forma linear. Nos compostos, cresce de forma exponencial.</p>
+
+            <h3>Essa calculadora é confiável?</h3>
+            <p>Sim. Os cálculos seguem as fórmulas financeiras tradicionais.</p>
+
+            <h3>Os valores são estimativas?</h3>
+            <p>Sim. Para contratos reais, consulte sempre a instituição financeira.</p>
+        </section>
+
 
     </main>
 
@@ -69,15 +114,19 @@
 
     <script src="../js/juros.js"></script>
     <script src="../js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script type="application/ld+json">
         {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Calculadora de IMC",
-        "description": "Ferramenta online para calcular o Índice de Massa Corporal (IMC).",
-        "applicationCategory": "HealthApplication",
+        "name": "Calculadora de Juros Online",
+        "description": "Calculadora online para juros simples e compostos.",
+        "applicationCategory": "FinanceApplication",
         "operatingSystem": "All"
         }
-</script>
+    </script>
+
 </body>
+
 </html>
