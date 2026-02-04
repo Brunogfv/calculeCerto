@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Calcule seu IMC online de forma rápida e gratuita. Descubra seu Índice de Massa Corporal e saiba se está abaixo do peso, no peso ideal, com sobrepeso ou obesidade.">
-    <meta name="keywords"
-        content="calculadora de imc, imc online, índice de massa corporal, calcular imc, imc feminino, imc masculino, imc adulto">
+    <meta name="keywords" content="calculadora de imc, imc online, índice de massa corporal, calcular imc">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="https://portaldascontas.com.br/">
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -18,99 +17,256 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-STVR24Q61S');
     </script>
 
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
+    <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/imc.css">
+
     <title>Calculadora de IMC Online Grátis | Portal das Contas</title>
 </head>
 
 <body data-theme="light">
-    <header>
-        <h1>Calculadora de IMC</h1>
 
-        <p>Calcule o seu Índice de Massa Corpórea (IMC) de forma rápida e gratuita. Basta informar seu peso e altura
-            para descobrir sua classificação.</p>
-        <button class="toggle-theme" onclick="alternarTema()">🌙 Modo Escuro</button>
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários (NOVA) -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                    </div>
+                </div>
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
     </header>
-    
-    <main class="container">
-        <label for="">Peso (kg)</label>
-        <input type="text" id="peso" step="0.1" placeholder="Ex: 70,5 ou 70.5">
 
-        <label for="">Altura (m)</label>
-        <input type="text" id="altura" step="0.01" placeholder="Ex: 1,75 ou 1.75">
+    <main>
+        <div class="calculator-wrapper">
+            <!-- Seção da Calculadora -->
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de IMC</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Entenda seu corpo em poucos segundos.</p>
+                </div>
 
-        <button onclick="calcularIMC()">Calcular</button>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label for="peso">Peso (kg)</label>
+                        <input type="text" id="peso" placeholder="Ex: 70,5">
+                    </div>
+                    <div class="input-group">
+                        <label for="altura">Altura (m)</label>
+                        <input type="text" id="altura" placeholder="Ex: 1,75">
+                    </div>
+                </div>
 
-        <p id="resultado"></p>
+                <button class="btn-calc" onclick="calcularIMC()">Calcular meu IMC</button>
 
-        <p class="aviso">Os resultados são apenas estimativas e não substituem um profissional de saúde.</p>
+                <!-- Resultado -->
+                <div id="resultado-container" class="result-area">
+                    <div id="resultado-card" class="result-card">
+                        <div class="imc-value" id="imc-valor">0.0</div>
+                        <div class="imc-label" id="imc-texto">-</div>
 
-        <h2>O que é IMC?</h2>
+                        <!-- Barra visual -->
+                        <div class="gauge-container">
+                            <div id="imc-bar" class="gauge-fill"></div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 13px; color: var(--cor-texto-suave);">
+                        * Os resultados são estimativas baseadas na OMS e não substituem um diagnóstico médico
+                        profissional.
+                    </p>
+                </div>
+            </div>
 
-        <p>
-            O IMC (Índice de Massa Corporal) é uma medida usada para avaliar se uma pessoa
-            está dentro do peso ideal em relação à sua altura.
-        </p>
+            <!-- Conteúdo Informativo Novo -->
+            <div class="info-content">
+                <section>
+                    <h2>O que é o IMC?</h2>
+                    <p>
+                        O <strong>Índice de Massa Corporal (IMC)</strong> é uma métrica internacional reconhecida pela
+                        Organização Mundial da Saúde (OMS).
+                        Ele serve como uma "bússola" inicial para verificar se o seu peso está adequado em relação à sua
+                        altura.
+                    </p>
+                    <p>
+                        O cálculo é simples: divide-se o peso (em quilogramas) pela altura elevada ao quadrado (em
+                        metros). Apesar de simples, é uma das ferramentas mais usadas para detectar riscos de saúde
+                        relacionados ao peso.
+                    </p>
+                </section>
 
-        <h2>Como calcular o IMC?</h2>
+                <section>
+                    <h2>Por que saber o meu IMC é importante?</h2>
+                    <p>
+                        Estar dentro do peso ideal não é apenas uma questão estética, mas principalmente de saúde.
+                        Manter o IMC na faixa normal ajuda a reduzir significativamente o risco de desenvolver doenças
+                        crônicas, tais como:
+                    </p>
+                    <ul style="list-style-type: none; padding: 0; color: var(--cor-texto-suave);">
+                        <li style="margin-bottom: 8px;">✓ <strong>Diabetes Tipo 2</strong></li>
+                        <li style="margin-bottom: 8px;">✓ <strong>Hipertensão arterial</strong></li>
+                        <li style="margin-bottom: 8px;">✓ <strong>Doenças cardiovasculares</strong></li>
+                        <li style="margin-bottom: 8px;">✓ <strong>Problemas nas articulações</strong></li>
+                    </ul>
+                </section>
 
-        <p>
-            O cálculo do IMC é feito dividindo o peso (em kg) pela altura ao quadrado (em metros).
-        </p>
+                <section>
+                    <h2>Classificação do IMC (Tabela Oficial)</h2>
+                    <p>Após calcular, compare seu resultado com a tabela abaixo definida pela OMS:</p>
 
-        <h2>Classificação do IMC</h2>
-        <p>
-            Após calcular o IMC, o resultado é classificado de acordo com faixas
-            definidas pela Organização Mundial da Saúde (OMS).
-            Veja abaixo as classificações:
-        </p>
+                    <table class="imc-table">
+                        <thead>
+                            <tr>
+                                <th>Resultado IMC</th>
+                                <th>Situação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Menor que 18,5</td>
+                                <td><span class="color-dot" style="background: var(--imc-azul);"></span>Abaixo do peso
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Entre 18,5 e 24,9</td>
+                                <td><span class="color-dot" style="background: var(--imc-verde);"></span>Peso normal
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Entre 25,0 e 29,9</td>
+                                <td><span class="color-dot" style="background: var(--imc-amarelo);"></span>Sobrepeso
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Entre 30,0 e 34,9</td>
+                                <td><span class="color-dot" style="background: var(--imc-laranja);"></span>Obesidade
+                                    Grau I</td>
+                            </tr>
+                            <tr>
+                                <td>Entre 35,0 e 39,9</td>
+                                <td><span class="color-dot" style="background: var(--imc-vermelho);"></span>Obesidade
+                                    Grau II</td>
+                            </tr>
+                            <tr>
+                                <td>Maior que 40,0</td>
+                                <td><span class="color-dot" style="background: var(--imc-vermelho);"></span>Obesidade
+                                    Grau III</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
 
-        <ul>
-            <li><strong>Abaixo de 18,5:</strong> Abaixo do peso</li>
-            <li><strong>Entre 18,5 e 24,9:</strong> Peso normal</li>
-            <li><strong>Entre 25,0 e 29,9:</strong> Sobrepeso</li>
-            <li><strong>Entre 30,0 e 34,9:</strong> Obesidade grau I</li>
-            <li><strong>Entre 35,0 e 39,9:</strong> Obesidade grau II</li>
-            <li><strong>Acima de 40,0:</strong> Obesidade grau III (obesidade mórbida)</li>
-        </ul>
-
-        <p>
-            Manter o IMC dentro da faixa considerada normal pode ajudar a reduzir
-            riscos de doenças cardiovasculares, diabetes e outros problemas de saúde.
-        </p>
-        <section>
-            <h2>Por que calcular o IMC?</h2>
-            <p>
-                Calcular o IMC ajuda a identificar possíveis riscos à saúde relacionados
-                ao baixo peso, sobrepeso ou obesidade. Apesar de não substituir uma avaliação
-                médica, o IMC é uma referência importante para o cuidado com a saúde.
-            </p>
-
-            <h2>O IMC é confiável?</h2>
-            <p>
-                O IMC é um método amplamente utilizado, porém não leva em consideração
-                fatores como massa muscular, idade e sexo. Para uma análise completa,
-                consulte um profissional de saúde.
-            </p>
-        </section>
-
+                <section
+                    style="background: rgba(37, 99, 235, 0.05); padding: 24px; border-radius: 12px; border-left: 4px solid var(--cor-primaria);">
+                    <h2 style="margin-top: 0; color: var(--cor-primaria);">⚠️ O IMC é sempre preciso?</h2>
+                    <p style="margin-bottom: 0;">
+                        O IMC é um excelente indicador geral, mas ele possui <strong>limitações</strong>. Por não
+                        distinguir entre massa gorda e massa muscular, ele pode indicar "sobrepeso" em atletas
+                        musculosos ou "peso normal" em pessoas com pouca massa muscular ("skinny fat").
+                    </p>
+                    <p style="margin-bottom: 0; margin-top: 10px;">
+                        Por isso, considere outros fatores como <strong>idade, biotipo, circunferência da
+                            cintura</strong> e composição corporal. Consulte sempre um nutricionista ou médico para um
+                        plano de saúde personalizado.
+                    </p>
+                </section>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>© 2026 Portal das Contas</p>
         <a href="../paginas/privacidade.html">Privacidade</a>
-        <a href="../paginas/sobre.html">Sobre</a>
+        <a href="../paginas/termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
     </footer>
 
@@ -125,7 +281,8 @@
         "applicationCategory": "HealthApplication",
         "operatingSystem": "All"
         }
-</script>
+    </script>
+    <script src="../js/dropdown.js"></script>
 </body>
 
 </html>

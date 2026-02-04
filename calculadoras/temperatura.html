@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversor de Temperatura. Converta Celsius, Fahrenheit e Kelvin rapidamente.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/temperatura.css">
+
+    <title>Conversor de Temperatura | Portal das Contas</title>
+
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM CATEGORIA UTILITÁRIOS -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                    </div>
+                </div>
+
+                <!-- Casa -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                    </div>
+                </div>
+
+                <!-- Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                    </div>
+                </div>
+
+                <!-- Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                    </div>
+                </div>
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Conversor de Temperatura</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Converta Celsius, Fahrenheit e Kelvin.</p>
+                </div>
+
+                <div class="input-group">
+                    <label>Converter de:</label>
+                    <div class="converter-box">
+                        <select id="unidade-entrada" onchange="converterTemperatura()">
+                            <option value="C" selected>Celsius (°C)</option>
+                            <option value="F">Fahrenheit (°F)</option>
+                            <option value="K">Kelvin (K)</option>
+                        </select>
+                        <input type="number" id="temp-entrada" placeholder="0" oninput="converterTemperatura()">
+                    </div>
+                </div>
+
+                <!-- Resultados -->
+                <div class="results-grid">
+                    <div class="res-card">
+                        <span class="res-icon">🌡️</span>
+                        <div class="res-label">Celsius</div>
+                        <div class="res-val" id="val-c">0°C</div>
+                    </div>
+                    <div class="res-card">
+                        <span class="res-icon">🌡</span>
+                        <div class="res-label">Fahrenheit</div>
+                        <div class="res-val" id="val-f">0°F</div>
+                    </div>
+                    <div class="res-card">
+                        <span class="res-icon">❄️</span>
+                        <div class="res-label">Kelvin</div>
+                        <div class="res-val" id="val-k">0K</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo -->
+            <!-- <div class="tips-card">
+                <h3>📝 Fórmulas de Conversão</h3>
+                <div class="tips-row">
+                    <strong>Celsius para Fahrenheit:</strong> (°C × 9/5) + 32
+                </div>
+                <div class="tips-row">
+                    <strong>Fahrenheit para Celsius:</strong> (°F - 32) × 5/9
+                </div>
+                <div class="tips-row">
+                    <strong>Celsius para Kelvin:</strong> °C + 273.15
+                </div>
+            </div> -->
+
+            <!-- Coluna de Conteúdo (SEO & Retenção) -->
+            <aside class="info-card">
+                <article>
+                    <h3>Entendendo as Escalas</h3>
+                    <p>
+                        Existem três escalas principais de medição de temperatura usadas no mundo. Saber a diferença
+                        entre elas é essencial para cozinhar, viajar ou entender notícias do clima internacional.
+                    </p>
+
+                    <h4>Celsius (°C)</h4>
+                    <p>Usado no Brasil e na maioria dos países. Baseado nas propriedades da água: 0°C é o ponto de
+                        congelamento e 100°C é o ponto de ebulição.</p>
+
+                    <h4>Fahrenheit (°F)</h4>
+                    <p>Padrão oficial nos Estados Unidos. Nesta escala, a água congela a 32°F e ferve a 212°F. É comum
+                        ver temperaturas corporais (98.6°F) ou climas em filmes americanos usando esta unidade.</p>
+
+                    <h4>Kelvin (K)</h4>
+                    <p>Usado principalmente em ciência e física. É uma escala absoluta onde o zero representa a ausência
+                        total de energia térmica (Zero Absoluto), algo impossível de alcançar na prática.</p>
+
+                    <h3>📊 Tabela de Referência Rápida</h3>
+                    <p>Confira os pontos de fusão e ebulição da água nas três escalas:</p>
+                    <table class="temp-table">
+                        <thead>
+                            <tr>
+                                <th>Evento</th>
+                                <th>Celsius</th>
+                                <th>Fahrenheit</th>
+                                <th>Kelvin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Zero Absoluto</td>
+                                <td>-273.15 °C</td>
+                                <td>-459.67 °F</td>
+                                <td>0 K</td>
+                            </tr>
+                            <tr>
+                                <td>Congelamento (Água)</td>
+                                <td>0 °C</td>
+                                <td>32 °F</td>
+                                <td>273.15 K</td>
+                            </tr>
+                            <tr>
+                                <td>Temperatura Ambiente</td>
+                                <td>25 °C</td>
+                                <td>77 °F</td>
+                                <td>298.15 K</td>
+                            </tr>
+                            <tr>
+                                <td>Corpo Humano</td>
+                                <td>37 °C</td>
+                                <td>98.6 °F</td>
+                                <td>310.15 K</td>
+                            </tr>
+                            <tr>
+                                <td>Ebulição (Água)</td>
+                                <td>100 °C</td>
+                                <td>212 °F</td>
+                                <td>373.15 K</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Fórmulas Manuais</h4>
+                    <div class="formula-box">
+                        °F para °C: (°F − 32) × 5/9
+                    </div>
+                    <div class="formula-box">
+                        °C para °F: (°C × 9/5) + 32
+                    </div>
+                </article>
+
+                <!-- FAQ -->
+                <article style="margin-top: 30px;">
+                    <h3>Dúvidas Frequentes</h3>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Como fazer uma conversão rápida de cabeça?</summary>
+                            <p>Para uma estimativa simples de Celsius para Fahrenheit: dobre o valor em Celsius e
+                                adicione 30. Ex: 20°C x 2 = 40 + 30 = 70°F (o valor exato seria 68°F).</p>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Por que Kelvin não tem graus (°)?</summary>
+                            <p>Pois Kelvin é uma escala absoluta de termodinâmica, não relativa como Celsius ou
+                                Fahrenheit. Por isso, dizemos apenas "300 Kelvin" e não "300 graus Kelvin".</p>
+                        </details>
+                    </div>
+                </article>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Portal das Contas</p>
+        <a href="../paginas/privacidade.html">Privacidade</a>
+        <a href="../paginas/termos.html">Termos de Uso</a>
+        <a href="../index.html">Início</a>
+    </footer>
+
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/temperatura.js"></script>
+</body>
+
+</html>

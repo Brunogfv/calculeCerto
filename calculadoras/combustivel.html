@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Calcule o 13º salário online de forma simples. Saiba o valor bruto, primeira parcela, segunda parcela e descontos do INSS.">
+        content="Calcule o consumo de combustível do seu veículo. Descubra quantos km/l seu carro faz e o custo por quilômetro rodado.">
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -14,20 +14,21 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-STVR24Q61S');
     </script>
 
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
         crossorigin="anonymous"></script>
 
+    <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/decimo-terceiro.css">
-    <title>Calculadora de 13º Salário Online | Portal das Contas</title>
+    <link rel="stylesheet" href="../css/combustivel.css">
+
+    <title>Calculadora de Combustível | Portal das Contas</title>
+
 </head>
 
 <body data-theme="light">
@@ -126,80 +127,73 @@
 
     <main>
         <div class="calculator-wrapper">
-            <div class="calc-header">
-                <h2>Calculadora de 13º Salário</h2>
-                <p>Descubra quanto você vai receber considerando o INSS.</p>
-            </div>
-
-            <form onsubmit="event.preventDefault(); calcularDecimoTerceiro();">
-                <div class="input-group">
-                    <label for="salario">Salário Bruto Mensal</label>
-                    <div class="input-wrapper">
-                        <span class="input-prefix">R$</span>
-                        <input type="text" id="salario" placeholder="0,00" oninput="formatarMoeda(this)" required>
-                    </div>
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de Combustível</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra a eficiência do seu carro.</p>
                 </div>
 
                 <div class="input-group">
-                    <label for="meses">Meses Trabalhados no Ano</label>
-                    <div class="input-wrapper">
-                        <!-- Select é melhor para evitar erro de digitação -->
-                        <select id="meses"
-                            style="padding-left: 16px; appearance: none; cursor: pointer; background-image: url('data:image/svg+xml;utf8,<svg fill=\'%2364748b\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>'); background-repeat: no-repeat; background-position: right 10px center;">
-                            <option value="1">1 mês</option>
-                            <option value="2">2 meses</option>
-                            <option value="3">3 meses</option>
-                            <option value="4">4 meses</option>
-                            <option value="5">5 meses</option>
-                            <option value="6">6 meses</option>
-                            <option value="7">7 meses</option>
-                            <option value="8">8 meses</option>
-                            <option value="9">9 meses</option>
-                            <option value="10">10 meses</option>
-                            <option value="11">11 meses</option>
-                            <option value="12" selected>12 meses</option>
-                        </select>
-                    </div>
+                    <label for="km">Distância percorrida (km)</label>
+                    <input type="number" id="km" placeholder="Ex: 350">
                 </div>
 
-                <div class="btn-container">
-                    <button type="submit" class="btn-primary">Calcular Agora</button>
-                    <button type="button" class="btn-secondary" onclick="limparCampos()">Limpar</button>
-                </div>
-            </form>
-
-            <!-- Resultados -->
-            <div id="resultado-juros" class="result-box">
-                <div class="result-card">
-                    <div class="result-label">Você receberá (Total Líquido)</div>
-                    <div class="result-value-main" id="valor-liquido">R$ 0,00</div>
+                <div class="input-group">
+                    <label for="litros">Litros abastecidos (L)</label>
+                    <input type="number" id="litros" placeholder="Ex: 25">
                 </div>
 
-                <div class="result-breakdown">
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Valor Bruto Total</div>
-                        <div class="breakdown-value" id="valor-bruto">R$ 0,00</div>
+                <div class="input-group">
+                    <label for="preco">Preço do Litro (R$) - Opcional</label>
+                    <input type="number" id="preco" placeholder="Ex: 5,49" step="0.001">
+                </div>
+
+                <button class="btn-primary" onclick="calcularCombustivel()">
+                    ⛽ Calcular Consumo
+                </button>
+
+                <!-- Resultados -->
+                <div id="resultado-area" class="result-area">
+
+                    <div class="main-result">
+                        <div class="result-label">Consumo Médio</div>
+                        <div class="result-value" id="valor-kml">0</div>
+                        <small style="color: var(--cor-texto-suave);">Km por Litro (Km/L)</small>
                     </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Desconto INSS</div>
-                        <div class="breakdown-value discount" id="valor-inss">R$ 0,00</div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">1ª Parcela (50%)</div>
-                        <div class="breakdown-value" id="valor-parcela1">R$ 0,00</div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">2ª Parcela (Restante)</div>
-                        <div class="breakdown-value" id="valor-parcela2">R$ 0,00</div>
+
+                    <div class="details-grid">
+                        <div class="detail-card">
+                            <div class="detail-title">Custo por Km</div>
+                            <div class="detail-val" id="custo-km">R$ 0,00</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-title">Custo Total do Abastecimento</div>
+                            <div class="detail-val" id="custo-total">R$ 0,00</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="info-text">
-                <strong>Como funciona?</strong><br>
-                O cálculo considera 1/12 do salário por mês trabalhado. O INSS é descontado no momento do pagamento da
-                1ª parcela (se for o caso) ou descontado da 2ª parcela (regra geral). Esta calculadora utiliza uma
-                alíquota média de 8% para fins de estimativa rápida. Consulte seu holerite para valores exatos.
+            <!-- Conteúdo Educativo -->
+            <div class="tips-card">
+                <h3 style="margin-top: 0; color: var(--cor-texto);">💡 Dicas para economizar combustível</h3>
+                <ul class="tips-list">
+                    <li><span class="check-icon">✓</span> Mantenha os pneus calibrados na pressão correta.</li>
+                    <li><span class="check-icon">✓</span> Evite acelerações bruscas e frenagens rápidas.</li>
+                    <li><span class="check-icon">✓</span> Utilize o ar condicionado com moderação.</li>
+                    <li><span class="check-icon">✓</span> Retire excesso de peso do porta-malas.</li>
+                    <li><span class="check-icon">✓</span> Faça revisões periódicas (óleo, filtros).</li>
+                </ul>
+            </div>
+
+            <div
+                style="margin-top: 20px; background: rgba(245, 158, 11, 0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                <h4 style="margin-top: 0; color: #92400e; font-size: 16px;">Como calcular na prática?</h4>
+                <p style="margin: 0; font-size: 14px; color: #78350f; line-height: 1.6;">
+                    Encha o tanque até o bico e zere o odômetro (anote a quilometragem). Quando precisar abastecer
+                    novamente, encha até o bico novamente e veja quantos litros gastou. Use a quilometragem rodada e os
+                    litros desta nova carga nesta calculadora.
+                </p>
             </div>
         </div>
     </main>
@@ -211,8 +205,8 @@
         <a href="../index.html">Início</a>
     </footer>
 
-    <script src="../js/decimo-terceiro.js"></script>
     <script src="../js/theme.js"></script>
+    <script src="../js/combustivel.js"></script>
     <script src="../js/dropdown.js"></script>
 </body>
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Calcule o 13º salário online de forma simples. Saiba o valor bruto, primeira parcela, segunda parcela e descontos do INSS.">
+        content="Calculadora de Piso e Azulejo. Calcule a quantidade de peças e caixas necessárias para revestir seu piso com o desperdício.">
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -14,20 +14,21 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-STVR24Q61S');
     </script>
 
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
         crossorigin="anonymous"></script>
 
+    <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/decimo-terceiro.css">
-    <title>Calculadora de 13º Salário Online | Portal das Contas</title>
+    <link rel="stylesheet" href="../css/piso.css">
+
+    <title>Calculadora de Piso | Portal das Contas</title>
+
 </head>
 
 <body data-theme="light">
@@ -35,7 +36,7 @@
     <!-- Overlay Mobile -->
     <div class="overlay" onclick="toggleMenu()"></div>
 
-    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <!-- HEADER PADRÃO COM CATEGORIA CASA -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
@@ -55,7 +56,7 @@
             <nav class="menu" id="nav-menu">
                 <a href="../index.html" onclick="toggleMenu()">Início</a>
 
-                <!-- Categoria Finanças -->
+                <!-- Finanças -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
                     <div class="dropdown-menu">
@@ -68,7 +69,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Saúde -->
+                <!-- Saúde -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
                     <div class="dropdown-menu">
@@ -79,7 +80,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Auto -->
+                <!-- Auto -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
                     <div class="dropdown-menu">
@@ -87,7 +88,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Educação -->
+                <!-- Educação -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
                     <div class="dropdown-menu">
@@ -95,7 +96,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Casa & Reforma -->
+                <!-- Casa & Reforma -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
                     <div class="dropdown-menu">
@@ -114,6 +115,7 @@
                     </div>
                 </div>
 
+
                 <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
                 <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
             </nav>
@@ -126,80 +128,101 @@
 
     <main>
         <div class="calculator-wrapper">
-            <div class="calc-header">
-                <h2>Calculadora de 13º Salário</h2>
-                <p>Descubra quanto você vai receber considerando o INSS.</p>
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de Piso</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Saiba quantos azulejos, porcelanatos ou pisos
+                        comprar.</p>
+                </div>
+
+                <div class="section-grid">
+                    <!-- Coluna 1: Ambiente -->
+                    <div>
+                        <h4 style="color: var(--cor-primaria); margin-bottom: 10px;">Medidas do Ambiente</h4>
+                        <div class="input-group">
+                            <label for="comprimento">Comprimento (m)</label>
+                            <input type="number" id="comprimento" step="0.01" placeholder="Ex: 4.5">
+                        </div>
+                        <div class="input-group">
+                            <label for="largura">Largura (m)</label>
+                            <input type="number" id="largura" step="0.01" placeholder="Ex: 3.0">
+                        </div>
+                    </div>
+
+                    <!-- Coluna 2: Piso -->
+                    <div>
+                        <h4 style="color: var(--cor-primaria); margin-bottom: 10px;">Especificações do Piso</h4>
+                        <div class="input-group">
+                            <label for="piso-largura">Largura do Piso (cm)</label>
+                            <input type="number" id="piso-largura" step="0.1" placeholder="Ex: 60">
+                        </div>
+                        <div class="input-group">
+                            <label for="piso-altura">Altura do Piso (cm)</label>
+                            <input type="number" id="piso-altura" step="0.1" placeholder="Ex: 60">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-grid">
+                    <!-- Detalhes -->
+                    <div>
+                        <div class="input-group">
+                            <label for="conteudo-caixa">Metros quadrados por caixa (m²)</label>
+                            <input type="number" id="conteudo-caixa" step="0.01" placeholder="Ex: 1.44"
+                                title="Geralmente na embalagem do piso">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="input-group">
+                            <label for="residuo">Margem de Resíduo/Quebra (%)</label>
+                            <select id="residuo">
+                                <option value="0">0% (Sem margem)</option>
+                                <option value="0.05">5% (Revestimento reto)</option>
+                                <option value="0.10" selected>10% (Padrão)</option>
+                                <option value="0.15">15% (Revestimento diagonal)</option>
+                                <option value="0.20">20% (Reservado)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-calc" onclick="calcularPiso()">Calcular Material</button>
+
+                <!-- Resultados -->
+                <div id="resultado-area" class="result-area">
+                    <div class="result-grid">
+                        <div class="result-card">
+                            <div class="result-label">Área Total</div>
+                            <div class="result-value" id="area-total">0</div>
+                            <small>m²</small>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Peças Necessárias</div>
+                            <div class="result-value" id="pecas-total">0</div>
+                            <small>unid.</small>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Caixas Comprar</div>
+                            <div class="result-value" id="caixas-total">0</div>
+                            <small>unid.</small>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <form onsubmit="event.preventDefault(); calcularDecimoTerceiro();">
-                <div class="input-group">
-                    <label for="salario">Salário Bruto Mensal</label>
-                    <div class="input-wrapper">
-                        <span class="input-prefix">R$</span>
-                        <input type="text" id="salario" placeholder="0,00" oninput="formatarMoeda(this)" required>
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <label for="meses">Meses Trabalhados no Ano</label>
-                    <div class="input-wrapper">
-                        <!-- Select é melhor para evitar erro de digitação -->
-                        <select id="meses"
-                            style="padding-left: 16px; appearance: none; cursor: pointer; background-image: url('data:image/svg+xml;utf8,<svg fill=\'%2364748b\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>'); background-repeat: no-repeat; background-position: right 10px center;">
-                            <option value="1">1 mês</option>
-                            <option value="2">2 meses</option>
-                            <option value="3">3 meses</option>
-                            <option value="4">4 meses</option>
-                            <option value="5">5 meses</option>
-                            <option value="6">6 meses</option>
-                            <option value="7">7 meses</option>
-                            <option value="8">8 meses</option>
-                            <option value="9">9 meses</option>
-                            <option value="10">10 meses</option>
-                            <option value="11">11 meses</option>
-                            <option value="12" selected>12 meses</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="btn-container">
-                    <button type="submit" class="btn-primary">Calcular Agora</button>
-                    <button type="button" class="btn-secondary" onclick="limparCampos()">Limpar</button>
-                </div>
-            </form>
-
-            <!-- Resultados -->
-            <div id="resultado-juros" class="result-box">
-                <div class="result-card">
-                    <div class="result-label">Você receberá (Total Líquido)</div>
-                    <div class="result-value-main" id="valor-liquido">R$ 0,00</div>
-                </div>
-
-                <div class="result-breakdown">
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Valor Bruto Total</div>
-                        <div class="breakdown-value" id="valor-bruto">R$ 0,00</div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Desconto INSS</div>
-                        <div class="breakdown-value discount" id="valor-inss">R$ 0,00</div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">1ª Parcela (50%)</div>
-                        <div class="breakdown-value" id="valor-parcela1">R$ 0,00</div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">2ª Parcela (Restante)</div>
-                        <div class="breakdown-value" id="valor-parcela2">R$ 0,00</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-text">
-                <strong>Como funciona?</strong><br>
-                O cálculo considera 1/12 do salário por mês trabalhado. O INSS é descontado no momento do pagamento da
-                1ª parcela (se for o caso) ou descontado da 2ª parcela (regra geral). Esta calculadora utiliza uma
-                alíquota média de 8% para fins de estimativa rápida. Consulte seu holerite para valores exatos.
+            <!-- Conteúdo Educativo -->
+            <div class="info-box">
+                <h3>Dicas para assentar piso</h3>
+                <ul style="color: var(--cor-texto-suave); line-height: 1.6;">
+                    <li><strong>Verifique o Lote:</strong> Pisos podem ter pequenas variações de tom. Compre sempre do
+                        mesmo lote para o mesmo ambiente.</li>
+                    <li><strong>Nível da Argamassa:</strong> O contrapiso precisa estar perfeitamente nivelado e seco.
+                    </li>
+                    <li><strong>Rejunte:</strong> Lembre-se que o rejunte também gasta material, mas esta calculadora
+                        foca na área de piso.</li>
+                    <li><strong>Desperdício:</strong> Para pisos assentados em diagonal (45º), o desperdício chega a ser
+                        15-20%.</li>
+                </ul>
             </div>
         </div>
     </main>
@@ -211,9 +234,9 @@
         <a href="../index.html">Início</a>
     </footer>
 
-    <script src="../js/decimo-terceiro.js"></script>
-    <script src="../js/theme.js"></script>
     <script src="../js/dropdown.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/piso.js"></script>
 </body>
 
 </html>

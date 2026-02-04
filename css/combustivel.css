@@ -1,0 +1,196 @@
+/* --- ESTILOS ESPECÍFICOS COMBUSTÍVEL --- */
+:root {
+    --cor-primaria: #2563eb;
+    --cor-secundaria: #16a34a;
+    --cor-fundo: #f1f5f9;
+    --cor-card: #ffffff;
+    --cor-texto: #1f2933;
+    --cor-texto-suave: #64748b;
+    --cor-gas: #f59e0b;
+    /* Cor gasolina/amarelo */
+}
+
+[data-theme="dark"] {
+    --cor-fundo: #0f172a;
+    --cor-card: #1e293b;
+    --cor-texto: #e2e8f0;
+    --cor-texto-suave: #94a3b8;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    /* padding-bottom: 40px; */
+}
+
+.calculator-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Card Principal */
+.calc-card {
+    background-color: var(--cor-card);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    border-top: 4px solid var(--cor-gas);
+}
+
+.calc-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.calc-header h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+    color: var(--cor-texto);
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-texto);
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 16px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Botão */
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+/* Resultados */
+.result-area {
+    display: none;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.main-result {
+    margin-bottom: 24px;
+}
+
+.result-value {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--cor-gas);
+    line-height: 1;
+}
+
+.result-label {
+    font-size: 14px;
+    color: var(--cor-texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.detail-card {
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.detail-title {
+    font-size: 12px;
+    color: var(--cor-texto-suave);
+    margin-bottom: 4px;
+}
+
+.detail-val {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+/* Conteúdo Educativo */
+.tips-card {
+    background: var(--cor-card);
+    padding: 24px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--cor-texto-suave);
+    font-size: 15px;
+}
+
+.check-icon {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-value {
+        font-size: 36px;
+    }
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Calcule porcentagem online. Descubra quanto é X% de um valor, calcule aumentos e descontos percentuais de forma simples e gratuita.">
+        content="Calculadora de Data de Parto. Descubra a data provável do parto (DPP), a semana gestacional e o trimestre da sua bebê.">
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -25,16 +25,18 @@
 
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/porcentagem.css">
+    <link rel="stylesheet" href="../css/parto.css">
 
-    <title>Calculadora de Porcentagem | Portal das Contas</title>
+    <title>Calculadora de Parto | Portal das Contas</title>
+
 </head>
 
 <body data-theme="light">
+
     <!-- Overlay Mobile -->
     <div class="overlay" onclick="toggleMenu()"></div>
 
-    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <!-- HEADER PADRÃO COM SAÚDE -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
@@ -54,7 +56,7 @@
             <nav class="menu" id="nav-menu">
                 <a href="../index.html" onclick="toggleMenu()">Início</a>
 
-                <!-- Categoria Finanças -->
+                <!-- Finanças -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
                     <div class="dropdown-menu">
@@ -67,7 +69,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Saúde -->
+                <!-- Saúde -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
                     <div class="dropdown-menu">
@@ -78,7 +80,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Auto -->
+                <!-- Auto -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
                     <div class="dropdown-menu">
@@ -86,7 +88,8 @@
                     </div>
                 </div>
 
-                <!-- Categoria Educação -->
+
+                <!-- Educação -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
                     <div class="dropdown-menu">
@@ -94,7 +97,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Casa & Reforma -->
+                <!-- Casa -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
                     <div class="dropdown-menu">
@@ -127,105 +130,114 @@
         <div class="calculator-wrapper">
             <div class="calc-card">
                 <div class="calc-header">
-                    <h2>Calculadora de Porcentagem</h2>
-                    <p style="color: var(--cor-texto-suave); margin: 0;">Realize cálculos rápidos de descontos e
-                        aumentos.</p>
+                    <h2>Calculadora de Parto</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra quando seu bebê vai chegar.</p>
                 </div>
 
-                <div class="input-group select-wrapper">
-                    <label for="tipo">Tipo de Cálculo</label>
-                    <select name="tipo" id="tipo" onchange="atualizarTextoBotao()">
-                        <option value="parte">Quanto é X% de um valor?</option>
-                        <option value="aumento">Aumentar um valor em X%</option>
-                        <option value="desconto">Descontar X% de um valor</option>
+                <div class="input-group">
+                    <label for="data-menstruacao">Data da última menstruação (1º dia)</label>
+                    <input type="date" id="data-menstruacao">
+                </div>
+
+                <div class="input-group">
+                    <label for="ciclo">Duração média do ciclo (dias)</label>
+                    <select id="ciclo">
+                        <option value="26">26 dias (Curto)</option>
+                        <option value="27">27 dias</option>
+                        <option value="28" selected>28 dias (Padrão)</option>
+                        <option value="29">29 dias</option>
+                        <option value="30">30 dias (Longo)</option>
+                        <option value="31">31 dias</option>
+                        <option value="32">32 dias</option>
+                        <option value="33">33 dias</option>
+                        <option value="34">34 dias</option>
+                        <option value="35">35 dias</option>
                     </select>
                 </div>
 
-                <div class="inputs-grid">
-                    <div class="input-group">
-                        <label for="percentual">Porcentagem (%)</label>
-                        <input type="number" id="percentual" placeholder="Ex: 10" step="0.01">
-                    </div>
-                    <div class="input-group">
-                        <label for="valor">O Valor</label>
-                        <input type="number" id="valor" placeholder="Ex: 200" step="0.01">
-                    </div>
-                </div>
-
-                <div class="btn-container">
-                    <button class="btn-primary" id="btnCalcular" onclick="calcularPorcentagem()">Calcular</button>
-                    <button class="btn-secondary" onclick="limparCampos()">Limpar</button>
-                </div>
+                <button class="btn-calc" onclick="calcularParto()">Calcular Data de Parto</button>
 
                 <!-- Resultados -->
                 <div id="resultado-area" class="result-area">
-                    <div class="result-card">
-                        <div class="result-desc" id="result-desc-text">O resultado é:</div>
-                        <div class="result-value" id="result-value">0.00</div>
 
-                        <!-- Detalhes Matemáticos -->
-                        <div class="steps-box" id="steps-text">
-                            <!-- JS vai preencher aqui -->
+                    <div class="main-result">
+                        <div class="result-label">Data Estimada de Parto (DPP)</div>
+                        <div class="result-value" id="data-parto">00/00/0000</div>
+                        <small style="color: var(--cor-texto-suave);">Data aproximada (+/- 5 dias)</small>
+                    </div>
+
+                    <!-- Linha do Tempo -->
+                    <div class="timeline-container">
+                        <div class="progress-track">
+                            <div id="progress-bar" class="progress-fill"></div>
+
+                            <!-- Marcadores Visuais (Semanas 13, 27, 40) -->
+                            <div class="milestone" style="left: 32.5%;">T1</div>
+                            <div class="milestone" style="left: 67.5%;">T2</div>
+                            <div class="milestone" style="left: 100%;">T3</div>
+                        </div>
+                        <div class="milestones">
+                            <span>0 sem</span>
+                            <span>13 sem</span>
+                            <span>27 sem</span>
+                            <span>40 sem</span>
                         </div>
                     </div>
+
+                    <p style="margin-top:20px; font-size:15px;">
+                        Estimativa: <strong id="semana-atual">-</strong> semanas de gestação.
+                    </p>
+
+                    <!-- Cards Trimestres -->
+                    <div class="tri-card">
+                        <div style="display:flex; align-items:center;">
+                            <span class="tri-icon">🌱</span>
+                            <div class="tri-info">
+                                <div class="tri-title">1º Trimestre</div>
+                                <div class="tri-sub">0 a 13 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tri-card">
+                        <div style="display:flex; align-items:center;">
+                            <span class="tri-icon">🤰</span>
+                            <div class="tri-info">
+                                <div class="tri-title">2º Trimestre</div>
+                                <div class="tri-sub">14 a 27 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tri-card">
+                        <div style="display:flex; align-items:center;">
+                            <span class="tri-icon">👶</span>
+                            <div class="tri-info">
+                                <div class="tri-title">3º Trimestre</div>
+                                <div class="tri-sub">28 a 40 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
             <!-- Conteúdo Educativo -->
-            <div class="info-content">
-                <h3>Fórmulas de Cálculo</h3>
-                <p>Entenda a matemática por trás de cada tipo de cálculo:</p>
+            <div
+                style="background: var(--cor-card); padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <h3 style="margin-top: 0; color: var(--cor-texto);">💡 Como é feito o cálculo?</h3>
+                <ul style="color: var(--cor-texto-suave); line-height: 1.7; padding-left: 20px;">
+                    <li>O cálculo considera o primeiro dia da última menstruação como o início da gravidez.</li>
+                    <li>A duração padrão da gestação é de <strong>40 semanas</strong> (aproximadamente 9 meses e 7
+                        dias).</li>
+                    <li>Ajustamos a data baseado na duração do seu ciclo menstrual (ovulação).</li>
+                    <li>Esta é apenas uma estimativa. Apenas 5% dos bebês nascem exatamente na data estimada.</li>
+                </ul>
 
-                <div class="formula-grid">
-                    <div class="formula-card">
-                        <div class="formula-title">Parte de um Todo</div>
-                        <div class="formula-math">(Valor × %) / 100</div>
-                        <small style="color: var(--cor-texto-suave)">Ex: Quanto é 10% de 200?</small>
-                    </div>
-                    <div class="formula-card">
-                        <div class="formula-title">Aumento</div>
-                        <div class="formula-math">Valor × (1 + %/100)</div>
-                        <small style="color: var(--cor-texto-suave)">Ex: Aumentar 200 em 10%.</small>
-                    </div>
-                    <div class="formula-card">
-                        <div class="formula-title">Desconto</div>
-                        <div class="formula-math">Valor × (1 - %/100)</div>
-                        <small style="color: var(--cor-texto-suave)">Ex: Descontar 10% de 200.</small>
-                    </div>
-                </div>
-
-                <h3>Exemplos do Dia a Dia</h3>
-
-                <div class="example-box">
-                    <h4>🛒 Promoção de Loja</h4>
-                    <p style="font-size: 14px; margin-bottom: 0; color: #78350f;">
-                        Uma TV custa <strong>R$ 2.000,00</strong> e está com <strong>15% de desconto</strong>.
-                        Qual o valor final?
-                        <br><br>
-                        <em>Use a opção "Descontar X%".</em><br>
-                        Resultado: Você paga <strong>R$ 1.700,00</strong>.
-                    </p>
-                </div>
-
-                <div class="example-box">
-                    <h4>📈 Aumento de Salário</h4>
-                    <p style="font-size: 14px; margin-bottom: 0; color: #78350f;">
-                        Seu salário é de <strong>R$ 3.500,00</strong> e você recebeu um aumento de <strong>5%</strong>.
-                        Qual o novo salário?
-                        <br><br>
-                        <em>Use a opção "Aumentar X%".</em><br>
-                        Resultado: Novo salário de <strong>R$ 3.675,00</strong>.
-                    </p>
-                </div>
-
-                <div class="example-box">
-                    <h4>🍽️ Gorjeta em Restaurante</h4>
-                    <p style="font-size: 14px; margin-bottom: 0; color: #78350f;">
-                        A conta do jantar deu <strong>R$ 150,00</strong> e você quer dar <strong>10% de
-                            gorjeta</strong>.
-                        <br><br>
-                        <em>Use a opção "Quanto é X% de um valor".</em><br>
-                        Resultado: Dê <strong>R$ 15,00</strong> de gorjeta.
+                <div
+                    style="margin-top:20px; background: rgba(239, 68, 68, 0.05); padding: 15px; border-left: 4px solid var(--cor-primaria); border-radius: 8px;">
+                    <h4 style="margin: 0 0 5px 0; color: #9f1239; font-size: 16px;">⚠️ Aviso Importante</h4>
+                    <p style="margin: 0; font-size: 14px; color: #831843;">
+                        Esta ferramenta é apenas informativa. Consulte sempre seu médico obstetra para acompanhamento
+                        pré-natal e definição correta da data provável do parto.
                     </p>
                 </div>
             </div>
@@ -239,9 +251,9 @@
         <a href="../index.html">Início</a>
     </footer>
 
-    <script src="../js/porcentagem.js"></script>
-    <script src="../js/theme.js"></script>
     <script src="../js/dropdown.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/parto.js"></script>
 </body>
 
 </html>

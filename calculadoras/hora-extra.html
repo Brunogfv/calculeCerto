@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Calcule porcentagem online. Descubra quanto é X% de um valor, calcule aumentos e descontos percentuais de forma simples e gratuita.">
+        content="Calculadora de Hora Extra. Calcule quanto você vai receber trabalhando horas adicionais noturnas ou em domingo.">
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -25,16 +25,18 @@
 
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/porcentagem.css">
+    <link rel="stylesheet" href="../css/hora-extra.css">
 
-    <title>Calculadora de Porcentagem | Portal das Contas</title>
+    <title>Calculadora de Hora Extra | Portal das Contas</title>
+
 </head>
 
 <body data-theme="light">
+
     <!-- Overlay Mobile -->
     <div class="overlay" onclick="toggleMenu()"></div>
 
-    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <!-- HEADER PADRÃO COM CATEGORIA FINANÇAS -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
@@ -94,7 +96,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Casa & Reforma -->
+                <!-- Categoria Casa -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
                     <div class="dropdown-menu">
@@ -104,7 +106,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Utilitários (NOVA) -->
+                <!-- Categoria Utilitários -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
                     <div class="dropdown-menu">
@@ -127,105 +129,107 @@
         <div class="calculator-wrapper">
             <div class="calc-card">
                 <div class="calc-header">
-                    <h2>Calculadora de Porcentagem</h2>
-                    <p style="color: var(--cor-texto-suave); margin: 0;">Realize cálculos rápidos de descontos e
-                        aumentos.</p>
+                    <h2>Calculadora de Hora Extra</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra o valor das horas trabalhadas a mais
+                        noturnas ou em domingo.</p>
                 </div>
 
-                <div class="input-group select-wrapper">
-                    <label for="tipo">Tipo de Cálculo</label>
-                    <select name="tipo" id="tipo" onchange="atualizarTextoBotao()">
-                        <option value="parte">Quanto é X% de um valor?</option>
-                        <option value="aumento">Aumentar um valor em X%</option>
-                        <option value="desconto">Descontar X% de um valor</option>
-                    </select>
-                </div>
-
-                <div class="inputs-grid">
+                <div class="input-row">
                     <div class="input-group">
-                        <label for="percentual">Porcentagem (%)</label>
-                        <input type="number" id="percentual" placeholder="Ex: 10" step="0.01">
+                        <label for="salario">Salário Bruto Mensal (R$)</label>
+                        <input type="number" id="salario" placeholder="Ex: 3500" step="0.01">
                     </div>
                     <div class="input-group">
-                        <label for="valor">O Valor</label>
-                        <input type="number" id="valor" placeholder="Ex: 200" step="0.01">
+                        <label for="horas-mes">Horas Trabalhadas (Mês)</label>
+                        <select id="horas-mes">
+                            <option value="220">220h (Padrão CLT)</option>
+                            <option value="200">200h (Bancário/Comercial)</option>
+                            <option value="44">44h (Meio Período)</option>
+                            <option value="custom">Outro valor</option>
+                        </select>
                     </div>
                 </div>
 
-                <div class="btn-container">
-                    <button class="btn-primary" id="btnCalcular" onclick="calcularPorcentagem()">Calcular</button>
-                    <button class="btn-secondary" onclick="limparCampos()">Limpar</button>
+                <div class="input-row">
+                    <div class="input-group" id="group-custom-horas" style="display:none;">
+                        <label for="custom-horas">Informe as Horas Mensais</label>
+                        <input type="number" id="custom-horas" placeholder="Ex: 180">
+                    </div>
                 </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="horas-extra">Horas Extra Trabalhadas</label>
+                        <input type="number" id="horas-extra" placeholder="Ex: 2">
+                    </div>
+                    <div class="input-group">
+                        <label for="percentual">Percentual Adicional</label>
+                        <select id="percentual">
+                            <option value="50">50% (Dia de Semana)</option>
+                            <option value="70">70% (Trabalho em Dia)</option>
+                            <option value="100">100% (Domingo/Feriado)</option>
+                            <option value="120">120% (Feriado em Domingo)</option>
+                            <option value="150">150% (Feriado em Domingo + Noturno)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn-calc" onclick="calcularHoraExtra()">Calcular Valor</button>
 
                 <!-- Resultados -->
                 <div id="resultado-area" class="result-area">
-                    <div class="result-card">
-                        <div class="result-desc" id="result-desc-text">O resultado é:</div>
-                        <div class="result-value" id="result-value">0.00</div>
+                    <div class="result-summary">
+                        <div class="highlight-text">Total a Receber (Extra)</div>
+                        <div class="highlight-value" id="valor-extra">R$ 0,00</div>
+                        <small style="color: var(--cor-texto-suave);">Valor bruto sobre as horas adicionais</small>
+                    </div>
 
-                        <!-- Detalhes Matemáticos -->
-                        <div class="steps-box" id="steps-text">
-                            <!-- JS vai preencher aqui -->
+                    <div class="details-grid">
+                        <div class="detail-card">
+                            <div class="detail-title">Valor Hora Normal</div>
+                            <div class="detail-value" id="valor-hora-normal">R$ 0,00</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-title">Valor Hora Extra</div>
+                            <div class="detail-value" id="valor-hora-extra" style="color: var(--cor-primaria);">R$ 0,00
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Conteúdo Educativo -->
-            <div class="info-content">
-                <h3>Fórmulas de Cálculo</h3>
-                <p>Entenda a matemática por trás de cada tipo de cálculo:</p>
+            <!-- Conteúdo Educativo e SEO -->
+            <div class="info-box">
+                <h3>💡 Regras da Hora Extra (CLT)</h3>
+                <p style="color: var(--cor-texto-suave); line-height: 1.7;">
+                    O cálculo da hora extra segue as regras da CLT (Consolidação das Leis do Trabalho). O percentual
+                    muda dependendo do dia da semana e do horário.
+                </p>
 
-                <div class="formula-grid">
-                    <div class="formula-card">
-                        <div class="formula-title">Parte de um Todo</div>
-                        <div class="formula-math">(Valor × %) / 100</div>
-                        <small style="color: var(--cor-texto-suave)">Ex: Quanto é 10% de 200?</small>
-                    </div>
-                    <div class="formula-card">
-                        <div class="formula-title">Aumento</div>
-                        <div class="formula-math">Valor × (1 + %/100)</div>
-                        <small style="color: var(--cor-texto-suave)">Ex: Aumentar 200 em 10%.</small>
-                    </div>
-                    <div class="formula-card">
-                        <div class="formula-title">Desconto</div>
-                        <div class="formula-math">Valor × (1 - %/100)</div>
-                        <small style="color: var(--cor-texto-suave)">Ex: Descontar 10% de 200.</small>
-                    </div>
+                <div class="rule-card">
+                    <h4>1. Dia de Semana</h4>
+                    <p>Trabalho realizado além da jornada normal em dias úteis. O percentual mínimo é de
+                        <strong>50%</strong> sobre o valor da hora normal.</p>
                 </div>
 
-                <h3>Exemplos do Dia a Dia</h3>
-
-                <div class="example-box">
-                    <h4>🛒 Promoção de Loja</h4>
-                    <p style="font-size: 14px; margin-bottom: 0; color: #78350f;">
-                        Uma TV custa <strong>R$ 2.000,00</strong> e está com <strong>15% de desconto</strong>.
-                        Qual o valor final?
-                        <br><br>
-                        <em>Use a opção "Descontar X%".</em><br>
-                        Resultado: Você paga <strong>R$ 1.700,00</strong>.
-                    </p>
+                <div class="rule-card">
+                    <h4>2. Trabalho Noturno</h4>
+                    <p>Trabalho realizado entre 22h e 5h. Possui um adicional mínimo de <strong>20%</strong> que se soma
+                        à hora extra de 50%. Totalizando <strong>70%</strong>.</p>
                 </div>
 
-                <div class="example-box">
-                    <h4>📈 Aumento de Salário</h4>
-                    <p style="font-size: 14px; margin-bottom: 0; color: #78350f;">
-                        Seu salário é de <strong>R$ 3.500,00</strong> e você recebeu um aumento de <strong>5%</strong>.
-                        Qual o novo salário?
-                        <br><br>
-                        <em>Use a opção "Aumentar X%".</em><br>
-                        Resultado: Novo salário de <strong>R$ 3.675,00</strong>.
-                    </p>
+                <div class="rule-card">
+                    <h4>3. Domingo e Feriado</h4>
+                    <p>O adicional é de <strong>100%</strong> sobre o valor da hora normal. Se for noturno (no domingo),
+                        aplica-se mais 20%, totalizando <strong>120%</strong>.</p>
                 </div>
 
-                <div class="example-box">
-                    <h4>🍽️ Gorjeta em Restaurante</h4>
-                    <p style="font-size: 14px; margin-bottom: 0; color: #78350f;">
-                        A conta do jantar deu <strong>R$ 150,00</strong> e você quer dar <strong>10% de
-                            gorjeta</strong>.
-                        <br><br>
-                        <em>Use a opção "Quanto é X% de um valor".</em><br>
-                        Resultado: Dê <strong>R$ 15,00</strong> de gorjeta.
+                <div
+                    style="margin-top: 30px; background: rgba(245, 158, 11, 0.1); padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                    <h4 style="margin-top: 0; color: #92400e; font-size: 16px;">⚠️ Importante</h4>
+                    <p style="margin: 0; font-size: 14px; color: #78350f;">
+                        Este cálculo é uma estimativa baseada nas regras gerais da CLT. Convenções coletivas podem
+                        alterar os percentuais. Consulte o holerite ou sua empresa para valores exatos.
                     </p>
                 </div>
             </div>
@@ -239,9 +243,9 @@
         <a href="../index.html">Início</a>
     </footer>
 
-    <script src="../js/porcentagem.js"></script>
-    <script src="../js/theme.js"></script>
     <script src="../js/dropdown.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/hora-extra.js"></script>
 </body>
 
 </html>

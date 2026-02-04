@@ -13,71 +13,491 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-STVR24Q61S');
     </script>
 
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
-    crossorigin="anonymous"></script>
-
+        crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./css/style.css">
     <title>Portal das Contas | Calculadora Online</title>
 </head>
 
 <body data-theme="light">
-    <header class="header">
-        <h1>Portal das Contas</h1>
-        <p>Calculadoras simples, rápidas e gratuitas.</p>
 
-        <button class="toggle-theme" onclick="alternarTema()">
-            🌙 Modo Escuro
-        </button>
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
 
+    <!-- HEADER PADRÃO COM DROPDOWNS (RAIZ) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários (NOVA) -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                    </div>
+                </div>
+
+                <a href="paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
     </header>
-    
+
     <main class="container">
-        <h2>Escolha uma calculadora</h2>
-        <div class="cards">
-            <a href="calculadoras/imc.html" class="card">
-                <h3>IMC</h3>
-                <p>Calcule seu Índice de Massa Corporal</p>
-            </a>
 
-            <a href="calculadoras/porcentagem.html" class="card">
-                <h3>Porcentagem</h3>
-                <p>Calcule porcentagens rapidamente</p>
-            </a>
+        <!-- HERO SECTION -->
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-size: 28px; color: var(--cor-texto); margin-bottom: 10px;">Calculadoras Gratuitas</h2>
+            <p style="color: var(--cor-texto-suave); font-size: 18px;">Ferramentas rápidas e seguras para seu dia a dia.
+            </p>
+        </div>
 
-            <a href="calculadoras/juros.html" class="card">
-                <h3>Juros</h3>
-                <p>Calcule juros simples e compostos</p>
-            </a>
-            <a href="calculadoras/decimo-terceiro.html" class="card">
-                <h3>13º salário</h3>
-                <p>Calcule o valor do 13º salário</p>
-            </a>
-            <a href="calculadoras/inss.html" class="card">
-                <h3>Calculadora de INSS</h3>
-                <p>Calcule o desconto do INSS e descubra seu salário líquido</p>
-            </a>
+        <!-- 1. DESTAQUES (Mais Buscados) -->
+        <div style="margin-bottom: 50px;">
+            <h3
+                style="display: flex; align-items: center; gap: 10px; color: var(--cor-texto); border-bottom: 2px solid var(--cor-primaria); padding-bottom: 10px; margin-bottom: 20px;">
+                🔥 Mais Acessados
+            </h3>
+            <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <!-- Card INSS -->
+                <a href="calculadoras/inss.html" class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Calculadora INSS</h3>
+                    <p>Descubra seu salário líquido e o desconto do INSS com a tabela atualizada.</p>
+                </a>
+
+                <!-- Card 13º Salário -->
+                <a href="calculadoras/decimo-terceiro.html" class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>13º Salário</h3>
+                    <p>Simule o valor da primeira e segunda parcela do seu décimo terceiro.</p>
+                </a>
+
+                <!-- Card IMC -->
+                <a href="calculadoras/imc.html" class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                            <line x1="16" y1="8" x2="2" y2="22"></line>
+                            <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3>Calculadora IMC</h3>
+                    <p>Calcule seu Índice de Massa Corporal e verifique se está no peso ideal.</p>
+                </a>
+
+                <!-- Card Juros -->
+                <a href="calculadoras/juros.html" class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3>Juros Compostos</h3>
+                    <p>Simule investimentos e veja seu dinheiro crescer com o tempo.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 2. SAÚDE & BEM-ESTAR -->
+        <div style="margin-bottom: 50px;">
+            <h3
+                style="display: flex; align-items: center; gap: 10px; color: var(--cor-texto); border-bottom: 2px solid var(--cor-secundaria); padding-bottom: 10px; margin-bottom: 20px;">
+                🥗 Saúde & Bem-estar
+            </h3>
+            <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <!-- IMC -->
+                <a href="calculadoras/imc.html" class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                            <line x1="16" y1="8" x2="2" y2="22"></line>
+                            <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3>Calculadora IMC</h3>
+                    <p>Calcule seu Índice de Massa Corporal e verifique se está no peso ideal.</p>
+                </a>
+
+                <!-- TMB -->
+                <a href="calculadoras/tmb.html" class="card">
+                    <div class="card-icon" style="color: #f97316; background-color: rgba(249, 115, 22, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M12 20.94c1.7 0 3.23-.4 4.5-1.09"></path>
+                            <path d="M4.93 19.08A10.04 10.04 0 0 1 2.05 12"></path>
+                            <path d="M12 2a10 10 0 0 1 10 10"></path>
+                            <path d="M12 2a10 10 0 0 0-10 10"></path>
+                            <path d="M16.5 8.5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"></path>
+                        </svg>
+                    </div>
+                    <h3>Taxa Metabólica (TMB)</h3>
+                    <p>Descubra quantas calorias seu corpo gasta em repouso.</p>
+                </a>
+
+                <!-- Água -->
+                <a href="calculadoras/agua.html" class="card">
+                    <div class="card-icon" style="color: #0ea5e9; background-color: rgba(14, 165, 233, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>Quantidade de Água</h3>
+                    <p>Calcule a meta diária de água ideal para seu peso.</p>
+                </a>
+
+                <!-- Parto -->
+                <a href="calculadoras/parto.html" class="card">
+                    <div class="card-icon" style="color: #ec4899; background-color: rgba(236, 72, 153, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M18 12h-5"></path>
+                            <path d="M12 2L2 12"></path>
+                            <path d="M22 12L12 2"></path>
+                            <path d="M12 22v-6"></path>
+                        </svg>
+                    </div>
+                    <h3>Data de Parto</h3>
+                    <p>Descubra a data estimada do nascimento e o trimestre.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. EDUCAÇÃO (NOVA SEÇÃO) -->
+        <div style="margin-bottom: 50px;">
+            <h3
+                style="display: flex; align-items: center; gap: 10px; color: var(--cor-texto); border-bottom: 2px solid var(--cor-primaria); padding-bottom: 10px; margin-bottom: 20px;">
+                📚 Educação
+            </h3>
+            <div class="cards">
+                <!-- Média -->
+                <a href="calculadoras/medias.html" class="card">
+                    <div class="card-icon" style="color: #8b5cf6; background-color: rgba(139, 92, 246, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Média Escolar</h3>
+                    <p>Calcule médias ponderadas ou simples com pesos personalizados.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- SEÇÃO CASA & REFORMA -->
+        <div style="margin-bottom: 50px;">
+            <h3
+                style="display: flex; align-items: center; gap: 10px; color: var(--cor-texto); border-bottom: 2px solid #d97706; padding-bottom: 10px; margin-bottom: 20px;">
+                🏠 Casa & Reforma
+            </h3>
+            <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                <!-- Tinta -->
+                <a href="calculadoras/tinta.html" class="card">
+                    <div class="card-icon" style="color: #d97706; background-color: rgba(217, 119, 6, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3>Calculadora de Tinta</h3>
+                    <p>Calcule litros e latas de tinta para pintar suas paredes.</p>
+                </a>
+
+                <!-- Piso -->
+                <a href="calculadoras/piso.html" class="card">
+                    <div class="card-icon" style="color: #475569; background-color: rgba(71, 85, 105, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3>Calculadora de Piso</h3>
+                    <p>Calcule peças e caixas de azulejo para revestir seu ambiente.</p>
+                </a>
+
+                <!-- Cimento -->
+                <a href="calculadoras/cimento.html" class="card">
+                    <div class="card-icon" style="color: #475569; background-color: rgba(71, 85, 105, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"></path>
+                            <polyline points="16 6 12 2 8 6"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Calculadora de Cimento</h3>
+                    <p>Calcule sacos de cimento, areia e brita para contrapiso e laje.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 5. FINANÇAS & VEÍCULOS -->
+        <div style="margin-bottom: 40px;">
+            <h3
+                style="display: flex; align-items: center; gap: 10px; color: var(--cor-texto); border-bottom: 2px solid var(--cor-primaria); padding-bottom: 10px; margin-bottom: 20px;">
+                💰 Finanças & Veículos
+            </h3>
+            <div class="cards">
+                <!-- Combustível -->
+                <a href="calculadoras/combustivel.html" class="card">
+                    <div class="card-icon" style="color: #f59e0b; background-color: rgba(245, 158, 11, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M3 22v-8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8"></path>
+                            <path
+                                d="M18 10h-2a2 2 0 0 0-2 2v2H8v-2a2 2 0 0 0-2-2H4a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3>Consumo de Combustível</h3>
+                    <p>Calcule quantos Km/L seu carro faz e o custo da viagem.</p>
+                </a>
+
+                <!-- Porcentagem -->
+                <a href="calculadoras/porcentagem.html" class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <line x1="19" y1="5" x2="5" y2="19"></line>
+                            <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                            <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                    <h3>Porcentagem</h3>
+                    <p>Calcule aumentos, descontos e valores percentuais rapidamente.</p>
+                </a>
+
+                <!-- Conversor de Salário -->
+                <a href="calculadoras/salario.html" class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Conversor de Salário</h3>
+                    <p>Converta seu salário mensal em valor por hora ou anual.</p>
+                </a>
+
+                <!-- Hora Extra -->
+                <a href="calculadoras/hora-extra.html" class="card">
+                    <div class="card-icon" style="color: #f59e0b; background-color: rgba(245, 158, 11, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Calculadora de Hora Extra</h3>
+                    <p>Calcule o valor das horas trabalhadas a mais e noturnas.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 6. UTILITÁRIOS (NOVA SEÇÃO) -->
+        <div style="margin-bottom: 40px;">
+            <h3
+                style="display: flex; align-items: center; gap: 10px; color: var(--cor-texto); border-bottom: 2px solid var(--cor-primaria); padding-bottom: 10px; margin-bottom: 20px;">
+                🛠️ Utilitários
+            </h3>
+            <div class="cards">
+                <!-- Datas -->
+                <a href="calculadoras/datas.html" class="card">
+                    <div class="card-icon" style="color: #8b5cf6; background-color: rgba(139, 92, 246, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Diferença de Datas</h3>
+                    <p>Calcule quantos dias faltam ou passaram entre duas datas.</p>
+                </a>
+
+                <!-- Temperatura -->
+                <a href="calculadoras/temperatura.html" class="card">
+                    <div class="card-icon" style="color: #ef4444; background-color: rgba(239, 68, 68, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 0 0 4.5-4.5h2.25a4.5 4.5 0 0 0 4.5 4.5v-8.5H10">
+                            </path>
+                            <path
+                                d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 0 0 4.5-4.5h2.25a4.5 4.5 0 0 0 4.5 4.5v-8.5H10z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3>Conversor de Temperatura</h3>
+                    <p>Converta Celsius, Fahrenheit e Kelvin rapidamente.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- CTA Final -->
+        <div
+            style="background: linear-gradient(135deg, var(--cor-primaria), #1e40af); padding: 30px; border-radius: 12px; text-align: center; color: white; margin-top: 40px;">
+            <h3 style="margin-top: 0;">Não encontrou o que procurava?</h3>
+            <p style="opacity: 0.9; margin-bottom: 20px;">Estamos sempre adicionando novas ferramentas. Sugira uma
+                calculadora!</p>
+            <a href="paginas/contato.html"
+                style="background: white; color: var(--cor-primaria); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">Sugerir
+                Nova Ferramenta</a>
         </div>
 
     </main>
 
     <footer>
         <p>© 2026 Portal das Contas</p>
-        <a href="../paginas/privacidade.html">Privacidade</a>
-        <a href="../paginas/sobre.html">Sobre</a>
-
+        <a href="./paginas/privacidade.html">Privacidade</a>
+        <a href="./paginas/termos.html">Termos de Uso</a>
     </footer>
 
-    <script src="./js/theme.js"></script>
+    <script>
+        // --- LÓGICA DO TEMA ---
+        function alternarTema() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const currentTheme = body.getAttribute('data-theme');
+
+            if (currentTheme === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Carregar tema salvo ao iniciar
+        if (localStorage.getItem('theme')) {
+            document.body.setAttribute('data-theme', localStorage.getItem('theme'));
+            document.getElementById('theme-icon').textContent = localStorage.getItem('theme') === 'light' ? '🌙' : '☀️';
+        }
+
+        // --- LÓGICA DO MENU MOBILE ---
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+            document.querySelector('.overlay').classList.toggle('active');
+        }
+
+        // --- LÓGICA DO DROPDOWN MOBILE ---
+        function toggleMobileDropdown(element) {
+            // Se estiver em tela pequena (mobile)
+            if (window.innerWidth <= 768) {
+                const menu = element.nextElementSibling; // O .dropdown-menu
+                menu.classList.toggle('mobile-open');
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Calcule porcentagem online. Descubra quanto é X% de um valor, calcule aumentos e descontos percentuais de forma simples e gratuita.">
+        content="Calculadora de Tinta para Paredes. Calcule quantos litros e latas de tinta comprar para sua reforma.">
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -25,16 +25,18 @@
 
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/porcentagem.css">
+    <link rel="stylesheet" href="../css/tinta.css">
 
-    <title>Calculadora de Porcentagem | Portal das Contas</title>
+    <title>Calculadora de Tinta | Portal das Contas</title>
+
 </head>
 
 <body data-theme="light">
+
     <!-- Overlay Mobile -->
     <div class="overlay" onclick="toggleMenu()"></div>
 
-    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <!-- HEADER PADRÃO COM NOVA CATEGORIA CASA -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
@@ -54,7 +56,7 @@
             <nav class="menu" id="nav-menu">
                 <a href="../index.html" onclick="toggleMenu()">Início</a>
 
-                <!-- Categoria Finanças -->
+                <!-- Finanças -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
                     <div class="dropdown-menu">
@@ -67,7 +69,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Saúde -->
+                <!-- Saúde -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
                     <div class="dropdown-menu">
@@ -78,7 +80,7 @@
                     </div>
                 </div>
 
-                <!-- Categoria Auto -->
+                <!-- Auto -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
                     <div class="dropdown-menu">
@@ -86,7 +88,15 @@
                     </div>
                 </div>
 
-                <!-- Categoria Educação -->
+                <!-- Casa & Reforma (NOVA) -->
+                <!-- <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                    </div>
+                </div> -->
+
+                <!-- Educação -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
                     <div class="dropdown-menu">
@@ -127,107 +137,101 @@
         <div class="calculator-wrapper">
             <div class="calc-card">
                 <div class="calc-header">
-                    <h2>Calculadora de Porcentagem</h2>
-                    <p style="color: var(--cor-texto-suave); margin: 0;">Realize cálculos rápidos de descontos e
-                        aumentos.</p>
+                    <h2>Calculadora de Tinta</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra exatamente quanto comprar para sua
+                        reforma.</p>
                 </div>
 
-                <div class="input-group select-wrapper">
-                    <label for="tipo">Tipo de Cálculo</label>
-                    <select name="tipo" id="tipo" onchange="atualizarTextoBotao()">
-                        <option value="parte">Quanto é X% de um valor?</option>
-                        <option value="aumento">Aumentar um valor em X%</option>
-                        <option value="desconto">Descontar X% de um valor</option>
-                    </select>
-                </div>
-
-                <div class="inputs-grid">
-                    <div class="input-group">
-                        <label for="percentual">Porcentagem (%)</label>
-                        <input type="number" id="percentual" placeholder="Ex: 10" step="0.01">
+                <!-- Configuração -->
+                <div class="config-row">
+                    <div>
+                        <label style="font-size:13px; font-weight:600; display:block; margin-bottom:5px;">Rendimento da
+                            Tinta (m²/litro)</label>
+                        <select id="rendimento">
+                            <option value="8">Alta Cobertura (8m²/L)</option>
+                            <option value="10" selected>Padrão (10m²/L)</option>
+                            <option value="12">Econômica (12m²/L)</option>
+                        </select>
                     </div>
-                    <div class="input-group">
-                        <label for="valor">O Valor</label>
-                        <input type="number" id="valor" placeholder="Ex: 200" step="0.01">
+                    <div>
+                        <label style="font-size:13px; font-weight:600; display:block; margin-bottom:5px;">Mãos de
+                            Tinta</label>
+                        <select id="maos">
+                            <option value="1">1 Mão</option>
+                            <option value="2" selected>2 Mãos (Padrão)</option>
+                            <option value="3">3 Mãos</option>
+                        </select>
                     </div>
                 </div>
 
-                <div class="btn-container">
-                    <button class="btn-primary" id="btnCalcular" onclick="calcularPorcentagem()">Calcular</button>
-                    <button class="btn-secondary" onclick="limparCampos()">Limpar</button>
+                <!-- 1. Paredes -->
+                <div class="dynamic-section">
+                    <div class="section-title">📐 Paredes para Pintar</div>
+                    <div id="lista-paredes">
+                        <!-- Padrão 1 parede -->
+                        <div class="list-row">
+                            <input type="text" placeholder="Ex: Parede Sala" class="input-nome">
+                            <input type="number" step="0.01" placeholder="Largura (m)" class="input-largura">
+                            <input type="number" step="0.01" placeholder="Altura (m)" class="input-altura">
+                            <div style="width:100%; height:38px;"></div>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="adicionarParede()">+ Adicionar Parede</button>
                 </div>
+
+                <!-- 2. Aberturas (Portas/Janelas) -->
+                <div class="dynamic-section" style="padding-top:20px; border-top:1px dashed #e2e8f0;">
+                    <div class="section-title">🚪 Área de Portas/Janelas (Subtração)</div>
+                    <div id="lista-aberturas"></div> <!-- Começa vazio -->
+                    <button class="btn-add" onclick="adicionarAbertura()">+ Adicionar Abertura</button>
+                </div>
+
+                <button class="btn-calc" onclick="calcularTinta()">Calcular Tinta</button>
 
                 <!-- Resultados -->
                 <div id="resultado-area" class="result-area">
-                    <div class="result-card">
-                        <div class="result-desc" id="result-desc-text">O resultado é:</div>
-                        <div class="result-value" id="result-value">0.00</div>
 
-                        <!-- Detalhes Matemáticos -->
-                        <div class="steps-box" id="steps-text">
-                            <!-- JS vai preencher aqui -->
+                    <div class="result-summary">
+                        <div style="font-size:14px; color: var(--cor-texto-suave);">Total de Tinta Necessário</div>
+                        <div class="liters-value" id="valor-litros">0</div>
+                        <small style="color: var(--cor-texto-suave);">Litros (com 10% de margem de segurança)</small>
+                    </div>
+
+                    <h3 style="text-align:center; font-size:18px; color: var(--cor-texto);">Lista de Compras (Latões)
+                    </h3>
+                    <div class="cans-grid">
+                        <div class="can-card">
+                            <span class="can-icon">🛢️</span>
+                            <div class="can-name">Lata 18L</div>
+                            <div class="can-qty" id="lata-18">0</div>
+                        </div>
+                        <div class="can-card">
+                            <span class="can-icon">🥫</span>
+                            <div class="can-name">Lata 3.6L</div>
+                            <div class="can-qty" id="lata-36">0</div>
+                        </div>
+                        <div class="can-card">
+                            <span class="can-icon">🧴</span>
+                            <div class="can-name">Galão 0.9L</div>
+                            <div class="can-qty" id="lata-09">0</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Conteúdo Educativo -->
-            <div class="info-content">
-                <h3>Fórmulas de Cálculo</h3>
-                <p>Entenda a matemática por trás de cada tipo de cálculo:</p>
-
-                <div class="formula-grid">
-                    <div class="formula-card">
-                        <div class="formula-title">Parte de um Todo</div>
-                        <div class="formula-math">(Valor × %) / 100</div>
-                        <small style="color: var(--cor-texto-suave)">Ex: Quanto é 10% de 200?</small>
-                    </div>
-                    <div class="formula-card">
-                        <div class="formula-title">Aumento</div>
-                        <div class="formula-math">Valor × (1 + %/100)</div>
-                        <small style="color: var(--cor-texto-suave)">Ex: Aumentar 200 em 10%.</small>
-                    </div>
-                    <div class="formula-card">
-                        <div class="formula-title">Desconto</div>
-                        <div class="formula-math">Valor × (1 - %/100)</div>
-                        <small style="color: var(--cor-texto-suave)">Ex: Descontar 10% de 200.</small>
-                    </div>
-                </div>
-
-                <h3>Exemplos do Dia a Dia</h3>
-
-                <div class="example-box">
-                    <h4>🛒 Promoção de Loja</h4>
-                    <p style="font-size: 14px; margin-bottom: 0; color: #78350f;">
-                        Uma TV custa <strong>R$ 2.000,00</strong> e está com <strong>15% de desconto</strong>.
-                        Qual o valor final?
-                        <br><br>
-                        <em>Use a opção "Descontar X%".</em><br>
-                        Resultado: Você paga <strong>R$ 1.700,00</strong>.
-                    </p>
-                </div>
-
-                <div class="example-box">
-                    <h4>📈 Aumento de Salário</h4>
-                    <p style="font-size: 14px; margin-bottom: 0; color: #78350f;">
-                        Seu salário é de <strong>R$ 3.500,00</strong> e você recebeu um aumento de <strong>5%</strong>.
-                        Qual o novo salário?
-                        <br><br>
-                        <em>Use a opção "Aumentar X%".</em><br>
-                        Resultado: Novo salário de <strong>R$ 3.675,00</strong>.
-                    </p>
-                </div>
-
-                <div class="example-box">
-                    <h4>🍽️ Gorjeta em Restaurante</h4>
-                    <p style="font-size: 14px; margin-bottom: 0; color: #78350f;">
-                        A conta do jantar deu <strong>R$ 150,00</strong> e você quer dar <strong>10% de
-                            gorjeta</strong>.
-                        <br><br>
-                        <em>Use a opção "Quanto é X% de um valor".</em><br>
-                        Resultado: Dê <strong>R$ 15,00</strong> de gorjeta.
-                    </p>
-                </div>
+            <div class="tips-card">
+                <h3>💡 Dicas para não errar na pintura</h3>
+                <ul style="padding-left: 20px; color: var(--cor-texto-suave); line-height: 1.8;">
+                    <li><strong>Lixe as paredes:</strong> Use massa corrida e lixa bem antes de começar para economizar
+                        tinta.</li>
+                    <li><strong>Fundo:</strong> Sempre use uma demão de "fundo" (ou a própria tinta diluída em 10% de
+                        água) como primeira camada.</li>
+                    <li><strong>Áreas Abertas:</strong> Diminua a área de janelas e portas para comprar menos tinta.
+                    </li>
+                    <li><strong>Cores Escuras:</strong> Tintas escuras geralmente têm menor rendimento. Considere
+                        diminuir a opção de m²/litro para 8 ou 9.</li>
+                </ul>
             </div>
         </div>
     </main>
@@ -239,9 +243,9 @@
         <a href="../index.html">Início</a>
     </footer>
 
-    <script src="../js/porcentagem.js"></script>
-    <script src="../js/theme.js"></script>
     <script src="../js/dropdown.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/tinta.js"></script>
 </body>
 
 </html>

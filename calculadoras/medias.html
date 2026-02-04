@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calcule a média escolar ponderada ou simples. Adicione as notas e pesos das provas e descubra se foi aprovado.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/medias.css">
+
+    <title>Calculadora de Média Escolar | Portal das Contas</title>
+
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários (NOVA) -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                    </div>
+                </div>
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de Média Escolar</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Calcule médias ponderadas ou simples.</p>
+                </div>
+
+                <!-- Configuração -->
+                <div class="config-row">
+                    <div class="input-group">
+                        <label style="display:block; margin-bottom:5px; font-weight:600; font-size:14px;">Média
+                            necessária para passar:</label>
+                        <input type="number" id="nota-corte" value="6.0" step="0.1" max="10">
+                    </div>
+                    <div class="input-group">
+                        <label style="display:block; margin-bottom:5px; font-weight:600; font-size:14px;">Peso padrão
+                            (se deixar em branco):</label>
+                        <input type="number" value="1" disabled style="background: #e2e8f0; opacity: 0.6;">
+                    </div>
+                </div>
+
+                <!-- Lista de Notas -->
+                <div id="lista-notas" class="notas-list">
+                    <!-- Linha 1 -->
+                    <div class="nota-row">
+                        <input type="text" placeholder="Ex: Prova 1" class="input-nome">
+                        <input type="number" step="0.1" max="10" placeholder="Nota" class="input-nota"
+                            oninput="this.classList.add('active')">
+                        <input type="number" step="1" placeholder="Peso" class="input-peso" value="1">
+                        <div style="display:none;">1</div> <!-- Hidden ID -->
+                        <!-- Botão Remover (não remove a primeira linha para não deixar vazio) -->
+                        <div style="width:100%; height:40px;"></div>
+                    </div>
+                </div>
+
+                <button class="btn-add" onclick="adicionarNota()">+ Adicionar Prova/Atividade</button>
+                <button class="btn-calc" onclick="calcularMedia()">Calcular Média</button>
+
+                <!-- Resultados -->
+                <div id="resultado-area" class="result-area">
+                    <div class="result-box">
+                        <div class="media-value" id="valor-media">0.0</div>
+                        <div id="status-badge" class="status-badge">-</div>
+                        <p style="color: var(--cor-texto-suave); font-size: 14px; margin-top: 10px;">
+                            Média ponderada calculada com base nos pesos informados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo -->
+            <!-- <div class="info-card">
+                <h3>Como calcular a média?</h3>
+                <p style="color: var(--cor-texto-suave); line-height: 1.6;">
+                    A média escolar é o valor que representa o desempenho geral do aluno em várias avaliações.
+                </p>
+
+                <h4 style="color: var(--cor-primaria);">Média Aritmética (Simples)</h4>
+                <p style="color: var(--cor-texto-suave); font-size: 14px;">
+                    Soma-se todas as notas e divide-se pelo número total de provas. É usada quando todas as provas têm a
+                    mesma importância.
+                </p>
+
+                <h4 style="color: var(--cor-primaria);">Média Ponderada</h4>
+                <p style="color: var(--cor-texto-suave); font-size: 14px;">
+                    Algumas provas valem mais (têm mais peso). Para calcular, multiplica-se cada nota pelo seu peso,
+                    soma-se tudo e divide-se pelo total dos pesos.
+                </p>
+                <ul
+                    style="color: var(--cor-texto-suave); font-size: 13px; background: #f8fafc; padding: 15px; border-radius: 8px;">
+                    <li><strong>Peso:</strong> O valor de importância da prova (ex: Prova Final vale 3.0, Trabalho vale
+                        1.0).</li>
+                    <li><strong>Nota de Corte:</strong> O valor mínimo necessário para ser aprovado (geralmente 6.0 ou
+                        7.0).</li>
+                </ul>
+            </div> -->
+            <aside class="info-card">
+                <article>
+                    <h3>Entenda sua Média</h3>
+                    <p>
+                        Manter o controle das notas é essencial para evitar sustos no final do bimestre. Esta ferramenta
+                        permite simular cenários, descobrindo quanto você precisa tirar nas próximas provas para
+                        alcançar sua meta.
+                    </p>
+
+                    <h4>Tipos de Cálculo</h4>
+                    <p><strong>Média Aritmética (Simples):</strong> Utilizada quando todas as provas têm a mesma
+                        importância. Fórmula: Soma das notas ÷ Número de provas.</p>
+                    <p><strong>Média Ponderada:</strong> É o padrão da maioria das faculdades e escolas técnicas.
+                        Algumas avaliações valem mais que outras. O cálculo multiplica a nota pelo peso before somar.
+                    </p>
+
+                    <ul>
+                        <li><strong>Nota de Corte:</strong> Geralmente 6.0 ou 7.0. É o limite mínimo para aprovação
+                            direta.</li>
+                        <li><strong>Peso:</strong> Um valor que indica a relevância da prova. Ex: Uma prova de peso 3
+                            conta o triplo de um trabalho de peso 1.</li>
+                    </ul>
+                </article>
+
+                <!-- FAQ Section (Ótimo para SEO) -->
+                <article style="margin-top: 30px;">
+                    <h3>Perguntas Frequentes</h3>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Como calcular a nota para a recuperação?</summary>
+                            <p>Para a recuperação final, a fórmula costuma ser: (Média Atual + Nota da Recuperação) ÷ 2.
+                                Use nossa calculadora inserindo sua média atual como "Nota 1" e simule qual nota precisa
+                                na "Nota 2" para atingir 6.0.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Posso usar notas decimais?</summary>
+                            <p>Sim! O sistema aceita notas com vírgula ou ponto (ex: 7.5, 8.3). Basta digitar o valor
+                                exato que consta no seu boletim.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>O que significa média ponderada?</summary>
+                            <p>Significa que as notas não têm a mesma força. Uma prova bimestral (peso 4) influencia
+                                mais na média final do que um exercício de sala (peso 1).</p>
+                        </details>
+                    </div>
+                </article>
+
+                <article
+                    style="margin-top: 30px; background: #e0f2fe; padding: 20px; border-radius: 12px; border: 1px solid #bae6fd;">
+                    <h4 style="margin-top: 0; color: #0369a1;">💡 Dica de Estudo</h4>
+                    <p style="margin-bottom: 0; color: #0c4a6e; font-size: 0.9rem;">
+                        Se o peso das provas finais é maior, foque seu estudo intensivamente nas últimas semanas. Um bom
+                        resultado na prova final pode compensar notas menores no início.
+                    </p>
+                </article>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Portal das Contas</p>
+        <a href="../paginas/privacidade.html">Privacidade</a>
+        <a href="../paginas/termos.html">Termos de Uso</a>
+        <a href="../index.html">Início</a>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/medias.js"></script>
+    <script src="../js/dropdown.js"></script>
+</body>
+
+</html>

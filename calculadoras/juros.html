@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Calcule juros simples e compostos online. Descubra juros e montante final de forma rápida, gratuita e confiável.">
-
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -15,100 +14,267 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-STVR24Q61S');
     </script>
 
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
         crossorigin="anonymous"></script>
 
+    <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/juros.css">
+
     <title>Calculadora de Juros Online | Portal das Contas</title>
 </head>
 
 <body data-theme="light">
-    <header>
-        <h1>Calculadora de Juros Simples e Compostos</h1>
-        <p>Calcule juros e montante de uma forma simples e rápida</p>
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
 
-        <button class="toggle-theme" onclick="alternarTema()">🌙 Modo Escuro</button>
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários (NOVA) -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                    </div>
+                </div>
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
     </header>
 
-    <main class="container">
-        <label>Capital Inicial (R$)</label>
-        <input type="text" id="capital" placeholder="Ex: 1000">
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de Juros</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Simule seus investimentos e financiamentos.</p>
+                </div>
 
-        <label>Taxa de juros (% mês)</label>
-        <input type="text" id="taxa" placeholder="Ex: 2,5">
+                <div class="inputs-grid">
+                    <div class="input-group">
+                        <label for="capital">Capital Inicial (R$)</label>
+                        <input type="text" id="capital" placeholder="Ex: 1000" oninput="formatarMoeda(this)">
+                    </div>
+                    <div class="input-group">
+                        <label for="taxa">Taxa de Juros (% ao mês)</label>
+                        <input type="number" id="taxa" placeholder="Ex: 1.5" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="tempo">Tempo (meses)</label>
+                        <input type="number" id="tempo" placeholder="Ex: 12" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="tipo">Tipo de Juros</label>
+                        <select id="tipo">
+                            <option value="simples">Juros Simples</option>
+                            <option value="composto" selected>Juros Compostos</option>
+                        </select>
+                    </div>
+                </div>
 
-        <label for="">Tempo (meses)</label>
-        <input type="number" id="tempo" placeholder="Ex: 12">
+                <div class="btn-container">
+                    <button class="btn-primary" onclick="calcularJuros()">Calcular Agora</button>
+                    <button class="btn-secondary" onclick="limparCampos()">Limpar</button>
+                </div>
 
-        <label for="">Tipo de Juros</label>
-        <select name="" id="tipo">
-            <option value="simples">Juros Simples</option>
-            <option value="composto">Juros Compostos</option>
-        </select>
+                <!-- Resultados -->
+                <div id="resultado-juros" class="result-area">
+                    <div class="result-card">
+                        <small
+                            style="color: var(--cor-texto-suave); text-transform: uppercase; letter-spacing: 1px;">Montante
+                            Final</small>
+                        <div class="result-value-main" id="valor-final">R$ 0,00</div>
 
-        <button onclick="calcularJuros()">Calcular</button>
-        <button class="btn-secundario" onclick="limparCampos()">Limpar</button>
+                        <div class="result-value-details">
+                            <div class="detail-item">
+                                <small>Capital Inicial</small>
+                                <strong id="capital-inicial">R$ 0,00</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Total em Juros</small>
+                                <strong id="total-juros" class="text-green">R$ 0,00</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Tempo</small>
+                                <strong id="resumo-tempo">0 meses</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Lucratividade</small>
+                                <strong id="taxa-efetiva">0%</strong>
+                            </div>
+                        </div>
+                    </div>
 
-        <div id="resultado-juros"></div>
-        <div class="grafico-container" id="grafico-container">
-            <canvas id="graficoJuros"></canvas>
+                    <!-- Gráfico -->
+                    <div class="grafico-container" id="grafico-container">
+                        <canvas id="graficoJuros"></canvas>
+                    </div>
+
+                    <!-- Comparador -->
+                    <div id="comparador" class="comparador-box"></div>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo -->
+            <h3 style="margin-bottom: 20px; color: var(--cor-texto);">Entenda a Matemática por trás do Dinheiro</h3>
+
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h4 style="margin-top:0; color: var(--cor-primaria);">Juros Simples</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        O valor dos juros é calculado sempre sobre o valor original (Capital). O lucro é linear e não
+                        acumula.
+                    </p>
+                    <div class="edu-formula">J = C × i × t</div>
+                    <small style="color: #64748b;">(C: Capital, i: Taxa, t: Tempo)</small>
+                </div>
+
+                <div class="edu-card" style="border-color: var(--cor-secundaria);">
+                    <h4 style="margin-top:0; color: var(--cor-secundaria);">Juros Compostos</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        Os juros são calculados sobre o montante do mês anterior (Capital + Juros). É o "juros sobre
+                        juros".
+                    </p>
+                    <div class="edu-formula">M = C × (1 + i)ᵗ</div>
+                    <small style="color: #64748b;">(M: Montante Final)</small>
+                </div>
+            </div>
+
+            <section style="margin-top: 40px;">
+                <h3 style="color: var(--cor-texto);">Exemplo Prático: O Poder do Composto</h3>
+                <p style="color: var(--cor-texto-suave); line-height: 1.6;">
+                    Imagine que você investiu <strong>R$ 1.000,00</strong> a uma taxa de <strong>10% ao mês</strong> por
+                    <strong>2 meses</strong>.
+                </p>
+
+                <ul style="color: var(--cor-texto-suave); font-size: 15px; line-height: 1.8;">
+                    <li>
+                        <strong>Juros Simples:</strong> No 1º mês você ganha R$ 100. No 2º mês, você ganha outros R$
+                        100. <br>
+                        <em>Total: R$ 1.200,00</em>
+                    </li>
+                    <li>
+                        <strong>Juros Compostos:</strong> No 1º mês você ganha R$ 100 (Saldo: R$ 1.100). No 2º mês, os
+                        10% incidem sobre os R$ 1.100 (Juros = R$ 110). <br>
+                        <em>Total: R$ 1.210,00</em>
+                    </li>
+                </ul>
+                <p style="color: var(--cor-secundaria); font-weight: 500; font-size: 14px;">
+                    💡 No longo prazo, essa pequena diferença se torna um abismo. É por isso que bancos amoram juros
+                    compostos para empréstimos e investidores amoram para aplicações.
+                </p>
+            </section>
+
+            <section style="margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                <h3 style="color: var(--cor-texto);">Perguntas Frequentes</h3>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Qual a diferença visual no gráfico?
+                    </summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        Nos juros simples, a linha é reta (crescimento constante). Nos juros compostos, a linha é curva
+                        e sobe mais rápido no final (crescimento exponencial).
+                    </p>
+                </details>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Essa calculadora serve para
+                        financiamentos?</summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        Sim, mas lembre-se que financiamentos usam a Tabela Price ou SAC, que envolvem amortização do
+                        principal. Nesta calculadora, simulamos apenas a acumulação de juros (comum em investimentos).
+                    </p>
+                </details>
+            </section>
+
         </div>
-        <div class="cta">
-            <p>Quer saber onde investir para alcançar esse valor?</p>
-            <button>Ver opções de investimento</button>
-        </div>
-
-        <h2>Entenda o resultado</h2>
-
-        <section class="explicacao">
-            <h2>Como funciona o cálculo de juros?</h2>
-
-            <p>
-                Juros são o valor pago pelo uso do dinheiro ao longo do tempo.
-                Eles podem ser <strong>juros simples</strong> ou <strong>juros compostos</strong>.
-            </p>
-
-            <h3>Juros simples</h3>
-            <p>
-                Calculados apenas sobre o valor inicial.
-                Fórmula: <strong>J = C × i × t</strong>
-            </p>
-
-            <h3>Juros compostos</h3>
-            <p>
-                Os juros crescem sobre juros anteriores.
-                Muito usados em financiamentos e investimentos.
-            </p>
-        </section>
-
-        <section class="faq">
-            <h2>Perguntas frequentes</h2>
-
-            <h3>Qual a diferença entre juros simples e compostos?</h3>
-            <p>Nos juros simples, o valor cresce de forma linear. Nos compostos, cresce de forma exponencial.</p>
-
-            <h3>Essa calculadora é confiável?</h3>
-            <p>Sim. Os cálculos seguem as fórmulas financeiras tradicionais.</p>
-
-            <h3>Os valores são estimativas?</h3>
-            <p>Sim. Para contratos reais, consulte sempre a instituição financeira.</p>
-        </section>
-
-
     </main>
 
     <footer>
         <p>© 2026 Portal das Contas</p>
         <a href="../paginas/privacidade.html">Privacidade</a>
-        <a href="../paginas/sobre.html">Sobre</a>
+        <a href="../paginas/termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
     </footer>
 
@@ -126,6 +292,7 @@
         "operatingSystem": "All"
         }
     </script>
+    <script src="../js/dropdown.js"></script>
 
 </body>
 

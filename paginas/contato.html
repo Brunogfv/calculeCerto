@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Política de Privacidade do Portal das Contas. Saiba como usamos cookies e protegemos seus dados.">
-    <title>Política de Privacidade | Portal das Contas</title>
+        content="Entre em contato com o Portal das Contas. Tire suas dúvidas, sugira novas calculadoras ou reporte bugs.">
+    <title>Contato | Portal das Contas</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/privacidade.css">
+    <link rel="stylesheet" href="../css/contato.css">
 </head>
 
 <body data-theme="light">
@@ -104,44 +104,60 @@
         </div>
     </header>
 
-    <main class="page-content">
-        <div class="text-card">
-            <h1>Política de Privacidade</h1>
-            <!-- DATA ATUALIZADA -->
-            <p>Última atualização: 20 de Maio de 2026</p>
+    <main class="page-wrapper">
+        <h1 style="text-align: center; margin-bottom: 30px;">Entre em Contato</h1>
 
-            <p>No <strong>Portal das Contas</strong>, acessível a partir de portaldascontas.com.br, uma de nossas
-                principais prioridades é a privacidade de nossos visitantes. Este documento contém tipos de informações
-                que são coletadas e registradas pelo Portal das Contas e como as usamos.</p>
+        <div class="contact-container">
+            <!-- Formulário -->
+            <div class="form-card">
+                <h2 style="margin-top: 0;">Envie uma mensagem</h2>
+                <form
+                    onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! Retornaremos para o e-mail informado em breve.'); this.reset();">
+                    <div class="input-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" required placeholder="Ex: João da Silva">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Seu E-mail</label>
+                        <input type="email" id="email" required placeholder="Ex: joao@email.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto"
+                            style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; background: var(--cor-fundo); color: var(--cor-texto);">
+                            <option>Dúvida sobre Calculadoras</option>
+                            <option>Erro no Cálculo</option>
+                            <option>Sugestão de Nova Ferramenta</option>
+                            <option>Parceria / Publicidade</option>
+                            <option>Outro Assunto</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" required
+                            placeholder="Escreva sua mensagem detalhadamente..."></textarea>
+                    </div>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </div>
 
-            <h2>Arquivos de Log</h2>
-            <p>O Portal das Contas segue um procedimento padrão de uso de arquivos de log. Esses arquivos registram os
-                visitantes quando eles visitam sites. Todas as empresas de hospedagem fazem isso e uma parte da análise
-                dos serviços de hospedagem. As informações coletadas pelos arquivos de log incluem endereços de
-                protocolo de Internet (IP), tipo de navegador, Provedor de Serviços de Internet (ISP), data e hora,
-                páginas de referência/saída e possivelmente o número de cliques.</p>
-
-            <h2>Cookies e Web Beacons</h2>
-            <p>Como qualquer outro site, o Portal das Contas usa 'cookies'. Esses cookies são usados para armazenar
-                informações, incluindo as preferências dos visitantes e as páginas do site que o visitante acessou ou
-                visitou.</p>
-
-            <h2>Google DoubleClick DART Cookie</h2>
-            <p>O Google é um fornecedor terceirizado em nosso site. Ele também usa cookies, conhecidos como cookies
-                DART, para veicular anúncios aos visitantes do nosso site com base em sua visita a este e a outros sites
-                na internet. No entanto, os visitantes podem recusar o uso de cookies DART acessando a política de
-                privacidade da rede de conteúdo e de anúncios do Google no seguinte URL: <a
-                    href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a>
-            </p>
-
-            <h2>Google AdSense</h2>
-            <p>Utilizamos o Google AdSense para exibir anúncios. O Google pode usar cookies para coletar informações
-                sobre suas visitas a este site e a outros sites, a fim de exibir anúncios de produtos e serviços que
-                possam ser do seu interesse.</p>
-
-            <h2>Consentimento do Usuário</h2>
-            <p>Ao continuar navegando em nosso site, você concorda com nossa Política de Privacidade e concorda com seus
-                termos.</p>
+            <!-- Informações (Genéricas) -->
+            <div class="info-card">
+                <h2>Informações</h2>
+                <div class="info-box">
+                    <p style="margin-top: 0;">
+                        <strong>Por que não temos telefone ou WhatsApp?</strong><br>
+                        Nossa equipe é pequena e trabalha remotamente. Para garantir que seu pedido seja registrado e
+                        respondido corretamente, solicitamos que utilize o formulário ao lado.
+                    </p>
+                    <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 15px 0;">
+                    <p style="margin: 0;">
+                        <strong>Como receberei resposta?</strong><br>
+                        Nossa equipe analisará sua mensagem e entrará em contato diretamente no endereço de e-mail que
+                        você informou no formulário acima.
+                    </p>
+                </div>
+            </div>
         </div>
     </main>
 

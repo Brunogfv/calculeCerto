@@ -1,0 +1,238 @@
+/* --- ESTILOS ESPECÍFICOS DA CALCULADORA --- */
+/* Se o seu style.css global não tiver estas classes, adicione-as lá ou deixe aqui */
+
+:root {
+    --cor-primaria: #2563eb;
+    --cor-secundaria: #16a34a;
+    --cor-fundo: #f1f5f9;
+    --cor-card: #ffffff;
+    --cor-texto: #1f2933;
+    --cor-texto-suave: #64748b;
+    --cor-danger: #ef4444;
+}
+
+[data-theme="dark"] {
+    --cor-fundo: #0f172a;
+    --cor-card: #1e293b;
+    --cor-texto: #e2e8f0;
+    --cor-texto-suave: #94a3b8;
+}
+
+body {
+    /* Garante que o fundo escuro/claro funcione */
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Container Principal da Calculadora */
+.calculator-wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: var(--cor-card);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calc-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--cor-texto);
+}
+
+.calc-header p {
+    color: var(--cor-texto-suave);
+    margin-bottom: 24px;
+    font-size: 15px;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-texto);
+    font-size: 14px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Ícone dentro do input */
+.input-prefix {
+    position: absolute;
+    left: 14px;
+    color: var(--cor-texto-suave);
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    padding-left: 40px;
+    /* Espaço para o R$ */
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 16px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: all 0.2s;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Botões */
+.btn-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+button {
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: white;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #cbd5e1;
+    color: var(--cor-texto-suave);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--cor-texto);
+    border-color: #94a3b8;
+}
+
+/* Área de Resultado */
+.result-box {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+    display: none;
+    /* Escondido por padrão */
+}
+
+.result-card {
+    background-color: rgba(37, 99, 235, 0.05);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.result-label {
+    font-size: 14px;
+    color: var(--cor-texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.result-value-main {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    margin: 8px 0;
+}
+
+.result-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.breakdown-item {
+    background: var(--cor-card);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.breakdown-label {
+    font-size: 12px;
+    color: var(--cor-texto-suave);
+    margin-bottom: 4px;
+}
+
+.breakdown-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+.breakdown-value.discount {
+    color: var(--cor-danger);
+}
+
+/* Texto informativo */
+.info-text {
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--cor-texto-suave);
+    line-height: 1.6;
+    background: rgba(0, 0, 0, 0.02);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .btn-container {
+        grid-template-columns: 1fr;
+    }
+
+    .result-breakdown {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-wrapper {
+        padding: 20px;
+        margin: 20px;
+    }
+}

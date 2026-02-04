@@ -4,74 +4,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conheça o Portal das Contas, um site de calculadoras online simples e gratuitas.">
-    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-STVR24Q61S');
-    </script>
-
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
-
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
-    crossorigin="anonymous"></script>
-
+    <meta name="description"
+        content="Sobre o Portal das Contas - Nossa missão é simplificar seus cálculos financeiros e de saúde.">
+    <title>Sobre Nós | Portal das Contas</title>
     <link rel="stylesheet" href="../css/style.css">
-    <title>Sobre | Portal das Contas</title>
+    <link rel="stylesheet" href="../css/sobre.css">
 </head>
 
 <body data-theme="light">
 
-    <header>
-        <h1>Sobre o Portal das Contas</h1>
-        <p>Calculadoras simples rápidas e acessíveis</p>
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
 
-        <button class="toggle-theme" onclick="alternarTema">🌙 Modo Escuro</button>
+    <!-- HEADER PADRÃO COM DROPDOWNS (RAIZ) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="../calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="../calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="../calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="../calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="../calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="../calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="../calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="../calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="../calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="../calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="../calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="../calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="../calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="../calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="../calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários (NOVA) -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="../calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="../calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                    </div>
+                </div>
+
+                <a href="sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
     </header>
-    <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-7285637994208303">
-    </amp-auto-ads>
-    <main class="container">
-        <h2>O que é o Portal das Contas?</h2>
-        <p>
-            O <strong>Portal das Contas</strong> é um site criado com o objetivo de facilitar
-            cálculos do dia a dia de forma simples, rápida e gratuita.
-        </p>
 
-        <p>
-            Aqui você encontra ferramentas como calculadora de IMC, porcentagem
-            e outras que serão adicionadas futuramente.
-        </p>
+    <main class="page-content">
+        <div class="about-card">
+            <h1>Sobre o Portal das Contas</h1>
+            <p class="lead" style="font-size: 18px; color: var(--cor-texto-suave); margin-bottom: 30px;">
+                Nossa missão é simplificar a matemática do seu dia a dia, fornecendo ferramentas gratuitas, rápidas e
+                precisas.
+            </p>
 
-        <h2>Nosso objetivo</h2>
-        <p>
-            Tornar cálculos comuns acessíveis para qualquer pessoa, sem complicação,
-            sem cadastros e sem custos.
-        </p>
+            <h2>Quem Somos?</h2>
+            <p>O <strong>Portal das Contas</strong> é um projeto dedicado a democratizar o acesso a informações
+                financeiras e de saúde. Acreditamos que calcular o impacto de um desconto, o retorno de um investimento
+                ou a própria condição física não deve ser um burocracia.</p>
+            <p>Fomos criados em 2026 com o objetivo de centralizar as calculadoras mais utilizadas pelos brasileiros em
+                um único lugar, com uma interface amigável e responsiva.</p>
 
-        <h2>Responsabilidade</h2>
-        <p>
-            Os resultados fornecidos pelo site são apenas estimativas e não substituem
-            orientações profissionais, especialmente nas áreas de saúde e finanças.
-        </p>
+            <h2>Nossos Valores</h2>
+            <ul>
+                <li><strong>Simplicidade:</strong> Ferramentas intuitivas que não exigem conhecimentos avançados.</li>
+                <li><strong>Precisão:</strong> Atualizamos constantemente nossas alíquotas e fórmulas (INSS, IMC, Juros)
+                    conforme a legislação vigente.</li>
+                <li><strong>Transparência:</strong> Explicamos o "como" e o "porquê" de cada cálculo, não entregamos
+                    apenas números.</li>
+            </ul>
+
+            <h2>Compromisso com a Privacidade</h2>
+            <p>Não coletamos dados pessoais sensíveis. Todos os cálculos são processados diretamente no seu navegador
+                (client-side). Seus dados financeiros e de saúde nunca são armazenados em nossos servidores.</p>
+
+            <h2>Aviso Legal</h2>
+            <p
+                style="font-size: 14px; color: var(--cor-texto-suave); background: rgba(245,158,11,0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                As informações e ferramentas fornecidas neste site são meramente informativas e educacionais. Embora nos
+                esforcemos para manter a precisão, não garantimos que os cálculos estejam livres de erros ou adequados
+                ao seu caso específico. Para questões médicas, financeiras ou legais, consulte sempre um profissional
+                habilitado.
+            </p>
+        </div>
     </main>
 
     <footer>
         <p>© 2026 Portal das Contas</p>
-        <a href="privacidade.html">Privacidade</a>
+        <a href="./privacidade.html">Privacidade</a>
+        <a href="./termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
     </footer>
 
     <script src="../js/theme.js"></script>
+    <script src="../js/dropdown.js"></script>
 </body>
 
 </html>
