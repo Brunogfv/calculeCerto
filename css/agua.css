@@ -195,6 +195,54 @@ select:focus {
     color: var(--cor-primaria);
 }
 
+/* FAQ */
+.faq-item {
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+details {
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: 600;
+    color: var(--cor-texto);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+details p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--cor-texto-suave);
+}
+
+/* Cards */
+.calc-card,
+.info-card {
+    background: var(--cor-card);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--cor-borda);
+}
+
 @media (max-width: 600px) {
     .tips-grid {
         grid-template-columns: 1fr;

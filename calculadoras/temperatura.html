@@ -16,7 +16,7 @@
         gtag('config', 'G-STVR24Q61S');
     </script>
 
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    <!-- <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script> -->
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
@@ -87,6 +87,14 @@
                     </div>
                 </div>
 
+                <!-- Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                    </div>
+                </div>
+
                 <!-- Casa -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
@@ -97,13 +105,6 @@
                     </div>
                 </div>
 
-                <!-- Educação -->
-                <div class="menu-item">
-                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
-                    <div class="dropdown-menu">
-                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
-                    </div>
-                </div>
 
                 <!-- Utilitários -->
                 <div class="menu-item">
@@ -271,12 +272,17 @@
                         </details>
                     </div>
                 </article>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O anúncio vai cair aqui -->
+                </div>
             </aside>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 Portal das Contas</p>
+        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
         <a href="../paginas/privacidade.html">Privacidade</a>
         <a href="../paginas/termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
@@ -285,6 +291,11 @@
     <script src="../js/dropdown.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/temperatura.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'temperatura' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('temperatura');
+    </script>
 </body>
 
 </html>

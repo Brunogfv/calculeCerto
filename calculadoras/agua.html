@@ -182,6 +182,7 @@
 
             <!-- Conteúdo Educativo -->
             <div class="tips-grid">
+
                 <div class="tip-card">
                     <h4>💧 Por que beber água?</h4>
                     <ul style="padding-left: 20px; color: var(--cor-texto-suave); font-size: 15px; line-height: 1.6;">
@@ -205,16 +206,47 @@
             <div
                 style="margin-top: 20px; background: rgba(14, 165, 233, 0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.2);">
                 <h4 style="margin-top: 0; color: #0369a1;">Dica Extra</h4>
-                <p style="margin: 0; color: #0c4a6e;">
-                    Não espere sentir sede para beber água. A sede é um sinal tardio de desidratação. Leve sempre uma
-                    garrafinha com você!
+                <p style="margin: 0; font-size: 0.85rem; color: #0c4a6e;">
+                    A sede é um sinal tardio de desidratação. Se você sentir sede, já perdeu cerca de 2% da sua água
+                    corporal. Beba água mesmo sem sede!
                 </p>
             </div>
+            <h4 style="padding-left: 20px; margin-top: 25px;">Sinais de Desidratação</h4>
+            <ul style="margin-left: 20px; padding-left: 20px; font-size: 0.95rem; color: var(--cor-texto-suave); line-height: 1.8;">
+                <li>Urina amarela escura (o ideal é cor de palha clara).</li>
+                <li>Boca seca ou lábios rachados.</li>
+                <li>Dor de cabeça constante.</li>
+                <li>Fadiga e falta de concentração.</li>
+            </ul>
+            <div id="anuncio-dinamico"
+                style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <!-- O anúncio vai cair aqui -->
+            </div>
+
+            <!-- FAQ -->
+            <article style="margin-top: 30px;">
+                <h3>Dúvidas Frequentes</h3>
+                <div class="faq-item">
+                    <details>
+                        <summary>Posso beber muita água?</summary>
+                        <p>Sim, existe uma condição rara chamada hiponatremia (intoxicação por água), mas ela é difícil
+                            de acontecer em pessoas saudáveis. O corpo elimina o excesso pela urina, mas ouça seu corpo.
+                        </p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Chá e café contam?</summary>
+                        <p>Sim, mas por conterem cafeína (um diurético leve), não são 100% eficientes como água pura.
+                            Água mineral é sempre a melhor escolha para hidratação.</p>
+                    </details>
+                </div>
+            </article>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 Portal das Contas</p>
+        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
         <a href="../paginas/privacidade.html">Privacidade</a>
         <a href="../paginas/termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
@@ -223,6 +255,11 @@
     <script src="../js/agua.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'agua' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('agua');
+    </script>
 
 </body>
 

@@ -264,12 +264,17 @@
                         resultado na prova final pode compensar notas menores no início.
                     </p>
                 </article>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O anúncio vai cair aqui -->
+                </div>
             </aside>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 Portal das Contas</p>
+        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
         <a href="../paginas/privacidade.html">Privacidade</a>
         <a href="../paginas/termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
@@ -278,6 +283,11 @@
     <script src="../js/theme.js"></script>
     <script src="../js/medias.js"></script>
     <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'media_escolar' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('media_escolar');
+    </script>
 </body>
 
 </html>

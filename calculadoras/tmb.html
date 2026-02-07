@@ -226,15 +226,20 @@
                     emagrecer ou ganhar massa.
                 </p>
 
-                <h3>A Fórmula de Mifflin-St Jeor</h3>
+                <!-- <h3>A Fórmula de Mifflin-St Jeor</h3>
                 <p style="color: var(--cor-texto-suave); line-height: 1.6;">
                     Utilizamos a fórmula de Mifflin-St Jeor, considerada a mais precisa hoje em dia para a população
                     geral.
+                </p> -->
+                <h4>Como aumentar a TMB?</h4>
+                <p style="font-size: 0.95rem;">
+                    O metabolismo é influenciado pela massa muscular. Quanto mais músculos você tem, maior é sua TMB.
+                    Exercícios de força (musculação) são os melhores aliados para queimar mais calorias em repouso.
                 </p>
-                <ul style="color: var(--cor-texto-suave); line-height: 1.8;">
+                <!-- <ul style="color: var(--cor-texto-suave); line-height: 1.8;">
                     <li><strong>Homens:</strong> (10 × peso em kg) + (6,25 × altura em cm) − (5 × idade) + 5</li>
                     <li><strong>Mulheres:</strong> (10 × peso em kg) + (6,25 × altura em cm) − (5 × idade) − 161</li>
-                </ul>
+                </ul> -->
 
                 <div
                     style="margin-top: 20px; background: rgba(239, 68, 68, 0.1); padding: 15px; border-radius: 8px; border-left: 4px solid var(--cor-danger);">
@@ -244,12 +249,39 @@
                         problemas de saúde. Para dietas, consulte sempre um nutricionista.
                     </p>
                 </div>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O anúncio vai cair aqui -->
+                </div>
+
+                <!-- FAQ -->
+                <article style="margin-top: 30px;">
+                    <h3>Dúvidas Frequentes</h3>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Qual fórmula é utilizada?</summary>
+                            <p>Utilizamos a fórmula de <strong>Harris-Benedict (Revisada em 1984)</strong>, considerada
+                                um padrão ouro para estimativas metabólicas em adultos.</p>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Para que serve o "Gasto Total"?</summary>
+                            <p>O Gasto Total considera sua TMB multiplicada pelo seu nível de atividade física. É esse
+                                valor que você deve usar como base para definir quantas calorias comer para emagrecer,
+                                manter ou ganhar peso.</p>
+                        </details>
+                    </div>
+                </article>
             </div>
+
+
         </div>
     </main>
 
     <footer>
-        <p>© 2026 Portal das Contas</p>
+        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
         <a href="../paginas/privacidade.html">Privacidade</a>
         <a href="../paginas/termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
@@ -258,6 +290,11 @@
     <script src="../js/theme.js"></script>
     <script src="../js/tmb.js"></script>
     <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'tmb' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('tmb');
+    </script>
 </body>
 
 </html>

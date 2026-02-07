@@ -233,11 +233,33 @@
                         diminuir a opção de m²/litro para 8 ou 9.</li>
                 </ul>
             </div>
-        </div>
+
+            <div id="anuncio-dinamico"
+                style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <!-- O anúncio vai cair aqui -->
+            </div>
+            <!-- <div style="margin-top: 30px; border-top: 1px solid var(--cor-borda); padding-top: 20px;">
+                <h4 style="margin-bottom: 10px; font-size: 1rem; color: var(--cor-texto);">🛒 Produto Recomendado
+                </h4> -->
+
+            <!-- Cole o código HTML que você copiou da Amazon logo abaixo desta linha: -->
+
+
+            <!-- EXEMPLO DO QUE A AMAZON VAI TE DAR (apenas ilustrativo, substitua pelo seu): -->
+
+            <!-- <a target="_blank"
+                    href="https://www.amazon.com.br/CORALAR-L%C3%81TEX-MAIS-ECON%C3%94MICO-BRANCO/dp/B08L71HHFR?crid=3OODJ8WJCQTQ0&dib=eyJ2IjoiMSJ9.BdUYGBCBOMU66mZEJXjmpo7h6J8BT9h2Een_5GV6liJGOhj2UeqGrYn9NvAokzXuTTmWCjTzSoxkwI6rXM9-HwsPjWboqcDvcT14P-fJK74SbXloBDXBCEzC_cg7htUePvpQAeCJwr6J7M3UPd26eXm2It7AMj-2gJ4Fo9-FqsDA9iLA76ygUWh-7l833fNDfkUneUyUF8iOrBMoGACP6mchXtdxAE48zUcJTUJSQJVa6MziZ6KI3fwnmvhxO46fZQSaV1jYPJ-hLopoB756NmMugV4XHOwUmT-cvo2U24U.NumdcrzwxRkJM6xq-q2MJz_3yx4vhpyoggGi9k56jJ8&dib_tag=se&keywords=tinta+para+pintar+parede+18l&qid=1770223479&sprefix=tintas+18l%2Caps%2C303&sr=8-1&linkCode=ll2&tag=portaldascont-20&linkId=d718240d0b2ec75c01a792364d97d017&ref_=as_li_ss_tl">
+                    <img border="0" src="https://...imagem-do-produto.jpg">
+                </a>
+
+            </div>
+        </div> -->
+
+
     </main>
 
     <footer>
-        <p>© 2026 Portal das Contas</p>
+        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
         <a href="../paginas/privacidade.html">Privacidade</a>
         <a href="../paginas/termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
@@ -246,6 +268,11 @@
     <script src="../js/dropdown.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/tinta.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'tinta' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('tinta');
+    </script>
 </body>
 
 </html>

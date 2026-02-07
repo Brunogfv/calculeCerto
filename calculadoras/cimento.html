@@ -95,7 +95,7 @@
                         <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
                     </div>
                 </div>
-                
+
                 <!-- Casa & Reforma -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
@@ -192,22 +192,56 @@
                     </div>
                 </div>
 
-                <!-- Dicas -->
+                <!-- NOVOS ALERTAS ADICIONADOS AQUI -->
                 <div class="tips-box">
-                    <h4>Informações do Cálculo</h4>
+                    <h3>⚠️ Atenção na Obra</h3>
+
+                    <!-- Alerta 1: Dosagem -->
+                    <div
+                        style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                        <h4
+                            style="margin: 0 0 8px 0; color: #1e40af; font-size: 1rem; display: flex; align-items: center;">
+                            <i class="ph ph-ruler" style="margin-right: 8px;"></i> Dosagem Correta
+                        </h4>
+                        <p style="margin: 0; font-size: 0.9rem; color: #1e3a8a; line-height: 1.5;">
+                            Medir corretamente é vital. Para <strong>Contrapiso</strong> use o traço 1:3:6
+                            (Cimento:Areia:Brita). Para <strong>Concreto Estrutural</strong> (lajes/pilares) use o traço
+                            1:2:4. A mistura errada compromete a segurança.
+                        </p>
+                    </div>
+
+                    <!-- Alerta 2: Tempo de Pega -->
+                    <div
+                        style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                        <h4
+                            style="margin: 0 0 8px 0; color: #b91c1c; font-size: 1rem; display: flex; align-items: center;">
+                            <i class="ph ph-clock" style="margin-right: 8px;"></i> Tempo de Pega
+                        </h4>
+                        <p style="margin: 0; font-size: 0.9rem; color: #7f1d1d; line-height: 1.5;">
+                            O cimento começa a endurecer rápido. Misture apenas a quantidade que você consegue usar em
+                            <strong>30 a 40 minutos</strong>. O cimento que seca na betoneira é desperdício e difícil de
+                            limpar.
+                        </p>
+                    </div>
+
+                    <!-- Lista Original -->
+                    <h4>Informações Adicionais</h4>
                     <ul>
                         <li id="info-tipo">Calculado para <strong>Contrapiso</strong> (1:3:6).</li>
                         <li>Os valores são médios da construção civil e consideram 10% de resíduo.</li>
-                        <li>Para Concreto, utiliza-se traço padrão 1:2:4 (Cimento:Areia:Brita).</li>
                         <li>O peso seco dos materiais é maior que o volume aparente devido ao vazios.</li>
                     </ul>
                 </div>
+                <div id="anuncio-dinamico"
+                style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <!-- O anúncio vai cair aqui -->
+            </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 Portal das Contas</p>
+        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
         <a href="../paginas/privacidade.html">Privacidade</a>
         <a href="../paginas/termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
@@ -216,6 +250,11 @@
     <script src="../js/dropdown.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/cimento.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'cimento' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('cimento');
+    </script>
 </body>
 
 </html>

@@ -212,8 +212,35 @@
 
             <!-- Conteúdo Educativo -->
             <div class="info-box">
-                <h3>Dicas para assentar piso</h3>
-                <ul style="color: var(--cor-texto-suave); line-height: 1.6;">
+                <h3 style="margin-bottom: 15px;">Dicas para sua reforma</h3>
+
+                <!-- Texto 1: Margem de Segurança -->
+                <div
+                    style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                    <h4 style="margin: 0 0 8px 0; color: #15803d; font-size: 1rem; display: flex; align-items: center;">
+                        <i class="ph ph-package" style="margin-right: 8px;"></i> Margem de Segurança
+                    </h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: #14532d; line-height: 1.5;">
+                        Sempre considere comprar <strong>10% a mais de material</strong>. Isso cobre cortes, quebras
+                        durante o transporte ou manuseio, e peças com defeito de fábrica. É melhor sobrar um pouco do
+                        que parar a obra por falta de uma peça!
+                    </p>
+                </div>
+
+                <!-- Texto 2: Altura e Portas -->
+                <div
+                    style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                    <h4 style="margin: 0 0 8px 0; color: #c2410c; font-size: 1rem; display: flex; align-items: center;">
+                        <i class="ph ph-warning-circle" style="margin-right: 8px;"></i> Cuidado com a Altura
+                    </h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: #7c2d12; line-height: 1.5;">
+                        Se você for assentar o novo piso diretamente sobre um piso antigo (sem quebrar o antigo), a
+                        altura do chão vai subir. <strong>Verifique se a porta</strong> do cômodo ainda terá folga para
+                        abrir livremente, caso contrário, precisará ser desbastada ou ajustada.
+                    </p>
+                </div>
+
+                <ul style="color: var(--cor-texto-suave); line-height: 1.6; padding-left: 18px;">
                     <li><strong>Verifique o Lote:</strong> Pisos podem ter pequenas variações de tom. Compre sempre do
                         mesmo lote para o mesmo ambiente.</li>
                     <li><strong>Nível da Argamassa:</strong> O contrapiso precisa estar perfeitamente nivelado e seco.
@@ -224,11 +251,15 @@
                         15-20%.</li>
                 </ul>
             </div>
+            <div id="anuncio-dinamico"
+                style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <!-- O anúncio vai cair aqui -->
+            </div>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 Portal das Contas</p>
+        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
         <a href="../paginas/privacidade.html">Privacidade</a>
         <a href="../paginas/termos.html">Termos de Uso</a>
         <a href="../index.html">Início</a>
@@ -237,6 +268,11 @@
     <script src="../js/dropdown.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/piso.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'agua' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('agua');
+    </script>
 </body>
 
 </html>

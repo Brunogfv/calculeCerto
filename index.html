@@ -196,6 +196,23 @@
             </div>
         </div>
 
+        <!-- SEÇÃO DE DESTAQUE / OFERTA DO DIA -->
+        <div style="margin-bottom: 50px;">
+            <h3
+                style="display: flex; align-items: center; gap: 10px; color: var(--cor-texto); border-bottom: 2px solid #f59e0b; padding-bottom: 10px; margin-bottom: 20px;">
+                ⭐ Oferta Recomendada
+            </h3>
+
+            <!-- Container do Anúncio -->
+            <div id="anuncio-dinamico"
+                style="text-align: center; padding: 30px; background: #fffbeb; border-radius: 16px; border: 2px dashed #fcd34d; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <!-- O produto será carregado aqui -->
+                <p style="color: #b45309; font-weight: 500;">Carregando oferta...</p>
+            </div>
+        </div>
+
+        <!-- ... Continua o resto do código (Saúde & Bem-estar, etc.) ... -->
+
         <!-- 2. SAÚDE & BEM-ESTAR -->
         <div style="margin-bottom: 50px;">
             <h3
@@ -456,7 +473,7 @@
     </main>
 
     <footer>
-        <p>© 2026 Portal das Contas</p>
+        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
         <a href="./paginas/privacidade.html">Privacidade</a>
         <a href="./paginas/termos.html">Termos de Uso</a>
     </footer>
@@ -500,6 +517,17 @@
             }
         }
     </script>
+    <!-- Scripts Externos -->
+    <script src="./js/ads.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Carrega um produto da categoria 'geral' na Home
+            carregarAnuncio('geral');
+        });
+    </script>
+</body>
+
+</html>
 </body>
 
 </html>
