@@ -1,11 +1,21 @@
 /* --- ESTILOS ESPECÍFICOS JUROS --- */
 :root {
-    --cor-primaria: #2563eb;
+    /* --cor-primaria: #2563eb;
     --cor-secundaria: #16a34a;
     --cor-fundo: #f1f5f9;
     --cor-card: #ffffff;
     --cor-texto: #1f2933;
+    --cor-texto-suave: #64748b; */
+    --cor-primaria: #059669;
+    --cor-primaria-dark: #047857;
+    --cor-secundaria: #64748b;
+    --cor-fundo: #ecfdf5;
+    /* Fundo verde muito claro */
+    --cor-card: #ffffff;
+    --cor-texto: #1e293b;
     --cor-texto-suave: #64748b;
+    --cor-borda: #a7f3d0;
+    --sombra: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 [data-theme="dark"] {

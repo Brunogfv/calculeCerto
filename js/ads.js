@@ -807,115 +807,115 @@ const bancoDeAnuncios = {
             descricao: "O peso muda, mas a composição corporal conta mais. Esta balança conecta ao seu celular para medir gordura e músculos.",
             link: "https://mercadolivre.com/sec/1feZ8CS",
             imagem: "/imgs/balanca001.webp"
-        },{
+        }, {
             titulo: "Balança Bioimpedância Smart",
             etiqueta: "📊 Monitoramento",
             descricao: "O peso muda, mas a composição corporal conta mais. Esta balança conecta ao seu celular para medir gordura e músculos.",
             link: "https://amzn.to/4bED1pR",
             imagem: "/imgs/balanca002.jpg"
-        },{
+        }, {
             titulo: "Adipômetro (Prega Cutânea)",
             etiqueta: "📏 Precisão Profissional",
             descricao: "A forma mais barata e precisa de medir gordura corporal. Cientificamente mais confiável que balanças comuns.",
             link: "https://amzn.to/4kmlZPv",
             imagem: "/imgs/adipometro001.jpg"
-        },{
+        }, {
             titulo: "Adipômetro (Prega Cutânea)",
             etiqueta: "📏 Precisão Profissional",
             descricao: "A forma mais barata e precisa de medir gordura corporal. Cientificamente mais confiável que balanças comuns.",
             link: "https://mercadolivre.com/sec/1FDETH3",
             imagem: "/imgs/adipometro002.webpsssss"
-        },{
+        }, {
             titulo: "Balança de Cozinha Digital",
             etiqueta: "⚖️ Precisão na Dieta",
             descricao: "Advinhar a porção é o erro número 1. Pese seus alimentos para controlar calorias com exatidão.",
             link: "https://amzn.to/4rA8E8u",
             imagem: "/imgs/balanca_cozinha002.jpg"
-        },{
+        }, {
             titulo: "Balança de Cozinha Digital",
             etiqueta: "⚖️ Precisão na Dieta",
             descricao: "Advinhar a porção é o erro número 1. Pese seus alimentos para controlar calorias com exatidão.",
             link: "https://mercadolivre.com/sec/2Xa4389",
             imagem: "/imgs/balanca_cozinha003.webp"
-        },{
+        }, {
             titulo: "Air Fryer 4L",
             etiqueta: "🍟 Comida Saudável",
             descricao: "Reduza calorias drasticamente sem abrir mão da crosta e sabor frito. O segredo da manutenção de peso.",
             link: "https://amzn.to/4raDZ24",
             imagem: "/imgs/airfryer_mondial001.jpg"
-        },{
+        }, {
             titulo: "Air Fryer 4L",
             etiqueta: "🍟 Comida Saudável",
             descricao: "Reduza calorias drasticamente sem abrir mão da crosta e sabor frito. O segredo da manutenção de peso.",
             link: "https://mercadolivre.com/sec/1yKxTuC",
             imagem: "/imgs/airfryer_mondial002.webp"
-        },{
+        }, {
             titulo: "Liquidificador Turbo",
             etiqueta: "🥤 Dieta Líquida",
             descricao: "Prepare vitaminas, sopas e smoothies saudáveis em segundos. Uma forma fácil de ingerir vegetais.",
             link: "https://mercadolivre.com/sec/1aXwfLi",
             imagem: "/imgs/liquidificador001.webp"
-        },{
+        }, {
             titulo: "Liquidificador Turbo",
             etiqueta: "🥤 Dieta Líquida",
             descricao: "Prepare vitaminas, sopas e smoothies saudáveis em segundos. Uma forma fácil de ingerir vegetais.",
             link: "https://amzn.to/4kjHOz3",
             imagem: "/imgs/liquidificador002.jpg"
-        },{
+        }, {
             titulo: "Potes Marmita herméticos (Kit)",
             etiqueta: "🍱 Organização",
             descricao: "Marmitar é a garantia de comer o que você calculou. Organize sua semana com este kit prático.",
             link: "https://amzn.to/4rBnlID",
             imagem: "/imgs/kit_pote_vidro001.jpg"
-        },{
+        }, {
             titulo: "Potes Marmita herméticos (Kit)",
             etiqueta: "🍱 Organização",
             descricao: "Marmitar é a garantia de comer o que você calculou. Organize sua semana com este kit prático.",
             link: "https://mercadolivre.com/sec/2kUfRgh",
             imagem: "/imgs/kit_pote_vidro002.webp"
-        },{
+        }, {
             titulo: "Descascador de vegetais",
             etiqueta: "🥗 Mais Legumes",
             descricao: "Se comer bem é chato, facilita o processo. Corte vegetais em segundos para aumentar o consumo de fibras.",
             link: "https://mercadolivre.com/sec/2PmUr1v",
             imagem: "/imgs/descascador001.webp"
-        },{
+        }, {
             titulo: "Descascador de vegetais",
             etiqueta: "🥗 Mais Legumes",
             descricao: "Se comer bem é chato, facilita o processo. Corte vegetais em segundos para aumentar o consumo de fibras.",
             link: "https://amzn.to/3ZUntHf",
             imagem: "/imgs/descascador002.jpg"
-        },{
+        }, {
             titulo: "Garrafa Térmica 1.5L",
             etiqueta: "💧 Hidratação",
             descricao: "Beber água acelera o metabolismo. Tenha água gelada o dia todo com esta garrafa de alta capacidade.",
             link: "https://mercadolivre.com/sec/1wY3CHK",
             imagem: "/imgs/garrafa_termica003.webp"
-        },{
+        }, {
             titulo: "Garrafa Térmica 800ml",
             etiqueta: "💧 Hidratação",
             descricao: "Beber água acelera o metabolismo. Tenha água gelada o dia todo com esta garrafa de alta capacidade.",
             link: "https://amzn.to/4ceCCdQ",
             imagem: "/imgs/garrafa_termica004.jpg"
-        },{
+        }, {
             titulo: "Monitor Cardíaco",
             etiqueta: "❤️ Zona de Queima",
             descricao: "Para queimar gordura efetivamente, seu coração deve bater em uma zona específica. Monitore com precisão.",
             link: "https://amzn.to/3ObKyT7",
             imagem: "/imgs/monitor_cardiaco001.jpg"
-        },{
+        }, {
             titulo: "Monitor Cardíaco",
             etiqueta: "❤️ Zona de Queima",
             descricao: "Para queimar gordura efetivamente, seu coração deve bater em uma zona específica. Monitore com precisão.",
             link: "https://mercadolivre.com/sec/2cR4dKY",
             imagem: "/imgs/monitor_cardiaco002.webp"
-        },{
+        }, {
             titulo: "Panela a Vapor Elétrica",
             etiqueta: "🥦 Cozimento Saudável",
             descricao: "Cozinhar a vapor preserva até 90% dos nutrientes dos alimentos. Essencial para dietas restritivas.",
             link: "https://amzn.to/4r4yBxi",
             imagem: "/imgs/panela_vapor001.jpg"
-        },{
+        }, {
             titulo: "Panela a Vapor Elétrica",
             etiqueta: "🥦 Cozimento Saudável",
             descricao: "Cozinhar a vapor preserva até 90% dos nutrientes dos alimentos. Essencial para dietas restritivas.",
@@ -932,115 +932,115 @@ const bancoDeAnuncios = {
             descricao: "Dormir com a barriga grande é difícil. Esta almofada adapta-se ao seu corpo, aliviando dores nas costas e permitindo um sono reparador.",
             link: "https://amzn.to/4qoA3td",
             imagem: "/imgs/travesseiro001.jpg"
-        },{
+        }, {
             titulo: "Almofada de Gravidez em U",
             etiqueta: "🌙 Noites Melhores",
             descricao: "Dormir com a barriga grande é difícil. Esta almofada adapta-se ao seu corpo, aliviando dores nas costas e permitindo um sono reparador.",
             link: "https://mercadolivre.com/sec/2mhBK2Y",
             imagem: "/imgs/travesseiro002.webp"
-        },{
+        }, {
             titulo: "Cinta Gestacional Modeladora",
             etiqueta: "👗 Suporte e Conforto",
             descricao: "Alivia a pressão lombar e distribui o peso da barriga. Essencial para o terceiro trimestre ou para quem trabalha em pé.",
             link: "https://mercadolivre.com/sec/1VrgCSn",
             imagem: "/imgs/cinta001.webp"
-        },{
+        }, {
             titulo: "Cinta Gestacional Modeladora",
             etiqueta: "👗 Suporte e Conforto",
             descricao: "Alivia a pressão lombar e distribui o peso da barriga. Essencial para o terceiro trimestre ou para quem trabalha em pé.",
             link: "https://amzn.to/4cglGDH",
             imagem: "/imgs/cinta002.jpg"
-        },{
+        }, {
             titulo: "Doppler Fetal Portátil",
             etiqueta: "❤️ Escute o Bebê",
             descricao: "Acalme o coração ouvindo os batimentos do seu bebê em casa. Seguro e fácil de usar para criar laços afetivos.",
             link: "https://mercadolivre.com/sec/2u95bvw",
             imagem: "/imgs/doopler001.webp"
-        },{
+        }, {
             titulo: "Doppler Fetal Portátil",
             etiqueta: "❤️ Escute o Bebê",
             descricao: "Acalme o coração ouvindo os batimentos do seu bebê em casa. Seguro e fácil de usar para criar laços afetivos.",
             link: "https://mercadolivre.com/sec/1yzDMe2",
             imagem: "/imgs/doopler002.webp"
-        },{
+        }, {
             titulo: "Mala de Maternidade",
             etiqueta: "🧳 Pronta para o Hospital",
             descricao: "Não deixe para a última hora. Kit organizado com tudo o que mamãe e bebê precisam para a grande chegada.",
             link: "https://amzn.to/4ruwhzk",
             imagem: "/imgs/mala_maternidade001.jpg"
-        },{
+        }, {
             titulo: "Mala de Maternidade Completa",
             etiqueta: "🧳 Pronta para o Hospital",
             descricao: "Não deixe para a última hora. Kit organizado com tudo o que mamãe e bebê precisam para a grande chegada.",
             link: "https://mercadolivre.com/sec/27gsej1",
             imagem: "/imgs/mala_maternidade002.webp"
-        },{
+        }, {
             titulo: "Bomba de Leite Elétrica",
             etiqueta: "🤱 Amamentação Prática",
             descricao: "Extraia e armazene leite com conforto. Ideal para mamães que voltarão ao trabalho ou precisam aliviar o peito.",
             link: "https://amzn.to/4tdmZJI",
             imagem: "/imgs/bomba_leite001.jpg"
-        },{
+        }, {
             titulo: "Bomba de Leite Elétrica",
             etiqueta: "🤱 Amamentação Prática",
             descricao: "Extraia e armazene leite com conforto. Ideal para mamães que voltarão ao trabalho ou precisam aliviar o peito.",
             link: "https://mercadolivre.com/sec/25DKXfd",
             imagem: "/imgs/bomba_leite002.webp"
-        },{
+        }, {
             titulo: "Tensiômetro Digital de Braço",
             etiqueta: "🩺 Monitoramento",
             descricao: "A pressão arterial na gravidez deve ser monitorada. Tenha este aparelho em casa para melhor acompanhamento durante a gestação.",
             link: "https://amzn.to/4ak6Sl9",
             imagem: "/imgs/monitor_pressao001.jpg"
-        },{
+        }, {
             titulo: "Tensiômetro Digital de Braço",
             etiqueta: "🩺 Monitoramento",
             descricao: "A pressão arterial na gravidez deve ser monitorada. Tenha este aparelho em casa para melhor acompanhamento durante a gestação.",
             link: "https://mercadolivre.com/sec/1njzFDS",
             imagem: "/imgs/monitor_pressao002.webp"
-        },{
+        }, {
             titulo: "Lixeira Higiênica de Fraldas",
             etiqueta: "👽 Sem Cheiro",
             descricao: "O segredo para um quarto de bebê cheiroso. Sistema de selamento que evita o mau cheiro das fraldas usadas.",
             link: "https://amzn.to/3OqMSFU",
             imagem: "/imgs/lixeira001.jpg"
-        },{
+        }, {
             titulo: "Lixeira Higiênica de Fraldas",
             etiqueta: "👽 Sem Cheiro",
             descricao: "O segredo para um quarto de bebê cheiroso. Sistema de selamento que evita o mau cheiro das fraldas usadas.",
             link: "https://mercadolivre.com/sec/34aJzrz",
             imagem: "/imgs/lixeira002.webp"
-        },{
+        }, {
             titulo: "Monitor de Bebê com Vídeo",
             etiqueta: "👀 Olhos no Bebê",
             descricao: "Durma tranquila sabendo que seu bebê está bem. Visualização noturna e áudio bidirecional para acalmar o pequeno.",
             link: "https://amzn.to/4tikE0l",
             imagem: "/imgs/camera_bebe001.jpg"
-        },{
+        }, {
             titulo: "Monitor de Bebê com Vídeo",
             etiqueta: "👀 Olhos no Bebê",
             descricao: "Durma tranquila sabendo que seu bebê está bem. Visualização noturna e áudio bidirecional para acalmar o pequeno.",
             link: "https://mercadolivre.com/sec/29v6mbR",
             imagem: "/imgs/camera_bebe002.webp"
-        },{
+        }, {
             titulo: "Almofada de Amamentação",
             etiqueta: "🍼 Pega Correta",
             descricao: "Evite dores nos ombros e braços durante a amamentação. Dá o suporte necessário para o bebê mamar confortavelmente.",
             link: "https://amzn.to/4a3pw1D",
             imagem: "/imgs/almofada001.jpg"
-        },{
+        }, {
             titulo: "Almofada de Amamentação",
             etiqueta: "🍼 Pega Correta",
             descricao: "Evite dores nos ombros e braços durante a amamentação. Dá o suporte necessário para o bebê mamar confortavelmente.",
             link: "https://mercadolivre.com/sec/2E4J6Rt",
             imagem: "/imgs/almofada002.webp"
-        },{
+        }, {
             titulo: "Lençol de Berço",
             etiqueta: "🛏️ Enxoval Fofo",
             descricao: "Conforto e segurança para o sono do recém-nascido. Tecido 100% algodão, hipoalergênico e macio.",
             link: "https://amzn.to/4r1qgKy",
             imagem: "/imgs/lencol001.jpg"
-        },{
+        }, {
             titulo: "Jogo de Lençol de Berço",
             etiqueta: "🛏️ Enxoval Fofo",
             descricao: "Conforto e segurança para o sono do recém-nascido. Tecido 100% algodão, hipoalergênico e macio.",
@@ -1207,7 +1207,7 @@ const bancoDeAnuncios = {
         }
     ],
 
-    //Categoria: geral
+    // Categoria: Geral
     geral: [
         {
             titulo: "Echo Dot 5ª Geração",
@@ -1363,10 +1363,22 @@ const bancoDeAnuncios = {
             link: "https://amzn.to/4rEfRVf",
             imagem: "/imgs/kindle002.jpg"
         }
+    ],
+
+    // Categoria: Juros
+    juros: [
+        {
+            titulo: "",
+            etiqueta: "",
+            descricao: "",
+            link: "",
+            imagem: ""
+        }
     ]
 };
 
 // 2. A FUNÇÃO CORRIGIDA
+// 2. A FUNÇÃO DE CARGA DE ANÚNCIOS COM RASTREAMENTO
 function carregarAnuncio(categoria) {
     if (!bancoDeAnuncios[categoria]) return;
 
@@ -1390,7 +1402,7 @@ function carregarAnuncio(categoria) {
             <!-- Link Imagem -->
             <a href="${produto.link}" target="_blank" rel="nofollow noopener" style="text-decoration: none; display: block; margin-bottom: 12px;">
                 
-                <!-- MOLDURA FIXA (300px x 230px) -->
+                <!-- MOLDURA FIXA -->
                 <div style="width: 100%; max-width: 300px; height: 230px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s; transition: border-color 0.2s;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='#f59e0b'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='#e2e8f0'">
                     
                     <!-- IMAGEM DENTRO DA MOLDURA -->
@@ -1415,5 +1427,23 @@ function carregarAnuncio(categoria) {
     const container = document.getElementById('anuncio-dinamico');
     if (container) {
         container.innerHTML = html;
+
+        // --- INÍCIO DO RASTREAMENTO (Google Analytics) ---
+
+        // Seleciona TODOS os links dentro do anúncio (Imagem e Botão)
+        const linksAnuncio = container.querySelectorAll('a');
+
+        linksAnuncio.forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Envia o evento para o Google Analytics
+                gtag('event', 'clique_anuncio_afiliado', {
+                    'categoria_pagina': categoria,  // Ex: 'tinta', 'imc'
+                    'produto_titulo': produto.titulo, // Ex: 'Balde de Tinta'
+                    'url_destino': produto.link      // O link da Amazon
+                });
+            });
+        });
+
+        // --- FIM DO RASTREAMENTO ---
     }
 }
