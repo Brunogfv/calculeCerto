@@ -192,59 +192,187 @@
                     </div>
                 </div>
 
-                <!-- NOVOS ALERTAS ADICIONADOS AQUI -->
-                <div class="tips-box">
-                    <h3>⚠️ Atenção na Obra</h3>
+                <!-- Conteúdo Educativo e Links -->
+                <div class="info-box">
+                    <h3>Guia dos Materiais (Conteúdo Educativo)</h3>
+                    <p style="margin-bottom: 20px; color: var(--cor-texto-suave);">
+                        Entenda a função de cada componente para não errar na compra.
+                    </p>
 
-                    <!-- Alerta 1: Dosagem -->
-                    <div
-                        style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
-                        <h4
-                            style="margin: 0 0 8px 0; color: #1e40af; font-size: 1rem; display: flex; align-items: center;">
-                            <i class="ph ph-ruler" style="margin-right: 8px;"></i> Dosagem Correta
-                        </h4>
-                        <p style="margin: 0; font-size: 0.9rem; color: #1e3a8a; line-height: 1.5;">
-                            Medir corretamente é vital. Para <strong>Contrapiso</strong> use o traço 1:3:6
-                            (Cimento:Areia:Brita). Para <strong>Concreto Estrutural</strong> (lajes/pilares) use o traço
-                            1:2:4. A mistura errada compromete a segurança.
-                        </p>
+                    <!-- Card: Areia -->
+                    <div class="info-row" style="background: #f8fafc; border-color: #e2e8f0;">
+                        <div class="info-icon" style="color: #8b5cf6;">🏖️</div>
+                        <div class="info-content">
+                            <strong style="color: #334155;">Areia Média</strong>
+                            <p>A "base" da massa. É a areia que passa por um processo de lavagem, separando pedras
+                                grandes das pequenas, resultando em um material fino, ideal para assentamento de
+                                azulejos e acabamentos finos.</p>
+                        </div>
                     </div>
 
-                    <!-- Alerta 2: Tempo de Pega -->
-                    <div
-                        style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
-                        <h4
-                            style="margin: 0 0 8px 0; color: #b91c1c; font-size: 1rem; display: flex; align-items: center;">
-                            <i class="ph ph-clock" style="margin-right: 8px;"></i> Tempo de Pega
-                        </h4>
-                        <p style="margin: 0; font-size: 0.9rem; color: #7f1d1d; line-height: 1.5;">
-                            O cimento começa a endurecer rápido. Misture apenas a quantidade que você consegue usar em
-                            <strong>30 a 40 minutos</strong>. O cimento que seca na betoneira é desperdício e difícil de
-                            limpar.
-                        </p>
+                    <!-- Card: Brita -->
+                    <div class="info-row" style="background: #fff7ed; border-color: #fdba74;">
+                        <div class="info-icon">⛰️</div>
+                        <div class="info-content">
+                            <strong style="color: #92400e;">Brita</strong>
+                            <p>Pedra britada é usada na estrutura de concreto para "encher" os vazios, dando massa e
+                                resistência ao concreto.</p>
+                        </div>
                     </div>
 
-                    <!-- Lista Original -->
-                    <h4>Informações Adicionais</h4>
-                    <ul>
-                        <li id="info-tipo">Calculado para <strong>Contrapiso</strong> (1:3:6).</li>
-                        <li>Os valores são médios da construção civil e consideram 10% de resíduo.</li>
-                        <li>O peso seco dos materiais é maior que o volume aparente devido ao vazios.</li>
-                    </ul>
+                    <!-- Card: Cimento -->
+                    <div class="info-row" style="background: #fff7ed; border-color: #fdba74;">
+                        <div class="info-icon">🧱</div>
+                        <div class="info-content">
+                            <strong style="color: #166534;">Cimento</strong>
+                            <p>É o aglutinante. É a "cola" que, ao reagir com a água e a brita, endurece e prende tudo
+                                junto, formando uma pedra sólida.</p>
+                        </div>
+                    </div>
+
+                    <!-- Seção de Links Externos -->
+                    <div style="margin-top: 30px;">
+                        <h3 style="margin-bottom: 20px;">🔗 Referências e Leituras Recomendadas</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--cor-secundaria);">
+                            Aprofunde seus conhecimentos em Construção Civil com fontes oficiais e dicas profissionais.
+                        </p>
+
+                        <div class="link-grid">
+                            <!-- Link ABNT -->
+                            <a href="https://www.abnt.org.br/" target="_blank" rel="nofollow noopener"
+                                class="link-card">
+                                <span class="link-icon">🏗️</span>
+                                <div>
+                                    <div class="link-title">ABNT</div>
+                                    <div class="link-desc">Normas técnicas brasileiras.</div>
+                                </div>
+                            </a>
+
+                            <!-- Link Portal do Concreto -->
+                            <a href="https://www.portaldoconcreto.com.br/concreto" target="_blank"
+                                rel="nofollow noopener" class="link-card">
+                                <span class="link-icon">🏗️</span>
+                                <div>
+                                    <div class="link-title">Portal do Concreto</div>
+                                    <div class="link-desc">Dicas práticas de aplicação e propriedades dos materiais.
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Link Wikipedia -->
+                            <a href="https://pt.wikipedia.org/wiki/Concreto" target="_blank" rel="nofollow noopener"
+                                class="link-card">
+                                <span class="link-icon">📚</span>
+                                <div>
+                                    <div class="link-title">Wikipedia</div>
+                                    <div class="link-desc">História e componentes químicos do concreto.</div>
+                                </div>
+                            </a>
+
+                            <!-- Link Engenharia Civil Simplificada -->
+                            <a href="https://www.youtube.com/@EngenhariaDetalhada" target="_blank"
+                                class="link-card">
+                                <span class="link-icon">🎥</span>
+                                <div>
+                                    <div class="link-title">Engenharia Detalhada</div>
+                                    <div class="link-desc">Canal popular de divulgação de conhecimento direcionado para os profissionais de engenharia e entusiastas pela área.</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Alertas e Dicas -->
+                    <div class="tips-box">
+                        <h3>⚠️ Atenção na Obra</h3>
+
+                        <!-- Alerta 1: Dosagem -->
+                        <div
+                            style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                            <h4
+                                style="margin: 0 0 8px 0; color: #1e40af; font-size: 1rem; display: flex; align-items: center;">
+                                <span style="margin-right: 8px;">📏</span> Dosagem Correta
+                            </h4>
+                            <p style="margin: 0; font-size: 0.9rem; color: #1e3a8a; line-height: 1.5;">
+                                Meça corretamente! Para <strong>Contrapiso</strong> use o traço 1:3:6
+                                (Cimento:Areia:Brita). Para <strong>Concreto Estrutural</strong> (lajes/pilares) use o
+                                traço 1:2:4. A mistura errada compromete a segurança.
+                            </p>
+                        </div>
+
+                        <!-- Alerta 2: Tempo de Pega -->
+                        <div
+                            style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                            <h4
+                                style="margin: 0 0 8px 0; color: #b91c1c; font-size: 1rem; display: flex; align-items: center;">
+                                <span style="margin-right: 8px;">⏰</span> Tempo de Pega
+                            </h4>
+                            <p style="margin: 0; font-size: 0.9rem; color: #7f1d1d; line-height: 1.5;">
+                                O cimento começa a endurecer rápido. Misture apenas a quantidade que você consegue usar
+                                em <strong>30 a 40 minutos</strong>. O cimento que seca na betoneira é desperdício e
+                                difícil de limpar.
+                            </p>
+                        </div>
+
+                        <!-- Lista Original -->
+                        <h4 style="margin: 0 0 20px 10px 0; color: var(--cor-texto);">Informações Adicionais</h4>
+                        <ul
+                            style="margin-left: 20px; padding-left: 20px; font-size: 0.95rem; color: var(--cor-texto-suave); line-height: 1.8;">
+                            <li id="info-tipo">Calculado para <strong>Contrapiso</strong> (1:3:6).</li>
+                            <li>Os valores são médios da construção civil e consideram 10% de resíduo.</li>
+                            <li>O peso seco dos materiais é maior que o volume aparente devido aos vazios.</li>
+                        </ul>
+
+                        <!-- Anúncio Dinâmico -->
+                        <div id="anuncio-dinamico"
+                            style="text-align: center; margin-top: 30px; padding: 20px; background: #fff7ed; border-radius: 12px; border: 1px solid #fdba74;">
+                            <!-- Placeholder para anúncio -->
+                            <small>Publicidade</small>
+                        </div>
+                    </div>
                 </div>
                 <div id="anuncio-dinamico"
-                style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
-                <!-- O anúncio vai cair aqui -->
-            </div>
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O anúncio vai cair aqui -->
+                </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
-        <a href="../paginas/privacidade.html">Privacidade</a>
-        <a href="../paginas/termos.html">Termos de Uso</a>
-        <a href="../index.html">Início</a>
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/dropdown.js"></script>

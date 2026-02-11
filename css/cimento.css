@@ -1,13 +1,24 @@
 /* --- ESTILOS ESPECÍFICOS CIMENTO --- */
 :root {
-    --cor-primaria: #475569;
+    /* --cor-primaria: #475569; */
     /* Cor de Cimento/Cinza */
-    --cor-primaria-light: #94a3b8;
+    /* --cor-primaria-light: #94a3b8;
     --cor-secundaria: #16a34a;
     --cor-fundo: #f1f5f9;
     --cor-card: #ffffff;
     --cor-texto: #1f2933;
+    --cor-texto-suave: #64748b; */
+
+    --cor-primaria: #d97706;
+    --cor-primaria-dark: #b45309;
+    --cor-secundaria: #64748b;
+    --cor-fundo: #fff7ed;
+    /* Fundo laranja muito claro */
+    --cor-card: #ffffff;
+    --cor-texto: #1e293b;
     --cor-texto-suave: #64748b;
+    --cor-borda: #fdba74;
+    --sombra: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 [data-theme="dark"] {
@@ -231,4 +242,157 @@ select:focus {
     .obras-group {
         flex-direction: column;
     }
+}
+
+/* Classes Auxiliares para Conteúdo (substituindo styles inline inválidos) */
+.info-box {
+    background: var(--cor-card);
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--cor-borda);
+}
+
+.info-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--cor-borda);
+}
+
+.info-icon {
+    flex: 1;
+    min-width: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.info-content {
+    flex: 3;
+}
+
+.info-content strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.info-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+}
+
+/* Links Externos */
+.link-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.link-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.link-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: var(--cor-primaria);
+}
+
+.link-title {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.link-desc {
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+}
+
+/* FAQ */
+.faq-item {
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+details {
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: 600;
+    color: var(--cor-texto);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+details p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--cor-texto-suave);
+}
+
+/* Tips Box */
+.tips-box {
+    background: var(--cor-card);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--cor-borda);
+    margin-bottom: 30px;
+}
+
+.tips-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--cor-texto);
+}
+
+.tips-box h4 {
+    font-size: 1.1rem;
+    color: var(--cor-primaria);
+    margin: 20px 0 10px 0;
+    font-weight: 600;
+}
+
+.tips-box p {
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }

@@ -196,56 +196,135 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Anúncio Dinâmico -->
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe;">
+                    <!-- O anúncio será carregado aqui pelo js/ads.js -->
+                </div>
             </div>
 
-            <!-- Conteúdo Educativo e SEO -->
-            <div class="info-box">
-                <h3>💡 Regras da Hora Extra (CLT)</h3>
-                <p style="color: var(--cor-texto-suave); line-height: 1.7;">
-                    O cálculo da hora extra segue as regras da CLT (Consolidação das Leis do Trabalho). O percentual
-                    muda dependendo do dia da semana e do horário.
-                </p>
-
-                <div class="rule-card">
-                    <h4>1. Dia de Semana</h4>
-                    <p>Trabalho realizado além da jornada normal em dias úteis. O percentual mínimo é de
-                        <strong>50%</strong> sobre o valor da hora normal.</p>
-                </div>
-
-                <div class="rule-card">
-                    <h4>2. Trabalho Noturno</h4>
-                    <p>Trabalho realizado entre 22h e 5h. Possui um adicional mínimo de <strong>20%</strong> que se soma
-                        à hora extra de 50%. Totalizando <strong>70%</strong>.</p>
-                </div>
-
-                <div class="rule-card">
-                    <h4>3. Domingo e Feriado</h4>
-                    <p>O adicional é de <strong>100%</strong> sobre o valor da hora normal. Se for noturno (no domingo),
-                        aplica-se mais 20%, totalizando <strong>120%</strong>.</p>
-                </div>
-
-                <div
-                    style="margin-top: 30px; background: rgba(245, 158, 11, 0.1); padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
-                    <h4 style="margin-top: 0; color: #92400e; font-size: 16px;">⚠️ Importante</h4>
-                    <p style="margin: 0; font-size: 14px; color: #78350f;">
-                        Este cálculo é uma estimativa baseada nas regras gerais da CLT. Convenções coletivas podem
-                        alterar os percentuais. Consulte o holerite ou sua empresa para valores exatos.
+            <!-- Coluna de Conteúdo -->
+            <aside class="info-card">
+                <article>
+                    <h3>Entenda seus Direitos</h3>
+                    <p>
+                        Hora extra é qualquer hora trabalhada além da jornada semanal padrão (geralmente 44h). Pela CLT,
+                        você tem direito a receber um valor extra por isso.
                     </p>
+
+                    <!-- Alerta Noturno -->
+                    <div class="tips-box">
+                        <h4>🌙 Adicional Noturno vs. Hora Extra</h4>
+                        <p>
+                            São coisas diferentes. <strong>Adicional noturno</strong> (+20%) aplica-se a horas entre 22h
+                            e 5h. <strong>Hora extra</strong> (+50%) aplica-se a horas além da carga horária. Se você
+                            faz hora extra à noite, os adicionais podem se somar!
+                        </p>
+                    </div>
+
+                    <h4>Como calcular a Hora?</h4>
+                    <p style="font-size: 0.95rem;">
+                        Para calcular o valor da hora a receber, multiplique o valor da sua hora normal pelo fator: <br>
+                        <br>
+                        <em>Exemplo (50%):</em> Hora Normal × 1.50 = Total da Hora Extra.
+                    </p>
+                </article>
+
+                <!-- Links Externos -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Legislação Trabalhista</h3>
+                    <div class="link-grid">
+                        <!-- Link eSocial -->
+                        <a href="https://www.gov.br/esocial/pt-br" target="_blank" rel="nofollow noopener"
+                            class="link-card">
+                            <span class="link-icon">⚖️</span>
+                            <div>
+                                <div class="link-title">Portal eSocial</div>
+                                <div class="link-desc">Sistema de escrituração fiscal das informações trabalhistas.
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Link Caixa -->
+                        <a href="https://www.caixa.gov.br/servicos/trabalhador/Paginas/default.aspx" target="_blank"
+                            rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">🏦</span>
+                            <div>
+                                <div class="link-title">Caixa Trabalhador</div>
+                                <div class="link-desc">Serviços como FGTS e abono salarial.</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
+
+                <!-- FAQ -->
+                <article style="margin-top: 30px;">
+                    <h3>Dúvidas Frequentes</h3>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Como descubro meu valor da hora?</summary>
+                            <p>A forma correta é pegar seu salário bruto e dividir por 220 (número médio de horas
+                                mensais na CLT). Exemplo: R$ 2.200 ÷ 220 = R$ 10,00/hora.</p>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Os descontos de INSS incidem sobre a hora extra?</summary>
+                            <p>Sim. A hora extra integra o salário e sofre os descontos de INSS e IRRF no final do mês.
+                                O valor calculado aqui é bruto.</p>
+                        </details>
+                    </div>
+                </article>
+            </aside>
         </div>
     </main>
 
-    <footer>
-        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
-        <a href="../paginas/privacidade.html">Privacidade</a>
-        <a href="../paginas/termos.html">Termos de Uso</a>
-        <a href="../index.html">Início</a>
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/dropdown.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/hora-extra.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'hora_extra' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('hora_extra');
+    </script>
 </body>
 
 </html>

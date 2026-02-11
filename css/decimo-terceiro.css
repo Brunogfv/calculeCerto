@@ -2,14 +2,29 @@
 /* Se o seu style.css global não tiver estas classes, adicione-as lá ou deixe aqui */
 
 :root {
-    --cor-primaria: #2563eb;
+    /* --cor-primaria: #2563eb;
     --cor-secundaria: #16a34a;
     --cor-fundo: #f1f5f9;
     --cor-card: #ffffff;
     --cor-texto: #1f2933;
     --cor-texto-suave: #64748b;
-    --cor-danger: #ef4444;
+    --cor-danger: #ef4444; */
+
+    /* Tema 13º Salário (Laranja Dourado) */
+    --cor-primaria: #d97706;
+    --cor-primaria-dark: #b45309;
+    --cor-secundaria: #64748b;
+    --cor-fundo: #fff7ed;
+    /* Fundo laranja muito claro */
+    --cor-card: #ffffff;
+    --cor-texto: #1e293b;
+    --cor-texto-suave: #64748b;
+    --cor-borda: #fdba74;
+    --sombra: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
+
+
+
 
 [data-theme="dark"] {
     --cor-fundo: #0f172a;
@@ -235,4 +250,295 @@ button {
         padding: 20px;
         margin: 20px;
     }
+}
+
+/* Layout */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    /* display: grid;
+    grid-template-columns: 1fr; */
+    gap: 40px;
+}
+
+@media(min-width: 900px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Cards */
+.calc-card,
+.info-card {
+    background: var(--cor-card);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--cor-borda);
+}
+
+.calc-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--cor-texto);
+}
+
+.calc-header p {
+    color: var(--cor-texto-suave);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.btn-calc {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.btn-calc:hover {
+    background-color: var(--cor-primaria-dark);
+}
+
+/* Resultado */
+#resultado-area {
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--cor-fundo);
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+    display: none;
+}
+
+.res-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--cor-borda);
+}
+
+.res-row.total {
+    border-bottom: none;
+    border-top: 2px solid var(--cor-borda);
+    padding-top: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--cor-primaria);
+    margin-top: 10px;
+}
+
+.res-label {
+    font-size: 0.9rem;
+    color: var(--cor-secundaria);
+}
+
+.res-val {
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+.res-discount {
+    color: #ef4444;
+}
+
+/* Vermelho para descontos */
+
+/* FAQ */
+.faq-item {
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+details {
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: 600;
+    color: var(--cor-texto);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+details p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--cor-texto-suave);
+}
+
+/* Conteúdo Lateral */
+.info-card {
+    background: var(--cor-card);
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--cor-borda);
+    margin-bottom: 30px;
+}
+
+.info-card h3 {
+    margin-bottom: 15px;
+    color: var(--cor-texto);
+    font-size: 1.4rem;
+}
+
+.info-card p,
+.info-card li {
+    color: var(--cor-texto-suave);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.info-card ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Alert Box */
+.alert-box {
+    background: #fff7ed;
+    border-left: 4px solid #d97706;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.alert-box h4 {
+    margin: 0 0 5px 0;
+    color: #9a3412;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.alert-box p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #7c2d12;
+}
+
+/* FAQ */
+.faq-item {
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+details {
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: 600;
+    color: var(--cor-texto);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+details p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--cor-texto-suave);
+}
+
+/* Links Externos */
+.link-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.link-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.link-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    color: var(--cor-primaria);
+}
+
+.link-title {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.link-desc {
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
 }

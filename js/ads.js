@@ -1368,11 +1368,999 @@ const bancoDeAnuncios = {
     // Categoria: Juros
     juros: [
         {
-            titulo: "",
-            etiqueta: "",
-            descricao: "",
+            titulo: "Pai Rico, Pai Pobre",
+            etiqueta: "📚 Clássico",
+            descricao: "O livro que mudou a mentalidade de milhões de pessoas sobre dinheiro. Aprenda a diferenciar ativos de passivos.",
+            link: "https://amzn.to/45REzJj",
+            imagem: "/imgs/pai_rico_pobre.jpg"
+        },
+        {
+            titulo: "O Investidor Inteligente",
+            etiqueta: "📈 Estratégia",
+            descricao: "A bíblia do investimento em valor. Aprenda como construir riqueza a longo prazo com segurança.",
+            link: "https://amzn.to/4ce3ZEO",
+            imagem: "/imgs/investidor_inteligente.jpg"
+        },
+        {
+            titulo: "Agenda de Controles Financeiros",
+            etiqueta: "📝 Organização",
+            descricao: "Saiba para onde vai cada centavo. Esta agenda ajuda a planejar gastos, economizar e atingir metas.",
+            link: "https://amzn.to/4qqLWiq",
+            imagem: "/imgs/agenda003.jpg"
+        },
+        {
+            titulo: "Do Mil ao Milhão",
+            etiqueta: "🚀 Motivação",
+            descricao: "Como Thiago Nigro saiu da dívida e se tornou investidor. Um guia prático para iniciantes.",
+            link: "https://amzn.to/4rCSyev",
+            imagem: "/imgs/mil_milhao.jpg"
+        },
+        {
+            titulo: "Calculadora Financeira HP12C",
+            etiqueta: "🔢 Profissional",
+            descricao: "A ferramenta indispensável para profissionais de finanças. Faça cálculos complexos de juros e amortização.",
+            link: "https://amzn.to/4r10CFR",
+            imagem: "/imgs/calculadora003.jpg"
+        },
+        {
+            titulo: "O Jeito Peter Lynch",
+            etiqueta: "🏆 Ações",
+            descricao: "Aprenda a investir na bolsa escolhendo empresas do seu dia a dia. Simples e direto ao ponto.",
+            link: "https://mercadolivre.com/sec/2Yj1gr1",
+            imagem: "/imgs/peterLynch.webp"
+        },
+        {
+            titulo: "Organizador de Documentos",
+            etiqueta: "📂 Ordem",
+            descricao: "Mantenha seus contratos, notas fiscais e extratos organizados. Essencial para o controle financeiro.",
+            link: "https://mercadolivre.com/sec/19CZjGe",
+            imagem: "/imgs/organizador004.webp"
+        },
+        {
+            titulo: "Kit Organizador de Documentos",
+            etiqueta: "📂 Ordem",
+            descricao: "Mantenha seus contratos, notas fiscais e extratos organizados. Essencial para o controle financeiro.",
+            link: "https://amzn.to/3O9CpP5",
+            imagem: "/imgs/organizador005.jpg"
+        },
+        {
+            titulo: "Os Segredos da Mente Milionária",
+            etiqueta: "🧠 Psicologia",
+            descricao: "Identifique e modifique seus modelos de dinheiro que estão te impedindo de enriquecer.",
+            link: "https://amzn.to/4rxhOTi",
+            imagem: "/imgs/segredos.jpg"
+        },
+        // {
+        //     titulo: "Viva Sempre com Dinheiro",
+        //     etiqueta: "⭐ Melhor Avaliado",
+        //     descricao: "A mentoria com a mais alta aprovação (4.9⭐). Saia do caos financeiro, limpe o nome e aprenda a viver com dinheiro de forma definitiva.",
+        //     link: "",
+        //     imagem: "../imgs/curso_viva_sempre.jpg"
+        // }
+    ],
+
+    // Categoria: Combustível
+    combustivel: [
+        {
+            titulo: "Aditivo de Combustível Lubrificante",
+            etiqueta: "🛡️ Proteção do Motor",
+            descricao: "A gasolina brasileira tem má qualidade. Use este aditivo para limpar os bicos injetores e proteger o motor, economizando no longo prazo.",
+            link: "https://amzn.to/3ZuN3m2",
+            imagem: "../imgs/aditivo_combustivel001.jpg"
+        },
+        {
+            titulo: "Aditivo de Combustível Lubrificante",
+            etiqueta: "🛡️ Proteção do Motor",
+            descricao: "A gasolina brasileira tem má qualidade. Use este aditivo para limpar os bicos injetores e proteger o motor, economizando no longo prazo.",
+            link: "https://mercadolivre.com/sec/2GJKu7s",
+            imagem: "../imgs/aditivo_combustivel002.webp"
+        },
+        {
+            titulo: "Aditivo de Combustível Lubrificante",
+            etiqueta: "🛡️ Proteção do Motor",
+            descricao: "A gasolina brasileira tem má qualidade. Use este aditivo para limpar os bicos injetores e proteger o motor, economizando no longo prazo.",
+            link: "https://mercadolivre.com/sec/2yUydd6",
+            imagem: "../imgs/aditivo_combustivel003.webp"
+        },
+        {
+            titulo: "Aditivo de Combustível Lubrificante",
+            etiqueta: "🛡️ Proteção do Motor",
+            descricao: "A gasolina brasileira tem má qualidade. Use este aditivo para limpar os bicos injetores e proteger o motor, economizando no longo prazo.",
+            link: "https://mercadolivre.com/sec/11Bks8g",
+            imagem: "../imgs/aditivo_combustivel004.webp"
+        },
+        {
+            titulo: "Aditivo de Combustível Lubrificante",
+            etiqueta: "🛡️ Proteção do Motor",
+            descricao: "A gasolina brasileira tem má qualidade. Use este aditivo para limpar os bicos injetores e proteger o motor, economizando no longo prazo.",
+            link: "https://mercadolivre.com/sec/2dicptZ",
+            imagem: "../imgs/aditivo_combustivel005.webp"
+        },
+        {
+            titulo: "Manômetro Digital de Pneus",
+            etiqueta: "🎯 Eficiência",
+            descricao: "Você sabia que pneus murchos aumentam o consumo? Mantenha a calibragem correta com precisão e economize no posto.",
+            link: "https://amzn.to/3O3EfBc",
+            imagem: "../imgs/manometro_pneus001.jpg"
+        },
+        {
+            titulo: "Manômetro Digital de Pneus",
+            etiqueta: "🎯 Eficiência",
+            descricao: "Você sabia que pneus murchos aumentam o consumo? Mantenha a calibragem correta com precisão e economize no posto.",
+            link: "https://mercadolivre.com/sec/2znwtzg",
+            imagem: "../imgs/manometro_pneus002.webp"
+        },
+        {
+            titulo: "Tampa de Tanque com Chave",
+            etiqueta: "🔒 Segurança",
+            descricao: "Evite o furto de combustível ('caixa d'água'). Tampa reforçada com fechadura universal que se adapta à maioria dos carros.",
+            link: "https://mercadolivre.com/sec/14yMpZW",
+            imagem: "../imgs/tampa_tanque_seguranca001.webp"
+        },
+        {
+            titulo: "Tampa de Tanque com Chave",
+            etiqueta: "🔒 Segurança",
+            descricao: "Evite o furto de combustível ('caixa d'água'). Tampa reforçada com fechadura universal que se adapta à maioria dos carros.",
+            link: "https://mercadolivre.com/sec/2XvY2rn",
+            imagem: "../imgs/tampa_tanque_seguranca002.webp"
+        },
+        {
+            titulo: "Tampa de Tanque com Chave",
+            etiqueta: "🔒 Segurança",
+            descricao: "Evite o furto de combustível ('caixa d'água'). Tampa reforçada com fechadura universal que se adapta à maioria dos carros.",
+            link: "https://mercadolivre.com/sec/1VkFekD",
+            imagem: "../imgs/tampa_tanque_seguranca003.webp"
+        },
+        {
+            titulo: "Óleo Sintético 5W30",
+            etiqueta: "🧹 Manutenção",
+            descricao: "Um motor limpo e bem lubrificado consome menos. Melhore o desempenho e o consumo com troca de óleo de qualidade.",
+            link: "https://amzn.to/4qm6JDt",
+            imagem: "../imgs/oleo_sintetico001.jpg"
+        },
+        {
+            titulo: "Óleo Sintético 5W30",
+            etiqueta: "🧹 Manutenção",
+            descricao: "Um motor limpo e bem lubrificado consome menos. Melhore o desempenho e o consumo com troca de óleo de qualidade.",
+            link: "https://mercadolivre.com/sec/2zYFwQX",
+            imagem: "../imgs/oleo_sintetico002.webp"
+        },
+        {
+            titulo: "Óleo Sintético 5W30",
+            etiqueta: "🧹 Manutenção",
+            descricao: "Um motor limpo e bem lubrificado consome menos. Melhore o desempenho e o consumo com troca de óleo de qualidade.",
+            link: "https://mercadolivre.com/sec/1PRi1uk",
+            imagem: "../imgs/oleo_sintetico003.webp"
+        },
+        {
+            titulo: "Óleo Sintético 5W30",
+            etiqueta: "🧹 Manutenção",
+            descricao: "Um motor limpo e bem lubrificado consome menos. Melhore o desempenho e o consumo com troca de óleo de qualidade.",
+            link: "https://mercadolivre.com/sec/2NmSUX2",
+            imagem: "../imgs/oleo_sintetico004.webp"
+        },
+        {
+            titulo: "Óleo Sintético 5W30",
+            etiqueta: "🧹 Manutenção",
+            descricao: "Um motor limpo e bem lubrificado consome menos. Melhore o desempenho e o consumo com troca de óleo de qualidade.",
+            link: "https://mercadolivre.com/sec/25sAuYt",
+            imagem: "../imgs/oleo_sintetico005.webp"
+        },
+        {
+            titulo: "Scanner OBD2 Bluetooth",
+            etiqueta: "📱 Diagnóstico",
+            descricao: "Seu carro está bebendo muito? Conecte este scanner ao celular, veja erros do motor e ajuste o consumo.",
+            link: "https://mercadolivre.com/sec/16pJRLL",
+            imagem: "../imgs/scanner_obd2001.webp"
+        },
+        {
+            titulo: "Scanner OBD2 Bluetooth",
+            etiqueta: "📱 Diagnóstico",
+            descricao: "Seu carro está bebendo muito? Conecte este scanner ao celular, veja erros do motor e ajuste o consumo.",
+            link: "https://mercadolivre.com/sec/1uTqJ4X",
+            imagem: "../imgs/scanner_obd2002.webp"
+        },
+        {
+            titulo: "Scanner OBD2 Bluetooth",
+            etiqueta: "📱 Diagnóstico",
+            descricao: "Seu carro está bebendo muito? Conecte este scanner ao celular, veja erros do motor e ajuste o consumo.",
+            link: "https://mercadolivre.com/sec/1aqX3L9",
+            imagem: "../imgs/scanner_obd2003.webp"
+        },
+        {
+            titulo: "Scanner OBD2 Bluetooth",
+            etiqueta: "📱 Diagnóstico",
+            descricao: "Seu carro está bebendo muito? Conecte este scanner ao celular, veja erros do motor e ajuste o consumo.",
+            link: "https://mercadolivre.com/sec/2EX4ALe",
+            imagem: "../imgs/scanner_obd2004.webp"
+        },
+        {
+            titulo: "Scanner OBD2 Bluetooth",
+            etiqueta: "📱 Diagnóstico",
+            descricao: "Seu carro está bebendo muito? Conecte este scanner ao celular, veja erros do motor e ajuste o consumo.",
+            link: "https://mercadolivre.com/sec/23A4Q79",
+            imagem: "../imgs/scanner_obd2005.webp"
+        },
+        {
+            titulo: "Suporte de Celular para Carro",
+            etiqueta: "📱 GPS Seguro",
+            descricao: "Dirija olhando a estrada. Use o Waze ou GPS sem usar as mãos e encontre o posto mais barato no caminho.",
+            link: "https://amzn.to/3O3HDMq",
+            imagem: "../imgs/suporte_celular_carro001.jpg"
+        },
+        {
+            titulo: "Suporte de Celular para Carro",
+            etiqueta: "📱 GPS Seguro",
+            descricao: "Dirija olhando a estrada. Use o Waze ou GPS sem usar as mãos e encontre o posto mais barato no caminho.",
+            link: "https://mercadolivre.com/sec/26dGe63",
+            imagem: "../imgs/suporte_celular_carro002.webp"
+        },
+        {
+            titulo: "Suporte de Celular para Carro",
+            etiqueta: "📱 GPS Seguro",
+            descricao: "Dirija olhando a estrada. Use o Waze ou GPS sem usar as mãos e encontre o posto mais barato no caminho.",
+            link: "https://mercadolivre.com/sec/1ScMqBv",
+            imagem: "../imgs/suporte_celular_carro003.webp"
+        },
+        {
+            titulo: "Suporte de Celular para Carro",
+            etiqueta: "📱 GPS Seguro",
+            descricao: "Dirija olhando a estrada. Use o Waze ou GPS sem usar as mãos e encontre o posto mais barato no caminho.",
+            link: "https://mercadolivre.com/sec/2DyjdRG",
+            imagem: "../imgs/suporte_celular_carro004.webp"
+        },
+        {
+            titulo: "Suporte de Celular para Carro",
+            etiqueta: "📱 GPS Seguro",
+            descricao: "Dirija olhando a estrada. Use o Waze ou GPS sem usar as mãos e encontre o posto mais barato no caminho.",
+            link: "https://mercadolivre.com/sec/1pi3EGW",
+            imagem: "../imgs/suporte_celular_carro005.webp"
+        },
+        {
+            titulo: "Cabos Elétricos para Bateria",
+            etiqueta: "🔌 Emergência",
+            descricao: "Não fique parado na estrada por causa de uma bateria descarregada. Cabos reforçados para dar partida rápida.",
+            link: "https://amzn.to/4bKK3JB",
+            imagem: "../imgs/cabos_bateria001.jpg"
+        },
+        {
+            titulo: "Cabos Elétricos para Bateria",
+            etiqueta: "🔌 Emergência",
+            descricao: "Não fique parado na estrada por causa de uma bateria descarregada. Cabos reforçados para dar partida rápida.",
+            link: "https://mercadolivre.com/sec/1vLfYXA",
+            imagem: "../imgs/cabos_bateria002.webp"
+        },
+        {
+            titulo: "Filtro de Ar Esportivo",
+            etiqueta: "💨 Respiração",
+            descricao: "Melhora a entrada de ar, otimizando a combustão. Peça simples que ajuda a manter o desempenho do veículo.",
+            link: "https://mercadolivre.com/sec/14mXisx",
+            imagem: "../imgs/filtro_ar_esportivo001.webp"
+        },
+        {
+            titulo: "Filtro de Ar Esportivo",
+            etiqueta: "💨 Respiração",
+            descricao: "Melhora a entrada de ar, otimizando a combustão. Peça simples que ajuda a manter o desempenho do veículo.",
+            link: "https://mercadolivre.com/sec/1cXRPpK",
+            imagem: "../imgs/filtro_ar_esportivo002.webp"
+        },
+        {
+            titulo: "Patinete Elétrico Dobrável",
+            etiqueta: "🛴 Economia Urbana",
+            descricao: "Para deslocamentos curtos (trabalho/mercado), o patinete é imbatível. Economize combustível para viagens longas.",
+            link: "https://mercadolivre.com/sec/1t4W1fP",
+            imagem: "../imgs/patinete_eletrico001.webp"
+        },
+        {
+            titulo: "Patinete Elétrico Dobrável",
+            etiqueta: "🛴 Economia Urbana",
+            descricao: "Para deslocamentos curtos (trabalho/mercado), o patinete é imbatível. Economize combustível para viagens longas.",
+            link: "https://mercadolivre.com/sec/2fBPD72",
+            imagem: "../imgs/patinete_eletrico002.webp"
+        },
+        {
+            titulo: "Patinete Elétrico Dobrável",
+            etiqueta: "🛴 Economia Urbana",
+            descricao: "Para deslocamentos curtos (trabalho/mercado), o patinete é imbatível. Economize combustível para viagens longas.",
+            link: "https://mercadolivre.com/sec/1sY3xWX",
+            imagem: "../imgs/patinete_eletrico003.webp"
+        },
+        {
+            titulo: "Scooter Elétrica Bivolt",
+            etiqueta: "🛴 Economia Urbana",
+            descricao: "Para deslocamentos curtos (trabalho/mercado), a scooter é imbatível. Economize combustível para viagens longas.",
+            link: "https://mercadolivre.com/sec/2opATdm",
+            imagem: "../imgs/patinete_eletrico004.webp"
+        }
+    ],
+
+    // Categoria: Datas
+    datas: [
+        {
+            titulo: "Agenda 2026 de Bolso",
+            etiqueta: "📅 Organização",
+            descricao: "Não confie apenas na memória do celular. Anote seus prazos, metas e compromissos em uma agenda física prática.",
+            link: "https://mercadolivre.com/sec/235EUYn",
+            imagem: "../imgs/agenda_2026001.webp"
+        },
+        {
+            titulo: "Agenda 2026 de Bolso",
+            etiqueta: "📅 Organização",
+            descricao: "Não confie apenas na memória do celular. Anote seus prazos, metas e compromissos em uma agenda física prática.",
+            link: "https://amzn.to/4amHOdg",
+            imagem: "../imgs/agenda_2026002.jpg"
+        },
+        {
+            titulo: "Calendário de Parede Grande",
+            etiqueta: "🗓️ Visão Completa",
+            descricao: "Tenha o ano inteiro na sua parede. Essencial para planejar projetos longos e visualizar datas de entrega.",
+            link: "https://amzn.to/4rJCxna",
+            imagem: "../imgs/calendario_parede001.jpg"
+        },
+        {
+            titulo: "Calendário de Parede Grande",
+            etiqueta: "🗓️ Visão Completa",
+            descricao: "Tenha o ano inteiro na sua parede. Essencial para planejar projetos longos e visualizar datas de entrega.",
+            link: "https://mercadolivre.com/sec/1SnaJW5",
+            imagem: "../imgs/calendario_parede002.webp"
+        },
+        {
+            titulo: "Trabalhe 4 horas por semana",
+            etiqueta: "🚀 Gestão do Tempo",
+            descricao: "O best-seller de Timothy Ferriss. Aprenda a eliminar o inútil e focar no que realmente importa para liberdade.",
+            link: "https://amzn.to/4qs9Qd8",
+            imagem: "../imgs/livro_4_horas001.jpg"
+        },
+        {
+            titulo: "Trabalhe 4 horas por semana",
+            etiqueta: "🚀 Gestão do Tempo",
+            descricao: "O best-seller de Timothy Ferriss. Aprenda a eliminar o inútil e focar no que realmente importa para liberdade.",
+            link: "https://mercadolivre.com/sec/1ezUNgQ",
+            imagem: "../imgs/livro_4_horas002.webp"
+        },
+        {
+            titulo: "Quadro Branco (Lousa)",
+            etiqueta: "🖊️ Brainstorming",
+            descricao: "Organize datas e ideias visualmente. Perfeito para planejar semanas ou meses na parede do escritório ou cozinha.",
+            link: "https://amzn.to/3ZrnFxv",
+            imagem: "../imgs/quadro_branco001.jpg"
+        },
+        {
+            titulo: "Quadro Branco (Lousa)",
+            etiqueta: "🖊️ Brainstorming",
+            descricao: "Organize datas e ideias visualmente. Perfeito para planejar semanas ou meses na parede do escritório ou cozinha.",
+            link: "https://mercadolivre.com/sec/1JnawwQ",
+            imagem: "../imgs/quadro_branco002.webp"
+        },
+        {
+            titulo: "Quadro Branco (Lousa)",
+            etiqueta: "🖊️ Brainstorming",
+            descricao: "Organize datas e ideias visualmente. Perfeito para planejar semanas ou meses na parede do escritório ou cozinha.",
+            link: "https://mercadolivre.com/sec/1Txui2H",
+            imagem: "../imgs/quadro_branco003.webp"
+        },
+        {
+            titulo: "Timer Pomodoro Digital",
+            etiqueta: "🍅 Foco",
+            descricao: "Gerencie seu tempo em blocos. A técnica Pomodoro é a melhor forma de cumprir prazos sem estresse.",
+            link: "https://amzn.to/3My1Lpq",
+            imagem: "../imgs/timer_digital001.jpg"
+        },
+        {
+            titulo: "Timer Pomodoro Digital",
+            etiqueta: "🍅 Foco",
+            descricao: "Gerencie seu tempo em blocos. A técnica Pomodoro é a melhor forma de cumprir prazos sem estresse.",
+            link: "https://mercadolivre.com/sec/2JV16H9",
+            imagem: "../imgs/timer_digital002.webp"
+        },
+        {
+            titulo: "O Poder do Hábito",
+            etiqueta: "📖 Rotina",
+            descricao: "Pequenas mudanças, grandes resultados. Aprenda a usar o tempo a seu favor criando hábitos duradouros.",
+            link: "https://amzn.to/4r5XjNA",
+            imagem: "../imgs/livro_habito001.jpg"
+        },
+        {
+            titulo: "O Poder do Hábito",
+            etiqueta: "📖 Rotina",
+            descricao: "Pequenas mudanças, grandes resultados. Aprenda a usar o tempo a seu favor criando hábitos duradouros.",
+            link: "https://mercadolivre.com/sec/2g6HpL3",
+            imagem: "../imgs/livro_habito002.webp"
+        },
+        {
+            titulo: "Marcadores de Página Coloridos",
+            etiqueta: "🔖 Estudo",
+            descricao: "Organize livros e documentos por data ou prioridade. Ferramenta simples para não perder prazos importantes.",
+            link: "https://mercadolivre.com/sec/1GYXtXR",
+            imagem: "../imgs/marcadores_pagina001.webp"
+        },
+        {
+            titulo: "Marcadores de Página Coloridos",
+            etiqueta: "🔖 Estudo",
+            descricao: "Organize livros e documentos por data ou prioridade. Ferramenta simples para não perder prazos importantes.",
+            link: "https://amzn.to/4arAihe",
+            imagem: "../imgs/marcadores_pagina002.jpg"
+        },
+        {
+            titulo: "Relógio Digital de Mesa",
+            etiqueta: "⏰ Tempo Real",
+            descricao: "Mantenha o controle do tempo durante o trabalho ou estudo. Visor grande e fácil de ler.",
+            link: "https://amzn.to/4knCKK6",
+            imagem: "../imgs/relogio_mesa001.jpg"
+        },
+        {
+            titulo: "Relógio Digital de Mesa",
+            etiqueta: "⏰ Tempo Real",
+            descricao: "Mantenha o controle do tempo durante o trabalho ou estudo. Visor grande e fácil de ler.",
+            link: "https://mercadolivre.com/sec/27ApvvZ",
+            imagem: "../imgs/relogio_mesa002.webp"
+        },
+        {
+            titulo: "Relógio Digital de Mesa",
+            etiqueta: "⏰ Tempo Real",
+            descricao: "Mantenha o controle do tempo durante o trabalho ou estudo. Visor grande e fácil de ler.",
+            link: "https://mercadolivre.com/sec/12mvqPu",
+            imagem: "../imgs/relogio_mesa003.webp"
+        },
+        {
+            titulo: "Relógio Digital de Mesa",
+            etiqueta: "⏰ Tempo Real",
+            descricao: "Mantenha o controle do tempo durante o trabalho ou estudo. Visor grande e fácil de ler.",
+            link: "https://mercadolivre.com/sec/1yN3z8V",
+            imagem: "../imgs/relogio_mesa004.webp"
+        },
+        {
+            titulo: "Bloco de Notas Adesivas",
+            etiqueta: "📝 Lembretes",
+            descricao: "Para datas e lembretes rápidos que não podem ser esquecidos. A forma mais clássica de gestão de tempo.",
+            link: "https://amzn.to/3Zn67mh",
+            imagem: "../imgs/post_it001.jpg"
+        },
+        {
+            titulo: "Bloco de Notas Adesivas",
+            etiqueta: "📝 Lembretes",
+            descricao: "Para datas e lembretes rápidos que não podem ser esquecidos. A forma mais clássica de gestão de tempo.",
+            link: "https://amzn.to/46sEX12",
+            imagem: "../imgs/post_it002.jpg"
+        },
+        {
+            titulo: "Bloco de Notas Adesivas",
+            etiqueta: "📝 Lembretes",
+            descricao: "Para datas e lembretes rápidos que não podem ser esquecidos. A forma mais clássica de gestão de tempo.",
+            link: "https://mercadolivre.com/sec/1kGNS2F",
+            imagem: "../imgs/post_it003.webp"
+        },
+        {
+            titulo: "Bloco de Notas Adesivas",
+            etiqueta: "📝 Lembretes",
+            descricao: "Para datas e lembretes rápidos que não podem ser esquecidos. A forma mais clássica de gestão de tempo.",
+            link: "https://mercadolivre.com/sec/2RRxxg8",
+            imagem: "../imgs/post_it003.webp"
+        }
+    ],
+
+    // Categoria: Décimo Terceiro
+    decimo_terceiro: [
+        {
+            titulo: "CLT Consolidada (Edição Atualizada)",
+            etiqueta: "📚 Direitos do Trabalho",
+            descricao: "O guia oficial para conferir seus direitos. Saiba exatamente o que a empresa deve pagar no seu 13º e férias.",
+            link: "https://amzn.to/3MfoB5e",
+            imagem: "../imgs/livro_clt.jpg"
+        },
+        {
+            titulo: "TV Smart 50 polegadas 4K",
+            etiqueta: "📺 Presente de Fim de Ano",
+            descricao: "O clássico presente de fim de ano. Use uma parte do 13º para atualizar a sala de casa com uma nova TV.",
+            link: "https://mercadolivre.com/sec/2GYc3tT",
+            imagem: "../imgs/tv_smart001.webp"
+        },
+        {
+            titulo: "TV Smart 50 polegadas 4K",
+            etiqueta: "📺 Presente de Fim de Ano",
+            descricao: "O clássico presente de fim de ano. Use uma parte do 13º para atualizar a sala de casa com uma nova TV.",
+            link: "https://amzn.to/45VXSkG",
+            imagem: "../imgs/tv_smart002.jpg"
+        },
+        {
+            titulo: "Do Mil ao Milhão",
+            etiqueta: "🚀 Motivação",
+            descricao: "Como Thiago Nigro saiu da dívida e se tornou investidor. Um guia prático para iniciantes.",
+            link: "https://amzn.to/4rCSyev",
+            imagem: "/imgs/mil_milhao.jpg"
+        },
+        {
+            titulo: "Mala para Viagem",
+            etiqueta: "✈️ Férias",
+            descricao: "Está viajando com o 13º? Uma mala boa e resistente é essencial para transportar roupas e presentes sem preocupações.",
+            link: "https://amzn.to/405jebP",
+            imagem: "../imgs/mala_grande001.jpg"
+        },
+        {
+            titulo: "Mala para Viagem",
+            etiqueta: "✈️ Férias",
+            descricao: "Está viajando com o 13º? Uma mala boa e resistente é essencial para transportar roupas e presentes sem preocupações.",
+            link: "https://mercadolivre.com/sec/1Mp9S5X",
+            imagem: "../imgs/mala_grande002.webp"
+        },
+        {
+            titulo: "Notebook Gamer ou de Trabalho",
+            etiqueta: "💻 Upgrade",
+            descricao: "Invista no seu trabalho ou lazer. Um computador novo é um investimento que se paga ao longo do ano.",
+            link: "https://amzn.to/4bH1pXT",
+            imagem: "../imgs/notebook001.jpg"
+        },
+        {
+            titulo: "Notebook Gamer ou de Trabalho",
+            etiqueta: "💻 Upgrade",
+            descricao: "Invista no seu trabalho ou lazer. Um computador novo é um investimento que se paga ao longo do ano.",
+            link: "https://mercadolivre.com/sec/2zoD7D2",
+            imagem: "../imgs/notebook002.webp"
+        },
+        {
+            titulo: "Cofre de Segurança Digital",
+            etiqueta: "🔒 Proteção",
+            descricao: "Guarde o que sobrar do 13º em segurança. Cofre digital com senhas para armazenar dinheiro e joias em casa.",
+            link: "https://mercadolivre.com/sec/14B3gPT",
+            imagem: "../imgs/cofre_seguranca.webp"
+        },
+        {
+            titulo: "Câmera Digital de Viagem",
+            etiqueta: "📸 Memórias",
+            descricao: "Registre as férias em alta qualidade. Câmera compacta para capturar os melhores momentos da família.",
+            link: "https://mercadolivre.com/sec/1ViX6Gu",
+            imagem: "../imgs/camera_fotos.webp"
+        },
+        {
+            titulo: "Celular Smartphone Atual",
+            etiqueta: "📱 Comunicação",
+            descricao: "Chegou a hora de trocar de aparelho? Use o 13º para abater no valor do novo smartphone.",
+            link: "https://mercadolivre.com/sec/1XpdwjA",
+            imagem: "../imgs/smartphone001.webp"
+        },
+        {
+            titulo: "Celular Smartphone Atual",
+            etiqueta: "📱 Comunicação",
+            descricao: "Chegou a hora de trocar de aparelho? Use o 13º para abater no valor do novo smartphone.",
+            link: "https://mercadolivre.com/sec/138U5TL",
+            imagem: "../imgs/smartphone002.webp"
+        },
+        {
+            titulo: "E-book: O Jeito Peter Lynch",
+            etiqueta: "📈 Bolsa de Valores",
+            descricao: "Use o restante do dinheiro para investir na bolsa. Aprenda a escolher boas empresas para longo prazo.",
+            link: "https://mercadolivre.com/sec/2Yj1gr1",
+            imagem: "/imgs/peterLynch.webp"
+        },
+        {
+            titulo: "Passaporte Porta Documentos",
+            etiqueta: "🛂 Viagens Internacionais",
+            descricao: "Se o destino é internacional, proteja seu passaporte e documentos em um porta-documentos elegante de alta qualidade.",
+            link: "https://mercadolivre.com/sec/1AeRDvB",
+            imagem: "../imgs/passaporte_viagem001.webp"
+        },
+        {
+            titulo: "Passaporte Porta Documentos",
+            etiqueta: "🛂 Viagens Internacionais",
+            descricao: "Se o destino é internacional, proteja seu passaporte e documentos em um porta-documentos elegante de alta qualidade.",
+            link: "https://mercadolivre.com/sec/1GmC6XL",
+            imagem: "../imgs/passaporte_viagem002.webp"
+        },
+        {
+            titulo: "Passaporte Porta Documentos",
+            etiqueta: "🛂 Viagens Internacionais",
+            descricao: "Se o destino é internacional, proteja seu passaporte e documentos em um porta-documentos elegante de alta qualidade.",
+            link: "https://mercadolivre.com/sec/2kJVrVH",
+            imagem: "../imgs/passaporte_viagem003.webp"
+        }
+    ],
+
+    // Categoria: Hora Extra
+    hora_extra: [
+        {
+            titulo: "Headset com Cancelamento de Ruído",
+            etiqueta: "🎧 Foco Absoluto",
+            descricao: "Trabalhe em silêncio mesmo em ambientes barulhentos. Essencial para manter a produtividade nas horas extras.",
+            link: "https://www.amazon.com.br/soundcore-Cancelamento-Poderosos-Reprodu%C3%A7%C3%A3o-Bluetooth/dp/B0CRTYZG5C?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=303FZI935EB3Y&dib=eyJ2IjoiMSJ9.uXc4CoDczaGqN6a_x8XD7zQukBJHx-JtpVkhXk9TDWD1cdTjY61S9_s1ZwNq7s7_edz1Y2BX4sEtBJtsUz2An4vPuMWaUhslepCzo66nT1ESf_VW3mHTsUGmBhXNHQgAc1oDiXbvvcBOmGltSEYTC7PKjn2IYPml-50wrxDgt5JxEW97DsXNwvxlefXGgu40SG0-XJJhOcuz5M2xOFjLhKGteuJwFhScWyfsFJ55NINsi-Wc-QSsxDJwCUvkO3zG76HHL5FK_7d-vDXr8ONZZs7jisQpmVW6VVyfA2TheHs.X9W1tzdU_lpwHB0mov1l9_GrPnl0DJH32aBwYJSOdDo&dib_tag=se&keywords=Fone%2Bde%2BOuvido%2Bcom%2BCancelamento%2Bde%2BRu%C3%ADdo&qid=1770313812&sprefix=fone%2Bde%2Bouvido%2Bcom%2Bcancelamento%2Bde%2Bru%C3%ADdo%2Caps%2C265&sr=8-3-spons&ufe=app_do%3Aamzn1.fos.fcd6d665-32ba-4479-9f21-b774e276a678&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll2&tag=portaldascont-20&linkId=0e9454917b75817b4b32dc306d08a479&ref_=as_li_ss_tl",
+            imagem: "/imgs/fone_ouvido001.jpg"
+        },
+        {
+            titulo: "Headset com Cancelamento de Ruído",
+            etiqueta: "🎧 Foco Absoluto",
+            descricao: "Trabalhe em silêncio mesmo em ambientes barulhentos. Essencial para manter a produtividade nas horas extras.",
+            link: "https://mercadolivre.com/sec/1rubznZ",
+            imagem: "/imgs/fone_ouvido002.webp"
+        },
+        {
+            titulo: "Luminária de Mesa LED Dimmer",
+            etiqueta: "💡 Luz Adequada",
+            descricao: "Boa iluminação evita cansaço visual. Regule a intensidade da luz para aguentar mais tempo sentado.",
+            link: "https://mercadolivre.com/sec/2Sv5cEf",
+            imagem: "../imgs/luminaria_mesa_dimmer001.webp"
+        },
+        {
+            titulo: "Luminária de Mesa LED Dimmer",
+            etiqueta: "💡 Luz Adequada",
+            descricao: "Boa iluminação evita cansaço visual. Regule a intensidade da luz para aguentar mais tempo sentado.",
+            link: "https://amzn.to/4ttmvPE",
+            imagem: "../imgs/luminaria_mesa_dimmer002.jpg"
+        },
+        {
+            titulo: "Teclado Mecânico RGB",
+            etiqueta: "⌨️ Digitação Rápida",
+            descricao: "Aumente sua velocidade e conforto durante a digitação. Menos esforço nos dedos para trabalhar mais horas.",
+            link: "https://amzn.to/4rgnYHW",
+            imagem: "../imgs/teclado_mecanico001.jpg"
+        },
+        {
+            titulo: "Teclado Mecânico RGB",
+            etiqueta: "⌨️ Digitação Rápida",
+            descricao: "Aumente sua velocidade e conforto durante a digitação. Menos esforço nos dedos para trabalhar mais horas.",
+            link: "https://mercadolivre.com/sec/1a8aeY6",
+            imagem: "../imgs/teclado_mecanico002.webp"
+        },
+        {
+            titulo: "Máquina de Café Expresso",
+            etiqueta: "☕ Energia Extra",
+            descricao: "Para aguentar a madrugada trabalhando, nada melhor que um café fresco e rápido direto na sua mesa.",
+            link: "https://amzn.to/46FQ2vI",
+            imagem: "../imgs/maquina_cafe001.jpg"
+        },
+        {
+            titulo: "Máquina de Café Expresso",
+            etiqueta: "☕ Energia Extra",
+            descricao: "Para aguentar a madrugada trabalhando, nada melhor que um café fresco e rápido direto na sua mesa.",
+            link: "https://mercadolivre.com/sec/28uYSWH",
+            imagem: "../imgs/maquina_cafe002.webp"
+        },
+        {
+            titulo: "Suporte Ajustável para Notebook",
+            etiqueta: "💻 Ergonomia",
+            descricao: "Eleve a tela do notebook para alinhar a altura dos olhos. Evite dores nas costas e pescoço em sessões longas.",
+            link: "https://www.amazon.com.br/Notebook-Ergon%C3%B4mico-Ajust%C3%A1vel-Regul%C3%A1vel-Universal/dp/B0F1C2GCK4?dib=eyJ2IjoiMSJ9.TTLhiJIQ_k7k-dwtL2Ady56lCpdGmHa_nrqvTZYIvg52xPClzyXQCKqUTqVA0ko_fxCLtz_NTu40TZ13ESqbnkBwPiraD4_tckSe2ziWOiXSRHICrzHM3PDlOF5WKHpzQPBjyFGQV7n0jd8rHj72mY6wI9Ug0aJfEVEn4zEjS5XriZGkra3RWcNL1ed7L1zUKfJ72Bt0_zrGADOcrQ5YL_-B7oE2hqq-KZN14doOCAz2ED978WwBH0CYuPGAkD9fEAXhihI73VV3fx83E5eIY7GfEYcQ4nCjfzVeiq15AUk.TpycuB63BUrN7suPtSLMADiKmrLZOky9sHR3ChwZLQ4&dib_tag=se&keywords=suporte+ajustavel+para+notebook&qid=1770313183&sr=8-6&linkCode=ll2&tag=portaldascont-20&linkId=4c45a3407c685cb4c21a173580556823&ref_=as_li_ss_tl",
+            imagem: "/imgs/suporte_notebook001.jpg"
+        },
+        {
+            titulo: "Suporte Ajustável para Notebook",
+            etiqueta: "💻 Ergonomia",
+            descricao: "Eleve a tela do notebook para alinhar a altura dos olhos. Evite dores nas costas e pescoço em sessões longas.",
+            link: "https://mercadolivre.com/sec/1VfqVwZ",
+            imagem: "/imgs/suporte_notebook002.webp"
+        },
+        {
+            titulo: "Power Bank de Alta Capacidade",
+            etiqueta: "🔋 Bateria Sempre Cheia",
+            descricao: "O celular não pode morrer no meio de uma hora extra. Mantenha seus dispositivos carregados com um Power Bank de 20.000mAh.",
+            link: "https://amzn.to/4rfuBtG",
+            imagem: "/imgs/powerbank001.jpg"
+        },
+        {
+            titulo: "Power Bank de Alta Capacidade",
+            etiqueta: "🔋 Bateria Sempre Cheia",
+            descricao: "O celular não pode morrer no meio de uma hora extra. Mantenha seus dispositivos carregados com um Power Bank de 20.000mAh.",
+            link: "https://mercadolivre.com/sec/2mEU8M1",
+            imagem: "/imgs/powerbank002.webp"
+        },
+        {
+            titulo: "Cadeira Ergonômica",
+            etiqueta: "🪑 Conforto",
+            descricao: "Sentar por horas seguidas é difícil. Uma cadeira com bom suporte lombar é essencial para a sua saúde.",
+            link: "https://mercadolivre.com/sec/2FnjZ8S",
+            imagem: "../imgs/cadeira_ergonomica001.webp"
+        },
+        {
+            titulo: "Cadeira Ergonômica",
+            etiqueta: "🪑 Conforto",
+            descricao: "Sentar por horas seguidas é difícil. Uma cadeira com bom suporte lombar é essencial para a sua saúde.",
+            link: "https://amzn.to/3OzcTCY",
+            imagem: "../imgs/cadeira_ergonomica002.jpg"
+        },
+        {
+            titulo: "Mouse Vertical Ergonômico",
+            etiqueta: "🖱️ Prevenção",
+            descricao: "O formato vertical evita a Síndrome do Túnel do Carpo. Clique confortavelmente por horas a fio.",
+            link: "https://amzn.to/3MzcXSH",
+            imagem: "../imgs/mouse_vertical001.jpg"
+        },
+        {
+            titulo: "Mouse Vertical Ergonômico",
+            etiqueta: "🖱️ Prevenção",
+            descricao: "O formato vertical evita a Síndrome do Túnel do Carpo. Clique confortavelmente por horas a fio.",
+            link: "https://mercadolivre.com/sec/2WKu2TP",
+            imagem: "../imgs/mouse_vertical002.webp"
+        },
+        {
+            titulo: "Mesa Conversora em Pé",
+            etiqueta: "📏 Alternância",
+            descricao: "Alterne entre sentado e em pé. Melhora a circulação e o foco, ajudando a encarar o trabalho extra.",
+            link: "https://amzn.to/4qlOFcF",
+            imagem: "../imgs/mesa_pe001.jpg"
+        }
+    ],
+
+    // Categoria: INSS
+    inss: [
+        {
+            titulo: "CLT Consolidada (Edição Atualizada)",
+            etiqueta: "📚 Direitos Garantidos",
+            descricao: "O guia oficial da legislação trabalhista. Entenda exatamente seus direitos ao INSS, férias e rescisão.",
+            link: "https://amzn.to/3MfoB5e",
+            imagem: "../imgs/livro_clt.jpg"
+        },
+        {
+            titulo: "Adeus Aposentadoria",
+            etiqueta: "🕒 Planejamento",
+            descricao: "Não espere a hora chegar sem se preparar. Este livro ensina a como garantir o seu futuro sem depender dos outros.",
+            link: "https://amzn.to/402nnNM",
+            imagem: "../imgs/livro_aposentadoria.jpg"
+        },
+        {
+            titulo: "Organizador Financeiro",
+            etiqueta: "📂 Ordem",
+            descricao: "Mantenha contracheques, extratos de INSS e documentos seguros em um arquivo organizador portátil.",
+            link: "https://amzn.to/3O9CpP5",
+            imagem: "/imgs/organizador005.jpg"
+        },
+        {
+            titulo: "Calculadora Científica Financeira",
+            etiqueta: "🔢 Profissional",
+            descricao: "Para conferir os cálculos de juros e amortização com precisão, tenha uma calculadora financeira à mão.",
+            link: "https://amzn.to/4r10CFR",
+            imagem: "/imgs/calculadora003.jpg"
+        },
+        {
+            titulo: "Lupa com Luz LED",
+            etiqueta: "🔍 Leitura Fácil",
+            descricao: "Muitas vezes os contracheques têm letras pequenas. Uma lupa com iluminação ajuda a conferir os descontos.",
+            link: "https://amzn.to/4kt7Yj6",
+            imagem: "../imgs/lupa_led.jpg"
+        },
+        {
+            titulo: "Cofre para Documentos",
+            etiqueta: "🔒 Proteção",
+            descricao: "Seus documentos de previdência são vitais. Guarde-os em um cofre resistente a incêndio e invasão.",
+            link: "https://mercadolivre.com/sec/14B3gPT",
+            imagem: "../imgs/cofre_seguranca.webp"
+        },
+        {
+            titulo: "Os Segredos da Mente Milionária",
+            etiqueta: "🧠 Psicologia Financeira",
+            descricao: "Descubra os modelos mentais que limitam seu crescimento financeiro e como quebrá-los.",
+            link: "https://amzn.to/462oCjE",
+            imagem: "../imgs/livro_segredos_mente.jpg"
+        },
+        {
+            titulo: "Agenda de Controle Financeiro",
+            etiqueta: "📝 Diário de Gastos",
+            descricao: "Registrar o que entra e sai é o primeiro passo. Uma agenda específica para finanças ajuda a organizar o orçamento.",
+            link: "https://amzn.to/46ruGCk",
+            imagem: "../imgs/agenda_controle.jpg"
+        },
+        {
+            titulo: "Banco de Energia Nobreak",
+            etiqueta: "🔌 Energia",
+            descricao: "Para quem trabalha em casa, garantir que o computador não desliga em queda de luz é proteger seu trabalho.",
+            link: "https://amzn.to/4raIRUT",
+            imagem: "../imgs/nobreak_pequeno.jpg"
+        }
+    ],
+
+    // Categoria: Porcentagem
+    porcentagem: [
+        {
+            titulo: "Calculadora Financeira HP12C",
+            etiqueta: "🔢 Profissional",
+            descricao: "A ferramenta indispensável para lidar com juros e porcentagens no dia a dia financeiro.",
+            link: "https://amzn.to/4r10CFR",
+            imagem: "/imgs/calculadora003.jpg"
+        },
+        {
+            titulo: "Matemática Financeira para Leigos",
+            etiqueta: "📚 Guia Prático",
+            descricao: "Entenda como o dinheiro funciona e pare de se perder em porcentagens, juros e amortização.",
+            link: "https://amzn.to/4qwJ57F",
+            imagem: "../imgs/livro_financa_leigo.jpg"
+        },
+        {
+            titulo: "Calculadora Científica Escolar",
+            etiqueta: "🎓 Estudos",
+            descricao: "Essencial para quem está aprendendo matemática. Resolva operações de porcentagem com facilidade.",
+            link: "https://amzn.to/3MzKzjm",
+            imagem: "../imgs/calculadora_cientifica_escolar001.jpg"
+        },
+        {
+            titulo: "Calculadora Científica Escolar",
+            etiqueta: "🎓 Estudos",
+            descricao: "Essencial para quem está aprendendo matemática. Resolva operações de porcentagem com facilidade.",
+            link: "https://mercadolivre.com/sec/1p9i6Y3",
+            imagem: "../imgs/calculadora_cientifica_escolar002.webp"
+        },
+        {
+            titulo: "Lupa de Bolso com Iluminação",
+            etiqueta: "🔍 Leitura de Contratos",
+            descricao: "Não assine nada sem ler as letras miúdas. Uma lupa ajuda a ver as porcentagens de juros ocultas.",
+            link: "https://amzn.to/3MdmXkx",
+            imagem: "../imgs/lupa_bolso001.jpg"
+        },
+        {
+            titulo: "Lupa de Bolso com Iluminação",
+            etiqueta: "🔍 Leitura de Contratos",
+            descricao: "Não assine nada sem ler as letras miúdas. Uma lupa ajuda a ver as porcentagens de juros ocultas.",
+            link: "https://mercadolivre.com/sec/2uioxN6",
+            imagem: "../imgs/lupa_bolso002.webp"
+        },
+        {
+            titulo: "Livro de Matemática Básica",
+            etiqueta: "📐 Reforço Escolar",
+            descricao: "Revise os fundamentos da matemática: frações, porcentagens e regra de três.",
+            link: "https://amzn.to/4r5CfXz",
+            imagem: "../imgs/livro_matematica001.jpg"
+        },
+        {
+            titulo: "Agenda de Controle de Vendas",
+            etiqueta: "📝 Negócios",
+            descricao: "Para comerciantes: anote o lucro percentual diário e acompanhe a saúde financeira do seu comércio.",
+            link: "https://mercadolivre.com/sec/33fWZBJ",
+            imagem: "../imgs/agenda_vendas002.webp"
+        },
+        {
+            titulo: "Agenda de Controle de Vendas",
+            etiqueta: "📝 Negócios",
+            descricao: "Para comerciantes: anote o lucro percentual diário e acompanhe a saúde financeira do seu comércio.",
+            link: "https://amzn.to/46ruGCk",
+            imagem: "../imgs/agenda_controle.jpg"
+        },
+        {
+            titulo: "Balança de Precisão",
+            etiqueta: "⚖️ Ingredientes",
+            descricao: "Para cozinheiros: calcule a porcentagem de ingredientes ou desperdício em sua receita com precisão.",
+            link: "https://amzn.to/4rA8E8u",
+            imagem: "/imgs/balanca_cozinha002.jpg"
+        },
+        {
+            titulo: "Fita Métrica de Costura",
+            etiqueta: "📏 Moda e Tecidos",
+            descricao: "Calcule a porcentagem de tecido necessário para uma peça e evite erros de corte caros.",
+            link: "https://amzn.to/4r7Jpum",
+            imagem: "../imgs/fita_metrica003.jpg"
+        },
+        {
+            titulo: "Powerbank 10000mAh",
+            etiqueta: "🔋 Bateria Extra",
+            descricao: "Ofereça 5% a mais de bateria ao seu celular. Never more fique desconectado em uma reunião.",
+            link: "https://amzn.to/4tu8uBi",
+            imagem: "../imgs/powerbank_10k001.jpg"
+        },
+        {
+            titulo: "Powerbank 10000mAh",
+            etiqueta: "🔋 Bateria Extra",
+            descricao: "Ofereça 5% a mais de bateria ao seu celular. Never more fique desconectado em uma reunião.",
+            link: "https://mercadolivre.com/sec/1GKq1KG",
+            imagem: "../imgs/powerbank_10k002.webp"
+        },
+        {
+            titulo: "Termômetro Infravermelho",
+            etiqueta: "🌡️ Temperatura",
+            descricao: "Saiba a porcentagem de carga da sua bateria ou a temperatura precisa de processadores eletrônicos.",
+            link: "https://amzn.to/4aGbVNU",
+            imagem: "../imgs/termometro_infrared001.jpg"
+        },
+        {
+            titulo: "Termômetro Infravermelho",
+            etiqueta: "🌡️ Temperatura",
+            descricao: "Saiba a porcentagem de carga da sua bateria ou a temperatura precisa de processadores eletrônicos.",
+            link: "https://mercadolivre.com/sec/32kkqFF",
+            imagem: "../imgs/termometro_infrared002.webp"
+        },
+        {
+            titulo: "Termômetro Infravermelho",
+            etiqueta: "🌡️ Temperatura",
+            descricao: "Saiba a porcentagem de carga da sua bateria ou a temperatura precisa de processadores eletrônicos.",
+            link: "https://mercadolivre.com/sec/2CowHQK",
+            imagem: "../imgs/termometro_infrared003.webp"
+        }
+    ],
+
+    // Categoria: Salário
+    salario: [
+        {
+            titulo: "CLT Consolidada (Edição Atualizada)",
+            etiqueta: "📚 Direitos Trabalhistas",
+            descricao: "Conheça seus direitos sobre hora extra, férias e 13º salário. O livro que todo trabalhador deve ter.",
+            link: "https://amzn.to/3MfoB5e",
+            imagem: "../imgs/livro_clt.jpg"
+        },
+        {
+            titulo: "Cronômetro Digital de Mesa",
+            etiqueta: "⏱️ Controle de Tempo",
+            descricao: "Registre exatamente suas horas trabalhadas para garantir que o pagamento esteja correto.",
+            link: "https://amzn.to/3OaOEek",
+            imagem: "../imgs/cronometro_mesa.jpg"
+        },
+        {
+            titulo: "Trabalhe 4 horas por dia",
+            etiqueta: "🚀 Produtividade",
+            descricao: "Trabalhe menos e ganhe mais. O clássico sobre redefinição de riqueza e qualidade de vida.",
+            link: "https://amzn.to/4qs9Qd8",
+            imagem: "../imgs/livro_4_horas001.jpg"
+        },
+        {
+            titulo: "Organizador de Documentos",
+            etiqueta: "📂 Profissional",
+            label: "Organização",
+            descricao: "Mantenha contracheques, holerites e comprovantes de renda organizados para o seu controle financeiro.",
+            link: "https://amzn.to/3O9CpP5",
+            imagem: "/imgs/organizador005.jpg"
+        },
+        {
+            titulo: "Relógio de Ponto Digital",
+            etiqueta: "🕐 Registro",
+            descricao: "Para home office: registre seus horários de entrada e saída automaticamente para conferir o salário.",
+            link: "https://amzn.to/4rLV7Lq",
+            imagem: "../imgs/relogio_ponto001.jpg"
+        },
+        {
+            titulo: "Relógio de Ponto Digital",
+            etiqueta: "🕐 Registro",
+            descricao: "Para home office: registre seus horários de entrada e saída automaticamente para conferir o salário.",
+            link: "https://mercadolivre.com/sec/2F63sYm",
+            imagem: "../imgs/relogio_ponto002.webp"
+        },
+        {
+            titulo: "Cadeira Escritório Presidente",
+            etiqueta: "🪑 Conforto no Trabalho",
+            descricao: "Você ganha seu salário sentado. Invista em uma cadeira ergonômica para cuidar da sua saúde.",
+            link: "https://amzn.to/46Fz00M",
+            imagem: "../imgs/cadeira_presidente001.jpg"
+        },
+        {
+            titulo: "Cadeira Escritório Presidente",
+            etiqueta: "🪑 Conforto no Trabalho",
+            descricao: "Você ganha seu salário sentado. Invista em uma cadeira ergonômica para cuidar da sua saúde.",
+            link: "https://mercadolivre.com/sec/2YcEsD5",
+            imagem: "../imgs/cadeira_presidente002.webp"
+        },
+        {
+            titulo: "Mochila Executiva Impermeável",
+            etiqueta: "💼 Profissionalismo",
+            descricao: "Leve seus documentos de trabalho e computador com segurança e estilo para o escritório.",
+            link: "https://amzn.to/4rIhZLE",
+            imagem: "../imgs/mochila_executiva001.jpg"
+        },
+        {
+            titulo: "Mochila Executiva Impermeável",
+            etiqueta: "💼 Profissionalismo",
+            descricao: "Leve seus documentos de trabalho e computador com segurança e estilo para o escritório.",
+            link: "https://mercadolivre.com/sec/1r5VFHz",
+            imagem: "../imgs/mochila_executiva002.webp"
+        },
+        {
+            titulo: "Calculadora Impressora Fiscal",
+            etiqueta: "🖨️ Controle",
+            descricao: "Imprima recibos e orçamentos com agilidade e profissionalismo.",
+            link: "https://amzn.to/4ab1aTO",
+            imagem: "../imgs/calculadora_impressora001.jpg"
+        },
+        {
+            titulo: "Calculadora Impressora Fiscal",
+            etiqueta: "🖨️ Controle",
+            descricao: "Imprima recibos e orçamentos com agilidade e profissionalismo.",
             link: "",
-            imagem: ""
+            imagem: "../imgs/calculadora_impressora002.webp"
+        },
+        {
+            titulo: "Kit Canetas Azul e Preta",
+            etiqueta: "✒️ Assinatura",
+            descricao: "Tenha sempre uma caneta à mão para checar pagamentos e assinar documentos. O clássico indispensável.",
+            link: "https://amzn.to/4kwoVcz",
+            imagem: "../imgs/canetas_bic001.jpg"
+        },
+        {
+            titulo: "Kit de Canetas Esferográficas",
+            etiqueta: "✒️ Assinatura",
+            descricao: "Tenha sempre uma caneta à mão para checar pagamentos e assinar documentos. O clássico indispensável.",
+            link: "https://mercadolivre.com/sec/2A2zGfo",
+            imagem: "../imgs/canetas_bic002.webp"
         }
     ]
 };

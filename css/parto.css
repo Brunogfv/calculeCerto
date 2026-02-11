@@ -299,3 +299,196 @@ details p {
         font-size: 28px;
     }
 }
+
+/* Linha do Tempo (Progresso) */
+.timeline-container {
+    margin: 30px 0;
+}
+
+.progress-track {
+    position: relative;
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--cor-primaria);
+    width: 0%;
+    border-radius: 6px;
+    transition: width 1s ease-out;
+}
+
+.milestones {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--cor-texto-suave);
+}
+
+/* Cards Trimestres */
+.tri-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--cor-fundo);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--cor-borda);
+}
+
+.tri-icon {
+    font-size: 1.5rem;
+}
+
+.tri-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+}
+
+.tri-sub {
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+}
+
+/* Conteúdo Educativo */
+.info-card h3 {
+    margin-bottom: 15px;
+    color: var(--cor-texto);
+    font-size: 1.4rem;
+}
+
+.info-card p,
+.info-card li {
+    color: var(--cor-texto-suave);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.info-card ul {
+    margin-left: 20px;
+}
+
+/* Timeline Vertical (Educativa) */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--cor-primaria-light);
+    margin-left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--cor-primaria);
+    border-radius: 50%;
+    border: 2px solid var(--cor-card);
+}
+
+.t-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.t-desc {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+}
+
+/* FAQ */
+.faq-item {
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+details {
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: 600;
+    color: var(--cor-texto);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+details p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--cor-texto-suave);
+}
+
+/* Links Externos */
+.link-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.link-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.link-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    color: var(--cor-primaria);
+}
+
+.link-title {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.link-desc {
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+}

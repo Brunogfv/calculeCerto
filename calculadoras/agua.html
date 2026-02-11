@@ -126,130 +126,222 @@
     </header>
 
     <main>
-        <div class="calculator-wrapper">
-            <div class="calc-card">
-                <div class="calc-header">
-                    <h2>Calculadora de Água</h2>
-                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra quanto beber para manter seu corpo
-                        saudável.</p>
-                </div>
-
-                <div class="input-group">
-                    <label for="peso">Seu Peso (kg)</label>
-                    <input type="number" id="peso" placeholder="Ex: 70" step="0.1">
-                </div>
-
-                <div class="input-group">
-                    <label for="atividade">Nível de Atividade</label>
-                    <select id="atividade">
-                        <option value="1">Sedentário (Pouco exercício)</option>
-                        <option value="1.2">Moderado (Exercício leve 1-3x semana)</option>
-                        <option value="1.4">Ativo (Exercício moderado 3-5x semana)</option>
-                        <option value="1.6">Muito Ativo (Exercício pesado 6-7x semana)</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="clima">Clima</label>
-                    <select id="clima">
-                        <option value="0">Frio ou Ameno</option>
-                        <option value="500">Quente ou Úmido (Precisa beber mais)</option>
-                    </select>
-                </div>
-
-                <button class="btn-primary" onclick="calcularAgua()">
-                    💧 Calcular Quantidade
-                </button>
-
-                <!-- Resultados -->
-                <div id="resultado-area" class="result-area">
-                    <span class="water-icon-large">🚰</span>
-                    <div class="water-label">Meta diária recomendada</div>
-                    <div class="water-value" id="valor-agua">0 Litros</div>
-                    <small style="color: var(--cor-texto-suave);">ou <span id="valor-ml">0</span> ml</small>
-
-                    <!-- Visualização de Copos -->
-                    <div
-                        style="margin-top: 20px; text-align: left; font-weight: 600; font-size: 14px; color: var(--cor-texto-suave);">
-                        Isso equivale a <span id="qtd-copos"
-                            style="color: var(--cor-primaria); font-size: 18px;">0</span> copos de 300ml:
+        <main>
+            <div class="calculator-wrapper">
+                <!-- Coluna da Calculadora -->
+                <div class="calc-card">
+                    <div class="calc-header">
+                        <h2>Calculadora de Água</h2>
+                        <p style="color: var(--cor-texto-suave); margin: 0;">Descubra o seu consumo diário ideal para
+                            manter o corpo funcionando em plenitude.</p>
                     </div>
-                    <div class="cups-container" id="copos-visual">
-                        <!-- Copos gerados via JS -->
+
+                    <div class="input-group">
+                        <label for="peso">Seu Peso (kg)</label>
+                        <input type="number" id="peso" placeholder="Ex: 70" step="0.1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="atividade">Nível de Atividade</label>
+                        <select id="atividade">
+                            <option value="1">Sedentário (Pouco exercício)</option>
+                            <option value="1.2">Moderado (Exercício leve 1-3x semana)</option>
+                            <option value="1.4">Ativo (Exercício moderado 3-5x semana)</option>
+                            <option value="1.6">Muito Ativo (Exercício pesado 6-7x semana)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="clima">Clima</label>
+                        <select id="clima">
+                            <option value="0">Frio ou Ameno</option>
+                            <option value="500">Quente ou Úmido (Precisa beber mais)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-primary" onclick="calcularAgua()">
+                        💧 Calcular Quantidade
+                    </button>
+
+                    <!-- Resultados -->
+                    <div id="resultado-area" class="result-area">
+                        <span class="water-icon-large">🚰</span>
+                        <div class="water-label">Meta diária recomendada</div>
+                        <div class="water-value" id="valor-agua">0 Litros</div>
+                        <small style="color: var(--cor-texto-suave);">ou <span id="valor-ml">0</span> ml</small>
+
+                        <!-- Visualização de Copos -->
+                        <div
+                            style="margin-top: 20px; text-align: left; font-weight: 600; font-size: 14px; color: var(--cor-texto-suave);">
+                            Isso equivale a <span id="qtd-copos"
+                                style="color: var(--cor-primaria); font-size: 18px;">0</span> copos de 300ml:
+                        </div>
+                        <div class="cups-container" id="copos-visual">
+                            <!-- Copos gerados via JS -->
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Conteúdo Educativo -->
-            <div class="tips-grid">
+                <!-- Coluna de Conteúdo e Links Externos -->
+                <div class="tips-grid">
 
-                <div class="tip-card">
-                    <h4>💧 Por que beber água?</h4>
-                    <ul style="padding-left: 20px; color: var(--cor-texto-suave); font-size: 15px; line-height: 1.6;">
-                        <li>Regula a temperatura corporal.</li>
-                        <li>Transporta nutrientes para as células.</li>
-                        <li>Melhora a função cerebral e o foco.</li>
-                        <li>Deixa a pele mais saudável.</li>
-                    </ul>
-                </div>
-                <div class="tip-card">
-                    <h4>🚨 Sinais de Desidratação</h4>
-                    <ul style="padding-left: 20px; color: var(--cor-texto-suave); font-size: 15px; line-height: 1.6;">
-                        <li>Sede intensa.</li>
-                        <li>Urina escura e com pouco volume.</li>
-                        <li>Boca seca e cansaço.</li>
-                        <li>Dor de cabeça leve.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div
-                style="margin-top: 20px; background: rgba(14, 165, 233, 0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.2);">
-                <h4 style="margin-top: 0; color: #0369a1;">Dica Extra</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #0c4a6e;">
-                    A sede é um sinal tardio de desidratação. Se você sentir sede, já perdeu cerca de 2% da sua água
-                    corporal. Beba água mesmo sem sede!
-                </p>
-            </div>
-            <h4 style="padding-left: 20px; margin-top: 25px;">Sinais de Desidratação</h4>
-            <ul style="margin-left: 20px; padding-left: 20px; font-size: 0.95rem; color: var(--cor-texto-suave); line-height: 1.8;">
-                <li>Urina amarela escura (o ideal é cor de palha clara).</li>
-                <li>Boca seca ou lábios rachados.</li>
-                <li>Dor de cabeça constante.</li>
-                <li>Fadiga e falta de concentração.</li>
-            </ul>
-            <div id="anuncio-dinamico"
-                style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
-                <!-- O anúncio vai cair aqui -->
-            </div>
-
-            <!-- FAQ -->
-            <article style="margin-top: 30px;">
-                <h3>Dúvidas Frequentes</h3>
-                <div class="faq-item">
-                    <details>
-                        <summary>Posso beber muita água?</summary>
-                        <p>Sim, existe uma condição rara chamada hiponatremia (intoxicação por água), mas ela é difícil
-                            de acontecer em pessoas saudáveis. O corpo elimina o excesso pela urina, mas ouça seu corpo.
+                    <!-- CARD: EDUCACIONAL (Contexto) -->
+                    <div class="tip-card">
+                        <h4>🧠 Como o corpo usa a água?</h4>
+                        <p style="font-size: 0.95rem; color: var(--cor-texto-suave); margin-bottom: 15px;">
+                            A água compõe cerca de 60% do nosso corpo. Ela é essencial para regular a temperatura
+                            corporal, lubrificar as articulações e transportar oxigênio. Cerca de 2,5 litros são
+                            perdidos por dia apenas por respiração e transpiração, precisando ser repostos
+                            constantemente.
                         </p>
-                    </details>
+
+                        <div
+                            style="background: #e0f2fe; border-left: 4px solid #0ea5e9; padding: 15px; margin-top: 15px; border-radius: 8px;">
+                            <h5 style="margin: 0 0 5px 0; color: #0284c7; font-size: 0.95rem; font-weight: 700;">Dica
+                                Importante</h5>
+                            <p style="margin: 0; font-size: 0.85rem; color: #0c4a6e;">
+                                Beber água antes de se sentir sede é a melhor forma de garantir que seu desempenho
+                                físico e mental (foco) não seja prejudicado pela desidratação.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD: SINAIS E ALERTAS (Mesclado) -->
+                    <div class="tip-card">
+                        <h4>⚠️ Sinais de Desidratação</h4>
+                        <ul
+                            style="padding-left: 0; list-style: none; color: var(--cor-texto-suave); font-size: 0.95rem; line-height: 1.8;">
+                            <li>Urina escura e com pouco volume (o ideal é cor de palha clara).</li>
+                            <li>Boca seca ou lábios rachados.</li>
+                            <li>Dor de cabeça constante.</li>
+                            <li>Fadiga e falta de concentração.</li>
+                        </ul>
+                    </div>
+
                 </div>
-                <div class="faq-item">
-                    <details>
-                        <summary>Chá e café contam?</summary>
-                        <p>Sim, mas por conterem cafeína (um diurético leve), não são 100% eficientes como água pura.
-                            Água mineral é sempre a melhor escolha para hidratação.</p>
-                    </details>
+
+                <!-- SEÇÃO DE REFERÊNCIAS EXTERNAS (SEO e Autoridade) -->
+                <article style="margin-top: 40px;">
+                    <h3>📚 Leituras Recomendadas (Oficiais)</h3>
+                    <p style="margin-bottom: 15px; color: var(--cor-texto-suave);">
+                        Para mais informações científicas e oficiais sobre a ingestão de água e nutrientes, consulte os
+                        guias do Ministério da Saúde e da Organização Mundial da Saúde.
+                    </p>
+
+                    <div style="display: grid; gap: 15px;">
+                        <!-- Link Ministério da Saúde -->
+                        <a href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil/publicacoes-para-promocao-a-saude/guia_alimentar_populacao_brasileira_2ed.pdf/view"
+                            target="_blank" rel="noopener noreferrer" class="link-card">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span
+                                    style="background: #3b82f6; color: white; padding: 8px; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">🇧</span>
+                                <div>
+                                    <div style="font-weight: 600; color: var(--cor-texto);">Guia Alimentar (Min. Saúde)
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: var(--cor-texto-suave);">Orientações oficiais
+                                        sobre hidratação.</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Link OMS -->
+                        <a href="https://www.who.int/pt/publications/i/item/WHO-HSE-PHE-AMR-08.01.01" target="_blank"
+                            rel="noopener noreferrer" class="link-card">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span
+                                    style="background: #16a34a; color: white; padding: 8px; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">🌎</span>
+                                <div>
+                                    <div style="font-weight: 600; color: var(--cor-texto);">OMS - Hidratação</div>
+                                    <div style="font-size: 0.85rem; color: var(--cor-texto-suave);">Diretrizes globais
+                                        sobre consumo de água.</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div
+                        style="background: #fff7ed; border-left: 4px solid #059669; padding: 15px; margin: 20px 0; border-radius: 8px;">
+                        <h4 style="margin: 0 0 5px 0; color: #065f46; font-size: 0.95rem; font-weight: 700;">
+                            💡 Hidratação e Cérebro
+                        </h4>
+                        <p style="margin: 0; font-size: 0.85rem; color: #064e3b;">
+                            Estudos da OMS indicam que mesmo desidratação leve (1-2%) pode prejudicar a função cognitiva
+                            e o humor. Manter-se bem hidratado é crucial para o aprendizado e memória.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Anúncio Dinâmico -->
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O produto será carregado aqui pelo js/ads.js -->
                 </div>
-            </article>
-        </div>
+
+                <!-- FAQ -->
+                <article style="margin-top: 30px;">
+                    <h3>Dúvidas Frequentes</h3>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Posso beber muita água?</summary>
+                            <p>
+                                Sim, existe uma condição rara chamada hiponatremia (intoxicação por água), mas ela é
+                                difícil de acontecer em pessoas saudáveis.
+                                Os rins saudáveis filtram o excesso. Beba água regularmente, mas ouça seu corpo se algo
+                                não estiver parecendo certo.
+                            </p>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Chá e café contam para a meta?</summary>
+                            <p>
+                                Sim, contam, mas por conterem cafeína (um diurético leve), não são 100% eficientes para
+                                reidratação.
+                                Água mineral é sempre a melhor escolha pura para o sistema, mas chás e sucos naturais
+                                sem açúcar também contribuem.
+                            </p>
+                        </details>
+                    </div>
+                </article>
+            </div>
+        </main>
     </main>
 
-    <footer>
-        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
-        <a href="../paginas/privacidade.html">Privacidade</a>
-        <a href="../paginas/termos.html">Termos de Uso</a>
-        <a href="../index.html">Início</a>
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/agua.js"></script>

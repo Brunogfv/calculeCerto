@@ -274,3 +274,111 @@ button {
         grid-template-columns: 1fr;
     }
 }
+
+/* Conteúdo Educativo */
+.edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.edu-card {
+    background: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+}
+
+.edu-formula {
+    background: var(--cor-card);
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0;
+    border: 1px dashed var(--cor-borda);
+    border-radius: 4px;
+    color: var(--cor-primaria);
+}
+
+/* FAQ */
+details {
+    margin-bottom: 15px;
+    background: var(--cor-card);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    cursor: pointer;
+}
+
+summary {
+    font-weight: 600;
+    color: var(--cor-primaria);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+details p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+}
+
+/* Links Externos */
+.link-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.link-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.link-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    color: var(--cor-primaria);
+}
+
+.link-title {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.link-desc {
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+}

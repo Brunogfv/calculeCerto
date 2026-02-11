@@ -114,7 +114,7 @@
                         <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
                     </div>
                 </div>
-                
+
                 <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
                 <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
             </nav>
@@ -160,32 +160,145 @@
                         <span id="valor-meses">0 Meses</span>
                     </div>
                 </div>
+                <!-- Anúncio Dinâmico -->
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O produto será carregado aqui pelo js/ads.js -->
+                </div>
             </div>
 
-            <!-- Conteúdo Educativo -->
-            <div class="tips-card">
-                <h3>💡 Para que serve?</h3>
-                <ul style="padding-left: 20px; line-height: 1.8;">
-                    <li><strong>Contagem Regressiva:</strong> "Quantos dias faltam para as férias?" ou "Quando é meu
-                        aniversário?".</li>
-                    <li><strong>Aniversário de Namoro/Casamento:</strong> Insira a data do evento e a data de hoje para
-                        saber quantos anos completos.</li>
-                    <li><strong>Projetos:</strong> Calcular a duração de uma obra ou plano de ação.</li>
-                </ul>
+            <!-- Coluna de Conteúdo -->
+            <div>
+                <aside class="info-card">
+                    <article>
+                        <h3>Planejamento com Precisão</h3>
+                        <p>
+                            Calcular datas exatas é essencial para o planejamento de projetos, prazos de entrega ou
+                            contagem regressiva para eventos importantes.
+                        </p>
+
+                        <!-- Dica -->
+                        <div class="tips-box">
+                            <h4>💡 Dica: Dias Úteis</h4>
+                            <p>
+                                Esta calculadora conta todos os dias (incluindo finais de semana). Para prazos de
+                                trabalho, lembre-se de descontar os sábados e domingos.
+                            </p>
+                        </div>
+
+                        <h4>Como usar?</h4>
+                        <p style="font-size: 0.95rem;">
+                            Selecione a data inicial e a data final nos campos acima. O sistema calculará
+                            automaticamente o período entre elas, ajudando você a visualizar quanto tempo falta ou
+                            quanto tempo já passou.
+                        </p>
+                    </article>
+
+                    <!-- Links Externos -->
+                    <div style="margin-top: 30px;">
+                        <h3 style="margin-bottom: 20px;">🔗 Calendários e Feriados</h3>
+                        <div class="link-grid">
+                            <!-- Link Calendário Brasil -->
+                            <a href="https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026"
+                                target="_blank" rel="nofollow noopener" class="link-card">
+                                <span class="link-icon">🇧🇷</span>
+                                <div>
+                                    <div class="link-title">Gov.br</div>
+                                    <div class="link-desc">Portal oficial e feriados nacionais.</div>
+                                </div>
+                            </a>
+
+                            <!-- Link Time and Date -->
+                            <a href="https://www.timeanddate.com/calendar/" target="_blank" rel="nofollow noopener"
+                                class="link-card">
+                                <span class="link-icon">🌍</span>
+                                <div>
+                                    <div class="link-title">Time and Date</div>
+                                    <div class="link-desc">Feriados mundiais e calculadoras de fuso horário.</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- FAQ -->
+                    <article style="margin-top: 30px;">
+                        <h3>Dúvidas Frequentes</h3>
+                        <div class="faq-item">
+                            <details>
+                                <summary>A contagem inclui os dias de início e fim?</summary>
+                                <p>Sim, a contagem é inclusiva. Se você seleciona o dia 1 e o dia 3, a diferença será de
+                                    3 dias (1, 2 e 3).</p>
+                            </details>
+                        </div>
+                        <div class="faq-item">
+                            <details>
+                                <summary>Funciona para datas passadas?</summary>
+                                <p>Sim! Você pode colocar uma data de início no passado e a data final hoje para saber
+                                    quantos dias se passaram desde um evento.</p>
+                            </details>
+                        </div>
+                    </article>
+                </aside>
+
+                <!-- <div class="info-card">
+                    <h3>💡 Para que serve?</h3>
+                    <ul style="padding-left: 20px; line-height: 1.8; color: var(--cor-texto-suave);">
+                        <li><strong>Contagem Regressiva:</strong> "Quantos dias faltam para as férias?" ou "Quando é meu
+                            aniversário?".</li>
+                        <li><strong>Aniversário de Namoro/Casamento:</strong> Insira a data do evento e a data de hoje
+                            para saber quantos anos completos.</li>
+                        <li><strong>Projetos:</strong> Calcular a duração de uma obra ou plano de ação.</li>
+                    </ul>
+                </div> -->
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
-        <a href="../paginas/privacidade.html">Privacidade</a>
-        <a href="../paginas/termos.html">Termos de Uso</a>
-        <a href="../index.html">Início</a>
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/dropdown.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/datas.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'datas' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('datas');
+    </script>
 </body>
 
 </html>

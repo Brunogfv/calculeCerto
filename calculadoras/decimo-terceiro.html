@@ -125,95 +125,205 @@
     </header>
 
     <main>
-        <div class="calculator-wrapper">
+        <!-- Coluna da Calculadora -->
+        <section class="calc-card">
             <div class="calc-header">
                 <h2>Calculadora de 13º Salário</h2>
-                <p>Descubra quanto você vai receber considerando o INSS.</p>
+                <p>Simule o valor líquido e a divisão entre 1ª e 2ª parcela.</p>
             </div>
 
-            <form onsubmit="event.preventDefault(); calcularDecimoTerceiro();">
-                <div class="input-group">
-                    <label for="salario">Salário Bruto Mensal</label>
-                    <div class="input-wrapper">
-                        <span class="input-prefix">R$</span>
-                        <input type="text" id="salario" placeholder="0,00" oninput="formatarMoeda(this)" required>
-                    </div>
-                </div>
+            <div class="input-group">
+                <label for="salario-bruto">Salário Bruto (R$)</label>
+                <input type="number" id="salario-bruto" step="0.01" placeholder="Ex: 3000.00">
+            </div>
 
-                <div class="input-group">
-                    <label for="meses">Meses Trabalhados no Ano</label>
-                    <div class="input-wrapper">
-                        <!-- Select é melhor para evitar erro de digitação -->
-                        <select id="meses"
-                            style="padding-left: 16px; appearance: none; cursor: pointer; background-image: url('data:image/svg+xml;utf8,<svg fill=\'%2364748b\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>'); background-repeat: no-repeat; background-position: right 10px center;">
-                            <option value="1">1 mês</option>
-                            <option value="2">2 meses</option>
-                            <option value="3">3 meses</option>
-                            <option value="4">4 meses</option>
-                            <option value="5">5 meses</option>
-                            <option value="6">6 meses</option>
-                            <option value="7">7 meses</option>
-                            <option value="8">8 meses</option>
-                            <option value="9">9 meses</option>
-                            <option value="10">10 meses</option>
-                            <option value="11">11 meses</option>
-                            <option value="12" selected>12 meses</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="input-group">
+                <label for="dependentes">Número de Dependentes</label>
+                <input type="number" id="dependentes" step="1" placeholder="Ex: 1">
+            </div>
 
-                <div class="btn-container">
-                    <button type="submit" class="btn-primary">Calcular Agora</button>
-                    <button type="button" class="btn-secondary" onclick="limparCampos()">Limpar</button>
-                </div>
-            </form>
+            <div class="input-group">
+                <label for="meses-trabalhados">Meses Trabalhados no Ano</label>
+                <input type="number" id="meses-trabalhados" step="1" min="1" max="12" value="12" placeholder="Ex: 12">
+                <small style="color: var(--cor-secundaria); font-size: 0.8rem;">Se trabalhou o ano todo, deixe
+                    12.</small>
+            </div>
+
+            <button class="btn-calc" onclick="calcularDecimoTerceiro()">Calcular 13º</button>
 
             <!-- Resultados -->
-            <div id="resultado-juros" class="result-box">
-                <div class="result-card">
-                    <div class="result-label">Você receberá (Total Líquido)</div>
-                    <div class="result-value-main" id="valor-liquido">R$ 0,00</div>
+            <div id="resultado-area">
+                <h4 style="text-align: center; margin-bottom: 15px; color: var(--cor-texto);">Detalhamento</h4>
+
+                <div class="res-row">
+                    <span class="res-label">Valor Bruto Total</span>
+                    <span class="res-val" id="res-bruto">R$ 0,00</span>
+                </div>
+                <div class="res-row">
+                    <span class="res-label">Desconto INSS</span>
+                    <span class="res-val res-discount" id="res-inss">- R$ 0,00</span>
+                </div>
+                <div class="res-row">
+                    <span class="res-label">Desconto IRRF</span>
+                    <span class="res-val res-discount" id="res-irrf">- R$ 0,00</span>
+                </div>
+                <div class="res-row total">
+                    <span class="res-label">Valor Líquido Total</span>
+                    <span class="res-val" id="res-liquido">R$ 0,00</span>
                 </div>
 
-                <div class="result-breakdown">
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Valor Bruto Total</div>
-                        <div class="breakdown-value" id="valor-bruto">R$ 0,00</div>
+                <div style="margin-top: 20px; border-top: 1px solid var(--cor-borda); padding-top: 15px;">
+                    <div class="res-row">
+                        <span class="res-label">1ª Parcela (Novembro)</span>
+                        <span class="res-val" style="color: var(--cor-primaria);" id="res-parcela1">R$ 0,00</span>
                     </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Desconto INSS</div>
-                        <div class="breakdown-value discount" id="valor-inss">R$ 0,00</div>
+                    <p style="font-size: 0.75rem; color: var(--cor-secundaria); text-align: right;">*Sem descontos</p>
+                    <div class="res-row">
+                        <span class="res-label">2ª Parcela (Dezembro)</span>
+                        <span class="res-val" style="color: var(--cor-primaria);" id="res-parcela2">R$ 0,00</span>
                     </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">1ª Parcela (50%)</div>
-                        <div class="breakdown-value" id="valor-parcela1">R$ 0,00</div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">2ª Parcela (Restante)</div>
-                        <div class="breakdown-value" id="valor-parcela2">R$ 0,00</div>
-                    </div>
+                    <p style="font-size: 0.75rem; color: var(--cor-secundaria); text-align: right;">*Descontos deduzidos
+                        aqui</p>
                 </div>
             </div>
 
-            <div class="info-text">
-                <strong>Como funciona?</strong><br>
-                O cálculo considera 1/12 do salário por mês trabalhado. O INSS é descontado no momento do pagamento da
-                1ª parcela (se for o caso) ou descontado da 2ª parcela (regra geral). Esta calculadora utiliza uma
-                alíquota média de 8% para fins de estimativa rápida. Consulte seu holerite para valores exatos.
+            <!-- Anúncio Dinâmico -->
+            <div id="anuncio-dinamico"
+                style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <!-- O produto será carregado aqui pelo js/ads.js -->
             </div>
-        </div>
+
+            <!-- Coluna de Conteúdo -->
+            <aside class="info-card">
+                <article>
+                    <h3>Como é Calculado?</h3>
+                    <p>
+                        O 13º salário corresponde a 1/12 da remuneração bruta por mês trabalhado no ano corrente. Ele é
+                        pago em duas parcelas (geralmente novembro e dezembro).
+                    </p>
+
+                    <!-- Alerta Antecipação -->
+                    <div class="alert-box">
+                        <h4>⚠️ Antecipação do 1º Salário</h4>
+                        <p>
+                            Trabalhadores têm direito a sacar a 1ª parcela antecipadamente nos meses de fevereiro,
+                            março, abril ou agosto. A escolha é do trabalhador, não do patrão.
+                        </p>
+                    </div>
+
+                    <h4>Regras dos Descontos</h4>
+                    <ul>
+                        <li><strong>INSS:</strong> Incide sobre o valor bruto total.</li>
+                        <li><strong>IRRF:</strong> Incide sobre o valor bruto menos INSS e dedução por dependente (R$
+                            189,59).</li>
+                        <li><strong>Divisão:</strong> Na 1ª parcela (Nov) não há descontos. Na 2ª parcela (Dez), todos
+                            os descontos calculados sobre o total são abatidos.</li>
+                    </ul>
+                </article>
+
+                <!-- Links Externos -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Consultas Oficiais</h3>
+                    <div class="link-grid">
+                        <!-- Link Receita Federal -->
+                        <a href="https://www.gov.br/receitafederal/pt-br" target="_blank" rel="nofollow noopener"
+                            class="link-card">
+                            <span class="link-icon">🏛️</span>
+                            <div>
+                                <div class="link-title">Receita Federal</div>
+                                <div class="link-desc">Consulte restituição e tabelas oficiais do IRRF.</div>
+                            </div>
+                        </a>
+
+                        <!-- Link eSocial -->
+                        <a href="https://www.gov.br/esocial/pt-br" target="_blank" rel="nofollow noopener"
+                            class="link-card">
+                            <span class="link-icon">💼</span>
+                            <div>
+                                <div class="link-title">Portal eSocial</div>
+                                <div class="link-desc">Sistema de escrituração fiscal das informações trabalhistas.
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <article style="margin-top: 30px;">
+                    <h3>Dúvidas Frequentes</h3>
+                    <div class="faq-item">
+                        <details>
+                            <summary>E se eu entrei na empresa no meio do ano?</summary>
+                            <p>O cálculo é proporcional. Se você trabalhou 6 meses, você receberá 6/12 avos do seu
+                                salário bruto como 13º.</p>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Posso pedir para adiantar a 2ª parcela?</summary>
+                            <p>Não. A legislação permite apenas o adiantamento da 1ª parcela. A 2ª deve ser paga até o
+                                dia 20 de dezembro.</p>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>Quem não tem direito ao 13º?</summary>
+                            <p>Empregados domésticos, avulsos e rurais que pediram demissão sem justa causa antes de
+                                trabalhar 15 dias no mês não recebem o mês correspondente.</p>
+                        </details>
+                    </div>
+                </article>
+            </aside>
+        </section>
+
+
     </main>
 
-    <footer>
-        <p>© 2026 Portal das Contas - Ferramentas gratuitas para seu dia a dia.</p>
-        <a href="../paginas/privacidade.html">Privacidade</a>
-        <a href="../paginas/termos.html">Termos de Uso</a>
-        <a href="../index.html">Início</a>
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/decimo-terceiro.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+    <script>
+        // O nome 'decimo_terceiro' deve ser IGUALZINHO ao que está no bancoDeAnuncios lá no arquivo ads.js
+        carregarAnuncio('decimo_terceiro');
+    </script>
 </body>
 
 </html>
