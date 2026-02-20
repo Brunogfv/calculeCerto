@@ -1,0 +1,358 @@
+/* =========================================
+   VARIÁVEIS DE CORES (Minhas Cores)
+   ========================================= */
+:root {
+    --cor-primaria: #2563eb;
+    /* Azul vibrante */
+    --cor-primaria-escura: #1e40af;
+    /* Azul mais escuro para o gradiente */
+    --cor-secundaria: #16a34a;
+    --cor-fundo: #f1f5f9;
+    /* Fundo quase branco */
+    --cor-texto: #1f2937;
+    /* Texto escuro */
+    --cor-texto-suave: #64748b;
+    /* Texto secundário */
+    --cor-borda: #e2e8f0;
+    --cor-card: #ffffff;
+
+    --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --sombra-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    --transicao: all 0.3s ease;
+}
+
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   HEADER (Topo)
+   ========================================= */
+.header {
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
+    color: white;
+    position: sticky;
+    /* Fixa o topo ao rolar a página */
+    top: 0;
+    z-index: 1000;
+    /* Fica acima dos elementos do site */
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    /* Sombra suave abaixo do gradiente */
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 70px;
+    /* Altura fixa para o header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- Logo --- */
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s;
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
+/* --- Botão Mobile (Hambúrguer) --- */
+.mobile-menu-btn {
+    display: none;
+    /* Escondido por padrão no desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Navegação Desktop --- */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    /* Espaçamento entre os links */
+    height: 100%;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    /* Branco levemente transparente */
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: white;
+}
+
+/* --- Efeito de Seta Underline Animado --- */
+.menu a::after {
+    content: '';
+    /* Linha branca */
+    position: absolute;
+    width: 0;
+    /* Começa invisível */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+    /* Aparece inteiro no hover */
+}
+
+/* --- Container do Dropdown (Submenu) --- */
+.menu-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Seta visual do dropdown (opcional se quiser a setinha no link) */
+.menu-item>a::after {
+    content: '▾';
+    font-size: 10px;
+    margin-left: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s;
+}
+
+.menu-item:hover>a::after {
+    transform: rotate(180deg);
+    color: var(--cor-primaria);
+}
+
+/* O Dropdown em si */
+.dropdown-menu {
+    display: none;
+    /* Oculto por padrão */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centraliza em relação ao link pai */
+    min-width: 220px;
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 10px 0;
+    /* Padding superior para o separador */
+    margin-top: 15px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    border-top: 3px solid var(--cor-primaria);
+}
+
+/* Links dentro do Dropdown */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--cor-texto);
+    /* Texto escuro pois o fundo é branco */
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8fafc;
+    color: var(--cor-primaria);
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a.active {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    background-color: #eff6ff;
+}
+
+/* --- Botão de Tema --- */
+.toggle-theme {
+    background: rgba(255, 255, 255, 0.15);
+    /* Branco transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    margin-left: 15px;
+    color: white;
+}
+
+.toggle-theme:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* --- Overlay (Fundo escuro quando menu abre no mobile) --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.overlay.active {
+    opacity: 1;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Mobile/Tablet)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Ajustes do Container */
+    .header-container {
+        padding: 0 15px;
+    }
+
+    /* Mostrar Botão Mobile */
+    .mobile-menu-btn {
+        display: flex;
+        z-index: 1002;
+    }
+
+    /* Transformar o Menu em Sidebar Deslizante no Mobile */
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Começa fora da tela à direita */
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        /* Altura total da tela */
+        background-color: white;
+        flex-direction: column;
+        padding-top: 80px;
+        /* Espaço para não cobrir o header */
+        gap: 0;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        /* Fica acima do header */
+        overflow-y: auto;
+        /* Scroll interno se o menu for muito grande */
+    }
+
+    /* Classe ativa adicionada pelo JS para abrir o menu */
+    .menu.active {
+        right: 0;
+    }
+
+    /* Resetar links do menu mobile */
+    .menu a,
+    .menu-item>a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--cor-texto);
+        font-size: 1.1rem;
+        border-bottom: 1px solid #f1f5f9;
+        text-align: left;
+    }
+
+    /* Dropdowns no Mobile: Abrem verticalmente dentro da lista, não flutuam */
+    .menu-item {
+        display: block;
+        position: static;
+        /* Remove absolute positioning */
+        height: auto;
+        align-items: flex-start;
+        padding: 0;
+        /* Remove padding do desktop */
+    }
+
+    /* Dropdown Links no mobile */
+    .dropdown-menu {
+        display: none;
+        /* JS controla isso, ou CSS simples */
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-top: 0;
+        background-color: #f8fafc;
+        /* Fundo diferente para submenu */
+        border-bottom: 1px solid #e2e8f0;
+        border-radius: 0;
+        min-width: 100%;
+        transform: none;
+        /* Remove transform do desktop */
+        opacity: 1;
+        visibility: visible;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    /* Mostrar dropdown se tiver classe active (opcional se usar JS para classes no mobile) */
+    .dropdown-menu.mobile-open {
+        display: block !important;
+        border-top: 1px solid #e2e8f0;
+        /* Linha separadora visual */
+    }
+}

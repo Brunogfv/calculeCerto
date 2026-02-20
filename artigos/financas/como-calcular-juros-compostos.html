@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Como Calcular Juros Compostos: Fórmula, Exemplos e Simulações para 2026</title>
+    <meta name="description"
+        content="Aprenda como calcular juros compostos com a fórmula M = C(1+i)^t. Veja exemplos práticos, a diferença para juros simples, a Regra do 72 e simule investimentos reais.">
+    <meta name="keywords"
+        content="como calcular juros compostos, fórmula juros compostos, juros compostos exemplos, M = C(1+i)t, juros sobre juros, montante, capital, taxa CDI">
+    <meta name="author" content="Portal das Contas">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical"
+        href="https://www.portaldascontas.com.br/artigos/investimentos/como-calcular-juros-compostos.html">
+
+    <meta property="og:title" content="Como Calcular Juros Compostos: Fórmula, Exemplos e Simulações para 2026">
+    <meta property="og:description"
+        content="Guia completo sobre juros compostos: fórmula passo a passo, exemplos resolvidos, comparação com juros simples e a Regra do 72.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_BR">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Como Calcular Juros Compostos: Fórmula, Exemplos e Simulações para 2026",
+      "description": "Guia completo sobre juros compostos com a fórmula M = C(1+i)^t, exemplos práticos resolvidos, comparação com juros simples e a Regra do 72.",
+      "author": {"@type": "Organization", "name": "Portal das Contas"},
+      "publisher": {"@type": "Organization", "name": "Portal das Contas"},
+      "datePublished": "2026-02-18",
+      "dateModified": "2026-02-18",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.portaldascontas.com.br/artigos/investimentos/como-calcular-juros-compostos.html"},
+      "articleSection": "Investimentos",
+      "keywords": ["juros compostos", "fórmula juros compostos", "montante", "CDI", "renda fixa", "investimentos"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Qual a fórmula dos juros compostos?", "acceptedAnswer": {"@type": "Answer", "text": "A fórmula é M = C × (1 + i)^t, onde M é o montante final, C é o capital inicial, i é a taxa de juros em decimal e t é o tempo. O resultado J (juros) é obtido subtraindo o capital: J = M − C."}},
+        {"@type": "Question", "name": "Qual a diferença entre juros simples e compostos?", "acceptedAnswer": {"@type": "Answer", "text": "Nos juros simples, os juros são calculados sempre sobre o capital inicial. Nos compostos, os juros são calculados sobre o capital mais os juros já acumulados — o famoso 'juros sobre juros'. Com o tempo, a diferença entre os dois modelos se torna enorme."}},
+        {"@type": "Question", "name": "O que é a Regra do 72?", "acceptedAnswer": {"@type": "Answer", "text": "É um atalho mental para estimar em quanto tempo um investimento dobra de valor com juros compostos. Basta dividir 72 pela taxa de juros anual. Exemplo: a 8% ao ano, o capital dobra em aproximadamente 9 anos (72 ÷ 8 = 9)."}},
+        {"@type": "Question", "name": "Como converter taxa mensal em anual para juros compostos?", "acceptedAnswer": {"@type": "Answer", "text": "A conversão NÃO é simples (não basta multiplicar por 12). A taxa anual equivalente é calculada como: taxa anual = (1 + taxa mensal)^12 − 1. Exemplo: 1% ao mês equivale a (1,01)^12 − 1 = 12,68% ao ano, não 12%."}},
+        {"@type": "Question", "name": "Juros compostos são usados em financiamentos?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. A maioria dos financiamentos, empréstimos pessoais e cartões de crédito utiliza o regime de juros compostos. Por isso dívidas no cartão crescem rapidamente — a mesma lógica de crescimento exponencial que beneficia o investidor, prejudica o devedor."}}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.portaldascontas.com.br/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.portaldascontas.com.br/artigos/index.html"},
+        {"@type": "ListItem", "position": 3, "name": "Investimentos"},
+        {"@type": "ListItem", "position": 4, "name": "Como Calcular Juros Compostos"}
+      ]
+    }
+    </script>
+
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-STVR24Q61S');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="/artigos/css/o-que-e-roi.css"> -->
+     <link rel="stylesheet" href="/artigos/css/como-calcular-juros-compostos.css">
+
+    <style>
+
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- ══════════════════════════════════
+        HEADER — PRESERVADO
+        ══════════════════════════════════ -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="/index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="/calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="/calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="/calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="/calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="/calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="/calculadoras/gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="/calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="/calculadoras/pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="/calculadoras/nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="/calculadoras/equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="/calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="/calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="/calculadoras/medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="/calculadoras/churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="/calculadoras/pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="/calculadoras/energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="/calculadoras/festa.html" class="active" onclick="toggleMenu()">Calculadora de
+                            Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="/calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="/calculadoras/conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="/calculadoras/velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="/calculadoras/kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="/artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-wrapper">
+
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../../index.html">Home</a><span>›</span>
+                <a href="../index.html">Blog</a><span>›</span>
+                <a href="../index.html">Investimentos</a><span>›</span>
+                <span aria-current="page">Como Calcular Juros Compostos</span>
+            </nav>
+
+            <p class="article-eyebrow">Investimentos &amp; Matemática Financeira</p>
+            <h1 class="article-title">Como Calcular <em>Juros Compostos</em>: Fórmula, Exemplos e a Regra do 72</h1>
+
+            <p class="article-intro">
+                "Os juros compostos são a oitava maravilha do mundo." A frase atribuída a Einstein resume por que esse
+                conceito é o mais poderoso da matemática financeira. <strong>Quem entende, lucra. Quem ignora,
+                    paga.</strong> Neste guia você vai aprender a fórmula do zero, ver exemplos resolvidos e entender
+                por que o tempo é o ingrediente mais valioso de qualquer investimento.
+            </p>
+
+            <div class="article-meta">
+                <span>📅 <strong>Atualizado em:</strong> 18 de fevereiro de 2026</span>
+                <span>⏱ <strong>Leitura:</strong> ~8 minutos</span>
+                <span>✍️ <strong>Por:</strong> Equipe Portal das Contas</span>
+            </div>
+
+            <article class="article-content">
+
+                <h2 id="o-que-e">1. O Que São Juros Compostos?</h2>
+                <p>Juros compostos são aqueles calculados <strong>sobre o capital inicial mais os juros já
+                        acumulados</strong>. A cada período, o valor gerado nos períodos anteriores passa a integrar a
+                    base de cálculo — criando o famoso efeito de "<strong>juros sobre juros</strong>". O resultado é um
+                    crescimento exponencial, muito mais acelerado do que o crescimento linear dos juros simples.</p>
+
+                <div class="hbox">
+                    <strong>💡 A lógica em uma frase:</strong>
+                    Em juros simples, você ganha juros sobre o capital. Em juros compostos, você ganha juros sobre o
+                    capital <em>e</em> sobre todos os juros acumulados anteriormente — e aí a mágica começa.
+                </div>
+
+                <h2 id="formula">2. A Fórmula: M = C × (1 + i)<sup>t</sup></h2>
+                <p>A fórmula dos juros compostos é simples de entender e extremamente poderosa na prática. Com ela é
+                    possível calcular o montante final de qualquer investimento ou dívida:</p>
+
+                <div class="formula-box">
+                    <span class="f-label">Fórmula</span>
+                    <span class="f-main">M = C × (1 + i)<sup style="font-size:.6em">t</sup></span>
+                    <ul class="f-legenda">
+                        <li><strong>M</strong> = Montante final (capital + juros)</li>
+                        <li><strong>C</strong> = Capital inicial investido</li>
+                        <li><strong>i</strong> = Taxa de juros em <em>decimal</em> (ex.: 10% → 0,10)</li>
+                        <li><strong>t</strong> = Tempo (na mesma unidade da taxa: meses ou anos)</li>
+                        <li><strong>J = M − C</strong> (valor dos juros puro)</li>
+                    </ul>
+                </div>
+
+                <h2 id="passo-a-passo">3. Como Calcular Passo a Passo</h2>
+
+                <p>Seguindo 5 passos simples qualquer cálculo de juros compostos pode ser resolvido manualmente:</p>
+
+                <div class="exemplo-card">
+                    <h4>📋 Os 5 passos do cálculo</h4>
+                    <div class="ex-linha"><span class="el">Passo 1</span><span>Identifique o capital inicial (C), a taxa
+                            (i%) e o tempo (t).</span></div>
+                    <div class="ex-linha"><span class="el">Passo 2</span><span>Converta a taxa percentual para decimal:
+                            divida por 100. Ex.: 1,5% → 0,015.</span></div>
+                    <div class="ex-linha"><span class="el">Passo 3</span><span>Certifique-se de que taxa e tempo estão
+                            na mesma unidade (ambos mensais ou ambos anuais).</span></div>
+                    <div class="ex-linha"><span class="el">Passo 4</span><span>Aplique: M = C × (1 + i)<sup>t</sup>.
+                            Calcule a potência primeiro, depois multiplique por C.</span></div>
+                    <div class="ex-linha"><span class="el">Passo 5</span><span>Para encontrar só os juros: J = M −
+                            C.</span></div>
+                </div>
+
+                <h2 id="exemplos">4. Exemplos Práticos Resolvidos</h2>
+
+                <h3>Exemplo 1 — Investimento de R$ 5.000 a 1% ao mês por 12 meses</h3>
+                <div class="exemplo-card">
+                    <h4>💰 Dados do problema</h4>
+                    <div class="ex-linha"><span class="el">Capital (C)</span><span>R$ 5.000,00</span></div>
+                    <div class="ex-linha"><span class="el">Taxa (i)</span><span>1% ao mês = 0,01</span></div>
+                    <div class="ex-linha"><span class="el">Tempo (t)</span><span>12 meses</span></div>
+                    <div class="ex-linha"><span class="el">Cálculo</span><span>M = 5.000 × (1 + 0,01)<sup>12</sup> =
+                            5.000 × 1,12683 = <strong>R$ 5.634,13</strong></span></div>
+                    <div class="ex-resultado verde">
+                        <span>Juros ganhos (J = M − C)</span>
+                        <span class="rv">+ R$ 634,13</span>
+                    </div>
+                </div>
+
+                <h3>Exemplo 2 — Dívida de R$ 2.000 no cartão de crédito a 12% ao mês por 3 meses</h3>
+                <div class="exemplo-card">
+                    <h4>⚠️ O lado perigoso dos juros compostos</h4>
+                    <div class="ex-linha"><span class="el">Capital (C)</span><span>R$ 2.000,00</span></div>
+                    <div class="ex-linha"><span class="el">Taxa (i)</span><span>12% ao mês = 0,12</span></div>
+                    <div class="ex-linha"><span class="el">Tempo (t)</span><span>3 meses</span></div>
+                    <div class="ex-linha"><span class="el">Cálculo</span><span>M = 2.000 × (1,12)<sup>3</sup> = 2.000 ×
+                            1,40493 = <strong>R$ 2.809,86</strong></span></div>
+                    <div class="ex-resultado">
+                        <span>Juros cobrados em apenas 3 meses</span>
+                        <span class="rv">+ R$ 809,86</span>
+                    </div>
+                </div>
+
+                <div class="hbox vermelho">
+                    <strong>⚠️ Atenção com o cartão de crédito:</strong> Uma dívida de R$ 2.000 rotativa a 12% ao mês
+                    dobra de valor em menos de 7 meses. Os juros compostos que enriquecem o investidor, arruínam o
+                    devedor. A mesma fórmula, efeitos opostos.
+                </div>
+
+                <h2 id="crescimento">5. O Poder do Tempo: Veja o Dinheiro Crescer</h2>
+                <p>Uma das visualizações mais impactantes dos juros compostos é ver como um investimento de <strong>R$
+                        10.000 a 10% ao ano</strong> evolui com o tempo:</p>
+
+                <div class="growth-grid">
+                    <div class="growth-card">
+                        <div class="gc-ano">Ano 1</div>
+                        <div class="gc-val">R$ 11.000</div>
+                        <div class="gc-juros">+R$ 1.000</div>
+                        <div class="gc-bar" style="width:10%; background: var(--roxo-med);"></div>
+                    </div>
+                    <div class="growth-card">
+                        <div class="gc-ano">Ano 5</div>
+                        <div class="gc-val">R$ 16.105</div>
+                        <div class="gc-juros">+R$ 6.105</div>
+                        <div class="gc-bar" style="width:38%; background: var(--roxo);"></div>
+                    </div>
+                    <div class="growth-card">
+                        <div class="gc-ano">Ano 10</div>
+                        <div class="gc-val">R$ 25.937</div>
+                        <div class="gc-juros">+R$ 15.937</div>
+                        <div class="gc-bar" style="width:62%;"></div>
+                    </div>
+                    <div class="growth-card">
+                        <div class="gc-ano">Ano 20</div>
+                        <div class="gc-val">R$ 67.275</div>
+                        <div class="gc-juros">+R$ 57.275</div>
+                        <div class="gc-bar" style="width:100%;"></div>
+                    </div>
+                </div>
+
+                <p>Perceba que nos primeiros anos o crescimento parece lento. Mas a partir do ano 10, o efeito
+                    acumulativo dispara — os juros passam a gerar mais valor do que o capital original. Isso é o que os
+                    economistas chamam de <strong>aceleração exponencial</strong>.</p>
+
+                <h2 id="simples-vs-compostos">6. Juros Simples vs. Compostos</h2>
+                <p>Entender a diferença entre os dois regimes é fundamental para nunca ser enganado em um contrato
+                    financeiro:</p>
+
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Juros Simples</th>
+                            <th>Juros Compostos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Fórmula</strong></td>
+                            <td>M = C × (1 + i × t)</td>
+                            <td>M = C × (1 + i)<sup>t</sup></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Crescimento</strong></td>
+                            <td>Linear</td>
+                            <td class="tc-pos">Exponencial</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Base de cálculo</strong></td>
+                            <td>Sempre o capital inicial</td>
+                            <td class="tc-pos">Capital + juros acumulados</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Melhor para</strong></td>
+                            <td>Cálculos de curto prazo</td>
+                            <td>Investimentos de longo prazo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Usado em</strong></td>
+                            <td>Notas promissórias, títulos simples</td>
+                            <td>CDB, Tesouro, crédito rotativo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exemplo: R$ 1.000 a 10% a.a. por 10 anos</strong></td>
+                            <td>R$ 2.000</td>
+                            <td class="tc-pos">R$ 2.594</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="regra72">7. A Regra do 72: Quanto Tempo Para Dobrar?</h2>
+                <p>A <strong>Regra do 72</strong> é um atalho mental poderoso para estimar o tempo necessário para
+                    dobrar um capital com juros compostos. Basta dividir 72 pela taxa de juros:</p>
+
+                <div class="formula-box">
+                    <span class="f-label">Regra do 72</span>
+                    <span class="f-main">Tempo para dobrar ≈ 72 ÷ taxa (%)</span>
+                    <ul class="f-legenda">
+                        <li>A 6% ao ano → dobra em ~12 anos (72 ÷ 6 = 12)</li>
+                        <li>A 10% ao ano → dobra em ~7,2 anos (72 ÷ 10 = 7,2)</li>
+                        <li>A 12% ao mês → dobra em ~6 meses (dívida no cartão!)</li>
+                    </ul>
+                </div>
+
+                <div class="hbox verde">
+                    <strong>✅ Dica prática:</strong> Use a Regra do 72 para comparar rapidamente investimentos. Se um
+                    CDB paga 10% ao ano, seu dinheiro dobra em ~7 anos. Se outro paga 12%, dobra em ~6 anos. A diferença
+                    de 2 pontos percentuais vale 1 ano inteiro de crescimento acumulado.
+                </div>
+
+                <h2 id="conversao">8. Convertendo Taxa Mensal em Anual (e vice-versa)</h2>
+                <p>Em juros compostos, a conversão de taxas <strong>não é linear</strong>. Este é o erro mais comum
+                    cometido por iniciantes — e que pode levar a cálculos completamente errados:</p>
+
+                <div class="hbox amber">
+                    <strong>⚠️ Erro clássico:</strong> Multiplicar a taxa mensal por 12 para obter a taxa anual. Isso só
+                    funciona em juros simples. Em juros compostos, 1% ao mês equivale a 12,68% ao ano — não 12%.
+                </div>
+
+                <div class="formula-box">
+                    <span class="f-label">Conversão de Taxas Equivalentes</span>
+                    <span class="f-main">i_anual = (1 + i_mensal)<sup style="font-size:.55em">12</sup> − 1</span>
+                    <ul class="f-legenda">
+                        <li>1% ao mês → (1,01)<sup>12</sup> − 1 = <strong>12,68% ao ano</strong></li>
+                        <li>0,5% ao mês → (1,005)<sup>12</sup> − 1 = <strong>6,17% ao ano</strong></li>
+                        <li>2% ao mês → (1,02)<sup>12</sup> − 1 = <strong>26,82% ao ano</strong></li>
+                    </ul>
+                </div>
+
+                <div class="cta-box">
+                    <h3>🧮 Simule Qualquer Cenário de Juros</h3>
+                    <p>Nossa calculadora faz todos esses cálculos instantaneamente — com tabela de evolução mês a mês.
+                    </p>
+                    <a href="/calculadoras/juros.html" class="cta-btn">Usar Calculadora de Juros →</a>
+                </div>
+
+                <h2 id="conclusao">Conclusão</h2>
+                <p>Juros compostos são a força mais silenciosa e mais poderosa das finanças pessoais. Quando você
+                    investe, eles trabalham <em>para</em> você — dobrando e triplicando seu capital com o tempo. Quando
+                    você se endivida, trabalham <em>contra</em> você com a mesma implacabilidade. A diferença entre
+                    ricos e endividados, muitas vezes, está apenas em qual lado desta equação a pessoa está.</p>
+                <p>Comece cedo, reinvista os rendimentos e deixe o tempo fazer o trabalho pesado.</p>
+
+            </article>
+
+            <div class="author-box">
+                <div class="author-avatar">📊</div>
+                <div class="author-info">
+                    <h4>Equipe Editorial — Portal das Contas</h4>
+                    <p>Conteúdo educacional baseado em matemática financeira e conceitos de economia. Não constitui
+                        recomendação de investimento. Consulte um assessor certificado para decisões financeiras.</p>
+                </div>
+            </div>
+
+            <section class="faq-section">
+                <h2>Perguntas Frequentes</h2>
+
+                <details class="faq-item">
+                    <summary>Qual a fórmula dos juros compostos?</summary>
+                    <div class="faq-answer">A fórmula é <strong>M = C × (1 + i)<sup>t</sup></strong>, onde M é o
+                        montante final, C é o capital inicial, i é a taxa em decimal e t é o tempo. Para obter só os
+                        juros: J = M − C.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Qual a diferença entre juros simples e compostos?</summary>
+                    <div class="faq-answer">Nos juros simples, os juros incidem sempre sobre o capital inicial —
+                        crescimento linear. Nos compostos, os juros de cada período passam a integrar a base de cálculo
+                        do próximo — crescimento exponencial. No longo prazo, a diferença é enorme.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>O que é a Regra do 72?</summary>
+                    <div class="faq-answer">É um atalho para estimar em quantos anos um capital dobra: basta dividir 72
+                        pela taxa de juros anual. A 8% ao ano, o capital dobra em aproximadamente 9 anos (72 ÷ 8 = 9). É
+                        uma estimativa, mas muito precisa para taxas entre 6% e 15%.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Como converter taxa mensal em anual?</summary>
+                    <div class="faq-answer">A conversão correta para juros compostos é: <strong>i_anual = (1 +
+                            i_mensal)<sup>12</sup> − 1</strong>. Nunca multiplique por 12 — isso só vale para juros
+                        simples. Exemplo: 1% ao mês = 12,68% ao ano (não 12%).</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Juros compostos são usados em financiamentos?</summary>
+                    <div class="faq-answer">Sim. Financiamentos, empréstimos pessoais e o crédito rotativo do cartão de
+                        crédito usam juros compostos. Uma dívida no cartão a 12% ao mês dobra em menos de 7 meses — a
+                        mesma fórmula que enriquece o investidor destrói o devedor.</div>
+                </details>
+            </section>
+
+            <section class="related-section">
+                <h2>Veja Também</h2>
+                <div class="cards-grid">
+                    <a href="/artigos/financas/investir-cdb.html" class="card">
+                        <span class="card-icon">🏦</span>
+                        <span class="card-tag">Artigo</span>
+                        <span class="card-title">Vale a Pena Investir em CDB?</span>
+                        <span class="card-arrow">Ler artigo →</span>
+                    </a>
+                    <a href="o-que-e-roi.html" class="card">
+                        <span class="card-icon">📈</span>
+                        <span class="card-tag">Artigo</span>
+                        <span class="card-title">O Que é ROI?</span>
+                        <span class="card-arrow">Ler artigo →</span>
+                    </a>
+                    <a href="/calculadoras/juros.html" class="card">
+                        <span class="card-icon">🧮</span>
+                        <span class="card-tag">Calculadora</span>
+                        <span class="card-title">Calculadora de Juros Compostos</span>
+                        <span class="card-arrow">Simular →</span>
+                    </a>
+                    <a href="/artigos/financas/calcular-porcentagem.html" class="card">
+                        <span class="card-icon">%</span>
+                        <span class="card-tag">Artigo</span>
+                        <span class="card-title">Como Calcular Porcentagem</span>
+                        <span class="card-arrow">Ler artigo →</span>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="/paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="/paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="/paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="/paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function alternarTema() {
+            const body = document.body, icon = document.getElementById('theme-icon');
+            const t = body.getAttribute('data-theme');
+            body.setAttribute('data-theme', t === 'light' ? 'dark' : 'light');
+            icon.textContent = t === 'light' ? '☀️' : '🌙';
+            localStorage.setItem('theme', t === 'light' ? 'dark' : 'light');
+        }
+        const saved = localStorage.getItem('theme');
+        if (saved) { document.body.setAttribute('data-theme', saved); document.getElementById('theme-icon').textContent = saved === 'light' ? '🌙' : '☀️'; }
+        function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); document.querySelector('.overlay').classList.toggle('active'); }
+    </script>
+    <script src="../../js/ads.js"></script>
+</body>
+
+</html>

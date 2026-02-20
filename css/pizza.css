@@ -1,0 +1,79 @@
+:root {
+    --cor-primaria: #f97316;
+    --cor-secundaria: #10b981;
+    --cor-fundo: #f8fafc;
+    --cor-card: #ffffff;
+    --cor-borda: #e2e8f0;
+    --cor-texto: #1e293b;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--cor-fundo);
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    color: var(--cor-primaria);
+}
+
+.sub {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.pizza-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pizza-card {
+    background: var(--cor-card);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid var(--cor-borda);
+    width: 250px;
+    transition: 0.3s;
+}
+
+.pizza-card input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border: none;
+    background: var(--cor-primaria);
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.resultado {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--cor-secundaria);
+    color: white;
+    font-weight: bold;
+}

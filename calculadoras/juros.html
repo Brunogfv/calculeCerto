@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Calcule juros simples e compostos online. Descubra juros e montante final de forma rápida, gratuita e confiável.">
+        content="Use nossa calculadora de juros simples e compostos online grátis. Descubra o valor final do investimento, total em juros e compare os dois tipos de rendimento de forma rápida e segura.">
+
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -27,7 +28,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/juros.css">
 
-    <title>Calculadora de Juros Online | Portal das Contas</title>
+    <title>Calculadora de Juros Simples e Compostos Online Grátis | Portal das Contas</title>
+
 </head>
 
 <body data-theme="light">
@@ -62,6 +64,7 @@
                         <a href="./inss.html" onclick="toggleMenu()">INSS</a>
                         <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
                         <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
                         <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
                         <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
                     </div>
@@ -74,6 +77,7 @@
                         <a href="./imc.html" onclick="toggleMenu()">IMC</a>
                         <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
                         <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
                         <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
                     </div>
                 </div>
@@ -83,6 +87,7 @@
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
                     <div class="dropdown-menu">
                         <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="./pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
                     </div>
                 </div>
 
@@ -91,6 +96,13 @@
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
                     <div class="dropdown-menu">
                         <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="./regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="./nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="./cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="./mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="./equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="./bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="./forca.html" onclick="toggleMenu()">Força (Física)</a>
                     </div>
                 </div>
 
@@ -101,17 +113,30 @@
                         <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
                         <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
                         <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="./medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="./churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="./pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="./energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="./festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
                     </div>
                 </div>
 
-                <!-- Categoria Utilitários (NOVA) -->
+                <!-- Categoria Utilitários -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
                     <div class="dropdown-menu">
                         <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
                         <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="./conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="./velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="./kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
                     </div>
                 </div>
+
+                <div class="menu-item">
+                    <a href="../artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
 
                 <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
                 <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
@@ -127,9 +152,24 @@
         <div class="calculator-wrapper">
             <div class="calc-card">
                 <div class="calc-header">
-                    <h2>Calculadora de Juros</h2>
+                    <h1>Calculadora de Juros</h1>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Simule seus investimentos e financiamentos.</p>
                 </div>
+
+                <section class="intro-seo" style="margin-bottom:30px;">
+                    <h2>Como calcular juros simples e compostos?</h2>
+                    <p>
+                        A calculadora de juros permite simular investimentos, financiamentos e empréstimos.
+                        Você pode calcular tanto juros simples quanto juros compostos,
+                        informando o capital inicial, a taxa de juros e o tempo.
+                    </p>
+                    <p>
+                        Nos juros simples, o cálculo é feito sempre sobre o valor inicial.
+                        Já nos juros compostos, os juros são aplicados sobre o valor acumulado,
+                        gerando o famoso "juros sobre juros".
+                    </p>
+                </section>
+
 
                 <div class="inputs-grid">
                     <div class="input-group">

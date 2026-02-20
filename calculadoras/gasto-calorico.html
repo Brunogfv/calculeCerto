@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculadora de Gasto Calórico: Descubra quantas calorias você queima correndo, caminhando ou na academia. Baseado no seu peso e tempo de atividade.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/medias.css">
+
+    <title>Calculadora de Gasto Calórico | Portal das Contas</title>
+
+    <style>
+        .activity-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .activity-select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid var(--cor-borda);
+            border-radius: 8px;
+            background-color: white;
+            cursor: pointer;
+            appearance: none;
+            /* Remove seta padrão para customizar se quiser, mas vamos manter simples */
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        .activity-select:focus {
+            outline: none;
+            border-color: var(--cor-primaria);
+        }
+
+        .food-equivalent {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff7ed;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ffedd5;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #9a3412;
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="./pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="./regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="./nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="./cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="./mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="./equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="./bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="./forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="./medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="./churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="./pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="./energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="./festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="./conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="./velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="./kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="../artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de Gasto Calórico</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra quantas calorias você queima em suas
+                        atividades.</p>
+                </div>
+
+                <div class="activity-grid">
+                    <div class="input-group">
+                        <label style="display:block; margin-bottom:5px; font-weight:600; font-size:14px;">Seu Peso
+                            (kg):</label>
+                        <input type="number" id="peso" placeholder="Ex: 70" value="70">
+                    </div>
+
+                    <div class="input-group">
+                        <label style="display:block; margin-bottom:5px; font-weight:600; font-size:14px;">Atividade
+                            Física:</label>
+                        <select id="atividade" class="activity-select">
+                            <!-- Grupos de atividades -->
+                            <optgroup label="🏃 Corrida e Caminhada">
+                                <option value="3.5">Caminhada Leve (3.5 km/h)</option>
+                                <option value="5.0">Caminhada Rápida (5-6 km/h)</option>
+                                <option value="8.0">Correr Moderado (8 km/h)</option>
+                                <option value="11.5">Correr Rápido (10+ km/h)</option>
+                            </optgroup>
+
+                            <optgroup label="🚴 Esportes e Cardio">
+                                <option value="4.0">Ciclismo Leve (Lazer)</option>
+                                <option value="10.0">Ciclagem Intensa (20+ km/h)</option>
+                                <option value="6.0">Natação (Moderada)</option>
+                                <option value="8.0">Natação (Rápida)</option>
+                                <option value="3.0">Alongamento / Yoga</option>
+                                <option value="5.0">Dança (Aeróbica)</option>
+                                <option value="7.0">Futebol (Recreativo)</option>
+                                <option value="6.0">Tênis</option>
+                            </optgroup>
+
+                            <optgroup label="🏋️ Musculação e Força">
+                                <option value="3.0">Musculação (Leve)</option>
+                                <option value="5.0">Musculação (Pesada/Vigorosa)</option>
+                                <option value="8.0">CrossFit / HIIT</option>
+                            </optgroup>
+
+                            <optgroup label="🧹 Atividades Diárias">
+                                <option value="3.0">Limpeza Pesada</option>
+                                <option value="2.5">Jardinagem</option>
+                                <option value="1.5">Cozinhar</option>
+                                <option value="1.3">Sentado no Trabalho</option>
+                                <option value="0.9">Dormindo</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label style="display:block; margin-bottom:5px; font-weight:600; font-size:14px;">Duração
+                            (minutos):</label>
+                        <input type="number" id="tempo" placeholder="Ex: 30" value="30">
+                    </div>
+                </div>
+
+                <button class="btn-calc" onclick="calcularCalorias()">Calcular Queima</button>
+
+                <!-- Resultados -->
+                <div id="resultado-area" class="result-area" style="display: none;">
+                    <div class="result-box">
+                        <div class="media-value" id="valor-kcal">0 kcal</div>
+                        <div id="status-badge" class="status-badge" style="background: #dbeafe; color: #1e40af;">
+                            Atividade Calculada</div>
+
+                        <div style="margin-top: 15px; font-size: 0.9rem; color: var(--cor-texto-suave);">
+                            <p id="texto-met" style="margin:0;"></p>
+                        </div>
+
+                        <!-- Equivalência em Comida -->
+                        <div class="food-equivalent">
+                            <span style="font-size: 1.5rem;">🍔</span>
+                            <div>
+                                <strong>Isso equivale a:</strong>
+                                <div id="texto-comida">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <small style="color: #94a3b8;">Publicidade</small>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo / SEO -->
+            <aside class="info-card">
+                <article>
+                    <h3>Como funciona o cálculo?</h3>
+                    <p>
+                        Utilizamos a fórmula baseada no <strong>MET (Metabolic Equivalent of Task)</strong>, um padrão
+                        fisiológico que estima quanto gasto energético cada atividade exige em comparação ao repouso.
+                    </p>
+                    <p>
+                        <strong>A fórmula é:</strong><br>
+                        <em>Calorias = MET × Peso (kg) × Tempo (horas)</em>
+                    </p>
+                    <p>
+                        Por exemplo, Correr tem um MET alto (cerca de 8), pois exige muito mais energia do que Dormir
+                        (MET 0.9).
+                    </p>
+                </article>
+
+                <!-- Links Externos -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Saúde e Bem-estar</h3>
+                    <div class="link-grid">
+                        <a href="https://www.gov.br/saude/pt-br" target="_blank" rel="nofollow noopener"
+                            class="link-card">
+                            <span class="link-icon">🏥</span>
+                            <div>
+                                <div class="link-title">Ministério da Saúde</div>
+                                <div class="link-desc">Diretrizes oficiais de atividade física.</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.youtube.com/results?search_query=treino+em+casa+para+emagrecer"
+                            target="_blank" rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">📺</span>
+                            <div>
+                                <div class="link-title">Treinos em Casa</div>
+                                <div class="link-desc">Vídeos para começar hoje mesmo.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <article style="margin-top: 30px;">
+                    <h3>Perguntas Frequentes</h3>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Essas calorias são exatas?</summary>
+                            <p>Não. O cálculo é uma estimativa baseada na média da população. Fatores como idade,
+                                gênero, temperatura ambiente e condicionamento físico influenciam no gasto real, mas a
+                                ferramenta oferece uma excelente referência.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>O que é considerado "Pesado" na musculação?</summary>
+                            <p>Consideramos "pesado" quando a sessão envolve exercícios compostos, pouca pausa entre
+                                séries e alta intensidade, elevando significativamente a frequência cardíaca.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Andar de bicicleta queima muitas calorias?</summary>
+                            <p>Depende da velocidade e do terreno. Pedalar na cidade com paradas constantes queima menos
+                                (MET 4) do que um treino intenso de 20km/h ou subidas (MET 10+).</p>
+                        </details>
+                    </div>
+                </article>
+
+                <article
+                    style="margin-top: 30px; background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
+                    <h4 style="margin-top: 0; color: #15803d;">🥗 Dica Nutricional</h4>
+                    <p style="margin-bottom: 0; color: #166534; font-size: 0.9rem;">
+                        Lembre-se de que a alimentação responde por 70% dos resultados no emagrecimento. Não adianta
+                        queimar 500 kcal correndo se você comer 600 kcal a mais na refeição seguinte. O segredo é o
+                        déficit calórico consistente.
+                    </p>
+                </article>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+
+    <script>
+        carregarAnuncio('gasto_calorico');
+    </script>
+
+    <!-- Script da Calculadora de Gasto Calórico -->
+    <script>
+        // Lista de equivalências para tornar o resultado divertido (Kcal)
+        const equivalentes = [
+            { kcal: 350, nome: "1 Hambúrguer Médio", icone: "🍔" },
+            { kcal: 150, nome: "1 Latinha de Coca-Cola", icone: "🥤" },
+            { kcal: 80, nome: "1 Pedaco de Pizza", icone: "🍕" },
+            { kcal: 70, nome: "1 Cerveja (330ml)", icone: "🍺" },
+            { kcal: 110, nome: "1 Barra de Chocolate", icone: "🍫" },
+            { kcal: 200, nome: "1 Pão de Queijo", icone: "🧀" }
+        ];
+
+        function calcularCalorias() {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const met = parseFloat(document.getElementById('atividade').value);
+            const tempoMin = parseInt(document.getElementById('tempo').value);
+
+            if (isNaN(peso) || isNaN(met) || isNaN(tempoMin)) {
+                alert("Por favor, preencha todos os campos corretamente.");
+                return;
+            }
+
+            // Converter minutos para horas
+            const tempoHoras = tempoMin / 60;
+
+            // Fórmula: Kcal = MET * Peso(kg) * Tempo(horas)
+            const kcalTotal = met * peso * tempoHoras;
+
+            // Atualizar UI
+            const kcalArredondado = Math.round(kcalTotal);
+            document.getElementById('valor-kcal').innerText = `${kcalArredondado} kcal`;
+
+            const badge = document.getElementById('status-badge');
+            if (kcalArredondado > 500) {
+                badge.innerText = "Treino Intenso! 🔥";
+                badge.style.background = "#fee2e2";
+                badge.style.color = "#991b1b";
+            } else if (kcalArredondado > 200) {
+                badge.innerText = "Bom Treino 💪";
+                badge.style.background = "#dbeafe";
+                badge.style.color = "#1e40af";
+            } else {
+                badge.innerText = "Atividade Leve 🚶";
+                badge.style.background = "#f1f5f9";
+                badge.style.color = "#475569";
+            }
+
+            document.getElementById('texto-met').innerText = `Baseado no MET ${met} por ${tempoMin} minutos.`;
+
+            // Calcular equivalência em comida
+            // Encontra o item mais próximo
+            let itemProximo = equivalentes[0];
+            let menorDiferenca = Math.abs(kcalArredondado - equivalentes[0].kcal);
+
+            equivalentes.forEach(item => {
+                const diff = Math.abs(kcalArredondado - item.kcal);
+                if (diff < menorDiferenca) {
+                    menorDiferenca = diff;
+                    itemProximo = item;
+                }
+            });
+
+            // Calcular quantas vezes esse item cabe nas calorias queimadas
+            const vezes = (kcalArredondado / itemProximo.kcal).toFixed(1);
+
+            const textoComida = document.getElementById('texto-comida');
+            if (vezes >= 1) {
+                textoComida.innerHTML = `${itemProximo.icone} <strong>${vezes}x ${itemProximo.nome}</strong> (${itemProximo.kcal} kcal cada)`;
+            } else {
+                // Se queimou menos que um item inteiro, mostra a fração
+                textoComida.innerHTML = `${itemProximo.icone} <strong>${(vezes * 100).toFixed(0)}% de um ${itemProximo.nome}</strong>`;
+            }
+
+            document.getElementById('resultado-area').style.display = 'block';
+
+            // Scroll
+            if (window.innerWidth < 600) {
+                document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+        }
+    </script>
+</body>
+
+</html>

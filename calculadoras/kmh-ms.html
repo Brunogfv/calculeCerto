@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conversor de km/h para m/s online. Converta velocidades do sistema métrico para o Sistema Internacional de Unidades (SI) instantaneamente. Fórmula e tabela de referência.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/medias.css">
+
+    <title>Conversor de km/h para m/s | Portal das Contas</title>
+
+    <style>
+        .converter-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .converter-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .converter-box label {
+            font-weight: 600;
+            text-align: center;
+            color: var(--cor-texto-suave);
+            font-size: 1.1rem;
+        }
+
+        .converter-box input {
+            width: 100%;
+            padding: 20px;
+            font-size: 2rem;
+            text-align: center;
+            border: 2px solid var(--cor-borda);
+            border-radius: 12px;
+            font-weight: bold;
+            color: var(--cor-primaria);
+        }
+
+        .converter-box input:focus {
+            outline: none;
+            border-color: var(--cor-primaria);
+            background-color: #f0f9ff;
+        }
+
+        .exchange-icon {
+            font-size: 2rem;
+            color: #cbd5e1;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+        }
+
+        .formula-card {
+            background: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: monospace;
+            font-size: 1.1rem;
+        }
+
+        .ref-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .ref-table th,
+        .ref-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .ref-table th {
+            background-color: #f1f5f9;
+            color: var(--cor-texto-suave);
+        }
+
+        @media (max-width: 600px) {
+            .converter-container {
+                flex-direction: column;
+            }
+
+            .converter-box input {
+                font-size: 1.5rem;
+                padding: 15px;
+            }
+
+            .exchange-icon {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="./pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="./regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="./nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="./cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="./mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="./equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="./bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="./forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="./medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="./churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="./pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="./energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="./festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="./conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="./velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="./kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="../artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Conversor de km/h para m/s</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Converta quilômetros por hora em metros por
+                        segundo instantaneamente.</p>
+                </div>
+
+                <div class="converter-container">
+                    <!-- km/h -->
+                    <div class="converter-box">
+                        <label for="input-kmh">Quilômetros por Hora (km/h)</label>
+                        <input type="number" id="input-kmh" placeholder="0" oninput="converter('kmh')">
+                    </div>
+
+                    <div class="exchange-icon">⇄</div>
+
+                    <!-- m/s -->
+                    <div class="converter-box">
+                        <label for="input-ms">Metros por Segundo (m/s)</label>
+                        <input type="number" id="input-ms" placeholder="0" oninput="converter('ms')">
+                    </div>
+                </div>
+
+                <div class="formula-card">
+                    Fator de Conversão: <strong>Dividir por 3,6</strong>
+                </div>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <small style="color: #94a3b8;">Publicidade</small>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo / SEO Rico -->
+            <aside class="info-card">
+                <article>
+                    <h3>Entendendo a Conversão</h3>
+                    <p>
+                        Converter <strong>km/h</strong> para <strong>m/s</strong> é uma tarefa comum em física, mas gera
+                        dúvidas porque envolve duas unidades de tempo diferentes (hora e segundo) e duas de distância
+                        (quilômetro e metro).
+                    </p>
+
+                    <h4>A Matemática do 3,6</h4>
+                    <p>
+                        O número mágico <strong>3,6</strong> vem da relação entre as unidades:
+                    </p>
+                    <ul style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                        <li><strong>1 km = 1.000 metros</strong></li>
+                        <strong>➡ Divisão de 1000</strong>
+                        <li><strong>1 h = 3.600 segundos</strong> (60 min × 60 seg)</li>
+                        <strong>➡ Divisão por 3600</strong>
+                    </ul>
+                    <p>
+                        Logo: $1000 / 3600 = 1 / 3,6$. Por isso, para transformar km/h em m/s, basta <strong>dividir por
+                            3,6</strong>. Para voltar (m/s para km/h), basta <strong>multiplicar por 3,6</strong>.
+                    </p>
+                </article>
+
+                <!-- Links Externos (CORRIGIDO) -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Referências de Estudos</h3>
+                    <div class="link-grid">
+                        <a href="https://www.gov.br/inmetro/pt-br" target="_blank" rel="nofollow noopener"
+                            class="link-card">
+                            <span class="link-icon">⚖️</span>
+                            <div>
+                                <div class="link-title">INMETRO</div>
+                                <div class="link-desc">Instituto Nacional de Metrologia, Qualidade e Tecnologia.</div>
+                            </div>
+                        </a>
+
+                        <a href="https://pt.khanacademy.org/science/physics/one-dimensional-motion/displacement-velocity-time/a/what-is-velocity"
+                            target="_blank" rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">🏃</span>
+                            <div>
+                                <div class="link-title">Khan Academy</div>
+                                <div class="link-desc">Entenda velocidade e movimento de forma visual.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tabela de Referência -->
+                <article style="margin-top: 30px;">
+                    <h3>Tabela de Referência Rápida</h3>
+                    <table class="ref-table">
+                        <thead>
+                            <tr>
+                                <th>km/h</th>
+                                <th>m/s</th>
+                                <th>Contexto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3,6</td>
+                                <td>1</td>
+                                <td>Caminhada muito lenta</td>
+                            </tr>
+                            <tr>
+                                <td>10,8</td>
+                                <td>3</td>
+                                <td>Corrida leve</td>
+                            </tr>
+                            <tr>
+                                <td>36</td>
+                                <td>10</td>
+                                <td>Bicicleta urbana</td>
+                            </tr>
+                            <tr>
+                                <td>72</td>
+                                <td>20</td>
+                                <td>Limite em muitas avenidas</td>
+                            </tr>
+                            <tr>
+                                <td>108</td>
+                                <td>30</td>
+                                <td>Velocidade de autódromo (fórmula 1 em curvas lentas)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <!-- Dica Mental -->
+                <article
+                    style="margin-top: 30px; background: #ecfccb; padding: 20px; border-radius: 12px; border: 1px solid #bef264;">
+                    <h4 style="margin-top: 0; color: #3f6212;">🧠 Dica de Cálculo Mental</h4>
+                    <p style="margin-bottom: 0; color: #365314; font-size: 0.9rem;">
+                        Dividir por 3,6 na cabeça é difícil. Para uma estimativa rápida, <strong>divida por 4</strong>
+                        (é mais fácil) e depois some cerca de <strong>10%</strong> ao resultado.<br>
+                        <em>Ex: 72 km/h. 72 / 4 = 18. 10% de 18 é 1,8. 18 + 1,8 = 19,8 m/s (Resultado real: 20
+                            m/s).</em>
+                    </p>
+                </article>
+
+                <!-- FAQ Section -->
+                <article style="margin-top: 30px;">
+                    <h3>Perguntas Frequentes</h3>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Por que usamos km/h no trânsito?</summary>
+                            <p>Porque os números ficam mais amigáveis. Dizer que você está a "27,7 m/s" não ajuda o
+                                motorista a entender se está dentro do limite, mas dizer "100 km/h" é intuitivo.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>O que é m/s?</summary>
+                            <p>Metros por segundo (m/s) é a unidade padrão do Sistema Internacional de Unidades (SI)
+                                para velocidade. Ela é usada na física, engenharia e em cálculos precisos de distância e
+                                tempo.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Qual é a velocidade da luz em m/s?</summary>
+                            <p>A velocidade da luz no vácuo é aproximadamente <strong>299.792.458 m/s</strong> (ou cerca
+                                de 1.079.252.848,8 km/h).</p>
+                        </details>
+                    </div>
+                </article>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+
+    <script>
+        carregarAnuncio('kmh_ms');
+    </script>
+
+    <!-- Script do Conversor -->
+    <script>
+        function converter(origem) {
+            const inputKmh = document.getElementById('input-kmh');
+            const inputMs = document.getElementById('input-ms');
+
+            if (origem === 'kmh') {
+                // Convertendo de km/h para m/s
+                const valKmh = parseFloat(inputKmh.value);
+                if (!isNaN(valKmh)) {
+                    // Fator: dividir por 3.6
+                    const valMs = valKmh / 3.6;
+                    inputMs.value = Number.isInteger(valMs) ? valMs : valMs.toFixed(4).replace(/\.?0+$/, "");
+                } else {
+                    inputMs.value = '';
+                }
+            } else {
+                // Convertendo de m/s para km/h
+                const valMs = parseFloat(inputMs.value);
+                if (!isNaN(valMs)) {
+                    // Fator: multiplicar por 3.6
+                    const valKmh = valMs * 3.6;
+                    inputKmh.value = Number.isInteger(valKmh) ? valKmh : valKmh.toFixed(4).replace(/\.?0+$/, "");
+                } else {
+                    inputKmh.value = '';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

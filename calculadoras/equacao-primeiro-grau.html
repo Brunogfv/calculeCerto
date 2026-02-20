@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculadora de Equação do 1º Grau online. Encontre a raiz (valor de X) de equações lineares do tipo ax + b = 0 com passo a passo detalhado.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/medias.css">
+
+    <title>Calculadora de Equação do 1º Grau | Portal das Contas</title>
+
+    <style>
+        /* Visualização da Equação */
+        .equation-display {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px dashed #e2e8f0;
+            margin: 20px 0;
+            color: var(--cor-texto);
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .var-x {
+            color: var(--cor-primaria);
+            font-style: italic;
+        }
+
+        /* Inputs lado a lado */
+        .coefficients-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .coeff-input {
+            width: 100px;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 10px;
+            border: 2px solid var(--cor-borda);
+            border-radius: 8px;
+        }
+
+        .coeff-input:focus {
+            border-color: var(--cor-primaria);
+            outline: none;
+        }
+
+        /* Passo a passo */
+        .step-box {
+            background: white;
+            border-left: 4px solid var(--cor-primaria);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: var(--cor-primaria);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .step-math {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 500px) {
+            .equation-display {
+                font-size: 1.5rem;
+                padding: 15px;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="./pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="./regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="./nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="./cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="./mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="./equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="./bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="./forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="./medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="./churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="./pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="./energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="./festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="./conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="./velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="./kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="../artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de Equação do 1º Grau</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Resolva equações lineares (ax + b = 0) e veja o
+                        passo a passo.</p>
+                </div>
+
+                <!-- Visualização da Equação -->
+                <div class="equation-display" id="equation-visual">
+                    <!-- Será preenchido via JS: 2x + 10 = 0 -->
+                    <span id="vis-a">2</span><span class="var-x">x</span> + <span id="vis-b">10</span> = 0
+                </div>
+
+                <div class="coefficients-row">
+                    <div style="text-align:center;">
+                        <label
+                            style="display:block; font-size:0.8rem; color:var(--cor-texto-suave); margin-bottom:5px;">Coeficiente
+                            (a)</label>
+                        <input type="number" id="coef-a" class="coeff-input" value="2" oninput="atualizarVisual()">
+                    </div>
+
+                    <div style="font-size: 1.5rem; color: #cbd5e1;">+</div>
+
+                    <div style="text-align:center;">
+                        <label
+                            style="display:block; font-size:0.8rem; color:var(--cor-texto-suave); margin-bottom:5px;">Constante
+                            (b)</label>
+                        <input type="number" id="coef-b" class="coeff-input" value="10" oninput="atualizarVisual()">
+                    </div>
+
+                    <div style="font-size: 1.5rem; color: #cbd5e1;">= 0</div>
+                </div>
+
+                <button class="btn-calc" onclick="resolverEquacao()">Resolver Equação</button>
+
+                <!-- Resultados -->
+                <div id="resultado-area" class="result-area" style="display: none;">
+                    <div class="result-box">
+                        <div class="media-value" id="valor-x">x = 0</div>
+                        <div id="status-badge" class="status-badge">Solução Única</div>
+
+                        <!-- Passo a Passo -->
+                        <div style="margin-top: 25px; text-align: left;">
+                            <h4 style="margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">
+                                Passo a Passo:</h4>
+
+                            <div class="step-box">
+                                <div class="step-title">1. Isolar o termo com X</div>
+                                <div class="step-math" id="passo-1"></div>
+                            </div>
+
+                            <div class="step-box">
+                                <div class="step-title">2. Dividir pelo coeficiente de X</div>
+                                <div class="step-math" id="passo-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <small style="color: #94a3b8;">Publicidade</small>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo / SEO -->
+            <aside class="info-card">
+                <article>
+                    <h3>O que é Equação do 1º Grau?</h3>
+                    <p>
+                        A equação do 1º grau é uma igualdade matemática que envolve uma incógnita (geralmente
+                        representada por <strong>x, y ou z</strong>) elevada ao expoente 1. A forma padrão é:
+                    </p>
+                    <div
+                        style="background: #e2e8f0; padding: 10px; text-align: center; font-family: monospace; font-size: 1.2rem; border-radius: 8px; margin: 10px 0;">
+                        ax + b = 0
+                    </div>
+                    <p>
+                        Onde <strong>a</strong> é o coeficiente (número que multiplica o x) e <strong>b</strong> é o
+                        termo independente (número sozinho). O objetivo é encontrar o valor de <strong>x</strong> que
+                        torna a igualdade verdadeira.
+                    </p>
+                </article>
+
+                <!-- Links Externos -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Aprenda Matemática</h3>
+                    <div class="link-grid">
+                        <a href="https://www.todamateria.com.br/equacao-do-primeiro-grau/" target="_blank"
+                            rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">📚</span>
+                            <div>
+                                <div class="link-title">Toda Matéria</div>
+                                <div class="link-desc">Equação do Primeiro Grau.</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.todamateria.com.br/equacao-do-1-grau-com-uma-incognita-exercicios/"
+                            target="_blank" rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">✏️</span>
+                            <div>
+                                <div class="link-title">Toda Matéria</div>
+                                <div class="link-desc">Definições e exercícios resolvidos.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <article style="margin-top: 30px;">
+                    <h3>Perguntas Frequentes</h3>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>O que é a Raiz da Equação?</summary>
+                            <p>A raiz da equação é o valor numérico que, ao substituir a incógnita (x), torna a
+                                igualdade verdadeira. Por exemplo, em 2x + 4 = 0, a raiz é -2, pois 2(-2) + 4 = 0.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>E se o coeficiente 'a' for zero?</summary>
+                            <p>Se a = 0 e b = 0, temos 0x + 0 = 0. Isso é uma <strong>Equação Indeterminada</strong>,
+                                pois qualquer número serve como resposta (infinitas soluções).<br>
+                                Se a = 0 e b ≠ 0, temos 0x + 5 = 0. Isso é uma <strong>Equação Impossível</strong>, pois
+                                0 é sempre igual a 0, nunca a 5.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Como resolver na cabeça?</summary>
+                            <p>Pense: "O que multiplicado por 'a' dá o negativo de 'b'?".
+                                Ex: 3x + 9 = 0. Pense: "Quanto vezes 3 dá -9?". A resposta é -3.</p>
+                        </details>
+                    </div>
+                </article>
+
+                <article
+                    style="margin-top: 30px; background: #fef3c7; padding: 20px; border-radius: 12px; border: 1px solid #fde68a;">
+                    <h4 style="margin-top: 0; color: #b45309;">🧠 Dica de Estudo</h4>
+                    <p style="margin-bottom: 0; color: #92400e; font-size: 0.9rem;">
+                        Sempre faça a prova real! Depois de encontrar o valor de X, coloque ele de volta na equação
+                        original e veja se o resultado é zero. Se não for zero, reveja suas contas.
+                    </p>
+                </article>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+
+    <script>
+        carregarAnuncio('equacao_primeiro_grau');
+    </script>
+
+    <!-- Script da Calculadora de Equação do 1º Grau -->
+    <script>
+        function atualizarVisual() {
+            // Atualiza a equação grande (Visual) baseada nos inputs
+            const a = document.getElementById('coef-a').value;
+            const b = document.getElementById('coef-b').value;
+
+            const visA = document.getElementById('vis-a');
+            const visB = document.getElementById('vis-b');
+
+            // Se a for 1 ou -1, não mostra o número, apenas o x (ex: x + 2 em vez de 1x + 2)
+            if (a == 1) visA.innerText = "";
+            else if (a == -1) visA.innerText = "-";
+            else visA.innerText = a;
+
+            // Sinal entre ax e b
+            const sinalContainer = document.querySelector('.equation-display > span:nth-child(2)'); // O +
+            // Precisamos manipular o texto. Simplificando: vamos reescrever o HTML interno
+            const container = document.getElementById('equation-visual');
+
+            let html = "";
+            const valorA = parseFloat(a) || 0;
+            const valorB = parseFloat(b) || 0;
+
+            // Parte A (ax)
+            if (valorA === 1) html += `<span class="var-x">x</span>`;
+            else if (valorA === -1) html += `-<span class="var-x">x</span>`;
+            else html += `${valorA}<span class="var-x">x</span>`;
+
+            // Sinal
+            if (valorB >= 0) {
+                html += ` + `;
+            } else {
+                html += ` - `;
+            }
+
+            // Parte B (b) - valor absoluto para visual
+            html += `${Math.abs(valorB)} = 0`;
+
+            container.innerHTML = html;
+        }
+
+        function resolverEquacao() {
+            const a = parseFloat(document.getElementById('coef-a').value);
+            const b = parseFloat(document.getElementById('coef-b').value);
+
+            const badge = document.getElementById('status-badge');
+            const passo1 = document.getElementById('passo-1');
+            const passo2 = document.getElementById('passo-2');
+            const resX = document.getElementById('valor-x');
+
+            // Casos Especiais (a = 0)
+            if (a === 0) {
+                if (b === 0) {
+                    // 0x + 0 = 0 -> Indeterminada
+                    resX.innerText = "Infinitas Soluções";
+                    badge.innerText = "Indeterminada (VSR)";
+                    badge.style.background = "#f1f5f9";
+                    badge.style.color = "#64748b";
+
+                    passo1.innerHTML = `0x + 0 = 0`;
+                    passo2.innerHTML = `0x = 0 <br><small>Qualquer valor de x satisfaz a equação.</small>`;
+                } else {
+                    // 0x + 5 = 0 -> Impossível
+                    resX.innerText = "Sem Solução";
+                    badge.innerText = "Impossível (SI)";
+                    badge.style.background = "#fee2e2";
+                    badge.style.color = "#991b1b";
+
+                    passo1.innerHTML = `0x + ${b} = 0`;
+                    passo2.innerHTML = `0x = ${-b} <br><small>Não existe número que multiplicado por 0 dá ${-b}.</small>`;
+                }
+            } else {
+                // Cálculo Normal
+                const x = -b / a;
+                const xFormatado = Number.isInteger(x) ? x : x.toFixed(2).replace(/\.?0+$/, "");
+
+                resX.innerText = `x = ${xFormatado}`;
+                badge.innerText = "Solução Única";
+                badge.style.background = "#dbeafe";
+                badge.style.color = "#1e40af";
+
+                // Passo 1: Isolar ax (passar b para o outro lado mudando sinal)
+                // Se b for positivo, vira negativo. Se b for negativo, vira positivo.
+                const bPassado = -b;
+                passo1.innerHTML = `${a}x = ${bPassado} <br><small>Passamos o termo independente para o outro lado, invertendo o sinal.</small>`;
+
+                // Passo 2: Dividir por a
+                passo2.innerHTML = `x = ${bPassado} ÷ ${a} <br><strong>x = ${xFormatado}</strong>`;
+            }
+
+            document.getElementById('resultado-area').style.display = 'block';
+
+            // Scroll
+            if (window.innerWidth < 600) {
+                document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+        }
+
+        // Inicializar visual
+        atualizarVisual();
+    </script>
+</body>
+
+</html>

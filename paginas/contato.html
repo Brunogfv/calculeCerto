@@ -15,7 +15,7 @@
     <!-- Overlay Mobile -->
     <div class="overlay" onclick="toggleMenu()"></div>
 
-    <!-- HEADER PADRÃO COM DROPDOWNS (RAIZ) -->
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
@@ -33,7 +33,8 @@
             </button>
 
             <nav class="menu" id="nav-menu">
-                <a href="../index.html" onclick="toggleMenu()">Início</a>
+                <a href="/index.html" onclick="toggleMenu()">Início</a>
+
 
                 <!-- Categoria Finanças -->
                 <div class="menu-item">
@@ -55,6 +56,7 @@
                         <a href="../calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
                         <a href="../calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
                         <a href="../calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="../calculadoras/gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
                         <a href="../calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
                     </div>
                 </div>
@@ -64,6 +66,7 @@
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
                     <div class="dropdown-menu">
                         <a href="../calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="../calculadoras/pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
                     </div>
                 </div>
 
@@ -72,6 +75,12 @@
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
                     <div class="dropdown-menu">
                         <a href="../calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="../calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="../calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="../calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="../calculadoras/equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="../calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="../calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
                     </div>
                 </div>
 
@@ -82,20 +91,34 @@
                         <a href="../calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
                         <a href="../calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
                         <a href="../calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="../calculadoras/churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="../calculadoras/pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="../calculadoras/energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="../calculadoras/festa.html" class="active" onclick="toggleMenu()">Calculadora de
+                            Festa</a>
                     </div>
                 </div>
 
-                <!-- Categoria Utilitários (NOVA) -->
+                <!-- Categoria Utilitários -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
                     <div class="dropdown-menu">
                         <a href="../calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
                         <a href="../calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="../calculadoras/conversor-unidades.html" onclick="toggleMenu()">Conversor de
+                            Unidades</a>
+                        <a href="../calculadoras/velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="../calculadoras/kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
                     </div>
                 </div>
 
-                <a href="sobre.html" onclick="toggleMenu()">Sobre</a>
-                <a href="contato.html" onclick="toggleMenu()">Contato</a>
+                <div class="menu-item">
+                    <a href="/artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
             </nav>
 
             <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
@@ -181,8 +204,8 @@
                         Somos</a>
                     <a href="contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
                         Conosco</a>
-                    <a href="privacidade.html"
-                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="privacidade.html" style="color: var(--cor-primaria); text-decoration: none;">Política de
+                        Privacidade</a>
                     <a href="termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
                         Uso</a>
                 </div>

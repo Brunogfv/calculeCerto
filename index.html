@@ -25,6 +25,8 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/header.css"> -->
+
     <title>Portal das Contas | Calculadora Online</title>
 
     <meta name="lomadee" content="2324685" />
@@ -35,11 +37,11 @@
     <!-- Overlay Mobile -->
     <div class="overlay" onclick="toggleMenu()"></div>
 
-    <!-- HEADER PADRÃO COM DROPDOWNS (RAIZ) -->
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
-                <a href="index.html">
+                <a href="/index.html">
                     <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
                         <path
                             d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
@@ -53,18 +55,19 @@
             </button>
 
             <nav class="menu" id="nav-menu">
-                <a href="index.html" onclick="toggleMenu()">Início</a>
+                <a href="/index.html" onclick="toggleMenu()">Início</a>
 
                 <!-- Categoria Finanças -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
                     <div class="dropdown-menu">
-                        <a href="calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
-                        <a href="calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
-                        <a href="calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
-                        <a href="calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
-                        <a href="calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
-                        <a href="calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <a href="/calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="/calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="/calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="/calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
                     </div>
                 </div>
 
@@ -72,10 +75,11 @@
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
                     <div class="dropdown-menu">
-                        <a href="calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
-                        <a href="calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
-                        <a href="calculadoras/agua.html" onclick="toggleMenu()">Água</a>
-                        <a href="calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
+                        <a href="/calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="/calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="/calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="/calculadoras/gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="/calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
                     </div>
                 </div>
 
@@ -83,7 +87,8 @@
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
                     <div class="dropdown-menu">
-                        <a href="calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="/calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="/calculadoras/pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
                     </div>
                 </div>
 
@@ -91,7 +96,14 @@
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
                     <div class="dropdown-menu">
-                        <a href="calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
                     </div>
                 </div>
 
@@ -99,23 +111,36 @@
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
                     <div class="dropdown-menu">
-                        <a href="calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
-                        <a href="calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
-                        <a href="calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="/calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="/calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="/calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="/calculadoras/medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="/calculadoras/churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="/calculadoras/pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="/calculadoras/energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="/calculadoras/festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
                     </div>
                 </div>
 
-                <!-- Categoria Utilitários (NOVA) -->
+                <!-- Categoria Utilitários -->
                 <div class="menu-item">
                     <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
                     <div class="dropdown-menu">
-                        <a href="calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
-                        <a href="calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="/calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="/calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="/calculadoras/conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="/calculadoras/velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="/calculadoras/kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
                     </div>
                 </div>
 
-                <a href="paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
-                <a href="paginas/contato.html" onclick="toggleMenu()">Contato</a>
+                <div class="menu-item">
+                    <a href="/artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
             </nav>
 
             <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
@@ -155,7 +180,7 @@
 
         <!-- SEÇÃO INTRODUTÓRIA (Conteúdo Rico para AdSense) -->
         <div
-            style="background: white; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0; margin-bottom: 50px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            style="background: var(--cor-card); padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0; margin-bottom: 50px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <h2 style="font-size: 1.8rem; color: var(--cor-primaria); margin-bottom: 20px; text-align: center;">
                 Por que usar o Portal das Contas?
             </h2>
@@ -518,6 +543,69 @@
                     </div>
                     <h3>Conversor de Temperatura</h3>
                     <p>Converta Celsius, Fahrenheit e Kelvin rapidamente.</p>
+                </a>
+            </div>
+        </div>
+        <!-- 7. DICAS E ARTIGOS (NOVA SEÇÃO NA HOME) -->
+        <div style="margin-bottom: 50px;">
+            <h3
+                style="display: flex; align-items: center; gap: 10px; color: var(--cor-texto); border-bottom: 2px solid #8b5cf6; padding-bottom: 10px; margin-bottom: 20px;">
+                📝 Dicas e Artigos Recentes
+            </h3>
+            <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+
+                <!-- Artigo Destaque 1 -->
+                <a href="/artigos/financas/como-calcular-juros-compostos.html" class="card">
+                    <div class="card-icon" style="color: #16a34a; background-color: rgba(22, 163, 74, 0.1);">
+                        <!-- Ícone de Livro/Dica -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Juros Compostos</h3>
+                    <p>Como Calcular Juros Compostos Passo a Passo (Guia Completo).</p>
+                </a>
+
+                <!-- Artigo Destaque 2 -->
+                <a href="/artigos/financas/hora-extra.html" class="card">
+                    <div class="card-icon" style="color: #d97706; background-color: rgba(217, 119, 6, 0.1);">
+                        <!-- Ícone de Relógio/Trabalho -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Calculando Hora Extra</h3>
+                    <p>Sabe quanto você deve receber? Veja o passo a passo para calcular o adicional de 50% e 100%
+                        corretamente.</p>
+                </a>
+
+                <!-- Artigo Destaque 3 -->
+                <a href="/artigos/utilitarios/litros-tinta.html" class="card">
+                    <div class="card-icon" style="color: #2563eb; background-color: rgba(37, 99, 235, 0.1);">
+                        <!-- Ícone de Pincel/Reforma -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                            <path d="M2 2l7.586 7.586"></path>
+                            <circle cx="11" cy="11" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>Quantidade de Tinta</h3>
+                    <p>Não erre na compra. Descubra quantos litros são necessários por metro quadrado para pintar sua
+                        casa.</p>
+                </a>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="/artigos/index.html"
+                    style="color: var(--cor-primaria); text-decoration: none; font-weight: 600; font-size: 0.95rem;">
+                    Ver todos os 10 artigos no Blog &rarr;
                 </a>
             </div>
         </div>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculadora de MMC e MDC online. Descubra o Mínimo Múltiplo Comum e o Máximo Divisor Comum de qualquer conjunto de números. Ferramenta gratuita para estudos de matemática.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/medias.css">
+
+    <title>Calculadora de MMC e MDC | Portal das Contas</title>
+
+    <style>
+        /* Estilos específicos para os resultados de MMC e MDC */
+        .result-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .result-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .result-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 1rem;
+            color: var(--cor-texto-suave);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .big-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--cor-primaria);
+            line-height: 1;
+        }
+
+        /* Cores diferenciadas para não confundir */
+        .res-mmc {
+            color: #059669;
+        }
+
+        /* Verde */
+        .res-mdc {
+            color: #2563eb;
+        }
+
+        /* Azul */
+
+        .input-number-only {
+            /* Remove setinhas do input number */
+            -moz-appearance: textfield;
+        }
+
+        .input-number-only::-webkit-outer-spin-button,
+        .input-number-only::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        @media (max-width: 500px) {
+            .result-split {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="./pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="./regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="./nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="./cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="./mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="./equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="./bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="./forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="./medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="./churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="./pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="./energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="./festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="./conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="./velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="./kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="../artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de MMC e MDC</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Encontre o Mínimo Múltiplo e o Máximo Divisor
+                        de forma rápida.</p>
+                </div>
+
+                <!-- Lista de Números -->
+                <div id="lista-numeros" class="notas-list">
+                    <div class="nota-row">
+                        <input type="number" placeholder="Número" class="input-nota input-number-only" value="12">
+                        <button class="btn-remover-cr" onclick="removerLinha(this)" disabled
+                            style="opacity: 0.3; cursor: default;">&times;</button>
+                    </div>
+                    <div class="nota-row">
+                        <input type="number" placeholder="Número" class="input-nota input-number-only" value="18">
+                        <button class="btn-remover-cr" onclick="removerLinha(this)">&times;</button>
+                    </div>
+                    <div class="nota-row">
+                        <input type="number" placeholder="Número" class="input-nota input-number-only" value="24">
+                        <button class="btn-remover-cr" onclick="removerLinha(this)">&times;</button>
+                    </div>
+                </div>
+
+                <button class="btn-add" onclick="adicionarNumero()">+ Adicionar Número</button>
+                <button class="btn-calc" onclick="calcularMMC_MDC()">Calcular</button>
+
+                <!-- Resultados -->
+                <div id="resultado-area" class="result-area" style="display: none;">
+                    <div class="result-split">
+                        <!-- MMC -->
+                        <div class="result-card">
+                            <h4>MMC (Mínimo Múltiplo)</h4>
+                            <div class="big-number res-mmc" id="res-mmc">0</div>
+                            <p style="font-size: 0.8rem; color: #64748b; margin-top: 5px;">Menor número divisível por
+                                todos.</p>
+                        </div>
+
+                        <!-- MDC -->
+                        <div class="result-card">
+                            <h4>MDC (Máximo Divisor)</h4>
+                            <div class="big-number res-mdc" id="res-mdc">0</div>
+                            <p style="font-size: 0.8rem; color: #64748b; margin-top: 5px;">Maior número que divide
+                                todos.</p>
+                        </div>
+                    </div>
+
+                    <div class="result-box" style="background: #fff; border: 1px solid #e2e8f0;">
+                        <h4 style="margin-top: 0; font-size: 1rem;">Detalhes</h4>
+                        <p id="detalhes-math"
+                            style="color: var(--cor-texto-suave); font-size: 0.9rem; line-height: 1.6;">
+                            <!-- Texto explicativo via JS -->
+                        </p>
+                    </div>
+                </div>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <small style="color: #94a3b8;">Publicidade</small>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo / SEO -->
+            <aside class="info-card">
+                <article>
+                    <h3>O que são MMC e MDC?</h3>
+                    <p>
+                        O <strong>MMC</strong> (Mínimo Múltiplo Comum) é o menor número positivo que é múltiplo de dois
+                        ou mais números. Ele é muito usado para somar frações com denominadores diferentes.
+                    </p>
+                    <p>
+                        O <strong>MDC</strong> (Máximo Divisor Comum) é o maior número que divide dois ou mais números
+                        sem deixar resto. É a ferramenta perfeita para simplificar frações ao seu estado mais
+                        irredutível.
+                    </p>
+                </article>
+
+                <!-- Links Externos -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Aprenda Mais</h3>
+                    <div class="link-grid">
+                        <a href="https://www.todamateria.com.br/mmc-e-mdc/" target="_blank" rel="nofollow noopener"
+                            class="link-card">
+                            <span class="link-icon">📐</span>
+                            <div>
+                                <div class="link-title">Todo Matéria</div>
+                                <div class="link-desc">Explicação detalhada e exercícios.</div>
+                            </div>
+                        </a>
+
+                        <a href="https://app.planejativo.com/estudar/549/resumo/matematica-basica-mmc-e-mdc"
+                            target="_blank" rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">✏️</span>
+                            <div>
+                                <div class="link-title">Planejativo</div>
+                                <div class="link-desc">Resumo de MMC e MDC.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <article style="margin-top: 30px;">
+                    <h3>Perguntas Frequentes</h3>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Como calcular o MMC de cabeça?</summary>
+                            <p>Para números pequenos, liste os múltiplos do maior número até encontrar um que também
+                                seja divisível pelos menores. Ex: MMC de 4 e 6. Múltiplos de 6: 6, 12... 12 é divisível
+                                por 4, então o MMC é 12.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Para que serve o MDC na vida real?</summary>
+                            <p>É usado para dividir coisas em partes iguais sem sobrar nada. Ex: Você tem 12 maças e 18
+                                peras e quer fazer cestas com a mesma quantidade de cada fruta, sem sobrar nada. O MDC
+                                diz quantas cestas você pode fazer (6 cestas).</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>O MDC de números primos é sempre 1?</summary>
+                            <p>Sim, se os números forem primos entre si (não compartilham divisores além do 1), o MDC
+                                será 1. Ex: MDC de 7 e 13 é 1.</p>
+                        </details>
+                    </div>
+                </article>
+
+                <article
+                    style="margin-top: 30px; background: #f0f9ff; padding: 20px; border-radius: 12px; border: 1px solid #bae6fd;">
+                    <h4 style="margin-top: 0; color: #0369a1;">💡 Dica Rápida</h4>
+                    <p style="margin-bottom: 0; color: #0c4a6e; font-size: 0.9rem;">
+                        Uma regra de ouro: o MMC nunca é menor que o maior número da lista. O MDC nunca é maior que o
+                        menor número da lista.
+                    </p>
+                </article>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+
+    <script>
+        carregarAnuncio('mmc_mdc');
+    </script>
+
+    <!-- Script da Calculadora de MMC e MDC -->
+    <script>
+        // Funções Matemáticas
+        function calcularMDC(a, b) {
+            return b === 0 ? a : calcularMDC(b, a % b);
+        }
+
+        function calcularMMC(a, b) {
+            // Evita overflow com divisão antes da multiplicação
+            return (a / calcularMDC(a, b)) * b;
+        }
+
+        function adicionarNumero() {
+            const container = document.getElementById('lista-numeros');
+            const div = document.createElement('div');
+            div.className = 'nota-row';
+            div.innerHTML = `
+                <input type="number" placeholder="Número" class="input-nota input-number-only">
+                <button class="btn-remover-cr" onclick="removerLinha(this)" title="Remover">&times;</button>
+            `;
+            container.appendChild(div);
+            atualizarBotoesRemover();
+        }
+
+        function removerLinha(btn) {
+            const row = btn.parentElement;
+            row.remove();
+            atualizarBotoesRemover();
+
+            if (document.getElementById('resultado-area').style.display === 'block') {
+                calcularMMC_MDC();
+            }
+        }
+
+        function atualizarBotoesRemover() {
+            const rows = document.querySelectorAll('.nota-row');
+            const botoes = document.querySelectorAll('.btn-remover-cr');
+
+            if (rows.length <= 1) {
+                botoes.forEach(btn => {
+                    btn.disabled = true;
+                    btn.style.opacity = '0.3';
+                    btn.style.cursor = 'default';
+                });
+            } else {
+                botoes.forEach(btn => {
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
+                });
+            }
+        }
+
+        function calcularMMC_MDC() {
+            const inputs = document.querySelectorAll('.input-number-only');
+            const numeros = [];
+
+            inputs.forEach(input => {
+                const val = parseInt(input.value);
+                if (!isNaN(val) && val > 0) {
+                    numeros.push(val);
+                }
+            });
+
+            if (numeros.length < 2) {
+                alert("Por favor, insira pelo menos dois números válidos maiores que zero.");
+                return;
+            }
+
+            // Calcular MDC (Reduz array)
+            const mdcAtual = numeros.reduce((a, b) => calcularMDC(a, b));
+
+            // Calcular MMC (Reduz array)
+            const mmcAtual = numeros.reduce((a, b) => calcularMMC(a, b));
+
+            // Exibir Resultados
+            document.getElementById('res-mdc').innerText = mdcAtual;
+            document.getElementById('res-mmc').innerText = mmcAtual;
+
+            // Explicação
+            const listaStr = numeros.join(', ');
+            document.getElementById('detalhes-math').innerHTML = `
+                Analisamos os números: <strong>${listaStr}</strong>.<br>
+                O <strong>MDC (${mdcAtual})</strong> é o maior número que pode dividir todos eles simultaneamente.<br>
+                O <strong>MMC (${mmcAtual})</strong> é o menor número que é múltiplo de todos eles.
+            `;
+
+            document.getElementById('resultado-area').style.display = 'block';
+
+            // Scroll
+            if (window.innerWidth < 600) {
+                document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+        }
+    </script>
+</body>
+
+</html>

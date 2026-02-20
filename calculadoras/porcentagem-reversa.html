@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculadora de Porcentagem Reversa: Descubra o valor original antes do desconto ou do acréscimo. Calcule o preço cheio a partir do valor com desconto.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/medias.css">
+
+    <title>Calculadora de Porcentagem Reversa | Portal das Contas</title>
+
+    <style>
+        /* Toggle de Modo */
+        .type-toggle {
+            display: flex;
+            background: #f1f5f9;
+            padding: 5px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .toggle-btn {
+            padding: 8px 20px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: 600;
+            color: var(--cor-texto-suave);
+            transition: 0.3s;
+        }
+
+        .toggle-btn.active {
+            background: white;
+            color: var(--cor-primaria);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .input-big {
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .math-explanation {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            text-align: center;
+            margin-top: 15px;
+            color: #475569;
+            border: 1px dashed #cbd5e1;
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="./pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="./regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="./nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="./cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="./mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="./equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="./bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="./forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="./medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="./churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="./pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="./energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="./festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="./conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="./velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="./kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="../artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de Porcentagem Reversa</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra o valor original antes do desconto ou
+                        do acréscimo.</p>
+                </div>
+
+                <!-- Seleção do Tipo -->
+                <div class="type-toggle">
+                    <button class="toggle-btn active" id="btn-desconto" onclick="setTipo('desconto')">Desconto</button>
+                    <button class="toggle-btn" id="btn-acrescimo" onclick="setTipo('acrescimo')">Acréscimo/Taxa</button>
+                </div>
+
+                <div class="input-group">
+                    <label style="display:block; margin-bottom:5px; font-weight:600; font-size:14px;">Valor Final (O que
+                        você pagou/recbeu):</label>
+                    <input type="number" id="valor-final" class="input-big" placeholder="Ex: 80.00" step="0.01">
+                </div>
+
+                <div class="input-group" style="margin-top: 15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:600; font-size:14px;">Porcentagem
+                        (%):</label>
+                    <input type="number" id="porcentagem" class="input-big" placeholder="Ex: 20" step="0.1">
+                </div>
+
+                <button class="btn-calc" onclick="calcularReversa()" style="margin-top: 20px;">Calcular Valor
+                    Original</button>
+
+                <!-- Resultados -->
+                <div id="resultado-area" class="result-area" style="display: none;">
+                    <div class="result-box">
+                        <div style="font-size: 0.9rem; color: var(--cor-texto-suave); margin-bottom: 5px;">Valor
+                            Original:</div>
+                        <div class="media-value" id="valor-original">R$ 0,00</div>
+                        <div id="diferenca-badge" class="status-badge" style="margin-top: 10px;"></div>
+
+                        <div class="math-explanation" id="explicacao-math">
+                            <!-- Fórmula via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <small style="color: #94a3b8;">Publicidade</small>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo / SEO -->
+            <aside class="info-card">
+                <article>
+                    <h3>A Matemática da Porcentagem Reversa</h3>
+                    <p>
+                        Muitas pessoas cometem o erro de achar que para "reverter" um desconto basta adicionar a mesma
+                        porcentagem ao valor final.
+                    </p>
+                    <p>
+                        <strong>Exemplo:</strong> Se você tem R$ 80, que teve 20% de desconto, e soma 20% (R$ 16), volta
+                        para R$ 96, e não para o preço original de R$ 100.
+                    </p>
+                    <p>
+                        A conta correta é uma <strong>divisão</strong>, e não uma subtração ou soma simples.
+                    </p>
+                </article>
+
+                <!-- Links Externos -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Finanças Pessoais</h3>
+                    <div class="link-grid">
+                        <a href="https://portal.mec.gov.br/component/tags/tag/enef" target="_blank"
+                            rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">💰</span>
+                            <div>
+                                <div class="link-title">Estratégia e Educação Financeira</div>
+                                <div class="link-desc">Programa do Governo Federal.</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.bcb.gov.br/cidadaniafinanceira" target="_blank" rel="nofollow noopener"
+                            class="link-card">
+                            <span class="link-icon">🏦</span>
+                            <div>
+                                <div class="link-title">Banco Central</div>
+                                <div class="link-desc">Materiais sobre cidadania financeira.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <article style="margin-top: 30px;">
+                    <h3>Perguntas Frequentes</h3>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Qual a fórmula da porcentagem reversa?</summary>
+                            <p>Para reverter um desconto de <strong>x%</strong>, divida o valor final por <strong>(1 -
+                                    x/100)</strong>.<br>
+                                Para reverter um acréscimo de <strong>x%</strong>, divida o valor final por <strong>(1 +
+                                    x/100)</strong>.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Como usar para descobrir o preço cheio?</summary>
+                            <p>Se você comprou algo por R$ 85 e a etiqueta dizia "15% de desconto", insira 85 no valor
+                                final e 15 na porcentagem. A calculadora lhe dirá que o preço original era R$ 100.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Como usar para cálculo de nota fiscal?</summary>
+                            <p>Se você pagou R$ 1.150 por um serviço e sabe que R$ 150 eram de imposto (acréscimo), mas
+                                não sabe a porcentagem exata, você pode estimar. Se você sabe que a taxa é 15%, coloque
+                                1150 no valor final e 15% de acréscimo para saber quanto era o valor "líquido" antes do
+                                imposto.</p>
+                        </details>
+                    </div>
+                </article>
+
+                <article
+                    style="margin-top: 30px; background: #ecfccb; padding: 20px; border-radius: 12px; border: 1px solid #bef264;">
+                    <h4 style="margin-top: 0; color: #3f6212;">🛍️ Dica de Compra</h4>
+                    <p style="margin-bottom: 0; color: #365314; font-size: 0.9rem;">
+                        Lojas muitas vezes mostram o valor "de" e o valor "por". Use esta calculadora para verificar se
+                        o desconto anunciado é real. Às vezes o "de" é inflado artificialmente para parecer uma promoção
+                        maior.
+                    </p>
+                </article>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+
+    <script>
+        carregarAnuncio('porcentagem_reversa');
+    </script>
+
+    <!-- Script da Calculadora de Porcentagem Reversa -->
+    <script>
+        let tipoAtual = 'desconto';
+
+        function setTipo(tipo) {
+            tipoAtual = tipo;
+
+            // Atualizar botões
+            document.getElementById('btn-desconto').classList.toggle('active', tipo === 'desconto');
+            document.getElementById('btn-acrescimo').classList.toggle('active', tipo === 'acrescimo');
+
+            // Limpar
+            document.getElementById('resultado-area').style.display = 'none';
+        }
+
+        function calcularReversa() {
+            const valorFinal = parseFloat(document.getElementById('valor-final').value.replace(',', '.'));
+            const perc = parseFloat(document.getElementById('porcentagem').value.replace(',', '.'));
+
+            if (isNaN(valorFinal) || isNaN(perc)) {
+                alert("Por favor, preencha o valor final e a porcentagem.");
+                return;
+            }
+
+            let valorOriginal = 0;
+            let diferenca = 0;
+            let explicacao = "";
+            let badgeHTML = "";
+
+            if (tipoAtual === 'desconto') {
+                // Fórmula: Original = Final / (1 - (pct/100))
+                const divisor = 1 - (perc / 100);
+
+                if (divisor <= 0) {
+                    alert("A porcentagem de desconto deve ser menor que 100%.");
+                    return;
+                }
+
+                valorOriginal = valorFinal / divisor;
+                diferenca = valorOriginal - valorFinal;
+
+                badgeHTML = `<span style="font-size:1.2rem;">🏷️</span> Você economizou <strong>R$ ${diferenca.toFixed(2)}</strong>`;
+                explicacao = `Valor com desconto ÷ (1 - taxa)<br>
+                            ${valorFinal} ÷ (1 - ${perc / 100})<br>
+                            ${valorFinal} ÷ ${divisor.toFixed(4)} = <strong>R$ ${valorOriginal.toFixed(2)}</strong>`;
+            } else {
+                // Fórmula: Original = Final / (1 + (pct/100))
+                const divisor = 1 + (perc / 100);
+
+                valorOriginal = valorFinal / divisor;
+                diferenca = valorFinal - valorOriginal;
+
+                badgeHTML = `<span style="font-size:1.2rem;">📈</span> A taxa/acréscimo foi de <strong>R$ ${diferenca.toFixed(2)}</strong>`;
+                explicacao = `Valor com acréscimo ÷ (1 + taxa)<br>
+                            ${valorFinal} ÷ (1 + ${perc / 100})<br>
+                            ${valorFinal} ÷ ${divisor.toFixed(4)} = <strong>R$ ${valorOriginal.toFixed(2)}</strong>`;
+            }
+
+            // Atualizar UI
+            document.getElementById('valor-original').innerText = `R$ ${valorOriginal.toFixed(2)}`;
+            document.getElementById('diferenca-badge').innerHTML = badgeHTML;
+            document.getElementById('explicacao-math').innerHTML = explicacao;
+
+            document.getElementById('resultado-area').style.display = 'block';
+
+            // Scroll
+            if (window.innerWidth < 600) {
+                document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+        }
+    </script>
+</body>
+
+</html>

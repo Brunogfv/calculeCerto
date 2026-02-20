@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calcule quanto você precisa tirar no exame final ou recuperação para passar de ano. Ferramenta simples e gratuita.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/medias.css">
+
+    <title>Calculadora de Nota para Passar | Portal das Contas</title>
+
+    <style>
+        /* Estilos específicos para os campos de peso e média */
+        .pesos-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .peso-box h4 {
+            font-size: 13px;
+            color: var(--cor-texto-suave);
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .peso-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .peso-box input:focus {
+            border-color: var(--cor-primaria);
+            outline: none;
+        }
+
+        .result-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        @media (max-width: 500px) {
+            .pesos-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="./pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="./regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="./nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="./cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="./mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="./equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="./bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="./forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="./medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="./churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="./pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="./energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="./festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="./conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="./velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="./kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="../artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de Nota para Passar</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra quanto precisa tirar no exame final.
+                    </p>
+                </div>
+
+                <!-- Inputs Principais -->
+                <div class="input-group">
+                    <label style="display:block; margin-bottom:5px; font-weight:600; font-size:14px;">Sua Média
+                        Atual:</label>
+                    <input type="number" id="media-atual" placeholder="Ex: 5.5" step="0.1" max="10"
+                        oninput="limparResultado()">
+                </div>
+
+                <div class="input-group" style="margin-top: 15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:600; font-size:14px;">Média para
+                        Aprovação (Meta):</label>
+                    <input type="number" id="media-meta" value="6.0" step="0.1" max="10" oninput="limparResultado()">
+                </div>
+
+                <!-- Configuração de Pesos -->
+                <div class="pesos-container">
+                    <div class="peso-box">
+                        <h4>Peso da Média Atual</h4>
+                        <input type="number" id="peso-media" value="1" step="0.1"
+                            title="Quantos bimestres ou valor a sua média atual vale">
+                    </div>
+                    <div class="peso-box">
+                        <h4>Peso da Prova Final</h4>
+                        <input type="number" id="peso-prova" value="1" step="0.1"
+                            title="Quanto a prova final vale (ex: 2.0)">
+                    </div>
+                </div>
+
+                <button class="btn-calc" onclick="calcularNota()">Calcular Nota Necessária</button>
+
+                <!-- Resultados -->
+                <div id="resultado-area" class="result-area" style="display: none;">
+                    <div class="result-box">
+                        <span id="res-icon" class="result-icon">🎯</span>
+                        <div class="media-value" id="valor-nota-necessaria">0.0</div>
+                        <div id="msg-status" class="status-badge">Calcule acima</div>
+
+                        <div
+                            style="margin-top: 15px; font-size: 0.9rem; color: var(--cor-texto-suave); line-height: 1.4;">
+                            <p id="explicacao-matematica"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- Espaço reservado para anúncio -->
+                    <small style="color: #94a3b8;">Publicidade</small>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo / SEO -->
+            <aside class="info-card">
+                <article>
+                    <h3>Como funciona o Cálculo?</h3>
+                    <p>
+                        Muitos alunos ficam na dúvida sobre quanto precisam tirar na recuperação ou exame final. Esta
+                        calculadora usa a lógica de <strong>Média Ponderada</strong>.
+                    </p>
+                    <p>
+                        A fórmula utilizada é:
+                    </p>
+                    <div
+                        style="background: #e2e8f0; padding: 10px; border-radius: 6px; font-family: monospace; text-align: center; margin: 10px 0;">
+                        Nota Necessária = [(Meta × Total Pesos) − (Média Atual × Peso Média)] ÷ Peso Prova
+                    </div>
+                </article>
+
+                <!-- Links Externos -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Dicas de Estudo</h3>
+                    <div class="link-grid">
+                        <a href="https://estuda.com/" target="_blank" rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">📝</span>
+                            <div>
+                                <div class="link-title">Estudo de Última Hora</div>
+                                <div class="link-desc">Técnicas para absorver conteúdo rapidamente.</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.youtube.com/results?search_query=estudo+de+ultima+hora" target="_blank"
+                            rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">🎥</span>
+                            <div>
+                                <div class="link-title">Vídeos no YouTube</div>
+                                <div class="link-desc">Resumos e dicas de professores.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <article style="margin-top: 30px;">
+                    <h3>Perguntas Frequentes</h3>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>O que colocar em "Peso da Prova Final"?</summary>
+                            <p>Verifique o seu regimento escolar. Em muitos lugares, a prova final vale o mesmo que os
+                                bimestres (peso 1). Em outros, ela vale o dobro ou triplo (peso 2 ou 3). Se você não
+                                souber, tente peso 1 para média simples.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>E se a nota der negativa ou maior que 10?</summary>
+                            <p>Se o resultado for <strong>negativo</strong>, significa que você já atingiu a meta mesmo
+                                zerando a prova (parabéns!). Se der <strong>maior que 10</strong>, significa que é
+                                matematicamente impossível atingir a média.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Qual a média mais comum no Brasil?</summary>
+                            <p>A maioria das escolas particulares e públicas adota a média <strong>6.0</strong> ou
+                                <strong>7.0</strong> para aprovação direta. Consulte seu boletim para ter certeza.
+                            </p>
+                        </details>
+                    </div>
+                </article>
+
+                <article
+                    style="margin-top: 30px; background: #dcfce7; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
+                    <h4 style="margin-top: 0; color: #15803d;">🍀 Sorte!</h4>
+                    <p style="margin-bottom: 0; color: #166534; font-size: 0.9rem;">
+                        Lembre-se: o cansaço é o seu inimigo na véspera. Durma bem, mantenha-se hidratado e confie no
+                        que estudou. Boa prova!
+                    </p>
+                </article>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+
+    <script>
+        carregarAnuncio('media_final');
+    </script>
+
+    <!-- Script da Calculadora -->
+    <script>
+        function limparResultado() {
+            document.getElementById('resultado-area').style.display = 'none';
+        }
+
+        function calcularNota() {
+            // Pegar valores
+            let mediaAtual = parseFloat(document.getElementById('media-atual').value.replace(',', '.'));
+            let mediaMeta = parseFloat(document.getElementById('media-meta').value.replace(',', '.'));
+            let pesoMedia = parseFloat(document.getElementById('peso-media').value.replace(',', '.'));
+            let pesoProva = parseFloat(document.getElementById('peso-prova').value.replace(',', '.'));
+
+            // Validação
+            if (isNaN(mediaAtual) || isNaN(mediaMeta) || isNaN(pesoMedia) || isNaN(pesoProva)) {
+                alert("Por favor, preencha todos os campos corretamente.");
+                return;
+            }
+
+            if (pesoMedia <= 0 || pesoProva <= 0) {
+                alert("Os pesos devem ser maiores que zero.");
+                return;
+            }
+
+            // Cálculo
+            // Fórmula: Nota = [(Meta * (PesoMedia + PesoProva)) - (MediaAtual * PesoMedia)] / PesoProva
+            let totalPesos = pesoMedia + pesoProva;
+            let pontosNecessariosTotal = mediaMeta * totalPesos;
+            let pontosQueJaTenho = mediaAtual * pesoMedia;
+            let pontosFaltantes = pontosNecessariosTotal - pontosQueJaTenho;
+
+            let notaNecessaria = pontosFaltantes / pesoProva;
+
+            // Arredondamento
+            notaNecessaria = parseFloat(notaNecessaria.toFixed(2));
+
+            // Lógica de Exibição e Status
+            const resIcon = document.getElementById('res-icon');
+            const msgStatus = document.getElementById('msg-status');
+            const valorNota = document.getElementById('valor-nota-necessaria');
+            const explicacao = document.getElementById('explicacao-matematica');
+
+            valorNota.innerText = notaNecessaria;
+
+            let textoExplicacao = `Você precisa somar ${pontosFaltantes.toFixed(2)} pontos na prova de peso ${pesoProva}.`;
+
+            if (notaNecessaria <= 0) {
+                // Já passou
+                resIcon.innerText = "🎉";
+                valorNota.innerText = "0.0";
+                msgStatus.innerText = "Você Já Passou!";
+                msgStatus.style.background = "#dcfce7";
+                msgStatus.style.color = "#166534";
+                textoExplicacao = "Parabéns! Sua média atual já é suficiente para atingir a meta, mesmo que tire zero na prova final.";
+            } else if (notaNecessaria > 10) {
+                // Impossível
+                resIcon.innerText = "⚠️";
+                msgStatus.innerText = "Impossível";
+                msgStatus.style.background = "#fee2e2";
+                msgStatus.style.color = "#991b1b";
+                textoExplicacao = "Infelizmente, mesmo tirando 10.0 na prova final, você não alcançará a média necessária.";
+            } else {
+                // Possível
+                resIcon.innerText = "🎯";
+                msgStatus.innerText = "Nota Necessária";
+                msgStatus.style.background = "#e0e7ff"; // Cor padrão/azul
+                msgStatus.style.color = "#3730a3";
+            }
+
+            explicacao.innerText = textoExplicacao;
+            document.getElementById('resultado-area').style.display = 'block';
+
+            // Scroll suave
+            if (window.innerWidth < 600) {
+                document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+        }
+    </script>
+</body>
+
+</html>

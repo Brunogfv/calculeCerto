@@ -2362,6 +2362,926 @@ const bancoDeAnuncios = {
             link: "https://mercadolivre.com/sec/2A2zGfo",
             imagem: "../imgs/canetas_bic002.webp"
         }
+    ],
+
+    // Categoria: Bhaskara
+    bhaskara: [
+        {
+            titulo: "Calculadora Científica FX-82MS-2-S4-DH Casio",
+            etiqueta: "🧮 Essencial Matemática",
+            descricao: "Resolve equações polinomiais e faz cálculos complexos. Ideal para verificar seus resultados da Bhaskara.",
+            link: "https://amzn.to/4cBuAfe",
+            imagem: "../imgs/calculadora_cientifica001.jpg"
+        },
+        {
+            titulo: "Calculadora Científica FX-82MS-2-S4-DH Casio",
+            etiqueta: "🧮 Essencial Matemática",
+            descricao: "Resolve equações polinomiais e faz cálculos complexos. Ideal para verificar seus resultados da Bhaskara.",
+            link: "https://mercadolivre.com/sec/1p9i6Y3",
+            imagem: "../imgs/calculadora_cientifica002.webp"
+        },
+        {
+            titulo: "Livro: Matemática Básica para Concursos",
+            etiqueta: "📚 Estudo",
+            descricao: "Domine as fórmulas de segunda grau e funções quadráticas com este guia prático.",
+            link: "https://amzn.to/4qJjBnk",
+            imagem: "../imgs/livro_mat_basica001.jpg"
+        },
+        {
+            titulo: "Livro: Matemática Básica para Concursos",
+            etiqueta: "📚 Estudo",
+            descricao: "Domine as fórmulas de segunda grau e funções quadráticas com este guia prático.",
+            link: "https://amzn.to/4rqq0VR",
+            imagem: "../imgs/livro_mat_basica002.jpg"
+        },
+        {
+            titulo: "Livro: Matemática Básica para Concursos",
+            etiqueta: "📚 Estudo",
+            descricao: "Domine as fórmulas de segunda grau e funções quadráticas com este guia prático.",
+            link: "https://amzn.to/46g3Kpf",
+            imagem: "../imgs/livro_mat_basica003.jpg"
+        },
+        {
+            titulo: "Livro: Matemática Básica para Concursos",
+            etiqueta: "📚 Estudo",
+            descricao: "Domine as fórmulas de segunda grau e funções quadráticas com este guia prático.",
+            link: "https://amzn.to/4tKWCuO",
+            imagem: "../imgs/livro_mat_basica003.jpg"
+        },
+        {
+            titulo: "Kit Régua e Esquadro",
+            etiqueta: "📐 Geometria",
+            descricao: "Para traçar parábolas e compreender o lado gráfico da equação de Bhaskara no papel.",
+            link: "https://amzn.to/3OPay76",
+            imagem: "../imgs/kit_regua001.jpg"
+        },
+        {
+            titulo: "Kit Régua e Esquadro",
+            etiqueta: "📐 Geometria",
+            descricao: "Para traçar parábolas e compreender o lado gráfico da equação de Bhaskara no papel.",
+            link: "https://mercadolivre.com/sec/1U1i1nX",
+            imagem: "../imgs/kit_regua002.webp"
+        }
+    ],
+
+    // Categoria: Churrasco
+    churrasco: [
+        {
+            titulo: "Faca Trinchante Profissional",
+            etiqueta: "🔪 Corte Perfeito",
+            descricao: "Corte a carne com precisão após calcular o consumo por pessoa. A lâmina perfeita para churrasco.",
+            link: "https://mercadolivre.com/sec/1baCM8A",
+            imagem: "../imgs/faca_trinchante001.webp"
+        },
+        {
+            titulo: "Faca Trinchante Profissional",
+            etiqueta: "🔪 Corte Perfeito",
+            descricao: "Corte a carne com precisão após calcular o consumo por pessoa. A lâmina perfeita para churrasco.",
+            link: "https://amzn.to/3ORcdJi",
+            imagem: "../imgs/faca_trinchante002.jpg"
+        },
+        {
+            titulo: "Espetos de Aço Inox 12 Peças",
+            etiqueta: "🍢 Preparo",
+            descricao: "Organize os espetinhos calculando a quantidade certa para cada convidado.",
+            link: "https://amzn.to/4kPcokE",
+            imagem: "../imgs/espetos_inox001.jpg"
+        },
+        {
+            titulo: "Espetos de Aço Inox 12 Peças",
+            etiqueta: "🍢 Preparo",
+            descricao: "Organize os espetinhos calculando a quantidade certa para cada convidado.",
+            link: "https://mercadolivre.com/sec/2xMD7g6",
+            imagem: "../imgs/espetos_inox002.webp"
+        },
+        {
+            titulo: "Tábua de Corte para Carne",
+            etiqueta: "🥩 Utilidade",
+            descricao: "Superfície higiênica e resistente para manipular a carne no preparo.",
+            link: "https://amzn.to/4rWl2jn",
+            imagem: "../imgs/tabua_corte001.jpg"
+        },
+        {
+            titulo: "Tábua de Corte para Carne",
+            etiqueta: "🥩 Utilidade",
+            descricao: "Superfície higiênica e resistente para manipular a carne no preparo.",
+            link: "https://mercadolivre.com/sec/11duitR",
+            imagem: "../imgs/tabua_corte002.webp"
+        },
+        {
+            titulo: "Termômetro Digital para Alimentos",
+            etiqueta: "🌡️ Controle",
+            descricao: "Saiba o ponto exato da carne. Não confie apenas no olho, use a ciência.",
+            link: "https://www.amazon.com.br/Term%C3%B4metro-Culin%C3%A1rio-Digital-Leitura-Frituras/dp/B0FGCNM8RZ?crid=237203XDG5K5K&dib=eyJ2IjoiMSJ9.G9wvAHXRhNXzl9FrXnks74Jqmx5jB1OEXLc_dI7TNM-dGN3hcc6GY6I0zLWV0LcgWqxu5dY4PvNwF9jgL5rp7hxXIKFllyNGOVWSdfEySCIk_wn0UUVgVvMILLN4Y8fBpUE9Aubn9eKcA19icJjBc4mFBZfK9l1b2Zzx2hcWzdvlaChmmoEBCcLatdOilV2hHgu7FLRXYEdPjKJSbwgBsMEWdUN08iVQ9UGZZTNanLHH90MT-irgZOQ1lNJZZ7z-nKlz3iZhIqPnwY747YcNz4v4hjZXmgrsvAE9Kp4pR4E.3fGNpt65qIce9cVW_MuU3Z8VIZlS_SCIBl5Xg_2nlWE&dib_tag=se&keywords=termometro+culinario&qid=1770223964&sprefix=termo%2Caps%2C334&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=portaldascont-20&linkId=f047090ba40d41bbcc1c849dee24886e&ref_=as_li_ss_tl",
+            imagem: "/imgs/termometro_culinario.jpg"
+        },
+        {
+            titulo: "Termômetro Digital para Alimentos",
+            etiqueta: "🌡️ Controle",
+            descricao: "Saiba o ponto exato da carne. Não confie apenas no olho, use a ciência.",
+            link: "https://mercadolivre.com/sec/34hBgZA",
+            imagem: "/imgs/termometro_culinario.jpg"
+        }
+    ],
+
+    // Categoria: Conversor de Unidades
+    conversor_unidades: [
+        {
+            titulo: "Trena Digital a Laser 40m",
+            etiqueta: "📏 Precisão",
+            descricao: "Converta metros em centímetros ou polegadas instantaneamente na prática.",
+            link: "https://amzn.to/3OkIAjD",
+            imagem: "../imgs/trena_laser001.jpg"
+        },
+        {
+            titulo: "Trena Digital a Laser 40m",
+            etiqueta: "📏 Precisão",
+            descricao: "Converta metros em centímetros ou polegadas instantaneamente na prática.",
+            link: "https://amzn.to/3MvytIb",
+            imagem: "../imgs/trena_laser002.jpg"
+        },
+        {
+            titulo: "Trena Digital a Laser 40m",
+            etiqueta: "📏 Precisão",
+            descricao: "Converta metros em centímetros ou polegadas instantaneamente na prática.",
+            link: "https://mercadolivre.com/sec/2erYg3q",
+            imagem: "../imgs/trena_laser003.webp"
+        },
+        {
+            titulo: "Trena Digital a Laser 40m",
+            etiqueta: "📏 Precisão",
+            descricao: "Converta metros em centímetros ou polegadas instantaneamente na prática.",
+            link: "https://mercadolivre.com/sec/13SsLKo",
+            imagem: "../imgs/trena_laser004.webp"
+        },
+        {
+            titulo: "Balança de Cozinha Digital",
+            etiqueta: "⚖️ Medição",
+            descricao: "Essencial para converter receitas entre xícaras, gramas e mililitros.",
+            link: "https://mercadolivre.com/sec/1KoxJVC",
+            imagem: "/imgs/balanca_cozinha001.jpg"
+        },
+        {
+            titulo: "Balança de Cozinha Digital",
+            etiqueta: "⚖️ Medição",
+            descricao: "Essencial para converter receitas entre xícaras, gramas e mililitros.",
+            link: "https://www.amazon.com.br/Alimentos-Antiderrapante-Resistente-Defini%C3%A7%C3%A3o-Pessagem/dp/B0FC987YXM?pd_rd_w=DxRgf&content-id=amzn1.sym.ebf6c53b-8563-45af-833e-25b1308ef797&pf_rd_p=ebf6c53b-8563-45af-833e-25b1308ef797&pf_rd_r=BV8P034P5NT6NDKTCKTM&pd_rd_wg=SsCxL&pd_rd_r=0a4b4438-43f1-471f-ad95-b305c37c5cd6&pd_rd_i=B0FC987YXM&psc=1&linkCode=ll2&tag=portaldascont-20&linkId=a330700d9f12fcb079aa9f1da5e3f11d&ref_=as_li_ss_tl",
+            imagem: "/imgs/balanca_cozinha.jpg"
+        },
+        {
+            titulo: "Fita Métrica de Costura",
+            etiqueta: "📏 Flexível",
+            descricao: "Para medidas de tecido ou corpo, convertendo fácil entre cm e polegadas.",
+            link: "https://amzn.to/4qLeqDs",
+            imagem: "../imgs/fita_metrica004.jpg"
+        },
+        {
+            titulo: "Fita Métrica de Costura",
+            etiqueta: "📏 Flexível",
+            descricao: "Para medidas de tecido ou corpo, convertendo fácil entre cm e polegadas.",
+            link: "https://mercadolivre.com/sec/2rFLqgm",
+            imagem: "../imgs/fita_metrica005.webp"
+        }
+    ],
+
+    // Categoria: Coeficiente de Rendimento Universitário (CR)
+    coeficiente_rendimento: [
+        {
+            titulo: "Canetas Esferográficas 12 Cores",
+            etiqueta: "✒️ Estudos",
+            descricao: "Organize suas anotações de aula por cor para maximizar seu rendimento nos estudos.",
+            link: "https://mercadolivre.com/sec/1f18Aj1",
+            imagem: "../imgs/canetas_coloridas001.webp"
+        },
+        {
+            titulo: "Canetas Esferográficas 10 Cores",
+            etiqueta: "✒️ Estudos",
+            descricao: "Organize suas anotações de aula por cor para maximizar seu rendimento nos estudos.",
+            link: "https://mercadolivre.com/sec/1J72tfx",
+            imagem: "../imgs/canetas_coloridas002.webp"
+        },
+        {
+            titulo: "Canetas Esferográficas 24 Cores",
+            etiqueta: "✒️ Estudos",
+            descricao: "Organize suas anotações de aula por cor para maximizar seu rendimento nos estudos.",
+            link: "https://mercadolivre.com/sec/2F4Hf9h",
+            imagem: "../imgs/canetas_coloridas003.webp"
+        },
+        {
+            titulo: "Canetas Esferográficas 24 Cores",
+            etiqueta: "✒️ Estudos",
+            descricao: "Organize suas anotações de aula por cor para maximizar seu rendimento nos estudos.",
+            link: "https://mercadolivre.com/sec/2gyvGPK",
+            imagem: "../imgs/canetas_coloridas004.webp"
+        },
+        {
+            titulo: "Organizador de Mesa Giratório",
+            etiqueta: "🗂️ Organização",
+            descricao: "Mantenha seus materiais de estudo à mão e otimize seu tempo de estudo.",
+            link: "https://mercadolivre.com/sec/2x5T2GR",
+            imagem: "../imgs/organizador_mesa001.webp"
+        },
+        {
+            titulo: "Organizador de Mesa Giratório",
+            etiqueta: "🗂️ Organização",
+            descricao: "Mantenha seus materiais de estudo à mão e otimize seu tempo de estudo.",
+            link: "https://amzn.to/4qGhoZX",
+            imagem: "../imgs/organizador_mesa002.jpg"
+        },
+        {
+            titulo: "Luminária de Mesa LED",
+            etiqueta: "💡 Foco",
+            descricao: "Estude à noite sem cansar a vista. A iluminação correta ajuda na concentração.",
+            link: "https://amzn.to/4tILhLN",
+            imagem: "../imgs/luminaria_led001.jpg"
+        },
+        {
+            titulo: "Luminária de Mesa LED",
+            etiqueta: "💡 Foco",
+            descricao: "Estude à noite sem cansar a vista. A iluminação correta ajuda na concentração.",
+            link: "https://mercadolivre.com/sec/2WzksFB",
+            imagem: "../imgs/luminaria_led002.webp"
+        }
+    ],
+
+    // Categorias: Energia
+    energia: [
+        {
+            titulo: "Medidor de Consumo de Energia",
+            etiqueta: "⚡ Controle",
+            descricao: "Descubra quais aparelhos consomem mais e calcule sua conta de luz com precisão.",
+            link: "https://amzn.to/4aEUUTf",
+            imagem: "../imgs/medidor_energia001.jpg"
+        },
+        {
+            titulo: "Medidor de Consumo de Energia",
+            etiqueta: "⚡ Controle",
+            descricao: "Descubra quais aparelhos consomem mais e calcule sua conta de luz com precisão.",
+            link: "https://mercadolivre.com/sec/2J1MVQv",
+            imagem: "../imgs/medidor_energia002.webp"
+        },
+        {
+            titulo: "Kit 6 Lâmpadas LED 10W",
+            etiqueta: "💡 Economia",
+            descricao: "Reduza seu consumo energético trocando as lâmpadas antigas por LED.",
+            link: "https://amzn.to/4tFOVGB",
+            imagem: "../imgs/lampadas_led001.jpg"
+        },
+        {
+            titulo: "Kit 6 Lâmpadas LED 10W",
+            etiqueta: "💡 Economia",
+            descricao: "Reduza seu consumo energético trocando as lâmpadas antigas por LED.",
+            link: "https://mercadolivre.com/sec/1TAktRB",
+            imagem: "../imgs/lampadas_led002.webp"
+        },
+        {
+            titulo: "Kit 6 Lâmpadas LED 10W Smart",
+            etiqueta: "💡 Economia",
+            descricao: "Reduza seu consumo energético trocando as lâmpadas antigas por LED.",
+            link: "https://mercadolivre.com/sec/2JYWYhq",
+            imagem: "../imgs/lampadas_led003.webp"
+        },
+        {
+            titulo: "Multímetro Digital",
+            etiqueta: "🔧 Ferramenta",
+            descricao: "Meça tensão, corrente e resistência. O básico para entender circuitos elétricos.",
+            link: "https://amzn.to/3MREPSb",
+            imagem: "../imgs/multimetro001.jpg"
+        },
+        {
+            titulo: "Multímetro Digital",
+            etiqueta: "🔧 Ferramenta",
+            descricao: "Meça tensão, corrente e resistência. O básico para entender circuitos elétricos.",
+            link: "https://mercadolivre.com/sec/1vvAU5d",
+            imagem: "../imgs/multimetro002.webp"
+        },
+        {
+            titulo: "Multímetro Digital",
+            etiqueta: "🔧 Ferramenta",
+            descricao: "Meça tensão, corrente e resistência. O básico para entender circuitos elétricos.",
+            link: "https://mercadolivre.com/sec/2Quuyhh",
+            imagem: "../imgs/multimetro003.webp"
+        },
+        {
+            titulo: "Multímetro Digital",
+            etiqueta: "🔧 Ferramenta",
+            descricao: "Meça tensão, corrente e resistência. O básico para entender circuitos elétricos.",
+            link: "https://mercadolivre.com/sec/2cTq3rh",
+            imagem: "../imgs/multimetro004.webp"
+        }
+    ],
+
+    // Categoria: Equação do Primeiro Grau
+    equacao_primeiro_grau: [
+        {
+            titulo: "Calculadora Escolar 12 Dígitos",
+            etiqueta: "🧮 Básica",
+            descricao: "Perfeita para operações fundamentais e resolução de equações lineares simples.",
+            link: "https://mercadolivre.com/sec/1S1x7zy",
+            imagem: "../imgs/calculadora_escolar001.webp"
+        },
+        {
+            titulo: "Calculadora Escolar 12 Dígitos",
+            etiqueta: "🧮 Básica",
+            descricao: "Perfeita para operações fundamentais e resolução de equações lineares simples.",
+            link: "https://amzn.to/40krpkK",
+            imagem: "../imgs/calculadora_escolar002.jpg"
+        },
+        {
+            titulo: "Livro: Matemática Básica - Equações",
+            etiqueta: "📚 Aprendizado",
+            descricao: "Um guia didático para entender isolamento de variáveis e fundamentos.",
+            link: "https://amzn.to/3Ol9rfr",
+            imagem: "../imgs/livro_equacoes001.jpg"
+        },
+        {
+            titulo: "Livro: Matemática Básica - Equações",
+            etiqueta: "📚 Aprendizado",
+            descricao: "Um guia didático para entender isolamento de variáveis e fundamentos.",
+            link: "https://amzn.to/4rZWlCP",
+            imagem: "../imgs/livro_equacoes002.jpg"
+        },
+        {
+            titulo: "Quadro Branco de Mesa",
+            etiqueta: "🖊️ Prática",
+            descricao: "Resolva suas equações quantas vezes quiser sem gastar papel.",
+            link: "https://mercadolivre.com/sec/1eVTfcL",
+            imagem: "../imgs/quadro_branco_pequeno001.webp"
+        }
+    ],
+
+    // Categoria: Festa
+    festas_variadas: [
+        {
+            titulo: "Kit Balões Coloridos Metalizados 50 Unidades",
+            etiqueta: "🎈 Decoração",
+            descricao: "Essenciais para qualquer festa. Calcule a quantidade para encher o ambiente.",
+            link: "https://mercadolivre.com/sec/2JzNK9v",
+            imagem: "../imgs/baloes_kit001.webp"
+        },
+        {
+            titulo: "Kit Balões Coloridos 50 Unidades",
+            etiqueta: "🎈 Decoração",
+            descricao: "Essenciais para qualquer festa. Calcule a quantidade para encher o ambiente.",
+            link: "https://mercadolivre.com/sec/1ozYWqS",
+            imagem: "../imgs/baloes_kit002.webp"
+        },
+        {
+            titulo: "Kit Balões Coloridos Metalizados 50 Unidades",
+            etiqueta: "🎈 Decoração",
+            descricao: "Essenciais para qualquer festa. Calcule a quantidade para encher o ambiente.",
+            link: "https://mercadolivre.com/sec/1U5cr7W",
+            imagem: "../imgs/baloes_kit003.webp"
+        },
+        {
+            titulo: "Kit Balões Coloridos 100 Unidades",
+            etiqueta: "🎈 Decoração",
+            descricao: "Essenciais para qualquer festa. Calcule a quantidade para encher o ambiente.",
+            link: "https://amzn.to/4aH2pcj",
+            imagem: "../imgs/baloes_kit004.jpg"
+        },
+        {
+            titulo: "Kit Balões Lilás e Roxo 100 Unidades",
+            etiqueta: "🎈 Decoração",
+            descricao: "Essenciais para qualquer festa. Calcule a quantidade para encher o ambiente.",
+            link: "https://amzn.to/3MSQeRN",
+            imagem: "../imgs/baloes_kit005.jpg"
+        },
+        {
+            titulo: "Kit Balões Rosa Claro e Metalizado 100 Unidades",
+            etiqueta: "🎈 Decoração",
+            descricao: "Essenciais para qualquer festa. Calcule a quantidade para encher o ambiente.",
+            link: "https://amzn.to/4kPEhsQ",
+            imagem: "../imgs/baloes_kit006.jpg"
+        },
+        {
+            titulo: "Bomba de Encher Balões Elétrica",
+            etiqueta: "💨 Agilidade",
+            descricao: "Encha dezenas de balões em minutos. Economize fôlego para a festa.",
+            link: "https://mercadolivre.com/sec/1mZ6Acm",
+            imagem: "../imgs/bomba_baloes001.webp"
+        },
+        {
+            titulo: "Bomba de Encher Balões Elétrica",
+            etiqueta: "💨 Agilidade",
+            descricao: "Encha dezenas de balões em minutos. Economize fôlego para a festa.",
+            link: "https://mercadolivre.com/sec/32NuEJP",
+            imagem: "../imgs/bomba_baloes002.webp"
+        },
+        {
+            titulo: "Bomba de Encher Balões Elétrica",
+            etiqueta: "💨 Agilidade",
+            descricao: "Encha dezenas de balões em minutos. Economize fôlego para a festa.",
+            link: "https://amzn.to/4rK90u1",
+            imagem: "../imgs/bomba_baloes003.jpg"
+        },
+        {
+            titulo: "Guirlanda LED 10 Metros",
+            etiqueta: "✨ Luz",
+            descricao: "Ilumine o ambiente festivo com baixo consumo de energia.",
+            link: "https://amzn.to/4apbQ1c",
+            imagem: "../imgs/guirlanda_led001.jpg"
+        },
+        {
+            titulo: "Guirlanda LED 10 Metros",
+            etiqueta: "✨ Luz",
+            descricao: "Ilumine o ambiente festivo com baixo consumo de energia.",
+            link: "https://mercadolivre.com/sec/2JWwgje",
+            imagem: "../imgs/guirlanda_led002.webp"
+        }
+    ],
+
+    // Categoria: Força
+    forca: [
+        {
+            titulo: "Dinamômetro Escolar 10N",
+            etiqueta: "🍎 Laboratório",
+            descricao: "Meça forças em Newtons na prática. O objeto perfeito para visualizar a 2ª Lei de Newton.",
+            link: "https://mercadolivre.com/sec/1oCGUY7",
+            imagem: "../imgs/dinamometro001.webp"
+        },
+        {
+            titulo: "Dinamômetro Escolar 10N",
+            etiqueta: "🍎 Laboratório",
+            descricao: "Meça forças em Newtons na prática. O objeto perfeito para visualizar a 2ª Lei de Newton.",
+            link: "https://amzn.to/4arsT2L",
+            imagem: "../imgs/dinamometro002.jpg"
+        },
+        {
+            titulo: "Kit Física Experimental - Mecânica",
+            etiqueta: "⚙️ Experimentos",
+            descricao: "Poliadas, roldanas e pesos para montar experimentos de força e atrito.",
+            link: "https://mercadolivre.com/sec/2scHNgo",
+            imagem: "../imgs/kit_fisica_mecanica001.webp"
+        },
+        {
+            titulo: "Kit Física Experimental - Mecânica",
+            etiqueta: "⚙️ Experimentos",
+            descricao: "Poliadas, roldanas e pesos para montar experimentos de força e atrito.",
+            link: "https://mercadolivre.com/sec/2hjh1Po",
+            imagem: "../imgs/kit_fisica_mecanica002.webp"
+        },
+        {
+            titulo: "Livro: Física Básica - Mecânica",
+            etiqueta: "📚 Teoria",
+            descricao: "Curso de Física Básica: Mecânica (Volume 1). A bíblia para entender força e movimento.",
+            link: "https://amzn.to/3ZL4xux",
+            imagem: "../imgs/livro_fisica_mecanica001.jpg"
+        },
+        {
+            titulo: "Livro: Física Básica - Mecânica",
+            etiqueta: "📚 Teoria",
+            descricao: "Física Básica - Mecânica. O melhor livro sobre física básica já publicado no Brasil.",
+            link: "https://amzn.to/4bZ6Pxx",
+            imagem: "../imgs/livro_fisica_mecanica002.jpg"
+        }
+    ],
+
+    // Categoria: Gasto Calórico
+    gasto_calorico: [
+        {
+            titulo: "Smartwatch Monitor Cardíaco",
+            etiqueta: "⌚ Tecnologia",
+            descricao: "Monitore seus batimentos e calcule as calorias queimadas em tempo real durante o exercício.",
+            link: "https://amzn.to/46JwBCo",
+            imagem: "../imgs/smartwatch003.jpg"
+        },
+        {
+            titulo: "Smartwatch Monitor Cardíaco",
+            etiqueta: "⌚ Tecnologia",
+            descricao: "Monitore seus batimentos e calcule as calorias queimadas em tempo real durante o exercício.",
+            link: "https://mercadolivre.com/sec/137zfrk",
+            imagem: "../imgs/smartwatch004.webp"
+        },
+        {
+            titulo: "Balança de Bioimpedância",
+            etiqueta: "⚖️ Saúde",
+            descricao: "Além do peso, veja sua massa gorda e taxa metabólica basal.",
+            link: "https://amzn.to/4bED1pR",
+            imagem: "/imgs/balanca002.jpg"
+        },
+        {
+            titulo: "Balança de Bioimpedância",
+            etiqueta: "⚖️ Saúde",
+            descricao: "Além do peso, veja sua massa gorda e taxa metabólica basal.",
+            link: "https://mercadolivre.com/sec/1feZ8CS",
+            imagem: "/imgs/balanca001.webp"
+        },
+        {
+            titulo: "Balança de Bioimpedância",
+            etiqueta: "⚖️ Saúde",
+            descricao: "Além do peso, veja sua massa gorda e taxa metabólica basal.",
+            link: "https://mercadolivre.com/sec/2LbGHG6",
+            imagem: "/imgs/balanca003.webp"
+        },
+        {
+            titulo: "Corda de Pular para Exercícios",
+            etiqueta: "🏃 Cardio",
+            descricao: "Uma das melhores formas de queimar calorias em pouco espaço.",
+            link: "https://amzn.to/3MTV0yp",
+            imagem: "../imgs/corda_pular001.jpg"
+        },
+        {
+            titulo: "Corda de Pular para Exercícios",
+            etiqueta: "🏃 Cardio",
+            descricao: "Uma das melhores formas de queimar calorias em pouco espaço.",
+            link: "https://mercadolivre.com/sec/16SusGU",
+            imagem: "../imgs/corda_pular002.webp"
+        },
+        {
+            titulo: "Corda de Pular para Exercícios",
+            etiqueta: "🏃 Cardio",
+            descricao: "Uma das melhores formas de queimar calorias em pouco espaço.",
+            link: "https://mercadolivre.com/sec/1Eabbxo",
+            imagem: "../imgs/corda_pular003.webp"
+        },
+        {
+            titulo: "Corda de Pular para Exercícios",
+            etiqueta: "🏃 Cardio",
+            descricao: "Uma das melhores formas de queimar calorias em pouco espaço.",
+            link: "https://mercadolivre.com/sec/2SVBAZD",
+            imagem: "../imgs/corda_pular004.webp"
+        }
+    ],
+
+    // Categoria: km/h para m/s (Física/Cinemática)
+    kmh_ms: [
+        {
+            titulo: "Calculadora de Engenharia",
+            etiqueta: "🧮 Profissional",
+            descricao: "Para conversões rápidas de unidades de velocidade no trabalho ou faculdade.",
+            link: "https://amzn.to/3MTgA66",
+            imagem: "../imgs/calculadora_engenharia001.jpg"
+        },
+        {
+            titulo: "Calculadora de Engenharia",
+            etiqueta: "🧮 Profissional",
+            descricao: "Para conversões rápidas de unidades de velocidade no trabalho ou faculdade.",
+            link: "https://mercadolivre.com/sec/1p9i6Y3",
+            imagem: "../imgs/calculadora_engenharia002.webp"
+        },
+        {
+            titulo: "Velocímetro Digital para Bicicleta",
+            etiqueta: "🚴 Ciclismo",
+            descricao: "Veja sua velocidade em km/h e faça as conversões mentais para m/s durante o pedal.",
+            link: "https://mercadolivre.com/sec/2m7BqyY",
+            imagem: "../imgs/velocimetro_bike001.webp"
+        },
+        {
+            titulo: "Velocímetro Digital para Bicicleta",
+            etiqueta: "🚴 Ciclismo",
+            descricao: "Veja sua velocidade em km/h e faça as conversões mentais para m/s durante o pedal.",
+            link: "https://mercadolivre.com/sec/1AHk8K1",
+            imagem: "../imgs/velocimetro_bike002.webp"
+        }
+    ],
+
+    // Categoria: Média Final
+    media_final: [
+        {
+            titulo: "Calculadora Financeira HP12C",
+            etiqueta: "🧮 Avançada",
+            descricao: "Não apenas para finanças, mas excelente para cálculos rápidos de médias ponderadas.",
+            link: "https://amzn.to/3MhboZK",
+            imagem: "../imgs/hp12c001.jpg"
+        },
+        {
+            titulo: "Calculadora Financeira HP12C",
+            etiqueta: "🧮 Avançada",
+            descricao: "Não apenas para finanças, mas excelente para cálculos rápidos de médias ponderadas.",
+            link: "https://mercadolivre.com/sec/2uZH9ix",
+            imagem: "../imgs/hp12c002.webp"
+        },
+        {
+            titulo: "Caderno Universitário 10 Matérias",
+            etiqueta: "📓 Anotações",
+            descricao: "Separe suas notas por matéria para calcular a média final com facilidade no fim do semestre.",
+            link: "https://amzn.to/3MTWQzj",
+            imagem: "../imgs/caderno_10_materias001.jpg"
+        },
+        {
+            titulo: "Caderno Universitário 10 Matérias",
+            etiqueta: "📓 Anotações",
+            descricao: "Separe suas notas por matéria para calcular a média final com facilidade no fim do semestre.",
+            link: "https://mercadolivre.com/sec/2yBCTqM",
+            imagem: "../imgs/caderno_10_materias002.webp"
+        }
+    ],
+
+    // Categoria: Medidas Culinárias
+    medidas_culinarias: [
+        {
+            titulo: "Conjunto de Medidores (Colheres e Copos)",
+            etiqueta: "🥣 Precisão",
+            descricao: "O kit indispensável: Xícara, colher de sopa, chá e café. Nunca erre uma receita.",
+            link: "https://amzn.to/4rqAEMd",
+            imagem: "../imgs/kit_medidores001.jpg"
+        },
+        {
+            titulo: "Conjunto de Medidores (Colheres e Copos)",
+            etiqueta: "🥣 Precisão",
+            descricao: "O kit indispensável: Xícara, colher de sopa, chá e café. Nunca erre uma receita.",
+            link: "https://mercadolivre.com/sec/2uWcZ2D",
+            imagem: "../imgs/kit_medidores002.webp"
+        },
+        {
+            titulo: "Jarra Plástica com Escala",
+            etiqueta: "🥗 Volume",
+            descricao: "Para medir grandes quantidades de líquidos ou misturas em litros e mililitros.",
+            link: "https://amzn.to/4c4lpno",
+            imagem: "../imgs/bacia_escala001.jpg"
+        },
+        {
+            titulo: "Jarra Plástica com Escala",
+            etiqueta: "🥗 Volume",
+            descricao: "Para medir grandes quantidades de líquidos ou misturas em litros e mililitros.",
+            link: "https://mercadolivre.com/sec/2rLtxN5",
+            imagem: "../imgs/bacia_escala002.webp"
+        },
+        {
+            titulo: "Balança de Cozinha de Precisão",
+            etiqueta: "⚖️ Gramas",
+            descricao: "A forma mais precisa de cozinhar, especialmente para confeitaria e dietas.",
+            link: "https://amzn.to/4rA8E8u",
+            imagem: "/imgs/balanca_cozinha002.jpg"
+        },
+        {
+            titulo: "Balança de Cozinha de Precisão",
+            etiqueta: "⚖️ Gramas",
+            descricao: "A forma mais precisa de cozinhar, especialmente para confeitaria e dietas.",
+            link: "https://mercadolivre.com/sec/2Xa4389",
+            imagem: "/imgs/balanca_cozinha003.webp"
+        }
+    ],
+
+    // Categoria: MMC e MDC
+    mmc_mdc: [
+        {
+            titulo: "Calculadora Científica FX82MS",
+            etiqueta: "🧮 Escolar",
+            descricao: "Modelo clássico e confiável que ajuda a verificar cálculos de MDC e MMC rapidamente.",
+            link: "https://amzn.to/3MTgA66",
+            imagem: "../imgs/calculadora_engenharia001.jpg"
+        },
+        {
+            titulo: "Calculadora Científica FX82MS",
+            etiqueta: "🧮 Escolar",
+            descricao: "Modelo clássico e confiável que ajuda a verificar cálculos de MDC e MMC rapidamente.",
+            link: "https://mercadolivre.com/sec/1p9i6Y3",
+            imagem: "../imgs/calculadora_engenharia002.webp"
+        },
+        {
+            titulo: "Tabuada de Multiplicar Plastificada",
+            etiqueta: "🧠 Memória",
+            descricao: "Excelente para consultas rápidas, o Resumão explica cada uma das quatro operações. Ótimo para ajudar as crianças a memorizar as tabuadas antes das provas.",
+            link: "https://amzn.to/4rt0EH1",
+            imagem: "../imgs/tabuada_plastificada001.jpg"
+        },
+        {
+            titulo: "Tabuada de Multiplicar Plastificada",
+            etiqueta: "🧠 Memória",
+            descricao: "Ajude as crianças a visualizar os múltiplos para entender o MMC.",
+            link: "https://mercadolivre.com/sec/29wF2X3",
+            imagem: "../imgs/tabuada_plastificada002.webp"
+        },
+        {
+            titulo: "Kit Blocos Lógicos Matemáticos",
+            etiqueta: "🔢 Educativo",
+            descricao: "Ensina divisibilidade e frações de forma visual e prática.",
+            link: "https://amzn.to/3Oshbfy",
+            imagem: "../imgs/blocos_logicos001.jpg"
+        },
+        {
+            titulo: "Kit Blocos Lógicos Matemáticos",
+            etiqueta: "🔢 Educativo",
+            descricao: "Ensina divisibilidade e frações de forma visual e prática.",
+            link: "https://mercadolivre.com/sec/2d3K5UL",
+            imagem: "../imgs/blocos_logicos002.webp"
+        }
+    ],
+
+    // Categoria: Pizza
+    pizza: [
+        {
+            titulo: "Cortador de Pizza Roda Inox",
+            etiqueta: "🍕 Fatias",
+            descricao: "Corte fatias perfeitas sem arrastar o queijo ou quebrar a massa.",
+            link: "https://amzn.to/4tQln9k",
+            imagem: "../imgs/cortador_pizza_roda001.jpg"
+        },
+        {
+            titulo: "Cortador de Pizza Roda Inox",
+            etiqueta: "🍕 Fatias",
+            descricao: "Corte fatias perfeitas sem arrastar o queijo ou quebrar a massa.",
+            link: "https://mercadolivre.com/sec/2uAFdSw",
+            imagem: "../imgs/cortador_pizza_roda002.webp"
+        },
+        {
+            titulo: "Cortador de Pizza Roda Inox",
+            etiqueta: "🍕 Fatias",
+            descricao: "Corte fatias perfeitas sem arrastar o queijo ou quebrar a massa.",
+            link: "https://mercadolivre.com/sec/11GREujw",
+            imagem: "../imgs/cortador_pizza_roda003.webp"
+        },
+        {
+            titulo: "Pedra para Pizza Forno",
+            etiqueta: "🔥 Crocância",
+            descricao: "Deixe a pizza igual da pizzaria com massa crocante e bem assada.",
+            link: "https://amzn.to/4cCok6Y",
+            imagem: "../imgs/pedra_pizza001.jpg"
+        },
+        {
+            titulo: "Pedra para Pizza Forno",
+            etiqueta: "🔥 Crocância",
+            descricao: "Deixe a pizza igual da pizzaria com massa crocante e bem assada.",
+            link: "https://mercadolivre.com/sec/2pqMw65",
+            imagem: "../imgs/pedra_pizza002.webp"
+        },
+        {
+            titulo: "Pá de Pizza com Cabo Longo",
+            etiqueta: "🥖 Forno",
+            descricao: "Manuseie a pizza com segurança dentro do forno a lenha ou elétrico.",
+            link: "https://mercadolivre.com/sec/1xkcuNa",
+            imagem: "../imgs/pa_pizza001.webp"
+        },
+        {
+            titulo: "Pá de Pizza com Cabo Longo",
+            etiqueta: "🥖 Forno",
+            descricao: "Manuseie a pizza com segurança dentro do forno a lenha ou elétrico.",
+            link: "https://amzn.to/4kL5Va3",
+            imagem: "../imgs/pa_pizza002.jpg"
+        }
+    ],
+
+    // Categoria: Pneus
+    pneus: [
+        {
+            titulo: "Manômetro para Pneus Digital",
+            etiqueta: "🚗 Pressão",
+            descricao: "Calibre seus pneus na medida certa para economizar combustível e garantir segurança.",
+            link: "https://amzn.to/3O3EfBc",
+            imagem: "../imgs/manometro_pneus001.jpg"
+        },
+        {
+            titulo: "Manômetro para Pneus Digital",
+            etiqueta: "🚗 Pressão",
+            descricao: "Calibre seus pneus na medida certa para economizar combustível e garantir segurança.",
+            link: "https://mercadolivre.com/sec/2znwtzg",
+            imagem: "../imgs/manometro_pneus002.webp"
+        },
+        {
+            titulo: "Compressor Portátil 12V",
+            etiqueta: "🔧 Emergência",
+            descricao: "Encha o pneu a qualquer hora, no asfalto ou na estrada, usando o acendedor do carro.",
+            link: "https://amzn.to/4tLQDG8",
+            imagem: "../imgs/compressor_portatil001.jpg"
+        },
+        {
+            titulo: "Compressor Portátil 12V",
+            etiqueta: "🔧 Emergência",
+            descricao: "Encha o pneu a qualquer hora, no asfalto ou na estrada, usando o acendedor do carro.",
+            link: "https://mercadolivre.com/sec/2QLqvjr",
+            imagem: "../imgs/compressor_portatil002.webp"
+        },
+        {
+            titulo: "Compressor Portátil 12V",
+            etiqueta: "🔧 Emergência",
+            descricao: "Encha o pneu a qualquer hora, no asfalto ou na estrada, usando o acendedor do carro.",
+            link: "https://amzn.to/4s5BhuJ",
+            imagem: "../imgs/compressor_portatil003.jpg"
+        },
+        {
+            titulo: "Kit Vedação",
+            etiqueta: "🛞 Manutenção",
+            descricao: "Kit Reparo Remendo Pneu Sem Câmara Carro Moto.",
+            link: "https://amzn.to/4u2R5Aj",
+            imagem: "../imgs/kit_valvulas001.jpg"
+        }
+    ],
+
+    // Categoria: Porcentagem Reversa
+    porcentagem_reversa: [
+        {
+            titulo: "Calculadora de Porcentagem",
+            etiqueta: "🧮 Foco",
+            descricao: "Teclas dedicadas para cálculos de margem, markup e desconto reverso.",
+            link: "https://amzn.to/3MTgA66",
+            imagem: "../imgs/calculadora_engenharia001.jpg"
+        },
+        {
+            titulo: "Calculadora de Porcentagem",
+            etiqueta: "🧮 Foco",
+            descricao: "Teclas dedicadas para cálculos de margem, markup e desconto reverso.",
+            link: "https://mercadolivre.com/sec/1p9i6Y3",
+            imagem: "../imgs/calculadora_engenharia002.webp"
+        },
+        {
+            titulo: "Livro: Matemática Financeira Descomplicada",
+            etiqueta: "📚 Negócios",
+            descricao: "Aprenda a calcular margens de lucro e juros para não perder dinheiro.",
+            link: "https://amzn.to/4aEfBP5",
+            imagem: "../imgs/livro_mat_fin001.jpg"
+        },
+        {
+            titulo: "Livro: Matemática Financeira Descomplicada",
+            etiqueta: "📚 Negócios",
+            descricao: "Aprenda a calcular margens de lucro e juros para não perder dinheiro.",
+            link: "https://amzn.to/4asppgp",
+            imagem: "../imgs/livro_mat_fin001.jpg"
+        },
+        {
+            titulo: "Livro: Matemática Financeira Descomplicada",
+            etiqueta: "📚 Negócios",
+            descricao: "Aprenda a calcular margens de lucro e juros para não perder dinheiro.",
+            link: "https://amzn.to/4aKXuHq",
+            imagem: "../imgs/livro_mat_fin002.jpg"
+        }
+    ],
+
+    // Categoria: Regra de Três
+    regra_tres: [
+        {
+            titulo: "Calculadora Científica Básica",
+            etiqueta: "🧮 Auxílio",
+            descricao: "Facilita as divisões e multiplicações da regra de três composta ou simples.",
+            link: "https://amzn.to/3MzKzjm",
+            imagem: "../imgs/calculadora_cientifica_escolar001.jpg"
+        },
+        {
+            titulo: "Calculadora Científica Básica",
+            etiqueta: "🧮 Auxílio",
+            descricao: "Facilita as divisões e multiplicações da regra de três composta ou simples.",
+            link: "https://mercadolivre.com/sec/1p9i6Y3",
+            imagem: "../imgs/calculadora_cientifica_escolar002.webp"
+        },
+        {
+            titulo: "Livro: Matemática para o Ensino Médio",
+            etiqueta: "📚 Reforço",
+            descricao: "Capítulo completo sobre grandezas proporcionais e regra de três.",
+            link: "https://amzn.to/4ruMV2i",
+            imagem: "../imgs/livro_medio_mat001.jpg"
+        },
+        {
+            titulo: "Livro: Matemática para o Ensino Médio",
+            etiqueta: "📚 Reforço",
+            descricao: "Capítulo completo sobre grandezas proporcionais e regra de três.",
+            link: "https://amzn.to/4s5Djel",
+            imagem: "../imgs/livro_medio_mat002.jpg"
+        }
+
+    ],
+
+    // Categoria: Velocidade Média
+    velocidade_media: [
+        {
+            titulo: "Suporte de Celular para Carro",
+            etiqueta: "📱 GPS",
+            descricao: "Use o GPS para medir o tempo exato e calcular sua velocidade média real em viagens.",
+            link: "https://amzn.to/40jqKQB",
+            imagem: "../imgs/suporte_celular_carro006.jpg"
+        },
+        {
+            titulo: "Suporte de Celular para Carro",
+            etiqueta: "📱 GPS",
+            descricao: "Use o GPS para medir o tempo exato e calcular sua velocidade média real em viagens.",
+            link: "https://amzn.to/40lomJ2",
+            imagem: "../imgs/suporte_celular_carro007.jpg"
+        },
+        {
+            titulo: "Suporte de Celular para Carro",
+            etiqueta: "📱 GPS",
+            descricao: "Use o GPS para medir o tempo exato e calcular sua velocidade média real em viagens.",
+            link: "https://mercadolivre.com/sec/26dGe63",
+            imagem: "../imgs/suporte_celular_carro008.webp"
+        },
+        {
+            titulo: "Suporte de Celular para Carro",
+            etiqueta: "📱 GPS",
+            descricao: "Use o GPS para medir o tempo exato e calcular sua velocidade média real em viagens.",
+            link: "https://mercadolivre.com/sec/2DyjdRG",
+            imagem: "../imgs/suporte_celular_carro009.webp"
+        },
+        {
+            titulo: "Cronômetro Digital de Bolso",
+            etiqueta: "⏱️ Tempo",
+            descricao: "Marque o tempo de chegada e partida com precisão manual.",
+            link: "https://amzn.to/4kK3hBF",
+            imagem: "../imgs/cronometro_bolso001.jpg"
+        },
+        {
+            titulo: "Cronômetro Digital de Bolso",
+            etiqueta: "⏱️ Tempo",
+            descricao: "Marque o tempo de chegada e partida com precisão manual.",
+            link: "https://mercadolivre.com/sec/26MEVwA",
+            imagem: "../imgs/cronometro_bolso002.webp"
+        },
+        {
+            titulo: "Radar Detector (Aviso)",
+            etiqueta: "🚨 Segurança",
+            descricao: "Mantenha-se dentro da velocidade permitida evitando multas por excesso.",
+            link: "https://mercadolivre.com/sec/26NmP5Y",
+            imagem: "../imgs/radar_aviso001.webp"
+        }
     ]
 };
 

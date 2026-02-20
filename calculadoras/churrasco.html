@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculadora de Churrasco: Descubra quanto de carne, bebida e carvão comprar para o seu churrasco. Planeje sua festa sem desperdício.">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/medias.css">
+
+    <title>Calculadora de Churrasco | Portal das Contas</title>
+
+    <style>
+        /* Estilos específicos para inputs de convidados */
+        .convidados-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .convidado-box {
+            text-align: center;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .convidado-box label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--cor-texto-suave);
+        }
+
+        .convidado-box input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2rem;
+            text-align: center;
+            border: 2px solid var(--cor-borda);
+            border-radius: 8px;
+        }
+
+        .convidado-box input:focus {
+            border-color: var(--cor-primaria);
+            outline: none;
+        }
+
+        /* Lista de Compras no Resultado */
+        .shopping-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .shopping-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .item-icon {
+            font-size: 1.5rem;
+            margin-right: 12px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-size: 0.85rem;
+            color: var(--cor-texto-suave);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .item-quantity {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--cor-texto);
+        }
+
+        @media (max-width: 500px) {
+            .convidados-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .shopping-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="./pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="./regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="./nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="./cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="./mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="./equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="./bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="./forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="./medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="./churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="./pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="./energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="./festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="./conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="./velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="./kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="../artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h2>Calculadora de Churrasco</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Quantidade certa de carne, bebida e carvão.</p>
+                </div>
+
+                <!-- Inputs de Pessoas -->
+                <div class="convidados-grid">
+                    <div class="convidado-box">
+                        <label>Homens</label>
+                        <input type="number" id="qtd-homens" placeholder="0" min="0" value="5"
+                            oninput="limparResultado()">
+                    </div>
+                    <div class="convidado-box">
+                        <label>Mulheres</label>
+                        <input type="number" id="qtd-mulheres" placeholder="0" min="0" value="5"
+                            oninput="limparResultado()">
+                    </div>
+                    <div class="convidado-box">
+                        <label>Crianças</label>
+                        <input type="number" id="qtd-criancas" placeholder="0" min="0" value="2"
+                            oninput="limparResultado()">
+                    </div>
+                </div>
+
+                <button class="btn-calc" onclick="calcularChurrasco()">Calcular Lista</button>
+
+                <!-- Resultados -->
+                <div id="resultado-area" class="result-area" style="display: none;">
+                    <div class="result-box">
+                        <div class="media-value" id="total-pessoas">0 Pessoas</div>
+                        <div id="status-churrasco" class="status-badge">Prepare a churrasqueira!</div>
+
+                        <div class="shopping-list" id="lista-compras">
+                            <!-- Itens serão inseridos via JS -->
+                        </div>
+
+                        <div style="margin-top: 20px; font-size: 0.85rem; color: #64748b; text-align: center;">
+                            *Estimativas baseadas no consumo médio brasileiro.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <small style="color: #94a3b8;">Publicidade</small>
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo / SEO -->
+            <aside class="info-card">
+                <article>
+                    <h3>O que comprar para o Churrasco?</h3>
+                    <p>
+                        O segredo de um bom churrasco não é apenas a qualidade da carne, mas o planejamento. Comprar a
+                        menos pode gerar constrangimento, e comprar a mais resulta em desperdício e dinheiro jogado
+                        fora.
+                    </p>
+
+                    <h4>Cortes de Carne Mais Populares</h4>
+                    <ul>
+                        <li><strong>Picanha:</strong> A queridinha, suculenta e com gordura na medida certa.</li>
+                        <li><strong>Fraldinha:</strong> Ótima relação custo-benefício, muito saborosa.</li>
+                        <li><strong>Maminha:</strong> Carne mais magra, ideal para quem não quer gordura.</li>
+                        <li><strong>Linguiça:</strong> Indispensável para o "apetite" inicial.</li>
+                    </ul>
+                </article>
+
+                <!-- Links Externos -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Receitas e Dicas</h3>
+                    <div class="link-grid">
+                        <a href="https://www.tudogostoso.com.br/busca?q=churrasco" target="_blank"
+                            rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">🍖</span>
+                            <div>
+                                <div class="link-title">Tudo Gostoso</div>
+                                <div class="link-desc">Receitas de acompanhamentos e molhos.</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.youtube.com/results?search_query=como+acender+carvao+corretamente"
+                            target="_blank" rel="nofollow noopener" class="link-card">
+                            <span class="link-icon">🔥</span>
+                            <div>
+                                <div class="link-title">Dicas de Carvão</div>
+                                <div class="link-desc">Como fazer o fogo durar mais.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <article style="margin-top: 30px;">
+                    <h3>Dúvidas Frequentes</h3>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Quanto de carvão eu preciso?</summary>
+                            <p>A regra geral é cerca de 1kg de carvão para cada 3 a 4 pessoas. Se o churrasco for longo
+                                ou se usar carvão de baixa qualidade, compre um pouco mais.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>E os acompanhamentos?</summary>
+                            <p>Não esqueça do pão de alho (cerca de 1.2 por pessoa), farofa, vinagrete e queijo coalho.
+                                Eles são essenciais para completar a experiência.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>Como calcular bebidas não alcoólicas?</summary>
+                            <p>Calcule 500ml de refrigerante ou suco por pessoa (contando crianças e adultos). No calor,
+                                o consumo aumenta. Gelo é vital: cerca de 1kg a cada 3 pessoas.</p>
+                        </details>
+                    </div>
+                </article>
+
+                <article
+                    style="margin-top: 30px; background: #fff7ed; padding: 20px; border-radius: 12px; border: 1px solid #ffedd5;">
+                    <h4 style="margin-top: 0; color: #c2410c;">🕒 Dica de Tempo</h4>
+                    <p style="margin-bottom: 0; color: #9a3412; font-size: 0.9rem;">
+                        Comece a preparar o fogo pelo menos 40 minutos antes da hora de servir. O carvão precisa ficar
+                        cinza (brasa) para não soltar fumaça e passar gosto de fuligem na carne.
+                    </p>
+                </article>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="./paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="./paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="./paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="./paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/ads.js"></script>
+
+    <script>
+        carregarAnuncio('churrasco');
+    </script>
+
+    <!-- Script da Calculadora de Churrasco -->
+    <script>
+        function limparResultado() {
+            document.getElementById('resultado-area').style.display = 'none';
+        }
+
+        function calcularChurrasco() {
+            // Pegar valores
+            const h = parseInt(document.getElementById('qtd-homens').value) || 0;
+            const m = parseInt(document.getElementById('qtd-mulheres').value) || 0;
+            const c = parseInt(document.getElementById('qtd-criancas').value) || 0;
+
+            const totalPessoas = h + m + c;
+
+            if (totalPessoas === 0) {
+                alert("Por favor, informe a quantidade de pessoas.");
+                return;
+            }
+
+            // Estimativas (Regras de Ouro do Churrasco)
+            // Carnes
+            const carneH = 0.45; // kg
+            const carneM = 0.30; // kg
+            const carneC = 0.20; // kg
+            const totalCarne = (h * carneH) + (m * carneM) + (c * carneC);
+
+            const linguicaPessoa = 0.15; // kg
+            const totalLinguica = totalPessoas * linguicaPessoa;
+
+            // Acompanhamentos
+            const paoPessoa = 1.2;
+            const totalPao = Math.ceil(totalPessoas * paoPessoa);
+
+            // Carvão: Aprox 1kg para cada 3-4 pessoas, mas vamos ser generosos: 1kg por 3.
+            const totalCarvao = Math.ceil(totalPessoas / 3);
+
+            // Bebidas
+            // Cerveja (Homens 4, Mulheres 2, Crianças 0)
+            const cervejas = (h * 4) + (m * 2);
+
+            // Refrigerante (500ml por pessoa total)
+            const litrosRefri = (totalPessoas * 0.5);
+            const garrafasRefri = Math.ceil(litrosRefri / 2); // Garrafas de 2L
+
+            // Gelo (1kg a cada 3 pessoas)
+            const kgGelo = Math.ceil(totalPessoas / 3);
+
+            // Lista de Itens para renderizar
+            const lista = [
+                { icon: '🥩', nome: 'Carne Bovina', qtd: `${totalCarne.toFixed(1)} kg` },
+                { icon: '🌭', nome: 'Linguiça', qtd: `${totalLinguica.toFixed(1)} kg` },
+                { icon: '🍞', nome: 'Pão de Alho', qtd: `${totalPao} unid.` },
+                { icon: '🪵', nome: 'Carvão', qtd: `${totalCarvao} kg` },
+                { icon: '🍺', nome: 'Cerveja', qtd: `${cervejas} latas/long necks` },
+                { icon: '🥤', nome: 'Refrigerante', qtd: `${garrafasRefri} garrafas (2L)` },
+                { icon: '🧊', nome: 'Gelo', qtd: `${kgGelo} kg` }
+            ];
+
+            // Renderizar lista
+            const listaHtml = lista.map(item => `
+                <div class="shopping-item">
+                    <div class="item-icon">${item.icon}</div>
+                    <div class="item-details">
+                        <div class="item-name">${item.nome}</div>
+                        <div class="item-quantity">${item.qtd}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('lista-compras').innerHTML = listaHtml;
+            document.getElementById('total-pessoas').innerText = `${totalPessoas} Pessoas`;
+
+            // Atualizar Badge
+            const badge = document.getElementById('status-churrasco');
+            if (totalPessoas < 5) {
+                badge.innerText = "Churrasco Família";
+                badge.style.background = "#dbeafe";
+                badge.style.color = "#1e40af";
+            } else if (totalPessoas < 20) {
+                badge.innerText = "Churrasco com Amigos";
+                badge.style.background = "#dcfce7";
+                badge.style.color = "#166534";
+            } else {
+                badge.innerText = "Grande Evento!";
+                badge.style.background = "#fae8ff";
+                badge.style.color = "#86198f";
+            }
+
+            document.getElementById('resultado-area').style.display = 'block';
+
+            // Scroll
+            if (window.innerWidth < 600) {
+                document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+        }
+    </script>
+</body>
+
+</html>

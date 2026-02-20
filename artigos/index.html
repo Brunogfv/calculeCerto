@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Artigos Educativos | Portal das Contas</title>
+    <meta name="description"
+        content="Guias completos sobre finanças, investimentos, saúde e cálculos. Aprenda sobre CDB, ROI, juros compostos, hora extra, TMB, déficit calórico e muito mais com exemplos práticos.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ══════════════════════════════════════════
+           ESTILOS DA PÁGINA DE ARTIGOS — NÃO AFETA HEADER/FOOTER
+           ══════════════════════════════════════════ */
+
+        .artigos-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 20px 80px;
+            font-family: 'Sora', sans-serif;
+        }
+
+        /* ── Hero da página ── */
+        .page-hero {
+            text-align: center;
+            margin-bottom: 52px;
+        }
+
+        .page-hero .eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cor-primaria, #10b981);
+            background: color-mix(in srgb, var(--cor-primaria, #10b981) 10%, transparent);
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800;
+            color: var(--cor-texto, #0f172a);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+        }
+
+        .page-hero h1 em {
+            font-style: normal;
+            color: var(--cor-primaria, #10b981);
+        }
+
+        .page-hero p {
+            font-size: 1.05rem;
+            color: var(--cor-texto-suave, #64748b);
+            max-width: 560px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        /* ── Filtros de categoria ── */
+        .filtros {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .filtro-btn {
+            padding: 8px 20px;
+            border: 2px solid var(--cor-borda, #e2e8f0);
+            border-radius: 50px;
+            font-family: 'Sora', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--cor-texto-suave, #64748b);
+            background: var(--cor-card, #fff);
+            cursor: pointer;
+            transition: all .2s;
+        }
+
+        .filtro-btn:hover,
+        .filtro-btn.ativo {
+            border-color: var(--cor-primaria, #10b981);
+            background: color-mix(in srgb, var(--cor-primaria, #10b981) 10%, transparent);
+            color: var(--cor-primaria, #059669);
+        }
+
+        /* ── Seção de categoria ── */
+        .categoria-section {
+            margin-bottom: 56px;
+        }
+
+        .categoria-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--cor-borda, #e2e8f0);
+        }
+
+        .categoria-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: color-mix(in srgb, var(--cor-primaria, #10b981) 12%, transparent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .categoria-titulo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--cor-texto, #0f172a);
+            letter-spacing: -0.3px;
+        }
+
+        .categoria-count {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--cor-primaria, #10b981);
+            background: color-mix(in srgb, var(--cor-primaria, #10b981) 10%, transparent);
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: 4px;
+        }
+
+        /* Variantes por categoria */
+        .categoria-count.roxo {
+            color: #7c3aed;
+            background: #ede9fe;
+        }
+
+        .categoria-count.laranja {
+            color: #ea580c;
+            background: #fff7ed;
+        }
+
+        .categoria-count.verde {
+            color: #059669;
+            background: #d1fae5;
+        }
+
+        .categoria-count.azul {
+            color: #0369a1;
+            background: #e0f2fe;
+        }
+
+        /* Tags e CTAs por categoria */
+        .card-tag.inv {
+            color: #7c3aed;
+        }
+
+        .card-tag.fin {
+            color: #ea580c;
+        }
+
+        .card-tag.sau {
+            color: #10b981;
+        }
+
+        .card-tag.aut {
+            color: #0369a1;
+        }
+
+        .card-cta.inv {
+            color: #7c3aed;
+        }
+
+        .card-cta.fin {
+            color: #ea580c;
+        }
+
+        .card-cta.sau {
+            color: #10b981;
+        }
+
+        .card-cta.aut {
+            color: #0369a1;
+        }
+
+        /* Hover por categoria */
+        .artigo-card.inv:hover {
+            border-color: #7c3aed;
+            box-shadow: 0 8px 28px rgba(124, 58, 237, .1);
+        }
+
+        .artigo-card.fin:hover {
+            border-color: #ea580c;
+            box-shadow: 0 8px 28px rgba(234, 88, 12, .1);
+        }
+
+        .artigo-card.aut:hover {
+            border-color: #0369a1;
+            box-shadow: 0 8px 28px rgba(3, 105, 161, .1);
+        }
+
+        /* Badges por categoria */
+        .card-badge-inv {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: #7c3aed;
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .card-badge-fin {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: #ea580c;
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .card-badge-aut {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: #0369a1;
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        /* ── Grid de cards ── */
+        .artigos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* ── Card de artigo ── */
+        .artigo-card {
+            background: var(--cor-card, #fff);
+            border: 1px solid var(--cor-borda, #e2e8f0);
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: border-color .2s, box-shadow .2s, transform .2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .artigo-card:hover {
+            border-color: var(--cor-primaria, #10b981);
+            box-shadow: 0 8px 28px rgba(16, 185, 129, .1);
+            transform: translateY(-3px);
+        }
+
+        .artigo-card.destaque {
+            grid-column: span 2;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .artigo-card.destaque .card-icon-wrap {
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+        }
+
+        .artigo-card.destaque .card-icon-wrap .card-icon {
+            font-size: 2rem;
+        }
+
+        .card-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--cor-primaria, #10b981);
+        }
+
+        .card-titulo {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--cor-texto, #0f172a);
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .artigo-card.destaque .card-titulo {
+            font-size: 1.15rem;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--cor-texto-suave, #64748b);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 4px;
+        }
+
+        .card-tempo {
+            font-size: 0.75rem;
+            color: var(--cor-texto-suave, #94a3b8);
+            font-weight: 600;
+        }
+
+        .card-cta {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--cor-primaria, #10b981);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-badge-novo {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--cor-primaria, #10b981);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        /* ── Banner CTA calculadoras ── */
+        .banner-calcs {
+            background: linear-gradient(135deg, var(--cor-primaria, #10b981), color-mix(in srgb, var(--cor-primaria, #10b981) 70%, #0f172a));
+            border-radius: 20px;
+            padding: 40px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 56px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-calcs::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 180px;
+            height: 180px;
+            background: rgba(255, 255, 255, .07);
+            border-radius: 50%;
+        }
+
+        .banner-calcs::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 30%;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, .05);
+            border-radius: 50%;
+        }
+
+        .banner-calcs-text h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .banner-calcs-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, .8);
+            margin: 0;
+        }
+
+        .banner-calcs-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            color: var(--cor-primaria, #059669);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: transform .2s, box-shadow .2s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-calcs-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .15);
+        }
+
+        /* ── Empty state ── */
+        .card-breve {
+            opacity: .55;
+            pointer-events: none;
+        }
+
+        .card-badge-breve {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--cor-borda, #e2e8f0);
+            color: var(--cor-texto-suave, #64748b);
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .artigo-card.destaque {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+
+            .banner-calcs {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px 20px;
+            }
+
+            .filtros {
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- ══════════════════════════════════
+        HEADER — PRESERVADO
+        ══════════════════════════════════ -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="../index.html" onclick="toggleMenu()">Início</a>
+
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="./juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="./inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="./decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="./porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="./porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="./salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="./hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="./imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="./tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="./agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="./gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="./parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="./combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="./pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="./medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="./regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="./nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="./cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="./mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="./equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="./bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <a href="./forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="./tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="./piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="./cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="./medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="./churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="./pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="./energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="./festa.html" class="active" onclick="toggleMenu()">Calculadora de Festa</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="./datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="./temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="./conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="./velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="./kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="../artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+                <a href="../paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="../paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ══════════════════════════════════
+        MAIN
+        ══════════════════════════════════ -->
+    <main>
+        <div class="artigos-page">
+
+            <!-- Hero -->
+            <div class="page-hero">
+                <span class="eyebrow">Blog &amp; Guias</span>
+                <h1>Aprenda com o <em>Portal das Contas</em></h1>
+                <p>Guias completos, explicações práticas e exemplos reais sobre finanças, investimentos, saúde e
+                    cálculos do cotidiano.</p>
+            </div>
+
+            <!-- Filtros de categoria -->
+            <div class="filtros" role="navigation" aria-label="Filtrar por categoria">
+                <button class="filtro-btn ativo" onclick="filtrar('todos', this)">📋 Todos</button>
+                <button class="filtro-btn" onclick="filtrar('investimentos', this)">📈 Investimentos</button>
+                <button class="filtro-btn" onclick="filtrar('financas', this)">💰 Finanças</button>
+                <button class="filtro-btn" onclick="filtrar('saude', this)">🏥 Saúde</button>
+                <button class="filtro-btn" onclick="filtrar('auto', this)">🚗 Auto &amp; Casa</button>
+            </div>
+
+            <!-- ════════════════════════════════════
+                CATEGORIA: INVESTIMENTOS
+                ════════════════════════════════════ -->
+            <section class="categoria-section" data-categoria="investimentos" aria-labelledby="cat-inv">
+                <div class="categoria-header">
+                    <div class="categoria-icon">📈</div>
+                    <h2 class="categoria-titulo" id="cat-inv">
+                        Investimentos &amp; Matemática Financeira
+                        <span class="categoria-count roxo">4 artigos</span>
+                    </h2>
+                </div>
+
+                <div class="artigos-grid">
+
+                    <!-- DESTAQUE: CDB -->
+                    <a href="financas/investir-cdb.html" class="artigo-card inv destaque">
+                        <div class="card-icon-wrap">
+                            <span class="card-icon">🏦</span>
+                        </div>
+                        <div style="flex:1">
+                            <div class="card-badge-inv">Novo</div>
+                            <div class="card-tag inv">Guia Completo</div>
+                            <h3 class="card-titulo">Vale a Pena Investir em CDB em 2026?</h3>
+                            <p class="card-desc">Entenda o que é o CDB, tipos de rentabilidade (pré-fixado, pós-fixado
+                                e IPCA+), como o Imposto de Renda e o FGC funcionam, e compare com a poupança e o
+                                Tesouro Selic com simulações reais.</p>
+                            <div class="card-footer">
+                                <span class="card-tempo">⏱ 8 min de leitura</span>
+                                <span class="card-cta inv">Ler artigo →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Juros Compostos -->
+                    <a href="financas/como-calcular-juros-compostos.html" class="artigo-card inv">
+                        <div class="card-badge-inv">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">📐</span></div>
+                        <div class="card-tag inv">Guia Completo</div>
+                        <h3 class="card-titulo">Como Calcular Juros Compostos: Fórmula e Exemplos</h3>
+                        <p class="card-desc">A fórmula M = C(1+i)^t do zero, exemplos resolvidos, a Regra do 72 e como
+                            converter taxas mensais em anuais corretamente.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 8 min</span>
+                            <span class="card-cta inv">Ler →</span>
+                        </div>
+                    </a>
+
+                    <!-- Juros Simples vs Compostos -->
+                    <a href="financas/juros-simples-compostos.html" class="artigo-card inv">
+                        <div class="card-badge-inv">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">⚖️</span></div>
+                        <div class="card-tag inv">Comparativo</div>
+                        <h3 class="card-titulo">Juros Simples vs. Compostos: Qual a Diferença Real?</h3>
+                        <p class="card-desc">Compare crescimento linear e exponencial com tabela de 30 anos e descubra
+                            onde cada regime é aplicado no mercado financeiro brasileiro.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 7 min</span>
+                            <span class="card-cta inv">Ler →</span>
+                        </div>
+                    </a>
+
+                    <!-- ROI -->
+                    <a href="financas/o-que-e-roi.html" class="artigo-card inv">
+                        <div class="card-badge-inv">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">📊</span></div>
+                        <div class="card-tag inv">Guia Completo</div>
+                        <h3 class="card-titulo">O Que é ROI? Retorno sobre Investimento Explicado</h3>
+                        <p class="card-desc">Fórmula, exemplos em marketing e negócios, ROI vs. ROAS, benchmarks para
+                            2026 e as 7 limitações que todo investidor precisa conhecer.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 7 min</span>
+                            <span class="card-cta inv">Ler →</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- ════════════════════════════
+                CATEGORIA: FINANÇAS & TRABALHISTA
+                ════════════════════════════ -->
+            <section class="categoria-section" data-categoria="financas" aria-labelledby="cat-financas">
+                <div class="categoria-header">
+                    <div class="categoria-icon">💰</div>
+                    <h2 class="categoria-titulo" id="cat-financas">
+                        Finanças &amp; Direitos Trabalhistas
+                        <span class="categoria-count laranja">4 artigos</span>
+                    </h2>
+                </div>
+
+                <div class="artigos-grid">
+
+                    <!-- DESTAQUE: Hora Extra -->
+                    <a href="financas/hora-extra.html" class="artigo-card fin destaque">
+                        <div class="card-icon-wrap">
+                            <span class="card-icon">⏱</span>
+                        </div>
+                        <div style="flex:1">
+                            <div class="card-badge-fin">Novo</div>
+                            <div class="card-tag fin">Guia CLT</div>
+                            <h3 class="card-titulo">Como Calcular Hora Extra Corretamente</h3>
+                            <p class="card-desc">Divisor 220, adicionais de 50% e 100%, hora noturna com hora ficta,
+                                banco de horas e reflexos no 13º salário e férias — tudo com exemplos resolvidos.</p>
+                            <div class="card-footer">
+                                <span class="card-tempo">⏱ 7 min de leitura</span>
+                                <span class="card-cta fin">Ler artigo →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- INSS -->
+                    <a href="financas/como-calcular-desconto-inss.html" class="artigo-card fin">
+                        <div class="card-badge-fin">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">🏛️</span></div>
+                        <div class="card-tag fin">Guia Prático</div>
+                        <h3 class="card-titulo">Como Calcular o Desconto do INSS em 2026</h3>
+                        <p class="card-desc">Tabela progressiva atualizada, alíquotas por faixa salarial e exemplos
+                            resolvidos para empregados CLT e autônomos.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 6 min</span>
+                            <span class="card-cta fin">Ler →</span>
+                        </div>
+                    </a>
+
+                    <!-- Porcentagem -->
+                    <a href="financas/calcular-porcentagem.html" class="artigo-card fin">
+                        <div class="card-badge-fin">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">%</span></div>
+                        <div class="card-tag fin">Guia Prático</div>
+                        <h3 class="card-titulo">Como Calcular Porcentagem de Forma Fácil</h3>
+                        <p class="card-desc">Os três tipos de cálculo percentual com exemplos de desconto, aumento e
+                            comparação para aplicar no cotidiano.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 5 min</span>
+                            <span class="card-cta fin">Ler →</span>
+                        </div>
+                    </a>
+
+                    <!-- Juros Compostos (cross-link) -->
+                    <a href="financas/como-calcular-juros-compostos.html" class="artigo-card fin">
+                        <div class="card-icon-wrap"><span class="card-icon">📈</span></div>
+                        <div class="card-tag fin">Matemática Financeira</div>
+                        <h3 class="card-titulo">Juros Compostos: a Fórmula M = C(1+i)^t</h3>
+                        <p class="card-desc">Aprenda a fórmula passo a passo com simulações, a Regra do 72 e a
+                            conversão correta de taxas mensais em anuais.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 8 min</span>
+                            <span class="card-cta fin">Ler →</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- ════════════════════════════
+                CATEGORIA: SAÚDE & NUTRIÇÃO
+                ════════════════════════════ -->
+            <section class="categoria-section" data-categoria="saude" aria-labelledby="cat-saude">
+                <div class="categoria-header">
+                    <div class="categoria-icon">🏥</div>
+                    <h2 class="categoria-titulo" id="cat-saude">
+                        Saúde &amp; Nutrição
+                        <span class="categoria-count verde">5 artigos</span>
+                    </h2>
+                </div>
+
+                <div class="artigos-grid">
+
+                    <!-- DESTAQUE: TMB -->
+                    <a href="saude/o-que-e-tmb.html" class="artigo-card destaque">
+                        <div class="card-icon-wrap">
+                            <span class="card-icon">🔬</span>
+                        </div>
+                        <div style="flex:1">
+                            <div class="card-tag sau">Guia Completo</div>
+                            <h3 class="card-titulo">O Que é TMB? Taxa Metabólica Basal Explicada</h3>
+                            <p class="card-desc">Descubra o que é a Taxa Metabólica Basal, como calculá-la com as
+                                fórmulas Harris-Benedict e Mifflin-St Jeor e como usar esse número para emagrecer ou
+                                ganhar massa muscular.</p>
+                            <div class="card-footer">
+                                <span class="card-tempo">⏱ 7 min de leitura</span>
+                                <span class="card-cta sau">Ler artigo →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- GET -->
+                    <a href="saude/o-que-e-get.html" class="artigo-card">
+                        <div class="card-badge-novo">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">🔥</span></div>
+                        <div class="card-tag sau">Conceito-chave</div>
+                        <h3 class="card-titulo">O Que é GET? Gasto Energético Total Explicado</h3>
+                        <p class="card-desc">Entenda os 4 componentes do seu gasto diário e como usá-los para montar
+                            qualquer estratégia nutricional.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 7 min</span>
+                            <span class="card-cta sau">Ler →</span>
+                        </div>
+                    </a>
+
+                    <!-- Déficit Calórico -->
+                    <a href="saude/deficit-calorico.html" class="artigo-card">
+                        <div class="card-badge-novo">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">📉</span></div>
+                        <div class="card-tag sau">Guia Prático</div>
+                        <h3 class="card-titulo">Déficit Calórico: Como Emagrecer Sem Perder Músculo</h3>
+                        <p class="card-desc">Aprenda a calcular e aplicar o déficit certo para emagrecer de forma
+                            sustentável.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 8 min</span>
+                            <span class="card-cta sau">Ler →</span>
+                        </div>
+                    </a>
+
+                    <!-- Superávit -->
+                    <a href="saude/superavit-calorico.html" class="artigo-card">
+                        <div class="card-badge-novo">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">💪</span></div>
+                        <div class="card-tag sau">Guia Prático</div>
+                        <h3 class="card-titulo">Superávit Calórico para Hipertrofia</h3>
+                        <p class="card-desc">Quanto comer a mais para ganhar massa muscular sem acumular gordura
+                            desnecessária.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 7 min</span>
+                            <span class="card-cta sau">Ler →</span>
+                        </div>
+                    </a>
+
+                    <!-- Proteína -->
+                    <a href="saude/proteina-diaria.html" class="artigo-card">
+                        <div class="card-badge-novo">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">🥩</span></div>
+                        <div class="card-tag sau">Baseado em Evidências</div>
+                        <h3 class="card-titulo">Quanto de Proteína Consumir Por Dia?</h3>
+                        <p class="card-desc">Referências científicas atualizadas sobre ingestão proteica para cada
+                            objetivo.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 7 min</span>
+                            <span class="card-cta sau">Ler →</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- Banner CTA calculadoras -->
+            <div class="banner-calcs">
+                <div class="banner-calcs-text">
+                    <h2>🧮 Prefere calcular direto?</h2>
+                    <p>Use nossas calculadoras gratuitas e obtenha resultados em segundos.</p>
+                </div>
+                <a href="../index.html" class="banner-calcs-btn">
+                    Ver Calculadoras →
+                </a>
+            </div>
+
+            <!-- ════════════════════════════
+                CATEGORIA: AUTO & CASA
+                ════════════════════════════ -->
+            <section class="categoria-section" data-categoria="auto" aria-labelledby="cat-auto">
+                <div class="categoria-header">
+                    <div class="categoria-icon">🚗</div>
+                    <h2 class="categoria-titulo" id="cat-auto">
+                        Auto &amp; Casa
+                        <span class="categoria-count azul">2 artigos</span>
+                    </h2>
+                </div>
+
+                <div class="artigos-grid">
+
+                    <!-- DESTAQUE: Combustível -->
+                    <a href="/artigos/utilitarios/consumo-combustivel.html" class="artigo-card aut destaque">
+                        <div class="card-icon-wrap">
+                            <span class="card-icon">⛽</span>
+                        </div>
+                        <div style="flex:1">
+                            <div class="card-badge-aut">Novo</div>
+                            <div class="card-tag aut">Guia Prático</div>
+                            <h3 class="card-titulo">Como Calcular o Consumo de Combustível do Seu Carro</h3>
+                            <p class="card-desc">Aprenda a medir o consumo real em km/l, compare gasolina vs. etanol
+                                com a regra dos 70% e descubra quanto você gasta por quilômetro rodado.</p>
+                            <div class="card-footer">
+                                <span class="card-tempo">⏱ 5 min de leitura</span>
+                                <span class="card-cta aut">Ler artigo →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Tinta -->
+                    <a href="/artigos/utilitarios/litros-tinta.html" class="artigo-card aut">
+                        <div class="card-badge-aut">Novo</div>
+                        <div class="card-icon-wrap"><span class="card-icon">🖌️</span></div>
+                        <div class="card-tag aut">Guia Prático</div>
+                        <h3 class="card-titulo">Quantos Litros de Tinta para Pintar um Ambiente?</h3>
+                        <p class="card-desc">Calcule com precisão a quantidade de tinta considerando demãos, tipo de
+                            superfície e rendimento por lata — sem desperdício.</p>
+                        <div class="card-footer">
+                            <span class="card-tempo">⏱ 5 min</span>
+                            <span class="card-cta aut">Ler →</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+        </div><!-- /artigos-page -->
+    </main>
+
+    <!-- ══════════════════════════════════
+        FOOTER — PRESERVADO
+        ══════════════════════════════════ -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">Somos um projeto dedicado a simplificar a matemática do cotidiano dos
+                    brasileiros. Nosso objetivo é fornecer ferramentas digitais gratuitas e de alta qualidade para
+                    ajudar na organização financeira, planejamento de saúde e execução de reformas.</p>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="/paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="/paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="/paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="/paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Este site é apenas para fins informativos.
+                    Consulte sempre um profissional para decisões financeiras ou médicas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/dropdown.js"></script>
+
+    <script>
+        // Filtro de categorias
+        function filtrar(cat, btn) {
+            document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
+            btn.classList.add('ativo');
+
+            document.querySelectorAll('.categoria-section').forEach(sec => {
+                if (cat === 'todos' || sec.dataset.categoria === cat) {
+                    sec.style.display = '';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+
+            // Esconde banner se filtrado por categoria específica
+            const banner = document.querySelector('.banner-calcs');
+            if (banner) banner.style.display = cat === 'todos' ? '' : 'none';
+        }
+    </script>
+</body>
+
+</html>

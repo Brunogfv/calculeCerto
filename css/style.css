@@ -65,12 +65,13 @@ a {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .header-container {
-    max-width: 1110px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 16px 24px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,7 +79,7 @@ a {
 
 .logo a {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 800;
     color: white;
     letter-spacing: -0.5px;
     display: flex;
@@ -482,4 +483,29 @@ nav .dropdown-menu a:hover {
         grid-template-columns: 1fr;
         /* 1 coluna no mobile */
     }
+}
+
+/* ARTIGOS */
+.article-intro {
+    font-size: 1.15rem;
+    color: var(--suave);
+    line-height: 1.75;
+    border-left: 4px solid var(--azul);
+    padding-left: 20px;
+    margin-bottom: 36px;
+}
+
+.article-content p {
+    font-size: 1.05rem;
+    color: var(--suave);
+    line-height: 1.85;
+    margin-bottom: 22px;
+}
+
+.card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--verde) !important;
+    line-height: 1.35;
 }
