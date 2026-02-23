@@ -1,107 +1,334 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+    <!-- Página Principal -->
     <url>
         <loc>https://portaldascontas.com.br/</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <!-- Página de Artigos -->
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- CALCULADORAS -->
 
     <!-- Finanças -->
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/juros</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/inss</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/decimo-terceiro</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/porcentagem</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/porcentagem-reversa</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/salario</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/hora-extra</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <!-- Saúde -->
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/imc</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/tmb</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/agua</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/gasto-calorico</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/parto</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Auto -->
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/combustivel</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/pneus</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Educação -->
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/medias</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/regra-de-tres</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/media-final</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/cr</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/mmc-mdc</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/equacao-1-grau.html</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/bhaskara</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/forca</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Casa e Reforma -->
+    <!-- Casa -->
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/tinta</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/piso</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/cimento</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/medidas-culinarias</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/churrasco</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/pizza</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/energia</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/festa</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Utilitários -->
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/datas</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://portaldascontas.com.br/calculadoras/temperatura</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/conversor-unidades</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/velocidade-media</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/calculadoras/kmh-ms</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
-    <!-- Institucionais -->
+    <!-- ARTIGOS FINANÇAS -->
     <url>
-        <loc>https://portaldascontas.com.br/paginas/sobre</loc>
-        <priority>0.5</priority>
+        <loc>https://portaldascontas.com.br/artigos/financas/investir-cdb</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://portaldascontas.com.br/paginas/contato</loc>
-        <priority>0.5</priority>
+        <loc>https://portaldascontas.com.br/artigos/financas/como-calcular-juros-compostos</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://portaldascontas.com.br/paginas/privacidade</loc>
-        <priority>0.3</priority>
+        <loc>https://portaldascontas.com.br/artigos/financas/juros-simples-compostos</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://portaldascontas.com.br/paginas/termos</loc>
-        <priority>0.3</priority>
+        <loc>https://portaldascontas.com.br/artigos/financas/o-que-e-roi</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/financas/hora-extra</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/financas/como-calcular-desconto-inss</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/financas/calcular-porcentagem</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ARTIGOS SAÚDE -->
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/saude/o-que-e-tmb</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/saude/o-que-e-get</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/saude/deficit-calorico</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/saude/superavit-calorico</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/saude/proteina-diaria</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ARTIGOS UTILITÁRIOS -->
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/utilitarios/consumo-combustivel</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://portaldascontas.com.br/artigos/utilitarios/litros-tinta</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
 </urlset>
