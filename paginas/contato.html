@@ -133,19 +133,23 @@
             <!-- Formulário -->
             <div class="form-card">
                 <h2 style="margin-top: 0;">Envie uma mensagem</h2>
-                <form
-                    onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! Retornaremos para o e-mail informado em breve.'); this.reset();">
+                <form action="https://formsubmit.co/bruno.gfv@gmail.com" method="POST">
+                    <!-- Configurações do FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nova mensagem do Portal das Contas">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
                     <div class="input-group">
                         <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" required placeholder="Ex: João da Silva">
+                        <input type="text" id="nome" name="nome" required placeholder="Ex: João da Silva">
                     </div>
                     <div class="input-group">
                         <label for="email">Seu E-mail</label>
-                        <input type="email" id="email" required placeholder="Ex: joao@email.com">
+                        <input type="email" id="email" name="email" required placeholder="Ex: joao@email.com">
                     </div>
                     <div class="input-group">
                         <label for="assunto">Assunto</label>
-                        <select id="assunto"
+                        <select id="assunto" name="assunto"
                             style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; background: var(--cor-fundo); color: var(--cor-texto);">
                             <option>Dúvida sobre Calculadoras</option>
                             <option>Erro no Cálculo</option>
@@ -156,7 +160,7 @@
                     </div>
                     <div class="input-group">
                         <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" required
+                        <textarea id="mensagem" name="mensagem" required
                             placeholder="Escreva sua mensagem detalhadamente..."></textarea>
                     </div>
                     <button type="submit">Enviar Mensagem</button>
