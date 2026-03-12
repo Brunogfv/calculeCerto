@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Como Calcular Inflação Acumulada: Guia Completo 2026</title>
+    <meta name="description"
+        content="Aprenda como calcular a inflação acumulada com fórmulas simples e exemplos práticos. Entenda IPCA, variação acumulada de preços e impacto no seu poder de compra.">
+    <meta name="keywords"
+        content="calcular inflação acumulada, inflação acumulada, IPCA acumulado, como calcular inflação, variação acumulada preços, inflação no período, cálculo IPCA">
+    <meta name="author" content="Portal das Contas">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://portaldascontas.com.br/artigos/financas/como-calcular-inflacao-acumulada.html">
+
+    <meta property="og:title" content="Como Calcular Inflação Acumulada: Guia Completo">
+    <meta property="og:description"
+        content="Descubra como calcular a inflação acumulada em qualquer período. Fórmulas práticas, exemplos reais e dicas para entender o impacto da inflação no seu bolso.">
+    <meta property="og:type" content="article">
+    <meta property="og:url"
+        content="https://portaldascontas.com.br/artigos/financas/como-calcular-inflacao-acumulada.html">
+    <meta property="og:locale" content="pt_BR">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Como Calcular Inflação Acumulada: Guia Completo 2026",
+      "description": "Guia completo sobre como calcular inflação acumulada: fórmulas, exemplos práticos, IPCA acumulado e impacto no poder de compra.",
+      "author": {"@type": "Organization", "name": "Portal das Contas", "url": "https://portaldascontas.com.br"},
+      "publisher": {"@type": "Organization", "name": "Portal das Contas", "logo": {"@type": "ImageObject", "url": "https://portaldascontas.com.br/images/logo.png"}},
+      "datePublished": "2026-03-06",
+      "dateModified": "2026-03-06",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://portaldascontas.com.br/artigos/financas/como-calcular-inflacao-acumulada.html"},
+      "articleSection": "Finanças",
+      "keywords": ["inflação acumulada", "IPCA", "cálculo inflação", "variação preços", "poder de compra"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Como calcular a inflação acumulada?", "acceptedAnswer": {"@type": "Answer", "text": "Para calcular inflação acumulada, use a fórmula: Inflação Acumulada = [(1 + taxa1) × (1 + taxa2) × ... × (1 + taxaN) - 1] × 100. Exemplo: se a inflação foi 0,5% em janeiro, 0,6% em fevereiro e 0,4% em março, o acumulado é [(1,005 × 1,006 × 1,004) - 1] × 100 = 1,52%. Não some diretamente as taxas, pois há efeito composto."}},
+        {"@type": "Question", "name": "O que é inflação acumulada no ano?", "acceptedAnswer": {"@type": "Answer", "text": "Inflação acumulada no ano é a variação total de preços desde janeiro até o mês atual. É calculada multiplicando todos os índices mensais. Exemplo: se estamos em março e o IPCA foi 0,5% em janeiro, 0,6% em fevereiro e 0,4% em março, a inflação acumulada no ano é 1,52%. Diferente da soma simples (1,5%), o cálculo correto considera o efeito composto."}},
+        {"@type": "Question", "name": "Como calcular inflação acumulada em 12 meses?", "acceptedAnswer": {"@type": "Answer", "text": "Para calcular inflação acumulada em 12 meses, multiplique os índices mensais dos últimos 12 meses e subtraia 1. Fórmula: [(1+mês1) × (1+mês2) × ... × (1+mês12) - 1] × 100. Exemplo: se cada mês teve inflação de 0,5%, o acumulado em 12 meses é [(1,005)^12 - 1] × 100 = 6,17%, não 6% (soma simples). O IBGE divulga esse dado mensalmente como 'IPCA acumulado em 12 meses'."}},
+        {"@type": "Question", "name": "Qual a diferença entre somar e acumular inflação?", "acceptedAnswer": {"@type": "Answer", "text": "Somar inflação (0,5% + 0,6% + 0,4% = 1,5%) está ERRADO porque ignora o efeito composto. Acumular inflação considera que a inflação de fevereiro incide sobre os preços já reajustados em janeiro. O cálculo correto é multiplicar: (1,005 × 1,006 × 1,004 - 1) = 1,52%. A diferença parece pequena em períodos curtos, mas em 12 meses pode ser significativa."}},
+        {"@type": "Question", "name": "Como usar inflação acumulada no reajuste de salário?", "acceptedAnswer": {"@type": "Answer", "text": "Para repor perdas pela inflação, use a inflação acumulada no período desde o último reajuste. Exemplo: salário de R$ 5.000 sem reajuste há 12 meses, inflação acumulada de 6%. Reajuste necessário: R$ 5.000 × 1,06 = R$ 5.300. Se receber menos (exemplo R$ 5.200), houve perda real de poder de compra. O cálculo correto usa inflação acumulada, não a soma dos meses."}}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://portaldascontas.com.br/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://portaldascontas.com.br/artigos/index.html"},
+        {"@type": "ListItem", "position": 3, "name": "Finanças", "item": "https://portaldascontas.com.br/artigos/financas/"},
+        {"@type": "ListItem", "position": 4, "name": "Como Calcular Inflação Acumulada", "item": "https://portaldascontas.com.br/artigos/financas/como-calcular-inflacao-acumulada.html"}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/artigos/css/o-que-e-roi.css">
+    <link rel="stylesheet" href="/artigos/css/calcular-porcentagem.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
+
+    <script type="module" src="/js/pagefind.js"></script>
+
+</head>
+
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="/index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="/calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="/calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="/calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <!-- NOVAS CALCULADORAS FINANCEIRAS -->
+                        <a href="/calculadoras/calc-investimento.html" onclick="toggleMenu()">Investimentos</a>
+                        <a href="/calculadoras/dividendos.html" onclick="toggleMenu()">Dividendos</a>
+                        <a href="/calculadoras/calc-inflacao.html" onclick="toggleMenu()">Inflação</a>
+                        <a href="/calculadoras/calc-cdb.html" onclick="toggleMenu()">CDB</a>
+                        <a href="/calculadoras/calc-ir-investimentos.html" onclick="toggleMenu()">IR Investimentos</a>
+                        <a href="/calculadoras/calc-tesouro-direto.html" onclick="toggleMenu()">Tesouro Direto</a>
+                        <a href="/calculadoras/calc-price-sac.html" onclick="toggleMenu()">Price e SAC</a>
+                        <a href="/calculadoras/calc-poupanca-vs-investimento.html" onclick="toggleMenu()">Poupança vs.
+                            Outros</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="/calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="/calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="/calculadoras/gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="/calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="/calculadoras/pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <!-- NOVA CALCULADORA EDUCAÇÃO -->
+                        <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="/calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="/calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="/calculadoras/medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="/calculadoras/churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="/calculadoras/pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="/calculadoras/energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="/calculadoras/festa.html" class="active" onclick="toggleMenu()">Calculadora de
+                            Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="/calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="/calculadoras/conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="/calculadoras/velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="/calculadoras/kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="/artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <!-- BARRA DE BUSCA ADICIONADA AQUI -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
+                    autocomplete="off">
+
+                <!-- Lista de Resultados -->
+                <div class="search-results" id="search-results-list">
+                    <!-- Os itens serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <!-- FIM DA BARRA DE BUSCA -->
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-wrapper">
+
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../../index.html">Home</a><span>›</span>
+                <a href="../index.html">Blog</a><span>›</span>
+                <a href="../index.html">Finanças</a><span>›</span>
+                <span aria-current="page">Como Calcular Inflação Acumulada</span>
+            </nav>
+
+            <p class="article-eyebrow">Finanças &amp; Investimentos</p>
+            <h1 class="article-title">Como Calcular a <em>Inflação Acumulada</em>: Guia Completo</h1>
+
+            <p class="article-intro">
+                Entender como calcular a inflação acumulada é essencial para avaliar o impacto real dos preços no seu
+                bolso ao longo do tempo. Muita gente comete o erro de simplesmente somar as taxas mensais — mas isso
+                está <strong>matematicamente errado</strong>. Este guia ensina o cálculo correto, com fórmulas simples e
+                exemplos práticos que mostram como a inflação acumulada afeta salários, investimentos e poder de compra.
+            </p>
+
+            <div class="article-meta">
+                <span>📅 <strong>Atualizado em:</strong> 6 de março de 2026</span>
+                <span>⏱ <strong>Leitura:</strong> ~8 minutos</span>
+                <span>✍️ <strong>Por:</strong> Equipe Portal das Contas</span>
+            </div>
+
+            <article class="article-content" itemscope itemtype="https://schema.org/Article">
+
+                <h2 id="o-que-e">1. O Que é Inflação Acumulada?</h2>
+                <p><strong>Inflação acumulada</strong> é a variação total de preços em um determinado período. É o
+                    quanto os preços subiram desde um ponto inicial até um ponto final, considerando <strong>todos os
+                        meses intermediários</strong>.</p>
+
+                <p>Exemplo: se você quer saber quanto os preços subiram de janeiro a junho, você está calculando a
+                    inflação acumulada do primeiro semestre.</p>
+
+                <p>A inflação acumulada é diferente da inflação mensal isolada. A inflação mensal mostra a variação de
+                    um mês para outro. A acumulada mostra o efeito total ao longo de vários meses.</p>
+
+                <div class="highlight-box">
+                    <strong>💡 Por que não pode somar?</strong> Se a inflação foi 0,5% em janeiro e 0,6% em fevereiro,
+                    muita gente acha que o acumulado é 1,1%. ERRADO! A inflação de fevereiro incide sobre os preços já
+                    reajustados em janeiro. É um efeito composto, como juros compostos.
+                </div>
+
+                <h2 id="formula">2. Fórmula da Inflação Acumulada</h2>
+                <p>A fórmula correta para calcular inflação acumulada é:</p>
+
+                <div class="formula-box">
+                    <span class="formula-label">Inflação Acumulada</span><br>
+                    = [(1 + taxa₁) × (1 + taxa₂) × ... × (1 + taxaₙ) - 1] × 100
+                </div>
+
+                <p>Onde as taxas devem estar em formato decimal (ex: 0,5% = 0,005).</p>
+
+                <h3>Passo a Passo:</h3>
+                <ol>
+                    <li>Converta cada taxa percentual para decimal (divida por 100)</li>
+                    <li>Some 1 a cada taxa</li>
+                    <li>Multiplique todos os valores</li>
+                    <li>Subtraia 1 do resultado</li>
+                    <li>Multiplique por 100 para voltar a percentual</li>
+                </ol>
+
+                <div class="exemplo-card">
+                    <h4>📊 Exemplo: 3 meses</h4>
+                    <div class="exemplo-linha"><span class="el-label">Janeiro</span><span>0,5%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Fevereiro</span><span>0,6%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Março</span><span>0,4%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Conversão</span><span>0,005 | 0,006 | 0,004</span>
+                    </div>
+                    <div class="exemplo-linha"><span class="el-label">Cálculo</span><span>(1,005 × 1,006 × 1,004) -
+                            1</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Resultado</span><span>1,01520 - 1 = 0,01520</span>
+                    </div>
+                    <div class="exemplo-resultado verde"><span>Inflação acumulada</span><span
+                            class="res-val">1,52%</span></div>
+                    <div class="exemplo-linha laranja"><span class="el-label">Soma simples
+                            (errado)</span><span>1,5%</span></div>
+                </div>
+
+                <h2 id="exemplos-praticos">3. Exemplos Práticos de Cálculo</h2>
+
+                <h3>Exemplo 1: Inflação Acumulada no Ano</h3>
+                <p>Vamos calcular a inflação de janeiro a março de 2026 com dados hipotéticos do IPCA:</p>
+
+                <div class="exemplo-card">
+                    <h4>📈 IPCA acumulado em 2026 (jan-mar)</h4>
+                    <div class="exemplo-linha"><span class="el-label">Janeiro 2026</span><span>0,42%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Fevereiro 2026</span><span>0,83%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Março 2026</span><span>0,16%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Fórmula</span><span>(1,0042 × 1,0083 × 1,0016) -
+                            1</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Multiplicação</span><span>1,0142 - 1 =
+                            0,0142</span></div>
+                    <div class="exemplo-resultado verde"><span>Inflação acumulada no ano</span><span
+                            class="res-val">1,42%</span></div>
+                </div>
+
+                <h3>Exemplo 2: Inflação em 12 Meses</h3>
+                <p>Para calcular a inflação acumulada em 12 meses (dos últimos 12 meses até hoje):</p>
+
+                <div class="exemplo-card">
+                    <h4>📊 Inflação em 12 meses (simplificado)</h4>
+                    <div class="exemplo-linha"><span class="el-label">Supondo</span><span>0,5% em cada um dos 12
+                            meses</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Fórmula</span><span>(1,005)¹² - 1</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Cálculo</span><span>1,0617 - 1 = 0,0617</span>
+                    </div>
+                    <div class="exemplo-resultado verde"><span>Inflação acumulada 12 meses</span><span
+                            class="res-val">6,17%</span></div>
+                    <div class="exemplo-linha laranja"><span class="el-label">Soma simples
+                            (errado)</span><span>6,0%</span></div>
+                </div>
+
+                <h3>Exemplo 3: Reajuste de Aluguel</h3>
+                <p>Seu aluguel é R$ 2.000 e o contrato prevê reajuste pela inflação acumulada em 12 meses (6,17%):</p>
+
+                <div class="exemplo-card">
+                    <h4>🏠 Reajuste de aluguel</h4>
+                    <div class="exemplo-linha"><span class="el-label">Aluguel atual</span><span>R$ 2.000,00</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Inflação acumulada</span><span>6,17%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Cálculo</span><span>R$ 2.000 × 1,0617</span></div>
+                    <div class="exemplo-resultado laranja"><span>Novo aluguel</span><span class="res-val">R$
+                            2.123,40</span></div>
+                </div>
+
+                <h2 id="ipca-acumulado">4. IPCA Acumulado: O Índice Oficial</h2>
+                <p>No Brasil, o <strong>IPCA</strong> (Índice Nacional de Preços ao Consumidor Amplo) é o índice oficial
+                    de inflação medido pelo IBGE.</p>
+
+                <p>O IBGE divulga mensalmente:</p>
+                <ul>
+                    <li><strong>IPCA mensal:</strong> variação do mês</li>
+                    <li><strong>IPCA acumulado no ano:</strong> de janeiro até o mês atual</li>
+                    <li><strong>IPCA acumulado em 12 meses:</strong> dos últimos 12 meses</li>
+                </ul>
+
+                <p>Quando você vê "IPCA acumulado em 12 meses de 5,8%", significa que os preços subiram 5,8% nos últimos
+                    12 meses usando a fórmula de acumulação correta.</p>
+
+                <h2 id="aplicacoes">5. Aplicações Práticas da Inflação Acumulada</h2>
+
+                <h3>1. Reajuste de Salário</h3>
+                <p>Para repor a inflação, o salário deve ser corrigido pela inflação acumulada desde o último reajuste.
+                </p>
+
+                <div class="exemplo-card">
+                    <h4>💰 Reajuste salarial</h4>
+                    <div class="exemplo-linha"><span class="el-label">Salário há 12 meses</span><span>R$ 5.000,00</span>
+                    </div>
+                    <div class="exemplo-linha"><span class="el-label">Inflação acumulada</span><span>6,17%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Reajuste necessário</span><span>R$ 5.000 ×
+                            1,0617</span></div>
+                    <div class="exemplo-resultado verde"><span>Salário reajustado</span><span class="res-val">R$
+                            5.308,50</span></div>
+                </div>
+
+                <p>Se você receber menos que isso, houve <strong>perda real de poder de compra</strong>.</p>
+
+                <h3>2. Correção de Investimentos</h3>
+                <p>Para saber se seu investimento ganhou poder de compra, compare a rentabilidade com a inflação
+                    acumulada.</p>
+
+                <div class="exemplo-card">
+                    <h4>📈 Investimento vs Inflação</h4>
+                    <div class="exemplo-linha"><span class="el-label">Investimento rendeu</span><span>8% no ano</span>
+                    </div>
+                    <div class="exemplo-linha"><span class="el-label">Inflação acumulada</span><span>5%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Ganho real</span><span>[(1,08 / 1,05) - 1] ×
+                            100</span></div>
+                    <div class="exemplo-resultado verde"><span>Rentabilidade real</span><span
+                            class="res-val">2,86%</span></div>
+                </div>
+
+                <h3>3. Atualização de Dívidas</h3>
+                <p>Algumas dívidas são corrigidas pela inflação. A inflação acumulada determina quanto você deve pagar.
+                </p>
+
+                <h2 id="erro-comum">6. O Erro Comum: Por Que Não Pode Somar?</h2>
+                <p>Muita gente comete o erro de somar as taxas: 0,5% + 0,6% + 0,4% = 1,5%.</p>
+
+                <p><strong>Por que está errado?</strong></p>
+
+                <p>Porque a inflação é <strong>composta</strong>. Quando os preços sobem 0,5% em janeiro, a inflação de
+                    fevereiro incide sobre os preços JÁ REAJUSTADOS.</p>
+
+                <div class="exemplo-card">
+                    <h4>🔍 Visualizando o erro</h4>
+                    <div class="exemplo-linha"><span class="el-label">Produto em janeiro</span><span>R$ 100,00</span>
+                    </div>
+                    <div class="exemplo-linha"><span class="el-label">Inflação jan (0,5%)</span><span>R$ 100,50</span>
+                    </div>
+                    <div class="exemplo-linha"><span class="el-label">Inflação fev (0,6%)</span><span>R$ 100,50 × 1,006
+                            = R$ 101,10</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Inflação mar (0,4%)</span><span>R$ 101,10 × 1,004
+                            = R$ 101,50</span></div>
+                    <div class="exemplo-resultado verde"><span>Variação total</span><span class="res-val">1,50% (não
+                            1,5%!)</span></div>
+                    <div class="exemplo-linha laranja"><span class="el-label">Se fosse soma simples</span><span>R$
+                            101,50 (coincidência!)</span></div>
+                </div>
+
+                <p>Nesse caso específico a diferença é pequena (0,02%), mas em períodos longos ou com inflação alta, a
+                    diferença fica enorme.</p>
+
+                <h2 id="calculadora">7. Como Usar Calculadoras</h2>
+
+                <h3>Excel / Google Planilhas</h3>
+                <p>Fórmula para calcular inflação acumulada no Excel:</p>
+
+                <div class="formula-box">
+                    =(PRODUTO(1+A1:A12)-1)*100
+                </div>
+
+                <p>Onde A1:A12 são as células com as taxas mensais em formato decimal (0,005 para 0,5%).</p>
+
+                <h3>Calculadora Científica</h3>
+                <p>Para calcular manualmente:</p>
+                <ol>
+                    <li>Digite 1 + primeira taxa</li>
+                    <li>Multiplique pelo (1 + segunda taxa)</li>
+                    <li>Continue multiplicando</li>
+                    <li>Subtraia 1</li>
+                    <li>Multiplique por 100</li>
+                </ol>
+
+                <div class="cta-box" role="complementary">
+                    <h3>🧮 Calcule Variações</h3>
+                    <p>Use nossa calculadora para calcular inflação acumulada facilmente.</p>
+                    <a href="/calculadoras/calc-inflacao.html " class="cta-btn">Calcular Agora →</a>
+                </div>
+
+                <h2 id="inflacao-negativa">8. Inflação Negativa (Deflação)</h2>
+                <p>Quando os preços caem, temos <strong>deflação</strong> (inflação negativa). O cálculo é o mesmo:</p>
+
+                <div class="exemplo-card">
+                    <h4>📉 Exemplo com deflação</h4>
+                    <div class="exemplo-linha"><span class="el-label">Mês 1</span><span>-0,2% (deflação)</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Mês 2</span><span>0,3% (inflação)</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Mês 3</span><span>-0,1% (deflação)</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Cálculo</span><span>(0,998 × 1,003 × 0,999) -
+                            1</span></div>
+                    <div class="exemplo-resultado verde"><span>Inflação acumulada</span><span class="res-val">0,00%
+                            (praticamente zero)</span></div>
+                </div>
+
+                <h2 id="dicas">9. Dicas Importantes</h2>
+
+                <h3>1. Use Sempre a Fórmula Correta</h3>
+                <p>Nunca some as taxas. Sempre multiplique os índices (1 + taxa).</p>
+
+                <h3>2. Converta para Decimal</h3>
+                <p>Lembre-se: 0,5% = 0,005 (divide por 100).</p>
+
+                <h3>3. Consulte Fontes Oficiais</h3>
+                <p>O IBGE divulga o IPCA todo mês. Use dados oficiais para cálculos de reajuste.</p>
+
+                <h3>4. Diferencie os Períodos</h3>
+                <p>Inflação acumulada no ano ≠ inflação acumulada em 12 meses. No ano vai de janeiro até agora. Em 12
+                    meses são os últimos 12 meses.</p>
+
+                <h3>5. Atenção em Períodos Longos</h3>
+                <p>Quanto maior o período e maiores as taxas, maior a diferença entre somar (errado) e acumular (certo).
+                </p>
+
+                <div class="highlight-box verde">
+                    <strong>✅ Atalho mental:</strong> Para períodos curtos e inflação baixa, a diferença entre somar e
+                    acumular é pequena. Mas para ser preciso e não errar em cálculos importantes (salário, aluguel),
+                    sempre use a fórmula correta.
+                </div>
+
+                <h2 id="exemplo-real">10. Exemplo Real: 2023-2024</h2>
+                <p>Vamos usar dados reais do IPCA de 2023 para ilustrar:</p>
+
+                <div class="exemplo-card">
+                    <h4>📊 IPCA acumulado em 2023 (jan-dez)</h4>
+                    <div class="exemplo-linha"><span class="el-label">Janeiro</span><span>0,53%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Fevereiro</span><span>0,84%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Março</span><span>0,71%</span></div>
+                    <div class="exemplo-linha"><span class="el-label">...</span><span>demais meses...</span></div>
+                    <div class="exemplo-linha"><span class="el-label">Dezembro</span><span>0,56%</span></div>
+                    <div class="exemplo-resultado verde"><span>IPCA acumulado 2023</span><span class="res-val">4,62%
+                            (oficial IBGE)</span></div>
+                </div>
+
+                <p>Esse 4,62% foi calculado multiplicando todos os índices mensais — não somando as taxas!</p>
+
+                <h2 id="conclusao">Conclusão</h2>
+                <p>Calcular a inflação acumulada corretamente é essencial para entender o verdadeiro impacto dos preços
+                    no seu bolso. A diferença entre somar taxas (método errado) e multiplicar índices (método correto)
+                    pode parecer pequena no curto prazo, mas faz toda diferença em decisões importantes como reajuste de
+                    salário, aluguel e avaliação de investimentos. Use sempre a fórmula correta: multiplique (1 + cada
+                    taxa), subtraia 1 e converta para percentual. Com esse conhecimento, você consegue avaliar com
+                    precisão se seus ganhos estão realmente superando a inflação e mantendo seu poder de compra ao longo
+                    do tempo.</p>
+
+            </article>
+
+            <div class="author-box" aria-label="Sobre o autor">
+                <div class="author-avatar" aria-hidden="true">👨‍💼</div>
+                <div class="author-info">
+                    <h4>Equipe Editorial — Portal das Contas</h4>
+                    <p>Conteúdo desenvolvido por especialistas em educação financeira e economia, com foco em
+                        simplificar conceitos econômicos para o público geral.</p>
+                </div>
+            </div>
+
+            <section class="faq-section" aria-labelledby="faq-titulo">
+                <h2 id="faq-titulo">Perguntas Frequentes sobre Inflação Acumulada</h2>
+                <details class="faq-item">
+                    <summary>Como calcular a inflação acumulada?</summary>
+                    <div class="faq-answer">Para calcular inflação acumulada corretamente, use a fórmula: Inflação
+                        Acumulada = [(1 + taxa₁) × (1 + taxa₂) × ... × (1 + taxaₙ) - 1] × 100. Exemplo prático: se a
+                        inflação foi 0,5% em janeiro, 0,6% em fevereiro e 0,4% em março, o cálculo correto é [(1,005 ×
+                        1,006 × 1,004) - 1] × 100 = 1,52%. Nunca some diretamente as taxas (0,5% + 0,6% + 0,4% = 1,5%)
+                        pois isso ignora o efeito composto.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>O que é inflação acumulada no ano?</summary>
+                    <div class="faq-answer">Inflação acumulada no ano é a variação total de preços desde janeiro até o
+                        mês atual do mesmo ano. É calculada multiplicando todos os índices mensais do período. Exemplo:
+                        se estamos em março e o IPCA foi 0,5% em janeiro, 0,6% em fevereiro e 0,4% em março, a inflação
+                        acumulada no ano é 1,52% (não 1,5% da soma simples). O IBGE divulga esse indicador mensalmente
+                        junto com o IPCA.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Como calcular inflação acumulada em 12 meses?</summary>
+                    <div class="faq-answer">Para calcular a inflação acumulada em 12 meses, multiplique os índices
+                        mensais dos últimos 12 meses e subtraia 1. Fórmula: [(1+mês₁) × (1+mês₂) × ... × (1+mês₁₂) - 1]
+                        × 100. Exemplo: se cada mês teve inflação de 0,5%, o acumulado em 12 meses é [(1,005)¹² - 1] ×
+                        100 = 6,17%, e não 6% (soma simples). Esse é o indicador "IPCA acumulado em 12 meses" divulgado
+                        mensalmente pelo IBGE.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Qual a diferença entre somar e acumular inflação?</summary>
+                    <div class="faq-answer">Somar inflação (0,5% + 0,6% + 0,4% = 1,5%) está ERRADO porque ignora o
+                        efeito composto dos preços. Acumular inflação corretamente considera que a inflação de cada mês
+                        incide sobre os preços já reajustados dos meses anteriores. O cálculo correto multiplica os
+                        índices: (1,005 × 1,006 × 1,004 - 1) = 1,52%. A diferença parece pequena em períodos curtos, mas
+                        em 12 meses ou mais pode ser significativa e impactar reajustes salariais e contratuais.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Como usar inflação acumulada no reajuste de salário?</summary>
+                    <div class="faq-answer">Para repor perdas pela inflação no salário, use a inflação acumulada no
+                        período desde o último reajuste. Exemplo: salário de R$ 5.000 sem reajuste há 12 meses, inflação
+                        acumulada de 6,17%. Reajuste necessário: R$ 5.000 × 1,0617 = R$ 5.308,50. Se receber menos
+                        (exemplo R$ 5.200), houve perda real de 2,04% no poder de compra. Use sempre a inflação
+                        acumulada oficial (IPCA) e não a soma simples das taxas mensais.</div>
+                </details>
+            </section>
+
+            <section class="related-articles" aria-labelledby="relacionados-titulo">
+                <h2 id="relacionados-titulo">Veja Também</h2>
+                <div class="cards-grid">
+                    <a href="o-que-e-ipca.html" class="card">
+                        <span class="card-icon">📊</span>
+                        <span class="card-tag">Artigo</span>
+                        <span class="card-title">O Que é IPCA</span>
+                        <span class="card-desc">Entenda o índice oficial de inflação no Brasil.</span>
+                        <span class="card-arrow">Ler artigo →</span>
+                    </a>
+                    <a href="../../calculadoras/porcentagem.html" class="card">
+                        <span class="card-icon">%</span>
+                        <span class="card-tag">Calculadora</span>
+                        <span class="card-title">Calculadora de Porcentagem</span>
+                        <span class="card-desc">Calcule variações e inflação acumulada.</span>
+                        <span class="card-arrow">Calcular →</span>
+                    </a>
+                    <a href="/artigos/financas/calcular-rentabilidade-investimento.html" class="card">
+                        <span class="card-icon">💹</span>
+                        <span class="card-tag">Artigo</span>
+                        <span class="card-title">Como Calcular Rentabilidade</span>
+                        <span class="card-desc">Compare investimentos descontando inflação.</span>
+                        <span class="card-arrow">Ler artigo →</span>
+                    </a>
+                    <a href="/artigos/financas/calcular-rendimento-investimento.html" class="card">
+                        <span class="card-icon">📈</span>
+                        <span class="card-tag">Artigo</span>
+                        <span class="card-title">Rendimento de Investimentos</span>
+                        <span class="card-desc">Veja se seus investimentos vencem a inflação.</span>
+                        <span class="card-arrow">Ler artigo →</span>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="/paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="/paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="/paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="/paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/theme.js"></script>
+
+</body>
+
+</html>

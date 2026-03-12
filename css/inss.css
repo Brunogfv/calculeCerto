@@ -16,11 +16,11 @@
     --cor-texto-suave: #94a3b8;
 }
 
-body {
+/* body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    /* padding-bottom: 40px; */
-}
+    padding-bottom: 40px;
+} */
 
 .calculator-wrapper {
     max-width: 900px;

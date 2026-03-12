@@ -64,12 +64,13 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
     border-bottom: 1px solid #e2e8f0;
 }
 
 .header-container {
-    max-width: 1300px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 12px 20px;
     display: flex;
@@ -331,10 +332,8 @@ nav .menu-item>a::after {
     opacity: 0.7;
 }
 
-/* Menu Dropdown (Escondido por padrão) */
+/* Menu Dropdown (Escondido por padrão com transição suave) */
 nav .dropdown-menu {
-    display: none !important;
-    /* FORÇA ficar fechado */
     position: absolute;
     top: 100%;
     left: 0;
@@ -343,17 +342,23 @@ nav .dropdown-menu {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     border-radius: 0 0 8px 8px;
     z-index: 9999;
-    /* Garante que fique por cima de tudo */
     padding: 8px 0;
     border-top: 1px solid #f1f5f9;
+    /* Transição suave em vez de display:none */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
 }
 
 /* Mostra ao passar o mouse (APENAS NO DESKTOP) */
 @media (min-width: 769px) {
     nav .menu-item:hover .dropdown-menu {
-        display: block !important;
-        /* FORÇA abrir no hover */
-        animation: fadeIn 0.2s ease;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 }
 
@@ -397,24 +402,37 @@ nav .dropdown-menu a:hover {
         width: 100%;
     }
 
-    /* O dropdown vira estático para aparecer embaixo no mobile */
+    /* No mobile, dropdown vira estático e controlado por clique */
     nav .dropdown-menu {
         position: static;
-        display: none !important;
-        /* Continua fechado até clicar */
         width: 100%;
         box-shadow: none;
         border: none;
         background-color: rgba(0, 0, 0, 0.2);
-        /* Fundo levemente escuro para indicar submenu */
         padding-left: 15px;
-        /* Indentação visual */
         border-radius: 0;
+        /* Escondido por padrão com transição */
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        transform: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.4s ease;
+        overflow: hidden;
+        pointer-events: none;
     }
 
-    /* Classe auxiliar para abrir no mobile */
+    /* Desativa hover no mobile */
+    nav .menu-item:hover .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Classe auxiliar para abrir no mobile (via clique) */
     nav .dropdown-menu.mobile-open {
-        display: block !important;
+        opacity: 1;
+        visibility: visible;
+        max-height: 500px;
+        pointer-events: auto;
     }
 }
 

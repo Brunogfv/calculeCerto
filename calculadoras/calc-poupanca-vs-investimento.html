@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Compare a rentabilidade da Poupança com outros investimentos. Use nossa calculadora para ver quanto você ganha a mais aplicando seu dinheiro com juros compostos.">
+
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/juros.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
+
+    <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
+    <script type="module" src="/js/pagefind.js"></script>
+
+    <title>Calculadora de Poupança vs. Outros Investimentos | Portal das Contas</title>
+
+</head>
+
+<body data-theme="light">
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="/index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="/calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="/calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="/calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <!-- NOVAS CALCULADORAS FINANCEIRAS -->
+                        <a href="/calculadoras/calc-investimento.html" onclick="toggleMenu()">Investimentos</a>
+                        <a href="/calculadoras/dividendos.html" onclick="toggleMenu()">Dividendos</a>
+                        <a href="/calculadoras/calc-inflacao.html" onclick="toggleMenu()">Inflação</a>
+                        <a href="/calculadoras/calc-cdb.html" onclick="toggleMenu()">CDB</a>
+                        <a href="/calculadoras/calc-ir-investimentos.html" onclick="toggleMenu()">IR Investimentos</a>
+                        <a href="/calculadoras/calc-tesouro-direto.html" onclick="toggleMenu()">Tesouro Direto</a>
+                        <a href="/calculadoras/calc-price-sac.html" onclick="toggleMenu()">Price e SAC</a>
+                        <a href="/calculadoras/calc-poupanca-vs-investimento.html" onclick="toggleMenu()">Poupança vs.
+                            Outros</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="/calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="/calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="/calculadoras/gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="/calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="/calculadoras/pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <!-- NOVA CALCULADORA EDUCAÇÃO -->
+                        <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="/calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="/calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="/calculadoras/medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="/calculadoras/churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="/calculadoras/pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="/calculadoras/energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="/calculadoras/festa.html" class="active" onclick="toggleMenu()">Calculadora de
+                            Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="/calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="/calculadoras/conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="/calculadoras/velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="/calculadoras/kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="/artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <!-- BARRA DE BUSCA ADICIONADA AQUI -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
+                    autocomplete="off">
+
+                <!-- Lista de Resultados -->
+                <div class="search-results" id="search-results-list">
+                    <!-- Os itens serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <!-- FIM DA BARRA DE BUSCA -->
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h1>Calculadora de Poupança vs. Outros Investimentos</h1>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra o quanto você pode ganhar a mais
+                        aplicando seu dinheiro.</p>
+                </div>
+
+                <section class="intro-seo" style="margin-bottom:30px;">
+                    <h2>Por que comparar a Poupança?</h2>
+                    <p>
+                        A Poupança é tradicional, mas muitas vezes perde para a inflação ou para investimentos simples
+                        como CDB e Tesouro Direto.
+                        Nesta calculadora, simulamos o impacto dos <strong>Juros Compostos</strong> ao longo do tempo e
+                        mostramos a diferença real no seu bolso.
+                    </p>
+                </section>
+
+
+                <div class="inputs-grid">
+                    <div class="input-group">
+                        <label for="valor-inicial">Valor Inicial (R$)</label>
+                        <input type="text" id="valor-inicial" placeholder="Ex: 1.000,00" oninput="formatarMoeda(this)">
+                    </div>
+                    <div class="input-group">
+                        <label for="aporte-mensal">Aporte Mensal (R$)</label>
+                        <input type="text" id="aporte-mensal" placeholder="Ex: 200,00" oninput="formatarMoeda(this)">
+                    </div>
+                    <div class="input-group">
+                        <label for="prazo-anos">Prazo (Anos)</label>
+                        <input type="number" id="prazo-anos" placeholder="Ex: 2" step="1">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="input-group">
+                            <label for="taxa-poupanca">Taxa Poupança (% a.m)</label>
+                            <input type="number" id="taxa-poupanca" value="0.5" step="0.01">
+                            <small style="font-size: 0.7em; color: #64748b;">Média ~0,5%</small>
+                        </div>
+                        <div class="input-group">
+                            <label for="taxa-investimento">Taxa Investimento (% a.m)</label>
+                            <input type="number" id="taxa-investimento" value="1.0" step="0.01">
+                            <small style="font-size: 0.7em; color: #64748b;">Simulação ~1,0%</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-primary" onclick="calcularComparacao()">Calcular Agora</button>
+                    <button class="btn-secondary" onclick="limparCampos()">Limpar</button>
+                </div>
+
+                <!-- Resultados -->
+                <div id="resultado-comparacao" class="result-area">
+
+                    <!-- Banner de Diferença (Estilo da versão anterior) -->
+                    <div
+                        style="background-color: #fff3cd; color: #856404; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #ffeeba; margin-bottom: 25px;">
+                        <span style="font-weight: bold; font-size: 1.1rem;">Ao investir melhor, você ganharia</span><br>
+                        <span id="diferenca-valor"
+                            style="font-size: 2rem; font-weight: 800; color: #b45309; display: block; margin: 10px 0;">R$
+                            0,00</span>
+                        <span style="font-size: 0.9rem;">a mais que na Poupança.</span>
+                    </div>
+
+                    <div class="inputs-grid" style="grid-template-columns: 1fr 1fr;">
+                        <!-- Card Poupança -->
+                        <div class="result-card" style="border-top: 4px solid #7f8c8d;">
+                            <small
+                                style="color: var(--cor-texto-suave); text-transform: uppercase; letter-spacing: 1px;">Na
+                                Poupança</small>
+                            <div class="result-value-main" id="total-poupanca">R$ 0,00</div>
+                            <div class="result-value-details">
+                                <div class="detail-item">
+                                    <small>Total Investido</small>
+                                    <strong id="investido-poup">R$ 0,00</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <small>Lucro</small>
+                                    <strong id="lucro-poup" class="text-green">R$ 0,00</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Investimento -->
+                        <div class="result-card" style="border-top: 4px solid #27ae60;">
+                            <small
+                                style="color: var(--cor-texto-suave); text-transform: uppercase; letter-spacing: 1px;">No
+                                Investimento</small>
+                            <div class="result-value-main" id="total-investimento">R$ 0,00</div>
+                            <div class="result-value-details">
+                                <div class="detail-item">
+                                    <small>Total Investido</small>
+                                    <strong id="investido-cdb">R$ 0,00</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <small>Lucro Líq. (estimado)</small>
+                                    <strong id="lucro-cdb" class="text-green">R$ 0,00</strong>
+                                </div>
+                            </div>
+                            <small style="display:block; margin-top:10px; font-size:0.75rem; color:#666;">*Já descontado
+                                IR</small>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico -->
+                    <div class="grafico-container" id="grafico-container" style="margin-top: 30px;">
+                        <canvas id="graficoComparacao"></canvas>
+                    </div>
+                </div>
+
+                <!-- Anúncio Dinâmico -->
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O produto será carregado aqui pelo js/ads.js -->
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo (Baseado na versão anterior) -->
+            <h3 style="margin-bottom: 20px; color: var(--cor-texto);">Entenda o cálculo</h3>
+
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h4 style="margin-top:0; color: var(--cor-primaria);">O que significa o cálculo?</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        A comparação utiliza o regime de <strong>Juros Compostos</strong>, onde os juros gerados são
+                        somados ao capital para calcular os juros do mês seguinte ("juros sobre juros"). A diferença
+                        principal é a taxa de juros aplicada.
+                    </p>
+                </div>
+
+                <div class="edu-card" style="border-color: var(--cor-secundaria);">
+                    <h4 style="margin-top:0; color: var(--cor-secundaria);">Fórmula Matemática</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        Usamos a fórmula de Juros Compostos com aportes mensais para ambos os cenários.
+                    </p>
+                    <div class="edu-formula">M = C(1+i)^n + PMT × [ (1+i)^n - 1 ] / i</div>
+                    <small style="color: #64748b;">M: Montante, C: Capital, i: Taxa, n: Meses, PMT: Aporte.</small>
+                </div>
+            </div>
+
+            <section style="margin-top: 40px; padding-left: 25px;">
+                <h3 style="color: var(--cor-texto);">Exemplo Prático</h3>
+                <div class="example-box">
+                    <p>Imagine que você tem <strong>R$ 1.000,00</strong> para guardar por <strong>1 ano</strong> (12
+                        meses), sem aportar mais nada.</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Poupança (0,5% a.m):</strong> Ao final, você terá aproximadamente <strong>R$
+                                1.061,68</strong>.</li>
+                        <li><strong>Investimento (1,0% a.m):</strong> Ao final, você terá aproximadamente <strong>R$
+                                1.126,83</strong> (líquido após IR).</li>
+                    </ul>
+                    <p style="margin-top: 10px;">Neste cenário simples de 1 ano, a diferença já é de mais de R$ 60,00.
+                        Em prazos maiores (10, 20 anos), com aportes mensais, essa diferença se torna um valor
+                        gigantesco.</p>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section style="margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                <h3 style="color: var(--cor-texto);">Perguntas Frequentes</h3>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Vale mais a pena poupança ou CDB?
+                    </summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        Na maioria dos cenários econômicos recentes, o CDB que paga 100% do CDI costuma render mais que
+                        a Poupança, mesmo após o desconto do Imposto de Renda.
+                    </p>
+                </details>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Investimentos como CDB são seguros?
+                    </summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        Sim, a grande maioria dos CDBs conta com a proteção do FGC (Fundo Garantidor de Créditos), que
+                        garante o reembolso de até R$ 250.000,00 por CPF e por instituição financeira em caso de
+                        falência do banco.
+                    </p>
+                </details>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Quais são as desvantagens do CDB em
+                        relação à Poupança?</summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        As principais desvantagens são a liquidez (alguns CDBs têm carência) e a tributação (o CDB paga
+                        Imposto de Renda sobre os lucros, enquanto a poupança é isenta). Porém, mesmo pagando IR, o CDB
+                        costuma render mais.
+                    </p>
+                </details>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="/paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="/paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="/paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="/paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos do Template -->
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/ads.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Script Específico (Lógica idêntica à versão standalone anterior) -->
+    <script>
+        let graficoComparacaoInstance = null;
+
+        function formatarMoeda(input) {
+            let valor = input.value.replace(/\D/g, "");
+            valor = (valor / 100).toFixed(2) + "";
+            valor = valor.replace(".", ",");
+            valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+            input.value = valor;
+        }
+
+        function parseMoeda(valorString) {
+            if (!valorString) return 0;
+            return parseFloat(valorString.replace(/\./g, "").replace(",", "."));
+        }
+
+        function formatarParaBRL(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function calcularComparacao() {
+            // 1. Obter Valores (Idênticos à versão anterior)
+            let valorInicial = parseFloat(document.getElementById('valor-inicial').value);
+            let aporteMensal = parseFloat(document.getElementById('aporte-mensal').value);
+            let anos = parseInt(document.getElementById('prazo-anos').value);
+            let taxaPoupanca = parseFloat(document.getElementById('taxa-poupanca').value);
+            let taxaInvestimento = parseFloat(document.getElementById('taxa-investimento').value);
+
+            // Validação simples
+            if (isNaN(valorInicial)) valorInicial = 0;
+            if (isNaN(aporteMensal)) aporteMensal = 0;
+            if (isNaN(anos) || anos <= 0) {
+                alert("Por favor, insira um período válido em anos.");
+                return;
+            }
+            if (isNaN(taxaPoupanca) || isNaN(taxaInvestimento)) {
+                alert("Insira taxas válidas.");
+                return;
+            }
+
+            let meses = anos * 12;
+            let iPoupanca = taxaPoupanca / 100;
+            let iInvestimento = taxaInvestimento / 100;
+
+            // Cálculo do Total Investido (Bolsa)
+            let totalInvestido = valorInicial + (aporteMensal * meses);
+
+            // 2. Cálculo Poupança (Isenta de IR)
+            // FV = P(1+i)^n + PMT * [((1+i)^n - 1) / i]
+            let futuroPoupanca = valorInicial * Math.pow(1 + iPoupanca, meses);
+            if (iPoupanca > 0) {
+                futuroPoupanca += aporteMensal * ((Math.pow(1 + iPoupanca, meses) - 1) / iPoupanca);
+            } else {
+                futuroPoupanca += aporteMensal * meses;
+            }
+
+            let lucroPoupanca = futuroPoupanca - totalInvestido;
+
+            // 3. Cálculo Investimento (Sujeito a IR)
+            // Lógica simplificada da versão anterior: 15% se > 2 anos, 20% se <= 2 anos.
+            let brutoInvestimento = valorInicial * Math.pow(1 + iInvestimento, meses);
+            if (iInvestimento > 0) {
+                brutoInvestimento += aporteMensal * ((Math.pow(1 + iInvestimento, meses) - 1) / iInvestimento);
+            } else {
+                brutoInvestimento += aporteMensal * meses;
+            }
+
+            let aliquotaIR = (anos > 2) ? 0.15 : 0.20; // Simplificação didática da versão anterior
+            let lucroBruto = brutoInvestimento - totalInvestido;
+            let valorIR = lucroBruto * aliquotaIR;
+            let futuroInvestimentoLiquido = brutoInvestimento - valorIR;
+            let lucroInvestimentoLiquido = futuroInvestimentoLiquido - totalInvestido;
+
+            // 4. Exibir Resultados
+            document.getElementById('total-poupanca').innerText = formatarParaBRL(futuroPoupanca);
+            document.getElementById('investido-poup').innerText = formatarParaBRL(totalInvestido);
+            document.getElementById('lucro-poup').innerText = formatarParaBRL(lucroPoupanca);
+
+            document.getElementById('total-investimento').innerText = formatarParaBRL(futuroInvestimentoLiquido);
+            document.getElementById('investido-cdb').innerText = formatarParaBRL(totalInvestido);
+            document.getElementById('lucro-cdb').innerText = formatarParaBRL(lucroInvestimentoLiquido);
+
+            let diferenca = futuroInvestimentoLiquido - futuroPoupanca;
+            let elDiferenca = document.getElementById('diferenca-valor');
+            elDiferenca.innerText = formatarParaBRL(diferenca);
+
+            if (diferenca > 0) {
+                elDiferenca.style.color = "#b45309"; // Amarelo escuro/ouro para destaque
+            } else {
+                elDiferenca.style.color = "#27ae60"; // Verde
+            }
+
+            // Mostrar div de resultados
+            document.getElementById('resultado-comparacao').style.display = 'block';
+
+            // 5. Atualizar Gráfico
+            atualizarGrafico(futuroPoupanca, futuroInvestimentoLiquido);
+        }
+
+        function limparCampos() {
+            document.getElementById('valor-inicial').value = '';
+            document.getElementById('aporte-mensal').value = '';
+            document.getElementById('prazo-anos').value = '';
+            document.getElementById('taxa-poupanca').value = '0.5';
+            document.getElementById('taxa-investimento').value = '1.0';
+            document.getElementById('resultado-comparacao').style.display = 'none';
+
+            if (graficoComparacaoInstance) {
+                graficoComparacaoInstance.destroy();
+            }
+        }
+
+        function atualizarGrafico(valorPoupanca, valorCDB) {
+            const ctx = document.getElementById('graficoComparacao').getContext('2d');
+
+            if (graficoComparacaoInstance) {
+                graficoComparacaoInstance.destroy();
+            }
+
+            graficoComparacaoInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Poupança', 'Investimento (Líquido)'],
+                    datasets: [{
+                        label: 'Valor Total (R$)',
+                        data: [valorPoupanca, valorCDB],
+                        backgroundColor: [
+                            '#95a5a6', // Cinza
+                            '#27ae60'  // Verde
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return 'Total: ' + new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed.y);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function (value) {
+                                    return 'R$ ' + value.toLocaleString('pt-BR');
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Carregamento de Anúncio (Mantendo padrão do template)
+        carregarAnuncio('poupanca-vs-investimentos');
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora de Poupança vs. Outros Investimentos",
+            "description": "Compare o rendimento da Poupança com Investimentos (CDB/Tesouro) calculando juros compostos e IR estimado.",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "All",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "BRL"
+            }
+        }
+    </script>
+</body>
+
+</html>

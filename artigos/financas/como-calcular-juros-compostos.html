@@ -23,44 +23,44 @@
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Como Calcular Juros Compostos: Fórmula, Exemplos e Simulações para 2026",
-      "description": "Guia completo sobre juros compostos com a fórmula M = C(1+i)^t, exemplos práticos resolvidos, comparação com juros simples e a Regra do 72.",
-      "author": {"@type": "Organization", "name": "Portal das Contas"},
-      "publisher": {"@type": "Organization", "name": "Portal das Contas"},
-      "datePublished": "2026-02-18",
-      "dateModified": "2026-02-18",
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://portaldascontas.com.br/artigos/investimentos/como-calcular-juros-compostos.html"},
-      "articleSection": "Investimentos",
-      "keywords": ["juros compostos", "fórmula juros compostos", "montante", "CDI", "renda fixa", "investimentos"]
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Como Calcular Juros Compostos: Fórmula, Exemplos e Simulações para 2026",
+    "description": "Guia completo sobre juros compostos com a fórmula M = C(1+i)^t, exemplos práticos resolvidos, comparação com juros simples e a Regra do 72.",
+    "author": {"@type": "Organization", "name": "Portal das Contas"},
+    "publisher": {"@type": "Organization", "name": "Portal das Contas"},
+    "datePublished": "2026-02-18",
+    "dateModified": "2026-02-18",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://portaldascontas.com.br/artigos/investimentos/como-calcular-juros-compostos.html"},
+    "articleSection": "Investimentos",
+    "keywords": ["juros compostos", "fórmula juros compostos", "montante", "CDI", "renda fixa", "investimentos"]
     }
     </script>
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
         {"@type": "Question", "name": "Qual a fórmula dos juros compostos?", "acceptedAnswer": {"@type": "Answer", "text": "A fórmula é M = C × (1 + i)^t, onde M é o montante final, C é o capital inicial, i é a taxa de juros em decimal e t é o tempo. O resultado J (juros) é obtido subtraindo o capital: J = M − C."}},
         {"@type": "Question", "name": "Qual a diferença entre juros simples e compostos?", "acceptedAnswer": {"@type": "Answer", "text": "Nos juros simples, os juros são calculados sempre sobre o capital inicial. Nos compostos, os juros são calculados sobre o capital mais os juros já acumulados — o famoso 'juros sobre juros'. Com o tempo, a diferença entre os dois modelos se torna enorme."}},
         {"@type": "Question", "name": "O que é a Regra do 72?", "acceptedAnswer": {"@type": "Answer", "text": "É um atalho mental para estimar em quanto tempo um investimento dobra de valor com juros compostos. Basta dividir 72 pela taxa de juros anual. Exemplo: a 8% ao ano, o capital dobra em aproximadamente 9 anos (72 ÷ 8 = 9)."}},
         {"@type": "Question", "name": "Como converter taxa mensal em anual para juros compostos?", "acceptedAnswer": {"@type": "Answer", "text": "A conversão NÃO é simples (não basta multiplicar por 12). A taxa anual equivalente é calculada como: taxa anual = (1 + taxa mensal)^12 − 1. Exemplo: 1% ao mês equivale a (1,01)^12 − 1 = 12,68% ao ano, não 12%."}},
         {"@type": "Question", "name": "Juros compostos são usados em financiamentos?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. A maioria dos financiamentos, empréstimos pessoais e cartões de crédito utiliza o regime de juros compostos. Por isso dívidas no cartão crescem rapidamente — a mesma lógica de crescimento exponencial que beneficia o investidor, prejudica o devedor."}}
-      ]
+]
     }
     </script>
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://portaldascontas.com.br/"},
         {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://portaldascontas.com.br/artigos/index.html"},
         {"@type": "ListItem", "position": 3, "name": "Investimentos", "item": "https://portaldascontas.com.br/artigos/financas/"},
         {"@type": "ListItem", "position": 4, "name": "Como Calcular Juros Compostos", "item": "https://portaldascontas.com.br/artigos/financas/como-calcular-juros-compostos.html"}
-      ]
+    ]
     }
     </script>
 
@@ -78,19 +78,20 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- <link rel="stylesheet" href="/artigos/css/o-que-e-roi.css"> -->
     <link rel="stylesheet" href="/artigos/css/como-calcular-juros-compostos.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
 
-    <style>
+    <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
+    <script type="module" src="/js/pagefind.js"></script>
 
-    </style>
 </head>
 
 <body data-theme="light">
 
+    <!-- Overlay Mobile -->
     <div class="overlay" onclick="toggleMenu()"></div>
 
-    <!-- ══════════════════════════════════
-        HEADER — PRESERVADO
-        ══════════════════════════════════ -->
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
@@ -121,6 +122,16 @@
                         <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
                         <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
                         <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <!-- NOVAS CALCULADORAS FINANCEIRAS -->
+                        <a href="/calculadoras/calc-investimento.html" onclick="toggleMenu()">Investimentos</a>
+                        <a href="/calculadoras/dividendos.html" onclick="toggleMenu()">Dividendos</a>
+                        <a href="/calculadoras/calc-inflacao.html" onclick="toggleMenu()">Inflação</a>
+                        <a href="/calculadoras/calc-cdb.html" onclick="toggleMenu()">CDB</a>
+                        <a href="/calculadoras/calc-ir-investimentos.html" onclick="toggleMenu()">IR Investimentos</a>
+                        <a href="/calculadoras/calc-tesouro-direto.html" onclick="toggleMenu()">Tesouro Direto</a>
+                        <a href="/calculadoras/calc-price-sac.html" onclick="toggleMenu()">Price e SAC</a>
+                        <a href="/calculadoras/calc-poupanca-vs-investimento.html" onclick="toggleMenu()">Poupança vs.
+                            Outros</a>
                     </div>
                 </div>
 
@@ -151,11 +162,12 @@
                     <div class="dropdown-menu">
                         <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
                         <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
-                        <a href="/calculadoras/nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
                         <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
                         <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
-                        <a href="/calculadoras/equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
                         <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <!-- NOVA CALCULADORA EDUCAÇÃO -->
                         <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
                     </div>
                 </div>
@@ -196,6 +208,23 @@
                 <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
                 <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
             </nav>
+
+            <!-- BARRA DE BUSCA ADICIONADA AQUI -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
+                    autocomplete="off">
+
+                <!-- Lista de Resultados -->
+                <div class="search-results" id="search-results-list">
+                    <!-- Os itens serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <!-- FIM DA BARRA DE BUSCA -->
 
             <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
                 <span id="theme-icon">🌙</span>

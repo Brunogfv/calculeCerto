@@ -22,43 +22,43 @@
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Como Calcular Hora Extra Corretamente: Guia Completo da CLT 2026",
-      "description": "Guia completo sobre cálculo de hora extra segundo a CLT: divisor 220, adicionais de 50% e 100%, hora noturna, banco de horas e reflexos no 13º e férias.",
-      "author": {"@type": "Organization", "name": "Portal das Contas"},
-      "publisher": {"@type": "Organization", "name": "Portal das Contas"},
-      "datePublished": "2026-02-18",
-      "dateModified": "2026-02-18",
-      "articleSection": "Finanças",
-      "keywords": ["hora extra", "CLT", "divisor 220", "adicional noturno", "banco de horas", "13 salário"]
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Como Calcular Hora Extra Corretamente: Guia Completo da CLT 2026",
+    "description": "Guia completo sobre cálculo de hora extra segundo a CLT: divisor 220, adicionais de 50% e 100%, hora noturna, banco de horas e reflexos no 13º e férias.",
+    "author": {"@type": "Organization", "name": "Portal das Contas"},
+    "publisher": {"@type": "Organization", "name": "Portal das Contas"},
+    "datePublished": "2026-02-18",
+    "dateModified": "2026-02-18",
+    "articleSection": "Finanças",
+    "keywords": ["hora extra", "CLT", "divisor 220", "adicional noturno", "banco de horas", "13 salário"]
     }
     </script>
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
         {"@type": "Question", "name": "Por que se usa o divisor 220 no cálculo de hora extra?", "acceptedAnswer": {"@type": "Answer", "text": "O divisor 220 representa as horas mensais de um trabalhador com jornada de 44h semanais (44h × 4,33 semanas/mês ≈ 220h). A legislação trabalhista consolidou esse número como padrão para calcular o valor da hora normal, independentemente do mês ter mais ou menos semanas."}},
         {"@type": "Question", "name": "Qual o adicional de hora extra em dia útil e domingo?", "acceptedAnswer": {"@type": "Answer", "text": "Em dias úteis (segunda a sábado), o adicional mínimo é de 50% sobre o valor da hora normal. Em domingos e feriados, o adicional é de 100% (dobro). Convenções coletivas podem prever percentuais maiores, mas nunca menores."}},
         {"@type": "Question", "name": "O que é hora noturna e como afeta o cálculo?", "acceptedAnswer": {"@type": "Answer", "text": "Trabalho noturno é aquele realizado entre 22h e 5h. Tem dois benefícios: adicional noturno de pelo menos 20% sobre a hora normal, e hora ficta (cada hora trabalhada à noite conta como 52 minutos e 30 segundos, reduzindo o total de horas a cumprir). Se há hora extra noturna, acumulam-se os dois adicionais."}},
         {"@type": "Question", "name": "A hora extra entra no cálculo do 13º salário?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. As horas extras habituais integram o salário do trabalhador e impactam o cálculo do 13º salário, férias com 1/3, FGTS e aviso prévio. Para isso, considera-se a média das horas extras recebidas nos últimos 12 meses."}},
         {"@type": "Question", "name": "O que é banco de horas e quando a empresa pode usar?", "acceptedAnswer": {"@type": "Answer", "text": "Banco de horas é um sistema pelo qual as horas extras trabalhadas são compensadas com folgas em vez de pagamento. Exige acordo escrito (coletivo ou individual) e, conforme a CLT, a compensação deve ocorrer em até 6 meses. Se não compensadas no prazo, devem ser pagas como horas extras normais."}}
-      ]
+    ]
     }
     </script>
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://portaldascontas.com.br/"},
         {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://portaldascontas.com.br/artigos/index.html"},
         {"@type": "ListItem", "position": 3, "name": "Finanças", "item": "https://portaldascontas.com.br/artigos/financas/"},
         {"@type": "ListItem", "position": 4, "name": "Como Calcular Hora Extra", "item": "https://portaldascontas.com.br/artigos/financas/hora-extra.html"}
-      ]
+    ]
     }
     </script>
 
@@ -76,16 +76,20 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/artigos/css/o-que-e-roi.css">
     <link rel="stylesheet" href="/artigos/css/hora-extra.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
+
+    <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
+    <script type="module" src="/js/pagefind.js"></script>
 
 </head>
 
 <body data-theme="light">
 
+    <!-- Overlay Mobile -->
     <div class="overlay" onclick="toggleMenu()"></div>
 
-    <!-- ══════════════════════════════════
-        HEADER — PRESERVADO
-        ══════════════════════════════════ -->
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
@@ -116,6 +120,16 @@
                         <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
                         <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
                         <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <!-- NOVAS CALCULADORAS FINANCEIRAS -->
+                        <a href="/calculadoras/calc-investimento.html" onclick="toggleMenu()">Investimentos</a>
+                        <a href="/calculadoras/dividendos.html" onclick="toggleMenu()">Dividendos</a>
+                        <a href="/calculadoras/calc-inflacao.html" onclick="toggleMenu()">Inflação</a>
+                        <a href="/calculadoras/calc-cdb.html" onclick="toggleMenu()">CDB</a>
+                        <a href="/calculadoras/calc-ir-investimentos.html" onclick="toggleMenu()">IR Investimentos</a>
+                        <a href="/calculadoras/calc-tesouro-direto.html" onclick="toggleMenu()">Tesouro Direto</a>
+                        <a href="/calculadoras/calc-price-sac.html" onclick="toggleMenu()">Price e SAC</a>
+                        <a href="/calculadoras/calc-poupanca-vs-investimento.html" onclick="toggleMenu()">Poupança vs.
+                            Outros</a>
                     </div>
                 </div>
 
@@ -146,11 +160,12 @@
                     <div class="dropdown-menu">
                         <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
                         <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
-                        <a href="/calculadoras/nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
                         <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
                         <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
-                        <a href="/calculadoras/equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
                         <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <!-- NOVA CALCULADORA EDUCAÇÃO -->
                         <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
                     </div>
                 </div>
@@ -191,6 +206,23 @@
                 <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
                 <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
             </nav>
+
+            <!-- BARRA DE BUSCA ADICIONADA AQUI -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
+                    autocomplete="off">
+
+                <!-- Lista de Resultados -->
+                <div class="search-results" id="search-results-list">
+                    <!-- Os itens serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <!-- FIM DA BARRA DE BUSCA -->
 
             <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
                 <span id="theme-icon">🌙</span>

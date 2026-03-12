@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Simule seus investimentos no Tesouro Direto. Calcule o rendimento do Tesouro Selic, IPCA+ e Prefixado, descontando a taxa de custódia da B3 e o Imposto de Renda.">
+
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/juros.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
+
+    <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
+    <script type="module" src="/js/pagefind.js"></script>
+
+    <title>Calculadora de Tesouro Direto Online | Simulador de Títulos | Portal das Contas</title>
+
+</head>
+
+<body data-theme="light">
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="/index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="/calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="/calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="/calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <!-- NOVAS CALCULADORAS FINANCEIRAS -->
+                        <a href="/calculadoras/calc-investimento.html" onclick="toggleMenu()">Investimentos</a>
+                        <a href="/calculadoras/dividendos.html" onclick="toggleMenu()">Dividendos</a>
+                        <a href="/calculadoras/calc-inflacao.html" onclick="toggleMenu()">Inflação</a>
+                        <a href="/calculadoras/calc-cdb.html" onclick="toggleMenu()">CDB</a>
+                        <a href="/calculadoras/calc-ir-investimentos.html" onclick="toggleMenu()">IR Investimentos</a>
+                        <a href="/calculadoras/calc-tesouro-direto.html" onclick="toggleMenu()">Tesouro Direto</a>
+                        <a href="/calculadoras/calc-price-sac.html" onclick="toggleMenu()">Price e SAC</a>
+                        <a href="/calculadoras/calc-poupanca-vs-investimento.html" onclick="toggleMenu()">Poupança vs.
+                            Outros</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="/calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="/calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="/calculadoras/gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="/calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="/calculadoras/pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <!-- NOVA CALCULADORA EDUCAÇÃO -->
+                        <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="/calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="/calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="/calculadoras/medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="/calculadoras/churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="/calculadoras/pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="/calculadoras/energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="/calculadoras/festa.html" class="active" onclick="toggleMenu()">Calculadora de
+                            Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="/calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="/calculadoras/conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="/calculadoras/velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="/calculadoras/kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="/artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <!-- BARRA DE BUSCA ADICIONADA AQUI -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
+                    autocomplete="off">
+
+                <!-- Lista de Resultados -->
+                <div class="search-results" id="search-results-list">
+                    <!-- Os itens serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <!-- FIM DA BARRA DE BUSCA -->
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h1>Calculadora de Tesouro Direto</h1>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Simule seus títulos públicos com taxa de
+                        custódia e IR.</p>
+                </div>
+
+                <section class="intro-seo" style="margin-bottom:30px;">
+                    <h2>Como simular o rendimento do Tesouro?</h2>
+                    <p>
+                        O Tesouro Direto é a forma de o Governo brasileiro pegar dinheiro emprestado. Em troca, paga
+                        juros.
+                        A maioria dos títulos (como o Tesouro Selic) rende via juros compostos.
+                    </p>
+                    <p>
+                        Nesta calculadora, simulamos o valor bruto e depois descontamos o **Imposto de Renda (tabela
+                        regressiva)** e a **Taxa de Custódia** (cobrada pela B3 para guardar seus títulos).
+                    </p>
+                </section>
+
+
+                <div class="inputs-grid">
+                    <div class="input-group">
+                        <label for="capital-inicial">Valor a Investir (R$)</label>
+                        <input type="text" id="capital-inicial" placeholder="Ex: 5.000,00"
+                            oninput="formatarMoeda(this)">
+                    </div>
+                    <div class="input-group">
+                        <label for="taxa-anual">Taxa de Juros Anual (%)</label>
+                        <input type="number" id="taxa-anual" placeholder="Ex: 10.75" step="0.01">
+                        <small style="font-size: 0.75rem; color: #64748b; display: block; margin-top: 4px;">
+                            Para Tesouro Selic, use a taxa Selic atual.
+                        </small>
+                    </div>
+                    <div class="input-group">
+                        <label for="prazo-anos">Prazo (Anos)</label>
+                        <input type="number" id="prazo-anos" placeholder="Ex: 3" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="taxa-custodia">Taxa de Custódia (% a.a.)</label>
+                        <input type="number" id="taxa-custodia" value="0.20" step="0.01" disabled>
+                        <small style="font-size: 0.75rem; color: #64748b; display: block; margin-top: 4px;">
+                            Taxa padrão da B3 (0,20%).
+                        </small>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-primary" onclick="calcularTesouro()">Calcular Agora</button>
+                    <button class="btn-secondary" onclick="limparCampos()">Limpar</button>
+                </div>
+
+                <!-- Resultados -->
+                <div id="resultado-tesouro" class="result-area">
+                    <div class="result-card">
+                        <small
+                            style="color: var(--cor-texto-suave); text-transform: uppercase; letter-spacing: 1px;">Valor
+                            Líquido a Receber</small>
+                        <div class="result-value-main" id="valor-liquido">R$ 0,00</div>
+
+                        <div class="result-value-details">
+                            <div class="detail-item">
+                                <small>Total Bruto</small>
+                                <strong id="valor-bruto">R$ 0,00</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Imposto de Renda</small>
+                                <strong id="valor-imposto" class="text-red">- R$ 0,00</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Taxa de Custódia (Est.)</small>
+                                <strong id="valor-custodia" class="text-orange">- R$ 0,00</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Lucro Líquido</small>
+                                <strong id="lucro-liquido" class="text-green">R$ 0,00</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico -->
+                    <div class="grafico-container" id="grafico-container">
+                        <canvas id="graficoTesouro"></canvas>
+                    </div>
+                </div>
+
+                <!-- Anúncio Dinâmico -->
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O produto será carregado aqui pelo js/ads.js -->
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo -->
+            <h3 style="margin-bottom: 20px; color: var(--cor-texto);">Tipos de Títulos e Custos</h3>
+
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h4 style="margin-top:0; color: var(--cor-primaria);">Principais Títulos</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        <strong>Tesouro Selic:</strong> Rende a taxa básica de juros. Mais seguro e com liquidez
+                        diária.<br>
+                        <strong>Tesouro IPCA+:</strong> Garante ganho real acima da inflação. Ótimo para longo
+                        prazo.<br>
+                        <strong>Tesouro Prefixado:</strong> Taxa fixa definida na compra.
+                    </p>
+                </div>
+
+                <div class="edu-card" style="border-color: var(--cor-secundaria);">
+                    <h4 style="margin-top:0; color: var(--cor-secundaria);">Taxa de Custódia (B3)</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        A B3 cobra 0,20% ao ano sobre o valor total do título. Essa taxa é descontada semestralmente (a
+                        cada 6 meses) do saldo investido.
+                    </p>
+                    <div class="edu-formula">Custo = Saldo × 0,20% × (Tempo em anos)</div>
+                    <small style="color: #64748b;">Isenção para valores até R$ 10.000 no Tesouro Selic.</small>
+                </div>
+            </div>
+
+            <section style="margin-top: 40px; padding-left: 25px;">
+                <h3 style="color: var(--cor-texto);">Exemplo Prático: Investindo R$ 2.000</h3>
+                <p style="color: var(--cor-texto-suave); line-height: 1.6;">
+                    Você aplicou <strong>R$ 2.000,00</strong> no Tesouro Selic a <strong>10% ao ano</strong> por
+                    <strong>2 anos</strong>.
+                </p>
+
+                <ul style="color: var(--cor-texto-suave); font-size: 15px; line-height: 1.8;">
+                    <li>
+                        <strong>Montante Bruto (2 anos):</strong> 2.000 × (1,10)² = <strong>R$ 2.420,00</strong>.
+                    </li>
+                    <li>
+                        <strong>Lucro Bruto:</strong> R$ 420,00.
+                    </li>
+                    <li>
+                        <strong>Imposto de Renda (20% para 2 anos):</strong> 420 × 20% = <strong>R$ 84,00</strong>.
+                    </li>
+                    <li>
+                        <strong>Taxa de Custódia (Estimada):</strong> Aproximadamente <strong>R$ 9,00</strong> no
+                        período.
+                    </li>
+                    <li>
+                        <strong>Resultado Final:</strong> R$ 2.420 - R$ 84 - R$ 9 = <strong>R$ 2.327,00</strong>.
+                    </li>
+                </ul>
+                <p style="color: var(--cor-secundaria); font-weight: 500; font-size: 14px;">
+                    💡 Note que a Taxa de Custódia incide sobre o saldo total, reduzindo um pouco o ganho, mas o Tesouro
+                    continua sendo um dos investimentos mais rentáveis e seguros para pequenos investidores.
+                </p>
+            </section>
+
+            <!-- Links Externos -->
+            <div style="margin-top: 40px;">
+                <h3 style="margin-bottom: 20px;">🔗 Onde Investir</h3>
+                <div class="link-grid">
+                    <!-- Link Tesouro Direto -->
+                    <a href="https://www.tesourodireto.com.br/" target="_blank" rel="nofollow noopener"
+                        class="link-card">
+                        <span class="link-icon">🏛️</span>
+                        <div>
+                            <div class="link-title">Tesouro Direto</div>
+                            <div class="link-desc">Site oficial para compra e venda de títulos públicos do governo.
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Link B3 -->
+                    <a href="https://www.b3.com.br/pt_br/" target="_blank" rel="nofollow noopener" class="link-card">
+                        <span class="link-icon">🏢</span>
+                        <div>
+                            <div class="link-title">B3</div>
+                            <div class="link-desc">Bolsa de Valores oficial. Informações sobre taxas de custódia.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <section style="margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                <h3 style="color: var(--cor-texto);">Perguntas Frequentes</h3>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Existe isenção da taxa de custódia?
+                    </summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        Sim! Para investimentos em <strong>Tesouro Selic</strong> até o valor de <strong>R$
+                            10.000,00</strong>, não é cobrada a taxa de custódia da B3.
+                    </p>
+                </details>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Qual a liquidez do Tesouro Direto?
+                    </summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        O <strong>Tesouro Selic</strong> tem liquidez diária (vende quando quiser). Os outros títulos
+                        (IPCA+, Prefixado) podem ser vendidos a qualquer hora também, mas sujeitos ao preço de mercado
+                        (marcação a mercado), o que pode gerar lucro ou prejuízo se vendido antes do vencimento.
+                    </p>
+                </details>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="/paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="/paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="/paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="/paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos do Template -->
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/ads.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Script Específico da Calculadora de Tesouro Direto -->
+    <script>
+        let graficoTesouroInstance = null;
+
+        function formatarMoeda(input) {
+            let valor = input.value.replace(/\D/g, "");
+            valor = (valor / 100).toFixed(2) + "";
+            valor = valor.replace(".", ",");
+            valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+            input.value = valor;
+        }
+
+        function parseMoeda(valorString) {
+            if (!valorString) return 0;
+            return parseFloat(valorString.replace(/\./g, "").replace(",", "."));
+        }
+
+        function formatarParaBRL(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function calcularTesouro() {
+            // 1. Obter valores
+            const capitalInicialInput = document.getElementById('capital-inicial').value;
+            const taxaAnual = parseFloat(document.getElementById('taxa-anual').value);
+            const anos = parseInt(document.getElementById('prazo-anos').value);
+            const taxaCustodia = parseFloat(document.getElementById('taxa-custodia').value);
+
+            const capitalInicial = parseMoeda(capitalInicialInput);
+
+            // 2. Validação
+            if (!capitalInicial || capitalInicial <= 0) {
+                alert("Por favor, insira um valor válido para o investimento.");
+                return;
+            }
+            if (isNaN(taxaAnual) || taxaAnual < 0) {
+                alert("Por favor, insira uma taxa de juros anual válida.");
+                return;
+            }
+            if (isNaN(anos) || anos <= 0) {
+                alert("Por favor, insira um prazo válido em anos.");
+                return;
+            }
+
+            // 3. Cálculos
+            // A. Montante Bruto (Juros Compostos)
+            const montanteBruto = capitalInicial * Math.pow(1 + (taxaAnual / 100), anos);
+            const lucroBruto = montanteBruto - capitalInicial;
+
+            // B. Cálculo do IR (Tabela Regressiva)
+            // Considerando 365 dias no ano para simplificação da alíquota (ou ano comercial de 360)
+            const dias = anos * 365;
+            let aliquotaIR = 0;
+
+            if (dias <= 180) aliquotaIR = 0.225;
+            else if (dias <= 360) aliquotaIR = 0.20;
+            else if (dias <= 720) aliquotaIR = 0.175;
+            else aliquotaIR = 0.15;
+
+            const valorIR = lucroBruto * aliquotaIR;
+
+            // C. Cálculo da Taxa de Custódia
+            // A taxa é cobrada semestralmente (0,20% a.a.). 
+            // Estimativa simplificada: Montante Médio * 0,002 * Anos
+            // Montante Médio ≈ (Capital Inicial + Montante Bruto) / 2
+            const montanteMedio = (capitalInicial + montanteBruto) / 2;
+            const valorCustodia = montanteMedio * (taxaCustodia / 100) * anos;
+
+            // Nota: Se capitalInicial <= 10000 e fosse Tesouro Selic real, custodia seria 0.
+            // Como é uma calculadora genérica, aplicamos a taxa, mas avisamos no texto educativo.
+
+            // D. Resultados
+            const valorLiquido = montanteBruto - valorIR - valorCustodia;
+            const lucroLiquido = valorLiquido - capitalInicial;
+
+            // 4. Atualizar DOM
+            document.getElementById('valor-liquido').innerText = formatarParaBRL(valorLiquido);
+            document.getElementById('valor-bruto').innerText = formatarParaBRL(montanteBruto);
+            document.getElementById('valor-imposto').innerText = "- " + formatarParaBRL(valorIR);
+            document.getElementById('valor-custodia').innerText = "- " + formatarParaBRL(valorCustodia);
+            document.getElementById('lucro-liquido').innerText = formatarParaBRL(lucroLiquido);
+
+            // Mostrar área de resultado
+            document.getElementById('resultado-tesouro').style.display = 'block';
+
+            // 5. Atualizar Gráfico
+            atualizarGrafico(capitalInicial, lucroLiquido, valorIR, valorCustodia);
+        }
+
+        function limparCampos() {
+            document.getElementById('capital-inicial').value = '';
+            document.getElementById('taxa-anual').value = '';
+            document.getElementById('prazo-anos').value = '';
+            document.getElementById('resultado-tesouro').style.display = 'none';
+
+            if (graficoTesouroInstance) {
+                graficoTesouroInstance.destroy();
+            }
+        }
+
+        function atualizarGrafico(investido, lucroLiq, ir, custodia) {
+            const ctx = document.getElementById('graficoTesouro').getContext('2d');
+
+            if (graficoTesouroInstance) {
+                graficoTesouroInstance.destroy();
+            }
+
+            graficoTesouroInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Capital Investido', 'Lucro Líquido', 'Imposto de Renda', 'Taxa de Custódia'],
+                    datasets: [{
+                        label: 'Valor (R$)',
+                        data: [investido, lucroLiq, ir, custodia],
+                        backgroundColor: [
+                            '#94a3b8', // Cinza
+                            '#10b981', // Verde
+                            '#ef4444', // Vermelho
+                            '#f97316'  // Laranja
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function (value) {
+                                    return 'R$ ' + value.toLocaleString('pt-BR');
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Carregamento de Anúncio (Mantendo padrão do template)
+        carregarAnuncio('tesouro-direto');
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora de Tesouro Direto",
+            "description": "Simulador de rendimentos de títulos públicos com cálculo de taxa de custódia e imposto de renda regressivo.",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "All",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "BRL"
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -23,44 +23,44 @@
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Vale a Pena Investir em CDB em 2026? Guia Completo com Simulações",
-      "description": "Guia completo sobre CDB: como funciona a rentabilidade, tabela regressiva de IR, segurança do FGC, comparativo com poupança e Tesouro Selic e simulações práticas.",
-      "author": {"@type": "Organization", "name": "Portal das Contas", "url": "https://portaldascontas.com.br"},
-      "publisher": {"@type": "Organization", "name": "Portal das Contas", "logo": {"@type": "ImageObject", "url": "https://portaldascontas.com.br/images/logo.png"}},
-      "datePublished": "2026-02-18",
-      "dateModified": "2026-02-18",
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://portaldascontas.com.br/artigos/investimentos/cdb.html"},
-      "articleSection": "Investimentos",
-      "keywords": ["CDB", "CDI", "renda fixa", "FGC", "imposto de renda", "poupança", "Tesouro Selic"]
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Vale a Pena Investir em CDB em 2026? Guia Completo com Simulações",
+    "description": "Guia completo sobre CDB: como funciona a rentabilidade, tabela regressiva de IR, segurança do FGC, comparativo com poupança e Tesouro Selic e simulações práticas.",
+    "author": {"@type": "Organization", "name": "Portal das Contas", "url": "https://portaldascontas.com.br"},
+    "publisher": {"@type": "Organization", "name": "Portal das Contas", "logo": {"@type": "ImageObject", "url": "https://portaldascontas.com.br/images/logo.png"}},
+    "datePublished": "2026-02-18",
+    "dateModified": "2026-02-18",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://portaldascontas.com.br/artigos/investimentos/cdb.html"},
+    "articleSection": "Investimentos",
+    "keywords": ["CDB", "CDI", "renda fixa", "FGC", "imposto de renda", "poupança", "Tesouro Selic"]
     }
     </script>
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
         {"@type": "Question", "name": "O que é CDB?", "acceptedAnswer": {"@type": "Answer", "text": "CDB (Certificado de Depósito Bancário) é um título de renda fixa emitido por bancos. Ao comprar um CDB, você empresta dinheiro ao banco e recebe juros em troca. É um dos investimentos de renda fixa mais populares do Brasil, com garantia do FGC de até R$ 250 mil por CPF por instituição."}},
         {"@type": "Question", "name": "CDB paga imposto de renda?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O IR incide apenas sobre os rendimentos (lucro), com alíquota regressiva: 22,5% até 180 dias, 20% de 181 a 360 dias, 17,5% de 361 a 720 dias e 15% acima de 720 dias. Quanto mais tempo o dinheiro fica aplicado, menor o imposto."}},
         {"@type": "Question", "name": "CDB é mais rentável que a poupança?", "acceptedAnswer": {"@type": "Answer", "text": "Na grande maioria dos cenários, sim. CDBs acima de 100% do CDI superam a poupança líquida mesmo após o desconto do Imposto de Renda, especialmente para prazos acima de 720 dias quando a alíquota cai para 15%."}},
         {"@type": "Question", "name": "O que é o FGC e como ele protege meu CDB?", "acceptedAnswer": {"@type": "Answer", "text": "O FGC (Fundo Garantidor de Créditos) é uma entidade que devolve até R$ 250 mil por CPF por instituição financeira em caso de falência do banco. O limite global por CPF é de R$ 1 milhão a cada 4 anos. CDBs estão cobertos pelo FGC, assim como a poupança."}},
         {"@type": "Question", "name": "O que significa CDB com liquidez diária?", "acceptedAnswer": {"@type": "Answer", "text": "Significa que você pode resgatar o dinheiro a qualquer momento, com o valor caindo na conta em D+1 (1 dia útil). Ideal para reserva de emergência. Em troca, a taxa oferecida costuma ser um pouco menor que CDBs com vencimento fixo."}}
-      ]
+    ]
     }
     </script>
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://portaldascontas.com.br/"},
         {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://portaldascontas.com.br/artigos/index.html"},
         {"@type": "ListItem", "position": 3, "name": "Investimentos", "item": "https://portaldascontas.com.br/artigos/financas/"},
         {"@type": "ListItem", "position": 4, "name": "Vale a Pena Investir em CDB em 2026?", "item": "https://portaldascontas.com.br/artigos/financas/investir-cdb.html"}
-      ]
+    ]
     }
     </script>
 
@@ -71,14 +71,21 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/artigos/css/o-que-e-roi.css">
-     <link rel="stylesheet" href="/artigos/css/investir-cdb.css">
+    <link rel="stylesheet" href="/artigos/css/investir-cdb.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
+
+    <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
+    <script type="module" src="/js/pagefind.js"></script>
 
 </head>
 
-<body>
-    <!-- ══════════════════════════════════
-        HEADER — PRESERVADO
-        ══════════════════════════════════ -->
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
@@ -109,6 +116,16 @@
                         <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
                         <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
                         <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <!-- NOVAS CALCULADORAS FINANCEIRAS -->
+                        <a href="/calculadoras/calc-investimento.html" onclick="toggleMenu()">Investimentos</a>
+                        <a href="/calculadoras/dividendos.html" onclick="toggleMenu()">Dividendos</a>
+                        <a href="/calculadoras/calc-inflacao.html" onclick="toggleMenu()">Inflação</a>
+                        <a href="/calculadoras/calc-cdb.html" onclick="toggleMenu()">CDB</a>
+                        <a href="/calculadoras/calc-ir-investimentos.html" onclick="toggleMenu()">IR Investimentos</a>
+                        <a href="/calculadoras/calc-tesouro-direto.html" onclick="toggleMenu()">Tesouro Direto</a>
+                        <a href="/calculadoras/calc-price-sac.html" onclick="toggleMenu()">Price e SAC</a>
+                        <a href="/calculadoras/calc-poupanca-vs-investimento.html" onclick="toggleMenu()">Poupança vs.
+                            Outros</a>
                     </div>
                 </div>
 
@@ -139,11 +156,12 @@
                     <div class="dropdown-menu">
                         <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
                         <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
-                        <a href="/calculadoras/nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
                         <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
                         <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
-                        <a href="/calculadoras/equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
                         <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <!-- NOVA CALCULADORA EDUCAÇÃO -->
                         <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
                     </div>
                 </div>
@@ -184,6 +202,23 @@
                 <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
                 <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
             </nav>
+
+            <!-- BARRA DE BUSCA ADICIONADA AQUI -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
+                    autocomplete="off">
+
+                <!-- Lista de Resultados -->
+                <div class="search-results" id="search-results-list">
+                    <!-- Os itens serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <!-- FIM DA BARRA DE BUSCA -->
 
             <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
                 <span id="theme-icon">🌙</span>

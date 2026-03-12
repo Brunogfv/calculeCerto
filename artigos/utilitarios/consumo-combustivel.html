@@ -23,44 +23,44 @@
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Como Calcular o Consumo de Combustível: Guia Completo com Exemplos 2026",
-      "description": "Guia completo sobre cálculo de consumo de combustível: método do tanque cheio, fórmula de km/l, custo por km, comparação álcool vs gasolina e dicas para economizar.",
-      "author": {"@type": "Organization", "name": "Portal das Contas", "url": "https://portaldascontas.com.br"},
-      "publisher": {"@type": "Organization", "name": "Portal das Contas", "logo": {"@type": "ImageObject", "url": "https://portaldascontas.com.br/images/logo.png"}},
-      "datePublished": "2026-02-10",
-      "dateModified": "2026-02-18",
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://portaldascontas.com.br/artigos/auto/consumo-combustivel.html"},
-      "articleSection": "Auto",
-      "keywords": ["consumo combustível", "km por litro", "álcool vs gasolina", "custo por km", "economia combustível"]
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Como Calcular o Consumo de Combustível: Guia Completo com Exemplos 2026",
+    "description": "Guia completo sobre cálculo de consumo de combustível: método do tanque cheio, fórmula de km/l, custo por km, comparação álcool vs gasolina e dicas para economizar.",
+    "author": {"@type": "Organization", "name": "Portal das Contas", "url": "https://portaldascontas.com.br"},
+    "publisher": {"@type": "Organization", "name": "Portal das Contas", "logo": {"@type": "ImageObject", "url": "https://portaldascontas.com.br/images/logo.png"}},
+    "datePublished": "2026-02-10",
+    "dateModified": "2026-02-18",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://portaldascontas.com.br/artigos/auto/consumo-combustivel.html"},
+    "articleSection": "Auto",
+    "keywords": ["consumo combustível", "km por litro", "álcool vs gasolina", "custo por km", "economia combustível"]
     }
     </script>
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
         {"@type": "Question", "name": "Como calcular o consumo de combustível do carro?", "acceptedAnswer": {"@type": "Answer", "text": "Use o método do tanque cheio: encha o tanque e zere o hodômetro. Rode normalmente até precisar abastecer. No segundo abastecimento, anote os litros colocados e a distância percorrida. Divida os km pelos litros: esse é o seu consumo em km/l."}},
         {"@type": "Question", "name": "Qual a fórmula para calcular km por litro?", "acceptedAnswer": {"@type": "Answer", "text": "Km/L = Quilômetros rodados ÷ Litros abastecidos. Exemplo: 450 km ÷ 38 litros = 11,84 km/l."}},
         {"@type": "Question", "name": "Como calcular o custo por km rodado?", "acceptedAnswer": {"@type": "Answer", "text": "Custo por km = Preço do litro ÷ Média de km/l. Exemplo: gasolina a R$ 6,20 ÷ 11,84 km/l = R$ 0,52 por km."}},
         {"@type": "Question", "name": "Álcool ou gasolina: qual compensa mais?", "acceptedAnswer": {"@type": "Answer", "text": "O álcool compensa quando seu preço for menor que 70% do preço da gasolina para a maioria dos carros flex. Para motores turbo modernos, esse limiar pode variar entre 68% e 75%. Sempre considere a média real do seu veículo com cada combustível."}},
         {"@type": "Question", "name": "Por que meu carro está consumindo mais combustível?", "acceptedAnswer": {"@type": "Answer", "text": "Os principais fatores são: pneus descalibrados, filtro de ar sujo, velas de ignição desgastadas, excesso de peso no porta-malas, uso intenso de ar-condicionado e estilo de condução agressivo com acelerações e freadas bruscas."}}
-      ]
+    ]
     }
     </script>
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://portaldascontas.com.br/"},
         {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://portaldascontas.com.br/artigos/index.html"},
         {"@type": "ListItem", "position": 3, "name": "Auto", "item": "https://portaldascontas.com.br/artigos/utilitarios/"},
         {"@type": "ListItem", "position": 4, "name": "Como Calcular o Consumo de Combustível", "item": "https://portaldascontas.com.br/artigos/utilitarios/consumo-combustivel.html"}
-      ]
+    ]
     }
     </script>
 
@@ -72,13 +72,20 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/artigos/css/o-que-e-roi.css">
     <link rel="stylesheet" href="/artigos/css/consumo-combustivel.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
+
+    <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
+    <script type="module" src="/js/pagefind.js"></script>
 
 </head>
 
-<body>
-    <!-- ══════════════════════════════════
-        HEADER — PRESERVADO
-        ══════════════════════════════════ -->
+<body data-theme="light">
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
     <header class="header topo">
         <div class="header-container">
             <div class="logo">
@@ -109,6 +116,16 @@
                         <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
                         <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
                         <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <!-- NOVAS CALCULADORAS FINANCEIRAS -->
+                        <a href="/calculadoras/calc-investimento.html" onclick="toggleMenu()">Investimentos</a>
+                        <a href="/calculadoras/dividendos.html" onclick="toggleMenu()">Dividendos</a>
+                        <a href="/calculadoras/calc-inflacao.html" onclick="toggleMenu()">Inflação</a>
+                        <a href="/calculadoras/calc-cdb.html" onclick="toggleMenu()">CDB</a>
+                        <a href="/calculadoras/calc-ir-investimentos.html" onclick="toggleMenu()">IR Investimentos</a>
+                        <a href="/calculadoras/calc-tesouro-direto.html" onclick="toggleMenu()">Tesouro Direto</a>
+                        <a href="/calculadoras/calc-price-sac.html" onclick="toggleMenu()">Price e SAC</a>
+                        <a href="/calculadoras/calc-poupanca-vs-investimento.html" onclick="toggleMenu()">Poupança vs.
+                            Outros</a>
                     </div>
                 </div>
 
@@ -139,11 +156,12 @@
                     <div class="dropdown-menu">
                         <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
                         <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
-                        <a href="/calculadoras/nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
                         <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
                         <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
-                        <a href="/calculadoras/equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
                         <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <!-- NOVA CALCULADORA EDUCAÇÃO -->
                         <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
                     </div>
                 </div>
@@ -184,6 +202,23 @@
                 <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
                 <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
             </nav>
+
+            <!-- BARRA DE BUSCA ADICIONADA AQUI -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
+                    autocomplete="off">
+
+                <!-- Lista de Resultados -->
+                <div class="search-results" id="search-results-list">
+                    <!-- Os itens serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <!-- FIM DA BARRA DE BUSCA -->
 
             <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
                 <span id="theme-icon">🌙</span>

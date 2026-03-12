@@ -1,0 +1,22 @@
+node_modules/
+.vscode/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary migration scripts and output files
+check-artigos.js
+check.ps1
+migrate-to-dynamic.js
+rebuild-index.js
+missing.json
+missing.txt
+links.txt
+out.txt
+test.txt

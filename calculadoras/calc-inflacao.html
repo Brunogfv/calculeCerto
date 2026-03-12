@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Use nossa calculadora de inflação online. Descubra quanto o seu dinheiro perdeu ou ganhou valor ao longo do tempo, corrigindo valores pela inflação acumulada.">
+
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/juros.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
+
+    <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
+    <script type="module" src="/js/pagefind.js"></script>
+
+    <title>Calculadora de Inflação Online | Correção de Valores | Portal das Contas</title>
+
+</head>
+
+<body data-theme="light">
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="/index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="/calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="/calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="/calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <!-- NOVAS CALCULADORAS FINANCEIRAS -->
+                        <a href="/calculadoras/calc-investimento.html" onclick="toggleMenu()">Investimentos</a>
+                        <a href="/calculadoras/dividendos.html" onclick="toggleMenu()">Dividendos</a>
+                        <a href="/calculadoras/calc-inflacao.html" onclick="toggleMenu()">Inflação</a>
+                        <a href="/calculadoras/calc-cdb.html" onclick="toggleMenu()">CDB</a>
+                        <a href="/calculadoras/calc-ir-investimentos.html" onclick="toggleMenu()">IR Investimentos</a>
+                        <a href="/calculadoras/calc-tesouro-direto.html" onclick="toggleMenu()">Tesouro Direto</a>
+                        <a href="/calculadoras/calc-price-sac.html" onclick="toggleMenu()">Price e SAC</a>
+                        <a href="/calculadoras/calc-poupanca-vs-investimento.html" onclick="toggleMenu()">Poupança vs.
+                            Outros</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="/calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="/calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="/calculadoras/gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="/calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="/calculadoras/pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <!-- NOVA CALCULADORA EDUCAÇÃO -->
+                        <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="/calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="/calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="/calculadoras/medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="/calculadoras/churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="/calculadoras/pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="/calculadoras/energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="/calculadoras/festa.html" class="active" onclick="toggleMenu()">Calculadora de
+                            Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="/calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="/calculadoras/conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="/calculadoras/velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="/calculadoras/kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="/artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <!-- BARRA DE BUSCA ADICIONADA AQUI -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
+                    autocomplete="off">
+
+                <!-- Lista de Resultados -->
+                <div class="search-results" id="search-results-list">
+                    <!-- Os itens serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <!-- FIM DA BARRA DE BUSCA -->
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h1>Calculadora de Inflação</h1>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra o valor real do dinheiro ao longo do
+                        tempo.</p>
+                </div>
+
+                <section class="intro-seo" style="margin-bottom:30px;">
+                    <h2>Como funciona a correção pela inflação?</h2>
+                    <p>
+                        A inflação é o aumento generalizado de preços ao longo do tempo, o que reduz o poder de compra
+                        da moeda.
+                        Com esta calculadora, você pode simular quanto um valor específico vale em uma data futura ou
+                        quanto valia no passado,
+                        baseando-se em uma taxa de inflação média estimada.
+                    </p>
+                </section>
+
+
+                <div class="inputs-grid">
+                    <div class="input-group">
+                        <label for="valor-inicial">Valor Original (R$)</label>
+                        <input type="text" id="valor-inicial" placeholder="Ex: 1.000,00" oninput="formatarMoeda(this)">
+                    </div>
+                    <div class="input-group">
+                        <label for="ano-inicio">Ano Inicial</label>
+                        <input type="number" id="ano-inicio" placeholder="Ex: 2010" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="ano-fim">Ano Final (Alvo)</label>
+                        <input type="number" id="ano-fim" placeholder="Ex: 2024" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="taxa-inflacao">Inflação Média Anual (%)</label>
+                        <input type="number" id="taxa-inflacao" placeholder="Ex: 4.5" step="0.1">
+                        <small style="font-size: 0.75rem; color: #64748b; display: block; margin-top: 4px;">
+                            *No Brasil, a média histórica é próxima de 6% a.a.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-primary" onclick="calcularInflacao()">Calcular Agora</button>
+                    <button class="btn-secondary" onclick="limparCampos()">Limpar</button>
+                </div>
+
+                <!-- Resultados -->
+                <div id="resultado-inflacao" class="result-area">
+                    <div class="result-card">
+                        <small
+                            style="color: var(--cor-texto-suave); text-transform: uppercase; letter-spacing: 1px;">Valor
+                            Ajustado</small>
+                        <div class="result-value-main" id="valor-ajustado">R$ 0,00</div>
+
+                        <div class="result-value-details">
+                            <div class="detail-item">
+                                <small>Valor Original</small>
+                                <strong id="resumo-original">R$ 0,00</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Diferença (Perda/Ganho)</small>
+                                <strong id="diferenca" class="text-red">R$ 0,00</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Período</small>
+                                <strong id="resumo-periodo">0 anos</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Variação Acumulada</small>
+                                <strong id="variacao-percentual">0%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico -->
+                    <div class="grafico-container" id="grafico-container">
+                        <canvas id="graficoInflacao"></canvas>
+                    </div>
+                </div>
+
+                <!-- Anúncio Dinâmico -->
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O produto será carregado aqui pelo js/ads.js -->
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo -->
+            <h3 style="margin-bottom: 20px; color: var(--cor-texto);">Entenda a Erosão do Poder de Compra</h3>
+
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h4 style="margin-top:0; color: var(--cor-primaria);">O que é Inflação?</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        Inflação é o aumento contínuo e generalizado dos preços dos bens e serviços. Quando a inflação é
+                        alta, o mesmo valor de dinheiro compra menos coisas do que comprava antes.
+                    </p>
+                    <div class="edu-formula">IPCA = Índice de Preços ao Consumidor Amplo</div>
+                    <small style="color: #64748b;">O índice oficial no Brasil.</small>
+                </div>
+
+                <div class="edu-card" style="border-color: var(--cor-secundaria);">
+                    <h4 style="margin-top:0; color: var(--cor-secundaria);">Fórmula de Correção</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        Para atualizar um valor pelo tempo, usamos a taxa média anual elevada ao número de anos. Isso
+                        nos mostra quanto "extra" seria necessário manter o poder de compra.
+                    </p>
+                    <div class="edu-formula">V_final = V_inicial × (1 + i)ᵗ</div>
+                    <small style="color: #64748b;">(i: inflação, t: tempo em anos)</small>
+                </div>
+            </div>
+
+            <section style="margin-top: 40px; padding-left: 25px;">
+                <h3 style="color: var(--cor-texto);">Exemplo Prático: O Custo do Pão</h3>
+                <p style="color: var(--cor-texto-suave); line-height: 1.6;">
+                    Em <strong>2010</strong>, um pãozinho custava em média <strong>R$ 3,50</strong>. Vamos simular
+                    quanto isso custaria em <strong>2024</strong>,
+                    considerando uma inflação média de <strong>5% ao ano</strong>.
+                </p>
+
+                <ul style="color: var(--cor-texto-suave); font-size: 15px; line-height: 1.8;">
+                    <li>
+                        <strong>Período:</strong> 14 anos (2024 - 2010).
+                    </li>
+                    <li>
+                        <strong>Cálculo:</strong> 3,50 × (1,05)¹⁴.
+                    </li>
+                    <li>
+                        <strong>Resultado:</strong> O pão custaria aproximadamente <strong>R$ 6,93</strong> hoje.
+                    </li>
+                </ul>
+                <p style="color: var(--cor-secundaria); font-weight: 500; font-size: 14px;">
+                    💡 Isso mostra que, se o seu salário não aumentou pelo menos na mesma proporção (inflação), você
+                    consegue comprar menos pães hoje do que comprava antes.
+                </p>
+            </section>
+
+            <!-- Links Externos -->
+            <div style="margin-top: 40px;">
+                <h3 style="margin-bottom: 20px;">🔗 Dados Oficiais e Referências</h3>
+                <div class="link-grid">
+                    <!-- Link IBGE -->
+                    <a href="https://www.ibge.gov.br/explica/inflacao/o-que-e-inflacao.htm" target="_blank"
+                        rel="nofollow noopener" class="link-card">
+                        <span class="link-icon">🏛️</span>
+                        <div>
+                            <div class="link-title">IBGE - O que é Inflação</div>
+                            <div class="link-desc">Página oficial do IBGE explicando o conceito de inflação e o IPCA.
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Link Calculadora Cidadão -->
+                    <a href="https://www3.bcb.gov.br/CALCIDADAO/publico/exibirFormCorrecaoValores.do?method=exibirFormCorrecaoValores"
+                        target="_blank" rel="nofollow noopener" class="link-card">
+                        <span class="link-icon">🏦</span>
+                        <div>
+                            <div class="link-title">Calculadora do Cidadão (Correção)</div>
+                            <div class="link-desc">Ferramenta oficial do Banco Central para correção de valores pelo
+                                IPCA real.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <section style="margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                <h3 style="color: var(--cor-texto);">Perguntas Frequentes</h3>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Qual é a inflação oficial do Brasil?
+                    </summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        O índice oficial é o <strong>IPCA</strong> (Índice de Preços ao Consumidor Amplo), calculado
+                        pelo IBGE. Ele é usado para balizar metas de inflação e reajustes de contratos.
+                    </p>
+                </details>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Essa calculadora usa dados reais do
+                        IBGE?</summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        Não. Esta é uma calculadora de simulação que usa uma <strong>taxa média</strong> que você
+                        define. Para cálculos oficiais com dados históricos exatos, utilize a "Calculadora do Cidadão"
+                        do Banco Central.
+                    </p>
+                </details>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="/paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="/paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="/paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="/paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos do Template -->
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/ads.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Script Específico da Calculadora de Inflação -->
+    <script>
+        let graficoInflacaoInstance = null;
+
+        function formatarMoeda(input) {
+            let valor = input.value.replace(/\D/g, "");
+            valor = (valor / 100).toFixed(2) + "";
+            valor = valor.replace(".", ",");
+            valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+            input.value = valor;
+        }
+
+        function parseMoeda(valorString) {
+            if (!valorString) return 0;
+            return parseFloat(valorString.replace(/\./g, "").replace(",", "."));
+        }
+
+        function formatarParaBRL(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function calcularInflacao() {
+            // 1. Obter valores
+            const valorInicialInput = document.getElementById('valor-inicial').value;
+            const anoInicio = parseInt(document.getElementById('ano-inicio').value);
+            const anoFim = parseInt(document.getElementById('ano-fim').value);
+            const taxaInflacao = parseFloat(document.getElementById('taxa-inflacao').value);
+
+            const valorInicial = parseMoeda(valorInicialInput);
+
+            // 2. Validação
+            if (!valorInicial || valorInicial <= 0) {
+                alert("Por favor, insira um valor original válido.");
+                return;
+            }
+            if (!anoInicio || !anoFim) {
+                alert("Por favor, preencha os anos inicial e final.");
+                return;
+            }
+            if (isNaN(taxaInflacao) || taxaInflacao < 0) {
+                alert("Por favor, insira uma taxa de inflação válida.");
+                return;
+            }
+            if (anoFim <= anoInicio) {
+                alert("O ano final deve ser maior que o ano inicial.");
+                return;
+            }
+
+            // 3. Cálculos
+            const anos = anoFim - anoInicio;
+            const taxaDecimal = taxaInflacao / 100;
+
+            // Fórmula: Valor Final = Valor Inicial * (1 + taxa)^tempo
+            const valorAjustado = valorInicial * Math.pow(1 + taxaDecimal, anos);
+
+            const diferenca = valorAjustado - valorInicial;
+            const variacaoPercentual = ((valorAjustado / valorInicial) - 1) * 100;
+
+            // 4. Atualizar DOM
+            document.getElementById('valor-ajustado').innerText = formatarParaBRL(valorAjustado);
+            document.getElementById('resumo-original').innerText = formatarParaBRL(valorInicial);
+
+            const elDiferenca = document.getElementById('diferenca');
+            elDiferenca.innerText = (diferenca > 0 ? "+ " : "") + formatarParaBRL(diferenca);
+            elDiferenca.className = diferenca > 0 ? 'text-red' : 'text-green'; // Se positivo, é inflação (perda de poder de compra)
+
+            document.getElementById('resumo-periodo').innerText = anos + (anos === 1 ? " ano" : " anos");
+            document.getElementById('variacao-percentual').innerText = variacaoPercentual.toFixed(2) + "%";
+
+            // Mostrar área de resultado
+            document.getElementById('resultado-inflacao').style.display = 'block';
+
+            // 5. Atualizar Gráfico
+            atualizarGrafico(valorInicial, valorAjustado);
+        }
+
+        function limparCampos() {
+            document.getElementById('valor-inicial').value = '';
+            document.getElementById('ano-inicio').value = '';
+            document.getElementById('ano-fim').value = '';
+            document.getElementById('taxa-inflacao').value = '';
+            document.getElementById('resultado-inflacao').style.display = 'none';
+
+            if (graficoInflacaoInstance) {
+                graficoInflacaoInstance.destroy();
+            }
+        }
+
+        function atualizarGrafico(original, ajustado) {
+            const ctx = document.getElementById('graficoInflacao').getContext('2d');
+
+            if (graficoInflacaoInstance) {
+                graficoInflacaoInstance.destroy();
+            }
+
+            graficoInflacaoInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Valor Original', 'Valor Corrigido'],
+                    datasets: [{
+                        label: 'Valor (R$)',
+                        data: [original, ajustado],
+                        backgroundColor: [
+                            '#94a3b8', // Cinza para o valor antigo
+                            '#ef4444'  // Vermelho para o valor inflacionado (custo maior)
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function (value) {
+                                    return 'R$ ' + value.toLocaleString('pt-BR');
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Carregamento de Anúncio (Mantendo padrão do template)
+        carregarAnuncio('inflacao');
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora de Inflação Online",
+            "description": "Ferramenta para simular a correção de valores monetários pela inflação acumulada ao longo do tempo.",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "All",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "BRL"
+            }
+        }
+    </script>
+</body>
+
+</html>

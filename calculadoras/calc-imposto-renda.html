@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calcule o valor líquido do seu salário ou rendimento após o desconto do Imposto de Renda. Utilize nossa calculadora de IRRF com base na tabela progressiva oficial 2024/2025.">
+
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/juros.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
+
+    <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
+    <script type="module" src="/js/pagefind.js"></script>
+
+    <title>Calculadora de Imposto de Renda e Renda Líquida | Portal das Contas</title>
+
+</head>
+
+<body data-theme="light">
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- HEADER PADRÃO COM DROPDOWNS (SUBPASTA) -->
+    <header class="header topo">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/index.html">
+                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                    </svg>
+                    Portal das Contas
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu" id="nav-menu">
+                <a href="/index.html" onclick="toggleMenu()">Início</a>
+
+                <!-- Categoria Finanças -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
+                        <a href="/calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
+                        <a href="/calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
+                        <a href="/calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
+                        <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
+                        <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
+                        <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
+                        <!-- NOVAS CALCULADORAS FINANCEIRAS -->
+                        <a href="/calculadoras/calc-investimento.html" onclick="toggleMenu()">Investimentos</a>
+                        <a href="/calculadoras/dividendos.html" onclick="toggleMenu()">Dividendos</a>
+                        <a href="/calculadoras/calc-inflacao.html" onclick="toggleMenu()">Inflação</a>
+                        <a href="/calculadoras/calc-cdb.html" onclick="toggleMenu()">CDB</a>
+                        <a href="/calculadoras/calc-ir-investimentos.html" onclick="toggleMenu()">IR Investimentos</a>
+                        <a href="/calculadoras/calc-tesouro-direto.html" onclick="toggleMenu()">Tesouro Direto</a>
+                        <a href="/calculadoras/calc-price-sac.html" onclick="toggleMenu()">Price e SAC</a>
+                        <a href="/calculadoras/calc-poupanca-vs-investimento.html" onclick="toggleMenu()">Poupança vs.
+                            Outros</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Saúde -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
+                        <a href="/calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
+                        <a href="/calculadoras/agua.html" onclick="toggleMenu()">Água</a>
+                        <a href="/calculadoras/gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
+                        <a href="/calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Auto -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
+                        <a href="/calculadoras/pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Educação -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
+                        <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
+                        <a href="/calculadoras/media-final.html" onclick="toggleMenu()">Nota para Passar</a>
+                        <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
+                        <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
+                        <a href="/calculadoras/equacao-primeiro-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
+                        <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
+                        <!-- NOVA CALCULADORA EDUCAÇÃO -->
+                        <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Casa & Reforma -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
+                        <a href="/calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
+                        <a href="/calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
+                        <a href="/calculadoras/medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
+                        <a href="/calculadoras/churrasco.html" onclick="toggleMenu()">Churrasco</a>
+                        <a href="/calculadoras/pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
+                        <a href="/calculadoras/energia.html" onclick="toggleMenu()">Consumo de Energia</a>
+                        <a href="/calculadoras/festa.html" class="active" onclick="toggleMenu()">Calculadora de
+                            Festa</a>
+                    </div>
+                </div>
+
+                <!-- Categoria Utilitários -->
+                <div class="menu-item">
+                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
+                    <div class="dropdown-menu">
+                        <a href="/calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
+                        <a href="/calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
+                        <a href="/calculadoras/conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
+                        <a href="/calculadoras/velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
+                        <a href="/calculadoras/kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="/artigos/index.html" onclick="toggleMenu()">Aprenda</a>
+                </div>
+
+
+                <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
+                <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
+            </nav>
+
+            <!-- BARRA DE BUSCA ADICIONADA AQUI -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
+                    autocomplete="off">
+
+                <!-- Lista de Resultados -->
+                <div class="search-results" id="search-results-list">
+                    <!-- Os itens serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <!-- FIM DA BARRA DE BUSCA -->
+
+            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <h1>Calculadora de Imposto de Renda</h1>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Descubra quanto sobra do seu salário após o
+                        IRRF.</p>
+                </div>
+
+                <section class="intro-seo" style="margin-bottom:30px;">
+                    <h2>Como calcular o rendimento líquido?</h2>
+                    <p>
+                        O Imposto de Renda Retido na Fonte (IRRF) incide sobre salários e outros rendimentos.
+                        Ele utiliza uma tabela progressiva: quem ganha mais paga uma porcentagem maior.
+                        Para chegar no valor líquido, subtraímos as deduções (como INSS ou dependentes) do valor bruto.
+                    </p>
+                    <p>
+                        Utilize esta calculadora para simular quanto você vai receber no mês ou para planejar o valor
+                        bruto necessário para atingir uma meta líquida.
+                    </p>
+                </section>
+
+
+                <div class="inputs-grid">
+                    <div class="input-group">
+                        <label for="valor-bruto">Renda Bruta (R$)</label>
+                        <input type="text" id="valor-bruto" placeholder="Ex: 5.000,00" oninput="formatarMoeda(this)">
+                    </div>
+                    <div class="input-group">
+                        <label for="valor-deducao">Dedução (INSS/Outras) (R$)</label>
+                        <input type="text" id="valor-deducao" placeholder="Ex: 500,00" oninput="formatarMoeda(this)">
+                        <small style="font-size: 0.75rem; color: #64748b; display: block; margin-top: 4px;">
+                            Para salários: use a tabela do INSS. Para investimentos: geralmente 0.
+                        </small>
+                    </div>
+                    <div class="input-group">
+                        <label for="num-dependentes">Nº de Dependentes</label>
+                        <input type="number" id="num-dependentes" placeholder="Ex: 2" step="1" min="0">
+                        <small style="font-size: 0.75rem; color: #64748b; display: block; margin-top: 4px;">
+                            Dedução de R$ 189,59 por dependente.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-primary" onclick="calcularIR()">Calcular Agora</button>
+                    <button class="btn-secondary" onclick="limparCampos()">Limpar</button>
+                </div>
+
+                <!-- Resultados -->
+                <div id="resultado-ir" class="result-area">
+                    <div class="result-card">
+                        <small
+                            style="color: var(--cor-texto-suave); text-transform: uppercase; letter-spacing: 1px;">Renda
+                            Líquida</small>
+                        <div class="result-value-main" id="valor-liquido">R$ 0,00</div>
+
+                        <div class="result-value-details">
+                            <div class="detail-item">
+                                <small>Base de Cálculo</small>
+                                <strong id="base-calculo">R$ 0,00</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Imposto (IRRF)</small>
+                                <strong id="valor-imposto" class="text-red">- R$ 0,00</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Alíquota Efetiva</small>
+                                <strong id="aliquota-efetiva">0%</strong>
+                            </div>
+                            <div class="detail-item">
+                                <small>Faixa de Tributação</small>
+                                <strong id="faixa-tributacao">Isento</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico -->
+                    <div class="grafico-container" id="grafico-container">
+                        <canvas id="graficoIR"></canvas>
+                    </div>
+                </div>
+
+                <!-- Anúncio Dinâmico -->
+                <div id="anuncio-dinamico"
+                    style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <!-- O produto será carregado aqui pelo js/ads.js -->
+                </div>
+            </div>
+
+            <!-- Conteúdo Educativo -->
+            <h3 style="margin-bottom: 20px; color: var(--cor-texto);">Entenda a Tabela Progressiva do IRRF</h3>
+
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h4 style="margin-top:0; color: var(--cor-primaria);">Base de Cálculo</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        O imposto não incide sobre tudo o que você ganha. Primeiro, subtraímos o INSS (para CLT) e a
+                        dedução por dependente. O que sobra é a "Base de Cálculo", sobre a qual aplicamos a alíquota.
+                    </p>
+                    <div class="edu-formula">Base = Bruto - INSS - (Dependentes × 189,59)</div>
+                </div>
+
+                <div class="edu-card" style="border-color: var(--cor-secundaria);">
+                    <h4 style="margin-top:0; color: var(--cor-secundaria);">Tabela Progressiva 2025</h4>
+                    <p style="font-size: 14px; color: var(--cor-texto-suave);">
+                        Quanto maior a base de cálculo, maior a porcentagem de imposto. As faixas são atualizadas
+                        anualmente.
+                    </p>
+                    <ul style="font-size: 12px; color: #475569; padding-left: 20px; line-height: 1.6;">
+                        <li>Até R$ 2.259,20: Isento</li>
+                        <li>7,5%: de R$ 2.259,21 a R$ 2.826,65</li>
+                        <li>15%: de R$ 2.826,66 a R$ 3.751,05</li>
+                        <li>22,5%: de R$ 3.751,06 a R$ 4.664,68</li>
+                        <li>27,5%: Acima de R$ 4.664,68</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section style="margin-top: 40px; padding-left: 25px;">
+                <h3 style="color: var(--cor-texto);">Exemplo Prático: Salário de R$ 4.000</h3>
+                <p style="color: var(--cor-texto-suave); line-height: 1.6;">
+                    João recebe <strong>R$ 4.000,00</strong> de salário bruto. Ele é CLT e pagou <strong>R$
+                        440,00</strong> de INSS. Ele não tem dependentes.
+                </p>
+
+                <ul style="color: var(--cor-texto-suave); font-size: 15px; line-height: 1.8;">
+                    <li>
+                        <strong>Base de Cálculo:</strong> 4.000 - 440 = <strong>R$ 3.560,00</strong>.
+                    </li>
+                    <li>
+                        <strong>Faixa do IR:</strong> R$ 3.560,00 está na faixa de <strong>22,5%</strong> (que vai de
+                        3.751,06 a 4.664,68? Não, 3560 está na faixa de 22.5%? Correção: 3560 está na faixa de 22.5%
+                        sim, pois o teto da faixa anterior é 3751.05? Não, aguarde.
+                        Faixa anterior (15%) vai até 3751.05. 3560 é menor que 3751. Logo, é faixa de 15%.
+                        *Correção no raciocínio para o exemplo:* 3.560,00 entra na 3ª faixa (15%).
+                    </li>
+                    <li>
+                        <strong>Cálculo:</strong> (3.560 × 15%) - R$ 381,44 (dedução legal da tabela).
+                    </li>
+                    <li>
+                        <strong>IRRF:</strong> 534,00 - 381,44 = <strong>R$ 152,56</strong>.
+                    </li>
+                    <li>
+                        <strong>Líquido:</strong> 4.000 - 440 (INSS) - 152,56 (IR) = <strong>R$ 3.407,44</strong>.
+                    </li>
+                </ul>
+                <p style="color: var(--cor-secundaria); font-weight: 500; font-size: 14px;">
+                    💡 Veja como a dedução parcelada na tabela (o valor fixo que se subtrai) evita que o imposto seja
+                    muito alto no início de cada faixa.
+                </p>
+            </section>
+
+            <!-- Links Externos -->
+            <div style="margin-top: 40px;">
+                <h3 style="margin-bottom: 20px;">🔗 Fontes Oficiais</h3>
+                <div class="link-grid">
+                    <!-- Link Receita Federal -->
+                    <a href="https://www.gov.br/receitafederal/pt-br" target="_blank" rel="nofollow noopener"
+                        class="link-card">
+                        <span class="link-icon">🏛️</span>
+                        <div>
+                            <div class="link-title">Receita Federal</div>
+                            <div class="link-desc">Portal oficial para consultas de tabelas, declaração e legislação
+                                tributária.</div>
+                        </div>
+                    </a>
+
+                    <!-- Link Simulador Oficial -->
+                    <a href="https://www27.receita.fazenda.gov.br/simulador-irpf/" target="_blank"
+                        rel="nofollow noopener" class="link-card">
+                        <span class="link-icon">🧮</span>
+                        <div>
+                            <div class="link-title">Simulador Oficial</div>
+                            <div class="link-desc">Ferramenta oficial da Receita Federal para cálculo da monthly tax
+                                withholding.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <section style="margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                <h3 style="color: var(--cor-texto);">Perguntas Frequentes</h3>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">O que é a dedução por dependente?
+                    </summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        Por cada dependente oficial declarado (filhos, cônjuge, enteado, etc.), você pode descontar R$
+                        189,59 da base de cálculo do Imposto de Renda mensal. Isso reduz o valor sobre o qual o imposto
+                        é calculado.
+                    </p>
+                </details>
+
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--cor-primaria);">Essa calculadora serve para o IR
+                        anual (Declaração)?</summary>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--cor-texto-suave);">
+                        Não. Esta calculadora foca no IRRF mensal (retenção na fonte) que aparece no contracheque ou no
+                        extrato de investimentos. A declaração anual ajusta esse valor considerando outras deduções
+                        (saúde, educação, previdência privada) que não são descontadas mensalmente.
+                    </p>
+                </details>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER ENRIQUECIDO -->
+    <footer
+        style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 10px;">Sobre o Portal das Contas</h3>
+                <p style="margin-bottom: 20px;">
+                    Somos um projeto dedicado a simplificar a matemática do cotidiano dos brasileiros. Nosso objetivo é
+                    fornecer ferramentas digitais gratuitas e de alta qualidade para ajudar na organização financeira,
+                    planejamento de saúde e execução de reformas.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="/paginas/sobre.html" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="/paginas/contato.html" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="/paginas/privacidade.html"
+                        style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="/paginas/termos.html" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos do Template -->
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/ads.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Script Específico da Calculadora de IR -->
+    <script>
+        let graficoIRInstance = null;
+        const DEDUCAO_DEPENDENTE = 189.59;
+
+        function formatarMoeda(input) {
+            let valor = input.value.replace(/\D/g, "");
+            valor = (valor / 100).toFixed(2) + "";
+            valor = valor.replace(".", ",");
+            valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+            input.value = valor;
+        }
+
+        function parseMoeda(valorString) {
+            if (!valorString) return 0;
+            return parseFloat(valorString.replace(/\./g, "").replace(",", "."));
+        }
+
+        function formatarParaBRL(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function calcularIR() {
+            // 1. Obter valores
+            const valorBrutoInput = document.getElementById('valor-bruto').value;
+            const valorDeducaoInput = document.getElementById('valor-deducao').value;
+            const numDependentes = parseInt(document.getElementById('num-dependentes').value) || 0;
+
+            const valorBruto = parseMoeda(valorBrutoInput);
+            const valorDeducao = parseMoeda(valorDeducaoInput);
+
+            // 2. Validação
+            if (!valorBruto || valorBruto <= 0) {
+                alert("Por favor, insira uma renda bruta válida.");
+                return;
+            }
+
+            // 3. Cálculos
+            // Base de Cálculo = Bruto - Deduções (INSS/Outras) - (Dependentes * 189.59)
+            const deducaoDependentes = numDependentes * DEDUCAO_DEPENDENTE;
+            const baseCalculo = Math.max(0, valorBruto - valorDeducao - deducaoDependentes);
+
+            // Tabela Progressiva IRRF 2024/2025
+            let aliquota = 0;
+            let deducaoParcelada = 0;
+            let faixaTexto = "Isento";
+
+            if (baseCalculo <= 2259.20) {
+                aliquota = 0;
+                deducaoParcelada = 0;
+                faixaTexto = "Isento (Até R$ 2.259,20)";
+            } else if (baseCalculo <= 2826.65) {
+                aliquota = 0.075;
+                deducaoParcelada = 169.44;
+                faixaTexto = "7,5% (Até R$ 2.826,65)";
+            } else if (baseCalculo <= 3751.05) {
+                aliquota = 0.15;
+                deducaoParcelada = 381.44;
+                faixaTexto = "15% (Até R$ 3.751,05)";
+            } else if (baseCalculo <= 4664.68) {
+                aliquota = 0.225;
+                deducaoParcelada = 662.77;
+                faixaTexto = "22,5% (Até R$ 4.664,68)";
+            } else {
+                aliquota = 0.275;
+                deducaoParcelada = 896.00;
+                faixaTexto = "27,5% (Acima de R$ 4.664,68)";
+            }
+
+            const valorImposto = Math.max(0, (baseCalculo * aliquota) - deducaoParcelada);
+            const valorLiquido = valorBruto - valorDeducao - valorImposto;
+
+            // Alíquota Efetiva: (Imposto Pago / Renda Bruta)
+            let aliquotaEfetiva = 0;
+            if (valorBruto > 0) {
+                aliquotaEfetiva = (valorImposto / valorBruto) * 100;
+            }
+
+            // 4. Atualizar DOM
+            document.getElementById('valor-liquido').innerText = formatarParaBRL(valorLiquido);
+            document.getElementById('base-calculo').innerText = formatarParaBRL(baseCalculo);
+            document.getElementById('valor-imposto').innerText = "- " + formatarParaBRL(valorImposto);
+            document.getElementById('aliquota-efetiva').innerText = aliquotaEfetiva.toFixed(2) + "%";
+            document.getElementById('faixa-tributacao').innerText = faixaTexto;
+
+            // Mostrar área de resultado
+            document.getElementById('resultado-ir').style.display = 'block';
+
+            // 5. Atualizar Gráfico
+            // O gráfico vai mostrar: O que é seu (Líquido + Deduções) vs O que é imposto
+            // Vamos simplificar visualmente: Líquido vs Descontos Totais (Imposto + Deduções INSS)
+            const totalDescontos = valorImposto + valorDeducao + deducaoDependentes;
+            atualizarGrafico(valorLiquido, totalDescontos);
+        }
+
+        function limparCampos() {
+            document.getElementById('valor-bruto').value = '';
+            document.getElementById('valor-deducao').value = '';
+            document.getElementById('num-dependentes').value = '';
+            document.getElementById('resultado-ir').style.display = 'none';
+
+            if (graficoIRInstance) {
+                graficoIRInstance.destroy();
+            }
+        }
+
+        function atualizarGrafico(liquido, descontos) {
+            const ctx = document.getElementById('graficoIR').getContext('2d');
+
+            if (graficoIRInstance) {
+                graficoIRInstance.destroy();
+            }
+
+            graficoIRInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Renda Líquida', 'Total de Descontos (IR + Outros)'],
+                    datasets: [{
+                        data: [liquido, descontos],
+                        backgroundColor: [
+                            '#10b981', // Verde para o que fica
+                            '#ef4444'  // Vermelho para o que sai
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Carregamento de Anúncio (Mantendo padrão do template)
+        carregarAnuncio('imposto-renda');
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora de Imposto de Renda e Renda Líquida",
+            "description": "Simulador para cálculo de IRRF mensal (Tabela Progressiva) e descoberta da renda líquida.",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "All",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "BRL"
+            }
+        }
+    </script>
+</body>
+
+</html>
