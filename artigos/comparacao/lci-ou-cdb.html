@@ -79,123 +79,9 @@
 </head>
 
 <body>
-    <header class="header topo">
-        <div class="header-container">
-            <div class="logo">
-                <a href="/index.html">
-                    <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
-                    </svg>
-                    Portal das Contas
-                </a>
-            </div>
-
-            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
-                ☰
-            </button>
-
-            <nav class="menu" id="nav-menu">
-                <a href="/index.html" onclick="toggleMenu()">Início</a>
-
-                <div class="menu-item">
-                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças</a>
-                    <div class="dropdown-menu">
-                        <a href="/calculadoras/juros.html" onclick="toggleMenu()">Juros</a>
-                        <a href="/calculadoras/inss.html" onclick="toggleMenu()">INSS</a>
-                        <a href="/calculadoras/decimo-terceiro.html" onclick="toggleMenu()">13º Salário</a>
-                        <a href="/calculadoras/porcentagem.html" onclick="toggleMenu()">Porcentagem</a>
-                        <a href="/calculadoras/porcentagem-reversa.html" onclick="toggleMenu()">Porcentagem Reversa</a>
-                        <a href="/calculadoras/salario.html" onclick="toggleMenu()">Conversor de Salário</a>
-                        <a href="/calculadoras/hora-extra.html" onclick="toggleMenu()">Hora Extra</a>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde</a>
-                    <div class="dropdown-menu">
-                        <a href="/calculadoras/imc.html" onclick="toggleMenu()">IMC</a>
-                        <a href="/calculadoras/tmb.html" onclick="toggleMenu()">TMB</a>
-                        <a href="/calculadoras/agua.html" onclick="toggleMenu()">Água</a>
-                        <a href="/calculadoras/gasto-calorico.html" onclick="toggleMenu()">Gasto Calórico</a>
-                        <a href="/calculadoras/parto.html" onclick="toggleMenu()">Data de Parto</a>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
-                    <div class="dropdown-menu">
-                        <a href="/calculadoras/combustivel.html" onclick="toggleMenu()">Combustível</a>
-                        <a href="/calculadoras/pneus.html" onclick="toggleMenu()">Troca de Pneus/Aro</a>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação</a>
-                    <div class="dropdown-menu">
-                        <a href="/calculadoras/medias.html" onclick="toggleMenu()">Média Escolar</a>
-                        <a href="/calculadoras/regra-de-tres.html" onclick="toggleMenu()">Regra de Três</a>
-                        <a href="/calculadoras/nota-para-passar.html" onclick="toggleMenu()">Nota para Passar</a>
-                        <a href="/calculadoras/cr.html" onclick="toggleMenu()">CR Universitário</a>
-                        <a href="/calculadoras/mmc-mdc.html" onclick="toggleMenu()">MMC e MDC</a>
-                        <a href="/calculadoras/equacao-1-grau.html" onclick="toggleMenu()">Equação 1º Grau</a>
-                        <a href="/calculadoras/bhaskara.html" onclick="toggleMenu()">Bhaskara (2º Grau)</a>
-                        <a href="/calculadoras/forca.html" onclick="toggleMenu()">Força (Física)</a>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa & Reforma</a>
-                    <div class="dropdown-menu">
-                        <a href="/calculadoras/tinta.html" onclick="toggleMenu()">Calculadora de Tinta</a>
-                        <a href="/calculadoras/piso.html" onclick="toggleMenu()">Calculadora de Piso</a>
-                        <a href="/calculadoras/cimento.html" onclick="toggleMenu()">Calculadora de Cimento</a>
-                        <a href="/calculadoras/medidas-culinarias.html" onclick="toggleMenu()">Medidas Culinárias</a>
-                        <a href="/calculadoras/churrasco.html" onclick="toggleMenu()">Churrasco</a>
-                        <a href="/calculadoras/pizza.html" onclick="toggleMenu()">Comparador de Pizza</a>
-                        <a href="/calculadoras/energia.html" onclick="toggleMenu()">Consumo de Energia</a>
-                        <a href="/calculadoras/festa.html" onclick="toggleMenu()">Calculadora de Festa</a>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilitários</a>
-                    <div class="dropdown-menu">
-                        <a href="/calculadoras/datas.html" onclick="toggleMenu()">Diferença de Datas</a>
-                        <a href="/calculadoras/temperatura.html" onclick="toggleMenu()">Conversor de Temperatura</a>
-                        <a href="/calculadoras/conversor-unidades.html" onclick="toggleMenu()">Conversor de Unidades</a>
-                        <a href="/calculadoras/velocidade-media.html" onclick="toggleMenu()">Velocidade Média</a>
-                        <a href="/calculadoras/kmh-ms.html" onclick="toggleMenu()">km/h para m/s</a>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <a href="/artigos/index.html" onclick="toggleMenu()">Aprenda</a>
-                </div>
-
-                <a href="/paginas/sobre.html" onclick="toggleMenu()">Sobre</a>
-                <a href="/paginas/contato.html" onclick="toggleMenu()">Contato</a>
-            </nav>
-
-            <div class="search-wrapper">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <input type="text" class="search-input" id="site-search" placeholder="Busque uma calculadora..."
-                    autocomplete="off">
-
-                <div class="search-results" id="search-results-list">
-                </div>
-            </div>
-
-            <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
-                <span id="theme-icon">🌙</span>
-            </button>
-        </div>
-    </header>
-
+    <!-- Overlay Mobile -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+    <div id="header-container"></div>
     <main>
         <div class="page-wrapper">
 
@@ -372,7 +258,7 @@
                     <h3>🧮 Simule Seus Investimentos</h3>
                     <p>Use nossa calculadora para comparar quanto LCI e CDB renderão com seu valor e prazo específicos.
                     </p>
-                    <a href="../../calculadoras/juros.html" class="cta-btn">Calcular Rendimentos →</a>
+                    <a href="/calculadoras/calc-lci-vs-cdb.html" class="cta-btn">Calcular Rendimentos →</a>
                 </div>
 
                 <h2 id="quando-usar">6. Quando Usar Cada Um</h2>
@@ -562,7 +448,7 @@
                         <span class="card-desc">Tudo sobre CDB: tipos e rentabilidade.</span>
                         <span class="card-arrow">Ler artigo →</span>
                     </a>
-                    <a href="../../calculadoras/juros.html" class="card">
+                    <a href="/calculadoras/calc-lci-vs-cdb.html" class="card">
                         <span class="card-icon">🧮</span>
                         <span class="card-tag">Calculadora</span>
                         <span class="card-title">Calculadora de Rendimentos</span>
@@ -619,6 +505,7 @@
     </footer>
 
     <script src="/js/theme.js"></script>
+    <script type="module" src="/js/gerar-header.js"></script>
 
 </body>
 
