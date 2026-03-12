@@ -70,7 +70,7 @@ a {
 }
 
 .header-container {
-    max-width: 1600px;
+    max-width: 1500px;
     width: 100%;
     margin: 0 auto;
     padding: 12px 20px;
@@ -165,7 +165,7 @@ a {
 
 /* --- CONTAINER E SEÇÕES --- */
 .container {
-    max-width: 1110px;
+    max-width: 1500px;
     margin: 40px auto;
     padding: 0 20px;
 }

@@ -1,4 +1,4 @@
-﻿// gerar-header.js (ESM)
+// gerar-header.js (ESM)
 // Injeta o header (e overlay do menu mobile) em todas as paginas.
 // Nao depende de caminhos absolutos: resolve tudo a partir do proprio script.
 
@@ -105,6 +105,7 @@ function buildHeaderHTML() {
                     <a href="${href('calculadoras/cr.html')}" onclick="toggleMenu()">CR Universit&aacute;rio</a>
                     <a href="${href('calculadoras/mmc-mdc.html')}" onclick="toggleMenu()">MMC e MDC</a>
                     <a href="${href('calculadoras/equacao-primeiro-grau.html')}" onclick="toggleMenu()">Equa&ccedil;&atilde;o 1&ordm; Grau</a>
+                    <a href="${href('calculadoras/regra-de-tres.html')}" onclick="toggleMenu()">Regra de Tr&ecirc;s</a>
                     <a href="${href('calculadoras/bhaskara.html')}" onclick="toggleMenu()">Bhaskara (2&ordm; Grau)</a>
                     <a href="${href('calculadoras/forca.html')}" onclick="toggleMenu()">For&ccedil;a (F&iacute;sica)</a>
                 </div>

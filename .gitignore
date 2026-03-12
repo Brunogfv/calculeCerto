@@ -20,3 +20,12 @@ missing.txt
 links.txt
 out.txt
 test.txt
+
+# Pagefind index
+pagefind/
+
+# AI and system hidden files
+.gemini/
+.antigravity/
+.DS_Store
+Thumbs.db
