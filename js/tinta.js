@@ -65,8 +65,8 @@ function removerLinha(btn) {
 }
 
 function calcularTinta() {
-    const rendimento = parseFloat(document.getElementById("rendimento").value);
-    const maos = parseInt(document.getElementById("maos").value);
+    const rendimento = window.converterParaNumero(document.getElementById("rendimento").value);
+    const maos = window.converterParaNumero(document.getElementById("maos").value);
 
     const larguras = document.querySelectorAll("#lista-paredes .input-largura");
     const alturas = document.querySelectorAll("#lista-paredes .input-altura");
@@ -79,8 +79,8 @@ function calcularTinta() {
     // 1. Calcular Área Total das Paredes
     let areaParedes = 0;
     for (let i = 0; i < larguras.length; i++) {
-        const l = parseFloat(larguras[i].value);
-        const a = parseFloat(alturas[i].value);
+        const l = window.converterParaNumero(larguras[i].value);
+        const a = window.converterParaNumero(alturas[i].value);
         if (!isNaN(l) && !isNaN(a) && l > 0 && a > 0) {
             areaParedes += (l * a);
         }
@@ -89,8 +89,8 @@ function calcularTinta() {
     // 2. Calcular Área Total das Aberturas
     let areaAberturas = 0;
     for (let i = 0; i < aberturasLarg.length; i++) {
-        const l = parseFloat(aberturasLarg[i].value);
-        const a = parseFloat(aberturasAlt[i].value);
+        const l = window.converterParaNumero(aberturasLarg[i].value);
+        const a = window.converterParaNumero(aberturasAlt[i].value);
         if (!isNaN(l) && !isNaN(a) && l > 0 && a > 0) {
             areaAberturas += (l * a);
         }

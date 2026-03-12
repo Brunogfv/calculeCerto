@@ -29,10 +29,10 @@ function toggleMenu() {
 
 function calcularTMB() {
     const sexo = document.querySelector('input[name="sexo"]:checked').value;
-    const idade = parseFloat(document.getElementById("idade").value);
-    const peso = parseFloat(document.getElementById("peso").value);
-    const altura = parseFloat(document.getElementById("altura").value);
-    const fatorAtividade = parseFloat(document.getElementById("atividade").value);
+    const idade = window.converterParaNumero(document.getElementById("idade").value);
+    const peso = window.converterParaNumero(document.getElementById("peso").value);
+    const altura = window.converterParaNumero(document.getElementById("altura").value);
+    const fatorAtividade = window.converterParaNumero(document.getElementById("atividade").value);
 
     const resultadoArea = document.getElementById("resultado-area");
 

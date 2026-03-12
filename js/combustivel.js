@@ -30,9 +30,9 @@ function toggleMenu() {
 const formatadorBRL = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
 function calcularCombustivel() {
-    const km = parseFloat(document.getElementById("km").value);
-    const litros = parseFloat(document.getElementById("litros").value);
-    const preco = parseFloat(document.getElementById("preco").value);
+    const km = window.converterParaNumero(document.getElementById("km").value);
+    const litros = window.converterParaNumero(document.getElementById("litros").value);
+    const preco = window.converterParaNumero(document.getElementById("preco").value);
 
     const resultadoArea = document.getElementById("resultado-area");
 

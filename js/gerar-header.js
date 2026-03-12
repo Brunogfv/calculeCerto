@@ -161,7 +161,14 @@ function buildHeaderHTML() {
 `.trim();
 }
 
+function injectGlobalScripts() {
+    const sc = document.createElement('script');
+    sc.src = siteUrl('js/utils-calculadoras.js');
+    document.head.appendChild(sc);
+}
+
 function injectHeader() {
+    injectGlobalScripts();
     const headerHTML = buildHeaderHTML();
 
     const wrapper = document.createElement('div');

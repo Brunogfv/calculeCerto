@@ -77,8 +77,8 @@ function normalizarNumero(valor) {
 }
 
 function calcularIMC() {
-    const peso = normalizarNumero(document.getElementById("peso").value);
-    const altura = normalizarNumero(document.getElementById("altura").value);
+    const peso = window.converterParaNumero(document.getElementById("peso").value);
+    const altura = window.converterParaNumero(document.getElementById("altura").value);
     const resultContainer = document.getElementById("resultado-container");
     const resultCard = document.getElementById("resultado-card");
     const valorEl = document.getElementById("imc-valor");

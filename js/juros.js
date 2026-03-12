@@ -197,9 +197,9 @@ function formatarMoeda(input) {
 const formatadorBRL = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
 function calcularJuros() {
-    const capital = normalizarNumero(document.getElementById("capital").value);
-    const taxa = parseFloat(document.getElementById("taxa").value);
-    const tempo = parseInt(document.getElementById("tempo").value);
+    const capital = window.converterParaNumero(document.getElementById("capital").value);
+    const taxa = window.converterParaNumero(document.getElementById("taxa").value);
+    const tempo = window.converterParaNumero(document.getElementById("tempo").value);
     const tipo = document.getElementById("tipo").value;
 
     const resultadoArea = document.getElementById("resultado-juros");

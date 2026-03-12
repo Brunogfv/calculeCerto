@@ -28,8 +28,8 @@ function toggleMenu() {
 // --- FUNÇÕES DA ÁGUA ---
 
 function calcularAgua() {
-    const peso = parseFloat(document.getElementById("peso").value);
-    const atividade = parseFloat(document.getElementById("atividade").value);
+    const peso = window.converterParaNumero(document.getElementById("peso").value);
+    const atividade = window.converterParaNumero(document.getElementById("atividade").value);
     const clima = parseInt(document.getElementById("clima").value); // 0 ou 500ml
 
     const resultadoArea = document.getElementById("resultado-area");
