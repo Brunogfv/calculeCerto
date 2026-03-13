@@ -272,6 +272,27 @@ async function carregarEIniciarBusca() {
     }
 }
 
+function configurarRedirecionamento() {
+    const input = document.getElementById('site-search');
+    if (!input) {
+        console.warn('Input de busca nao encontrado para configurar redirecionamento');
+        return;
+    }
+
+    console.log('Configurando redirecionamento de busca...');
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const query = input.value.trim();
+            console.log('Enter pressionado. Busca:', query);
+            if (query) {
+                const target = sitePath(`busca.html?q=${encodeURIComponent(query)}`);
+                console.log('Redirecionando para:', target);
+                window.location.href = target;
+            }
+        }
+    });
+}
+
 function ativarBusca(input, container) {
     let debounceTimer;
 
@@ -333,5 +354,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ensureOverlay();
     injectHeader();
     inicializarTema();
+    configurarRedirecionamento();
     carregarEIniciarBusca();
 });

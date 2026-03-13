@@ -3,9 +3,9 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 15px;
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
 }
 
 .search-input {
@@ -31,10 +31,13 @@
 .search-icon {
     position: absolute;
     left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #94a3b8;
     pointer-events: none;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
+    z-index: 2;
 }
 
 /* Container dos Resultados */
@@ -113,7 +116,7 @@
 }
 
 /* Ajuste Mobile para a busca */
-@media (max-width: 768px) {
+@media (max-width: 1250px) {
     .search-wrapper {
         display: none;
         /* Esconde busca no header mobile para economizar espaço */

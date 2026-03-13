@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Busca | Portal das Contas</title>
+    <meta name="description" content="Encontre calculadoras e artigos no Portal das Contas.">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .search-page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 60vh;
+        }
+
+        .search-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .search-header h1 {
+            font-size: 2.5rem;
+            color: var(--cor-texto);
+            margin-bottom: 10px;
+        }
+
+        .search-header p {
+            font-size: 1.1rem;
+            color: var(--cor-texto-suave);
+        }
+
+        .results-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .search-result-item {
+            background: var(--cor-card);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transicao);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .search-result-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sombra-hover);
+            border-color: var(--cor-primaria);
+        }
+
+        .result-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .result-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cor-primaria);
+            background: rgba(37, 99, 235, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .search-result-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--cor-texto);
+        }
+
+        .search-result-item p {
+            color: var(--cor-texto-suave);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .loading-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--cor-texto-suave);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 16px;
+        }
+
+        [data-theme="dark"] .no-results {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .no-results h2 {
+            margin-bottom: 10px;
+        }
+
+        .search-again-box {
+            margin-top: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <!-- Header dinâmico será injetado aqui -->
+    <div id="header-container"></div>
+
+    <main class="search-page-content">
+        <div class="search-header">
+            <h1 id="search-title">Buscando...</h1>
+            <p id="search-count"></p>
+        </div>
+
+        <div id="results-list" class="results-container">
+            <div class="loading-results">
+                <p>Pesquisando no índice do portal...</p>
+            </div>
+        </div>
+
+        <div id="no-results" style="display: none;" class="no-results">
+            <h2>Poxa, não encontramos nada.</h2>
+            <p>Tente buscar por termos mais genéricos como "IMC", "Juros" ou "Tinta".</p>
+            <div class="search-again-box">
+                <!-- A barra de busca do header pode ser usada aqui -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="/js/busca.js"></script>
+</body>
+
+</html>

@@ -40,6 +40,7 @@
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
     <script type="module" src="/js/pagefind.js"></script>
+    <script type="module" src="/js/gerar-header.js"></script>
 </head>
 
 <body data-theme="light">
@@ -699,53 +700,13 @@
         </div>
     </footer>
 
-    <script>
-        // --- LÓGICA DO TEMA ---
-        function alternarTema() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-            const currentTheme = body.getAttribute('data-theme');
-
-            if (currentTheme === 'light') {
-                body.setAttribute('data-theme', 'dark');
-                themeIcon.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.setAttribute('data-theme', 'light');
-                themeIcon.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // Carregar tema salvo ao iniciar
-        if (localStorage.getItem('theme')) {
-            document.body.setAttribute('data-theme', localStorage.getItem('theme'));
-            document.getElementById('theme-icon').textContent = localStorage.getItem('theme') === 'light' ? '🌙' : '☀️';
-        }
-
-        // --- LÓGICA DO MENU MOBILE ---
-        function toggleMenu() {
-            document.getElementById('nav-menu').classList.toggle('active');
-            document.querySelector('.overlay').classList.toggle('active');
-        }
-
-        // --- LÓGICA DO DROPDOWN MOBILE ---
-        function toggleMobileDropdown(element) {
-            // Se estiver em tela pequena (mobile)
-            if (window.innerWidth <= 768) {
-                const menu = element.nextElementSibling; // O .dropdown-menu
-                menu.classList.toggle('mobile-open');
-            }
-        }
-    </script>
     <!-- Scripts Externos -->
     <script src="./js/ads.js"></script>
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             // Carrega um produto da categoria 'geral' na Home
-            carregarAnuncio('geral');
+            if (typeof carregarAnuncio === 'function') carregarAnuncio('geral');
         });
-
     </script>
 </body>
 

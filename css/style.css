@@ -87,6 +87,7 @@ a {
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
 }
 
 /* Ícone simples ao lado do logo */
@@ -109,6 +110,7 @@ a {
     position: relative;
     padding: 4px 0;
     transition: color 0.2s;
+    white-space: nowrap;
 }
 
 .menu a:hover {
@@ -161,6 +163,17 @@ a {
     color: white;
     font-size: 24px;
     cursor: pointer;
+}
+
+/* --- AJUSTES DE ESPAÇAMENTO PARA TELAS MÉDIAS --- */
+@media (max-width: 1400px) {
+    .menu {
+        gap: 20px;
+    }
+    
+    .menu a {
+        font-size: 14px;
+    }
 }
 
 /* --- CONTAINER E SEÇÕES --- */
@@ -394,8 +407,8 @@ nav .dropdown-menu a:hover {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* --- ESTILOS MOBILE (CELULAR) --- */
-@media (max-width: 768px) {
+/* --- ESTILOS MOBILE (CELULAR E TABLET) --- */
+@media (max-width: 1250px) {
 
     /* No mobile, o item de menu vira bloco para empilhar */
     nav .menu-item {
@@ -438,7 +451,7 @@ nav .dropdown-menu a:hover {
 }
 
 /* --- MEDIA QUERIES --- */
-@media (max-width: 768px) {
+@media (max-width: 1250px) {
     .mobile-menu-btn {
         display: block;
         z-index: 1002;
