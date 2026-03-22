@@ -27,7 +27,7 @@ out.txt
 test.txt
 
 # Pagefind index
-pagefind/
+# (NÃO ignorar) — o Pagefind precisa ser publicado junto com o site.
 
 # AI and system hidden files
 .gemini/
