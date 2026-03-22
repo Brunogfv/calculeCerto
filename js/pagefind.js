@@ -1,8 +1,42 @@
-import { search } from '/pagefind/pagefind.js';
-
 // --- LÓGICA DA BUSCA (PAGEFIND) ---
 const searchInput = document.getElementById('site-search');
 const searchResultsBox = document.getElementById('search-results-list');
+
+const siteBasePath = (() => {
+    try {
+        const url = new URL(import.meta.url);
+        // `.../js/pagefind.js` -> `.../`
+        return url.pathname.replace(/\/js\/pagefind\.js$/, '/');
+    } catch {
+        return '/';
+    }
+})();
+
+const pagefindModuleUrl = new URL('../pagefind/pagefind.js', import.meta.url).href;
+let pagefindModulePromise;
+
+function resolveSiteUrl(url) {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+
+    const normalizedBase = siteBasePath.endsWith('/') ? siteBasePath : `${siteBasePath}/`;
+
+    if (url.startsWith('/')) {
+        if (normalizedBase !== '/' && !url.startsWith(normalizedBase)) {
+            return normalizedBase.replace(/\/$/, '') + url;
+        }
+        return url;
+    }
+
+    return normalizedBase + url;
+}
+
+async function getPagefind() {
+    if (!pagefindModulePromise) {
+        pagefindModulePromise = import(pagefindModuleUrl);
+    }
+    return pagefindModulePromise;
+}
 
 async function performSearch(query) {
     if (!searchResultsBox) return;
@@ -15,7 +49,8 @@ async function performSearch(query) {
     }
 
     try {
-        const results = await search(query);
+        const pagefind = await getPagefind();
+        const results = await pagefind.search(query);
 
         if (results.results.length > 0) {
             for (const result of results.results) {
@@ -24,10 +59,7 @@ async function performSearch(query) {
 
                 if (!url) continue;
 
-                // Garante URL absoluta para funcionar em qualquer subpasta
-                if (!url.startsWith('/') && !url.startsWith('http')) {
-                    url = '/' + url;
-                }
+                url = resolveSiteUrl(url);
 
                 const div = document.createElement('a');
                 div.className = 'search-item';

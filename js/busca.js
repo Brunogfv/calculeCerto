@@ -26,10 +26,31 @@ async function carregarResultados() {
     titleEl.textContent = `Resultados para: "${query}"`;
 
     try {
-        // Importar o Pagefind (ajustando o caminho para o ambiente)
-        // Usamos siteUrl definido no gerar-header.js se estiver disponível, ou caminho relativo
-        const pagefindPath = '/pagefind/pagefind.js';
-        const pagefind = await import(pagefindPath);
+        const siteBasePath = (() => {
+            try {
+                const url = new URL(import.meta.url);
+                // `.../js/busca.js` -> `.../`
+                return url.pathname.replace(/\/js\/busca\.js$/, '/');
+            } catch {
+                return '/';
+            }
+        })();
+
+        const resolveSiteUrl = (url) => {
+            if (!url) return '';
+            if (url.startsWith('http://') || url.startsWith('https://')) return url;
+            const normalizedBase = siteBasePath.endsWith('/') ? siteBasePath : `${siteBasePath}/`;
+            if (url.startsWith('/')) {
+                if (normalizedBase !== '/' && !url.startsWith(normalizedBase)) {
+                    return normalizedBase.replace(/\/$/, '') + url;
+                }
+                return url;
+            }
+            return normalizedBase + url;
+        };
+
+        const pagefindUrl = new URL('../pagefind/pagefind.js', import.meta.url);
+        const pagefind = await import(pagefindUrl.href);
         
         // Executar a busca
         const search = await pagefind.search(query);
@@ -51,7 +72,7 @@ async function carregarResultados() {
             
             const card = document.createElement('a');
             card.className = 'search-result-item';
-            card.href = data.url;
+            card.href = resolveSiteUrl(data.url);
             
             // Tenta identificar a categoria pela URL
             let categoria = 'Geral';
