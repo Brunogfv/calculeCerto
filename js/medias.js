@@ -123,4 +123,14 @@ function calcularMedia() {
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // --- SALVAR NO HISTÓRICO ---
+    if (typeof window.salvarCalculo === 'function') {
+        const status = mediaFinal >= notaCorte ? 'Aprovado' : 'Reprovado';
+        window.salvarCalculo(
+            'Calculadora de Médias',
+            `Notas: ${preenchidos} | Corte: ${notaCorte}`,
+            `Média: ${mediaFinal.toFixed(1)} (${status})`
+        );
+    }
 }

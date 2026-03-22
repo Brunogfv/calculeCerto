@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Comparador de Preço de Pizza | Portal das Contas</title>
 
@@ -186,6 +187,7 @@
                     <h2>Comparador de Preço de Pizza</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Qual pizza tem o melhor custo-benefício por
                         cm²?</p>
+                    <div id="btn-favorito-container" data-nome="Comparador de Pizza" data-url="/calculadoras/pizza.html"></div>
                 </div>
 
                 <div class="pizza-battle-container">
@@ -519,6 +521,15 @@
             // Scroll
             if (window.innerWidth < 600) {
                 document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Comparador de Pizza',
+                    `P1: ${d1}cm (R$ ${preco1}) vs P2: ${d2}cm (R$ ${preco2})`,
+                    `Vencedor: ${vencedorNome} (${vencedorPreco.toFixed(4)}/cm²)`
+                );
             }
         }
     </script>

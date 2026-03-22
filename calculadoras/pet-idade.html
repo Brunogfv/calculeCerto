@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Descubra a idade real do seu pet em anos humanos! Calculadora online gratuita para cães (pequeno, médio ou grande porte) e gatos. Entenda as fases da vida do seu animal.">
+    <meta name="keywords"
+        content="idade de cachorro em anos humanos, idade de gato em anos humanos, calculadora de idade pet, calcular idade do cachorro, fase senior cachorro">
+    <meta name="robots" content="index, follow">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
+
+    <title>Calculadora de Idade de Cachorro e Gato em Anos Humanos</title>
+
+    <script type="module" src="../js/gerar-header.js"></script>
+
+    <style>
+        /* --- Estilos da Calculadora --- */
+        .calc-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .calc-header h1 {
+            color: var(--cor-texto);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .calc-header p {
+            color: var(--cor-texto-suave);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .calculator-container {
+            background: var(--cor-card);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+            border: 1px solid #e2e8f0;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cor-texto);
+            margin-bottom: 8px;
+        }
+
+        .input-group select,
+        .input-group input {
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #f8fafc;
+            color: var(--cor-texto);
+            transition: all 0.3s;
+        }
+
+        .input-group select:focus,
+        .input-group input:focus {
+            outline: none;
+            border-color: #2563eb;
+            background-color: #fff;
+        }
+
+        .btn-calc {
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-calc:hover {
+            background-color: #1d4ed8;
+        }
+
+        .result-box {
+            margin-top: 30px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .result-box.show {
+            display: block;
+        }
+
+        .result-title {
+            font-size: 1.1rem;
+            color: var(--cor-texto-suave);
+            margin-bottom: 10px;
+        }
+
+        .result-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #16a34a;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .result-message {
+            font-size: 1.1rem;
+            color: var(--cor-texto);
+            font-weight: 500;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- SEO & Conteúdo (Novo) --- */
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .info-content {
+            background-color: var(--cor-card);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-content h2 {
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .info-content h3 {
+            color: var(--cor-texto);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .info-content p,
+        .info-content ul {
+            color: var(--cor-texto-suave);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .info-content ul {
+            padding-left: 20px;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #1e3a8a;
+            font-size: 0.95rem;
+        }
+
+        /* --- FAQ (Novo) --- */
+        .faq-section {
+            margin-bottom: 40px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--cor-texto);
+        }
+
+        details {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+            transition: all 0.3s;
+        }
+
+        details[open] {
+            border-color: var(--cor-primaria);
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--cor-texto);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--cor-primaria);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details p {
+            margin-top: 15px;
+            margin-bottom: 0;
+            color: var(--cor-texto-suave);
+            font-size: 0.95rem;
+        }
+
+        /* --- Links Relacionados (Novo) --- */
+        .related-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--cor-texto);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .related-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--cor-primaria);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: var(--cor-texto);
+            margin-bottom: 5px;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--cor-texto-suave);
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Header Dinâmico -->
+    <div id="header-container"></div>
+
+    <main class="container">
+        <div class="calc-header">
+            <h1>Calculadora de Idade Pet</h1>
+            <p>Descubra a idade real do seu cachorro ou gato em "anos humanos" usando a nossa calculadora baseada nas
+                fases de desenvolvimento animal.</p>
+            <div id="btn-favorito-container" data-nome="Calculadora Pet" data-url="/calculadoras/pet-idade.html">
+            </div>
+        </div>
+
+        <section class="calculator-container" aria-label="Calculadora de Idade do Pet">
+            <form id="petForm">
+                <div class="input-group">
+                    <label for="tipo_pet">Seu pet é um:</label>
+                    <select id="tipo_pet" name="tipo_pet" onchange="togglePorte()" required>
+                        <option value="cachorro">Cachorro 🐶</option>
+                        <option value="gato">Gato 🐱</option>
+                    </select>
+                </div>
+
+                <!-- Campo de porte aparece apenas para cães -->
+                <div class="input-group" id="group_porte">
+                    <label for="porte">Qual o porte do cachorro?</label>
+                    <select id="porte" name="porte">
+                        <option value="pequeno">Pequeno (Até 9 kg)</option>
+                        <option value="medio">Médio (10 a 23 kg)</option>
+                        <option value="grande">Grande (Mais de 24 kg)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="idade_anos">Idade do pet (Anos):</label>
+                    <input type="number" id="idade_anos" name="idade_anos" min="0" max="30" value="0" required>
+                </div>
+
+                <div class="input-group" style="margin-bottom: 10px;">
+                    <label for="idade_meses">Meses adicionais (Opcional):</label>
+                    <input type="number" id="idade_meses" name="idade_meses" min="0" max="11" value="0">
+                </div>
+
+                <button type="button" class="btn-calc" onclick="calcularIdadePet()">Descobrir Idade</button>
+            </form>
+
+            <div id="resultado" class="result-box" aria-live="polite">
+                <div class="result-title">A idade humana do seu pet é aproximadamente:</div>
+                <div class="result-value" id="resultado_anos">--</div>
+                <div class="result-message" id="resultado_msg">...</div>
+            </div>
+        </section>
+
+        <!-- Anúncio AdSense Dinâmico -->
+        <div id="anuncio-dinamico" style="text-align: center; margin: 40px 0;"></div>
+
+        <!-- CONTEÚDO SEO E EDUCACIONAL -->
+        <div class="content-wrapper">
+
+            <section class="info-content">
+                <h2>A Regra dos "7 Anos" é um Mito!</h2>
+                <p>
+                    Durante muito tempo, acreditou-se que multiplicar a idade do cachorro por 7 daria a sua idade
+                    equivalente em anos humanos.
+                    No entanto, a ciência veterinária moderna provou que <strong>essa regra matemática simples é
+                        imprecisa</strong>.
+                </p>
+                <p>
+                    A verdade é que cães e gatos <strong>amadurecem muito mais rápido</strong> nos primeiros dois anos
+                    de
+                    vida do que os humanos.
+                    Um cachorro de 1 ano, por exemplo, não tem a maturidade de uma criança de 7 anos; fisicamente e
+                    sexualmente, ele já se aproxima
+                    de um adolescente humano de 15 anos de idade.
+                </p>
+
+                <h3>Como a idade dos cães é calculada de verdade?</h3>
+                <p>A taxa de envelhecimento varia bastante de acordo com o <strong>porte e a raça</strong> do animal:
+                </p>
+                <ul>
+                    <li><strong>Cães de pequeno porte (até 9kg):</strong> Vivem mais tempo. Envelhecem rápido nos
+                        primeiros
+                        anos, mas depois a taxa diminui (cerca de 4 a 5 anos humanos por cada ano canino).</li>
+                    <li><strong>Cães de médio porte (10 a 23kg):</strong> Têm uma taxa de envelhecimento equilibrada. Um
+                        cão
+                        médio de 10 anos equivale a um humano de 60 anos.</li>
+                    <li><strong>Cães de grande porte (+24kg):</strong> Envelhecem mais devagar no primeiro ano, mas a
+                        partir
+                        do quinto ano de vida, sua velocidade de envelhecimento dispara. Um cão grande de 6 anos já é
+                        considerado idoso.</li>
+                </ul>
+
+                <div class="info-box">
+                    <strong>Dica de Nutrição:</strong> Ao identificar que seu pet está entrando na fase sênior
+                    (geralmente a partir dos 7 anos em cães pequenos e 5 anos em cães grandes), mude a ração para uma
+                    fórmula especifica para idosos, que é mais fácil de digerir e protege as articulações.
+                </div>
+
+                <h3>E os Gatos?</h3>
+                <p>
+                    A lógica para felinos é um pouco mais padronizada, pois a variação de peso entre as raças domésticas
+                    não
+                    é tão extrema quanto nos cães.
+                    Geralmente, o primeiro ano de vida de um gato equivale a cerca de 15 anos humanos. Aos 2 anos, ele
+                    já
+                    tem "24 anos humanos". A partir do
+                    terceiro ano em diante, soma-se aproximadamente 4 anos humanos para cada ano felino.
+                </p>
+
+                <h3>Gatos Internos vs. Externos</h3>
+                <p>
+                    Embora a idade biológica siga a mesma linha do tempo, a expectativa de vida varia drasticamente.
+                    Gatos que vivem exclusivamente dentro de casa tendem a viver muito mais (15 a 20 anos) do que os
+                    gatos que têm acesso livre à rua (expostos a carros, brigas e doenças), que raramente ultrapassam os
+                    10-12 anos. Portanto, um gato de rua de 8 anos pode ser biologicamente mais "velho" e fragilizado do
+                    que um gato doméstico da mesma idade.
+                </p>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2>Perguntas Frequentes sobre Idade Animal</h2>
+
+                <details>
+                    <summary>Por que a regra dos 7 anos não vale mais?</summary>
+                    <p>Estudos genéticos mostram que o DNA dos cães muda rapidamente nos primeiros anos e depois
+                        estabiliza. Um cão de 1 ano já tem o desenvolvimento fisiológico equivalente a um jovem adulto
+                        de 15 a 30 anos (dependendo do porte). Multiplicar por 7 subestima a juventude dos jovens e
+                        superestima a velhice dos idosos.</p>
+                </details>
+
+                <details>
+                    <summary>O que influencia mais: a raça ou o porte?</summary>
+                    <p>Para a idade biológica, o porte (peso na vida adulta) é o fator mais preciso. Cães grandes
+                        costumam ter vidas mais curtas, logo, apresentam um envelhecimento mais acelerado do que cães de
+                        pequeno porte após os 5 anos de idade.</p>
+                </details>
+
+                <details>
+                    <summary>Quando um cachorro é considerado idoso (Sênior)?</summary>
+                    <p>Depende do porte. Cães pequenos entram na fase sênior por volta dos 10-11 anos. Cães de grande
+                        porte entram nessa fase precocemente, entre 5 e 6 anos. É nessa fase que exames de rotina
+                        (sangue, urina, coração) devem ser feitos semestralmente.</p>
+                </details>
+
+                <details>
+                    <summary>Meu gato tem 15 anos, isso é muito velho?</summary>
+                    <p>Não! 15 anos para um gato é equivalente a aproximadamente 76 anos humanos. Com cuidados
+                        adequados, vacinas em dia e ração de qualidade, gatos domésticos podem facilmente viver até os
+                        18 ou 20 anos, o que equivaleria a humanos com mais de 90 anos.</p>
+                </details>
+            </section>
+
+            <!-- Links Relacionados -->
+            <section class="related-section">
+                <h2>Outras Ferramentas de Saúde</h2>
+                <div class="related-grid">
+                    <a href="/calculadoras/imc.html" class="related-card">
+                        <div class="card-icon">⚖️</div>
+                        <div class="card-title">Calculadora de IMC</div>
+                        <div class="card-desc">Mantenha sua saúde em dia para cuidar bem do seu pet.</div>
+                    </a>
+                    <a href="/calculadoras/agua.html" class="related-card">
+                        <div class="card-icon">💧</div>
+                        <div class="card-title">Consumo de Água</div>
+                        <div class="card-desc">Hidratação também é essencial para a saúde dos donos.</div>
+                    </a>
+                    <a href="/calculadoras/tmb.html" class="related-card">
+                        <div class="card-icon">🔥</div>
+                        <div class="card-title">Calculadora TMB</div>
+                        <div class="card-desc">Descubra seu gasto calórico basal diário.</div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Dinâmico -->
+    <div id="footer-container"></div>
+
+    <!-- AdSense Load Script e Footer -->
+    <script src="../js/ads.js"></script>
+    <script src="../js/gerar-footer.js"></script>
+    <script>
+        // Carrega o anúncio contextualizado
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof carregarAnuncio === 'function') carregarAnuncio('geral');
+        });
+
+        function togglePorte() {
+            const tipo = document.getElementById('tipo_pet').value;
+            const groupPorte = document.getElementById('group_porte');
+
+            if (tipo === 'gato') {
+                groupPorte.style.display = 'none';
+            } else {
+                groupPorte.style.display = 'flex';
+            }
+        }
+
+        function calcularIdadePet() {
+            const tipo = document.getElementById('tipo_pet').value;
+            const porte = document.getElementById('porte').value;
+            const anosInput = parseInt(document.getElementById('idade_anos').value) || 0;
+            const mesesInput = parseInt(document.getElementById('idade_meses').value) || 0;
+
+            // Validações
+            if (anosInput < 0 || mesesInput < 0 || mesesInput > 11) {
+                alert('Por favor, insira valores válidos para anos e meses.');
+                return;
+            }
+
+            if (anosInput === 0 && mesesInput === 0) {
+                alert('Por favor, informe a idade do pet.');
+                return;
+            }
+
+            // Converter meses em fração de ano (ex: 6 meses = 0.5 anos)
+            const idadeEmAnos = anosInput + (mesesInput / 12);
+
+            let idadeHumana = 0;
+            let faseVida = "";
+
+            if (tipo === 'gato') {
+                if (idadeEmAnos <= 1) {
+                    idadeHumana = idadeEmAnos * 15;
+                    faseVida = "Adolescente";
+                } else if (idadeEmAnos <= 2) {
+                    idadeHumana = 15 + ((idadeEmAnos - 1) * 9);
+                    faseVida = "Jovem Adulto";
+                } else {
+                    idadeHumana = 24 + ((idadeEmAnos - 2) * 4);
+                    if (idadeEmAnos < 7) faseVida = "Adulto";
+                    else if (idadeEmAnos < 11) faseVida = "Maduro";
+                    else faseVida = "Idoso (Sênior)";
+                }
+            } else { // Cachorro
+                if (idadeEmAnos <= 1) {
+                    idadeHumana = idadeEmAnos * 15;
+                    faseVida = "Adolescente";
+                } else if (idadeEmAnos <= 2) {
+                    idadeHumana = 15 + ((idadeEmAnos - 1) * 9);
+                    faseVida = "Jovem Adulto";
+                } else {
+                    let base2Anos = 24;
+                    let anosAdicionais = idadeEmAnos - 2;
+                    let fator = 4; // default pequeno
+
+                    if (porte === 'medio') fator = 5;
+                    if (porte === 'grande') fator = 6; // Na verdade, para cães grandes o fator varia, mas 6 é uma média aceitável após o 5º ano.
+
+                    // Fórmula simplificada mas muito melhor que "vezes 7"
+                    idadeHumana = base2Anos + (anosAdicionais * fator);
+
+                    // Ajuste de fase de vida por porte (maiores envelhecem mais rápido)
+                    let limiarSenior = porte === 'pequeno' ? 10 : (porte === 'medio' ? 8 : 6);
+
+                    if (idadeEmAnos < limiarSenior) faseVida = "Adulto";
+                    else faseVida = "Cão Idoso (Sênior)";
+                }
+            }
+
+            // Exibir no front
+            const resultBox = document.getElementById('resultado');
+            const resultVal = document.getElementById('resultado_anos');
+            const resultMsg = document.getElementById('resultado_msg');
+
+            // Arredondar para no máximo 1 casa decimal se necessário, mas exibir int se redondo
+            const formatIdade = Math.round(idadeHumana * 10) / 10;
+
+            resultVal.innerHTML = `${formatIdade} <span style="font-size: 1.5rem">anos</span>`;
+
+            let icone = tipo === 'gato' ? '🐱' : '🐶';
+            resultMsg.innerHTML = `Seu ${tipo} está na fase: <strong>${faseVida}</strong> ${icone}`;
+
+            resultBox.classList.add('show');
+
+            // Rolar para o resultado
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // --- SALVAR NO HISTÓRICO (Sistema Local) ---
+            const animalNome = tipo === 'gato' ? 'Gato' : 'Cão';
+            const porteTexto = tipo === 'cachorro' ? ` (${porte})` : '';
+            const valoresSalvar = `${animalNome}${porteTexto} | ${anosInput}a ${mesesInput}m`;
+            const resultadoSalvar = `Idade Humana: ${formatIdade} anos`;
+
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo('Calculadora Pet', valoresSalvar, resultadoSalvar);
+            }
+        }
+    </script>
+
+    <!-- Schema FAQ para Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Por que a regra dos 7 anos não vale mais?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Estudos genéticos mostram que o DNA dos cães muda rapidamente nos primeiros anos e depois estabiliza. Um cão de 1 ano já tem o desenvolvimento fisiológico equivalente a um jovem adulto humano, não a uma criança de 7 anos."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Quando um cachorro é considerado idoso?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende do porte. Cães pequenos entram na fase sênior por volta dos 10-11 anos. Cães de grande porte entram nessa fase precocemente, entre 5 e 6 anos."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Meu gato tem 15 anos, isso é muito velho?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "15 anos para um gato é aproximadamente 76 anos humanos. Com cuidados adequados, gatos domésticos podem facilmente viver até os 18 ou 20 anos."
+        }
+      }]
+    }
+    </script>
+</body>
+
+</html>

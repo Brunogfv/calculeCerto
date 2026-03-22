@@ -27,11 +27,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/juros.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Imposto de Renda e Renda Líquida | Portal das Contas</title>
 </head>
@@ -46,6 +47,7 @@
                     <h1>Calculadora de Imposto de Renda</h1>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Descubra quanto sobra do seu salário após o
                         IRRF.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de IR (Salário)" data-url="/calculadoras/calc-imposto-renda.html"></div>
                 </div>
 
                 <section class="intro-seo" style="margin-bottom:30px;">
@@ -347,6 +349,15 @@
             // Vamos simplificar visualmente: Líquido vs Descontos Totais (Imposto + Deduções INSS)
             const totalDescontos = valorImposto + valorDeducao + deducaoDependentes;
             atualizarGrafico(valorLiquido, totalDescontos);
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de IR (Salário)',
+                    `Bruto: R$ ${valorBrutoInput} | Dependentes: ${numDependentes}`,
+                    `Líquido: ${formatarParaBRL(valorLiquido)} | Imposto: ${formatarParaBRL(valorImposto)}`
+                );
+            }
         }
 
         function limparCampos() {

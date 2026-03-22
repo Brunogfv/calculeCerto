@@ -1,0 +1,340 @@
+/* =============================================
+   ESTILOS — Meus Cálculos (Dashboard)
+   Portal das Contas
+   ============================================= */
+
+/* Container principal */
+.dashboard-container {
+    max-width: 900px;
+    margin: 30px auto 60px;
+    padding: 0 20px;
+}
+
+.dashboard-container h1 {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--cor-texto);
+}
+
+.dashboard-subtitle {
+    text-align: center;
+    color: var(--cor-texto-suave);
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+/* ---- Seções ---- */
+.dashboard-section {
+    background: var(--cor-card);
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 30px;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .dashboard-section {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cor-texto);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ---- Botões de ação ---- */
+.btn-acao {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: transparent;
+    color: var(--cor-texto-suave);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-acao:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #dc2626;
+}
+
+[data-theme="dark"] .btn-acao {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .btn-acao:hover {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.3);
+    color: #fca5a5;
+}
+
+/* ---- Cards de histórico ---- */
+.historico-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.historico-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    background: var(--cor-fundo);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+}
+
+.historico-item:hover {
+    border-color: rgba(37, 99, 235, 0.15);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+}
+
+[data-theme="dark"] .historico-item {
+    border-color: rgba(255, 255, 255, 0.04);
+}
+
+.historico-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.historico-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.historico-nome {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--cor-texto);
+    margin-bottom: 4px;
+}
+
+.historico-valores {
+    font-size: 13px;
+    color: var(--cor-texto-suave);
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+
+.historico-resultado {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    margin-bottom: 4px;
+}
+
+.historico-data {
+    font-size: 12px;
+    color: var(--cor-texto-suave);
+    opacity: 0.7;
+}
+
+/* ---- Favoritos ---- */
+.favoritos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+}
+
+.favorito-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background: var(--cor-fundo);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.favorito-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-hover);
+    border-color: rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="dark"] .favorito-card {
+    border-color: rgba(255, 255, 255, 0.04);
+}
+
+.favorito-star {
+    font-size: 24px;
+    color: #f59e0b;
+    min-width: 28px;
+    text-align: center;
+}
+
+.favorito-nome {
+    font-weight: 600;
+    font-size: 14px;
+    flex: 1;
+}
+
+.favorito-remover {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: var(--cor-texto-suave);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.favorito-card:hover .favorito-remover {
+    opacity: 1;
+}
+
+.favorito-remover:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+[data-theme="dark"] .favorito-remover:hover {
+    background: rgba(220, 38, 38, 0.15);
+    color: #fca5a5;
+}
+
+/* ---- Estado vazio ---- */
+.estado-vazio {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--cor-texto-suave);
+}
+
+.estado-vazio-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+.estado-vazio p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.estado-vazio a {
+    color: var(--cor-primaria);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.estado-vazio a:hover {
+    text-decoration: underline;
+}
+
+/* ---- Botão Favoritar (nas calculadoras) ---- */
+.btn-favorito {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: rgba(245, 158, 11, 0.08);
+    color: #b45309;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 10px;
+}
+
+.btn-favorito:hover {
+    background: rgba(245, 158, 11, 0.18);
+    border-color: #f59e0b;
+    transform: scale(1.03);
+}
+
+.btn-favorito.favoritado {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.btn-favorito.favoritado:hover {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    transform: scale(1.03);
+}
+
+[data-theme="dark"] .btn-favorito {
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #fbbf24;
+}
+
+[data-theme="dark"] .btn-favorito.favoritado {
+    color: white;
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 600px) {
+    .dashboard-container {
+        margin-top: 20px;
+    }
+
+    .dashboard-container h1 {
+        font-size: 22px;
+    }
+
+    .dashboard-section {
+        padding: 20px 16px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .favoritos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .historico-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .historico-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 16px;
+    }
+}

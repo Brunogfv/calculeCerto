@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('input', (e) => {
         const el = e.target;
         
-        // Verifica se é um input de texto ou número
-        if (el.tagName === 'INPUT' && (el.type === 'text' || el.type === 'number')) {
+        // Apenas para inputs do tipo TEXT — inputs type="number" usam ponto internamente
+        // e navegadores REJEITAM vírgulas, fazendo o valor ficar vazio.
+        if (el.tagName === 'INPUT' && el.type === 'text') {
             
             // Não interfere se o input já tiver lógica de formatação de moeda (ex: capital em juros.html)
             if (el.hasAttribute('oninput') && el.getAttribute('oninput').includes('formatarMoeda')) {
@@ -20,8 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Se o usuário digitou um ponto, trocamos por vírgula para manter o padrão PT-BR
             // mas apenas se o campo for destinado a números (baseado no ID ou placeholder)
             const isNumericField = el.id.match(/peso|altura|taxa|tempo|percent|valor|medida|tamanho|quantidade/i) || 
-                                 el.placeholder.toLowerCase().includes('ex:') ||
-                                 el.type === 'number';
+                                 el.placeholder.toLowerCase().includes('ex:');
 
             if (isNumericField && el.value.includes('.')) {
                 // Salva a posição do cursor
@@ -31,9 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.value = el.value.replace(/\./g, ',');
                 
                 // Restaura a posição do cursor
-                if (el.type === 'text') {
-                    el.setSelectionRange(start, end);
-                }
+                el.setSelectionRange(start, end);
             }
         }
     });

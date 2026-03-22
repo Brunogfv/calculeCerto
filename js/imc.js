@@ -153,4 +153,13 @@ function calcularIMC() {
     if (window.innerWidth < 600) {
         resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // Salva o cálculo no histórico do usuário
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de IMC',
+            `Peso: ${peso}kg | Altura: ${altura}m`,
+            `IMC: ${imcFormatado.replace('.', ',')} — ${classificacao}`
+        );
+    }
 }

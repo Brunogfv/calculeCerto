@@ -26,10 +26,11 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
 
     <title>Calculadora de Gasto Calórico | Portal das Contas</title>
@@ -90,6 +91,7 @@
                     <h2>Calculadora de Gasto Calórico</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Descubra quantas calorias você queima em suas
                         atividades.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Gasto Calórico" data-url="/calculadoras/gasto-calorico.html"></div>
                 </div>
 
                 <div class="activity-grid">
@@ -379,6 +381,15 @@
             }
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de Gasto Calórico',
+                    `Peso: ${peso}kg | Tempo: ${tempoMin}min`,
+                    `Gasto: ${kcalArredondado} kcal`
+                );
+            }
 
             // Scroll
             if (window.innerWidth < 600) {

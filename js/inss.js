@@ -205,6 +205,15 @@ function calcularINSS() {
     if (window.innerWidth < 600) {
         resultado.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // --- SALVAR NO HISTÓRICO (Sistema Local) ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de INSS',
+            `Salário: ${formatadorBRL.format(salario)}`,
+            `Líquido: ${formatadorBRL.format(salarioLiquido)} (Desconto: ${formatadorBRL.format(inssTotal)})`
+        );
+    }
 }
 
 function atualizarGrafico(dados) {

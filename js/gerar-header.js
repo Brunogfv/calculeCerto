@@ -24,10 +24,10 @@ function ensureOverlay() {
         document.body.prepend(overlay);
     }
 
-    // Garante que clicar fora fecha o menu.
-    overlay.addEventListener('click', () => {
+    // Garante que clicar fora fecha o menu. Prevê disparos duplos se houver onclick no HTML.
+    overlay.onclick = () => {
         if (typeof window.toggleMenu === 'function') window.toggleMenu();
-    });
+    };
 
     return overlay;
 }
@@ -51,97 +51,92 @@ function buildHeaderHTML() {
         <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">&#9776;</button>
 
         <nav class="menu" id="nav-menu">
-            <a href="${href('index.html')}" onclick="toggleMenu()">In&iacute;cio</a>
-
             <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finan&ccedil;as</a>
-                <div class="dropdown-menu">
-                    <a href="${href('calculadoras/juros.html')}" onclick="toggleMenu()">Juros</a>
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finan&ccedil;as &amp; Trabalho</a>
+                <div class="dropdown-menu columns-2">
+                    <a href="${href('calculadoras/juros.html')}" onclick="toggleMenu()">Juros &amp; Investimentos</a>
+                    <a href="${href('calculadoras/calc-investimento.html')}" onclick="toggleMenu()">Simulador de Investimentos</a>
+                    <a href="${href('calculadoras/calc-inflacao.html')}" onclick="toggleMenu()">Infla&ccedil;&atilde;o (IPCA/IGP-M)</a>
+                    <a href="${href('calculadoras/calc-poupanca-vs-investimento.html')}" onclick="toggleMenu()">Poupan&ccedil;a vs Investimentos</a>
                     <a href="${href('calculadoras/inss.html')}" onclick="toggleMenu()">INSS</a>
+                    <a href="${href('calculadoras/salario.html')}" onclick="toggleMenu()">Sal&aacute;rio L&iacute;quido</a>
                     <a href="${href('calculadoras/decimo-terceiro.html')}" onclick="toggleMenu()">13&ordm; Sal&aacute;rio</a>
+                    <a href="${href('calculadoras/pj-vs-clt.html')}" onclick="toggleMenu()">PJ vs CLT (Qual é Melhor?)</a>
+                    <a href="${href('calculadoras/hora-extra.html')}" onclick="toggleMenu()">Hora Extra</a>
                     <a href="${href('calculadoras/porcentagem.html')}" onclick="toggleMenu()">Porcentagem</a>
                     <a href="${href('calculadoras/porcentagem-reversa.html')}" onclick="toggleMenu()">Porcentagem Reversa</a>
-                    <a href="${href('calculadoras/salario.html')}" onclick="toggleMenu()">Conversor de Sal&aacute;rio</a>
-                    <a href="${href('calculadoras/hora-extra.html')}" onclick="toggleMenu()">Hora Extra</a>
-                    <a href="${href('calculadoras/calc-investimento.html')}" onclick="toggleMenu()">Investimentos</a>
-                    <a href="${href('calculadoras/dividendos.html')}" onclick="toggleMenu()">Dividendos</a>
-                    <a href="${href('calculadoras/calc-inflacao.html')}" onclick="toggleMenu()">Infla&ccedil;&atilde;o</a>
-                    <a href="${href('calculadoras/calc-cdb.html')}" onclick="toggleMenu()">CDB</a>
+                    <a href="${href('calculadoras/calc-cdb.html')}" onclick="toggleMenu()">CDB &amp; Renda Fixa</a>
+                    <a href="${href('calculadoras/calc-lca-vs-cdb.html')}" onclick="toggleMenu()">LCA vs CDB</a>
+                    <a href="${href('calculadoras/calc-lci-vs-cdb.html')}" onclick="toggleMenu()">LCI vs CDB</a>
                     <a href="${href('calculadoras/calc-ir-investimentos.html')}" onclick="toggleMenu()">IR Investimentos</a>
                     <a href="${href('calculadoras/calc-tesouro-direto.html')}" onclick="toggleMenu()">Tesouro Direto</a>
                     <a href="${href('calculadoras/calc-price-sac.html')}" onclick="toggleMenu()">Price e SAC</a>
-                    <a href="${href('calculadoras/calc-poupanca-vs-investimento.html')}" onclick="toggleMenu()">Poupan&ccedil;a vs. Outros</a>
                     <a href="${href('calculadoras/calc-imposto-renda.html')}" onclick="toggleMenu()">Imposto de Renda</a>
-                    <a href="${href('calculadoras/calc-lca-vs-cdb.html')}" onclick="toggleMenu()">LCA vs CDB</a>
-                    <a href="${href('calculadoras/calc-lci-vs-cdb.html')}" onclick="toggleMenu()">LCI vs CDB</a>
+                    <a href="${href('calculadoras/dividendos.html')}" onclick="toggleMenu()">Dividendos (FIIs)</a>
                 </div>
             </div>
 
             <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Sa&uacute;de</a>
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Sa&uacute;de &amp; Pets</a>
                 <div class="dropdown-menu">
-                    <a href="${href('calculadoras/imc.html')}" onclick="toggleMenu()">IMC</a>
-                    <a href="${href('calculadoras/tmb.html')}" onclick="toggleMenu()">TMB</a>
-                    <a href="${href('calculadoras/agua.html')}" onclick="toggleMenu()">&Aacute;gua</a>
-                    <a href="${href('calculadoras/gasto-calorico.html')}" onclick="toggleMenu()">Gasto Cal&oacute;rico</a>
-                    <a href="${href('calculadoras/tdee.html')}" onclick="toggleMenu()">TDEE</a>
+                    <a href="${href('calculadoras/imc.html')}" onclick="toggleMenu()">IMC (Peso Ideal)</a>
+                    <a href="${href('calculadoras/tmb.html')}" onclick="toggleMenu()">Metabolismo (TMB)</a>
+                    <a href="${href('calculadoras/tdee.html')}" onclick="toggleMenu()">Gasto Cal&oacute;rico (TDEE)</a>
+                    <a href="${href('calculadoras/gasto-calorico.html')}" onclick="toggleMenu()">Queima de Exerc&iacute;cios</a>
+                    <a href="${href('calculadoras/agua.html')}" onclick="toggleMenu()">&Aacute;gua Di&aacute;ria</a>
+                    <a href="${href('calculadoras/pet-idade.html')}" onclick="toggleMenu()">Idade Pet (Nova!)</a>
                     <a href="${href('calculadoras/parto.html')}" onclick="toggleMenu()">Data de Parto</a>
                 </div>
             </div>
 
             <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Auto</a>
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Im&oacute;veis &amp; Reforma</a>
+                <div class="dropdown-menu">
+                    <a href="${href('calculadoras/tinta.html')}" onclick="toggleMenu()">Pintura (Tinta)</a>
+                    <a href="${href('calculadoras/piso.html')}" onclick="toggleMenu()">Piso &amp; Azulejo</a>
+                    <a href="${href('calculadoras/cimento.html')}" onclick="toggleMenu()">Cimento &amp; Obra</a>
+                    <a href="${href('calculadoras/aluguel-vs-compra.html')}" onclick="toggleMenu()">Aluguel vs Compra (Novo!)</a>
+                    <a href="${href('calculadoras/amortizacao.html')}" onclick="toggleMenu()">Amortiza&ccedil;&atilde;o (Novo!)</a>
+                    <a href="${href('calculadoras/energia.html')}" onclick="toggleMenu()">Consumo de Energia</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educa&ccedil;&atilde;o &amp; Ci&ecirc;ncia</a>
+                <div class="dropdown-menu columns-2">
+                    <a href="${href('calculadoras/medias.html')}" onclick="toggleMenu()">M&eacute;dias Escolares</a>
+                    <a href="${href('calculadoras/media-final.html')}" onclick="toggleMenu()">Nota para Passar (M&eacute;dia)</a>
+                    <a href="${href('calculadoras/cr.html')}" onclick="toggleMenu()">Coeficiente (CR)</a>
+                    <a href="${href('calculadoras/regra-de-tres.html')}" onclick="toggleMenu()">Regra de Tr&ecirc;s</a>
+                    <a href="${href('calculadoras/bhaskara.html')}" onclick="toggleMenu()">Bhaskara &amp; Fun&ccedil;&otilde;es</a>
+                    <a href="${href('calculadoras/equacao-primeiro-grau.html')}" onclick="toggleMenu()">Equa&ccedil;&atilde;o 1&ordm; Grau</a>
+                    <a href="${href('calculadoras/mmc-mdc.html')}" onclick="toggleMenu()">MMC e MDC</a>
+                    <a href="${href('calculadoras/conversor-unidades.html')}" onclick="toggleMenu()">Conversor de Medidas</a>
+                    <a href="${href('calculadoras/velocidade-media.html')}" onclick="toggleMenu()">Velocidade M&eacute;dia</a>
+                    <a href="${href('calculadoras/forca.html')}" onclick="toggleMenu()">For&ccedil;a (F=ma)</a>
+                    <a href="${href('calculadoras/kmh-ms.html')}" onclick="toggleMenu()">km/h para m/s</a>
+                    <a href="${href('calculadoras/temperatura.html')}" onclick="toggleMenu()">Temperaturas</a>
+                    <a href="${href('calculadoras/datas.html')}" onclick="toggleMenu()">Diferen&ccedil;a de Datas</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Estilo de Vida</a>
                 <div class="dropdown-menu">
                     <a href="${href('calculadoras/combustivel.html')}" onclick="toggleMenu()">Combust&iacute;vel</a>
-                    <a href="${href('calculadoras/pneus.html')}" onclick="toggleMenu()">Troca de Pneus/Aro</a>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educa&ccedil;&atilde;o</a>
-                <div class="dropdown-menu">
-                    <a href="${href('calculadoras/medias.html')}" onclick="toggleMenu()">M&eacute;dia Escolar</a>
-                    <a href="${href('calculadoras/media-final.html')}" onclick="toggleMenu()">Nota para Passar</a>
-                    <a href="${href('calculadoras/cr.html')}" onclick="toggleMenu()">CR Universit&aacute;rio</a>
-                    <a href="${href('calculadoras/mmc-mdc.html')}" onclick="toggleMenu()">MMC e MDC</a>
-                    <a href="${href('calculadoras/equacao-primeiro-grau.html')}" onclick="toggleMenu()">Equa&ccedil;&atilde;o 1&ordm; Grau</a>
-                    <a href="${href('calculadoras/regra-de-tres.html')}" onclick="toggleMenu()">Regra de Tr&ecirc;s</a>
-                    <a href="${href('calculadoras/bhaskara.html')}" onclick="toggleMenu()">Bhaskara (2&ordm; Grau)</a>
-                    <a href="${href('calculadoras/forca.html')}" onclick="toggleMenu()">For&ccedil;a (F&iacute;sica)</a>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Casa &amp; Reforma</a>
-                <div class="dropdown-menu">
-                    <a href="${href('calculadoras/tinta.html')}" onclick="toggleMenu()">Calculadora de Tinta</a>
-                    <a href="${href('calculadoras/piso.html')}" onclick="toggleMenu()">Calculadora de Piso</a>
-                    <a href="${href('calculadoras/cimento.html')}" onclick="toggleMenu()">Calculadora de Cimento</a>
-                    <a href="${href('calculadoras/medidas-culinarias.html')}" onclick="toggleMenu()">Medidas Culin&aacute;rias</a>
-                    <a href="${href('calculadoras/churrasco.html')}" onclick="toggleMenu()">Churrasco</a>
+                    <a href="${href('calculadoras/pneus.html')}" onclick="toggleMenu()">Pneus &amp; Aro</a>
+                    <a href="${href('calculadoras/churrasco.html')}" onclick="toggleMenu()">Calculador de Churrasco</a>
+                    <a href="${href('calculadoras/festa.html')}" onclick="toggleMenu()">C&aacute;lculo de Festa</a>
                     <a href="${href('calculadoras/pizza.html')}" onclick="toggleMenu()">Comparador de Pizza</a>
-                    <a href="${href('calculadoras/energia.html')}" onclick="toggleMenu()">Consumo de Energia</a>
-                    <a href="${href('calculadoras/festa.html')}" onclick="toggleMenu()">Calculadora de Festa</a>
+                    <a href="${href('calculadoras/medidas-culinarias.html')}" onclick="toggleMenu()">Cozinha (Medidas)</a>
                 </div>
             </div>
 
-            <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Utilit&aacute;rios</a>
-                <div class="dropdown-menu">
-                    <a href="${href('calculadoras/datas.html')}" onclick="toggleMenu()">Diferen&ccedil;a de Datas</a>
-                    <a href="${href('calculadoras/temperatura.html')}" onclick="toggleMenu()">Conversor de Temperatura</a>
-                    <a href="${href('calculadoras/conversor-unidades.html')}" onclick="toggleMenu()">Conversor de Unidades</a>
-                    <a href="${href('calculadoras/velocidade-media.html')}" onclick="toggleMenu()">Velocidade M&eacute;dia</a>
-                    <a href="${href('calculadoras/kmh-ms.html')}" onclick="toggleMenu()">km/h para m/s</a>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <a href="${href('artigos/index.html')}" onclick="toggleMenu()">Aprenda</a>
-            </div>
+            <a href="${href('artigos/index.html')}" onclick="toggleMenu()">Aprenda</a>
 
             <a href="${href('paginas/sobre.html')}" onclick="toggleMenu()">Sobre</a>
             <a href="${href('paginas/contato.html')}" onclick="toggleMenu()">Contato</a>
+            <a href="${href('meus-calculos.html')}" onclick="toggleMenu()" style="display:flex;align-items:center;gap:4px">&#128203; Meus C&aacute;lculos</a>
         </nav>
 
         <div class="search-wrapper">
@@ -165,6 +160,16 @@ function injectGlobalScripts() {
     const sc = document.createElement('script');
     sc.src = siteUrl('js/utils-calculadoras.js');
     document.head.appendChild(sc);
+
+    // Carrega o sistema de usuário (histórico e favoritos)
+    const scUsuario = document.createElement('script');
+    scUsuario.src = siteUrl('js/usuario.js');
+    document.head.appendChild(scUsuario);
+
+    // Carrega o inicializador automático de favoritos
+    const scAutoFav = document.createElement('script');
+    scAutoFav.src = siteUrl('js/favoritos-auto.js');
+    document.head.appendChild(scAutoFav);
 }
 
 function injectHeader() {
@@ -209,7 +214,7 @@ window.toggleMenu = function () {
 
 // --- DROPDOWN MOBILE ---
 window.toggleMobileDropdown = function (element) {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1250) {
         const menu = element && element.nextElementSibling;
         if (menu) menu.classList.toggle('mobile-open');
     }

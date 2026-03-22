@@ -27,9 +27,10 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/juros.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
 </head>
 
@@ -43,6 +44,7 @@
                     <h1>Calculadora de Poupança vs. Outros Investimentos</h1>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Descubra o quanto você pode ganhar a mais
                         aplicando seu dinheiro.</p>
+                    <div id="btn-favorito-container" data-nome="Poupança vs. Investimentos" data-url="/calculadoras/calc-poupanca-vs-investimento.html"></div>
                 </div>
 
                 <section class="intro-seo" style="margin-bottom:30px;">
@@ -295,8 +297,8 @@
 
         function calcularComparacao() {
             // 1. Obter Valores (Idênticos à versão anterior)
-            let valorInicial = parseFloat(document.getElementById('valor-inicial').value);
-            let aporteMensal = parseFloat(document.getElementById('aporte-mensal').value);
+            let valorInicial = parseMoeda(document.getElementById('valor-inicial').value);
+            let aporteMensal = parseMoeda(document.getElementById('aporte-mensal').value);
             let anos = parseInt(document.getElementById('prazo-anos').value);
             let taxaPoupanca = parseFloat(document.getElementById('taxa-poupanca').value);
             let taxaInvestimento = parseFloat(document.getElementById('taxa-investimento').value);
@@ -370,6 +372,15 @@
 
             // 5. Atualizar Gráfico
             atualizarGrafico(futuroPoupanca, futuroInvestimentoLiquido);
+
+            // 6. Salvar no Histórico
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Poupança vs. Investimento',
+                    `Inic: R$ ${valorInicial.toLocaleString('pt-BR')} | Aporte: R$ ${aporteMensal.toLocaleString('pt-BR')} | ${anos} anos`,
+                    `Extra: ${formatarParaBRL(diferenca)}`
+                );
+            }
         }
 
         function limparCampos() {

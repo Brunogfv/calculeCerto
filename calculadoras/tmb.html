@@ -27,11 +27,12 @@
     <!-- Estilos Globais do site (preservados) -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/tmb.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de TMB — Taxa Metabólica Basal | Portal das Contas</title>
 
@@ -842,8 +843,9 @@
             <!-- Título da Página -->
             <div class="tmb-page-title">
                 <p class="eyebrow">Saúde &amp; Nutrição</p>
-                <h1>Calculadora de TMB</h1>
-                <p>Descubra quantas calorias seu corpo precisa por dia — em repouso e com suas atividades.</p>
+                <h1>Calculadora de Taxa Metabólica Basal</h1>
+            <p>Descubra o combustível necessário para o seu corpo.</p>
+            <div id="btn-favorito-container" data-nome="Calculadora de TMB" data-url="/calculadoras/tmb.html"></div>
             </div>
 
             <!-- ── CARD CALCULADORA ── -->
@@ -1217,6 +1219,15 @@
 
             // Rola suavemente para o resultado
             area.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de TMB',
+                    `Sexo: ${sexo} | Peso: ${peso}kg | Idade: ${idade}`,
+                    `TMB: ${Math.round(tmb)} kcal | TDEE: ${Math.round(tdee)} kcal`
+                );
+            }
 
             // Anúncio dinâmico (preserva chamada original)
             if (typeof carregarAnuncio === 'function') carregarAnuncio('tmb');

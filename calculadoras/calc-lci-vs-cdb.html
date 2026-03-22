@@ -27,9 +27,10 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/juros.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de LCI vs. CDB | Comparador de Renda Fixa | Portal das Contas</title>
 
@@ -45,6 +46,7 @@
                     <h1>Calculadora de LCI vs. CDB</h1>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Compare a rentabilidade líquida e descubra se a
                         isenção de IR compensa.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de LCI vs. CDB" data-url="/calculadoras/calc-lci-vs-cdb.html"></div>
                 </div>
 
                 <section class="intro-seo" style="margin-bottom:30px;">
@@ -397,6 +399,15 @@
 
             // 6. Atualizar Gráfico
             atualizarGrafico(fvLCI, fvCDB_Liquido);
+
+            // 7. Salvar no Histórico
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'LCI vs. CDB',
+                    `R$ ${capitalInicial.toLocaleString('pt-BR')} | ${anos} anos | CDI: ${cdiAnual}%`,
+                    `Melhor: ${diferenca > 0 ? 'CDB' : (diferenca < 0 ? 'LCI' : 'Empate')} | Dif: ${formatarParaBRL(Math.abs(diferenca))}`
+                );
+            }
         }
 
         function limparCampos() {

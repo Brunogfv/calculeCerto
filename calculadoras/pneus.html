@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Pneus e Troca de Aro | Portal das Contas</title>
 
@@ -164,8 +165,8 @@
             <div class="calc-card">
                 <div class="calc-header">
                     <h2>Calculadora de Troca de Pneus</h2>
-                    <p style="color: var(--cor-texto-suave); margin: 0;">Compare medidas e veja o erro no velocímetro.
-                    </p>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Compare medidas e veja o erro no velocímetro.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Pneus" data-url="/calculadoras/pneus.html"></div>
                 </div>
 
                 <div class="vs-container">
@@ -486,6 +487,15 @@
             document.getElementById('tabela-velocidade').innerHTML = tableHtml;
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de Pneus',
+                    `Original: ${oldL}/${oldP} R${oldR} | Novo: ${newL}/${newP} R${newR}`,
+                    `Vantagem: ${absPerc.toFixed(2)}% de variação`
+                );
+            }
 
             // Scroll
             if (window.innerWidth < 600) {

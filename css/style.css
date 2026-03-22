@@ -70,7 +70,7 @@ a {
 }
 
 .header-container {
-    max-width: 1500px;
+    max-width: 1700px;
     width: 100%;
     margin: 0 auto;
     padding: 12px 20px;
@@ -100,7 +100,8 @@ a {
 /* Menu Desktop */
 .menu {
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: 20px;
 }
 
 .menu a {
@@ -148,6 +149,8 @@ a {
     transition: var(--transicao);
     color: white;
     margin-left: 16px;
+    padding: 0;
+    font-weight: normal;
 }
 
 .toggle-theme:hover {
@@ -163,16 +166,20 @@ a {
     color: white;
     font-size: 24px;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    font-weight: normal;
 }
 
 /* --- AJUSTES DE ESPAÇAMENTO PARA TELAS MÉDIAS --- */
 @media (max-width: 1400px) {
     .menu {
-        gap: 20px;
+        gap: 12px;
     }
-    
+
     .menu a {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
@@ -338,12 +345,9 @@ nav .menu-item {
     position: relative;
 }
 
-/* Seta do menu */
+/* Seta do menu removida para melhor alinhamento */
 nav .menu-item>a::after {
-    content: ' ▾';
-    font-size: 10px;
-    margin-left: 4px;
-    opacity: 0.7;
+    content: '';
 }
 
 /* Menu Dropdown (Escondido por padrão com transição suave) */
@@ -364,6 +368,16 @@ nav .dropdown-menu {
     transform: translateY(-10px);
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     pointer-events: none;
+}
+
+/* Suporte a colunas para dropdowns densos (apenas desktop) */
+@media (min-width: 769px) {
+    nav .dropdown-menu.columns-2 {
+        min-width: 440px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 10px;
+    }
 }
 
 /* Mostra ao passar o mouse (APENAS NO DESKTOP) */
@@ -416,13 +430,28 @@ nav .dropdown-menu a:hover {
         width: 100%;
     }
 
+    nav .menu-item>a {
+        display: block;
+        position: relative;
+        z-index: 2;
+        background-color: transparent;
+    }
+
+    nav .dropdown-menu.mobile-open+a,
+    nav .menu-item>a:focus,
+    nav .menu-item>a:active {
+        color: var(--cor-texto) !important;
+        opacity: 1 !important;
+    }
+
     /* No mobile, dropdown vira estático e controlado por clique */
     nav .dropdown-menu {
         position: static;
         width: 100%;
         box-shadow: none;
         border: none;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: #f8fafc;
+        /* Fundo levemente cinza para contraste */
         padding-left: 15px;
         border-radius: 0;
         /* Escondido por padrão com transição */
@@ -443,10 +472,20 @@ nav .dropdown-menu a:hover {
 
     /* Classe auxiliar para abrir no mobile (via clique) */
     nav .dropdown-menu.mobile-open {
-        opacity: 1;
-        visibility: visible;
-        max-height: 500px;
+        opacity: 1 !important;
+        visibility: visible !important;
+        max-height: 2000px !important;
+        /* Aumentado para suportar todas as calculadoras */
         pointer-events: auto;
+        display: block !important;
+    }
+
+    nav .dropdown-menu a {
+        padding: 12px 30px !important;
+        font-size: 16px !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.03) !important;
+        background: transparent !important;
+        color: var(--cor-texto) !important;
     }
 }
 
@@ -455,31 +494,51 @@ nav .dropdown-menu a:hover {
     .mobile-menu-btn {
         display: block;
         z-index: 1002;
+        margin-left: auto;
+        margin-right: 15px;
     }
 
     .menu {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 80%;
+        /* Levemente maior para mais espaço */
         height: 100vh;
         background-color: var(--cor-card);
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
+        justify-content: flex-start;
+        /* Alinhado ao topo */
+        align-items: flex-start;
+        /* Alinhado à esquerda */
+        gap: 0;
+        /* Removido gap global para controle fino */
+        padding: 80px 20px 40px 20px;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
         transition: right 0.3s ease;
         z-index: 1001;
+        overflow-y: auto;
+        /* Scroll se necessário */
     }
 
     .menu.active {
         right: 0;
     }
 
-    .menu a {
+    .menu a,
+    nav .menu-item>a {
         color: var(--cor-texto);
         font-size: 18px;
+        padding: 12px 10px;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        /* Separador suave */
+    }
+
+    /* Remove efeito desktop no mobile */
+    .menu a::after {
+        display: none;
     }
 
     /* Overlay escuro quando o menu abre */

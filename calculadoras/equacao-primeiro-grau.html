@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Equação do 1º Grau | Portal das Contas</title>
 
@@ -127,6 +128,7 @@
                     <h2>Calculadora de Equação do 1º Grau</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Resolva equações lineares (ax + b = 0) e veja o
                         passo a passo.</p>
+                    <div id="btn-favorito-container" data-nome="Equação do 1º Grau" data-url="/calculadoras/equacao-primeiro-grau.html"></div>
                 </div>
 
                 <!-- Visualização da Equação -->
@@ -410,6 +412,15 @@
             }
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Equação do 1º Grau',
+                    `${a}x + ${b} = 0`,
+                    `Resultado: ${resX.innerText} | ${badge.innerText}`
+                );
+            }
 
             // Scroll
             if (window.innerWidth < 600) {

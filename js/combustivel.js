@@ -61,6 +61,15 @@ function calcularCombustivel() {
     document.getElementById("custo-km").textContent = !isNaN(preco) ? formatadorBRL.format(custoKm) : "-";
     document.getElementById("custo-total").textContent = !isNaN(preco) ? formatadorBRL.format(custoTotal) : "-";
 
+    // --- SALVAR NO HISTÓRICO ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de Combustível',
+            `${km} km | ${litros} L ${preco > 0 ? '| R$ ' + preco + '/L' : ''}`,
+            `Média: ${kml.toFixed(1).replace(".", ",")} Km/L ${custoTotal > 0 ? '| Total: ' + formatadorBRL.format(custoTotal) : ''}`
+        );
+    }
+
     // Scroll suave
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });

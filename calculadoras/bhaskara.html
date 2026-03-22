@@ -25,12 +25,13 @@
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/pagefind.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Bhaskara | Portal das Contas</title>
 
@@ -134,238 +135,6 @@
             color: inherit;
         }
 
-        /* --- NAVBAR --- */
-        /* .header {
-            background: var(--cor-primaria);
-            background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
-            color: white;
-            padding: 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .header-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo a {
-            font-size: 20px;
-            font-weight: 800;
-            color: white;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo svg {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-        }
-
-        .menu {
-            display: flex;
-            gap: 32px;
-        }
-
-        .menu a {
-            font-size: 15px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            position: relative;
-            padding: 4px 0;
-            transition: color 0.2s;
-        }
-
-        .menu a:hover {
-            color: white;
-        }
-
-        .menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: white;
-            transition: width 0.3s ease;
-        }
-
-        .menu a:hover::after {
-            width: 100%;
-        } */
-
-        .toggle-theme {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            cursor: pointer;
-            transition: var(--transicao);
-            color: white;
-            margin-left: 16px;
-        }
-
-        .toggle-theme:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: rotate(15deg) scale(1.05);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* --- DROPDOWNS --- */
-        nav .menu-item {
-            position: relative;
-        }
-
-        nav .menu-item>a::after {
-            content: ' ▾';
-            font-size: 10px;
-            margin-left: 4px;
-            opacity: 0.7;
-        }
-
-        nav .dropdown-menu {
-            display: none !important;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            min-width: 220px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border-radius: 0 0 8px 8px;
-            z-index: 9999;
-            padding: 8px 0;
-            border-top: 1px solid #f1f5f9;
-        }
-
-        @media (min-width: 769px) {
-            nav .menu-item:hover .dropdown-menu {
-                display: block !important;
-                animation: fadeIn 0.2s ease;
-            }
-        }
-
-        nav .dropdown-menu a {
-            display: block;
-            padding: 10px 20px;
-            color: #1f2933 !important;
-            font-size: 15px;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        nav .dropdown-menu a:hover {
-            background-color: #f8fafc;
-            color: var(--cor-primaria) !important;
-        }
-
-        /* Dropdown Dark Mode */
-        [data-theme="dark"] nav .dropdown-menu {
-            background-color: #1e293b;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        [data-theme="dark"] nav .dropdown-menu a {
-            color: #e2e8f0 !important;
-        }
-
-        [data-theme="dark"] nav .dropdown-menu a:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* --- MOBILE STYLES --- */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-                z-index: 1002;
-            }
-
-            .menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                height: 100vh;
-                background-color: var(--cor-card);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 30px;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-                transition: right 0.3s ease;
-                z-index: 1001;
-            }
-
-            .menu.active {
-                right: 0;
-            }
-
-            .menu a {
-                color: var(--cor-texto);
-                font-size: 18px;
-            }
-
-            nav .menu-item {
-                display: block;
-                width: 100%;
-            }
-
-            nav .dropdown-menu {
-                position: static;
-                display: none !important;
-                width: 100%;
-                box-shadow: none;
-                border: none;
-                background-color: rgba(0, 0, 0, 0.05);
-                padding-left: 15px;
-                border-radius: 0;
-            }
-
-            nav .dropdown-menu.mobile-open {
-                display: block !important;
-            }
-
-            .overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 1000;
-                display: none;
-                opacity: 0;
-                transition: opacity 0.3s;
-            }
-
-            .overlay.active {
-                display: block;
-                opacity: 1;
-            }
-        }
 
         /* --- FOOTER --- */
         footer {
@@ -1100,6 +869,7 @@
 
             <!-- Título hero -->
             <div class="bh-hero">
+                <div id="btn-favorito-container" data-nome="Calculadora de Bhaskara" data-url="/calculadoras/bhaskara.html"></div>
                 <h1>Fórmula de<br><em>Bhaskara</em></h1>
                 <p>Resolva equações do 2º grau com passo a passo completo. Insira os coeficientes e calcule Δ, x′ e x″
                     instantaneamente.</p>
@@ -1298,7 +1068,7 @@
             </div>
         </div>
     </footer>
-    <script src="/js/ads.js"></script>
+    <script src="../js/ads.js"></script>
 
 
 
@@ -1427,6 +1197,20 @@
 
             $('steps').innerHTML = h;
             ra.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                let resumo = "";
+                if (D > 0) resumo = `x' = ${vv1.innerText} | x'' = ${vv2.innerText}`;
+                else if (D === 0) resumo = `x = ${vv1.innerText}`;
+                else resumo = `Complexas: ${vv1.innerText}`;
+
+                window.salvarCalculo(
+                    'Calculadora de Bhaskara',
+                    `${a}x² + ${sgn(b)}x + ${sgn(c)} = 0`,
+                    `Delta: ${fmt(D)} | ${resumo}`
+                );
+            }
         }
 
         /* ── init ── */

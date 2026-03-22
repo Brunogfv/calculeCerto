@@ -152,6 +152,16 @@ function calcularPorcentagem() {
     resultValue.textContent = fmtVal(resultado);
     resultDesc.textContent = textoDesc;
     stepsText.innerHTML = textoPassos;
+
+    // --- SALVAR NO HISTÓRICO (Sistema Local) ---
+    if (typeof window.salvarCalculo === 'function') {
+        const calculoNome = tipo === 'parte' ? 'Porcentagem' : (tipo === 'aumento' ? 'Aumento %' : 'Desconto %');
+        window.salvarCalculo(
+            `Calculadora de ${calculoNome}`,
+            `Valor: ${fmtVal(valor)} | %: ${percentual}%`,
+            `Resultado: ${fmtVal(resultado)}`
+        );
+    }
 }
 
 function limparCampos() {

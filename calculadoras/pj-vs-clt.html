@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculadora PJ vs CLT: compare quanto você ganha de verdade como Pessoa Jurídica ou CLT. Simule impostos, benefícios, FGTS, férias, 13º, INSS e descubra qual modelo vale mais para o seu perfil.">
+    <meta name="keywords"
+        content="calculadora pj vs clt, comparar pj clt, quanto ganho como pj, vale a pena ser pj, simples nacional clt comparativo, fgts ferias 13 salario pj, conversao salario pj clt">
+    <meta name="robots" content="index, follow">
+
+    <title>Calculadora PJ vs CLT — Compare o Salário Real 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #f4f3ef;
+            --surface: #ffffff;
+            --border: #e0ddd6;
+            --ink: #1a1917;
+            --ink-soft: #44403c;
+            --ink-muted: #78716c;
+            --pj: #0f6b5c;
+            --pj-dark: #0a4f44;
+            --pj-light: #d1fae5;
+            --clt: #1d4ed8;
+            --clt-dark: #1e3a8a;
+            --clt-light: #dbeafe;
+            --gold: #b45309;
+            --gold-light: #fef3c7;
+            --red: #dc2626;
+            --red-light: #fee2e2;
+            --orange: #ea580c;
+            --orange-light: #fff7ed;
+            --green: #16a34a;
+            --green-light: #dcfce7;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, .10);
+            --r: 12px;
+            --sans: 'Sora', sans-serif;
+            --serif: 'Source Serif 4', Georgia, serif;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--ink);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* ---- Header ---- */
+        .calc-header {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .calc-header .eyebrow {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--pj);
+            background: var(--pj-light);
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        .calc-header h1 {
+            font-family: var(--serif);
+            font-size: clamp(28px, 5vw, 44px);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--ink);
+        }
+
+        .calc-header h1 span {
+            color: var(--pj);
+            font-style: italic;
+        }
+
+        .calc-header p {
+            color: var(--ink-soft);
+            font-size: 17px;
+            max-width: 680px;
+            margin: 0 auto;
+            font-family: var(--serif);
+            line-height: 1.7;
+        }
+
+        /* ---- Config Panel ---- */
+        .config-panel {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 36px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .panel-title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .panel-title-pj {
+            color: var(--pj);
+            border-color: var(--pj-light);
+        }
+
+        .panel-title-clt {
+            color: var(--clt);
+            border-color: var(--clt-light);
+        }
+
+        .two-col-panels {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        @media(min-width: 768px) {
+            .two-col-panels {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .sub-panel {
+            background: var(--bg);
+            border-radius: var(--r);
+            padding: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .sub-panel-pj {
+            border-color: var(--pj-light);
+            background: #f0fdf9;
+        }
+
+        .sub-panel-clt {
+            border-color: var(--clt-light);
+            background: #eff6ff;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media(min-width: 640px) {
+            .input-grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-soft);
+            margin-bottom: 6px;
+        }
+
+        .input-group input,
+        .input-group select {
+            padding: 11px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: var(--sans);
+            background: var(--surface);
+            color: var(--ink);
+            transition: all .2s;
+            width: 100%;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--pj);
+            box-shadow: 0 0 0 3px rgba(15, 107, 92, .12);
+        }
+
+        .input-group .help-text {
+            font-size: 12px;
+            color: var(--ink-muted);
+            margin-top: 4px;
+        }
+
+        .input-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .toggle-label {
+            font-size: 13px;
+            color: var(--ink-soft);
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--pj);
+        }
+
+        .btn-calc {
+            width: 100%;
+            background: var(--pj);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: var(--r);
+            font-size: 18px;
+            font-weight: 700;
+            font-family: var(--sans);
+            cursor: pointer;
+            transition: background .2s, transform .2s;
+            box-shadow: 0 4px 12px rgba(15, 107, 92, .3);
+            letter-spacing: .3px;
+        }
+
+        .btn-calc:hover {
+            background: var(--pj-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ---- Results ---- */
+        .result-container {
+            display: none;
+            animation: fadeIn .45s ease-out;
+            margin-bottom: 50px;
+        }
+
+        .result-container.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .winner-banner {
+            text-align: center;
+            padding: 28px 32px;
+            border-radius: var(--r);
+            margin-bottom: 32px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
+            line-height: 1.5;
+        }
+
+        .winner-pj {
+            background: var(--pj-light);
+            color: var(--pj-dark);
+            border: 2px solid #6ee7b7;
+        }
+
+        .winner-clt {
+            background: var(--clt-light);
+            color: var(--clt-dark);
+            border: 2px solid #93c5fd;
+        }
+
+        .winner-empate {
+            background: var(--gold-light);
+            color: var(--gold);
+            border: 2px solid #fcd34d;
+        }
+
+        .comparison-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            margin-bottom: 32px;
+        }
+
+        @media(min-width: 768px) {
+            .comparison-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .scenario-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .scenario-card h3 {
+            text-align: center;
+            margin-bottom: 22px;
+            font-size: 1.3rem;
+            font-family: var(--serif);
+        }
+
+        .scenario-pj h3 {
+            color: var(--pj);
+        }
+
+        .scenario-clt h3 {
+            color: var(--clt);
+        }
+
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border);
+            gap: 12px;
+        }
+
+        .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .data-label {
+            color: var(--ink-muted);
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .data-value {
+            font-weight: 700;
+            color: var(--ink);
+            font-size: 14.5px;
+            text-align: right;
+        }
+
+        .data-value.positive {
+            color: var(--green);
+        }
+
+        .data-value.negative {
+            color: var(--red);
+        }
+
+        .data-value.neutral {
+            color: var(--ink-soft);
+        }
+
+        .data-section {
+            margin: 14px 0 6px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            padding-top: 10px;
+            border-top: 2px solid var(--bg);
+        }
+
+        .highlight-row {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 14px;
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .highlight-row .hl-label {
+            font-weight: 600;
+            color: var(--ink);
+            font-size: 15px;
+        }
+
+        .highlight-row .hl-sub {
+            font-size: 12px;
+            color: var(--ink-muted);
+        }
+
+        .highlight-row .hl-value {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--pj);
+        }
+
+        .highlight-row.clt .hl-value {
+            color: var(--clt);
+        }
+
+        /* ---- Breakdown Table ---- */
+        .breakdown-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 28px;
+        }
+
+        .breakdown-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .bk-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .bk-table th {
+            text-align: left;
+            padding: 10px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            background: var(--bg);
+        }
+
+        .bk-table th:not(:first-child) {
+            text-align: right;
+        }
+
+        .bk-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--bg);
+            color: var(--ink-soft);
+        }
+
+        .bk-table td:not(:first-child) {
+            text-align: right;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .bk-table tr.total-row td {
+            border-top: 2px solid var(--border);
+            font-weight: 700;
+            color: var(--ink);
+            font-size: 15px;
+            background: var(--gold-light);
+        }
+
+        /* ---- Info Content ---- */
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .info-content {
+            background: var(--surface);
+            border-radius: var(--r);
+            padding: 40px;
+            border: 1px solid var(--border);
+            margin-bottom: 36px;
+        }
+
+        .info-content h2 {
+            font-family: var(--serif);
+            color: var(--ink);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--pj-light);
+            font-size: 1.7rem;
+        }
+
+        .info-content h3 {
+            color: var(--ink);
+            margin: 28px 0 12px;
+            font-size: 1.15rem;
+        }
+
+        .info-content p,
+        .info-content ul {
+            color: var(--ink-soft);
+            line-height: 1.8;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        .info-content ul {
+            padding-left: 20px;
+        }
+
+        .info-content li {
+            margin-bottom: 6px;
+        }
+
+        .info-box {
+            background: var(--pj-light);
+            border-left: 4px solid var(--pj);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: var(--pj-dark);
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+
+        .alert-box {
+            background: var(--orange-light);
+            border-left: 4px solid var(--orange);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #7c2d12;
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+
+        /* ---- FAQ ---- */
+        .faq-section {
+            margin-bottom: 40px;
+        }
+
+        .faq-section>h2 {
+            font-family: var(--serif);
+            text-align: center;
+            margin-bottom: 24px;
+            color: var(--ink);
+            font-size: 1.6rem;
+        }
+
+        details {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding: 16px 20px;
+            transition: all .2s;
+        }
+
+        details[open] {
+            border-color: var(--pj);
+            box-shadow: 0 0 0 3px rgba(15, 107, 92, .08);
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--ink);
+            font-size: 15px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--pj);
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        details p {
+            margin-top: 14px;
+            color: var(--ink-soft);
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+
+        /* ---- Related ---- */
+        .related-section h2 {
+            font-family: var(--serif);
+            text-align: center;
+            margin-bottom: 24px;
+            color: var(--ink);
+            font-size: 1.6rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .related-card {
+            background: var(--surface);
+            padding: 24px 20px;
+            border-radius: var(--r);
+            border: 1px solid var(--border);
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform .2s, box-shadow .2s, border-color .2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--pj);
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: var(--ink);
+            font-size: 14.5px;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--ink-muted);
+        }
+
+        /* ---- Notice ---- */
+        .disclaimer {
+            text-align: center;
+            font-size: 13px;
+            color: var(--ink-muted);
+            margin-bottom: 32px;
+            padding: 14px 20px;
+            background: var(--surface);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        @media(max-width: 600px) {
+            .config-panel {
+                padding: 24px 18px;
+            }
+
+            .info-content {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
+
+    <script type="module" src="../js/pagefind.js"></script>
+
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+
+        <div class="calc-header">
+            <div id="btn-favorito-container" data-nome="Calculadora PJ vs CLT" data-url="/calculadoras/pj-vs-clt.html"></div>
+            <p class="eyebrow">Simulador Financeiro 2026</p>
+            <h1>PJ ou CLT: qual <span>vale mais</span> para você?</h1>
+            <p>Compare o salário líquido real considerando impostos, FGTS, férias, 13º, plano de saúde
+                e todos os custos invisíveis de cada regime. Descubra qual modelo remunera melhor o seu perfil.</p>
+        </div>
+
+        <section class="config-panel">
+
+            <div class="two-col-panels">
+
+                <!-- Painel PJ -->
+                <div class="sub-panel sub-panel-pj">
+                    <h2 class="panel-title panel-title-pj">🟢 Seu Regime PJ</h2>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="pj_faturamento">Faturamento Bruto Mensal (R$):</label>
+                            <input type="number" id="pj_faturamento" value="12000" min="1000" step="500">
+                            <span class="help-text">O valor que a empresa te paga pelo serviço.</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="pj_regime">Regime Tributário da Empresa:</label>
+                            <select id="pj_regime">
+                                <option value="simples_anexo3">Simples Nacional — Anexo III (TI/Serviços)</option>
+                                <option value="simples_anexo5">Simples Nacional — Anexo V (Serv. Alta Receita)</option>
+                                <option value="lucro_presumido">Lucro Presumido (~15,3% efetivo)</option>
+                                <option value="mei">MEI (INSS R$ 70,60 + DAS fixo)</option>
+                            </select>
+                            <span class="help-text">Consulte seu contador. O Simples III é o mais comum para TI.</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="pj_pro_labore">Pró-Labore Mensal (R$):</label>
+                            <input type="number" id="pj_pro_labore" value="1412" min="0" step="100">
+                            <span class="help-text">Base do INSS PJ. Mín: 1 salário mínimo (R$ 1.412).</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="pj_contador">Contador + Taxas Mensais (R$):</label>
+                            <input type="number" id="pj_contador" value="200" min="0" step="50">
+                            <span class="help-text">Honorários do contador + banco + certificado digital.</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="pj_plano_saude">Plano de Saúde Próprio (R$/mês):</label>
+                            <input type="number" id="pj_plano_saude" value="500" min="0" step="50">
+                            <span class="help-text">Você paga integralmente quando é PJ.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painel CLT -->
+                <div class="sub-panel sub-panel-clt">
+                    <h2 class="panel-title panel-title-clt">🔵 Sua Proposta CLT</h2>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="clt_salario">Salário Bruto Mensal (R$):</label>
+                            <input type="number" id="clt_salario" value="8000" min="1412" step="500">
+                            <span class="help-text">O valor que consta na sua carteira assinada.</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="clt_plano_saude">Plano de Saúde Custeado pela empresa (R$/mês):</label>
+                            <input type="number" id="clt_plano_saude" value="500" min="0" step="50">
+                            <span class="help-text">Benefício que a empresa oferece (sem custo para você).</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="clt_vale_refeicao">Vale Refeição/Alimentação (R$/mês):</label>
+                            <input type="number" id="clt_vale_refeicao" value="600" min="0" step="50">
+                            <span class="help-text">Benefício livre de impostos recebido como CLT.</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="clt_vale_transporte">Vale Transporte (R$/mês):</label>
+                            <input type="number" id="clt_vale_transporte" value="200" min="0" step="50">
+                            <span class="help-text">Descontos de 6% do salário para VT (calcularemos).</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="clt_outros_beneficios">Outros Benefícios Líquidos (R$/mês):</label>
+                            <input type="number" id="clt_outros_beneficios" value="0" min="0" step="100">
+                            <span class="help-text">Gympass, PLR, Bônus, Stock options, etc.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn-calc" onclick="calcularPJvsCLT()">
+                ⚡ Comparar PJ vs CLT Agora
+            </button>
+        </section>
+
+        <!-- RESULTADOS -->
+        <div id="resultado" class="result-container" aria-live="polite">
+
+            <div id="winner_banner" class="winner-banner"></div>
+
+            <div class="comparison-cards">
+
+                <!-- Card PJ -->
+                <div class="scenario-card scenario-pj">
+                    <h3>🟢 Regime PJ</h3>
+
+                    <p class="data-section">Entradas</p>
+                    <div class="data-row">
+                        <span class="data-label">Faturamento bruto</span>
+                        <span class="data-value positive" id="r_pj_faturamento">R$ 0</span>
+                    </div>
+
+                    <p class="data-section">Deduções Obrigatórias</p>
+                    <div class="data-row">
+                        <span class="data-label">Imposto (DAS / Simples / LP)</span>
+                        <span class="data-value negative" id="r_pj_imposto">− R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">INSS sobre Pró-Labore</span>
+                        <span class="data-value negative" id="r_pj_inss">− R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">IRPF sobre Pró-Labore</span>
+                        <span class="data-value negative" id="r_pj_irpf">− R$ 0</span>
+                    </div>
+
+                    <p class="data-section">Custos Operacionais</p>
+                    <div class="data-row">
+                        <span class="data-label">Contador + Taxas</span>
+                        <span class="data-value negative" id="r_pj_contador">− R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Plano de Saúde (por conta própria)</span>
+                        <span class="data-value negative" id="r_pj_saude">− R$ 0</span>
+                    </div>
+
+                    <p class="data-section">Sem Esses Benefícios CLT</p>
+                    <div class="data-row">
+                        <span class="data-label">FGTS mensal (não acumula)</span>
+                        <span class="data-value negative" id="r_pj_fgts">− R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">13º Salário (não recebe)</span>
+                        <span class="data-value negative" id="r_pj_decimo">− R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Férias Remuneradas (não recebe)</span>
+                        <span class="data-value negative" id="r_pj_ferias">− R$ 0</span>
+                    </div>
+
+                    <div class="highlight-row">
+                        <div>
+                            <div class="hl-label">Renda Líquida Mensal Efetiva</div>
+                            <div class="hl-sub">Considerando todos os custos e perdas</div>
+                        </div>
+                        <div class="hl-value" id="r_pj_liquido">R$ 0</div>
+                    </div>
+                </div>
+
+                <!-- Card CLT -->
+                <div class="scenario-card scenario-clt">
+                    <h3>🔵 Regime CLT</h3>
+
+                    <p class="data-section">Entradas</p>
+                    <div class="data-row">
+                        <span class="data-label">Salário Bruto</span>
+                        <span class="data-value positive" id="r_clt_bruto">R$ 0</span>
+                    </div>
+
+                    <p class="data-section">Deduções Obrigatórias</p>
+                    <div class="data-row">
+                        <span class="data-label">INSS (Desconto na Fonte)</span>
+                        <span class="data-value negative" id="r_clt_inss">− R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">IRPF (Desconto na Fonte)</span>
+                        <span class="data-value negative" id="r_clt_irpf">− R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Vale Transporte (Desconto 6%)</span>
+                        <span class="data-value negative" id="r_clt_vt_desc">− R$ 0</span>
+                    </div>
+
+                    <p class="data-section">Benefícios Incluídos</p>
+                    <div class="data-row">
+                        <span class="data-label">Vale Refeição/Alimentação</span>
+                        <span class="data-value positive" id="r_clt_vr">+ R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Vale Transporte (recebido)</span>
+                        <span class="data-value positive" id="r_clt_vt_rec">+ R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Plano de Saúde (da empresa)</span>
+                        <span class="data-value positive" id="r_clt_saude">+ R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Outros benefícios</span>
+                        <span class="data-value positive" id="r_clt_outros">+ R$ 0</span>
+                    </div>
+
+                    <p class="data-section">Benefícios Diferidos (Mensalizado)</p>
+                    <div class="data-row">
+                        <span class="data-label">FGTS mensal (8% do bruto)</span>
+                        <span class="data-value positive" id="r_clt_fgts">+ R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">13º Salário (mensalizado)</span>
+                        <span class="data-value positive" id="r_clt_decimo">+ R$ 0</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Férias + ⅓ (mensalizado)</span>
+                        <span class="data-value positive" id="r_clt_ferias">+ R$ 0</span>
+                    </div>
+
+                    <div class="highlight-row clt">
+                        <div>
+                            <div class="hl-label">Remuneração Total Mensal Efetiva</div>
+                            <div class="hl-sub">Salário + todos os benefícios</div>
+                        </div>
+                        <div class="hl-value" id="r_clt_liquido">R$ 0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabela de ponto de equilíbrio -->
+            <div class="breakdown-card">
+                <h3>📊 Quanto o PJ precisa faturar para igualar o CLT?</h3>
+                <table class="bk-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>PJ (seu caso)</th>
+                            <th>CLT (equivalente)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Faturamento / Salário Bruto</td>
+                            <td id="eq_pj_bruto">—</td>
+                            <td id="eq_clt_bruto">—</td>
+                        </tr>
+                        <tr>
+                            <td>Impostos totais (imposto + INSS + IRPF)</td>
+                            <td id="eq_pj_impostos">—</td>
+                            <td id="eq_clt_impostos">—</td>
+                        </tr>
+                        <tr>
+                            <td>Custos operacionais (contador + saúde)</td>
+                            <td id="eq_pj_custos">—</td>
+                            <td id="eq_clt_custos">—</td>
+                        </tr>
+                        <tr>
+                            <td>Benefícios recebidos</td>
+                            <td id="eq_pj_beneficios">—</td>
+                            <td id="eq_clt_beneficios">—</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>💰 Líquido Mensal Total</td>
+                            <td id="eq_pj_total">—</td>
+                            <td id="eq_clt_total">—</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p id="ponto_equilibrio"
+                    style="margin-top:16px; font-size:14.5px; color: var(--ink-soft); line-height: 1.7;"></p>
+            </div>
+
+        </div>
+
+        <!-- CONTEÚDO EDUCACIONAL -->
+        <div class="content-wrapper">
+
+            <section class="info-content">
+                <h2>O que a maioria esquece ao comparar PJ e CLT</h2>
+                <p>
+                    A comparação PJ vs CLT é muito mais complexa do que parece. A maioria das pessoas olha
+                    apenas para o faturamento bruto do PJ versus o salário CLT e tira conclusões erradas.
+                    O diabo está nos detalhes — e eles fazem diferença de <strong>30% a 50%</strong> na renda líquida
+                    real.
+                </p>
+
+                <h3>Os benefícios CLT que muita gente não monetiza</h3>
+                <ul>
+                    <li><strong>FGTS (8% do salário bruto):</strong> Num salário de R$ 8.000, são R$ 640 por mês que
+                        ficam no seu nome. Em 5 anos: R$ 38.400 + rendimentos. Além disso, em caso de demissão sem justa
+                        causa, você recebe o saldo + 40% de multa.</li>
+                    <li><strong>13º Salário:</strong> Equivale a 1/12 do salário bruto por mês. Em R$ 8.000, são R$
+                        667/mês que chegam todo dezembro.</li>
+                    <li><strong>Férias + ⅓:</strong> 30 dias de férias pagas + adicional de 1/3. Em termos mensais,
+                        representa aproximadamente R$ 889 por mês para um salário de R$ 8.000.</li>
+                    <li><strong>Seguro-desemprego:</strong> Em caso de demissão sem justa causa, você tem direito a
+                        receber de 3 a 5 parcelas do MPES. Difícil de precificar, mas tem valor real.</li>
+                    <li><strong>Auxílio-doença e afastamentos:</strong> Se ficar doente, o INSS cobre. Como PJ, o risco
+                        é 100% seu.</li>
+                </ul>
+
+                <div class="info-box">
+                    <strong>Regra prática do mercado:</strong> Para compensar todos os custos e a falta de benefícios,
+                    um profissional PJ geralmente precisa faturar entre <strong>1,5× e 2,0×</strong> o salário CLT
+                    equivalente.
+                    Um CLT de R$ 8.000 geralmente só é igualado por um PJ que fatura R$ 12.000 a R$ 14.000 por mês.
+                </div>
+
+                <h3>Os verdadeiros custos do PJ</h3>
+                <p>
+                    Ser PJ não é apenas abrir um CNPJ e esperar o dinheiro cair. Existem custos recorrentes que
+                    corroem o faturamento bruto de forma silenciosa:
+                </p>
+                <ul>
+                    <li><strong>Contador:</strong> R$ 150 a R$ 400 por mês para manter tudo em dia.</li>
+                    <li><strong>Plano de Saúde:</strong> Sem a empresa pagando, você paga 100% — costuma ser R$ 400 a R$
+                        1.200/mês dependendo da cobertura e idade.</li>
+                    <li><strong>Previdência privada (PGBL/VGBL):</strong> Se quiser manter a aposentadoria, você precisa
+                        custear R$ 300 a R$ 700/mês além do INSS mínimo.</li>
+                    <li><strong>INSS Pró-Labore:</strong> Obrigação de recolher sobre o pró-labore (20% patronal pago
+                        pela PJ + 11% do empregado, na prática).</li>
+                    <li><strong>Período sem cliente (vacância):</strong> Meses sem contrato = zero receita. Isso precisa
+                        ser provisionado.</li>
+                </ul>
+
+                <div class="alert-box">
+                    <strong>Atenção ao risco PJ:</strong> Um profissional CLT tem renda garantida até ser demitido.
+                    Um PJ pode perder o contrato amanhã sem aviso, sem indenização e sem seguro-desemprego.
+                    Antes de virar PJ, tenha pelo menos <strong>6 meses de despesas guardadas como reserva de
+                        emergência</strong>.
+                </div>
+
+                <h3>Quando a PJ realmente compensa</h3>
+                <p>
+                    A PJ compensa quando o profissional consegue uma combinação de fatores favoráveis:
+                </p>
+                <ul>
+                    <li><strong>Faturamento significativamente maior</strong> do que o equivalente CLT (pelo menos 50%
+                        acima).</li>
+                    <li><strong>Regime tributário favorável</strong> — especialmente Simples Nacional Anexo III com
+                        RBT12 baixa, onde a alíquota efetiva começa em 6%.</li>
+                    <li><strong>Múltiplos clientes simultâneos</strong>, reduzindo o risco de vacância.</li>
+                    <li><strong>Disciplina financeira</strong> para provisionar férias, 13º, FGTS e INSS
+                        voluntariamente.</li>
+                    <li><strong>Perfil empreendedor</strong> que usa a PJ para crescer além do salário — contratando,
+                        diversificando receita.</li>
+                </ul>
+            </section>
+
+            <!-- FAQ -->
+            <section class="faq-section">
+                <h2>Perguntas Frequentes — PJ vs CLT</h2>
+
+                <details>
+                    <summary>O PJ paga INSS e tem direito à aposentadoria?</summary>
+                    <p>Sim, mas de forma diferente. O sócio de uma empresa precisa recolher INSS sobre o pró-labore
+                        (valor mínimo: 1 salário mínimo). Esse INSS garante todos os benefícios previdenciários:
+                        aposentadoria, auxílio-doença, salário-maternidade, etc. A diferença é que o INSS CLT é
+                        descontado automaticamente, enquanto o PJ precisa gerenciar ativamente esse recolhimento via GPS
+                        ou pela própria guia do Simples.</p>
+                </details>
+
+                <details>
+                    <summary>Qual o melhor regime tributário para PJ de TI?</summary>
+                    <p>Para a maioria dos profissionais de Tecnologia da Informação com faturamento até R$ 4,8
+                        milhões/ano, o Simples Nacional Anexo III (ou às vezes Anexo V) é o mais vantajoso. Com
+                        faturamento baixo (até ~R$ 180 mil/ano acumulado), a alíquota efetiva começa em apenas 6%,
+                        tornando a carga tributária muito mais baixa do que no Lucro Presumido. Consulte um contador
+                        para definir o melhor enquadramento para o seu caso específico.</p>
+                </details>
+
+                <details>
+                    <summary>PJ pode usar MEI para receber como profissional de serviços?</summary>
+                    <p>O MEI tem restrições importantes: o faturamento anual máximo é de R$ 81.000 (R$ 6.750/mês), e
+                        algumas atividades profissionais (como engenharia e advocacia) não podem ser MEI. Para muitos
+                        prestadores de serviços que faturam mais, o MEI é inviável. Além disso, empresas contratantes de
+                        grande porte geralmente exigem que o prestador tenha uma empresa de ME (Microempresa) no
+                        Simples, não MEI.</p>
+                </details>
+
+                <details>
+                    <summary>A empresa pode ser punida por contratar PJ ao invés de CLT?</summary>
+                    <p>Sim. Se o vínculo for caracterizado como relação de emprego (mesmo horário, exclusividade,
+                        subordinação, pessoalidade), o Ministério do Trabalho pode reconhecer o vínculo empregatício
+                        mesmo que haja um contrato PJ. Isso é chamado de "pejotização ilegal" e pode gerar passivos
+                        trabalhistas para a empresa. Por isso, muitas empresas só contratam PJ quando há real autonomia,
+                        ausência de exclusividade e flexibilidade de horário.</p>
+                </details>
+
+                <details>
+                    <summary>Férias e 13º: o PJ pode simular esses benefícios?</summary>
+                    <p>Sim — e é altamente recomendado. Um PJ disciplinado separa todo mês 1/12 do faturamento líquido
+                        como provisão de 13º e mais 1/11 como provisão de férias (30 dias pagos + 11 meses de trabalho).
+                        Sem essa disciplina de provisionamento, muitos PJs chegam ao fim do ano sem ter "tirado férias"
+                        e sem dinheiro extra — perdendo uma das maiores vantagens do modelo CLT sem nem perceber.</p>
+                </details>
+            </section>
+
+            <!-- Links Relacionados -->
+            <section class="related-section">
+                <h2>Ferramentas Complementares</h2>
+                <div class="related-grid">
+                    <a href="/calculadoras/juros.html" class="related-card">
+                        <div class="card-icon">📈</div>
+                        <div class="card-title">Juros Compostos</div>
+                        <div class="card-desc">Simule onde investir o extra do PJ.</div>
+                    </a>
+                    <a href="/calculadoras/aposentadoria.html" class="related-card">
+                        <div class="card-icon">🏦</div>
+                        <div class="card-title">Simulador de Aposentadoria</div>
+                        <div class="card-desc">Calcule quanto guardar para se aposentar.</div>
+                    </a>
+                    <a href="/calculadoras/salario.html" class="related-card">
+                        <div class="card-icon">💼</div>
+                        <div class="card-title">Conversor de Salário</div>
+                        <div class="card-desc">Hourly, diário, mensal e anual.</div>
+                    </a>
+                    <a href="/calculadoras/calc-inflacao.html" class="related-card">
+                        <div class="card-icon">📉</div>
+                        <div class="card-title">Calculadora de Inflação</div>
+                        <div class="card-desc">Quanto seu salário perdeu de valor?</div>
+                    </a>
+                </div>
+            </section>
+
+            <p class="disclaimer">
+                ⚠️ Esta calculadora usa tabelas fiscais de 2026 (INSS e IRPF) e é de caráter educacional.
+                Alíquotas e regras tributárias podem mudar. Consulte sempre um contador ou advogado trabalhista
+                antes de tomar decisões sobre seu regime de trabalho.
+            </p>
+        </div>
+
+    </main>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O PJ paga INSS e tem direito à aposentadoria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O sócio de uma empresa precisa recolher INSS sobre o pró-labore (mínimo 1 salário mínimo), garantindo aposentadoria, auxílio-doença e outros benefícios previdenciários."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual o melhor regime tributário para PJ de TI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para a maioria dos profissionais de TI com faturamento até R$ 4,8 milhões/ano, o Simples Nacional Anexo III é o mais vantajoso, com alíquota efetiva a partir de 6%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A empresa pode ser punida por contratar PJ ao invés de CLT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Se o vínculo tiver características de relação de emprego (exclusividade, subordinação, horário fixo), o Ministério do Trabalho pode reconhecer o vínculo empregatício e gerar passivos trabalhistas para a empresa."
+      }
+    }
+  ]
+}
+</script>
+
+    <script>
+        // ---- Tabelas Fiscais 2026 ----
+
+        // INSS 2026 (empregado/pró-labore)
+        function calcularINSS(salario) {
+            const faixas = [
+                { ate: 1518.00, aliq: 0.075 },
+                { ate: 2793.88, aliq: 0.09 },
+                { ate: 4190.83, aliq: 0.12 },
+                { ate: 8157.41, aliq: 0.14 }
+            ];
+            let inss = 0;
+            let base = 0;
+            for (let i = 0; i < faixas.length; i++) {
+                const teto = faixas[i].ate;
+                const piso = i === 0 ? 0 : faixas[i - 1].ate;
+                if (salario > piso) {
+                    const faixa = Math.min(salario, teto) - piso;
+                    inss += faixa * faixas[i].aliq;
+                    base = Math.min(salario, teto);
+                }
+            }
+            return Math.min(inss, 8157.41 * 0.14); // teto
+        }
+
+        // IRPF 2026
+        function calcularIRPF(baseCalculo) {
+            // Dedução padrão simplificada: 20% limitado a R$16.754,34/ano
+            const deducaoSimplificada = Math.min(baseCalculo * 0.20, 1396.20); // mensal
+            const base = Math.max(0, baseCalculo - deducaoSimplificada);
+
+            const faixas = [
+                { ate: 2259.20, aliq: 0, dedução: 0 },
+                { ate: 2826.65, aliq: 0.075, dedução: 169.44 },
+                { ate: 3751.05, aliq: 0.15, dedução: 381.44 },
+                { ate: 4664.68, aliq: 0.225, dedução: 662.77 },
+                { ate: Infinity, aliq: 0.275, dedução: 896.00 }
+            ];
+
+            for (const f of faixas) {
+                if (base <= f.ate) {
+                    return Math.max(0, base * f.aliq - f.dedução);
+                }
+            }
+            return 0;
+        }
+
+        // Simples Nacional — Anexo III 2026
+        function calcularSimplesAnexoIII(faturamentoMensal) {
+            const rbt12 = faturamentoMensal * 12; // estimativa anualizada
+            const tabela = [
+                { ate: 180000, aliq: 0.06, dedução: 0 },
+                { ate: 360000, aliq: 0.112, dedução: 9360 },
+                { ate: 720000, aliq: 0.135, dedução: 17640 },
+                { ate: 1800000, aliq: 0.16, dedução: 35640 },
+                { ate: 3600000, aliq: 0.21, dedução: 125640 },
+                { ate: 4800000, aliq: 0.33, dedução: 648000 }
+            ];
+            for (const f of tabela) {
+                if (rbt12 <= f.ate) {
+                    const aliqEfetiva = (rbt12 * f.aliq - f.dedução) / rbt12;
+                    return faturamentoMensal * aliqEfetiva;
+                }
+            }
+            return faturamentoMensal * 0.33;
+        }
+
+        // Simples Nacional — Anexo V 2026
+        function calcularSimplesAnexoV(faturamentoMensal) {
+            const rbt12 = faturamentoMensal * 12;
+            const tabela = [
+                { ate: 180000, aliq: 0.155, dedução: 0 },
+                { ate: 360000, aliq: 0.18, dedução: 4500 },
+                { ate: 720000, aliq: 0.195, dedução: 9900 },
+                { ate: 1800000, aliq: 0.205, dedução: 17100 },
+                { ate: 3600000, aliq: 0.23, dedução: 62100 },
+                { ate: 4800000, aliq: 0.305, dedução: 332100 }
+            ];
+            for (const f of tabela) {
+                if (rbt12 <= f.ate) {
+                    const aliqEfetiva = (rbt12 * f.aliq - f.dedução) / rbt12;
+                    return faturamentoMensal * aliqEfetiva;
+                }
+            }
+            return faturamentoMensal * 0.305;
+        }
+
+        // Formatação
+        const brl = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        const pos = (v) => v >= 0 ? `+ ${brl(v)}` : `− ${brl(Math.abs(v))}`;
+
+        function setVal(id, value, cls) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.textContent = value;
+            if (cls) { el.className = 'data-value ' + cls; }
+        }
+
+        function calcularPJvsCLT() {
+            // ---- INPUTS ----
+            const pjFaturamento = parseFloat(document.getElementById('pj_faturamento').value) || 0;
+            const pjRegime = document.getElementById('pj_regime').value;
+            const pjProLabore = parseFloat(document.getElementById('pj_pro_labore').value) || 1412;
+            const pjContador = parseFloat(document.getElementById('pj_contador').value) || 0;
+            const pjSaude = parseFloat(document.getElementById('pj_plano_saude').value) || 0;
+
+            const cltBruto = parseFloat(document.getElementById('clt_salario').value) || 0;
+            const cltSaude = parseFloat(document.getElementById('clt_plano_saude').value) || 0;
+            const cltVR = parseFloat(document.getElementById('clt_vale_refeicao').value) || 0;
+            const cltVT = parseFloat(document.getElementById('clt_vale_transporte').value) || 0;
+            const cltOutros = parseFloat(document.getElementById('clt_outros_beneficios').value) || 0;
+
+            // ---- PJ CÁLCULO ----
+            let pjImposto = 0;
+            if (pjRegime === 'simples_anexo3') {
+                pjImposto = calcularSimplesAnexoIII(pjFaturamento);
+            } else if (pjRegime === 'simples_anexo5') {
+                pjImposto = calcularSimplesAnexoV(pjFaturamento);
+            } else if (pjRegime === 'lucro_presumido') {
+                pjImposto = pjFaturamento * 0.153; // ~15,3% efetivo (PIS+COFINS+CSLL+IRPJ)
+            } else if (pjRegime === 'mei') {
+                pjImposto = 70.60; // DAS fixo 2026
+            }
+
+            const pjInssProLabore = calcularINSS(pjProLabore);
+            // IRPF sobre pró-labore, deduzindo INSS
+            const pjBaseIRPF = Math.max(0, pjProLabore - pjInssProLabore);
+            const pjIRPF = calcularIRPF(pjBaseIRPF);
+
+            // Distribuição de lucros (faturamento - imposto - pro-labore bruto)
+            const pjDistribuicao = Math.max(0, pjFaturamento - pjImposto - pjProLabore);
+
+            // FGTS que o PJ não acumula (baseado no pró-labore como proxy)
+            const pjFgtsNaoAcumula = pjProLabore * 0.08;
+            // 13º que não recebe (baseado no pró-labore)
+            const pjDecimoNaoRecebe = pjProLabore / 12;
+            // Férias que não recebe (pró-labore / 11 * (1 + 1/3))
+            const pjFeriasNaoRecebe = (pjProLabore / 11) * (1 + 1 / 3);
+
+            // Renda líquida PJ = pró-labore líquido + distribuição de lucros - custos
+            const pjProLaboreLiquido = pjProLabore - pjInssProLabore - pjIRPF;
+            const pjLiquido = pjProLaboreLiquido + pjDistribuicao - pjContador - pjSaude;
+
+            // ---- CLT CÁLCULO ----
+            const cltINSS = calcularINSS(cltBruto);
+            const cltBaseIRPF = Math.max(0, cltBruto - cltINSS);
+            const cltIRPF = calcularIRPF(cltBaseIRPF);
+
+            // VT: desconto máximo de 6% do salário ou valor do VT (o menor)
+            const cltVTDesconto = Math.min(cltBruto * 0.06, cltVT);
+            const cltVTLiquido = cltVT; // recebe o total; desconta-se o 6%
+
+            const cltFGTS = cltBruto * 0.08;
+            const cltDecimo = cltBruto / 12;
+            const cltFerias = (cltBruto / 11) * (1 + 1 / 3);
+
+            // Líquido: salário após descontos + benefícios recebidos + diferidos
+            const cltSalarioLiquido = cltBruto - cltINSS - cltIRPF - cltVTDesconto;
+            const cltTotal = cltSalarioLiquido + cltVR + cltVTLiquido + cltSaude + cltOutros + cltFGTS + cltDecimo + cltFerias;
+
+            // ---- PREENCHER INTERFACE ----
+            // PJ
+            setVal('r_pj_faturamento', brl(pjFaturamento), 'positive');
+            setVal('r_pj_imposto', `− ${brl(pjImposto)}`, 'negative');
+            setVal('r_pj_inss', `− ${brl(pjInssProLabore)}`, 'negative');
+            setVal('r_pj_irpf', `− ${brl(pjIRPF)}`, 'negative');
+            setVal('r_pj_contador', `− ${brl(pjContador)}`, 'negative');
+            setVal('r_pj_saude', `− ${brl(pjSaude)}`, 'negative');
+            setVal('r_pj_fgts', `− ${brl(pjFgtsNaoAcumula)} /mês`, 'negative');
+            setVal('r_pj_decimo', `− ${brl(pjDecimoNaoRecebe)} /mês`, 'negative');
+            setVal('r_pj_ferias', `− ${brl(pjFeriasNaoRecebe)} /mês`, 'negative');
+            document.getElementById('r_pj_liquido').textContent = brl(pjLiquido);
+
+            // CLT
+            setVal('r_clt_bruto', brl(cltBruto), 'positive');
+            setVal('r_clt_inss', `− ${brl(cltINSS)}`, 'negative');
+            setVal('r_clt_irpf', `− ${brl(cltIRPF)}`, 'negative');
+            setVal('r_clt_vt_desc', `− ${brl(cltVTDesconto)}`, 'negative');
+            setVal('r_clt_vr', `+ ${brl(cltVR)}`, 'positive');
+            setVal('r_clt_vt_rec', `+ ${brl(cltVTLiquido)}`, 'positive');
+            setVal('r_clt_saude', `+ ${brl(cltSaude)}`, 'positive');
+            setVal('r_clt_outros', `+ ${brl(cltOutros)}`, 'positive');
+            setVal('r_clt_fgts', `+ ${brl(cltFGTS)}`, 'positive');
+            setVal('r_clt_decimo', `+ ${brl(cltDecimo)}`, 'positive');
+            setVal('r_clt_ferias', `+ ${brl(cltFerias)}`, 'positive');
+            document.getElementById('r_clt_liquido').textContent = brl(cltTotal);
+
+            // Tabela de breakdown
+            const pjImpostosTotal = pjImposto + pjInssProLabore + pjIRPF;
+            const pjCustosOp = pjContador + pjSaude;
+            const pjBeneficiosRecebe = 0; // sem benefícios adicionais
+            const cltImpostosTotal = cltINSS + cltIRPF + cltVTDesconto;
+            const cltCustosOp = 0;
+            const cltBeneficiosRecebe = cltVR + cltVTLiquido + cltSaude + cltOutros + cltFGTS + cltDecimo + cltFerias;
+
+            document.getElementById('eq_pj_bruto').textContent = brl(pjFaturamento);
+            document.getElementById('eq_clt_bruto').textContent = brl(cltBruto);
+            document.getElementById('eq_pj_impostos').textContent = `− ${brl(pjImpostosTotal)}`;
+            document.getElementById('eq_clt_impostos').textContent = `− ${brl(cltImpostosTotal)}`;
+            document.getElementById('eq_pj_custos').textContent = `− ${brl(pjCustosOp)}`;
+            document.getElementById('eq_clt_custos').textContent = `− ${brl(cltCustosOp)}`;
+            document.getElementById('eq_pj_beneficios').textContent = `+ ${brl(pjBeneficiosRecebe)}`;
+            document.getElementById('eq_clt_beneficios').textContent = `+ ${brl(cltBeneficiosRecebe)}`;
+            document.getElementById('eq_pj_total').textContent = brl(pjLiquido);
+            document.getElementById('eq_clt_total').textContent = brl(cltTotal);
+
+            // Ponto de equilíbrio
+            const diff = pjLiquido - cltTotal;
+            const taxaCargaPJ = pjFaturamento > 0 ? ((pjFaturamento - pjLiquido) / pjFaturamento * 100).toFixed(1) : 0;
+            let msgEquilibrio = '';
+            if (pjFaturamento > 0 && cltBruto > 0) {
+                const fatNecessario = cltTotal > 0 ? (cltTotal / (pjLiquido / pjFaturamento)).toFixed(0) : 0;
+                msgEquilibrio = `Com os parâmetros informados, seu PJ gera uma <strong>carga tributária e operacional de ${taxaCargaPJ}%</strong> sobre o faturamento. `;
+                if (Math.abs(diff) < 200) {
+                    msgEquilibrio += `Ambos os cenários estão praticamente <strong>empatados</strong> (diferença de ${brl(Math.abs(diff))}). A decisão deve considerar aspectos além do financeiro: segurança, autonomia e perfil de carreira.`;
+                } else if (diff > 0) {
+                    msgEquilibrio += `Para igualar o total CLT de ${brl(cltTotal)}, o PJ precisaria faturar aproximadamente <strong>${brl(parseFloat(fatNecessario))}/mês</strong>.`;
+                } else {
+                    msgEquilibrio += `Para igualar o líquido PJ de ${brl(pjLiquido)}, o CLT precisaria de um salário bruto significativamente maior.`;
+                }
+            }
+            document.getElementById('ponto_equilibrio').innerHTML = msgEquilibrio;
+
+            // Banner vencedor
+            const banner = document.getElementById('winner_banner');
+            banner.className = 'winner-banner';
+            if (Math.abs(diff) < 200) {
+                banner.classList.add('winner-empate');
+                banner.innerHTML = `🤝 Resultado: <strong>Empate Técnico</strong><br><span style="font-size:1rem; font-weight:500;">A diferença mensal é de apenas ${brl(Math.abs(diff))}. Decida com base em autonomia, segurança e objetivos de carreira.</span>`;
+            } else if (diff > 0) {
+                banner.classList.add('winner-pj');
+                banner.innerHTML = `🏆 Financeiramente: <strong>PJ é Mais Vantajoso</strong><br><span style="font-size:1rem; font-weight:500;">Você ganha <strong>${brl(diff)}/mês</strong> a mais como PJ — ou seja, <strong>${brl(diff * 12)}/ano</strong>. Lembre-se de provisionar férias e 13º!</span>`;
+            } else {
+                banner.classList.add('winner-clt');
+                banner.innerHTML = `🏆 Financeiramente: <strong>CLT é Mais Vantajoso</strong><br><span style="font-size:1rem; font-weight:500;">Com todos os benefícios, o CLT supera o PJ em <strong>${brl(Math.abs(diff))}/mês</strong> — ou <strong>${brl(Math.abs(diff) * 12)}/ano</strong> a mais no seu bolso.</span>`;
+            }
+
+            const container = document.getElementById('resultado');
+            container.classList.add('show');
+            container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                const vencedor = diff > 0 ? "PJ" : Math.abs(diff) < 200 ? "Empate" : "CLT";
+                window.salvarCalculo(
+                    'Calculadora PJ vs CLT',
+                    `PJ: ${brl(pjFaturamento)} vs CLT: ${brl(cltBruto)}`,
+                    `Vencedor: ${vencedor} | Diferença: ${brl(Math.abs(diff))}`
+                );
+            }
+        }
+    </script>
+
+    <div id="footer-container"></div>
+
+    <script src="../js/theme.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
+    <script src="../js/gerar-footer.js"></script>
+
+</body>
+
+</html>

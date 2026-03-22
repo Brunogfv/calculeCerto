@@ -75,4 +75,13 @@ function calcularSalario() {
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // --- SALVAR NO HISTÓRICO ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Conversor de Salário',
+            `Salário: ${formatadorBRL.format(salario)} | ${horasSemana}h semanais`,
+            `Valor Hora: ${document.getElementById("valor-hora").textContent} | Anual: ${document.getElementById("valor-ano").textContent}`
+        );
+    }
 }

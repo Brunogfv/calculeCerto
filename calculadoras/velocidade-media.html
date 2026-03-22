@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Velocidade Média | Portal das Contas</title>
 
@@ -119,6 +120,7 @@
                     <h2>Calculadora de Velocidade Média</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Calcule a velocidade média da sua viagem ou
                         treino.</p>
+                    <div id="btn-favorito-container" data-nome="Velocidade Média" data-url="/calculadoras/velocidade-media.html"></div>
                 </div>
 
                 <!-- Inputs -->
@@ -331,11 +333,18 @@
             const ritmoFormatado = `${ritmoMin}'${ritmoSeg < 10 ? '0' : ''}${ritmoSeg}''`;
 
             // Exibir Resultados
-            document.getElementById('velocidade-kmh').innerText = `${velocidadeMedia.toFixed(1)} km/h`;
-            document.getElementById('tempo-total-h').innerText = `${tempoTotalHoras.toFixed(2)} h`;
             document.getElementById('ritmo-min-km').innerText = `${ritmoFormatado} /km`;
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de Velocidade Média',
+                    `Distância: ${distancia}km | Tempo: ${horas}h ${minutos}m`,
+                    `Velocidade: ${velocidadeMedia.toFixed(1)} km/h | Ritmo: ${ritmoFormatado}`
+                );
+            }
 
             // Scroll
             if (window.innerWidth < 600) {

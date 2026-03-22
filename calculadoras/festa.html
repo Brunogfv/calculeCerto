@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Festa | Portal das Contas</title>
 
@@ -112,6 +113,7 @@
                     <h2>Calculadora de Festa</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Planeje a lista de compras para o seu evento.
                     </p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Festa" data-url="/calculadoras/festa.html"></div>
                 </div>
 
                 <div class="input-group">
@@ -416,6 +418,15 @@
             document.getElementById('sub-doces').innerText = `Baseado no perfil de ${tipo.replace('_', ' ')}`;
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de Festa',
+                    `${numPessoas} pessoas | Perfil: ${tipo}`,
+                    `Carnes: ${totalCarne.toFixed(1)}kg | Bebidas: ${totalBebidas} | Bolo: ${textoDoces}`
+                );
+            }
 
             // Scroll
             if (window.innerWidth < 600) {

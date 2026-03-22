@@ -139,4 +139,14 @@ function calcularTinta() {
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // --- SALVAR NO HISTÓRICO ---
+    if (typeof window.salvarCalculo === 'function') {
+        const numParedes = document.querySelectorAll("#lista-paredes .list-row").length;
+        window.salvarCalculo(
+            'Calculadora de Tinta',
+            `Paredes: ${numParedes} | Rendimento: ${rendimento}m²/L | Mãos: ${maos}`,
+            `Total: ${litros.toFixed(1)}L | Latas: ${latas18}x18L, ${latas36}x3.6L, ${latas09}x0.9L`
+        );
+    }
 }

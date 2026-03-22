@@ -102,6 +102,15 @@ function calcularParto() {
     document.getElementById("data-parto").textContent = dateString;
     document.getElementById("semana-atual").textContent = currentWeek;
 
+    // --- SALVAR NO HISTÓRICO ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de Parto',
+            `LMP: ${dateInput} | Ciclo: ${cycleLength}d`,
+            `DPP: ${dateString} | Semanas: ${currentWeek}`
+        );
+    }
+
     // Scroll
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });

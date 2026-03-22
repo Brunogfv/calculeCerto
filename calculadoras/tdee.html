@@ -29,11 +29,12 @@
     <!-- Estilos Globais (Mantendo links originais) -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/imc.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <!-- Estilos Adicionais para garantir funcionamento standalone -->
     <style>
@@ -399,6 +400,7 @@
                     <h2>Calculadora de TDEE</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Descubra quantas calorias você gasta por dia.
                     </p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de TDEE" data-url="/calculadoras/tdee.html"></div>
                 </div>
 
                 <div class="input-group full-width">
@@ -645,6 +647,15 @@
 
             // Mostrar área de resultado
             resultadoContainer.style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de TDEE',
+                    `${peso}kg | ${altura}cm | ${idade}a | ${genero === 'm' ? 'Masc' : 'Fem'}`,
+                    `TDEE: ${Math.round(tdee)} kcal | TMB: ${Math.round(tmb)} kcal`
+                );
+            }
         }
 
         function limparCampos() {

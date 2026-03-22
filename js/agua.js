@@ -85,4 +85,13 @@ function calcularAgua() {
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // --- SALVAR NO HISTÓRICO (Sistema Local) ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de Água',
+            `Peso: ${peso}kg | Nível: ${atividade} | Clima: ${clima > 0 ? 'Quente' : 'Frio'}`,
+            `Meta: ${totalLitros.toFixed(2)}L (${copos} copos)`
+        );
+    }
 }

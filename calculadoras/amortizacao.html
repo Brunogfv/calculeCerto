@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Simulador de Amortização de Financiamento Imobiliário. Descubra quanto tempo e dinheiro (juros) você economiza ao fazer amortizações mensais ou pontuais no seu contrato Caixa (SAC ou Price). Use FGTS e reduza sua dívida.">
+    <meta name="keywords"
+        content="simulador amortizacao financiamento, amortizar financiamento caixa, calcular amortizacao sac price, abater juros imovel, simulador de reducao de tempo financiamento, antecipar parcelas fgts">
+    <meta name="robots" content="index, follow">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
+
+    <title>Simulador de Amortização de Financiamento (Economize Tempo e Juros)</title>
+
+    <script type="module" src="../js/gerar-header.js"></script>
+
+    <style>
+        /* Estilos da Calculadora */
+        .calc-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .calc-header h1 {
+            color: var(--cor-texto);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .calc-header p {
+            color: var(--cor-texto-suave);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calc-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media(min-width: 900px) {
+            .calc-container {
+                grid-template-columns: 350px 1fr;
+            }
+        }
+
+        /* Painel Lateral de Inputs */
+        .sidebar-panel {
+            background: var(--cor-card);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            align-self: start;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--cor-texto);
+            margin-bottom: 8px;
+        }
+
+        .input-group input,
+        .input-group select {
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #f8fafc;
+            color: var(--cor-texto);
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+            background-color: #fff;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 25px 0;
+        }
+
+        .btn-calc {
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-calc:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Área de Resultados Principal */
+        .dashboard-panel {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .dashboard-panel.show {
+            display: block;
+        }
+
+        .hero-result {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 16px;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+        }
+
+        .hero-result h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .economia-val {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 15px;
+            color: #fca5a5;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .economia-val.positive {
+            color: #86efac;
+        }
+
+        .tempo-val {
+            font-size: 1.3rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media(min-width: 768px) {
+            .compare-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .compare-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .compare-card h3 {
+            font-size: 1.1rem;
+            color: var(--cor-texto);
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .stat-label {
+            color: var(--cor-texto-suave);
+        }
+
+        .stat-val {
+            font-weight: 600;
+            color: var(--cor-texto);
+        }
+
+        .stat-val.bad {
+            color: #ef4444;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- SEO & Conteúdo (Novo) --- */
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .info-content {
+            background-color: var(--cor-card);
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 40px;
+        }
+
+        .info-content h2 {
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .info-content h3 {
+            color: var(--cor-texto);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .info-content p,
+        .info-content ul {
+            color: var(--cor-texto-suave);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #166534;
+            font-size: 0.95rem;
+        }
+
+        /* --- FAQ (Novo) --- */
+        .faq-section {
+            margin-bottom: 40px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--cor-texto);
+        }
+
+        details {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+            transition: all 0.3s;
+        }
+
+        details[open] {
+            border-color: var(--cor-primaria);
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--cor-texto);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--cor-primaria);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details p {
+            margin-top: 15px;
+            margin-bottom: 0;
+            color: var(--cor-texto-suave);
+            font-size: 0.95rem;
+        }
+
+        /* --- Links Relacionados (Novo) --- */
+        .related-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--cor-texto);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--cor-primaria);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: var(--cor-texto);
+            margin-bottom: 5px;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--cor-texto-suave);
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <div id="header-container"></div>
+
+    <main class="container">
+
+        <div class="calc-header">
+            <h1>Simulador de Amortização Imobiliária</h1>
+            <p>Descubra como pequenos aportes mensais agem no saldo devedor do seu financiamento, cortando anos de
+                dívida e dezenas de milhares de reais em juros bancários.</p>
+            <div id="btn-favorito-container" data-nome="Simulador de Amortização" data-url="/calculadoras/amortizacao.html"></div>
+        </div>
+
+        <section class="calc-container">
+
+            <!-- SIDEBAR: DADOS -->
+            <div class="sidebar-panel">
+                <h2 style="font-size: 1.2rem; margin-bottom: 20px; color: var(--cor-primaria);">Dados Atuais do Contrato
+                </h2>
+
+                <div class="input-group">
+                    <label for="saldo_devedor">Saldo Devedor Atual (R$):</label>
+                    <input type="number" id="saldo_devedor" placeholder="Ex: 250000" value="250000">
+                </div>
+
+                <div class="input-group">
+                    <label for="prazo_restante">Prazo Restante (Meses):</label>
+                    <input type="number" id="prazo_restante" placeholder="Ex: 300" value="300" min="1" max="420">
+                </div>
+
+                <div class="input-group">
+                    <label for="juros_aa">Taxa de Juros (CET % a.a):</label>
+                    <input type="number" id="juros_aa" placeholder="Ex: 9.5" value="9.5" step="0.1">
+                </div>
+
+                <div class="input-group">
+                    <label for="sistema_amort">Sistema de Financiamento:</label>
+                    <select id="sistema_amort">
+                        <option value="SAC">SAC (Parcelas Decrescentes) - Mais comum</option>
+                        <option value="PRICE">PRICE (Parcelas Fixas)</option>
+                    </select>
+                </div>
+
+                <div class="divider"></div>
+                <h2 style="font-size: 1.2rem; margin-bottom: 20px; color: #16a34a;">Sua Meta de Amortização</h2>
+
+                <div class="input-group">
+                    <label for="aporte_mensal">Aporte Extra Mensal (R$):</label>
+                    <input type="number" id="aporte_mensal" placeholder="Ex: 500" value="500">
+                </div>
+
+                <button type="button" class="btn-calc" onclick="simularAmortizacao()">Simular Economia</button>
+            </div>
+
+            <!-- DASHBOARD: RESULTADOS -->
+            <div id="resultado" class="dashboard-panel" aria-live="polite">
+
+                <div class="hero-result">
+                    <h2>Com essa estratégia, você deixará de pagar ao banco</h2>
+                    <div class="economia-val positive" id="res_economia_juros">R$ 0,00</div>
+                    <div class="tempo-val" id="res_economia_tempo">Você quita a dívida X meses mais cedo!</div>
+                </div>
+
+                <div class="compare-grid">
+
+                    <div class="compare-card" style="border-top: 4px solid #ef4444;">
+                        <h3>Cenário Padrão (Sem Amortizar)</h3>
+                        <div class="stat-row">
+                            <span class="stat-label">Saldo Financiado:</span>
+                            <span class="stat-val" id="cp_saldo">R$ 0,00</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Prazo de Pagamento:</span>
+                            <span class="stat-val" id="cp_prazo">0 meses</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">1ª Parcela Atual:</span>
+                            <span class="stat-val" id="cp_parcela1">R$ 0,00</span>
+                        </div>
+                        <div class="stat-row"
+                            style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;">
+                            <span class="stat-label">Total Gasto em Juros:</span>
+                            <span class="stat-val bad" id="cp_total_juros">R$ 0,00</span>
+                        </div>
+                    </div>
+
+                    <div class="compare-card" style="border-top: 4px solid #16a34a;">
+                        <h3>Cenário Acelerado (Com Aportes)</h3>
+                        <div class="stat-row">
+                            <span class="stat-label">Aporte Mensal Constante:</span>
+                            <span class="stat-val" id="ca_aporte">R$ 0,00</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Novo Prazo Total:</span>
+                            <span class="stat-val" style="color: #16a34a;" id="ca_novo_prazo">0 meses</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Total Aportado do Próprio Bolso:</span>
+                            <span class="stat-val" id="ca_total_investido">R$ 0,00</span>
+                        </div>
+                        <div class="stat-row"
+                            style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;">
+                            <span class="stat-label">Novo Total de Juros (Menor!):</span>
+                            <span class="stat-val" style="color: #16a34a;" id="ca_novo_juros">R$ 0,00</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Anúncio AdSense Dinâmico -->
+                <div id="anuncio-dinamico" style="text-align: center; margin: 30px 0;"></div>
+
+                <!-- Explicação rápida dentro do resultado (para não ficar vazio) -->
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <h3 style="margin-top:0; font-size: 1.1rem; color: var(--cor-primaria);">Por que essa economia
+                        acontece?</h3>
+                    <p style="font-size: 0.95rem; margin-bottom:0;">
+                        Os juros bancários são calculados sobre o saldo devedor restante. Ao fazer aportes extras, você
+                        reduz esse saldo permanentemente. No mês seguinte, o banco cobra juros sobre um valor menor, e
+                        assim sucessivamente, criando um efeito "bola de neve" positivo na sua dívida.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CONTEÚDO SEO E EDUCACIONAL (Sempre Visível) -->
+        <div class="content-wrapper">
+
+            <section class="info-content">
+                <h2>Entenda a Matemática da Amortização</h2>
+                <p>
+                    A parte mais cruel de um financiamento imobiliário de longo prazo no Brasil (30 a 35 anos) é a
+                    proporção de juros na sua parcela.
+                    Nos primeiros anos de contrato, <strong>cerca de 70% a 80% do valor do seu boleto vai direto
+                        para o banco em forma de juros</strong>, e apenas os 20% restantes realmente abatem a sua
+                    dívida original (o Saldo Devedor).
+                </p>
+                <p>
+                    Quando você faz uma <strong>Amortização Extraordinária</strong>, seja ela R$ 100,00 ou R$ 10.000,00,
+                    a lei garante que esse valor incida <strong>100% no abatimento do saldo devedor
+                        principal</strong>. Ele pula toda a fila dos juros e do seguro.
+                </p>
+
+                <div class="info-box">
+                    <strong>Efeito Cascata:</strong> Se você deve 100 mil e os juros do mês incidem sobre 100 mil.
+                    Ao amortizar 5 mil direto no saldo, no mês seguinte o banco será obrigado a cobrar juros apenas
+                    sobre 95 mil. Com juros menores no sistema SAC, a sua próxima parcela regular fica mais barata e
+                    a proporção de juros cai a cada mês!
+                </div>
+
+                <h3>Reduzir Prazo X Reduzir Parcela</h3>
+                <p>Ao realizar um pagamento extra nos apps da Caixa Econômica, Itaú, Bradesco, etc., eles costumam
+                    oferecer duas modalidades. Escolha com sabedoria:</p>
+                <ul>
+                    <li><strong>1. Reduzir o Prazo (Altamente Recomendado):</strong> O valor da sua prestação mensal
+                        continua o mesmo, porém o banco elimina as últimas "faturas" do seu contrato. Essa é a
+                        modalidade que garante os saltos absurdos de eliminação de juros apresentados no simulador
+                        acima.</li>
+                    <li><strong>2. Reduzir o Valor da Parcela:</strong> O seu tempo total de dívida (ex: 360 meses)
+                        se mantém inalterado, mas o seu boleto mensal fica mais barato. Isso só é recomendado se
+                        você estiver sofrendo de aperto financeiro imediato e precisar liberar folga no orçamento do
+                        mês que vem. O total de juros salvos no fim do período é muito menor do que ao reduzir
+                        prazo.</li>
+                </ul>
+
+                <h3>Amortizar X Antecipar Parcelas</h3>
+                <p>
+                    Muita gente confunde <strong>antecipar a próxima parcela</strong> com <strong>amortizar</strong>.
+                    Antecipar a parcela significa pagar o boleto do próximo mês antes da data. Isso evita juros de
+                    mora, mas não reduz os juros contratados, pois você apenas pagou uma obrigação que já existia.
+                    Já a <strong>amortização extraordinária</strong> é um pagamento a mais, que vai direto para o
+                    principal,
+                    reduzindo a base de cálculo de todos os juros futuros.
+                </p>
+
+                <h3>É melhor amortizar o imóvel ou investir o dinheiro?</h3>
+                <p>Depende do <em>Spread</em> (a diferença entre a taxa). Analise:</p>
+                <ul>
+                    <li>Se o CET (Custo Efetivo Total) do seu financiamento é de <strong>10% ao ano</strong>.</li>
+                    <li>Se você encontra uma aplicação segura (Tesouro Direto, CDB) que pague <strong>8.5% ao ano
+                            líquido</strong> de IR.</li>
+                    <li><strong>Resposta matemática: Amortize a dívida!</strong> A rentabilidade garantida ao deixar
+                        de pagar uma dívida cara de 10% é maior e menos burocrática do que tentar fazer 8.5%
+                        acompanharem a inflação. Considere investir apenas se os juros do seu Imóvel forem
+                        excepcionalmente baixos (como MCMV a 4% a.a).</li>
+                </ul>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2>Perguntas Frequentes sobre Amortização</h2>
+
+                <details>
+                    <summary>Posso usar o saldo do FGTS para amortizar?</summary>
+                    <p>Sim! Se você tiver saldo na conta do FGTS ligada ao seu contrato, pode solicitar a amortização
+                        direto pelo app do banco ou na agência. A amortização com FGTS segue a mesma lógica: reduz o
+                        saldo devedor e os juros futuros.</p>
+                </details>
+
+                <details>
+                    <summary>Qual o valor mínimo para amortizar?</summary>
+                    <p>A maioria dos contratos permite amortizações a partir de R$ 100,00 ou 1% do saldo devedor, o que
+                        for menor. Verifique o seu contrato específico, mas geralmente não é necessário ter muito
+                        dinheiro para começar a reduzir a dívida.</p>
+                </details>
+
+                <details>
+                    <summary>Posso fazer amortização se estiver atrasado?</summary>
+                    <p>Geralmente os bancos só permitem amortização extraordinária se o contrato estiver em dia (sem
+                        parcelas em atraso). Você deve quitar as pendências antes de aplicar dinheiro extra no saldo
+                        devedor.</p>
+                </details>
+
+                <details>
+                    <summary>A amortização pode ser cancelada?</summary>
+                    <p>Não. Uma vez realizada a amortização e abatida do saldo devedor, a operação é definitiva. O
+                        dinheiro "voltou" para o seu patrimônio líquido no imóvel. Não é possível pedir o valor de volta
+                        como se fosse um saque.</p>
+                </details>
+            </section>
+
+            <!-- Links Relacionados -->
+            <section class="related-section">
+                <h2>Outras Calculadoras Financeiras</h2>
+                <div class="related-grid">
+                    <a href="/calculadoras/juros.html" class="related-card">
+                        <div class="card-icon">📈</div>
+                        <div class="card-title">Juros Compostos</div>
+                        <div class="card-desc">Compare os juros do financiamento com a rentabilidade de investimentos.
+                        </div>
+                    </a>
+                    <a href="/calculadoras/calc-inflacao.html" class="related-card">
+                        <div class="card-icon">📉</div>
+                        <div class="card-title">Calculadora de Inflação</div>
+                        <div class="card-desc">Veja se a taxa do seu imóvel está acima da inflação real.</div>
+                    </a>
+                    <a href="/calculadoras/salario.html" class="related-card">
+                        <div class="card-icon">💼</div>
+                        <div class="card-title">Conversor de Salário</div>
+                        <div class="card-desc">Planeje quanto das suas rendas você pode direcionar para a amortização.
+                        </div>
+                    </a>
+                    <a href="/calculadoras/calc-tesouro-direto.html" class="related-card">
+                        <div class="card-icon">🏛️</div>
+                        <div class="card-title">Tesouro Direto</div>
+                        <div class="card-desc">Simule aplicações seguras que podem competir com a amortização.</div>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../js/ads.js"></script>
+    <script src="../js/gerar-footer.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof carregarAnuncio === 'function') carregarAnuncio('geral');
+        });
+
+        const formatBRL = (value) => value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        function simularAmortizacao() {
+            const saldoDevedor = parseFloat(document.getElementById('saldo_devedor').value) || 0;
+            const mesesTotal = parseInt(document.getElementById('prazo_restante').value) || 0;
+            const jurosAnual = parseFloat(document.getElementById('juros_aa').value) || 0;
+            const jurosMensal = (Math.pow(1 + (jurosAnual / 100), 1 / 12) - 1);
+            const sistema = document.getElementById('sistema_amort').value;
+            const aporteMensal = parseFloat(document.getElementById('aporte_mensal').value) || 0;
+
+            if (saldoDevedor <= 0 || mesesTotal <= 0) return alert("Preencha saldo devedor e prazo corretamente.");
+
+            // 1. Simular CENÁRIO NORMAL (Sem amortizar extra)
+            let n_saldo = saldoDevedor;
+            let n_totalJuros = 0;
+            let n_parcela1 = 0;
+
+            if (sistema === 'SAC') {
+                const amortizacaoFixa = saldoDevedor / mesesTotal;
+                for (let m = 1; m <= mesesTotal; m++) {
+                    let jurosMes = n_saldo * jurosMensal;
+                    let parcelaMes = amortizacaoFixa + jurosMes;
+
+                    if (m === 1) n_parcela1 = parcelaMes;
+
+                    n_totalJuros += jurosMes;
+                    n_saldo -= amortizacaoFixa;
+                    if (n_saldo < 0) n_saldo = 0;
+                }
+            } else { // PRICE
+                const q = Math.pow(1 + jurosMensal, mesesTotal);
+                const parcelaFixa = saldoDevedor * ((jurosMensal * q) / (q - 1));
+                n_parcela1 = parcelaFixa;
+
+                for (let m = 1; m <= mesesTotal; m++) {
+                    let jurosMes = n_saldo * jurosMensal;
+                    let amortizacaoBase = parcelaFixa - jurosMes;
+
+                    n_totalJuros += jurosMes;
+                    n_saldo -= amortizacaoBase;
+                    if (n_saldo < 0) n_saldo = 0;
+                }
+            }
+
+            // 2. Simular CENÁRIO AMORTIZANDO (Redução de Prazo)
+            let a_saldo = saldoDevedor;
+            let a_totalJuros = 0;
+            let a_totalAportesExtras = 0;
+            let a_mesesDecorridos = 0;
+
+            if (sistema === 'SAC') {
+                while (a_saldo > 0.01 && a_mesesDecorridos < mesesTotal) {
+                    a_mesesDecorridos++;
+
+                    let amortizacaoRegular = saldoDevedor / mesesTotal;
+                    if (amortizacaoRegular > a_saldo) amortizacaoRegular = a_saldo;
+
+                    let jurosMes = a_saldo * jurosMensal;
+                    a_totalJuros += jurosMes;
+
+                    a_saldo -= amortizacaoRegular;
+
+                    let aporteRealAplicado = 0;
+                    if (a_saldo > 0 && aporteMensal > 0) {
+                        if (aporteMensal > a_saldo) aporteRealAplicado = a_saldo;
+                        else aporteRealAplicado = aporteMensal;
+
+                        a_saldo -= aporteRealAplicado;
+                        a_totalAportesExtras += aporteRealAplicado;
+                    }
+                }
+            } else { // PRICE Amortizando
+                const qOrig = Math.pow(1 + jurosMensal, mesesTotal);
+                const parcelaFixa = saldoDevedor * ((jurosMensal * qOrig) / (qOrig - 1));
+
+                while (a_saldo > 0.01 && a_mesesDecorridos < mesesTotal * 2) {
+                    a_mesesDecorridos++;
+
+                    let jurosMes = a_saldo * jurosMensal;
+                    a_totalJuros += jurosMes;
+
+                    let amortizacaoBase = parcelaFixa - jurosMes;
+                    if (amortizacaoBase > a_saldo) amortizacaoBase = a_saldo;
+                    a_saldo -= amortizacaoBase;
+
+                    let aporteRealAplicado = 0;
+                    if (a_saldo > 0 && aporteMensal > 0) {
+                        if (aporteMensal > a_saldo) aporteRealAplicado = a_saldo;
+                        else aporteRealAplicado = aporteMensal;
+
+                        a_saldo -= aporteRealAplicado;
+                        a_totalAportesExtras += aporteRealAplicado;
+                    }
+                }
+            }
+
+            // Exibir Comparativo Default
+            document.getElementById('cp_saldo').textContent = formatBRL(saldoDevedor);
+            document.getElementById('cp_prazo').textContent = `${mesesTotal} meses`;
+            document.getElementById('cp_parcela1').textContent = formatBRL(n_parcela1);
+            document.getElementById('cp_total_juros').textContent = formatBRL(n_totalJuros);
+
+            // Exibir Comparativo Acelerado
+            document.getElementById('ca_aporte').textContent = formatBRL(aporteMensal);
+            document.getElementById('ca_novo_prazo').textContent = `${a_mesesDecorridos} meses`;
+            document.getElementById('ca_total_investido').textContent = formatBRL(a_totalAportesExtras);
+            document.getElementById('ca_novo_juros').textContent = formatBRL(a_totalJuros);
+
+            // Hero
+            const economJuros = n_totalJuros - a_totalJuros;
+            const economTempo = mesesTotal - a_mesesDecorridos;
+
+            document.getElementById('res_economia_juros').textContent = formatBRL(Math.max(0, economJuros));
+
+            if (economTempo > 0) {
+                const economAnos = Math.floor(economTempo / 12);
+                const economMesesRem = economTempo % 12;
+                let txtTempo = `Você quita a dívida `;
+                if (economAnos > 0) txtTempo += `${economAnos} ano(s) `;
+                if (economMesesRem > 0 || txtTempo === `Você quita a dívida `) txtTempo += `e ${economMesesRem} mês(es) `;
+                txtTempo += `mais cedo!`;
+                document.getElementById('res_economia_tempo').textContent = txtTempo;
+            } else {
+                document.getElementById('res_economia_tempo').textContent = `O prazo continua o mesmo (adicione aportes).`;
+            }
+
+            const dash = document.getElementById('resultado');
+            dash.classList.add('show');
+            dash.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Simulador de Amortização',
+                    `Saldo: ${formatBRL(saldoDevedor)} | Prazo: ${mesesTotal} meses | Extra: ${formatBRL(aporteMensal)}`,
+                    `Economia: ${formatBRL(Math.max(0, economJuros))} | Antecipação: ${economTempo} meses`
+                );
+            }
+        }
+    </script>
+
+    <!-- Schema FAQ para Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Posso usar o saldo do FGTS para amortizar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim! Se você tiver saldo na conta do FGTS ligada ao seu contrato, pode solicitar a amortização direto pelo app do banco ou na agência."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Qual o valor mínimo para amortizar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A maioria dos contratos permite amortizações a partir de R$ 100,00 ou 1% do saldo devedor, o que for menor."
+        }
+      }, {
+        "@type": "Question",
+        "name": "A amortização pode ser cancelada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. Uma vez realizada a amortização e abatida do saldo devedor, a operação é definitiva."
+        }
+      }]
+    }
+    </script>
+</body>
+
+</html>

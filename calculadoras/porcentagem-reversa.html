@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Porcentagem Reversa | Portal das Contas</title>
 
@@ -81,6 +82,9 @@
             border: 1px dashed #cbd5e1;
         }
     </style>
+
+
+
 </head>
 
 <body data-theme="light">
@@ -94,6 +98,8 @@
                     <h2>Calculadora de Porcentagem Reversa</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Descubra o valor original antes do desconto ou
                         do acréscimo.</p>
+                    <div id="btn-favorito-container" data-nome="Porcentagem Reversa"
+                        data-url="/calculadoras/porcentagem-reversa.html"></div>
                 </div>
 
                 <!-- Seleção do Tipo -->
@@ -226,6 +232,11 @@
     </main>
 
     <!-- FOOTER REMOVIDO POIS VEM DO HEADER DINAMICO -->
+    <div id="footer-container"></div>
+
+    <script src="../js/theme.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
+    <script src="../js/gerar-footer.js"></script>
 
     <script>
         if (typeof carregarAnuncio === 'function') carregarAnuncio('porcentagem_reversa');
@@ -295,6 +306,15 @@
             document.getElementById('explicacao-math').innerHTML = explicacao;
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Porcentagem Reversa',
+                    `Modo: ${tipoAtual} | Final: R$ ${valorFinal.toFixed(2)} | %: ${perc}%`,
+                    `Original: R$ ${valorOriginal.toFixed(2)}`
+                );
+            }
 
             // Scroll
             if (window.innerWidth < 600) {

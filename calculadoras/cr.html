@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de CR (Coeficiente de Rendimento) | Portal das Contas</title>
 
@@ -101,6 +102,7 @@
                     <h2>Calculadora de CR (Coeficiente de Rendimento)</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Calcule sua média universitária ponderada por
                         créditos.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de CR" data-url="/calculadoras/cr.html"></div>
                 </div>
 
                 <!-- Lista de Matérias -->
@@ -418,6 +420,15 @@
             }
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de CR',
+                    `Matérias: ${rows.length} | Créditos: ${totalCreditos}`,
+                    `Resultado: ${crFormatado} | Status: ${statusBadge.innerText}`
+                );
+            }
 
             // Scroll suave
             if (window.innerWidth < 600) {

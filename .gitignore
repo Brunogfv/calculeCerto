@@ -15,6 +15,11 @@ check-artigos.js
 check.ps1
 migrate-to-dynamic.js
 rebuild-index.js
+fix*.ps1
+fix*.py
+fix*.js
+tmp*.py
+migrate*.py
 missing.json
 missing.txt
 links.txt

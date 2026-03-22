@@ -141,6 +141,20 @@ function resolverBhaskara() {
     if (window.innerWidth < 600) {
         document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
+
+    // --- SALVAR NO HISTÓRICO ---
+    if (typeof window.salvarCalculo === 'function') {
+        let resumo = "";
+        if (delta > 0) resumo = `x' = ${valX1.innerText} | x'' = ${valX2.innerText}`;
+        else if (delta === 0) resumo = `x = ${valX1.innerText}`;
+        else resumo = `Complexas: ${valX1.innerText}`;
+
+        window.salvarCalculo(
+            'Calculadora de Bhaskara',
+            `${a}x² + ${b}x + ${c} = 0`,
+            `Delta: ${deltaStr} | ${resumo}`
+        );
+    }
 }
 
 // Inicializar visual

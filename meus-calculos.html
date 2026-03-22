@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Veja seu histórico de cálculos e calculadoras favoritas no Portal das Contas. Acompanhe todos os seus cálculos em um só lugar.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="google-adsense-account" content="ca-pub-7285637994208303">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STVR24Q61S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-STVR24Q61S');
+    </script>
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meus-calculos.css">
+    <link rel="stylesheet" href="css/pagefind.css">
+
+    <!-- Header dinâmico -->
+    <script type="module" src="/js/pagefind.js"></script>
+    <script type="module" src="/js/gerar-header.js"></script>
+
+    <title>Meus Cálculos | Portal das Contas</title>
+</head>
+
+<body data-theme="light">
+    <div id="header-container"></div>
+
+    <main>
+        <div class="dashboard-container">
+            <h1>📋 Meus Cálculos</h1>
+            <p class="dashboard-subtitle">Seu histórico de cálculos e calculadoras favoritas salvos localmente.</p>
+
+            <!-- Seção 1 — Últimos Cálculos -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>🕒 Últimos Cálculos</h2>
+                    <button class="btn-acao" id="btn-limpar-historico" title="Limpar todo o histórico">
+                        🗑 Limpar histórico
+                    </button>
+                </div>
+                <div id="historico-lista" class="historico-lista">
+                    <!-- Preenchido via JS -->
+                </div>
+            </div>
+
+            <!-- Seção 2 — Calculadoras Favoritas -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>⭐ Calculadoras Favoritas</h2>
+                </div>
+                <div id="favoritos-lista" class="favoritos-grid">
+                    <!-- Preenchido via JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/js/gerar-footer.js"></script>
+
+    <!-- Scripts -->
+    <script src="js/usuario.js"></script>
+    <script>
+        /**
+         * Dashboard — Meus Cálculos
+         * Renderiza o histórico e os favoritos salvos no localStorage.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarHistorico();
+            renderizarFavoritos();
+            configurarBotaoLimpar();
+        });
+
+        /** Renderiza a lista de últimos cálculos */
+        function renderizarHistorico() {
+            const container = document.getElementById('historico-lista');
+            const historico = window.obterHistorico();
+
+            if (historico.length === 0) {
+                container.innerHTML = `
+                    <div class="estado-vazio">
+                        <div class="estado-vazio-icon">📊</div>
+                        <p>Nenhum cálculo salvo ainda.<br>
+                        Use qualquer <a href="/">calculadora do site</a> e seu resultado aparecerá aqui automaticamente.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = historico.map(item => `
+                <div class="historico-item">
+                    <div class="historico-icon">🧮</div>
+                    <div class="historico-info">
+                        <div class="historico-nome">${escapeHtml(item.calculadora)}</div>
+                        <div class="historico-valores">${escapeHtml(item.valores)}</div>
+                        <div class="historico-resultado">${escapeHtml(item.resultado)}</div>
+                        <div class="historico-data">📅 ${escapeHtml(item.data)}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /** Renderiza a grade de favoritos */
+        function renderizarFavoritos() {
+            const container = document.getElementById('favoritos-lista');
+            const favoritos = window.listarFavoritos();
+
+            if (favoritos.length === 0) {
+                container.innerHTML = `
+                    <div class="estado-vazio" style="grid-column: 1 / -1;">
+                        <div class="estado-vazio-icon">⭐</div>
+                        <p>Nenhuma calculadora favoritada.<br>
+                        Clique no botão ☆ dentro de qualquer calculadora para salvá-la aqui.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = favoritos.map(fav => `
+                <div class="favorito-card">
+                    <span class="favorito-star">★</span>
+                    <a href="${escapeHtml(fav.url)}" class="favorito-nome">${escapeHtml(fav.nome)}</a>
+                    <button class="favorito-remover" data-url="${escapeHtml(fav.url)}" title="Remover favorito">❌</button>
+                </div>
+            `).join('');
+
+            // Listeners para remover
+            container.querySelectorAll('.favorito-remover').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const url = btn.getAttribute('data-url');
+                    window.removerFavorito(url);
+                    renderizarFavoritos(); // Re-renderiza
+                });
+            });
+        }
+
+        /** Configura o botão de limpar histórico */
+        function configurarBotaoLimpar() {
+            const btn = document.getElementById('btn-limpar-historico');
+            btn.addEventListener('click', () => {
+                if (confirm('Tem certeza que deseja limpar todo o histórico de cálculos?')) {
+                    window.limparHistorico();
+                    renderizarHistorico();
+                }
+            });
+        }
+
+        /** Escapa HTML para evitar XSS */
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+
+</html>

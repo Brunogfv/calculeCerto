@@ -27,11 +27,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/juros.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Dividendos e Proventos Online | Portal das Contas</title>
 
@@ -48,6 +49,7 @@
                     <h1>Calculadora de Dividendos</h1>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Simule seus ganhos passivos com Ações e FIIs.
                     </p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Dividendos" data-url="/calculadoras/dividendos.html"></div>
                 </div>
 
                 <section class="intro-seo" style="margin-bottom:30px;">
@@ -334,6 +336,15 @@
 
             // 5. Atualizar Gráfico
             atualizarGrafico(capitalInvestido, rendimentoAnual);
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de Dividendos',
+                    `Investido: R$ ${precoInput} x ${qtd} | DY: ${dy}%`,
+                    `Anual: ${formatarParaBRL(rendimentoAnual)} | Mensal: ${formatarParaBRL(rendimentoMensal)}`
+                );
+            }
         }
 
         function limparCampos() {

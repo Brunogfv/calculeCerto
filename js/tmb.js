@@ -73,4 +73,13 @@ function calcularTMB() {
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // --- SALVAR NO HISTÓRICO (Sistema Local) ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de TMB',
+            `Idade: ${idade} | Peso: ${peso}kg | Atividade: ${fatorAtividade}`,
+            `TMB: ${Math.round(tmb)} kcal | Manter: ${Math.round(caloriasManter)} kcal`
+        );
+    }
 }

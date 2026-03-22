@@ -158,18 +158,21 @@ function alternarTema() {
 
     if (currentTheme === 'light') {
         body.setAttribute('data-theme', 'dark');
-        themeIcon.textContent = '☀️';
+        if (themeIcon) themeIcon.textContent = '☀️';
         localStorage.setItem('theme', 'dark');
     } else {
         body.setAttribute('data-theme', 'light');
-        themeIcon.textContent = '🌙';
+        if (themeIcon) themeIcon.textContent = '🌙';
         localStorage.setItem('theme', 'light');
     }
 }
 
 if (localStorage.getItem('theme')) {
     document.body.setAttribute('data-theme', localStorage.getItem('theme'));
-    document.getElementById('theme-icon').textContent = localStorage.getItem('theme') === 'light' ? '🌙' : '☀️';
+    const themeIcon = document.getElementById('theme-icon');
+    if (themeIcon) {
+        themeIcon.textContent = localStorage.getItem('theme') === 'light' ? '🌙' : '☀️';
+    }
 }
 
 function toggleMenu() {
@@ -188,10 +191,13 @@ function normalizarNumero(valorTexto) {
 
 function formatarMoeda(input) {
     let valor = input.value.replace(/\D/g, "");
-    valor = (valor / 100).toFixed(2) + "";
-    valor = valor.replace(".", ",");
-    valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
-    input.value = valor;
+    if (valor === "") return;
+
+    // Converte para número e formata com separadores de milhar e decimal
+    // Se o valor for muito pequeno (menos de 3 dígitos), formata como centavos
+    // Se for maior, mantém a lógica de máscara financeira padrão
+    valor = (valor / 100).toFixed(2);
+    input.value = valor.replace(".", ",").replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
 }
 
 const formatadorBRL = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -238,6 +244,14 @@ function calcularJuros() {
 
     // Gerar Comparador
     calcularComparador(capital, tempo);
+
+    // Salvar no Histórico (Sistema Local)
+    const valoresSalvar = `Cap: ${formatadorBRL.format(capital)} | Tax: ${taxa}% (${tipo === 'simples' ? 'Sim' : 'Com'}) | Tmp: ${tempo} m`;
+    const resultadoSalvar = `Final: ${formatadorBRL.format(montante)}`;
+
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo('Calculadora de Juros', valoresSalvar, resultadoSalvar);
+    }
 
     // Scroll suave
     if (window.innerWidth < 600) {

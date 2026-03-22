@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Nota para Passar | Portal das Contas</title>
 
@@ -96,6 +97,7 @@
                     <h2>Calculadora de Nota para Passar</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Descubra quanto precisa tirar no exame final.
                     </p>
+                    <div id="btn-favorito-container" data-nome="Nota para Passar" data-url="/calculadoras/media-final.html"></div>
                 </div>
 
                 <!-- Inputs Principais -->
@@ -349,6 +351,15 @@
 
             explicacao.innerText = textoExplicacao;
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Nota para Passar',
+                    `Média Atual: ${mediaAtual} | Meta: ${mediaMeta}`,
+                    `Nota Necessária: ${notaNecessaria}`
+                );
+            }
 
             // Scroll suave
             if (window.innerWidth < 600) {

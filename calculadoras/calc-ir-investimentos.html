@@ -27,10 +27,11 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/juros.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de IR sobre Investimentos (Renda Fixa e Variável) | Portal das Contas</title>
 
@@ -46,6 +47,7 @@
                     <h1>Calculadora de IR sobre Investimentos</h1>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Calcule o imposto sobre lucros da Renda Fixa e
                         Variável.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de IR Investimentos" data-url="/calculadoras/calc-ir-investimentos.html"></div>
                 </div>
 
                 <section class="intro-seo" style="margin-bottom:30px;">
@@ -387,6 +389,15 @@
 
             // 5. Atualizar Gráfico
             atualizarGrafico(lucroLiquido, valorImposto);
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de IR Investimentos',
+                    `Lucro Bruto: R$ ${lucroBrutoInput} | Tipo: ${tipoInvestimento} | Prazo: ${prazoDias} dias`,
+                    `Líquido: ${formatarParaBRL(lucroLiquido)} | Imposto: ${formatarParaBRL(valorImposto)} (${(aliquota * 100).toFixed(1)}%)`
+                );
+            }
         }
 
         function limparCampos() {

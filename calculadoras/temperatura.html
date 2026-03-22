@@ -25,11 +25,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/temperatura.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Conversor de Temperatura | Portal das Contas</title>
 
@@ -43,8 +44,9 @@
         <div class="calculator-wrapper">
             <div class="calc-card">
                 <div class="calc-header">
-                    <h2>Conversor de Temperatura</h2>
-                    <p style="color: var(--cor-texto-suave); margin: 0;">Converta Celsius, Fahrenheit e Kelvin.</p>
+                    <h2>Calculadora de Temperatura</h2>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Converta graus Celsius, Fahrenheit e Kelvin.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Temperatura" data-url="/calculadoras/temperatura.html"></div>
                 </div>
 
                 <div class="input-group">
@@ -227,6 +229,8 @@
 
     <!-- FOOTER REMOVIDO POIS VEM DO HEADER DINAMICO -->
 
+    <script src="../js/temperatura.js"></script>
+    <script src="../js/ads.js"></script>
     <script>
         if (typeof carregarAnuncio === 'function') carregarAnuncio('temperatura');
     </script>

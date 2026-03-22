@@ -27,11 +27,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/juros.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de CDB Online e Renda Fixa | Portal das Contas</title>
 </head>
@@ -46,6 +47,7 @@
                     <h1>Calculadora de CDB</h1>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Simule a rentabilidade da sua Renda Fixa com
                         IR.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de CDB" data-url="/calculadoras/calc-cdb.html"></div>
                 </div>
 
                 <section class="intro-seo" style="margin-bottom:30px;">
@@ -393,6 +395,15 @@
 
             // 5. Atualizar Gráfico
             atualizarGrafico(valorInvestido, lucroBruto, valorImposto);
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de CDB',
+                    `Investido: R$ ${valorInvestidoInput} | Prazo: ${prazoMeses} meses | Taxa: ${percCDB}% do CDI`,
+                    `Líquido: ${formatarParaBRL(montanteLiquido)} | Lucro: ${formatarParaBRL(lucroLiquido)}`
+                );
+            }
         }
 
         function limparCampos() {

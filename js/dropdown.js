@@ -1,8 +1,2 @@
-// --- FUNÇÃO PARA DROPDOWN MOBILE ---
-function toggleMobileDropdown(element) {
-    // Se estiver em tela pequena (mobile)
-    if (window.innerWidth <= 768) {
-        const menu = element.nextElementSibling; // O .dropdown-menu
-        menu.classList.toggle('mobile-open');
-    }
-}
+// dropdow.js - Este arquivo foi desativado. 
+// A lógica de dropdown mobile foi centralizada em gerar-header.js para garantir consistência.

@@ -27,9 +27,10 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/juros.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
 </head>
 
@@ -43,6 +44,7 @@
                     <h1>Calculadora de Tesouro Direto</h1>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Simule seus títulos públicos com taxa de
                         custódia e IR.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Tesouro Direto" data-url="/calculadoras/calc-tesouro-direto.html"></div>
                 </div>
 
                 <section class="intro-seo" style="margin-bottom:30px;">
@@ -333,6 +335,15 @@
 
             // 5. Atualizar Gráfico
             atualizarGrafico(capitalInicial, lucroLiquido, valorIR, valorCustodia);
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de Tesouro Direto',
+                    `Investido: R$ ${capitalInicialInput} | Prazo: ${anos} anos | Taxa: ${taxaAnual}% a.a.`,
+                    `Líquido: ${formatarParaBRL(valorLiquido)} | Lucro: ${formatarParaBRL(lucroLiquido)}`
+                );
+            }
         }
 
         function limparCampos() {

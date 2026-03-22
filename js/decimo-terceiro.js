@@ -74,33 +74,31 @@ const formatadorBRL = new Intl.NumberFormat('pt-BR', {
 });
 
 function calcularDecimoTerceiro() {
-    const salarioInput = document.getElementById("salario").value;
-    const mesesInput = document.getElementById("meses").value;
-    const resultBox = document.getElementById("resultado-juros");
+    const salarioInput = document.getElementById("salario-bruto").value;
+    const mesesInput = document.getElementById("meses-trabalhados").value;
+    const resultBox = document.getElementById("resultado-area");
 
     // Elementos de saída
-    const elLiquido = document.getElementById("valor-liquido");
-    const elBruto = document.getElementById("valor-bruto");
-    const elInss = document.getElementById("valor-inss");
-    const elP1 = document.getElementById("valor-parcela1");
-    const elP2 = document.getElementById("valor-parcela2");
+    const elLiquido = document.getElementById("res-liquido");
+    const elBruto = document.getElementById("res-bruto");
+    const elInss = document.getElementById("res-inss");
+    const elP1 = document.getElementById("res-parcela1");
+    const elP2 = document.getElementById("res-parcela2");
 
     const salario = normalizarNumero(salarioInput);
     const meses = parseInt(mesesInput);
 
     // Validação
     if (isNaN(salario) || salario <= 0 || isNaN(meses)) {
-        // Pequena animação de erro (opcional, apenas mostra)
         alert("Por favor, preencha o salário corretamente.");
         return;
     }
 
-    // Cálculos (Mantendo sua lógica original de 8% INSS)
+    // Cálculos
     const decimoBruto = (salario / 12) * meses;
     const primeiraParcela = decimoBruto / 2;
 
     // Estimativa simples de INSS (8% sobre o total do 13º)
-    // Nota: O INSS real é progressivo, mas mantendo simplificado conforme seu código original
     const inss = decimoBruto * 0.08;
 
     const segundaParcela = decimoBruto - primeiraParcela - inss;
@@ -115,6 +113,15 @@ function calcularDecimoTerceiro() {
     elP1.textContent = formatadorBRL.format(primeiraParcela);
     elP2.textContent = formatadorBRL.format(segundaParcela);
     elLiquido.textContent = formatadorBRL.format(totalLiquido);
+
+    // --- SALVAR NO HISTÓRICO (Sistema Local) ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de 13º Salário',
+            `Salário: ${formatadorBRL.format(salario)} | Meses: ${meses}`,
+            `Líquido: ${formatadorBRL.format(totalLiquido)} (P1: ${formatadorBRL.format(primeiraParcela)} | P2: ${formatadorBRL.format(segundaParcela)})`
+        );
+    }
 }
 
 function limparCampos() {

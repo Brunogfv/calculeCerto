@@ -75,4 +75,13 @@ function calcularDiferenca() {
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // --- SALVAR NO HISTÓRICO ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de Datas',
+            `De: ${inicioVal} Até: ${fimVal}`,
+            `Diferença: ${diffDays} Dias (${textoBreakdown})`
+        );
+    }
 }

@@ -95,4 +95,13 @@ function calcularHoraExtra() {
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // --- SALVAR NO HISTÓRICO (Sistema Local) ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de Hora Extra',
+            `Salário: ${formatadorBRL.format(salario)} | Horas: ${horasExtra} (${percentual}%)`,
+            `Total Extra: ${formatadorBRL.format(totalExtra)}`
+        );
+    }
 }

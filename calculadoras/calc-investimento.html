@@ -27,9 +27,10 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/juros.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
 </head>
 
@@ -43,6 +44,7 @@
                     <h1>Calculadora de Investimentos</h1>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Simule o futuro do seu patrimônio com juros
                         compostos.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Investimentos" data-url="/calculadoras/calc-investimento.html"></div>
                 </div>
 
                 <section class="intro-seo" style="margin-bottom:30px;">
@@ -359,6 +361,15 @@
 
             // 5. Atualizar Gráfico
             atualizarGrafico(totalInvestido, totalJuros);
+
+            // 6. Salvar no Histórico
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de Investimentos',
+                    `Inic: R$ ${capitalInicial.toLocaleString('pt-BR')} | Aporte: R$ ${aporteMensal.toLocaleString('pt-BR')} | ${taxaAnual}% aa`,
+                    `Total: ${formatarParaBRL(totalAcumulado)}`
+                );
+            }
         }
 
         function limparCampos() {

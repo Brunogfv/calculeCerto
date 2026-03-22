@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Consumo de Energia | Portal das Contas</title>
 
@@ -103,6 +104,7 @@
                     <h2>Calculadora de Consumo de Energia</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Calcule o custo (R$) e consumo (kWh) de
                         eletrodomésticos.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Energia" data-url="/calculadoras/energia.html"></div>
                 </div>
 
                 <!-- Seleção de Aparelho -->
@@ -364,6 +366,16 @@
             // Scroll
             if (window.innerWidth < 600) {
                 document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                const appliance = document.getElementById('appliance-select').selectedOptions[0].text;
+                window.salvarCalculo(
+                    'Calculadora de Energia',
+                    `${appliance || 'Aparelho'} | Potência: ${potencia}W | Uso: ${horasDia}h/dia`,
+                    `Custo: ${custoMensal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} | Consumo: ${consumoMensalkWh.toFixed(2)}kWh`
+                );
             }
         }
     </script>

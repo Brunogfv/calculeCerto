@@ -44,12 +44,4 @@ if (savedTheme) {
     document.getElementById('theme-icon').textContent = savedTheme === 'light' ? '🌙' : '☀️';
 }
 
-// --- LÓGICA DO MENU MOBILE ---
-function toggleMenu() {
-    const menu = document.getElementById('nav-menu');
-    const overlay = document.querySelector('.overlay');
-
-    // Alterna a classe 'active'
-    menu.classList.toggle('active');
-    overlay.classList.toggle('active');
-}
+// --- LÓGICA DO MENU MOBILE FOI MOVIDA PARA gerar-header.js ---

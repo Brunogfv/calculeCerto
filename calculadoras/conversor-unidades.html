@@ -26,9 +26,10 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Conversor de Unidades | Portal das Contas</title>
 
@@ -156,8 +157,8 @@
             <div class="calc-card">
                 <div class="calc-header">
                     <h2>Conversor de Unidades</h2>
-                    <p style="color: var(--cor-texto-suave); margin: 0;">Converta medidas de comprimento, peso e volume.
-                    </p>
+                    <p style="color: var(--cor-texto-suave); margin: 0;">Converta medidas de comprimento, peso e volume.</p>
+                    <div id="btn-favorito-container" data-nome="Conversor de Unidades" data-url="/calculadoras/conversor-unidades.html"></div>
                 </div>
 
                 <!-- Abas -->
@@ -429,23 +430,26 @@
                     // Converter Valor 1 -> Base -> Valor 2
                     const valorEmBase = val1 * fator1;
                     const resultado = valorEmBase / fator2;
-                    document.getElementById('input-2').value = parseFloat(resultado.toFixed(4));
-                    updateFormula(val1, u1, resultado, u2);
-                } else {
-                    document.getElementById('input-2').value = '';
-                    document.getElementById('formula-display').innerText = '';
-                }
-            } else {
-                // Input 2 mudou -> Atualiza Input 1
-                if (!isNaN(val2)) {
-                    const valorEmBase = val2 * fator2;
-                    const resultado = valorEmBase / fator1;
                     document.getElementById('input-1').value = parseFloat(resultado.toFixed(4));
                     updateFormula(resultado, u1, val2, u2);
                 } else {
                     document.getElementById('input-1').value = '';
                     document.getElementById('formula-display').innerText = '';
                 }
+            }
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                const v1 = document.getElementById('input-1').value;
+                const v2 = document.getElementById('input-2').value;
+                const u1_name = unidadesObj[u1].nome.split('(')[0].trim();
+                const u2_name = unidadesObj[u2].nome.split('(')[0].trim();
+                
+                window.salvarCalculo(
+                    'Conversor de Unidades',
+                    `${categoriaAtual.toUpperCase()}: ${v1} ${u1_name}`,
+                    `Equivale a ${v2} ${u2_name}`
+                );
             }
         }
 

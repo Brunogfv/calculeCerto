@@ -27,11 +27,12 @@
     <link rel="stylesheet" href="../css/style.css">
     <!-- Usando o medias.css como base, mas adicionaremos estilos específicos abaixo se necessário -->
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Regra de Três | Portal das Contas</title>
 
@@ -148,6 +149,7 @@
                     <h2>Calculadora de Regra de Três</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Descubra o valor X em proporções diretas ou
                         inversas.</p>
+                    <div id="btn-favorito-container" data-nome="Regra de Três" data-url="/calculadoras/regra-de-tres.html"></div>
                 </div>
 
                 <!-- Seleção do Tipo -->
@@ -388,6 +390,15 @@
             document.getElementById('passo-a-passo').innerHTML = `${explicacao} <br> = <strong>${resultadoFormatado}</strong>`;
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Regra de Três',
+                    `${tipoAtual.toUpperCase()} | A:${a}, B:${b}, C:${c}`,
+                    `X = ${resultadoFormatado}`
+                );
+            }
 
             // Scroll suave para o resultado em mobile
             if (window.innerWidth < 600) {

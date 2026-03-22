@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de MMC e MDC | Portal das Contas</title>
 
@@ -110,6 +111,7 @@
                     <h2>Calculadora de MMC e MDC</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Encontre o Mínimo Múltiplo e o Máximo Divisor
                         de forma rápida.</p>
+                    <div id="btn-favorito-container" data-nome="MMC e MDC" data-url="/calculadoras/mmc-mdc.html"></div>
                 </div>
 
                 <!-- Lista de Números -->
@@ -382,6 +384,15 @@
             `;
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'MMC e MDC',
+                    `Números: ${numeros.join(', ')}`,
+                    `MMC: ${mmcAtual} | MDC: ${mdcAtual}`
+                );
+            }
 
             // Scroll
             if (window.innerWidth < 600) {

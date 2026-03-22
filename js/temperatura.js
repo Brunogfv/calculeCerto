@@ -64,4 +64,14 @@ function converterTemperatura() {
     document.getElementById("val-c").textContent = c.toFixed(1).replace(".", ",") + "°C";
     document.getElementById("val-f").textContent = f.toFixed(1).replace(".", ",") + "°F";
     document.getElementById("val-k").textContent = k.toFixed(1).replace(".", ",") + "K";
+
+    // --- SALVAR NO HISTÓRICO ---
+    if (typeof window.salvarCalculo === 'function') {
+        const labels = { 'C': 'Celsius', 'F': 'Fahrenheit', 'K': 'Kelvin' };
+        window.salvarCalculo(
+            'Calculadora de Temperatura',
+            `Entrada: ${valor}${unidade}`,
+            `Resultados: ${c.toFixed(1)}°C | ${f.toFixed(1)}°F | ${k.toFixed(1)}K`
+        );
+    }
 }

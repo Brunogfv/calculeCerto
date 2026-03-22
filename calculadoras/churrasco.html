@@ -26,9 +26,10 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Churrasco | Portal das Contas</title>
 
@@ -135,6 +136,7 @@
                 <div class="calc-header">
                     <h2>Calculadora de Churrasco</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Quantidade certa de carne, bebida e carvão.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Churrasco" data-url="/calculadoras/churrasco.html"></div>
                 </div>
 
                 <!-- Inputs de Pessoas -->
@@ -402,6 +404,15 @@
             // Scroll
             if (window.innerWidth < 600) {
                 document.getElementById('resultado-area').scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de Churrasco',
+                    `H: ${h} | M: ${m} | C: ${c} (Total: ${totalPessoas})`,
+                    `Carne: ${totalCarne.toFixed(1)}kg | Bebidas: ${cervejas} latas, ${garrafasRefri}x2L`
+                );
             }
         }
     </script>

@@ -26,11 +26,12 @@
     <!-- Estilos Globais -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/medias.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="../css/meus-calculos.css">
+    <link rel="stylesheet" href="../css/pagefind.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/pagefind.js"></script>
-    <script type="module" src="/js/gerar-header.js"></script>
+    <script type="module" src="../js/pagefind.js"></script>
+    <script type="module" src="../js/gerar-header.js"></script>
 
     <title>Calculadora de Força (2ª Lei de Newton) | Portal das Contas</title>
 
@@ -116,6 +117,7 @@
                 <div class="calc-header">
                     <h2>Calculadora de Força (2ª Lei de Newton)</h2>
                     <p style="color: var(--cor-texto-suave); margin: 0;">Calcule Força, Massa ou Aceleração.</p>
+                    <div id="btn-favorito-container" data-nome="Calculadora de Força" data-url="/calculadoras/forca.html"></div>
                 </div>
 
                 <!-- Seleção do que calcular -->
@@ -398,6 +400,15 @@
             passoPasso.innerHTML = textoCalculo;
 
             document.getElementById('resultado-area').style.display = 'block';
+
+            // --- SALVAR NO HISTÓRICO ---
+            if (typeof window.salvarCalculo === 'function') {
+                window.salvarCalculo(
+                    'Calculadora de Força',
+                    `Modo: ${modoAtual} | Dados: ${val1} & ${val2}`,
+                    `Resultado: ${resultadoFormatado} ${unidade}`
+                );
+            }
 
             // Scroll
             if (window.innerWidth < 600) {

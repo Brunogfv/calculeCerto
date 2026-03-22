@@ -113,4 +113,13 @@ function calcularCimento() {
     if (window.innerWidth < 600) {
         resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // --- SALVAR NO HISTÓRICO ---
+    if (typeof window.salvarCalculo === 'function') {
+        window.salvarCalculo(
+            'Calculadora de Cimento',
+            `${tipoAtual.toUpperCase()} | Área: ${comp}x${larg}m | Altura: ${alt}${tipoAtual === 'contrapiso' ? 'cm' : 'm'}`,
+            `Cimento: ${sacos} sacos | Areia: ${areia.toFixed(2)}m³ ${tipoAtual === 'concreto' ? '| Brita: ' + brita.toFixed(2) + 'm³' : ''}`
+        );
+    }
 }
