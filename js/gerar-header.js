@@ -170,6 +170,11 @@ function injectGlobalScripts() {
     const scAutoFav = document.createElement('script');
     scAutoFav.src = siteUrl('js/favoritos-auto.js');
     document.head.appendChild(scAutoFav);
+
+    // [SEO] Carrega o auxiliar de SEO (Canonical, Robots, etc)
+    const scSeo = document.createElement('script');
+    scSeo.src = siteUrl('js/seo-helper.js');
+    document.head.appendChild(scSeo);
 }
 
 function injectHeader() {
