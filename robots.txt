@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /busca.html
-Disallow: /*?q=
-Disallow: /*&q=
 
 Sitemap: https://portaldascontas.com.br/sitemap.xml

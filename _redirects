@@ -1,0 +1,23 @@
+# Redirects for Portal das Contas
+# Format: [Source] [Destination] [Status Code]
+
+# Remove index.html
+/index.html / 301
+
+# Force Non-WWW (Cloudflare usually handles this at DNS/Page Rules, but good to have)
+# Note: _redirects only works for the domains attached to the Pages project.
+# To handle www -> non-www, you must attach both domains to the project.
+
+# Remove .html extension (Cloudflare Pages Clean URLs handles this, but explicit is better)
+/artigos/financas/quanto-rende-10000-no-tesouro-selic.html /artigos/calculaveis/quanto-rende-10000-tesouro-selic 301
+/calculadoras/salario.html /calculadoras/salario 301
+
+# Fix specific path mismatches reported by the user
+/artigos/financas/quanto-rende-10000-no-tesouro-selic /artigos/calculaveis/quanto-rende-10000-tesouro-selic 301
+/artigos/saude/calculadoras/salario /calculadoras/salario 301
+/artigos/saude/calculadoras/tmb /calculadoras/tmb 301
+/artigos/saude/calculadoras/decimo-terceiro /calculadoras/decimo-terceiro 301
+/artigos/saude/calculadoras/piso /calculadoras/piso 301
+
+# General rules for stripping .html (Can be complex in _redirects without regex)
+# Cloudflare Pages Automatic "Clean URLs" is the best way to handle the .html strip.
