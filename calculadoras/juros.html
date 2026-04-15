@@ -45,6 +45,31 @@
 
     <main>
         <div class="calculator-wrapper">
+
+            <!-- BLOCO SUPERIOR: Introdução editorial -->
+            <div class="info-content" style="margin-bottom: 35px;">
+                <h2 style="font-size: 1.5rem; color: var(--cor-texto); margin-bottom: 16px;">Por que entender juros compostos muda tudo</h2>
+
+                <p style="color: var(--cor-texto-suave); line-height: 1.75; margin-bottom: 14px;">
+                    Há dois mundos completamente diferentes quando se fala de juros: o <strong>juros simples</strong>,
+                    que cresce de forma linear, e os <strong>juros compostos</strong>, que crescem de forma
+                    exponencial. Um exemplo concreto deixa essa diferença clara: imagine R$ 1.000 aplicados a uma
+                    taxa de <strong>10% ao ano por 10 anos</strong>. Com juros simples, os rendimentos são sempre
+                    calculados sobre o valor original — R$ 100 por ano — totalizando <strong>R$ 2.000</strong> ao final.
+                    Com juros compostos, cada ano os rendimentos são calculados sobre o montante acumulado, resultando
+                    em <strong>R$ 2.594</strong> — quase R$ 600 a mais, só pela reinção dos juros sobre juros.
+                </p>
+
+                <p style="color: var(--cor-texto-suave); line-height: 1.75; margin-bottom: 0;">
+                    Essa diferença parece pequena no curto prazo, mas se torna um abismo em períodos maiores.
+                    Entender esse mecanismo é o primeiro passo para tomar decisões financeiras mais inteligentes,
+                    seja para fazer seu dinheiro crescer por meio de investimentos, seja para evitar que dívidas
+                    fora de controle consumam sua renda. A calculadora abaixo faz esse cálculo automaticamente:
+                    basta informar o capital, a taxa e o período para ver o impacto real dos juros compostos
+                    no seu bolso.
+                </p>
+            </div>
+
             <div class="calc-card">
                 <div class="calc-header">
                     <h1>Calculadora de Juros</h1>
@@ -237,6 +262,87 @@
                     </p>
                 </details>
             </section>
+
+            <!-- BLOCO INFERIOR: Conteúdo educativo aprofundado -->
+            <div class="info-content" style="margin-top: 40px;">
+
+                <!-- SEÇÃO 1: Quando os juros trabalham a seu favor -->
+                <section aria-labelledby="juros-a-favor" style="margin-bottom: 40px;">
+                    <h2 id="juros-a-favor" style="font-size: 1.5rem; color: var(--cor-texto); margin-bottom: 16px;">Quando os juros compostos trabalham a seu favor</h2>
+
+                    <p style="color: var(--cor-texto-suave); line-height: 1.75; margin-bottom: 14px;">
+                        Em investimentos de longo prazo, os juros compostos são o melhor amigo do investidor. O segredo
+                        está em <strong>reinvestir os rendimentos</strong> em vez de retirá-los: quando os juros
+                        gerados em cada período são somados ao capital e passam a render também, cria-se um efeito
+                        de bola de neve que acelera o crescimento ao longo do tempo. No Brasil, produtos de renda fixa
+                        como <strong>CDB</strong> (Certificado de Depósito Bancário), <strong>Tesouro Selic</strong>,
+                        <strong>LCI</strong> (Letra de Crédito Imobiliário) e <strong>LCA</strong> (Letra de Crédito
+                        do Agronegócio) funcionam exatamente com essa lógica, acumulando rendimentos dia a dia sobre
+                        o saldo atualizado da aplicação.
+                    </p>
+
+                    <p style="color: var(--cor-texto-suave); line-height: 1.75; margin-bottom: 14px;">
+                        Para sentir o poder do tempo aliado aos juros compostos, considere o seguinte exemplo:
+                        uma pessoa que investe <strong>R$ 500 por mês</strong> a uma taxa média de
+                        <strong>0,8% ao mês</strong> (equivalente a cerca de 10% ao ano) durante <strong>30
+                        anos</strong> acumula aproximadamente <strong>R$ 2,1 milhões</strong>, tendo contribuído
+                        nominalmente R$ 180.000. Ou seja, os juros são responsáveis por mais de 90% do patrimônio
+                        final. Essa é a razão pela qual especialistas em finanças pessoais enfatizam tanto a importância
+                        de começar a investir cedo: cada ano de atraso reduz drasticamente o montante final.
+                    </p>
+                </section>
+
+                <!-- SEÇÃO 2: Quando os juros trabalham contra você -->
+                <section aria-labelledby="juros-contra" style="margin-bottom: 40px;">
+                    <h2 id="juros-contra" style="font-size: 1.5rem; color: var(--cor-texto); margin-bottom: 16px;">Quando os juros compostos trabalham contra você</h2>
+
+                    <p style="color: var(--cor-texto-suave); line-height: 1.75; margin-bottom: 14px;">
+                        O mesmo mecanismo que enriquece investidores pode ser devastador quando aplicado a dívidas.
+                        O <strong>rotativo do cartão de crédito</strong> é o caso mais grave no Brasil: de acordo
+                        com dados do Banco Central, a taxa média do crédito rotativo ultrapassou <strong>15% ao
+                        mês</strong> em 2024 — uma das mais altas do mundo. Uma dívida de <strong>R$ 3.000</strong>
+                        no cartão, se nenhum pagamento for feito por <strong>6 meses</strong>, cresce para mais de
+                        <strong>R$ 6.900</strong> — mais do que o dobro do valor original, em apenas meio ano.
+                        Esse número não é ficientificação: é o resultado direto dos juros compostos mensais
+                        acumulados.
+                    </p>
+
+                    <p style="color: var(--cor-texto-suave); line-height: 1.75; margin-bottom: 14px;">
+                        O <strong>cheque especial</strong> é o segundo maior villão, com taxas que historicamente
+                        superam 10% ao mês na maioria dos bancos brasileiros. Ambos os produtos são armadilhas
+                        de liquidez: oferecem acesso imediato ao dinheiro, mas cobram um preço exponencialmente
+                        alto por isso. Sempre que possível, priorize quitar essas modalidades antes de investir,
+                        pois nenhum investimento convencional remunera a taxas sequer próximas das cobradas por
+                        esses créditos. Use a calculadora acima para simular quanto uma dívida cresce ao longo
+                        do tempo e visualizar por que a quitam representa o melhor “investimento” disponível.
+                    </p>
+                </section>
+
+                <!-- SEÇÃO 3: A Regra do 72 -->
+                <section aria-labelledby="regra-72" style="margin-bottom: 30px;">
+                    <h2 id="regra-72" style="font-size: 1.5rem; color: var(--cor-texto); margin-bottom: 16px;">A Regra do 72: calcule mentalmente em segundos</h2>
+
+                    <p style="color: var(--cor-texto-suave); line-height: 1.75; margin-bottom: 14px;">
+                        Existe um atalho mental simples e surpreendentemente preciso para estimar em quanto tempo
+                        um valor dobra com juros compostos: basta dividir <strong>72 pela taxa de juros por
+                        período</strong>. A um rendimento de <strong>6% ao ano</strong>, o dinheiro dobra em
+                        aproximadamente <strong>12 anos</strong> (72 ÷ 6 = 12). A <strong>12% ao mês</strong>
+                        — próximo ao rotativo do cartão — uma dívida dobra em apenas <strong>6 meses</strong>
+                        (72 ÷ 12 = 6). Já com a Selic em torno de 1% ao mês, um investimento dobra em cerca de
+                        6 anos. Essa regra ajuda a ter intuição rápida sobre o poder do tempo e da taxa — e
+                        é um recurso valioso tanto para quem investe quanto para quem precisa entender o perigo
+                        de uma dívida cara. <strong>Use a calculadora acima para simular</strong> diferentes
+                        combinatões de taxa e prazo e ver a Regra do 72 em ação.
+                    </p>
+                </section>
+
+                <!-- AVISO LEGAL -->
+                <p style="font-size: 12px; color: var(--cor-texto-suave); margin-top: 10px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    ⚠️ As simulações apresentadas são meramente educativas e não constituem recomendação de investimento.
+                    Consulte um profissional certificado antes de tomar decisões financeiras.
+                </p>
+
+            </div>
 
         </div>
     </main>
