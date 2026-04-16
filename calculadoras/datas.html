@@ -92,86 +92,82 @@
             <!-- Coluna de Conteúdo -->
             <div>
                 <aside class="info-card">
-                    <article>
-                        <h3>Planejamento com Precisão</h3>
-                        <p>
-                            Calcular datas exatas é essencial para o planejamento de projetos, prazos de entrega ou
-                            contagem regressiva para eventos importantes.
-                        </p>
 
-                        <!-- Dica -->
-                        <div class="tips-box">
-                            <h4>💡 Dica: Dias Úteis</h4>
-                            <p>
-                                Esta calculadora conta todos os dias (incluindo finais de semana). Para prazos de
-                                trabalho, lembre-se de descontar os sábados e domingos.
+                    <!-- SEÇÃO 1 — PARA QUE SERVE CALCULAR A DIFERENÇA ENTRE DATAS -->
+                    <article style="margin-top: 40px; padding: 40px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                        <h2 style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 25px;">Para que serve calcular a diferença entre datas</h2>
+                        
+                        <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 18px;">
+                            Calcular a diferença entre duas datas é necessário em muitas situações práticas do cotidiano. Para <strong>documentação pessoal</strong>, você precisa saber se seus documentos ainda são válidos: CNH (Carteira Nacional de Habilitação), passaporte, CRLV (Certificado de Registro e Licenciamento de Veículo). Para <strong>previdência social</strong>, o cálculo correto do tempo de contribuição é essencial para solicitar aposentadoria. Bancos e empresas de crédito usam essa contagem para calcular juros em financiamentos (alguns contratos diferenciam dias corridos de dias úteis, o que muda o valor final). Também é necessário em <strong>gestação</strong> (contam-se as semanas de gravidez para acompanhamento médico) e no <strong>aviso prévio trabalhista</strong> (a CLT especifica o número de dias corridos que o empregador ou empregado deve avisar).
+                        </p>
+                        
+                        <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 0;">
+                            Além disso, essa ferramenta é fundamental para <strong>verificar prazos de garantia</strong> de produtos e serviços que você compra. Eletrodomésticos costumam vir com 12 meses de garantia; sapatos, 30 dias; produtos eletrônicos, 1 ano. Se você sabe a data exata da compra e a data de hoje, consegue calcular rapidamente se ainda está dentro do prazo de garantia para reclamar com o fornecedor ou fabricante. O mesmo vale para <strong>prazos processuais</strong>: se você recebe uma notificação, precisa responder em dias específicos (geralmente 15 ou 30 dias), e contar errado pode prejudicar seus direitos.
+                        </p>
+                    </article>
+
+                    <!-- SEÇÃO 2 — DIAS CORRIDOS VS DIAS ÚTEIS -->
+                    <article style="margin-top: 40px; padding: 40px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                        <h2 style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 25px;">Dias corridos vs dias úteis: quando cada um é usado</h2>
+                        
+                        <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 18px;">
+                            <strong>Dias corridos</strong> contam todos os dias do calendário, sem exceção: segunda-feira, terça, quarta, quinta, sexta, sábado, domingo, feriados — tudo conta. Essa contagem é usada em <strong>aviso prévio trabalhista</strong> (30 dias corridos significa 4 semanas e 2 dias), <strong>prazos de pagamento de boletos</strong> quando especificado no contrato, e <strong>períodos de gestação</strong> (semanas de gravidez são calculadas em dias corridos).
+                        </p>
+                        
+                        <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 0;">
+                            <strong>Dias úteis</strong> contam apenas os dias de trabalho: segunda a sexta-feira, excluindo feriados nacionais, estaduais e municipais. Essa contagem é usada em <strong>prazos processuais</strong> (você tem 15 dias úteis para responder uma ação judicial), <strong>operações bancárias</strong> (uma transferência leva 1 dia útil), e <strong>prazos administrativos</strong> (governo leva de 5 a 15 dias úteis para processar documentos). No e-commerce, a maioria dos prazos de entrega é em dias úteis, mas sempre leia o contrato para ter certeza. A confusão entre essas duas contagens pode resultar em pagamentos com juros (se você pensa que tem 15 dias corridos e na verdade são 15 dias úteis) ou perda de prazos importantes.
+                        </p>
+                    </article>
+
+                    <!-- SEÇÃO 3 — COMO CALCULAR IDADE, TEMPO DE SERVIÇO E VENCIMENTO -->
+                    <article style="margin-top: 40px; padding: 40px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                        <h2 style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 25px;">Como calcular idade, tempo de serviço e vencimento de documentos</h2>
+                        
+                        <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 18px;">
+                            Para calcular a <strong>idade exata em anos, meses e dias</strong>, não basta fazer uma subtração simples dos anos. Você precisa verificar se o mês e o dia de nascimento já passaram no ano atual. Por exemplo, se você nasceu em 15 de junho de 2000 e estamos em 10 de abril de 2026, sua idade é <strong>25 anos, 9 meses e 26 dias</strong> — não foram completados 26 anos porque ainda faltam 2 meses para seu aniversário. Para <strong>tempo de serviço no INSS</strong>, a contagem é ainda mais rigorosa: conta-se em meses completos de contribuição. Se você contribuiu de janeiro a dezembro (12 meses completos), recebe crédito de um ano. Mas se contribuiu de janeiro a 15 de dezembro, só recebe 11 meses, porque o 12º mês não foi completo. Isso é crítico porque o tempo de contribuição determine se você pode se aposentar ou não.
+                        </p>
+                        
+                        <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 0;">
+                            Quanto ao <strong>vencimento de documentos como CNH (Carteira Nacional de Habilitação)</strong>, é importante entender que a renovação não deve ser deixada para última hora. A lei permite que você renove sua CNH dentro de <strong>30 dias antes do vencimento ou no próprio mês de vencimento</strong>. Se deixar passar dessa janela, sua carteira vence e você não pode mais dirigir. Além disso, dirigir com documento vencido gera multa pesada e acúmulo de pontos na carteira, o que pode levar à suspensão do direito de dirigir. Portanto, se sua CNH vence em 15 de junho, você pode começar a renovação a partir de 15 de maio. O mesmo princípio se aplica a passaportes, documentos de identidade e outros registros pessoais — sempre deixe uma margem de alguns dias para evitar transtornos.
+                        </p>
+                    </article>
+
+                    <!-- FAQ EXPANDIDA -->
+                    <article style="margin-top: 50px; padding: 50px 40px; background: #f8fafc; border-radius: 16px;">
+                        <h2 style="color: var(--cor-primaria); margin: 0 0 40px; font-size: 1.4rem;">Perguntas Frequentes sobre Cálculo de Datas</h2>
+
+                        <details class="fq" style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 4px solid var(--cor-primaria);">
+                            <summary>Feriados estaduais e municipais contam como dias não úteis?</summary>
+                            <p style="margin-top: 15px; font-size: 0.98rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                                Sim, mas com ressalvas. <strong>Feriados nacionais</strong> (como Natal, Ano Novo, Independência do Brasil) sem dúvida não contam como dias úteis em nenhuma situação. <strong>Feriados estaduais</strong> (como Zumbi dos Palmares em Alagoas ou Data Magna de Acrelândia no Acre) contam como dias não úteis nos órgãos públicos e empresas situadas naquele estado. <strong>Feriados municipais</strong> (como data de fundação da cidade) geralmente não são reconhecidos por bancos e órgãos federais, mas são reconhecidos pela prefeitura e órgãos municipais. Ao contar dias úteis para um prazo específico, sempre verifique qual instituição está envolvida (banco, tribunal, prefeitura) e consulte o calendário oficial dela.
                             </p>
-                        </div>
+                        </details>
 
-                        <h4>Como usar?</h4>
-                        <p style="font-size: 0.95rem;">
-                            Selecione a data inicial e a data final nos campos acima. O sistema calculará
-                            automaticamente o período entre elas, ajudando você a visualizar quanto tempo falta ou
-                            quanto tempo já passou.
+                        <details class="fq" style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 4px solid var(--cor-primaria);">
+                            <summary>Como calcular o prazo de prescrição de uma dívida?</summary>
+                            <p style="margin-top: 15px; font-size: 0.98rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                                A prescrição de uma dívida é o prazo máximo em que o credor pode processar o devedor na justiça. <strong>Dívidas comuns</strong> (como contas não pagas) prescrevem em <strong>5 anos</strong> no regime geral. <strong>Cheques pré-datados</strong> prescrevem em <strong>6 meses</strong> a partir da data do cheque. <strong>Notas promissórias</strong> prescrevem em <strong>3 anos</strong>. <strong>Dívidas com a Fazenda Pública</strong> (impostos, multas) prescrevem em <strong>5 anos</strong>. O cálculo começa a partir da data em que a dívida foi contraída ou da data marcada no documento (não do vencimento, mas da data original). Se a dívida foi registrada em nome de um menino de idade, o prazo pode ser suspenso. Procure um advogado para garantir que o cálculo está correto no seu caso específico.
+                            </p>
+                        </details>
+
+                        <details class="fq" style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 4px solid var(--cor-primaria);">
+                            <summary>Qual a diferença entre data de vencimento e data de pagamento?</summary>
+                            <p style="margin-top: 15px; font-size: 0.98rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                                <strong>Data de vencimento</strong> é a data-limite até a qual você tem que pagar sem sofrer consequências (juros, multa, ou ação judicial). Se você paga na data de vencimento, não há problema. Se pagar um dia depois, dependendo do contrato, podem incidir juros de mora (juros por atraso) e multa por inadimplência. <strong>Data de pagamento</strong> é a data em que você efetivamente faz o pagamento — que pode ser antes, na, ou depois da data de vencimento. Em operações bancárias, o pagamento pode levar 1-2 dias úteis para "cair" na conta de quem recebe. Por isso, é comum que você pague 2-3 dias úteis antes do vencimento para garantir que o dinheiro chegue no prazo. Boletos, por exemplo, têm uma data de vencimento impressa; se você pagar 1 dia depois dessa data, o banco vai recalcular os juros. Por isso é importante calcular corretamente quando fazer o pagamento.
+                            </p>
+                        </details>
+                    </article>
+
+                    <!-- CTA FINAL -->
+                    <article style="background: linear-gradient(135deg, var(--cor-primaria), #1e40af); padding: 50px 40px; border-radius: 16px; text-align: center; color: white; margin-top: 50px;">
+                        <h2 style="margin: 0 0 20px; font-size: 1.6rem;">Calcule suas datas com precisão</h2>
+                        <p style="opacity: 0.95; margin: 0 0 30px; font-size: 1.05rem; line-height: 1.7;">
+                            Use a calculadora acima para descobrir quantos dias, meses e anos separam duas datas. Perfeito para prazos, aniversários, planejamento de projetos e contagem de documentos vencidos.
                         </p>
+                        <a href="#data-inicio" style="background: white; color: var(--cor-primaria); padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; transition: all 0.3s; font-size: 1.05rem;">Ir para a Calculadora</a>
                     </article>
 
-                    <!-- Links Externos -->
-                    <div style="margin-top: 30px;">
-                        <h3 style="margin-bottom: 20px;">🔗 Calendários e Feriados</h3>
-                        <div class="link-grid">
-                            <!-- Link Calendário Brasil -->
-                            <a href="https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026"
-                                target="_blank" rel="nofollow noopener" class="link-card">
-                                <span class="link-icon">🇧🇷</span>
-                                <div>
-                                    <div class="link-title">Gov.br</div>
-                                    <div class="link-desc">Portal oficial e feriados nacionais.</div>
-                                </div>
-                            </a>
-
-                            <!-- Link Time and Date -->
-                            <a href="https://www.timeanddate.com/calendar/" target="_blank" rel="nofollow noopener"
-                                class="link-card">
-                                <span class="link-icon">🌍</span>
-                                <div>
-                                    <div class="link-title">Time and Date</div>
-                                    <div class="link-desc">Feriados mundiais e calculadoras de fuso horário.</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- FAQ -->
-                    <article style="margin-top: 30px;">
-                        <h3>Dúvidas Frequentes</h3>
-                        <div class="faq-item">
-                            <details>
-                                <summary>A contagem inclui os dias de início e fim?</summary>
-                                <p>Sim, a contagem é inclusiva. Se você seleciona o dia 1 e o dia 3, a diferença será de
-                                    3 dias (1, 2 e 3).</p>
-                            </details>
-                        </div>
-                        <div class="faq-item">
-                            <details>
-                                <summary>Funciona para datas passadas?</summary>
-                                <p>Sim! Você pode colocar uma data de início no passado e a data final hoje para saber
-                                    quantos dias se passaram desde um evento.</p>
-                            </details>
-                        </div>
-                    </article>
                 </aside>
-
-                <!-- <div class="info-card">
-                    <h3>💡 Para que serve?</h3>
-                    <ul style="padding-left: 20px; line-height: 1.8; color: var(--cor-texto-suave);">
-                        <li><strong>Contagem Regressiva:</strong> "Quantos dias faltam para as férias?" ou "Quando é meu
-                            aniversário?".</li>
-                        <li><strong>Aniversário de Namoro/Casamento:</strong> Insira a data do evento e a data de hoje
-                            para saber quantos anos completos.</li>
-                        <li><strong>Projetos:</strong> Calcular a duração de uma obra ou plano de ação.</li>
-                    </ul>
-                </div> -->
             </div>
         </div>
     </main>

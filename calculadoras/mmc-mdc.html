@@ -174,81 +174,79 @@
 
             <!-- Conteúdo Educativo / SEO -->
             <aside class="info-card">
-                <article>
-                    <h3>O que são MMC e MDC?</h3>
-                    <p>
-                        O <strong>MMC</strong> (Mínimo Múltiplo Comum) é o menor número positivo que é múltiplo de dois
-                        ou mais números. Ele é muito usado para somar frações com denominadores diferentes.
+
+                <!-- SEÇÃO 1 — O QUE É MMC E MDC -->
+                <article style="margin-top: 40px; padding: 40px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <h2 style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 25px;">O que é MMC e MDC e para que servem</h2>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 18px;">
+                        O <strong>MMC (Mínimo Múltiplo Comum)</strong> é o menor número positivo que é múltiplo de dois ou mais números ao mesmo tempo. Um múltiplo é um número que você obtém multiplicando outro por um inteiro. Por exemplo, os múltiplos de 4 são 4, 8, 12, 16, 20... e os múltiplos de 6 são 6, 12, 18, 24... O primeiro número que aparece em ambas as listas é 12, portanto <strong>MMC(4, 6) = 12</strong>. O <strong>MDC (Máximo Divisor Comum)</strong> é o maior número que divide dois ou mais números sem deixar resto (sem sobra). Por exemplo, os divisores de 12 são 1, 2, 3, 4, 6 e 12; já os divisores de 8 são 1, 2, 4 e 8. O maior número que aparece em ambas as listas é 4, portanto <strong>MDC(12, 8) = 4</strong>.
                     </p>
-                    <p>
-                        O <strong>MDC</strong> (Máximo Divisor Comum) é o maior número que divide dois ou mais números
-                        sem deixar resto. É a ferramenta perfeita para simplificar frações ao seu estado mais
-                        irredutível.
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 0;">
+                        Existe uma relação matemática elegante e útil entre o MMC e o MDC: <strong>MMC(a, b) × MDC(a, b) = a × b</strong>. Isso significa que se você conhece o MMC e o MDC de dois números, pode verificar sua resposta usando essa fórmula. Por exemplo, com os números 12 e 8: MMC = 24 e MDC = 4. Verificando: 24 × 4 = 96, e 12 × 8 = 96 ✓. Essa relação funciona para qualquer par de números, sendo uma ferramenta poderosa para validar cálculos e entender como essas duas operações se relacionam.
                     </p>
                 </article>
 
-                <!-- Links Externos -->
-                <div style="margin-top: 30px;">
-                    <h3 style="margin-bottom: 20px;">🔗 Aprenda Mais</h3>
-                    <div class="link-grid">
-                        <a href="https://www.todamateria.com.br/mmc-e-mdc/" target="_blank" rel="nofollow noopener"
-                            class="link-card">
-                            <span class="link-icon">📐</span>
-                            <div>
-                                <div class="link-title">Todo Matéria</div>
-                                <div class="link-desc">Explicação detalhada e exercícios.</div>
-                            </div>
-                        </a>
-
-                        <a href="https://app.planejativo.com/estudar/549/resumo/matematica-basica-mmc-e-mdc"
-                            target="_blank" rel="nofollow noopener" class="link-card">
-                            <span class="link-icon">✏️</span>
-                            <div>
-                                <div class="link-title">Planejativo</div>
-                                <div class="link-desc">Resumo de MMC e MDC.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- FAQ Section -->
-                <article style="margin-top: 30px;">
-                    <h3>Perguntas Frequentes</h3>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>Como calcular o MMC de cabeça?</summary>
-                            <p>Para números pequenos, liste os múltiplos do maior número até encontrar um que também
-                                seja divisível pelos menores. Ex: MMC de 4 e 6. Múltiplos de 6: 6, 12... 12 é divisível
-                                por 4, então o MMC é 12.</p>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>Para que serve o MDC na vida real?</summary>
-                            <p>É usado para dividir coisas em partes iguais sem sobrar nada. Ex: Você tem 12 maças e 18
-                                peras e quer fazer cestas com a mesma quantidade de cada fruta, sem sobrar nada. O MDC
-                                diz quantas cestas você pode fazer (6 cestas).</p>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>O MDC de números primos é sempre 1?</summary>
-                            <p>Sim, se os números forem primos entre si (não compartilham divisores além do 1), o MDC
-                                será 1. Ex: MDC de 7 e 13 é 1.</p>
-                        </details>
-                    </div>
+                <!-- SEÇÃO 2 — COMO CALCULAR -->
+                <article style="margin-top: 40px; padding: 40px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <h2 style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 25px;">Como calcular MMC e MDC pelo método da fatoração</h2>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 18px;">
+                        O método mais eficiente para calcular tanto o MMC quanto o MDC é usar a <strong>fatoração em números primos</strong>. Comece decompondendo cada número em seus fatores primos. Para o <strong>MDC</strong>, você multiplica <strong>apenas os fatores PRIMOS que aparecem em TODOS os números, usando o MENOR expoente</strong>. Para o <strong>MMC</strong>, você multiplica <strong>todos os fatores primos (comunsou não), usando o MAIOR expoente</strong>. Vamos ver um exemplo prático: calcule MMC e MDC de 36 e 48. Primeiro, fatore: 36 = 2² × 3² e 48 = 2⁴ × 3¹. Para o MDC: pegue apenas os fatores comuns com o menor expoente: 2² × 3¹ = 4 × 3 = <strong>12</strong>. Para o MMC: pegue todos os fatores com o maior expoente: 2⁴ × 3² = 16 × 9 = <strong>144</strong>.
+                    </p>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 0;">
+                        Vamos verificar os resultados usando a relação que aprendemos: MMC × MDC = 144 × 12 = 1.728, e 36 × 48 = 1.728 ✓. Perfeito! O método da fatoração funciona para qualquer quantidade de números — fatore todos, aplique as regras de fatores primos comuns/não comuns com seus expoentes, e chegue ao resultado. A calculadora acima faz isso automaticamente, mas é importante entender o conceito para resolver manualmente quando necessário. Alguns números podem ter muitos fatores primos, mas o processo permanece o mesmo: identificar os primos, contar os expoentes, e aplicar a regra correta (menor para MDC, maior para MMC).
+                    </p>
                 </article>
 
-                <article
-                    style="margin-top: 30px; background: #f0f9ff; padding: 20px; border-radius: 12px; border: 1px solid #bae6fd;">
-                    <h4 style="margin-top: 0; color: #0369a1;">💡 Dica Rápida</h4>
-                    <p style="margin-bottom: 0; color: #0c4a6e; font-size: 0.9rem;">
-                        Uma regra de ouro: o MMC nunca é menor que o maior número da lista. O MDC nunca é maior que o
-                        menor número da lista.
+                <!-- SEÇÃO 3 — APLICAÇÕES PRÁTICAS -->
+                <article style="margin-top: 40px; padding: 40px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <h2 style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 25px;">Onde MMC e MDC aparecem na prática</h2>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 18px;">
+                        O <strong>MMC é essencial para somar frações com denominadores diferentes</strong>. Por exemplo, para somar 1/4 + 1/6, você precisa de um denominador comum — o MMC(4, 6) = 12. Converta: 1/4 = 3/12 e 1/6 = 2/12, então 3/12 + 2/12 = 5/12. O MMC também aparece em <strong>problemas de periodicidade</strong>: se um ônibus passa a cada 8 minutos e outro a cada 12 minutos, quando passarão no mesmo ponto simultaneamente? Resposta: no MMC(8, 12) = 24 minutos. O MMC também é útil para <strong>distribuir itens igualmente em grupos</strong>: se você tem 24 chocolates e 36 balas e quer dividir em pacotes iguais com o mesmo número de cada item, quantos pacotes máximos você consegue? O divisor é MMC(24, 36) = 72, então... espera, isso seria para encontrar o número máximo de itens, mas tecnicamente você usaria MDC neste caso.
                     </p>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 1rem; line-height: 1.8; margin-bottom: 0;">
+                        O <strong>MDC é perfeito para simplificar frações ao máximo</strong>. Por exemplo, 36/48 pode ser simplificada dividindo numerador e denominador pelo MDC(36, 48) = 12, resultando em 3/4. O MDC também resolve problemas de <strong>divisão em partes iguais</strong>: você tem duas barras, uma de 36 cm e outra de 48 cm, e quer cortá-las em pedaços iguais o maior possível sem sobra. O tamanho máximo de cada pedaço é MDC(36, 48) = 12 cm — você terá 3 pedaços da primeira barra e 4 da segunda. Na vida real, o MDC aparece em distribuição de produtos, organização de eventos, planejamento logístico, e sempre que você precisa garantir igualdade máxima sem desperdiço.
+                    </p>
+                </article>
+
+                <!-- FAQ EXPANDIDA -->
+                <article style="margin-top: 50px; padding: 50px 40px; background: #f8fafc; border-radius: 16px;">
+                    <h2 style="color: var(--cor-primaria); margin: 0 0 40px; font-size: 1.4rem;">Perguntas Frequentes sobre MMC e MDC</h2>
+
+                    <details class="fq" style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 4px solid var(--cor-primaria);">
+                        <summary>Como calcular MMC e MDC de três ou mais números?</summary>
+                        <p style="margin-top: 15px; font-size: 0.98rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                            O processo é idêntico ao de dois números — você estende a fatoração para todos os números. Exemplo: calcule MMC(12, 18, 24). Fatore: 12 = 2² × 3, 18 = 2 × 3², 24 = 2³ × 3. Para o MDC, pegue os primos comuns com MENOR expoente: 2¹ × 3¹ = 6. Para o MMC, pegue todos os primos com MAIOR expoente: 2³ × 3² = 8 × 9 = 72. A calculadora acima permite adicionar quantos números você quiser — basta clicar em "+ Adicionar Número" e seguir o processo.
+                        </p>
+                    </details>
+
+                    <details class="fq" style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 4px solid var(--cor-primaria);">
+                        <summary>Qual a relação entre MMC e MDC?</summary>
+                        <p style="margin-top: 15px; font-size: 0.98rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                            Existe uma relação matemática fundamental: <strong>MMC(a, b) × MDC(a, b) = a × b</strong>. Isso significa que o produto do MMC e MDC de dois números sempre iguala o produto dos próprios números. Por exemplo, com 12 e 8: MMC(12, 8) = 24, MDC(12, 8) = 4, então 24 × 4 = 96 e 12 × 8 = 96. Essa relação é verdadeira para quaisquer dois números inteiros positivos e é uma ferramenta poderosa para verificar se seus cálculos estão corretos. Se você calcula o MMC e o MDC e descobrir que essa relação não se mantém, recheck seus cálculos!
+                        </p>
+                    </details>
+
+                    <details class="fq" style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 4px solid var(--cor-primaria);">
+                        <summary>Como usar o MMC para somar frações com denominadores diferentes?</summary>
+                        <p style="margin-top: 15px; font-size: 0.98rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                            O MMC dos denominadores torna-se o <strong>denominador comum</strong>. Exemplo: somar 2/3 + 5/4. O MMC(3, 4) = 12. Converta cada fração: 2/3 = 8/12 (multiplique numerador e denominador por 4) e 5/4 = 15/12 (multiplique por 3). Agora: 8/12 + 15/12 = 23/12. O processo é: (1) Calcule o MMC dos denominadores, (2) Reescreva cada fração com o novo denominador (multiplicando numerador e denominador pelo mesmo valor), (3) Some ou subtraia apenas os numeradores. Essa técnica funciona para qualquer quantidade de frações com qualquer denominador.
+                        </p>
+                    </details>
+                </article>
+
+                <!-- CTA FINAL -->
+                <article style="background: linear-gradient(135deg, var(--cor-primaria), #1e40af); padding: 50px 40px; border-radius: 16px; text-align: center; color: white; margin-top: 50px;">
+                    <h2 style="margin: 0 0 20px; font-size: 1.6rem;">Calcule seu MMC e MDC agora</h2>
+                    <p style="opacity: 0.95; margin: 0 0 30px; font-size: 1.05rem; line-height: 1.7;">
+                        Use a calculadora acima para encontrar o Mínimo Múltiplo Comum e o Máximo Divisor Comum de qualquer conjunto de números. Basta adicionar quantos números precisar e clicar em "Calcular".
+                    </p>
+                    <a href="#lista-numeros" style="background: white; color: var(--cor-primaria); padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; transition: all 0.3s; font-size: 1.05rem;">Ir para a Calculadora</a>
                 </article>
 
             </aside>

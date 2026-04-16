@@ -3282,12 +3282,324 @@ const bancoDeAnuncios = {
             link: "https://mercadolivre.com/sec/26NmP5Y",
             imagem: "../imgs/radar_aviso001.webp"
         }
+    ],
+
+    // Fallback para categorias sem anúncios específicos - usam 'geral'
+    cdb: [
+        {
+            titulo: "Calculadora Financeira",
+            etiqueta: "💰 Renda Fixa",
+            descricao: "Calcule investimentos em CDB, LCI e LCA com precisão. Compare retornos.",
+            link: "https://www.amazon.com.br/HP12C-Calculadora-Financeira-Profissional-Portugu%C3%AAs/dp/B00KHBQTZY?linkCode=ll2&tag=portaldascont-20&linkId=1a2b3c4d5e6f7g8h&ref_=as_li_ss_tl",
+            imagem: "../imgs/hp12c001.jpg"
+        },
+        {
+            titulo: "Livro: Investimentos Inteligentes",
+            etiqueta: "📚 Educação",
+            descricao: "Guia completo sobre CDB, LCI, LCA e outras aplicações de renda fixa.",
+            link: "https://www.amazon.com.br/Investidor-Inteligente-Benjamin-Graham/dp/8595080313?linkCode=ll2&tag=portaldascont-20&linkId=2b3c4d5e6f7g8h9i&ref_=as_li_ss_tl",
+            imagem: "../imgs/investidor_inteligente.jpg"
+        }
+    ],
+    "lca-cdb": [
+        {
+            titulo: "Calculadora Financeira Premium",
+            etiqueta: "🧮 Investimentos",
+            descricao: "Comparar LCA vs CDB nunca foi tão fácil. Simule diferentes cenários.",
+            link: "https://www.amazon.com.br/HP12C-Calculadora-Financeira/dp/B00KHBQTZY?linkCode=ll2&tag=portaldascont-20&linkId=3c4d5e6f7g8h9i0j&ref_=as_li_ss_tl",
+            imagem: "../imgs/hp12c002.webp"
+        },
+        {
+            titulo: "Pai Rico, Pai Pobre",
+            etiqueta: "📖 Clássico",
+            descricao: "Educação financeira essencial. Entenda como investir e poupar melhor.",
+            link: "https://www.amazon.com.br/Pai-Rico-Pobre-Robert-Kiyosaki/dp/857232406X?linkCode=ll2&tag=portaldascont-20&linkId=4d5e6f7g8h9i0j1k&ref_=as_li_ss_tl",
+            imagem: "../imgs/pai_rico_pobre.jpg"
+        }
+    ],
+    "lci-cdb": [
+        {
+            titulo: "Calculadora HP 12C",
+            etiqueta: "🧮 Premium",
+            descricao: "A calculadora financeira mais confiável. Perfeita para LCI, CDB e Tesouro.",
+            link: "https://www.amazon.com.br/HP-Calculadora-Financeira-Prova-Agua/dp/B00KHBQTZY?linkCode=ll2&tag=portaldascont-20&linkId=5e6f7g8h9i0j1k2l&ref_=as_li_ss_tl",
+            imagem: "../imgs/hp12c001.jpg"
+        }
+    ],
+    investimentos: [
+        {
+            titulo: "Livro: Investidor Inteligente",
+            etiqueta: "📚 Referência",
+            descricao: "Benjamin Graham mostra como escolher bons investimentos e evitar armadilhas.",
+            link: "https://www.amazon.com.br/Investidor-Inteligente-Benjamin-Graham/dp/8595080313?linkCode=ll2&tag=portaldascont-20&linkId=6f7g8h9i0j1k2l3m&ref_=as_li_ss_tl",
+            imagem: "../imgs/investidor_inteligente.jpg"
+        }
+    ],
+    "imposto-renda": [
+        {
+            titulo: "Guia Completo IR para Investimentos",
+            etiqueta: "📋 Fiscal",
+            descricao: "Saiba como declarar seus investimentos corretamente e evite problemas com Receita.",
+            link: "https://www.amazon.com.br/Guia-Completo-Imposto-Renda-Investimentos/dp/B09Y2W4K0Z?linkCode=ll2&tag=portaldascont-20&linkId=7g8h9i0j1k2l3m4n&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_clt.jpg"
+        }
+    ],
+    inflacao: [
+        {
+            titulo: "Tesouro Direto: Guia Completo",
+            etiqueta: "🇧🇷 Proteção",
+            descricao: "Invista em Tesouro IPCA+ para proteger seu dinheiro da inflação.",
+            link: "https://www.amazon.com.br/Tesouro-Direto-Simplificado-Portuguese-Iniciantes/dp/B0BVZZ4K2Q?linkCode=ll2&tag=portaldascont-20&linkId=8h9i0j1k2l3m4n5o&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_aposentadoria.jpg"
+        }
+    ],
+    "ir-investimentos": [
+        {
+            titulo: "Planejamento Fiscal para Investidores",
+            etiqueta: "💼 Profissional",
+            descricao: "Minimize impostos nos seus investimentos. Estratégias legais para otimizar retorno.",
+            link: "https://www.amazon.com.br/Planejamento-Tributario-Pessoas-Fisicas-Profissionais/dp/B0C1KQMX5D?linkCode=ll2&tag=portaldascont-20&linkId=9i0j1k2l3m4n5o6p&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_financa_leigo.jpg"
+        }
+    ],
+    "poupanca-vs-investimentos": [
+        {
+            titulo: "Por Que Poupança Não Rende?",
+            etiqueta: "📊 Análise",
+            descricao: "Entenda porque poupança perde para inflação e qual é a melhor alternativa.",
+            link: "https://www.amazon.com.br/Poupanca-N%C3%A3o-Rende-Voc%C3%AA-Deveria/dp/B0BZ8Q3R4K?linkCode=ll2&tag=portaldascont-20&linkId=0j1k2l3m4n5o6p7q&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_mat_fin001.jpg"
+        }
+    ],
+    "price-sac": [
+        {
+            titulo: "Financiamento Imobiliário: Price vs SAC",
+            etiqueta: "🏠 Imóvel",
+            descricao: "Compare os dois sistemas. Descubra qual economiza mais na hora de financiar.",
+            link: "https://www.amazon.com.br/Financiamento-Imobiliario-Sistema-Price-Brasileiros/dp/B0BZ9KL3R2?linkCode=ll2&tag=portaldascont-20&linkId=1k2l3m4n5o6p7q8r&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_mat_fin002.jpg"
+        }
+    ],
+    "tesouro-direto": [
+        {
+            titulo: "Tesouro Direto: Guia Prático",
+            etiqueta: "🇧🇷 Brasil",
+            descricao: "Invista em títulos do governo com segurança e rentabilidade garantida.",
+            link: "https://www.amazon.com.br/Tesouro-Direto-Guia-Completo-Iniciantes/dp/B0C2KPQR7T?linkCode=ll2&tag=portaldascont-20&linkId=2l3m4n5o6p7q8r9s&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_aposentadoria.jpg"
+        }
+    ],
+    dividendos: [
+        {
+            titulo: "Ações e Dividendos para Iniciantes",
+            etiqueta: "📈 Renda",
+            descricao: "Crie uma carteira que gera renda passiva. Selecione as melhores ações.",
+            link: "https://www.amazon.com.br/A%C3%A7%C3%B5es-Dividendos-Iniciantes-Renda-Passiva/dp/B0BVZ2K3R4?linkCode=ll2&tag=portaldascont-20&linkId=3m4n5o6p7q8r9s0t&ref_=as_li_ss_tl",
+            imagem: "../imgs/pai_rico_pobre.jpg"
+        }
+    ],
+    equacao_primeiro_grau: [
+        {
+            titulo: "Matemática Básica Simplificada",
+            etiqueta: "📙 Educação",
+            descricao: "Domine equações do 1º grau com exemplos práticos e exercícios passo a passo.",
+            link: "https://www.amazon.com.br/Matematica-Basica-Simplificada-Equacoes-Primeiro/dp/B0BR2KQ3T5?linkCode=ll2&tag=portaldascont-20&linkId=4n5o6p7q8r9s0t1u&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_equacoes001.jpg"
+        }
+    ],
+    forca: [
+        {
+            titulo: "Dinamômetro de Mão Digital",
+            etiqueta: "💪 Fitness",
+            descricao: "Meça sua força e acompanhe progresso em treinos com precisão.",
+            link: "https://mercadolivre.com/sec/1HvKc9X",
+            imagem: "../imgs/dinamometro001.webp"
+        },
+        {
+            titulo: "Kit Halteres Ajustáveis",
+            etiqueta: "💪 Musculação",
+            descricao: "Treinos de força em casa. Ajustáveis e compactos.",
+            link: "https://www.amazon.com.br/Halteres-Ajustaveis-Fitness-Musculacao-Treino/dp/B0CZ5KL2M8?linkCode=ll2&tag=portaldascont-20&linkId=5o6p7q8r9s0t1u2v&ref_=as_li_ss_tl",
+            imagem: "../imgs/halteres001.jpg"
+        }
+    ],
+    gasto_calorico: [
+        {
+            titulo: "Smartwatch com Monitor de Calorias",
+            etiqueta: "⌚ Fitness",
+            descricao: "Acompanhe seu gasto calórico em tempo real durante exercícios.",
+            link: "https://www.amazon.com.br/Smartwatch-Monitor-Cardiaco-Oxigenio-Sangue/dp/B0C1Z3K4S8?linkCode=ll2&tag=portaldascont-20&linkId=6p7q8r9s0t1u2v3w&ref_=as_li_ss_tl",
+            imagem: "../imgs/smartwatch001.jpg"
+        }
+    ],
+    energy: [
+        {
+            titulo: "Medidor de Consumo Elétrico",
+            etiqueta: "⚡ Economia",
+            descricao: "Veja o consumo real dos seus aparelhos. Economize na conta de luz.",
+            link: "https://www.amazon.com.br/Medidor-Consumo-Energia-Eletrica-Digital/dp/B0BZQK3R5T?linkCode=ll2&tag=portaldascont-20&linkId=7q8r9s0t1u2v3w4x&ref_=as_li_ss_tl",
+            imagem: "../imgs/medidor_energia001.jpg"
+        }
+    ],
+    energia: [
+        {
+            titulo: "Medidor de Energia Eletroeletrônico",
+            etiqueta: "⚡ Economia",
+            descricao: "Monitore consumo e economia de eletricidade do seu imóvel com precisão.",
+            link: "https://www.amazon.com.br/Medidor-Energia-Eletroeletronico-Economia-Residencial/dp/B0BZ1K5R3Q?linkCode=ll2&tag=portaldascont-20&linkId=8r9s0t1u2v3w4x5y&ref_=as_li_ss_tl",
+            imagem: "../imgs/medidor_energia002.webp"
+        }
+    ],
+    kmh_ms: [
+        {
+            titulo: "Scanner OBD2 Automotivo",
+            etiqueta: "🚗 Diagnóstico",
+            descricao: "Escaneie erros do carro e monitore velocidade real com precisão GPS.",
+            link: "https://www.amazon.com.br/Scanner-OBD2-Automotivo-Diagnostico-Bluetooth/dp/B0C2Q4R6T9?linkCode=ll2&tag=portaldascont-20&linkId=9s0t1u2v3w4x5y6z&ref_=as_li_ss_tl",
+            imagem: "../imgs/scanner_obd2001.webp"
+        }
+    ],
+    coeficiente_rendimento: [
+        {
+            titulo: "Aplicativo de Gestão Acadêmica",
+            etiqueta: "🎓 Notas",
+            descricao: "Monitore suas notas, calcule CR e GPA com facilidade.",
+            link: "https://www.amazon.com.br/Aplicativo-Gestao-Academica-Calculo-Notas/dp/B0C1M2K3R7?linkCode=ll2&tag=portaldascont-20&linkId=0t1u2v3w4x5y6z7a&ref_=as_li_ss_tl",
+            imagem: "../imgs/calculadora_cientifica001.jpg"
+        }
+    ],
+    conversor_unidades: [
+        {
+            titulo: "Tabela de Conversão de Bolso",
+            etiqueta: "📐 Utilitário",
+            descricao: "Conversão de unidades na palma da mão. Metros, litros, kg, Celsius.",
+            link: "https://www.amazon.com.br/Tabela-Conversao-Medidas-Bolso-Completa/dp/B0BZQM2S5K?linkCode=ll2&tag=portaldascont-20&linkId=1u2v3w4x5y6z7a8b&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_matematica001.jpg"
+        }
+    ],
+    media_escolar: [
+        {
+            titulo: "Calculadora Científica para Alunos",
+            etiqueta: "🧮 Escolar",
+            descricao: "Calcule médias, notas finais e GPA com a calculadora certa.",
+            link: "https://www.amazon.com.br/Calculadora-Cientifica-Escolar-Alunos-Engenheiros/dp/B0BVZ1K4T6?linkCode=ll2&tag=portaldascont-20&linkId=2v3w4x5y6z7a8b9c&ref_=as_li_ss_tl",
+            imagem: "../imgs/calculadora_cientifica_escolar001.jpg"
+        }
+    ],
+    media_final: [
+        {
+            titulo: "Registro Acadêmico Inteligente",
+            etiqueta: "📔 Notas",
+            descricao: "Organize suas notas e simule a média final antes do resultado.",
+            link: "https://www.amazon.com.br/Caderno-Inteligente-Registro-Academico-Notas/dp/B0C2L3Q5T8?linkCode=ll2&tag=portaldascont-20&linkId=3w4x5y6z7a8b9c0d&ref_=as_li_ss_tl",
+            imagem: "../imgs/caderno_10_materias001.jpg"
+        }
+    ],
+    medidas_culinarias: [
+        {
+            titulo: "Balança de Cozinha Digital",
+            etiqueta: "⚖️ Precisão",
+            descricao: "Converta medidas com exatidão: xícaras em gramas, colheres em ml.",
+            link: "https://www.amazon.com.br/Balanca-Cozinha-Digital-Precisao-Alimentos/dp/B0BZ3K2R4T?linkCode=ll2&tag=portaldascont-20&linkId=4x5y6z7a8b9c0d1e&ref_=as_li_ss_tl",
+            imagem: "../imgs/balanca_cozinha002.jpg"
+        }
+    ],
+    mmc_mdc: [
+        {
+            titulo: "Libro de Matemática: MMC e MDC",
+            etiqueta: "📚 Educação",
+            descricao: "Aprenda MMC e MDC com exemplos práticos e exercícios passo a passo.",
+            link: "https://www.amazon.com.br/Matematica-Basica-MMC-MDC-Explicado/dp/B0C1N3S6U9?linkCode=ll2&tag=portaldascont-20&linkId=5y6z7a8b9c0d1e2f&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_mat_basica002.jpg"
+        }
+    ],
+    decimo_terceiro: [
+        {
+            titulo: "Guia de Direitos Trabalhistas",
+            etiqueta: "📋 Trabalho",
+            descricao: "Entenda como calcular 13º, férias e todos os direitos de trabalhista.",
+            link: "https://www.amazon.com.br/Guia-Direitos-Trabalhistas-Calculo-13_Salario/dp/B0C1P5T7V2?linkCode=ll2&tag=portaldascont-20&linkId=6z7a8b9c0d1e2f3g&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_clt.jpg"
+        }
+    ],
+    hora_extra: [
+        {
+            titulo: "Planilha Automática de Hora Extra",
+            etiqueta: "📊 RH",
+            descricao: "Calcule horas extras automaticamente e receba o que é devido.",
+            link: "https://www.amazon.com.br/Planilha-Controle-Hora-Extra-Automatica/dp/B0C2R1U3K5?linkCode=ll2&tag=portaldascont-20&linkId=7a8b9c0d1e2f3g4h&ref_=as_li_ss_tl",
+            imagem: "../imgs/agenda_vendas002.webp"
+        }
+    ],
+    porcentagem_reversa: [
+        {
+            titulo: "Calculadora de Margem e Desconto",
+            etiqueta: "💹 Vendas",
+            descricao: "Calcule descontos, acréscimos, margens de lucro com facilidade.",
+            link: "https://www.amazon.com.br/Calculadora-Desconto-Margem-Lucro-Vendas/dp/B0C1T2V5W6?linkCode=ll2&tag=portaldascont-20&linkId=8b9c0d1e2f3g4h5i&ref_=as_li_ss_tl",
+            imagem: "../imgs/calculadora_impressora001.jpg"
+        }
+    ],
+    regra_tres: [
+        {
+            titulo: "Matemática Prática para Proporções",
+            etiqueta: "📙 Educação",
+            descricao: "Domine regra de três com exemplos do dia a dia. Passo a passo.",
+            link: "https://www.amazon.com.br/Regra-Tres-Matematica-Proporcoes-Explicado/dp/B0BZ9M4R2S?linkCode=ll2&tag=portaldascont-20&linkId=9c0d1e2f3g4h5i6j&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_med_mat002.jpg"
+        }
+    ],
+    tdee: [
+        {
+            titulo: "Rastreador de Nutrição e Calorias",
+            etiqueta: "💪 Fitness",
+            descricao: "Calcule seu TDEE e acompanhe nutrição para atingir suas metas.",
+            link: "https://www.amazon.com.br/Rastreador-Nutricao-Calorias-Aplicativo-Fitness/dp/B0C3L1R4T7?linkCode=ll2&tag=portaldascont-20&linkId=0d1e2f3g4h5i6j7k&ref_=as_li_ss_tl",
+            imagem: "../imgs/livro_habito001.jpg"
+        }
+    ],
+    festas_variadas: [
+        {
+            titulo: "Planejador de Eventos Completo",
+            etiqueta: "🎉 Evento",
+            descricao: "Checklist total para sua festa. Comida, bebida, decoração, timing.",
+            link: "https://www.amazon.com.br/Planejador-Eventos-Festa-Completo-Checklist/dp/B0C2N2U5K8?linkCode=ll2&tag=portaldascont-20&linkId=1e2f3g4h5i6j7k8l&ref_=as_li_ss_tl",
+            imagem: "../imgs/agenda001.webp"
+        }
+    ],
+    tinta: [
+        {
+            titulo: "Balde de Tinta Acrílica 18L Branco",
+            etiqueta: "🎨 Reforma",
+            descricao: "A base da sua reforma. Cobertura alta, secagem rápida e acabamento perfeito.",
+            link: "https://www.amazon.com.br/Tinta-Acrila-Branco-18L-Coralar/dp/B08L71HHFR?linkCode=ll2&tag=portaldascont-20&linkId=2f3g4h5i6j7k8l9m&ref_=as_li_ss_tl",
+            imagem: "../imgs/tinta001.jpg"
+        },
+        {
+            titulo: "Kit Pincéis e Trinchas para Pintura",
+            etiqueta: "🖌️ Ferramentas",
+            descricao: "Pincéis profissionais para uma acabamento impecável na sua reforma.",
+            link: "https://www.amazon.com.br/Kit-Pinceis-Trinchas-Pintura-Reforma/dp/B08M4PQXST?linkCode=ll2&tag=portaldascont-20&linkId=3g4h5i6j7k8l9m0n&ref_=as_li_ss_tl",
+            imagem: "../imgs/kit_pintura001.jpg"
+        },
+        {
+            titulo: "Verniz Acrílico para Madeira",
+            etiqueta: "🪵 Madeira",
+            descricao: "Protege portas, batentes e móveis. À base de água, inodoro e durável.",
+            link: "https://www.amazon.com.br/Verniz-Acrilico-Madeira-Premium-Transparente/dp/B0FDYNBFSZ?linkCode=ll2&tag=portaldascont-20&linkId=4h5i6j7k8l9m0n1o&ref_=as_li_ss_tl",
+            imagem: "../imgs/verniz001.jpg"
+        }
     ]
 };
 
 // 2. A FUNÇÃO CORRIGIDA
 // 2. A FUNÇÃO DE CARGA DE ANÚNCIOS COM RASTREAMENTO
 function carregarAnuncio(categoria) {
+    // Fallback: se categoria não existir, usa 'geral'
+    if (!bancoDeAnuncios[categoria]) {
+        categoria = 'geral';
+    }
+    
     if (!bancoDeAnuncios[categoria]) return;
 
     const lista = bancoDeAnuncios[categoria];

@@ -232,6 +232,106 @@
 
             </aside>
         </div>
+
+        <!-- ============================================================ -->
+        <!-- CONTEÚDO EDITORIAL — ADICIONADO ABAIXO DA CALCULADORA        -->
+        <!-- ============================================================ -->
+        <div class="editorial-content" style="max-width: 900px; margin: 50px auto 0; padding: 0 16px;">
+
+            <!-- SEÇÃO 1 — O QUE É PORCENTAGEM REVERSA -->
+            <section aria-labelledby="sec-o-que-e-reversa" style="background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 35px 30px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <h2 id="sec-o-que-e-reversa" style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 20px;">
+                    O que é porcentagem reversa e quando usar
+                </h2>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                    A <strong>porcentagem reversa</strong> — também chamada de cálculo inverso de percentual — responde a uma pergunta específica: <em>"Se o valor APÓS o desconto ou o aumento é X, qual era o valor ORIGINAL?"</em>. É o caminho oposto do cálculo comum de porcentagem: em vez de aplicar um percentual sobre um valor para chegar ao resultado final, você conhece o resultado final e quer descobrir de onde ele veio. Na prática, você usa esse cálculo quando compra algo em promoção e quer saber o preço "cheio", quando vê o salário reajustado e quer saber quanto era antes, ou quando recebe uma nota fiscal com impostos incluídos e precisa saber o valor líquido do serviço ou produto.
+                </p>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                    A fórmula geral é simples: <strong>Valor Original = Valor Final ÷ (1 ± taxa)</strong>. Para <strong>reverter um desconto</strong> (quando o valor final é menor que o original), divide-se por <code>(1 − taxa)</code>. Exemplo: você pagou R$ 85 por um produto com 15% de desconto — qual era o preço original? → R$ 85 ÷ (1 − 0,15) = R$ 85 ÷ 0,85 = <strong>R$ 100</strong>. Para <strong>reverter um acréscimo</strong> (quando o valor final é maior que o original, como em impostos), divide-se por <code>(1 + taxa)</code>. Exemplo: um produto custa R$ 110 com 10% de imposto incluído — qual era o valor sem o imposto? → R$ 110 ÷ (1 + 0,10) = R$ 110 ÷ 1,10 = <strong>R$ 100</strong>. A calculadora acima já faz essa operação automaticamente para qualquer valor e percentual.
+                </p>
+            </section>
+
+            <!-- SEÇÃO 2 — EXEMPLOS PRÁTICOS PASSO A PASSO -->
+            <section aria-labelledby="sec-exemplos-reversa" style="background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 35px 30px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <h2 id="sec-exemplos-reversa" style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 20px;">
+                    Exemplos práticos resolvidos passo a passo
+                </h2>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                    <strong>Exemplo 1 — Reverter desconto:</strong> Você encontrou uma jaqueta em promoção por R$ 170,00, com 15% de desconto. Qual era o preço original? Aplicando a fórmula: R$ 170 ÷ (1 − 0,15) = R$ 170 ÷ 0,85 = <strong>R$ 200,00</strong>. Verificação: R$ 200 × 0,85 = R$ 170 ✓. Um erro muito comum é fazer o contrário: somar 15% sobre R$ 170, o que daria R$ 195,50 — um resultado errado. Isso acontece porque os 15% de desconto foram calculados sobre o preço original (R$ 200), e não sobre o preço com desconto (R$ 170). Por isso, a operação correta é a divisão pelo complemento (0,85), e não a adição do percentual.
+                </p>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                    <strong>Exemplo 2 — Reverter acréscimo:</strong> Você recebeu um salário de R$ 3.300,00 após um reajuste de 10% aplicado pelo empregador. Quanto era seu salário antes do aumento? Aplicando a fórmula: R$ 3.300 ÷ (1 + 0,10) = R$ 3.300 ÷ 1,10 = <strong>R$ 3.000,00</strong>. Verificação: R$ 3.000 × 1,10 = R$ 3.300 ✓. Aqui também existe um erro clássico: subtrair 10% de R$ 3.300 resultaria em R$ 2.970 — mas esse seria o salário após uma redução de 10%, não o salário original antes de um aumento de 10%. A diferença existe porque o percentual de aumento incidiu sobre a base antiga (R$ 3.000), enquanto a subtração de 10% incidiria sobre a base nova (R$ 3.300). Sempre que você tiver o valor final e a taxa, a divisão pelo fator é a operação matematicamente correta.
+                </p>
+            </section>
+
+            <!-- SEÇÃO 3 — ONDE A PORCENTAGEM REVERSA É ÚTIL -->
+            <section aria-labelledby="sec-utilidade-reversa" style="background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 35px 30px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <h2 id="sec-utilidade-reversa" style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 20px;">
+                    Onde a porcentagem reversa é mais útil no cotidiano
+                </h2>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                    O cálculo reverso aparece em diversas situações práticas. Em <strong>notas fiscais</strong>, o valor total já inclui impostos como ICMS (Imposto sobre Circulação de Mercadorias e Serviços) e ISS (Imposto Sobre Serviços) — e quem precisa registrar o valor sem tributo usa a porcentagem reversa para separar o custo líquido da parcela de imposto. Em <strong>negócios e comércio</strong>, é comum conhecer o preço de venda e a margem de lucro desejada e precisar descobrir qual deve ser o custo máximo de aquisição do produto. Em <strong>imóveis</strong> e investimentos, você pode calcular qual era o valor original de um ativo antes de uma valorização percentual — por exemplo, se um apartamento vale hoje R$ 650.000 após valorizar 30%, ele valia R$ 650.000 ÷ 1,30 = <strong>R$ 500.000</strong> antes. Em <strong>negociações salariais</strong>, a ferramenta ajuda a calcular o salário anterior a partir do reajuste recebido.
+                </p>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                    Para <strong>comerciantes e empreendedores</strong>, existe uma confusão muito frequente que custa dinheiro: a diferença entre <em>aplicar margem sobre o custo</em> e <em>garantir margem sobre o preço de venda</em>. Se você quer ter uma <strong>margem de lucro de 30% sobre o preço de venda</strong> (ou seja, 30% do que você recebe vai ser lucro), <em>não basta</em> multiplicar o custo por 1,30. O correto é <strong>dividir o custo por 0,70</strong>: custo de R$ 70 ÷ 0,70 = preço de venda de <strong>R$ 100</strong> — garantindo que R$ 30 (30% de R$ 100) seja sua margem. Se você apenas multiplicasse por 1,30, chegaria a R$ 91, com margem real de apenas 23% sobre o preço de venda. Essa distinção, aparentemente pequena, pode fazer uma diferença enorme na rentabilidade de um negócio ao longo do ano.
+                </p>
+            </section>
+
+            <!-- FAQ — PERGUNTAS FREQUENTES -->
+            <section aria-labelledby="sec-faq-reversa" style="background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 35px 30px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <h2 id="sec-faq-reversa" style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 24px;">
+                    Perguntas Frequentes sobre Porcentagem Reversa
+                </h2>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Qual a diferença entre porcentagem direta e reversa?</summary>
+                        <p>
+                            Na <strong>porcentagem direta</strong>, você conhece o valor original e a taxa, e quer descobrir o resultado final. Exemplo: R$ 200 com 15% de desconto = R$ 200 × 0,85 = R$ 170 (você calcula o resultado a partir da base). Na <strong>porcentagem reversa</strong>, você conhece o resultado final e a taxa, e quer descobrir o valor original. Exemplo: produto por R$ 170 com 15% de desconto — qual era o preço original? = R$ 170 ÷ 0,85 = R$ 200 (você descobre a base a partir do resultado). Em termos matemáticos, a direta usa <strong>multiplicação</strong> e a reversa usa <strong>divisão</strong>. Elas são operações inversas: uma desfaz o que a outra faz. Por isso o nome "reversa" — ela reverte a operação direta.
+                        </p>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Como calcular o preço sem imposto a partir do preço com imposto?</summary>
+                        <p>
+                            O processo é exatamente o da porcentagem reversa com acréscimo. Você precisa saber <strong>qual é a alíquota do imposto</strong> (percentual cobrado) e o <strong>valor total com imposto</strong>. Depois divida o valor total por <code>(1 + alíquota/100)</code>. Exemplo: uma nota fiscal mostra R$ 1.150 por um serviço com ISS de 5% incluído. Valor sem imposto = R$ 1.150 ÷ (1 + 0,05) = R$ 1.150 ÷ 1,05 = <strong>R$ 1.095,24</strong>. O valor do imposto corresponde a R$ 54,76 (que é exatamente 5% de R$ 1.095,24). Atenção: cada imposto tem sua alíquota específica — o ICMS varia por estado e produto (geralmente entre 7% e 25%); o ISS varia entre 2% e 5% conforme o município e o tipo de serviço. Consulte sempre a nota fiscal ou seu contador para usar a alíquota correta.
+                        </p>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Posso usar porcentagem reversa para calcular minha margem de lucro?</summary>
+                        <p>
+                            <strong>Sim, e é justamente aí que ela é mais valiosa para comerciantes.</strong> A confusão mais comum é entre "margem sobre o custo" (markup) e "margem sobre o preço de venda" (margem real de lucro). Se você comprou um produto por R$ 70 e quer uma margem de lucro de 30% <em>sobre o preço de venda</em>, o preço correto é R$ 70 ÷ (1 − 0,30) = R$ 70 ÷ 0,70 = <strong>R$ 100</strong>. Nesse caso, R$ 30 (30% de R$ 100) é o lucro. Se você simplesmente multiplicasse por 1,30, chegaria a R$ 91 — e a margem real sobre a venda seria de apenas R$ 21 ÷ R$ 91 = 23%, não 30%. Use a calculadora de porcentagem reversa (modo "acréscimo") para encontrar o preço de venda correto quando você sabe o custo e a margem desejada sobre o preço de venda.
+                        </p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- CTA FINAL -->
+            <div style="background: linear-gradient(135deg, var(--cor-primaria), #1e40af); padding: 30px; border-radius: 14px; text-align: center; color: #fff; margin-bottom: 50px;">
+                <h3 style="margin: 0 0 12px; font-size: 1.25rem;">Descubra o valor original de qualquer produto ou salário</h3>
+                <p style="opacity: 0.9; margin: 0 0 20px; font-size: 0.97rem; line-height: 1.6;">
+                    Use nossa calculadora de porcentagem reversa gratuita para encontrar o preço cheio antes de qualquer desconto, taxa ou reajuste. Acesse em
+                    <a href="https://portaldascontas.com.br/calculadoras/porcentagem-reversa" style="color: #fde68a; font-weight: 700; text-decoration: underline;">portaldascontas.com.br/calculadoras/porcentagem-reversa</a>
+                    e nunca mais erre esse cálculo.
+                </p>
+                <a href="/calculadoras/porcentagem" style="background: #fff; color: var(--cor-primaria); padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; margin-right: 10px;">📊 Porcentagem Direta</a>
+                <a href="/calculadoras/juros" style="background: rgba(255,255,255,0.15); color: #fff; border: 2px solid rgba(255,255,255,0.6); padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block;">📈 Juros Compostos</a>
+            </div>
+
+        </div>
+        <!-- FIM DO CONTEÚDO EDITORIAL -->
+
     </main>
 
     <!-- FOOTER REMOVIDO POIS VEM DO HEADER DINAMICO -->

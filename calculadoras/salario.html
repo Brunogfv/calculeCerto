@@ -183,6 +183,151 @@
                 </article>
             </aside>
         </div>
+
+        <!-- ============================================================ -->
+        <!-- CONTEÚDO EDITORIAL — ADICIONADO ABAIXO DA CALCULADORA        -->
+        <!-- ============================================================ -->
+        <div class="editorial-content" style="max-width: 900px; margin: 50px auto 0; padding: 0 16px;">
+
+            <!-- AVISO DE DISCLAIMER -->
+            <div style="background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 14px 18px; margin-bottom: 40px; font-size: 0.9rem; color: #78350f;">
+                ⚠️ <strong>Valores estimados.</strong> Consulte o departamento de RH ou um contador para cálculos precisos e situações específicas.
+            </div>
+
+            <!-- SEÇÃO 1 — SALÁRIO LÍQUIDO E DESCONTOS -->
+            <section aria-labelledby="sec-salario-liquido" style="background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 35px 30px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <h2 id="sec-salario-liquido" style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 20px;">
+                    O que é o salário líquido e o que desconta dele
+                </h2>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                    O <strong>salário líquido</strong> é o valor que efetivamente cai na conta bancária do trabalhador ao final de cada mês — diferente do salário bruto, que é o montante acordado em contrato. A diferença entre eles são os <strong>descontos obrigatórios</strong> previstos em lei. Os dois principais são o <strong>INSS</strong> (Instituto Nacional do Seguro Social), que é a contribuição para a previdência social, e o <strong>IRRF</strong> (Imposto de Renda Retido na Fonte), que é o imposto de renda descontado diretamente na folha de pagamento. Ambos são progressivos: quanto maior o salário, maior a alíquota (percentual) aplicada.
+                </p>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                    Além dos descontos obrigatórios, existem outros que podem aparecer no holerite dependendo da situação de cada trabalhador. O <strong>Vale-Transporte (VT)</strong>, por exemplo, pode gerar desconto de até 6% do salário bruto ao utilizar o benefício. O <strong>plano de saúde</strong> coletivo empresarial, quando custeado parcialmente pelo empregado, também é deduzido na folha. Outros descontos comuns são: <strong>pensão alimentícia</strong> determinada por ordem judicial, <strong>contribuição sindical</strong> (de caráter opcional desde 2017), <strong>adiantamento salarial</strong> (quando o trabalhador solicita parte do salário antes do dia de pagamento) e empréstimos consignados, cuja parcela é descontada diretamente em folha. Conhecer cada um desses itens ajuda a entender o holerite e a identificar possíveis erros.
+                </p>
+            </section>
+
+            <!-- SEÇÃO 2 — TABELA PROGRESSIVA DO IR -->
+            <section aria-labelledby="sec-tabela-ir" style="background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 35px 30px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <h2 id="sec-tabela-ir" style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 20px;">
+                    Como funciona a tabela progressiva do Imposto de Renda
+                </h2>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                    O cálculo do Imposto de Renda Retido na Fonte (IRRF) não incide sobre o salário bruto inteiro. Primeiro, calcula-se a <strong>base de cálculo</strong>: parte-se do salário bruto, subtrai-se o desconto do INSS e, caso o trabalhador tenha dependentes declarados, deduz-se <strong>R$ 189,59 por dependente</strong> (valor vigente em 2026). Sobre esse resultado aplica-se a <strong>tabela progressiva da Receita Federal</strong>, que funciona por faixas — cada faixa tem uma alíquota diferente, e o imposto é calculado <em>apenas sobre a parcela do rendimento que se encaixa naquela faixa</em>, não sobre o valor total.
+                </p>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 20px;">
+                    As faixas da tabela progressiva mensal de 2026 são as seguintes: rendimentos de até <strong>R$ 2.824,00</strong> são <strong>isentos</strong>; de R$ 2.824,01 a R$ 3.751,05 aplica-se <strong>7,5%</strong>; de R$ 3.751,06 a R$ 4.664,68 aplica-se <strong>15%</strong>; de R$ 4.664,69 a R$ 6.001,00 aplica-se <strong>22,5%</strong>; acima de R$ 6.001,00 aplica-se <strong>27,5%</strong>. Em cada faixa existe uma <em>parcela a deduzir</em> — um valor fixo que o governo desconta do imposto bruto calculado para evitar a bitributação das faixas anteriores (que já tiveram alíquota menor). Isso garante que ninguém pague a alíquota cheia sobre todo o rendimento, tornando o sistema verdadeiramente progressivo.
+                </p>
+
+                <!-- Tabela visual de referência rápida -->
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; color: var(--cor-texto-suave);">
+                        <thead>
+                            <tr style="background: var(--cor-primaria); color: #fff;">
+                                <th style="padding: 10px 14px; text-align: left; border-radius: 8px 0 0 0;">Base de Cálculo Mensal</th>
+                                <th style="padding: 10px 14px; text-align: center;">Alíquota</th>
+                                <th style="padding: 10px 14px; text-align: right; border-radius: 0 8px 0 0;">Parcela a Deduzir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 9px 14px;">Até R$ 2.824,00</td>
+                                <td style="padding: 9px 14px; text-align: center;"><strong>Isento</strong></td>
+                                <td style="padding: 9px 14px; text-align: right;">R$ 0,00</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0; background: #f8fafc;">
+                                <td style="padding: 9px 14px;">De R$ 2.824,01 a R$ 3.751,05</td>
+                                <td style="padding: 9px 14px; text-align: center;">7,5%</td>
+                                <td style="padding: 9px 14px; text-align: right;">R$ 211,80</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 9px 14px;">De R$ 3.751,06 a R$ 4.664,68</td>
+                                <td style="padding: 9px 14px; text-align: center;">15%</td>
+                                <td style="padding: 9px 14px; text-align: right;">R$ 492,78</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0; background: #f8fafc;">
+                                <td style="padding: 9px 14px;">De R$ 4.664,69 a R$ 6.001,00</td>
+                                <td style="padding: 9px 14px; text-align: center;">22,5%</td>
+                                <td style="padding: 9px 14px; text-align: right;">R$ 842,24</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 9px 14px;">Acima de R$ 6.001,00</td>
+                                <td style="padding: 9px 14px; text-align: center;">27,5%</td>
+                                <td style="padding: 9px 14px; text-align: right;">R$ 1.142,74</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 3 — ESTRATÉGIAS LEGAIS -->
+            <section aria-labelledby="sec-estrategias" style="background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 35px 30px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <h2 id="sec-estrategias" style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 20px;">
+                    Estratégias legais para pagar menos Imposto de Renda
+                </h2>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                    A legislação brasileira permite algumas reduções legítimas na base de cálculo do IR que muitos trabalhadores desconhecem. A mais conhecida é a <strong>dedução por dependentes</strong>: filhos menores de 21 anos (ou até 24 anos se estiverem cursando ensino superior), cônjuge sem renda própria, pais, avós e sogros que dependam financeiramente do contribuinte podem ser informados ao empregador para reduzir o valor do imposto descontado mensalmente. A maior a quantidade de dependentes, menor será a base de cálculo e, consequentemente, menor o IRRF. Além disso, a própria <strong>contribuição ao INSS</strong> é deduzida antes de se aplicar a tabela do IR, funcionando como uma dedução automática.
+                </p>
+
+                <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                    Outras deduções importantes que podem ser utilizadas na <strong>Declaração Anual do Imposto de Renda</strong>: a <strong>pensão alimentícia</strong> paga por decisão ou acordo judicial é integralmente dedutível da base de cálculo — um benefício significativo para quem tem essa obrigação. Já a <strong>previdência privada no modelo PGBL</strong> (Plano Gerador de Benefício Livre) permite deduzir até 12% da renda bruta tributável anual, reduzindo o imposto a pagar ou aumentando a restituição. Essa estratégia é especialmente indicada para quem faz a declaração no modelo completo. Para situações mais complexas, como acúmulo de rendimentos, deduções de saúde e educação ou investimentos, é sempre recomendável consultar um <strong>contador de confiança</strong>, que pode identificar oportunidades legais de redução da carga tributária.
+                </p>
+            </section>
+
+            <!-- FAQ — PERGUNTAS FREQUENTES -->
+            <section aria-labelledby="sec-faq" style="background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 35px 30px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <h2 id="sec-faq" style="font-size: 1.5rem; color: var(--cor-primaria); margin: 0 0 24px;">
+                    Perguntas Frequentes sobre Salário e Imposto de Renda
+                </h2>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>O vale-alimentação e o vale-transporte entram no cálculo do IR?</summary>
+                        <p>
+                            Não para a maioria dos casos. O <strong>Vale-Transporte (VT)</strong> é totalmente isento de Imposto de Renda e de INSS — ele não entra na base de cálculo de nenhum dos dois tributos. O <strong>Vale-Alimentação (VA)</strong> concedido via programa de alimentação do trabalhador (PAT) também é isento de IR, desde que a empresa esteja devidamente inscrita no programa. Se o benefício for pago em dinheiro fora do PAT, aí pode ser tributado. Por isso, é importante verificar como sua empresa concede o benefício.
+                        </p>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Ter dependentes realmente diminui o desconto do IR?</summary>
+                        <p>
+                            Sim, e de forma significativa. Cada dependente informado ao empregador reduz a <strong>base de cálculo do IRRF</strong> em R$ 189,59 por mês (valor de 2026). Isso significa que, para cada dependente, você paga menos imposto de renda todos os meses. Por exemplo, um trabalhador com salário bruto de R$ 5.000 e dois dependentes teria sua base de cálculo reduzida em R$ 379,18, o que pode fazer com que ele caia em uma faixa de alíquota menor ou até mesmo atinja a isenção. Basta apresentar a documentação dos dependentes ao RH da empresa.
+                        </p>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>O que é a parcela a deduzir na tabela do Imposto de Renda?</summary>
+                        <p>
+                            A <strong>parcela a deduzir</strong> é um valor fixo que a Receita Federal define para cada faixa da tabela progressiva. Ela existe para corrigir um efeito colateral do sistema de alíquotas: sem ela, ao ultrapassar o limite de uma faixa, toda a renda seria tributada pela alíquota maior, o que seria injusto. Com a parcela a deduzir, o cálculo garante que cada faixa de rendimento seja tributada apenas pela sua alíquota correspondente. Na prática: multiplica-se a base de cálculo pela alíquota da faixa e subtrai-se a parcela a deduzir — o resultado é o imposto devido. Isso torna o sistema mais equânime e progressivo.
+                        </p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- CTA FINAL -->
+            <div style="background: linear-gradient(135deg, var(--cor-primaria), #1e40af); padding: 30px; border-radius: 14px; text-align: center; color: #fff; margin-bottom: 50px;">
+                <h3 style="margin: 0 0 12px; font-size: 1.25rem;">Simule outros cenários de salário</h3>
+                <p style="opacity: 0.9; margin: 0 0 20px; font-size: 0.97rem; line-height: 1.6;">
+                    Quer saber exatamente quanto desconta de INSS e Imposto de Renda no seu salário? Explore também nossas calculadoras de INSS e de IR disponíveis em
+                    <a href="https://portaldascontas.com.br/calculadoras/salario" style="color: #fde68a; font-weight: 700; text-decoration: underline;">portaldascontas.com.br/calculadoras/salario</a>
+                    e compare diferentes faixas salariais para tomar decisões mais informadas sobre sua vida financeira.
+                </p>
+                <a href="/calculadoras/inss" style="background: #fff; color: var(--cor-primaria); padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; margin-right: 10px;">📊 Calcular INSS</a>
+                <a href="/calculadoras/calc-imposto-renda" style="background: rgba(255,255,255,0.15); color: #fff; border: 2px solid rgba(255,255,255,0.6); padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block;">📋 Calcular IR</a>
+            </div>
+
+        </div>
+        <!-- FIM DO CONTEÚDO EDITORIAL -->
+
     </main>
 
     <!-- FOOTER REMOVIDO POIS VEM DO HEADER DINAMICO -->

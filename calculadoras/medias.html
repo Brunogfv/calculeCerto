@@ -177,47 +177,83 @@
                     </div>
                 </div>
 
-                <!-- FAQ Section (Ótimo para SEO) -->
-                <article style="margin-top: 30px;">
-                    <h3>Perguntas Frequentes</h3>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>Como calcular a nota para a recuperação?</summary>
-                            <p>Para a recuperação final, a fórmula costuma ser: (Média Atual + Nota da Recuperação) ÷ 2.
-                                Use nossa calculadora inserindo sua média atual como "Nota 1" e simule qual nota precisa
-                                na "Nota 2" para atingir 6.0.</p>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>Posso usar notas decimais?</summary>
-                            <p>Sim! O sistema aceita notas com vírgula ou ponto (ex: 7.5, 8.3). Basta digitar o valor
-                                exato que consta no seu boletim.</p>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>O que significa média ponderada?</summary>
-                            <p>Significa que as notas não têm a mesma força. Uma prova bimestral (peso 4) influencia
-                                mais na média final do que um exercício de sala (peso 1).</p>
-                        </details>
-                    </div>
-                </article>
-
-                <article
-                    style="margin-top: 30px; background: #e0f2fe; padding: 20px; border-radius: 12px; border: 1px solid #bae6fd;">
-                    <h4 style="margin-top: 0; color: #0369a1;">💡 Dica de Estudo</h4>
-                    <p style="margin-bottom: 0; color: #0c4a6e; font-size: 0.9rem;">
-                        Se o peso das provas finais é maior, foque seu estudo intensivamente nas últimas semanas. Um bom
-                        resultado na prova final pode compensar notas menores no início.
+                <!-- SEÇÃO 1 — MÉDIA SIMPLES VS PONDERADA -->
+                <article style="margin-top: 40px; padding: 30px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <h3 style="font-size: 1.3rem; color: var(--cor-primaria); margin: 0 0 20px;">Média simples vs média ponderada: quando usar cada uma</h3>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                        A <strong>média simples</strong> é o método mais básico: você soma todas as notas e divide pelo número delas. Por exemplo, se você tirou notas 6, 7 e 8, a média simples é (6 + 7 + 8) ÷ 3 = 7. Nesse método, cada nota tem exatamente o mesmo peso — quer seja uma prova, um trabalho, ou uma participação em aula, todas influenciam igualmente na nota final. Isso funciona bem em disciplinas onde o professor julga que todas as avaliações têm a mesma importância.
+                    </p>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                        A <strong>média ponderada</strong>, por outro lado, atribui pesos diferentes a cada avaliação. Por exemplo: "Prova bimestral vale 3, Trabalho vale 1, Participação vale 1". Isso significa que a prova influencia 3x mais na nota final que o trabalho. A fórmula é: (nota₁ × peso₁ + nota₂ × peso₂ + ...) ÷ (peso₁ + peso₂ + ...). <strong>A maioria das escolas e universidades brasileiras usa média ponderada</strong>, porque normalmente algumas avaliações (como provas) devem ter mais relevância que atividades menores. Use a calculadora acima deixando todos os pesos iguais a 1 para média simples, ou customize os pesos para média ponderada.
                     </p>
                 </article>
 
+                <!-- SEÇÃO 2 — COMO CALCULAR NOTA NECESSÁRIA -->
+                <article style="margin-top: 40px; padding: 30px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <h3 style="font-size: 1.3rem; color: var(--cor-primaria); margin: 0 0 20px;">Como calcular a nota necessária para passar</h3>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                        Se você já tem algumas notas e precisa saber o mínimo que precisa tirar na prova final para atingir a média exigida (normalmente 6,0), basta usar a fórmula da média ponderada e isolar a variável desconhecida. Vamos a um exemplo: você precisa de média 6,0 para passar. Primeiro bimestre tirou 5,0 (peso 1), segundo bimestre tirou 7,0 (peso 1), e a prova final tem peso 2. Montando a equação: (5 + 7 + x×2) ÷ (1 + 1 + 2) = 6. Isso significa: (12 + 2x) ÷ 4 = 6. Multiplicando ambos os lados por 4: 12 + 2x = 24. Subtraindo 12: 2x = 12. Dividindo por 2: <strong>x = 6</strong>. Você precisa tirar 6,0 na prova final para chegar À média 6,0.
+                    </p>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                        Este cálculo é especialmente útil para estratégia de estudo: se a nota necessária for inviável (por exemplo, precisar de 9,5 quando raramente você tira acima de 7), talvez você necessite buscar recuperação em vez de tentar na prova final. Ou, se precisar apenas de 5,0 e você é capaz de fazer isso, já sabe que pode relaxar um pouco. A calculadora acima faz esse cálculo automaticamente — basta inserir as notas e pesos que você já tem, deixar a última nota em branco, e ajustar a "Média necessária para passar" conforme o objetivo. O sistema mostrará qual nota você precisa naquela última avaliação.
+                    </p>
+                </article>
 
-            </aside>
+                <!-- SEÇÃO 3 — SISTEMAS DE AVALIAÇÃO NO BRASIL -->
+                <article style="margin-top: 40px; padding: 30px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <h3 style="font-size: 1.3rem; color: var(--cor-primaria); margin: 0 0 20px;">Sistemas de avaliação no Brasil: entenda as diferenças</h3>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                        O Brasil não tem um sistema uniforme de avaliação — cada nível de ensino e instituição tem suas próprias regras. <strong>Escolas públicas</strong> geralmente usam média 5,0 ou 6,0 como nota de corte para aprovação direta, dependendo do município e do estado. <strong>Universidades federais</strong> também variam: algumas exigem média 5,0, outras 6,0, e algumas ainda usam sistema de aprovação por disciplina sem média global. <strong>ENEM (Exame Nacional do Ensino Médio)</strong> é diferente: não existe "nota de corte" oficial — você recebe uma pontuação em cada disciplina, e essa pontuação é usada como critério de seleção no SISU (Sistema de Seleção Unificada), ProUni e Fies. Cada instituição define seus próprios pontos mínimos por curso.
+                    </p>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                        <strong>Cursos técnicos e profissionalizantes</strong> geralmente exigem média 6,0 a 7,0 conforme a instituição. Algumas escolas técnicas federais (ETECs, IFETs) usam o ENEM como base de seleção também. O importante é conferir sempre o regulamento específico da sua instituição — cada uma pode ter critérios diferentes para aprovação, recuperação, e promoção. A calculadora acima serve para qualquer desses sistemas — basta você ajustar a "Nota de corte" para o valor exigido pela sua escola/universidade e inserir os pesos conforme o regimento de sua instituição.
+                    </p>
+                </article>
+
+                <!-- FAQ EXPANDIDA -->
+                <article style="margin-top: 50px; padding: 40px 30px; background: #f8fafc; border-radius: 16px;">
+                    <h3 style="color: var(--cor-primaria); margin: 0 0 30px;">Perguntas Frequentes sobre Avaliações e Médias</h3>
+
+                    <details style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.06);">
+                        <summary style="font-weight: 600; color: var(--cor-primaria); cursor: pointer; font-size: 1rem;">Qual a diferença entre recuperação e exame final?</summary>
+                        <p style="margin-top: 12px; font-size: 0.97rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                            <strong>Recuperação</strong> é uma oportunidade de refazer uma avaliação que o aluno não se saiu bem. Geralmente ocorre durante o ano letivo (recuperação paralela) ou ao final do bimestre/trimestre (recuperação bimestral). A nota da recuperação pode substituir a nota anterior ou ser usada em uma fórmula específica (ex: média entre primeira nota e recuperação). <strong>Exame Final</strong> é uma última tentativa no final do ano: se o aluno não atingiu média 6,0 durante todo o ano, ele faz um exame e a nota desse exame é combinada com a média anual. Fórmula comum: (Média anual + Nota do Exame) ÷ 2. Se o resultado for ≥ 6,0, o aluno passa; senão, fica retido. Nem todas as instituições usam exame final — algumas aprovam ou reprovam apenas pela média do ano.
+                        </p>
+                    </details>
+
+                    <details style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.06);">
+                        <summary style="font-weight: 600; color: var(--cor-primaria); cursor: pointer; font-size: 1rem;">Como o ENEM calcula a nota com a TRI (Teoria de Resposta ao Item)?</summary>
+                        <p style="margin-top: 12px; font-size: 0.97rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                            O ENEM não usa simples contagem de acertos. Usa a <strong>TRI (Teoria de Resposta ao Item)</strong>, que é um método estatístico sofisticado: cada questão tem um "peso" estatístico diferente, baseado em seu grau de dificuldade. Uma questão difícil que poucos acertaram vale mais do que uma fácil que quase todos acertaram. Além disso, o sistema leva em conta a <strong>consistência</strong> das respostas: se você acerta perguntas fáceis e médias mas erra as difíceis, a TRI assume que você tem domínio de conteúdo até certo ponto. Se você erra perguntas fáceis mas acerta as difíceis, a TRI acha isso inconsistente e pode penalizar. O resultado é uma pontuação que varia de 0 a 1.000 em cada disciplina. A TRI torna cada edição do ENEM comparável, mesmo que mudem as questões — uma nota 700 em 2024 significa o mesmo que 700 em 2025.
+                        </p>
+                    </details>
+
+                    <details style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.06);">
+                        <summary style="font-weight: 600; color: var(--cor-primaria); cursor: pointer; font-size: 1rem;">Repetir uma disciplina na universidade afeta o IRA?</summary>
+                        <p style="margin-top: 12px; font-size: 0.97rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                            <strong>Sim, mas depende da universidade.</strong> O <strong>IRA (Índice de Rendimento Acadêmico)</strong> é uma média ponderada de todas as disciplinas cursadas. Quando você repete uma disciplina, a maioria das universidades federais contabiliza AMBAS as notas no IRA — a primeira nota ruim e a segunda nota (a repetência). Isso pode prejudicar bastante o IRA. Algumas universidades oferecem a opção de <strong>"aproveitamento de disciplina"</strong> — se você passou com nota 5,0 mas quer melhorar para 7,0, você pode refazer sem que a primeira nota conte mais. Porém, essa opção não é padrão em todas as instituições. Universidades privadas geralmente têm políticas diferentes — algumas substituem a nota ruim pela nova, outras contam as duas. Sempre consulte o regulamento da sua instituição. O IRA é importante para bolsas, monitoria, formação de turmas especiais, e até para atrair empregadores — então manter o IRA alto é estratégico durante a graduação.
+                        </p>
+                    </details>
+                </article>
+
+                <!-- CTA FINAL -->
+                <article style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 40px 30px; border-radius: 14px; text-align: center; color: #fff; margin: 50px 0;">
+                    <h3 style="margin: 0 0 15px; font-size: 1.3rem;">Calcule sua média agora</h3>
+                    <p style="opacity: 0.95; margin: 0 0 25px; font-size: 0.98rem; line-height: 1.6;">
+                        Use nossa calculadora acima para descobrir sua média ponderada ou simples, e simule qual nota precisa nas próximas avaliações para atingir seus objetivos. Customize os pesos conforme o regulamento da sua instituição.
+                    </p>
+                    <a href="#resultado-area" style="background: #fff; color: #2563eb; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; transition: all 0.3s;">↑ Voltar à Calculadora</a>
+                </article>
+
+                <!-- Links Externos -->
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">🔗 Recursos para Estudos</h3>
         </div>
     </main>
 

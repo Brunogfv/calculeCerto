@@ -156,83 +156,79 @@
 
             <!-- Conteúdo Educativo / SEO -->
             <aside class="info-card">
-                <article>
-                    <h3>Como funciona o Cálculo?</h3>
-                    <p>
-                        Muitos alunos ficam na dúvida sobre quanto precisam tirar na recuperação ou exame final. Esta
-                        calculadora usa a lógica de <strong>Média Ponderada</strong>.
+                
+                <!-- SEÇÃO 1 — O QUE É MÉDIA FINAL -->
+                <article style="margin-top: 40px; padding: 30px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <h3 style="font-size: 1.3rem; color: var(--cor-primaria); margin: 0 0 20px;">O que é a média final e como ela funciona nas escolas brasileiras</h3>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                        A <strong>média final</strong> (também chamada de exame final) é uma última oportunidade de recuperação para alunos que não atingiram a média de aprovação direta durante o ano letivo. No sistema mais tradicional das escolas brasileiras — tanto públicas quanto particulares — quem termina o ano com média entre 4,0 e 5,9 pontos (em escolas com nota de corte 6,0) tem direito de fazer o exame final. Esse exame avalia todo o conteúdo do ano e oferece uma chance de elevar a nota. Já quem tem média inferior a 4,0 é automaticamente reprovado, sem direito ao exame final.
                     </p>
-                    <p>
-                        A fórmula utilizada é:
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                        O cálculo da aprovação no exame final segue uma fórmula simples: a média final é a média entre a nota do ano e a nota tirada no exame. Para ser aprovado após o exame final, esta nova média precisa ser no mínimo 5,0 (em muitos lugares) ou 6,0 (em outros, conforme politica da instituição). Por exemplo, se you teve média 4,5 no ano e quer atingir 5,0 para passar, você precisa considerar quanto precisa tirar no exame para que a média entre 4,5 e essa nota resulte em 5,0 ou mais. É isso que a calculadora acima faz de forma automática.
                     </p>
-                    <div
-                        style="background: #e2e8f0; padding: 10px; border-radius: 6px; font-family: monospace; text-align: center; margin: 10px 0;">
-                        Nota Necessária = [(Meta × Total Pesos) − (Média Atual × Peso Média)] ÷ Peso Prova
-                    </div>
                 </article>
 
-                <!-- Links Externos -->
-                <div style="margin-top: 30px;">
-                    <h3 style="margin-bottom: 20px;">🔗 Dicas de Estudo</h3>
-                    <div class="link-grid">
-                        <a href="https://estuda.com/" target="_blank" rel="nofollow noopener" class="link-card">
-                            <span class="link-icon">📝</span>
-                            <div>
-                                <div class="link-title">Estudo de Última Hora</div>
-                                <div class="link-desc">Técnicas para absorver conteúdo rapidamente.</div>
-                            </div>
-                        </a>
-
-                        <a href="https://www.youtube.com/results?search_query=estudo+de+ultima+hora" target="_blank"
-                            rel="nofollow noopener" class="link-card">
-                            <span class="link-icon">🎥</span>
-                            <div>
-                                <div class="link-title">Vídeos no YouTube</div>
-                                <div class="link-desc">Resumos e dicas de professores.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- FAQ Section -->
-                <article style="margin-top: 30px;">
-                    <h3>Perguntas Frequentes</h3>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>O que colocar em "Peso da Prova Final"?</summary>
-                            <p>Verifique o seu regimento escolar. Em muitos lugares, a prova final vale o mesmo que os
-                                bimestres (peso 1). Em outros, ela vale o dobro ou triplo (peso 2 ou 3). Se você não
-                                souber, tente peso 1 para média simples.</p>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>E se a nota der negativa ou maior que 10?</summary>
-                            <p>Se o resultado for <strong>negativo</strong>, significa que você já atingiu a meta mesmo
-                                zerando a prova (parabéns!). Se der <strong>maior que 10</strong>, significa que é
-                                matematicamente impossível atingir a média.</p>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>Qual a média mais comum no Brasil?</summary>
-                            <p>A maioria das escolas particulares e públicas adota a média <strong>6.0</strong> ou
-                                <strong>7.0</strong> para aprovação direta. Consulte seu boletim para ter certeza.
-                            </p>
-                        </details>
-                    </div>
+                <!-- SEÇÃO 2 — COMO CALCULAR NOTA NECESSÁRIA -->
+                <article style="margin-top: 40px; padding: 30px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <h3 style="font-size: 1.3rem; color: var(--cor-primaria); margin: 0 0 20px;">Como calcular a nota necessária no exame final</h3>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                        A maioria das escolas brasileiras utiliza a fórm seguinte para calcular a média final: <strong>(Média do Ano + Nota do Exame) ÷ 2</strong>. Isso significa que tanto a nota do ano quanto a nota do exame têm o mesmo peso (peso 1 cada). Para descobrir a nota mínima que você precisa tirar no exame final, use a fórmula inversa: <strong>Nota Exame = (Média de Aprovação × 2) − Média do Ano</strong>. Vejamos um exemplo prático: suponha que você tem média do ano de 4,5 pontos e a sua escola exige média 5,0 para aprovação. Usando a fórmula, a nota mínima no exame seria: (5,0 × 2) − 4,5 = 10,0 − 4,5 = 5,5. Logo, você precisa tirar pelo menos 5,5 no exame para conseguir uma média final de 5,0 e ser aprovado.
+                    </p>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                        É importante verificar o regulamento específico da sua instituição, pois algumas escolas podem usar pesos diferentes para a média do ano e a nota da prova final — por exemplo, a prova final pode valer o dobro. Nesse caso, a fórmula seria: (Média do Ano × 1 + Nota do Exame × 2) ÷ 3. A calculadora acima permite que você configure esses pesos manualmente para se adequar ao seu regimento escolar. Se sua escola usa uma fórmula diferente, basta ajustar os campos "Peso da Média Atual" e "Peso da Prova Final" de acordo com sua instituição.
+                    </p>
                 </article>
 
-                <article
-                    style="margin-top: 30px; background: #dcfce7; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
-                    <h4 style="margin-top: 0; color: #15803d;">🍀 Sorte!</h4>
-                    <p style="margin-bottom: 0; color: #166534; font-size: 0.9rem;">
-                        Lembre-se: o cansaço é o seu inimigo na véspera. Durma bem, mantenha-se hidratado e confie no
-                        que estudou. Boa prova!
+                <!-- SEÇÃO 3 — DICAS PARA SE PREPARAR -->
+                <article style="margin-top: 40px; padding: 30px; background: var(--cor-card); border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <h3 style="font-size: 1.3rem; color: var(--cor-primaria); margin: 0 0 20px;">Dicas para se preparar para o exame final</h3>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
+                        O exame final costuma cobrir todo o conteúdo dado ao longo do ano, portanto a preparação exige planejamento estratégico. Comece por <strong>priorizar os tópicos de maior peso</strong> nas provas anteriores (bimestres) e aqueles em que você tem mais dificuldade — é mais valioso melhorar onde você é fraco do que consolidar onde é forte. Se sua escola disponibiliza provas de anos anteriores, resolva-as como simulado: isso reduz a ansiedade e familiariza você com o formato da prova. Organize um cronograma de estudo por matéria nos dias disponíveis antes do exame, dedicando mais tempo às áreas com maior dificuldade. Avoid deixar tudo para última hora; study progressively permite melhor fixação do conteúdo.
                     </p>
+                    
+                    <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
+                        Não subestime o descanso adequado — <strong>durma bem na véspera</strong> do exame, pois o sono melhora a recuperação da memória e aguça o raciocínio lógico. Noites mal dormidas prejudicam concentração e tomada de decisão. Mantenha-se hidratado e alimentado bem antes da prova. Leve para o exame apenas o que é permitido pela intuição, e evite comparecer muito cedo (que pode aumentar ansiedade). No dia da prova, leia todas as questões com atenção antes de começar, em distribua bem o tempo: resolva primeiro as questões que você tem certeza, depois as questões mais desafiadoras com o tempo restante.
+                    </p>
+                </article>
+
+                <!-- FAQ EXPANDIDA -->
+                <article style="margin-top: 50px; padding: 40px 30px; background: #f8fafc; border-radius: 16px;">
+                    <h3 style="color: var(--cor-primaria); margin: 0 0 30px;">Perguntas Frequentes sobre Média Final</h3>
+
+                    <details style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.06);">
+                        <summary style="font-weight: 600; color: var(--cor-primaria); cursor: pointer; font-size: 1rem;">Quem vai para o exame final pode ser aprovado em todas as matérias?</summary>
+                        <p style="margin-top: 12px; font-size: 0.97rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                            Sim! O exame final é uma oportunidade individual por matéria — você faz exame final em cada disciplina em que não atingiu a média de aprovação direta. É totalmente possível fazer exame final em uma matéria e já estar aprovado em outras. Alguns alunos precisam fazer exame em 3 disciplinas, outros em 7 — depende quantas ficaram abaixo da nota de corte. Cada exame é calculado independentemente, então a aprovação em uma matéria não afeta a outra.
+                        </p>
+                    </details>
+
+                    <details style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.06);">
+                        <summary style="font-weight: 600; color: var(--cor-primaria); cursor: pointer; font-size: 1rem;">O exame final existe na universidade também?</summary>
+                        <p style="margin-top: 12px; font-size: 0.97rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                            Depende da instituição. Universidades federais e estaduais costumam oferecer <strong>exame de segunda chamada</strong> ou <strong>exame substitutivo</strong> para alunos que perderam a prova (justificadamente) ou tiraram nota baixa, mas nem sempre é a mesma dinâmica das escolas. Algumas universidades simplesmente reprovam e o aluno refaz a disciplina no próximo semestre. Universidades particulares têm políticas próprias — algumas permitem recuperação, outras não. O sistema varia bastante, então consulte o regimento da sua universidade. O conceito é semelhante, mas a fórmula de cálculo pode ser completamente diferente.
+                        </p>
+                    </details>
+
+                    <details style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.06);">
+                        <summary style="font-weight: 600; color: var(--cor-primaria); cursor: pointer; font-size: 1rem;">Qual a diferença entre exame final e recuperação paralela?</summary>
+                        <p style="margin-top: 12px; font-size: 0.97rem; color: var(--cor-texto-suave); line-height: 1.8; margin-bottom: 0;">
+                            <strong>Recuperação paralela</strong> ocorre durante o ano letivo — normalmente após cada bimestre ou em perí­odo específico. Se você ficou com nota baixa em um bimestre, você faz uma recuperação e a nota pode substituir a anterior ou ser incorporada em uma nova média parcial. <strong>Exame final</strong> acontece ao final do ano, é uma única tentativa (ou no máximo duas conforme a escola), e nela você precisa atingir uma média mínima para não ser reprovado. A recuperação paralela é graduada e oferece mais oportunidades ao longo do ano; o exame final é sua última chance. Muitas escolas oferecem ambas as modalidades — você refaz durante o ano e, se ainda assim acabar com média baixa, faz o exame final.
+                        </p>
+                    </details>
+                </article>
+
+                <!-- CTA FINAL -->
+                <article style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 40px 30px; border-radius: 14px; text-align: center; color: #fff; margin-top: 50px;">
+                    <h3 style="margin: 0 0 15px; font-size: 1.3rem;">Calcule sua nota agora</h3>
+                    <p style="opacity: 0.95; margin: 0 0 25px; font-size: 0.98rem; line-height: 1.6;">
+                        Use nossa calculadora acima para descobrir exatamente quanto você precisa tirar no exame final. Configure os pesos conforme o regimento da sua escola e simule diferentes cenários para sua aprovação.
+                    </p>
+                    <a href="#resultado-area" style="background: #fff; color: #2563eb; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; transition: all 0.3s;">↑ Voltar à Calculadora</a>
                 </article>
 
             </aside>
