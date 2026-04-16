@@ -19,5 +19,21 @@
 /artigos/saude/calculadoras/decimo-terceiro /calculadoras/decimo-terceiro 301
 /artigos/saude/calculadoras/piso /calculadoras/piso 301
 
+# Redirect requested: duplicate "calculadoras" segment → corrected path
+/artigos/financas/calculadoras/calculadoras/salario.html /calculadoras/salario.html 301
+
 # General rules for stripping .html (Can be complex in _redirects without regex)
 # Cloudflare Pages Automatic "Clean URLs" is the best way to handle the .html strip.
+
+# Redirects added by script to map old URLs to canonical/actual pages
+/artigos/calculaveis/quanto-rende-100000-poupanca.html /artigos/financas/quanto-rende-100000-na-poupanca.html 301
+/calculadoras/juros.html /artigos/financas/calculadoras/juros.html 301
+/artigos/comparacao/tesouro-direto-ou-cdb-liquidez-diaria.html /artigos/financas/tesouro-direto-ou-cdb-liquidez-diaria.html 301
+/artigos/utilitarios/consumo-combustivel.html /artigos/saude/calculadoras/combustivel.html 301
+/artigos/comparacao/tesouro-pre-fixado-ou-ipca.html /artigos/financas/tesouro-prefixado-ou-ipca.html 301
+/artigos/saude/imc-baixo.html /artigos/saude/imc-baixo-quando-preocupar.html 301
+/artigos/saude/calcular-gasto-calorico-diario.html /artigos/saude/como-calcular-gasto-calorico-diario.html 301
+/artigos/calculaveis/quanto-rende-investir-2000-mes.html /artigos/financas/quanto-rende-investir-2000-por-mes.html 301
+/artigos/calculaveis/quanto-rende-1milhao-mes.html /artigos/financas/quanto-rende-1-milhao-por-mes.html 301
+/artigos/calculaveis/quanto-rende-50000-mes.html /artigos/financas/quanto-rende-50000-reais-por-mes.html 301
+/artigos/calculaveis/quanto-rende-10000-tesouro-selic.html /artigos/financas/quanto-rende-10000-no-tesouro-selic.html 301
