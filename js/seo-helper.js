@@ -1,64 +1,56 @@
 /**
- * Portal das Contas - SEO Helper Script
- * Gerencia a canonicalização dinâmica e o controle de indexação (robots).
+ * Portal das Contas - SEO helper
+ * Mantem canonical e robots coerentes mesmo quando uma URL legada e acessada.
  */
 
 (function () {
-    const PREFERRED_DOMAIN = "portaldascontas.com.br";
-    const PROTOCOL = "https://";
+    const DOMAIN = "https://portaldascontas.com.br";
 
-    function updateCanonical() {
-        // Remove barras duplicadas, 'www.', query strings e fragmentos
-        let path = window.location.pathname;
+    function cleanPath(pathname) {
+        let path = pathname || "/";
 
-        // Garante que o path termina em .html se não for a raiz
-        if (path !== "/" && !path.endsWith(".html")) {
-            // Se o path termina em barra, remove e tenta ver se é diretório ou arquivo
-            path = path.replace(/\/$/, "");
-            if (path && !path.endsWith(".html")) {
-                path += ".html";
-            }
-        }
+        path = path.replace(/\/{2,}/g, "/");
+        path = path.replace(/\/calculadoras\/calculadoras\//g, "/calculadoras/");
+        path = path.replace(/^\/artigos\/[^/]+\/calculadoras\/([^/]+?)(?:\.html)?$/, "/calculadoras/$1");
 
-        // Se for a home (/index.html), canonicaliza para /
-        if (path === "/index.html") {
-            path = "/";
-        }
+        if (path === "/index.html") return "/";
+        if (path.endsWith("/index.html")) path = path.slice(0, -11) || "/";
+        if (path.endsWith(".html")) path = path.slice(0, -5) || "/";
+        if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
 
-        const canonicalUrl = `${PROTOCOL}${PREFERRED_DOMAIN}${path}`;
-
-        // Verifica se já existe a tag canonical
-        let canonicalTag = document.querySelector('link[rel="canonical"]');
-        if (!canonicalTag) {
-            canonicalTag = document.createElement('link');
-            canonicalTag.rel = 'canonical';
-            document.head.appendChild(canonicalTag);
-        }
-        canonicalTag.href = canonicalUrl;
+        return path || "/";
     }
 
-    function updateRobots() {
-        const isSearchPage = window.location.pathname.includes('busca.html');
-        const hasSearchParams = window.location.search.includes('?q=') || window.location.search.includes('&q=');
-
-        if (isSearchPage || hasSearchParams) {
-            let robotsTag = document.querySelector('meta[name="robots"]');
-            if (!robotsTag) {
-                robotsTag = document.createElement('meta');
-                robotsTag.name = 'robots';
-                document.head.appendChild(robotsTag);
-            }
-            robotsTag.content = 'noindex, follow';
+    function ensureCanonical() {
+        const canonicalUrl = `${DOMAIN}${cleanPath(window.location.pathname)}`;
+        let tag = document.querySelector('link[rel="canonical"]');
+        if (!tag) {
+            tag = document.createElement("link");
+            tag.rel = "canonical";
+            document.head.appendChild(tag);
         }
+        tag.href = canonicalUrl;
     }
 
-    // Executa as melhorias assim que o script carregar
-    updateCanonical();
-    updateRobots();
-    
-    // Opcional: Redirecionamento de WWW para Não-WWW (Segurança extra caso o Cloudflare não esteja configurado)
-    if (window.location.hostname.startsWith('www.')) {
-        const newUrl = window.location.href.replace('www.', '');
-        window.location.replace(newUrl);
+    function ensureRobots() {
+        const clean = cleanPath(window.location.pathname);
+        const isSearchPage = clean === "/busca" || clean === "/busca.html";
+        const hasSearchParams = new URLSearchParams(window.location.search).has("q");
+        const content = isSearchPage || hasSearchParams ? "noindex, follow" : "index, follow";
+
+        let tag = document.querySelector('meta[name="robots"]');
+        if (!tag) {
+            tag = document.createElement("meta");
+            tag.name = "robots";
+            document.head.appendChild(tag);
+        }
+        tag.content = content;
+    }
+
+    ensureCanonical();
+    ensureRobots();
+
+    if (window.location.hostname.startsWith("www.")) {
+        window.location.replace(window.location.href.replace("://www.", "://"));
     }
 })();

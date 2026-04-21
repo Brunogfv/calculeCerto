@@ -1,0 +1,188 @@
+# Relatorio de Refatoracao de URLs
+
+## Alteracoes realizadas
+
+- HTMLs processados: 161
+- Arquivos atualizados: 163
+- URLs antigas mapeadas: 161
+- Redirecionamentos 301 gerados em `_redirects` para todas as URLs `.html` e legados de calculadoras.
+- Canonical absoluta aplicada para a URL final sem `.html`.
+- Sitemap regenerado somente com URLs finais.
+
+## Exemplos de redirecionamento
+
+- `/artigos/financas/calculadoras/juros.html` -> `/calculadoras/juros`
+- `/artigos/saude/calculadoras/juros.html` -> `/calculadoras/juros`
+- `/calculadoras/calculadoras/salario.html` -> `/calculadoras/salario`
+
+## Problemas encontrados
+
+- Canonicals divergentes entre páginas reais e URLs antigas.
+- Referências internas para `.html` e caminhos legados de calculadoras.
+- Padrões históricos de duplicação em `/artigos/{categoria}/calculadoras/{slug}` e `/calculadoras/calculadoras/{slug}`.
+
+## Arquivos modificados
+
+- `artigos/calculaveis/quanto-rende-1000-10anos.html`
+- `artigos/calculaveis/quanto-rende-1000-mes.html`
+- `artigos/calculaveis/quanto-rende-10000-cdi.html`
+- `artigos/calculaveis/quanto-rende-10000-juros-compostos.html`
+- `artigos/calculaveis/quanto-rende-10000-mes.html`
+- `artigos/calculaveis/quanto-rende-10000-poupanca.html`
+- `artigos/calculaveis/quanto-rende-10000-tesouro-selic.html`
+- `artigos/calculaveis/quanto-rende-100000-cdi.html`
+- `artigos/calculaveis/quanto-rende-100000-mes.html`
+- `artigos/calculaveis/quanto-rende-100000-poupanca.html`
+- `artigos/calculaveis/quanto-rende-100000-tesouro-selic.html`
+- `artigos/calculaveis/quanto-rende-100mil-10anos.html`
+- `artigos/calculaveis/quanto-rende-100mil-5anos.html`
+- `artigos/calculaveis/quanto-rende-1milhao-investido.html`
+- `artigos/calculaveis/quanto-rende-1milhao-mes.html`
+- `artigos/calculaveis/quanto-rende-2000-mes.html`
+- `artigos/calculaveis/quanto-rende-5000-mes.html`
+- `artigos/calculaveis/quanto-rende-50000-cdi.html`
+- `artigos/calculaveis/quanto-rende-50000-mes.html`
+- `artigos/calculaveis/quanto-rende-50000-poupanca.html`
+- `artigos/calculaveis/quanto-rende-50000-tesouro-selic.html`
+- `artigos/calculaveis/quanto-rende-investir-1000-mes.html`
+- `artigos/calculaveis/quanto-rende-investir-10000-mes.html`
+- `artigos/calculaveis/quanto-rende-investir-2000-mes.html`
+- `artigos/calculaveis/quanto-rende-investir-500-mes.html`
+- `artigos/calculaveis/quanto-rende-investir-5000-mes.html`
+- `artigos/comparacao/acoes-ou-renda-fixa.html`
+- `artigos/comparacao/acoes-vs-etfs.html`
+- `artigos/comparacao/cdb-ou-debentures.html`
+- `artigos/comparacao/cdb-ou-fundos-de-investimentos.html`
+- `artigos/comparacao/cdb-ou-lc.html`
+- `artigos/comparacao/cdb-vs-tesouro-direto.html`
+- `artigos/comparacao/cdb110cdi-ou-lci.html`
+- `artigos/comparacao/cdi-ou-ipca.html`
+- `artigos/comparacao/criptomoedas-ou-acoes.html`
+- `artigos/comparacao/dolar-ou-real.html`
+- `artigos/comparacao/etf-ou-fundo-investimento.html`
+- `artigos/comparacao/fii-vs-renda-fixa.html`
+- `artigos/comparacao/fiis-ou-acoes.html`
+- `artigos/comparacao/fiis-ou-imoveis.html`
+- `artigos/comparacao/lca-ou-cdb.html`
+- `artigos/comparacao/lci-ou-cdb.html`
+- `artigos/comparacao/lci-ou-lca.html`
+- `artigos/comparacao/poupanca-ou-cdb.html`
+- `artigos/comparacao/renda-fixa-ou-renda-variavel.html`
+- `artigos/comparacao/tesouro-direto-ou-cdb-liquidez-diaria.html`
+- `artigos/comparacao/tesouro-direto-ou-poupanca.html`
+- `artigos/comparacao/tesouro-ipca-ou-fii.html`
+- `artigos/comparacao/tesouro-ipca-ou-tesouro-selic.html`
+- `artigos/comparacao/tesouro-pre-fixado-ou-ipca.html`
+- `artigos/comparacao/tesouro-selic-ou-poupanca.html`
+- `artigos/comparacao/tesouro-selic-vs-cdb.html`
+- `artigos/financas/calcular-financiamento.html`
+- `artigos/financas/calcular-inflacao-acumulada.html`
+- `artigos/financas/calcular-juros-emprestimos.html`
+- `artigos/financas/calcular-porcentagem.html`
+- `artigos/financas/calcular-rendimento-investimento.html`
+- `artigos/financas/calcular-rentabilidade-investimento.html`
+- `artigos/financas/capitalizacao-composta.html`
+- `artigos/financas/carteira-de-investimento.html`
+- `artigos/financas/como-calcular-desconto-inss.html`
+- `artigos/financas/como-calcular-juros-compostos.html`
+- `artigos/financas/como-funciona-poupanca.html`
+- `artigos/financas/funciona-cdb.html`
+- `artigos/financas/hora-extra.html`
+- `artigos/financas/imposto-renda-em-investimentos.html`
+- `artigos/financas/investir-cdb.html`
+- `artigos/financas/investir-pouco-dinheiro.html`
+- `artigos/financas/juros-simples-compostos.html`
+- `artigos/financas/lci-lca.html`
+- `artigos/financas/o-que-e-cdi.html`
+- `artigos/financas/o-que-e-ipca.html`
+- `artigos/financas/o-que-e-renda-fixa.html`
+- `artigos/financas/o-que-e-renda-variavel.html`
+- `artigos/financas/o-que-e-roi.html`
+- `artigos/financas/o-que-sao-dividendos.html`
+- `artigos/financas/o-que-sao-fundo-imobiliario.html`
+- `artigos/financas/tesouro-direto.html`
+- `artigos/financas/valor-futuro-investimento.html`
+- `artigos/index.html`
+- `artigos/saude/acelerar-metabolismo-naturalmente.html`
+- `artigos/saude/calcular-gasto-calorico-diario.html`
+- `artigos/saude/calcular-imc-corretamente.html`
+- `artigos/saude/como-reduzir-imc-saudavel.html`
+- `artigos/saude/deficit-calorico.html`
+- `artigos/saude/dieta-duasmil-calorias-funciona.html`
+- `artigos/saude/imc-alto.html`
+- `artigos/saude/imc-baixo.html`
+- `artigos/saude/imc-ideal-por-idade.html`
+- `artigos/saude/imc-infantil.html`
+- `artigos/saude/imc-masc-fem-diferenca.html`
+- `artigos/saude/imc-para-idosos.html`
+- `artigos/saude/imc-realmente-funciona.html`
+- `artigos/saude/metabolismo-basal-e-gasto-calorico.html`
+- `artigos/saude/o-que-e-get.html`
+- `artigos/saude/o-que-e-tmb.html`
+- `artigos/saude/proteina-diaria.html`
+- `artigos/saude/quantas-calorias-consumir-emagrecer.html`
+- `artigos/saude/quantas-calorias-consumir-ganhar-massa.html`
+- `artigos/saude/quantas-calorias-gastar-por-dia.html`
+- `artigos/saude/superavit-calorico.html`
+- `artigos/utilitarios/consumo-combustivel.html`
+- `artigos/utilitarios/litros-tinta.html`
+- `busca.html`
+- `calculadoras/agua.html`
+- `calculadoras/aluguel-vs-compra.html`
+- `calculadoras/amortizacao.html`
+- `calculadoras/bhaskara.html`
+- `calculadoras/calc-cdb.html`
+- `calculadoras/calc-imposto-renda.html`
+- `calculadoras/calc-inflacao.html`
+- `calculadoras/calc-investimento.html`
+- `calculadoras/calc-ir-investimentos.html`
+- `calculadoras/calc-lca-vs-cdb.html`
+- `calculadoras/calc-lci-vs-cdb.html`
+- `calculadoras/calc-poupanca-vs-investimento.html`
+- `calculadoras/calc-price-sac.html`
+- `calculadoras/calc-tesouro-direto.html`
+- `calculadoras/churrasco.html`
+- `calculadoras/cimento.html`
+- `calculadoras/combustivel.html`
+- `calculadoras/conversor-unidades.html`
+- `calculadoras/cr.html`
+- `calculadoras/datas.html`
+- `calculadoras/decimo-terceiro.html`
+- `calculadoras/dividendos.html`
+- `calculadoras/energia.html`
+- `calculadoras/equacao-primeiro-grau.html`
+- `calculadoras/festa.html`
+- `calculadoras/forca.html`
+- `calculadoras/gasto-calorico.html`
+- `calculadoras/hora-extra.html`
+- `calculadoras/imc.html`
+- `calculadoras/inss.html`
+- `calculadoras/juros.html`
+- `calculadoras/kmh-ms.html`
+- `calculadoras/media-final.html`
+- `calculadoras/medias.html`
+- `calculadoras/medidas-culinarias.html`
+- `calculadoras/mmc-mdc.html`
+- `calculadoras/parto.html`
+- `calculadoras/pet-idade.html`
+- `calculadoras/piso.html`
+- `calculadoras/pizza.html`
+- `calculadoras/pj-vs-clt.html`
+- `calculadoras/pneus.html`
+- `calculadoras/porcentagem-reversa.html`
+- `calculadoras/porcentagem.html`
+- `calculadoras/regra-de-tres.html`
+- `calculadoras/salario.html`
+- `calculadoras/tdee.html`
+- `calculadoras/temperatura.html`
+- `calculadoras/tinta.html`
+- `calculadoras/tmb.html`
+- `calculadoras/velocidade-media.html`
+- `index.html`
+- `meus-calculos.html`
+- `paginas/contato.html`
+- `paginas/privacidade.html`
+- `paginas/sobre.html`
+- `paginas/termos.html`
+- `_redirects`
+- `sitemap.xml`
