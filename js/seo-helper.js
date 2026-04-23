@@ -35,8 +35,9 @@
     function ensureRobots() {
         const clean = cleanPath(window.location.pathname);
         const isSearchPage = clean === "/busca" || clean === "/busca.html";
+        const isInternalPage = clean === "/meus-calculos" || clean === "/meus-calculos.html";
         const hasSearchParams = new URLSearchParams(window.location.search).has("q");
-        const content = isSearchPage || hasSearchParams ? "noindex, follow" : "index, follow";
+        const content = isSearchPage || isInternalPage || hasSearchParams ? "noindex, follow" : "index, follow";
 
         let tag = document.querySelector('meta[name="robots"]');
         if (!tag) {

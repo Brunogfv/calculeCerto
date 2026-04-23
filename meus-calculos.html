@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
+<head>
+
     <link rel="canonical" href="https://portaldascontas.com.br/meus-calculos">
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Veja seu histórico de cálculos e calculadoras favoritas no Portal das Contas. Acompanhe todos os seus cálculos em um só lugar.">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, follow">
     <meta name="google-adsense-account" content="ca-pub-7285637994208303">
 
     <!-- Google tag (gtag.js) -->
@@ -126,11 +127,23 @@
                 return;
             }
 
+            function normalizeFavoriteUrl(url) {
+                if (!url) return '/';
+                let normalized = String(url).trim();
+                normalized = normalized.replace(/^https?:\/\/(?:www\.)?portaldascontas\.com\.br/i, '');
+                if (!normalized.startsWith('/')) normalized = `/${normalized.replace(/^\/+/, '')}`;
+                if (normalized === '/index.html') return '/';
+                if (normalized.endsWith('/index.html')) normalized = normalized.slice(0, -11) || '/';
+                if (normalized.endsWith('.html')) normalized = normalized.slice(0, -5) || '/';
+                if (normalized.length > 1 && normalized.endsWith('/')) normalized = normalized.slice(0, -1);
+                return normalized || '/';
+            }
+
             container.innerHTML = favoritos.map(fav => `
                 <div class="favorito-card">
                     <span class="favorito-star">★</span>
-                    <a href="/${escapeHtml(fav.url)}" class="favorito-nome">${escapeHtml(fav.nome)}</a>
-                    <button class="favorito-remover" data-url="/${escapeHtml(fav.url)}" title="Remover favorito">❌</button>
+                    <a href="${escapeHtml(normalizeFavoriteUrl(fav.url))}" class="favorito-nome">${escapeHtml(fav.nome)}</a>
+                    <button class="favorito-remover" data-url="${escapeHtml(normalizeFavoriteUrl(fav.url))}" title="Remover favorito">❌</button>
                 </div>
             `).join('');
 

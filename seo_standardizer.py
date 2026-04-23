@@ -2,6 +2,7 @@ import os
 import re
 
 DOMAIN = "https://portaldascontas.com.br"
+NOINDEX_PAGES = {"busca.html", "meus-calculos.html"}
 
 def clean_url_path(path):
     path = path.replace("\\", "/")
@@ -80,8 +81,24 @@ def process_file(file_path):
     content = content.replace("http://www.portaldascontas.com.br", DOMAIN)
     
     # 5. robots
-    if not re.search(r'<meta name=["\']robots["\']', content, re.I) and "busca.html" not in file_path:
-         content = re.sub(r'(<head>)', r'\1\n    <meta name="robots" content="index, follow">', content, count=1, flags=re.I)
+    if any(page in file_path for page in NOINDEX_PAGES):
+        if re.search(r'<meta name=["\']robots["\']', content, re.I):
+            content = re.sub(
+                r'(<meta[^>]+name=["\']robots["\'][^>]+content=["\'])([^"\']*)(["\'][^>]*>)',
+                r'\1noindex, follow\3',
+                content,
+                flags=re.I,
+            )
+        else:
+            content = re.sub(
+                r'(<head>)',
+                r'\1\n    <meta name="robots" content="noindex, follow">',
+                content,
+                count=1,
+                flags=re.I,
+            )
+    elif not re.search(r'<meta name=["\']robots["\']', content, re.I):
+        content = re.sub(r'(<head>)', r'\1\n    <meta name="robots" content="index, follow">', content, count=1, flags=re.I)
 
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(content)

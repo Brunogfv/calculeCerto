@@ -2,6 +2,7 @@ import os
 import re
 
 DOMAIN = "https://portaldascontas.com.br"
+NOINDEX_PAGES = {"busca.html", "meus-calculos.html"}
 
 def standardize_url(url):
     # Ignore external links, mailto, tel, anchors
@@ -55,8 +56,8 @@ def process_file(file_path):
     # 3. Remove seo-helper.js script
     content = re.sub(r'<script [^>]*src=["\'][^"\']*seo-helper\.js["\'][^>]*></script>', '', content, flags=re.I)
     
-    # 4. Handle busca.html robots (noindex)
-    if "busca.html" in relative_path:
+    # 4. Handle internal/search pages robots (noindex)
+    if any(page in relative_path for page in NOINDEX_PAGES):
         if not re.search(r'meta name=["\']robots["\']', content, re.I):
             noindex_tag = '<meta name="robots" content="noindex, follow">'
             content = re.sub(r'(<head>)', r'\1\n    ' + noindex_tag, content, count=1, flags=re.I)

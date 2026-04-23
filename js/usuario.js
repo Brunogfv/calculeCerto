@@ -8,6 +8,24 @@
  *   - "calculadorasFavoritas"  → Array de objetos de favoritos
  */
 
+function normalizarUrlInterna(url) {
+    if (!url) return '/';
+
+    let normalized = String(url).trim();
+    normalized = normalized.replace(/^https?:\/\/(?:www\.)?portaldascontas\.com\.br/i, '');
+    if (!normalized.startsWith('/')) normalized = `/${normalized.replace(/^\/+/, '')}`;
+
+    if (normalized === '/index.html') return '/';
+    if (normalized.endsWith('/index.html')) normalized = normalized.slice(0, -11) || '/';
+    if (normalized.endsWith('.html')) normalized = normalized.slice(0, -5) || '/';
+    if (normalized.length > 1 && normalized.endsWith('/')) normalized = normalized.slice(0, -1);
+
+    normalized = normalized.replace(/\/calculadoras\/calculadoras\//g, '/calculadoras/');
+    normalized = normalized.replace(/^\/artigos\/[^/]+\/calculadoras\/([^/]+)$/, '/calculadoras/$1');
+
+    return normalized || '/';
+}
+
 // ========================================================
 // HISTÓRICO DE CÁLCULOS
 // ========================================================
@@ -101,7 +119,7 @@ window.adicionarFavorito = function (nome, url) {
         favoritos[index].nome = nome;
     } else {
         // Se não existe, adicionamos novo
-        favoritos.push({ nome: nome, url: url });
+        favoritos.push({ nome: nome, url: normalizedUrl });
     }
 
     try {
@@ -118,7 +136,11 @@ window.adicionarFavorito = function (nome, url) {
 window.listarFavoritos = function () {
     try {
         const dados = localStorage.getItem('calculadorasFavoritas');
-        return dados ? JSON.parse(dados) : [];
+        const favoritos = dados ? JSON.parse(dados) : [];
+        return favoritos.map(fav => ({
+            ...fav,
+            url: normalizarUrlInterna(fav.url)
+        }));
     } catch (e) {
         console.warn('Erro ao ler favoritos do localStorage:', e);
         return [];
@@ -130,8 +152,9 @@ window.listarFavoritos = function () {
  * @param {string} url - URL da calculadora a remover
  */
 window.removerFavorito = function (url) {
+    const normalizedUrl = normalizarUrlInterna(url);
     let favoritos = window.listarFavoritos();
-    favoritos = favoritos.filter(fav => fav.url !== url);
+    favoritos = favoritos.filter(fav => fav.url !== normalizedUrl);
     localStorage.setItem('calculadorasFavoritas', JSON.stringify(favoritos));
 };
 
@@ -141,7 +164,8 @@ window.removerFavorito = function (url) {
  * @returns {boolean} true se já estiver favoritada
  */
 window.isFavorito = function (url) {
-    return window.listarFavoritos().some(fav => fav.url === url);
+    const normalizedUrl = normalizarUrlInterna(url);
+    return window.listarFavoritos().some(fav => fav.url === normalizedUrl);
 };
 
 
