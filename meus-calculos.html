@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-
+<head>
     <link rel="canonical" href="https://portaldascontas.com.br/meus-calculos">
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,13 +138,31 @@
                 return normalized || '/';
             }
 
-            container.innerHTML = favoritos.map(fav => `
-                <div class="favorito-card">
-                    <span class="favorito-star">★</span>
-                    <a href="${escapeHtml(normalizeFavoriteUrl(fav.url))}" class="favorito-nome">${escapeHtml(fav.nome)}</a>
-                    <button class="favorito-remover" data-url="${escapeHtml(normalizeFavoriteUrl(fav.url))}" title="Remover favorito">❌</button>
-                </div>
-            `).join('');
+            container.innerHTML = '';
+
+            favoritos.forEach(fav => {
+                const normalizedUrl = normalizeFavoriteUrl(fav.url);
+                const card = document.createElement('div');
+                card.className = 'favorito-card';
+
+                const star = document.createElement('span');
+                star.className = 'favorito-star';
+                star.textContent = '★';
+
+                const link = document.createElement('a');
+                link.className = 'favorito-nome';
+                link.href = normalizedUrl;
+                link.textContent = fav.nome || normalizedUrl;
+
+                const button = document.createElement('button');
+                button.className = 'favorito-remover';
+                button.setAttribute('data-url', normalizedUrl);
+                button.title = 'Remover favorito';
+                button.textContent = '❌';
+
+                card.append(star, link, button);
+                container.appendChild(card);
+            });
 
             // Listeners para remover
             container.querySelectorAll('.favorito-remover').forEach(btn => {

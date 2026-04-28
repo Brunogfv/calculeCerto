@@ -1,28 +1,68 @@
 # Relatorio de Refatoracao de URLs
 
-## Alteracoes realizadas
+## Correcoes aplicadas
 
 - HTMLs processados: 161
-- Arquivos atualizados: 163
-- URLs antigas mapeadas: 161
-- Redirecionamentos 301 gerados em `_redirects` para todas as URLs `.html` e legados de calculadoras.
-- Canonical absoluta aplicada para a URL final sem `.html`.
-- Sitemap regenerado somente com URLs finais.
+- Arquivos alterados: 163
+- Redirecionamentos 301 gerados: 803
+- Canonicals absolutas padronizadas para HTTPS e sem `.html`.
+- Links internos normalizados para URLs finais limpas.
+- Sitemap regenerado apenas com URLs finais indexáveis.
+- URLs legadas de calculadoras e aliases de categoria incorreta redirecionadas com 301.
 
-## Exemplos de redirecionamento
+## URLs antigas -> novas
 
-- `/artigos/financas/calculadoras/juros.html` -> `/calculadoras/juros`
-- `/artigos/saude/calculadoras/juros.html` -> `/calculadoras/juros`
-- `/calculadoras/calculadoras/salario.html` -> `/calculadoras/salario`
+- `http://www.portaldascontas.com.br/*` -> `https://portaldascontas.com.br/:splat`
+- `https://www.portaldascontas.com.br/*` -> `https://portaldascontas.com.br/:splat`
+- `http://portaldascontas.com.br/*` -> `https://portaldascontas.com.br/:splat`
+- `/index.html` -> `/`
+- `/artigos/calculaveis/quanto-rende-1000-10anos.html` -> `/artigos/calculaveis/quanto-rende-1000-10anos`
+- `/artigos/calculaveis/quanto-rende-1000-mes.html` -> `/artigos/calculaveis/quanto-rende-1000-mes`
+- `/artigos/calculaveis/quanto-rende-10000-cdi.html` -> `/artigos/calculaveis/quanto-rende-10000-cdi`
+- `/artigos/calculaveis/quanto-rende-10000-juros-compostos.html` -> `/artigos/calculaveis/quanto-rende-10000-juros-compostos`
+- `/artigos/calculaveis/quanto-rende-10000-mes.html` -> `/artigos/calculaveis/quanto-rende-10000-mes`
+- `/artigos/calculaveis/quanto-rende-10000-poupanca.html` -> `/artigos/calculaveis/quanto-rende-10000-poupanca`
+- `/artigos/calculaveis/quanto-rende-10000-tesouro-selic.html` -> `/artigos/calculaveis/quanto-rende-10000-tesouro-selic`
+- `/artigos/calculaveis/quanto-rende-100000-cdi.html` -> `/artigos/calculaveis/quanto-rende-100000-cdi`
+- `/artigos/calculaveis/quanto-rende-100000-mes.html` -> `/artigos/calculaveis/quanto-rende-100000-mes`
+- `/artigos/calculaveis/quanto-rende-100000-poupanca.html` -> `/artigos/calculaveis/quanto-rende-100000-poupanca`
+- `/artigos/calculaveis/quanto-rende-100000-tesouro-selic.html` -> `/artigos/calculaveis/quanto-rende-100000-tesouro-selic`
+- `/artigos/calculaveis/quanto-rende-100mil-10anos.html` -> `/artigos/calculaveis/quanto-rende-100mil-10anos`
+- `/artigos/calculaveis/quanto-rende-100mil-5anos.html` -> `/artigos/calculaveis/quanto-rende-100mil-5anos`
+- `/artigos/calculaveis/quanto-rende-1milhao-investido.html` -> `/artigos/calculaveis/quanto-rende-1milhao-investido`
+- `/artigos/calculaveis/quanto-rende-1milhao-mes.html` -> `/artigos/calculaveis/quanto-rende-1milhao-mes`
+- `/artigos/calculaveis/quanto-rende-2000-mes.html` -> `/artigos/calculaveis/quanto-rende-2000-mes`
+- `/artigos/calculaveis/quanto-rende-5000-mes.html` -> `/artigos/calculaveis/quanto-rende-5000-mes`
+- `/artigos/calculaveis/quanto-rende-50000-cdi.html` -> `/artigos/calculaveis/quanto-rende-50000-cdi`
+- `/artigos/calculaveis/quanto-rende-50000-mes.html` -> `/artigos/calculaveis/quanto-rende-50000-mes`
+- `/artigos/calculaveis/quanto-rende-50000-poupanca.html` -> `/artigos/calculaveis/quanto-rende-50000-poupanca`
+- `/artigos/calculaveis/quanto-rende-50000-tesouro-selic.html` -> `/artigos/calculaveis/quanto-rende-50000-tesouro-selic`
+- `/artigos/calculaveis/quanto-rende-investir-1000-mes.html` -> `/artigos/calculaveis/quanto-rende-investir-1000-mes`
+- `/artigos/calculaveis/quanto-rende-investir-10000-mes.html` -> `/artigos/calculaveis/quanto-rende-investir-10000-mes`
+- `/artigos/calculaveis/quanto-rende-investir-2000-mes.html` -> `/artigos/calculaveis/quanto-rende-investir-2000-mes`
+- `/artigos/calculaveis/quanto-rende-investir-500-mes.html` -> `/artigos/calculaveis/quanto-rende-investir-500-mes`
+- `/artigos/calculaveis/quanto-rende-investir-5000-mes.html` -> `/artigos/calculaveis/quanto-rende-investir-5000-mes`
+- `/artigos/comparacao/acoes-ou-renda-fixa.html` -> `/artigos/comparacao/acoes-ou-renda-fixa`
+- `/artigos/comparacao/acoes-vs-etfs.html` -> `/artigos/comparacao/acoes-vs-etfs`
+- `/artigos/comparacao/cdb-ou-debentures.html` -> `/artigos/comparacao/cdb-ou-debentures`
+- `/artigos/comparacao/cdb-ou-fundos-de-investimentos.html` -> `/artigos/comparacao/cdb-ou-fundos-de-investimentos`
+- `/artigos/comparacao/cdb-ou-lc.html` -> `/artigos/comparacao/cdb-ou-lc`
+- `/artigos/comparacao/cdb-vs-tesouro-direto.html` -> `/artigos/comparacao/cdb-vs-tesouro-direto`
+- `/artigos/comparacao/cdb110cdi-ou-lci.html` -> `/artigos/comparacao/cdb110cdi-ou-lci`
+- `/artigos/comparacao/cdi-ou-ipca.html` -> `/artigos/comparacao/cdi-ou-ipca`
+- `/artigos/comparacao/criptomoedas-ou-acoes.html` -> `/artigos/comparacao/criptomoedas-ou-acoes`
+- `/artigos/comparacao/dolar-ou-real.html` -> `/artigos/comparacao/dolar-ou-real`
 
 ## Problemas encontrados
 
-- Canonicals divergentes entre páginas reais e URLs antigas.
-- Referências internas para `.html` e caminhos legados de calculadoras.
-- Padrões históricos de duplicação em `/artigos/{categoria}/calculadoras/{slug}` e `/calculadoras/calculadoras/{slug}`.
+- Grupos de conteúdo duplicado por hash: 0
+- Aliases legados detectados em metadados: 0
+- Links internos inválidos após padronização: 0
+- Placeholders `${...}` fora de `<script>`: 0
 
 ## Arquivos modificados
 
+- `_redirects`
 - `artigos/calculaveis/quanto-rende-1000-10anos.html`
 - `artigos/calculaveis/quanto-rende-1000-mes.html`
 - `artigos/calculaveis/quanto-rende-10000-cdi.html`
@@ -184,5 +224,4 @@
 - `paginas/privacidade.html`
 - `paginas/sobre.html`
 - `paginas/termos.html`
-- `_redirects`
 - `sitemap.xml`

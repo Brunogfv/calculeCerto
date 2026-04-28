@@ -1,0 +1,1458 @@
+{
+  "validated_at": "2026-04-28T12:31:41",
+  "pages_checked": 161,
+  "passed": true,
+  "results": [
+    {
+      "file": "index.html",
+      "url": "/",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/index.html",
+      "url": "/artigos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-1000-10anos.html",
+      "url": "/artigos/calculaveis/quanto-rende-1000-10anos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-1000-10anos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-1000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-1000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-1000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-10000-cdi.html",
+      "url": "/artigos/calculaveis/quanto-rende-10000-cdi",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-10000-cdi",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-10000-juros-compostos.html",
+      "url": "/artigos/calculaveis/quanto-rende-10000-juros-compostos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-10000-juros-compostos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-10000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-10000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-10000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-10000-poupanca.html",
+      "url": "/artigos/calculaveis/quanto-rende-10000-poupanca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-10000-poupanca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-10000-tesouro-selic.html",
+      "url": "/artigos/calculaveis/quanto-rende-10000-tesouro-selic",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-10000-tesouro-selic",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-100000-cdi.html",
+      "url": "/artigos/calculaveis/quanto-rende-100000-cdi",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-100000-cdi",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-100000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-100000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-100000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-100000-poupanca.html",
+      "url": "/artigos/calculaveis/quanto-rende-100000-poupanca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-100000-poupanca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-100000-tesouro-selic.html",
+      "url": "/artigos/calculaveis/quanto-rende-100000-tesouro-selic",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-100000-tesouro-selic",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-100mil-10anos.html",
+      "url": "/artigos/calculaveis/quanto-rende-100mil-10anos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-100mil-10anos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-100mil-5anos.html",
+      "url": "/artigos/calculaveis/quanto-rende-100mil-5anos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-100mil-5anos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-1milhao-investido.html",
+      "url": "/artigos/calculaveis/quanto-rende-1milhao-investido",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-1milhao-investido",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-1milhao-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-1milhao-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-1milhao-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-2000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-2000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-2000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-5000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-5000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-5000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-50000-cdi.html",
+      "url": "/artigos/calculaveis/quanto-rende-50000-cdi",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-50000-cdi",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-50000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-50000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-50000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-50000-poupanca.html",
+      "url": "/artigos/calculaveis/quanto-rende-50000-poupanca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-50000-poupanca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-50000-tesouro-selic.html",
+      "url": "/artigos/calculaveis/quanto-rende-50000-tesouro-selic",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-50000-tesouro-selic",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-investir-1000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-investir-1000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-investir-1000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-investir-10000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-investir-10000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-investir-10000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-investir-2000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-investir-2000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-investir-2000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-investir-500-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-investir-500-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-investir-500-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/calculaveis/quanto-rende-investir-5000-mes.html",
+      "url": "/artigos/calculaveis/quanto-rende-investir-5000-mes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/calculaveis/quanto-rende-investir-5000-mes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/acoes-ou-renda-fixa.html",
+      "url": "/artigos/comparacao/acoes-ou-renda-fixa",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/acoes-ou-renda-fixa",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/acoes-vs-etfs.html",
+      "url": "/artigos/comparacao/acoes-vs-etfs",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/acoes-vs-etfs",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/cdb-ou-debentures.html",
+      "url": "/artigos/comparacao/cdb-ou-debentures",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/cdb-ou-debentures",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/cdb-ou-fundos-de-investimentos.html",
+      "url": "/artigos/comparacao/cdb-ou-fundos-de-investimentos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/cdb-ou-fundos-de-investimentos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/cdb-ou-lc.html",
+      "url": "/artigos/comparacao/cdb-ou-lc",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/cdb-ou-lc",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/cdb-vs-tesouro-direto.html",
+      "url": "/artigos/comparacao/cdb-vs-tesouro-direto",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/cdb-vs-tesouro-direto",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/cdb110cdi-ou-lci.html",
+      "url": "/artigos/comparacao/cdb110cdi-ou-lci",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/cdb110cdi-ou-lci",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/cdi-ou-ipca.html",
+      "url": "/artigos/comparacao/cdi-ou-ipca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/cdi-ou-ipca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/criptomoedas-ou-acoes.html",
+      "url": "/artigos/comparacao/criptomoedas-ou-acoes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/criptomoedas-ou-acoes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/dolar-ou-real.html",
+      "url": "/artigos/comparacao/dolar-ou-real",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/dolar-ou-real",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/etf-ou-fundo-investimento.html",
+      "url": "/artigos/comparacao/etf-ou-fundo-investimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/etf-ou-fundo-investimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/fii-vs-renda-fixa.html",
+      "url": "/artigos/comparacao/fii-vs-renda-fixa",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/fii-vs-renda-fixa",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/fiis-ou-acoes.html",
+      "url": "/artigos/comparacao/fiis-ou-acoes",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/fiis-ou-acoes",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/fiis-ou-imoveis.html",
+      "url": "/artigos/comparacao/fiis-ou-imoveis",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/fiis-ou-imoveis",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/lca-ou-cdb.html",
+      "url": "/artigos/comparacao/lca-ou-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/lca-ou-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/lci-ou-cdb.html",
+      "url": "/artigos/comparacao/lci-ou-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/lci-ou-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/lci-ou-lca.html",
+      "url": "/artigos/comparacao/lci-ou-lca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/lci-ou-lca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/poupanca-ou-cdb.html",
+      "url": "/artigos/comparacao/poupanca-ou-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/poupanca-ou-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/renda-fixa-ou-renda-variavel.html",
+      "url": "/artigos/comparacao/renda-fixa-ou-renda-variavel",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/renda-fixa-ou-renda-variavel",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/tesouro-direto-ou-cdb-liquidez-diaria.html",
+      "url": "/artigos/comparacao/tesouro-direto-ou-cdb-liquidez-diaria",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/tesouro-direto-ou-cdb-liquidez-diaria",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/tesouro-direto-ou-poupanca.html",
+      "url": "/artigos/comparacao/tesouro-direto-ou-poupanca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/tesouro-direto-ou-poupanca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/tesouro-ipca-ou-fii.html",
+      "url": "/artigos/comparacao/tesouro-ipca-ou-fii",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/tesouro-ipca-ou-fii",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/tesouro-ipca-ou-tesouro-selic.html",
+      "url": "/artigos/comparacao/tesouro-ipca-ou-tesouro-selic",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/tesouro-ipca-ou-tesouro-selic",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/tesouro-pre-fixado-ou-ipca.html",
+      "url": "/artigos/comparacao/tesouro-pre-fixado-ou-ipca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/tesouro-pre-fixado-ou-ipca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/tesouro-selic-ou-poupanca.html",
+      "url": "/artigos/comparacao/tesouro-selic-ou-poupanca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/tesouro-selic-ou-poupanca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/comparacao/tesouro-selic-vs-cdb.html",
+      "url": "/artigos/comparacao/tesouro-selic-vs-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/comparacao/tesouro-selic-vs-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/calcular-financiamento.html",
+      "url": "/artigos/financas/calcular-financiamento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/calcular-financiamento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/calcular-inflacao-acumulada.html",
+      "url": "/artigos/financas/calcular-inflacao-acumulada",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/calcular-inflacao-acumulada",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/calcular-juros-emprestimos.html",
+      "url": "/artigos/financas/calcular-juros-emprestimos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/calcular-juros-emprestimos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/calcular-porcentagem.html",
+      "url": "/artigos/financas/calcular-porcentagem",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/calcular-porcentagem",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/calcular-rendimento-investimento.html",
+      "url": "/artigos/financas/calcular-rendimento-investimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/calcular-rendimento-investimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/calcular-rentabilidade-investimento.html",
+      "url": "/artigos/financas/calcular-rentabilidade-investimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/calcular-rentabilidade-investimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/capitalizacao-composta.html",
+      "url": "/artigos/financas/capitalizacao-composta",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/capitalizacao-composta",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/carteira-de-investimento.html",
+      "url": "/artigos/financas/carteira-de-investimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/carteira-de-investimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/como-calcular-desconto-inss.html",
+      "url": "/artigos/financas/como-calcular-desconto-inss",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/como-calcular-desconto-inss",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/como-calcular-juros-compostos.html",
+      "url": "/artigos/financas/como-calcular-juros-compostos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/como-calcular-juros-compostos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/como-funciona-poupanca.html",
+      "url": "/artigos/financas/como-funciona-poupanca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/como-funciona-poupanca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/funciona-cdb.html",
+      "url": "/artigos/financas/funciona-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/funciona-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/hora-extra.html",
+      "url": "/artigos/financas/hora-extra",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/hora-extra",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/imposto-renda-em-investimentos.html",
+      "url": "/artigos/financas/imposto-renda-em-investimentos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/imposto-renda-em-investimentos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/investir-cdb.html",
+      "url": "/artigos/financas/investir-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/investir-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/investir-pouco-dinheiro.html",
+      "url": "/artigos/financas/investir-pouco-dinheiro",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/investir-pouco-dinheiro",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/juros-simples-compostos.html",
+      "url": "/artigos/financas/juros-simples-compostos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/juros-simples-compostos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/lci-lca.html",
+      "url": "/artigos/financas/lci-lca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/lci-lca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/o-que-e-cdi.html",
+      "url": "/artigos/financas/o-que-e-cdi",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/o-que-e-cdi",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/o-que-e-ipca.html",
+      "url": "/artigos/financas/o-que-e-ipca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/o-que-e-ipca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/o-que-e-renda-fixa.html",
+      "url": "/artigos/financas/o-que-e-renda-fixa",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/o-que-e-renda-fixa",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/o-que-e-renda-variavel.html",
+      "url": "/artigos/financas/o-que-e-renda-variavel",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/o-que-e-renda-variavel",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/o-que-e-roi.html",
+      "url": "/artigos/financas/o-que-e-roi",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/o-que-e-roi",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/o-que-sao-dividendos.html",
+      "url": "/artigos/financas/o-que-sao-dividendos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/o-que-sao-dividendos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/o-que-sao-fundo-imobiliario.html",
+      "url": "/artigos/financas/o-que-sao-fundo-imobiliario",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/o-que-sao-fundo-imobiliario",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/tesouro-direto.html",
+      "url": "/artigos/financas/tesouro-direto",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/tesouro-direto",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/financas/valor-futuro-investimento.html",
+      "url": "/artigos/financas/valor-futuro-investimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/valor-futuro-investimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/acelerar-metabolismo-naturalmente.html",
+      "url": "/artigos/saude/acelerar-metabolismo-naturalmente",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/acelerar-metabolismo-naturalmente",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/calcular-gasto-calorico-diario.html",
+      "url": "/artigos/saude/calcular-gasto-calorico-diario",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/calcular-gasto-calorico-diario",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/calcular-imc-corretamente.html",
+      "url": "/artigos/saude/calcular-imc-corretamente",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/calcular-imc-corretamente",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/como-reduzir-imc-saudavel.html",
+      "url": "/artigos/saude/como-reduzir-imc-saudavel",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/como-reduzir-imc-saudavel",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/deficit-calorico.html",
+      "url": "/artigos/saude/deficit-calorico",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/deficit-calorico",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/dieta-duasmil-calorias-funciona.html",
+      "url": "/artigos/saude/dieta-duasmil-calorias-funciona",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/dieta-duasmil-calorias-funciona",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/imc-alto.html",
+      "url": "/artigos/saude/imc-alto",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/imc-alto",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/imc-baixo.html",
+      "url": "/artigos/saude/imc-baixo",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/imc-baixo",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/imc-ideal-por-idade.html",
+      "url": "/artigos/saude/imc-ideal-por-idade",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/imc-ideal-por-idade",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/imc-infantil.html",
+      "url": "/artigos/saude/imc-infantil",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/imc-infantil",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/imc-masc-fem-diferenca.html",
+      "url": "/artigos/saude/imc-masc-fem-diferenca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/imc-masc-fem-diferenca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/imc-para-idosos.html",
+      "url": "/artigos/saude/imc-para-idosos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/imc-para-idosos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/imc-realmente-funciona.html",
+      "url": "/artigos/saude/imc-realmente-funciona",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/imc-realmente-funciona",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/metabolismo-basal-e-gasto-calorico.html",
+      "url": "/artigos/saude/metabolismo-basal-e-gasto-calorico",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/metabolismo-basal-e-gasto-calorico",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/o-que-e-get.html",
+      "url": "/artigos/saude/o-que-e-get",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/o-que-e-get",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/o-que-e-tmb.html",
+      "url": "/artigos/saude/o-que-e-tmb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/o-que-e-tmb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/proteina-diaria.html",
+      "url": "/artigos/saude/proteina-diaria",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/proteina-diaria",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/quantas-calorias-consumir-emagrecer.html",
+      "url": "/artigos/saude/quantas-calorias-consumir-emagrecer",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/quantas-calorias-consumir-emagrecer",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/quantas-calorias-consumir-ganhar-massa.html",
+      "url": "/artigos/saude/quantas-calorias-consumir-ganhar-massa",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/quantas-calorias-consumir-ganhar-massa",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/quantas-calorias-gastar-por-dia.html",
+      "url": "/artigos/saude/quantas-calorias-gastar-por-dia",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/quantas-calorias-gastar-por-dia",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/saude/superavit-calorico.html",
+      "url": "/artigos/saude/superavit-calorico",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/saude/superavit-calorico",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/utilitarios/consumo-combustivel.html",
+      "url": "/artigos/utilitarios/consumo-combustivel",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/utilitarios/consumo-combustivel",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "artigos/utilitarios/litros-tinta.html",
+      "url": "/artigos/utilitarios/litros-tinta",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/utilitarios/litros-tinta",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "busca.html",
+      "url": "/busca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/busca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/agua.html",
+      "url": "/calculadoras/agua",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/agua",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/aluguel-vs-compra.html",
+      "url": "/calculadoras/aluguel-vs-compra",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/aluguel-vs-compra",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/amortizacao.html",
+      "url": "/calculadoras/amortizacao",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/amortizacao",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/bhaskara.html",
+      "url": "/calculadoras/bhaskara",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/bhaskara",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-cdb.html",
+      "url": "/calculadoras/calc-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-imposto-renda.html",
+      "url": "/calculadoras/calc-imposto-renda",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-imposto-renda",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-inflacao.html",
+      "url": "/calculadoras/calc-inflacao",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-inflacao",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-investimento.html",
+      "url": "/calculadoras/calc-investimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-investimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-ir-investimentos.html",
+      "url": "/calculadoras/calc-ir-investimentos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-ir-investimentos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-lca-vs-cdb.html",
+      "url": "/calculadoras/calc-lca-vs-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-lca-vs-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-lci-vs-cdb.html",
+      "url": "/calculadoras/calc-lci-vs-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-lci-vs-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-poupanca-vs-investimento.html",
+      "url": "/calculadoras/calc-poupanca-vs-investimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-poupanca-vs-investimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-price-sac.html",
+      "url": "/calculadoras/calc-price-sac",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-price-sac",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/calc-tesouro-direto.html",
+      "url": "/calculadoras/calc-tesouro-direto",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/calc-tesouro-direto",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/churrasco.html",
+      "url": "/calculadoras/churrasco",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/churrasco",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/cimento.html",
+      "url": "/calculadoras/cimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/cimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/combustivel.html",
+      "url": "/calculadoras/combustivel",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/combustivel",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/conversor-unidades.html",
+      "url": "/calculadoras/conversor-unidades",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/conversor-unidades",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/cr.html",
+      "url": "/calculadoras/cr",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/cr",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/datas.html",
+      "url": "/calculadoras/datas",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/datas",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/decimo-terceiro.html",
+      "url": "/calculadoras/decimo-terceiro",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/decimo-terceiro",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/dividendos.html",
+      "url": "/calculadoras/dividendos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/dividendos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/energia.html",
+      "url": "/calculadoras/energia",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/energia",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/equacao-primeiro-grau.html",
+      "url": "/calculadoras/equacao-primeiro-grau",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/equacao-primeiro-grau",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/festa.html",
+      "url": "/calculadoras/festa",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/festa",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/forca.html",
+      "url": "/calculadoras/forca",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/forca",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/gasto-calorico.html",
+      "url": "/calculadoras/gasto-calorico",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/gasto-calorico",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/hora-extra.html",
+      "url": "/calculadoras/hora-extra",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/hora-extra",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/imc.html",
+      "url": "/calculadoras/imc",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/imc",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/inss.html",
+      "url": "/calculadoras/inss",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/inss",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/juros.html",
+      "url": "/calculadoras/juros",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/juros",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/kmh-ms.html",
+      "url": "/calculadoras/kmh-ms",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/kmh-ms",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/media-final.html",
+      "url": "/calculadoras/media-final",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/media-final",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/medias.html",
+      "url": "/calculadoras/medias",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/medias",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/medidas-culinarias.html",
+      "url": "/calculadoras/medidas-culinarias",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/medidas-culinarias",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/mmc-mdc.html",
+      "url": "/calculadoras/mmc-mdc",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/mmc-mdc",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/parto.html",
+      "url": "/calculadoras/parto",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/parto",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/pet-idade.html",
+      "url": "/calculadoras/pet-idade",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/pet-idade",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/piso.html",
+      "url": "/calculadoras/piso",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/piso",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/pizza.html",
+      "url": "/calculadoras/pizza",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/pizza",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/pj-vs-clt.html",
+      "url": "/calculadoras/pj-vs-clt",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/pj-vs-clt",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/pneus.html",
+      "url": "/calculadoras/pneus",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/pneus",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/porcentagem.html",
+      "url": "/calculadoras/porcentagem",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/porcentagem",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/porcentagem-reversa.html",
+      "url": "/calculadoras/porcentagem-reversa",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/porcentagem-reversa",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/regra-de-tres.html",
+      "url": "/calculadoras/regra-de-tres",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/regra-de-tres",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/salario.html",
+      "url": "/calculadoras/salario",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/salario",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/tdee.html",
+      "url": "/calculadoras/tdee",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/tdee",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/temperatura.html",
+      "url": "/calculadoras/temperatura",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/temperatura",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/tinta.html",
+      "url": "/calculadoras/tinta",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/tinta",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/tmb.html",
+      "url": "/calculadoras/tmb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/tmb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/velocidade-media.html",
+      "url": "/calculadoras/velocidade-media",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/velocidade-media",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "meus-calculos.html",
+      "url": "/meus-calculos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/meus-calculos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "paginas/contato.html",
+      "url": "/paginas/contato",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/paginas/contato",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "paginas/privacidade.html",
+      "url": "/paginas/privacidade",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/paginas/privacidade",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "paginas/sobre.html",
+      "url": "/paginas/sobre",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/paginas/sobre",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "paginas/termos.html",
+      "url": "/paginas/termos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/paginas/termos",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    }
+  ],
+  "bad_internal_links": [],
+  "legacy_aliases": {}
+}

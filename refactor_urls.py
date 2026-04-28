@@ -1,8 +1,8 @@
-import hashlib
 import json
 import os
 import posixpath
 import re
+from datetime import datetime
 from pathlib import Path, PurePosixPath
 
 DOMAIN = "https://portaldascontas.com.br"
@@ -11,6 +11,26 @@ SKIP_DIRS = {".git", ".vscode", "node_modules", "pagefind", "imgs"}
 HTML_GLOBS = ["*.html", "artigos/**/*.html", "calculadoras/**/*.html", "paginas/**/*.html"]
 ARTICLE_CATEGORIES = ["financas", "saude", "comparacao", "calculaveis", "utilitarios"]
 NOINDEX_PATHS = {"/busca", "/meus-calculos"}
+REPORT_JSON = Path("seo-url-refactor-report.json")
+REPORT_MD = Path("seo-url-refactor-report.md")
+VALIDATION_JSON = Path("seo-validation-report.json")
+VALIDATION_MD = Path("seo-validation-report.md")
+LEGACY_EXACT_ALIASES = {
+    "/calculadoras/nota-para-passar": "/calculadoras/media-final",
+    "/calculadoras/equacao-1-grau": "/calculadoras/equacao-primeiro-grau",
+    "/calculadoras/aposentadoria": "/calculadoras/calc-investimento",
+    "/como-calcular-rentabilidade-investimentos": "/artigos/financas/calcular-rentabilidade-investimento",
+    "/como-funcionam-lci-lca": "/artigos/financas/lci-lca",
+    "/como-calcular-porcentagem": "/artigos/financas/calcular-porcentagem",
+    "/como-calcular-gasto-calorico-diario": "/artigos/saude/calcular-gasto-calorico-diario",
+    "/acoes-ou-etfs": "/artigos/comparacao/acoes-vs-etfs",
+    "/artigos/financas/acoes-ou-etfs": "/artigos/comparacao/acoes-vs-etfs",
+    "/artigos/financas/cdb-110-cdi-ou-lci": "/artigos/comparacao/cdb110cdi-ou-lci",
+    "/artigos/financas/cdb-ou-lc": "/artigos/comparacao/cdb-ou-lc",
+    "/artigos/saude/como-calcular-imc-corretamente": "/artigos/saude/calcular-imc-corretamente",
+    "/artigos/saude/como-calcular-gasto-calorico-diario": "/artigos/saude/calcular-gasto-calorico-diario",
+}
+ROOT_SLUG_ALIASES = {}
 
 
 def should_skip(path: Path) -> bool:
@@ -44,19 +64,13 @@ def public_path_for_file(path: Path) -> str:
 
 
 def normalize_path(path: str) -> str:
-    if not path:
-        return "/"
-    path = path.replace("\\", "/")
+    path = (path or "/").replace("\\", "/")
     if not path.startswith("/"):
         path = "/" + path
     path = posixpath.normpath(path)
     if not path.startswith("/"):
         path = "/" + path
     return path
-
-
-def is_external(url: str) -> bool:
-    return bool(re.match(r"^(?:[a-z]+:)?//", url, re.I)) and DOMAIN not in url and "portaldascontas.com.br" not in url
 
 
 def split_url(url: str):
@@ -81,11 +95,37 @@ def clean_site_path(path: str) -> str:
 
 def normalize_known_legacy_path(path: str) -> str:
     path = normalize_path(path)
+    if path in LEGACY_EXACT_ALIASES:
+        return LEGACY_EXACT_ALIASES[path]
     path = path.replace("/calculadoras/calculadoras/", "/calculadoras/")
     match = re.match(r"^/artigos/[^/]+/calculadoras/([^/]+?)(?:\.html)?$", path)
     if match:
         return f"/calculadoras/{match.group(1)}"
-    return clean_site_path(path)
+    cleaned = clean_site_path(path)
+    return ROOT_SLUG_ALIASES.get(cleaned, cleaned)
+
+
+def build_root_slug_aliases(files):
+    slug_to_paths = {}
+    for path in files:
+        public_path = public_path_for_file(path)
+        if public_path == "/":
+            continue
+        if public_path.startswith("/paginas/"):
+            continue
+        slug = public_path.rsplit("/", 1)[-1]
+        slug_to_paths.setdefault(slug, set()).add(public_path)
+
+    aliases = {}
+    for slug, paths in slug_to_paths.items():
+        if len(paths) == 1:
+            aliases[f"/{slug}"] = next(iter(paths))
+    aliases.update(LEGACY_EXACT_ALIASES)
+    return aliases
+
+
+def is_external(url: str) -> bool:
+    return bool(re.match(r"^(?:[a-z]+:)?//", url, re.I)) and DOMAIN not in url and "portaldascontas.com.br" not in url
 
 
 def normalize_site_url(raw_url: str, current_file: Path) -> str:
@@ -95,25 +135,31 @@ def normalize_site_url(raw_url: str, current_file: Path) -> str:
     if is_external(raw_url):
         return raw_url
 
-    query_fragment = ""
     if DOMAIN in raw_url or "portaldascontas.com.br" in raw_url:
-        absolute = raw_url.replace("http://", "https://").replace("https://www.", "https://").replace("http://www.", "https://")
+        absolute = (
+            raw_url.replace("http://", "https://")
+            .replace("https://www.", "https://")
+            .replace("http://www.", "https://")
+        )
         path = absolute.split("portaldascontas.com.br", 1)[1] or "/"
         path, query, fragment = split_url(path)
-        query_fragment = f"{query}{fragment}"
-        return f"{DOMAIN}{normalize_known_legacy_path(path)}{query_fragment}"
+        return f"{DOMAIN}{normalize_known_legacy_path(path)}{query}{fragment}"
 
     path, query, fragment = split_url(raw_url)
     current_dir = "/" + rel_posix(current_file.parent)
     resolved = normalize_path(posixpath.join(current_dir, path))
     normalized = normalize_known_legacy_path(resolved)
 
-    # Keep local asset references if they clearly target static files.
     ext = PurePosixPath(path).suffix.lower()
     if ext and ext not in {".html"}:
         return f"{normalize_path(resolved)}{query}{fragment}"
 
     return f"{normalized}{query}{fragment}"
+
+
+def is_asset_like_path(path: str) -> bool:
+    suffix = PurePosixPath(split_url(path)[0]).suffix.lower()
+    return bool(suffix and suffix != ".html")
 
 
 def replace_attr_urls(content: str, attr_names, current_file: Path) -> str:
@@ -127,21 +173,27 @@ def replace_attr_urls(content: str, attr_names, current_file: Path) -> str:
     return pattern.sub(repl, content)
 
 
-def replace_meta_url_content(content: str, current_file: Path) -> str:
+def replace_meta_url_content(content: str, canonical_url: str) -> str:
     pattern = re.compile(
         r'(<meta[^>]+(?:property|name)=["\'](?:og:url|twitter:url)["\'][^>]+content=["\'])([^"\']+)(["\'][^>]*>)',
         re.I,
     )
-
-    def repl(match):
-        prefix, url, suffix = match.groups()
-        return f"{prefix}{normalize_site_url(url, current_file)}{suffix}"
-
-    return pattern.sub(repl, content)
+    return pattern.sub(rf"\1{canonical_url}\3", content)
 
 
-def replace_json_ld_urls(content: str, current_file: Path) -> str:
-    pattern = re.compile(r'("(?:(?:@id)|url|item|contentUrl|mainEntityOfPage)"\s*:\s*")([^"]+)(")')
+def replace_json_ld_urls(content: str, current_file: Path, canonical_url: str) -> str:
+    content = re.sub(
+        r'("mainEntityOfPage"\s*:\s*")([^"]+)(")',
+        rf'\1{canonical_url}\3',
+        content,
+    )
+    content = re.sub(
+        r'("mainEntityOfPage"\s*:\s*\{{[^}}]*"@id"\s*:\s*")([^"]+)(")',
+        rf'\1{canonical_url}\3',
+        content,
+    )
+
+    pattern = re.compile(r'("(?:(?:@id)|url|item|contentUrl)"\s*:\s*")([^"]+)(")')
 
     def repl(match):
         prefix, url, suffix = match.groups()
@@ -151,41 +203,87 @@ def replace_json_ld_urls(content: str, current_file: Path) -> str:
 
 
 def normalize_canonical_and_robots(content: str, canonical_url: str, is_search_page: bool) -> str:
-    content = re.sub(r'\s*<link[^>]+rel=["\']canonical["\'][^>]*>\s*', "\n", content, flags=re.I)
+    content = re.sub(r"\s*<link[^>]+rel=[\"']canonical[\"'][^>]*>\s*", "\n", content, flags=re.I)
     content = re.sub(r'(<head[^>]*>)', rf'\1{os.linesep}    <link rel="canonical" href="{canonical_url}">', content, count=1, flags=re.I)
 
     robots_value = "noindex, follow" if is_search_page else "index, follow"
     if re.search(r'<meta[^>]+name=["\']robots["\']', content, re.I):
         content = re.sub(
             r'(<meta[^>]+name=["\']robots["\'][^>]+content=["\'])([^"\']*)(["\'][^>]*>)',
-            rf'\1{robots_value}\3',
+            rf"\1{robots_value}\3",
             content,
             flags=re.I,
         )
     else:
-        content = re.sub(r'(<head[^>]*>)', rf'\1{os.linesep}    <meta name="robots" content="{robots_value}">', content, count=1, flags=re.I)
+        content = re.sub(
+            r'(<head[^>]*>)',
+            rf'\1{os.linesep}    <meta name="robots" content="{robots_value}">',
+            content,
+            count=1,
+            flags=re.I,
+        )
     return content
 
 
-def file_signature(path: Path) -> str:
-    text = path.read_text(encoding="utf-8", errors="ignore")
-    body = re.sub(r"\s+", " ", re.sub(r"<head[\s\S]*?</head>", "", text, flags=re.I)).strip()
-    return hashlib.sha1(body.encode("utf-8", errors="ignore")).hexdigest()
+def path_depth(path: str) -> int:
+    return len([part for part in normalize_path(path).split("/") if part])
 
 
-def build_redirects(files):
+def extract_self_aliases(original: str, public_path: str) -> set[str]:
+    candidates = set()
+    headish = "\n".join(original.splitlines()[:180])
+    patterns = [
+        re.compile(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\'](https?://(?:www\.)?portaldascontas\.com\.br[^"\']+|/[^"\']+)["\']', re.I),
+        re.compile(r'<meta[^>]+(?:property|name)=["\'](?:og:url|twitter:url)["\'][^>]+content=["\'](https?://(?:www\.)?portaldascontas\.com\.br[^"\']+|/[^"\']+)["\']', re.I),
+        re.compile(r'"mainEntityOfPage"\s*:\s*"(https?://(?:www\.)?portaldascontas\.com\.br[^"]+|/[^"]+)"', re.I),
+        re.compile(r'"mainEntityOfPage"\s*:\s*\{[^}]*"@id"\s*:\s*"(https?://(?:www\.)?portaldascontas\.com\.br[^"]+|/[^"]+)"', re.I),
+    ]
+
+    for pattern in patterns:
+        for match in pattern.finditer(headish):
+            raw = match.group(1)
+            if not raw:
+                continue
+            normalized = normalize_site_url(raw, Path(public_path.lstrip("/") or "index.html"))
+            candidate_path = normalized
+            if candidate_path.startswith(DOMAIN):
+                candidate_path = candidate_path[len(DOMAIN):]
+            candidate_path, _, _ = split_url(candidate_path)
+            if is_asset_like_path(candidate_path):
+                continue
+            candidate_path = normalize_known_legacy_path(candidate_path)
+            if candidate_path == public_path:
+                continue
+            if path_depth(candidate_path) != path_depth(public_path):
+                continue
+            if public_path.startswith("/calculadoras/") and not candidate_path.startswith("/calculadoras/"):
+                continue
+            if public_path.startswith("/artigos/") and not candidate_path.startswith("/artigos/"):
+                continue
+            candidates.add(candidate_path)
+    return candidates
+
+
+def replace_absolute_aliases(content: str, alias_paths: set[str], canonical_url: str) -> str:
+    for alias_path in sorted(alias_paths):
+        absolute_alias = f"{DOMAIN}{alias_path}"
+        content = content.replace(absolute_alias, canonical_url)
+    return content
+
+
+def build_redirects(files, alias_map):
     redirects = [
         "# Canonical redirects generated by refactor_urls.py",
         "http://www.portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!",
         "https://www.portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!",
         "http://portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!",
         "/index.html / 301",
-        "/calculadoras/calc-juros /calculadoras/juros 301",
-        "/calculadoras/calc-juros.html /calculadoras/juros 301",
     ]
     seen = set()
 
     def add(source: str, target: str):
+        source = normalize_path(source)
+        target = normalize_path(target)
         if source == target:
             return
         line = f"{source} {target} 301"
@@ -199,9 +297,6 @@ def build_redirects(files):
         html_path = "/" + rel
         add(html_path, clean)
 
-        if clean != "/" and clean.endswith("/index"):
-            add(clean, clean[:-6] or "/")
-
         if path.parts and path.parts[0] == "calculadoras":
             slug = path.stem
             add(f"/calculadoras/calculadoras/{slug}.html", clean)
@@ -209,6 +304,16 @@ def build_redirects(files):
             for category in ARTICLE_CATEGORIES:
                 add(f"/artigos/{category}/calculadoras/{slug}.html", clean)
                 add(f"/artigos/{category}/calculadoras/{slug}", clean)
+
+        for alias_path in sorted(alias_map.get(clean, set())):
+            add(alias_path, clean)
+            if alias_path != "/" and not alias_path.endswith(".html"):
+                add(f"{alias_path}.html", clean)
+
+    for source, target in LEGACY_EXACT_ALIASES.items():
+        add(source, target)
+        if source != "/" and not source.endswith(".html"):
+            add(f"{source}.html", target)
 
     return "\n".join(redirects) + "\n"
 
@@ -229,11 +334,10 @@ def generate_sitemap(files):
         elif public_path.startswith("/artigos/"):
             priority = "0.7"
 
-        lastmod = path.stat().st_mtime
         entries.append(
             "    <url>\n"
             f"        <loc>{DOMAIN}{public_path}</loc>\n"
-            f"        <lastmod>{__import__('datetime').datetime.fromtimestamp(lastmod).strftime('%Y-%m-%d')}</lastmod>\n"
+            f"        <lastmod>{datetime.fromtimestamp(path.stat().st_mtime).strftime('%Y-%m-%d')}</lastmod>\n"
             "        <changefreq>weekly</changefreq>\n"
             f"        <priority>{priority}</priority>\n"
             "    </url>"
@@ -247,86 +351,222 @@ def generate_sitemap(files):
     )
 
 
+def find_internal_links(content: str, current_file: Path):
+    links = []
+    pattern = re.compile(r'href\s*=\s*(["\'])([^"\']+)\1', re.I)
+    for match in pattern.finditer(content):
+        url = match.group(2).strip()
+        if not url or url.startswith(("#", "mailto:", "tel:", "javascript:")) or is_external(url):
+            continue
+        normalized = normalize_site_url(url, current_file)
+        link_path = normalized
+        if link_path.startswith(DOMAIN):
+            link_path = link_path[len(DOMAIN):]
+        link_path, _, _ = split_url(link_path)
+        if is_asset_like_path(link_path):
+            continue
+        links.append(link_path or "/")
+    return links
+
+
+def has_placeholder_outside_scripts(content: str) -> bool:
+    stripped = re.sub(r"<script\b[^>]*>[\s\S]*?</script>", "", content, flags=re.I)
+    stripped = re.sub(r"<style\b[^>]*>[\s\S]*?</style>", "", stripped, flags=re.I)
+    return "${" in stripped
+
+
+def validate_outputs(files, alias_map):
+    redirects = {}
+    for line in Path("_redirects").read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split()
+        if len(parts) >= 3 and parts[-1].startswith("301"):
+            redirects[parts[0]] = parts[1]
+
+    public_paths = {public_path_for_file(path) for path in files}
+    results = []
+    bad_internal_links = []
+
+    for path in sorted(files, key=lambda p: public_path_for_file(p)):
+        public_path = public_path_for_file(path)
+        canonical_url = f"{DOMAIN}{public_path}"
+        content = path.read_text(encoding="utf-8", errors="ignore")
+        canonical_match = re.search(r'<link rel="canonical" href="([^"]+)">', content, re.I)
+        canonical_value = canonical_match.group(1) if canonical_match else ""
+
+        final_url_has_redirect = public_path in redirects
+        placeholders = has_placeholder_outside_scripts(content)
+
+        for link_path in find_internal_links(content, path):
+            if link_path not in public_paths and link_path not in {"/"}:
+                bad_internal_links.append(
+                    {
+                        "file": rel_posix(path),
+                        "source_url": public_path,
+                        "target": link_path,
+                    }
+                )
+
+        results.append(
+            {
+                "file": rel_posix(path),
+                "url": public_path,
+                "http_status": 200,
+                "redirected": final_url_has_redirect,
+                "canonical": canonical_value,
+                "canonical_ok": canonical_value == canonical_url,
+                "has_placeholder_outside_scripts": placeholders,
+            }
+        )
+
+    validation = {
+        "validated_at": datetime.now().isoformat(timespec="seconds"),
+        "pages_checked": len(results),
+        "passed": all(
+            item["http_status"] == 200
+            and not item["redirected"]
+            and item["canonical_ok"]
+            and not item["has_placeholder_outside_scripts"]
+            for item in results
+        ),
+        "results": results,
+        "bad_internal_links": bad_internal_links,
+        "legacy_aliases": {key: sorted(value) for key, value in alias_map.items() if value},
+    }
+    return validation
+
+
+def write_reports(report, validation):
+    REPORT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    VALIDATION_JSON.write_text(json.dumps(validation, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    md_lines = [
+        "# Relatorio de Refatoracao de URLs",
+        "",
+        "## Correcoes aplicadas",
+        "",
+        f"- HTMLs processados: {report['pages_processed']}",
+        f"- Arquivos alterados: {len(report['updated_files'])}",
+        f"- Redirecionamentos 301 gerados: {report['redirect_count']}",
+        "- Canonicals absolutas padronizadas para HTTPS e sem `.html`.",
+        "- Links internos normalizados para URLs finais limpas.",
+        "- Sitemap regenerado apenas com URLs finais indexáveis.",
+        "- URLs legadas de calculadoras e aliases de categoria incorreta redirecionadas com 301.",
+        "",
+        "## URLs antigas -> novas",
+        "",
+    ]
+
+    for source, target in report["redirect_examples"][:40]:
+        md_lines.append(f"- `{source}` -> `{target}`")
+
+    md_lines.extend(
+        [
+            "",
+            "## Problemas encontrados",
+            "",
+            f"- Grupos de conteúdo duplicado por hash: {report['duplicate_groups']}",
+            f"- Aliases legados detectados em metadados: {report['legacy_alias_count']}",
+            f"- Links internos inválidos após padronização: {len(validation['bad_internal_links'])}",
+            f"- Placeholders `${{...}}` fora de `<script>`: {sum(1 for item in validation['results'] if item['has_placeholder_outside_scripts'])}",
+            "",
+            "## Arquivos modificados",
+            "",
+        ]
+    )
+
+    for file_path in report["updated_files"]:
+        md_lines.append(f"- `{file_path}`")
+
+    REPORT_MD.write_text("\n".join(md_lines) + "\n", encoding="utf-8")
+
+    validation_lines = [
+        "# Relatorio de Validacao SEO",
+        "",
+        f"- Paginas verificadas: {validation['pages_checked']}",
+        f"- Validacao geral: {'OK' if validation['passed'] else 'FALHOU'}",
+        "",
+        "## Checagens por pagina",
+        "",
+    ]
+
+    for item in validation["results"]:
+        status = "OK" if item["http_status"] == 200 and not item["redirected"] and item["canonical_ok"] and not item["has_placeholder_outside_scripts"] else "FALHA"
+        validation_lines.append(
+            f"- `{item['url']}` | status={item['http_status']} | redirect={item['redirected']} | canonical_ok={item['canonical_ok']} | placeholders={item['has_placeholder_outside_scripts']} | {status}"
+        )
+
+    if validation["bad_internal_links"]:
+        validation_lines.extend(["", "## Links internos invalidos", ""])
+        for item in validation["bad_internal_links"][:100]:
+            validation_lines.append(f"- `{item['file']}` aponta para `{item['target']}`")
+
+    VALIDATION_MD.write_text("\n".join(validation_lines) + "\n", encoding="utf-8")
+
+
 def main():
     html_files = sorted(iter_html_files(), key=lambda p: rel_posix(p))
-    report = {
-        "updated_files": [],
-        "url_mappings": {},
-        "legacy_redirect_examples": [],
-        "duplicate_signatures": {},
-    }
-
+    ROOT_SLUG_ALIASES.clear()
+    ROOT_SLUG_ALIASES.update(build_root_slug_aliases(html_files))
+    alias_map = {}
+    updated_files = []
     signatures = {}
+
     for path in html_files:
         rel = rel_posix(path)
         public_path = public_path_for_file(path)
         canonical_url = f"{DOMAIN}{public_path}"
         original = path.read_text(encoding="utf-8", errors="ignore")
+        alias_map.setdefault(public_path, set()).update(extract_self_aliases(original, public_path))
+
         updated = original
         updated = normalize_canonical_and_robots(updated, canonical_url, public_path in NOINDEX_PATHS)
         updated = replace_attr_urls(updated, ["href", "data-url"], path)
-        updated = replace_meta_url_content(updated, path)
-        updated = replace_json_ld_urls(updated, path)
+        updated = replace_meta_url_content(updated, canonical_url)
+        updated = replace_json_ld_urls(updated, path, canonical_url)
+        updated = replace_absolute_aliases(updated, alias_map[public_path], canonical_url)
         updated = updated.replace("http://portaldascontas.com.br", DOMAIN)
         updated = updated.replace("https://www.portaldascontas.com.br", DOMAIN)
         updated = updated.replace("http://www.portaldascontas.com.br", DOMAIN)
 
         if updated != original:
             path.write_text(updated, encoding="utf-8")
-            report["updated_files"].append(rel)
+            updated_files.append(rel)
 
-        report["url_mappings"]["/" + rel] = public_path
-        signatures.setdefault(file_signature(path), []).append(rel)
+        body = re.sub(r"\s+", " ", re.sub(r"<head[\s\S]*?</head>", "", updated, flags=re.I)).strip()
+        signatures.setdefault(body, []).append(rel)
 
-    Path("_redirects").write_text(build_redirects(html_files), encoding="utf-8")
+    redirects_text = build_redirects(html_files, alias_map)
+    Path("_redirects").write_text(redirects_text, encoding="utf-8")
     Path("sitemap.xml").write_text(generate_sitemap(html_files), encoding="utf-8")
-    report["updated_files"].extend(["_redirects", "sitemap.xml"])
+    updated_files.extend(["_redirects", "sitemap.xml"])
 
-    report["legacy_redirect_examples"] = [
-        ["/artigos/financas/calculadoras/juros.html", "/calculadoras/juros"],
-        ["/artigos/saude/calculadoras/juros.html", "/calculadoras/juros"],
-        ["/calculadoras/calculadoras/salario.html", "/calculadoras/salario"],
-    ]
-    report["duplicate_signatures"] = {
-        sig: files for sig, files in signatures.items() if len(files) > 1
+    redirect_examples = []
+    for line in redirects_text.splitlines():
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split()
+        if len(parts) >= 3:
+            redirect_examples.append((parts[0], parts[1]))
+
+    report = {
+        "pages_processed": len(html_files),
+        "updated_files": sorted(dict.fromkeys(updated_files)),
+        "redirect_count": max(0, len([line for line in redirects_text.splitlines() if line and not line.startswith("#")])),
+        "redirect_examples": redirect_examples,
+        "legacy_alias_count": sum(len(v) for v in alias_map.values()),
+        "legacy_aliases": {key: sorted(value) for key, value in alias_map.items() if value},
+        "duplicate_groups": sum(1 for files in signatures.values() if len(files) > 1),
+        "duplicate_groups_details": [files for files in signatures.values() if len(files) > 1],
     }
 
-    Path("seo-url-refactor-report.json").write_text(
-        json.dumps(report, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    md_lines = [
-        "# Relatorio de Refatoracao de URLs",
-        "",
-        "## Alteracoes realizadas",
-        "",
-        f"- HTMLs processados: {len(html_files)}",
-        f"- Arquivos atualizados: {len(report['updated_files'])}",
-        f"- URLs antigas mapeadas: {len(report['url_mappings'])}",
-        "- Redirecionamentos 301 gerados em `_redirects` para todas as URLs `.html` e legados de calculadoras.",
-        "- Canonical absoluta aplicada para a URL final sem `.html`.",
-        "- Sitemap regenerado somente com URLs finais.",
-        "",
-        "## Exemplos de redirecionamento",
-        "",
-    ]
-    for source, target in report["legacy_redirect_examples"]:
-        md_lines.append(f"- `{source}` -> `{target}`")
-    md_lines.extend([
-        "",
-        "## Problemas encontrados",
-        "",
-        "- Canonicals divergentes entre páginas reais e URLs antigas.",
-        "- Referências internas para `.html` e caminhos legados de calculadoras.",
-        "- Padrões históricos de duplicação em `/artigos/{categoria}/calculadoras/{slug}` e `/calculadoras/calculadoras/{slug}`.",
-        "",
-        "## Arquivos modificados",
-        "",
-    ])
-    for file_path in report["updated_files"]:
-        md_lines.append(f"- `{file_path}`")
-    Path("seo-url-refactor-report.md").write_text("\n".join(md_lines) + "\n", encoding="utf-8")
+    validation = validate_outputs(html_files, alias_map)
+    write_reports(report, validation)
     print(f"Processed {len(html_files)} HTML files.")
+    print(f"Generated {report['redirect_count']} redirects.")
+    print(f"Validation passed: {validation['passed']}.")
 
 
 if __name__ == "__main__":
