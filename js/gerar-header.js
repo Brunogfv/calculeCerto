@@ -6,9 +6,23 @@ const SITE_BASE_URL = new URL('../', import.meta.url); // .../<base>/
 const SITE_BASE_PATH = SITE_BASE_URL.pathname; // .../<base>/
 
 function sitePath(relPath) {
-    const clean = String(relPath || '').replace(/^\/+/, '');
-    // Mantem o site funcionando quando hospedado em subpasta (ex: GitHub Pages).
-    return SITE_BASE_PATH + clean;
+    let clean = String(relPath || '').replace(/^\/+/, '');
+    
+    // Se for vazio (home), retorna apenas o SITE_BASE_PATH
+    if (!clean) return SITE_BASE_PATH;
+
+    // Se for um link interno (#) ou ja tiver extensao, nao faz nada
+    if (clean.includes('.') || clean.includes('#') || clean.includes('?')) {
+        return SITE_BASE_PATH + clean;
+    }
+
+    // Se for artigos, calculadoras ou paginas, garante a barra no final (sao diretorios)
+    if (clean === 'artigos' || clean === 'calculadoras' || clean === 'paginas') {
+        return SITE_BASE_PATH + clean + '/';
+    }
+
+    // Caso contrario, adiciona .html
+    return SITE_BASE_PATH + clean + '.html';
 }
 
 function siteUrl(relPath) {

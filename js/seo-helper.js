@@ -10,8 +10,11 @@
         let path = pathname || "/";
 
         path = path.replace(/\/{2,}/g, "/");
+        path = path.replace(/[},]+$/g, "");
         path = path.replace(/\/calculadoras\/calculadoras\//g, "/calculadoras/");
         path = path.replace(/^\/artigos\/[^/]+\/calculadoras\/([^/]+?)(?:\.html)?$/, "/calculadoras/$1");
+        path = path.replace(/^\/calculadoras\/calc-juros$/i, "/calculadoras/juros");
+        path = path.replace(/^\/calc-juros$/i, "/calculadoras/juros");
 
         if (path === "/index.html") return "/";
         if (path.endsWith("/index.html")) path = path.slice(0, -11) || "/";

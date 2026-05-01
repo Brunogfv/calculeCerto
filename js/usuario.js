@@ -12,8 +12,13 @@ function normalizarUrlInterna(url) {
     if (!url) return '/';
 
     let normalized = String(url).trim();
+    if (normalized.includes('${')) return '/';
     normalized = normalized.replace(/^https?:\/\/(?:www\.)?portaldascontas\.com\.br/i, '');
     if (!normalized.startsWith('/')) normalized = `/${normalized.replace(/^\/+/, '')}`;
+
+    normalized = normalized.replace(/[},]+$/g, '');
+    normalized = normalized.replace(/\/calculadoras\/calc-juros$/i, '/calculadoras/juros');
+    normalized = normalized.replace(/^\/calc-juros$/i, '/calculadoras/juros');
 
     if (normalized === '/index.html') return '/';
     if (normalized.endsWith('/index.html')) normalized = normalized.slice(0, -11) || '/';
@@ -106,13 +111,14 @@ window.limparHistorico = function () {
  * Impede favoritos duplicados (comparação por URL).
  *
  * @param {string} nome - Nome da calculadora (ex: "Calculadora de Juros Compostos")
- * @param {string} url  - URL relativa da calculadora (ex: "/calculadoras/juros.html")
+ * @param {string} url  - URL relativa da calculadora (ex: "/calculadoras/juros")
  */
 window.adicionarFavorito = function (nome, url) {
     const favoritos = window.listarFavoritos();
+    const normalizedUrl = normalizarUrlInterna(url);
 
     // Busca se já existe (comparação por URL)
-    const index = favoritos.findIndex(fav => fav.url === url);
+    const index = favoritos.findIndex(fav => fav.url === normalizedUrl);
     
     if (index >= 0) {
         // Se já existe, atualizamos o nome (caso tenha mudado no HTML)
@@ -137,10 +143,12 @@ window.listarFavoritos = function () {
     try {
         const dados = localStorage.getItem('calculadorasFavoritas');
         const favoritos = dados ? JSON.parse(dados) : [];
-        return favoritos.map(fav => ({
-            ...fav,
-            url: normalizarUrlInterna(fav.url)
-        }));
+        return favoritos
+            .filter(fav => fav && !String(fav.url || '').includes('${'))
+            .map(fav => ({
+                ...fav,
+                url: normalizarUrlInterna(fav.url)
+            }));
     } catch (e) {
         console.warn('Erro ao ler favoritos do localStorage:', e);
         return [];

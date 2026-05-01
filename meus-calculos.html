@@ -129,8 +129,12 @@
             function normalizeFavoriteUrl(url) {
                 if (!url) return '/';
                 let normalized = String(url).trim();
+                if (normalized.includes('${')) return '/';
                 normalized = normalized.replace(/^https?:\/\/(?:www\.)?portaldascontas\.com\.br/i, '');
                 if (!normalized.startsWith('/')) normalized = `/${normalized.replace(/^\/+/, '')}`;
+                normalized = normalized.replace(/[},]+$/g, '');
+                normalized = normalized.replace(/\/calculadoras\/calc-juros$/i, '/calculadoras/juros');
+                normalized = normalized.replace(/^\/calc-juros$/i, '/calculadoras/juros');
                 if (normalized === '/index.html') return '/';
                 if (normalized.endsWith('/index.html')) normalized = normalized.slice(0, -11) || '/';
                 if (normalized.endsWith('.html')) normalized = normalized.slice(0, -5) || '/';
