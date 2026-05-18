@@ -11,18 +11,18 @@ function sitePath(relPath) {
     // Se for vazio (home), retorna apenas o SITE_BASE_PATH
     if (!clean) return SITE_BASE_PATH;
 
-    // Se for um link interno (#) ou ja tiver extensao, nao faz nada
-    if (clean.includes('.') || clean.includes('#') || clean.includes('?')) {
+    // Se for um link interno (#) ou ja tiver extensao (que nao seja .html), nao faz nada
+    if ((clean.includes('.') && !clean.endsWith('.html')) || clean.includes('#') || clean.includes('?')) {
         return SITE_BASE_PATH + clean;
     }
 
-    // Se for artigos, calculadoras ou paginas, garante a barra no final (sao diretorios)
-    if (clean === 'artigos' || clean === 'calculadoras' || clean === 'paginas') {
-        return SITE_BASE_PATH + clean + '/';
+    // Remove .html se existir no final da string de entrada
+    if (clean.endsWith('.html')) {
+        clean = clean.slice(0, -5);
     }
 
-    // Caso contrario, adiciona .html
-    return SITE_BASE_PATH + clean + '.html';
+    // Retorna o caminho limpo sem .html
+    return SITE_BASE_PATH + clean;
 }
 
 function siteUrl(relPath) {
@@ -69,9 +69,9 @@ function buildHeaderHTML() {
                 <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finan&ccedil;as &amp; Trabalho</a>
                 <div class="dropdown-menu columns-2">
                     <a href="${href('calculadoras/juros')}" onclick="toggleMenu()">Juros &amp; Investimentos</a>
-                    <a href="${href('calculadoras/calc-investimento')}" onclick="toggleMenu()">Simulador de Investimentos</a>
-                    <a href="${href('calculadoras/calc-inflacao')}" onclick="toggleMenu()">Infla&ccedil;&atilde;o (IPCA/IGP-M)</a>
-                    <a href="${href('calculadoras/calc-poupanca-vs-investimento')}" onclick="toggleMenu()">Poupan&ccedil;a vs Investimentos</a>
+                    <a href="${href('calculadoras/investimento')}" onclick="toggleMenu()">Simulador de Investimentos</a>
+                    <a href="${href('calculadoras/inflacao')}" onclick="toggleMenu()">Infla&ccedil;&atilde;o (IPCA/IGP-M)</a>
+                    <a href="${href('calculadoras/poupanca-vs-investimento')}" onclick="toggleMenu()">Poupan&ccedil;a vs Investimentos</a>
                     <a href="${href('calculadoras/inss')}" onclick="toggleMenu()">INSS</a>
                     <a href="${href('calculadoras/salario')}" onclick="toggleMenu()">Sal&aacute;rio L&iacute;quido</a>
                     <a href="${href('calculadoras/decimo-terceiro')}" onclick="toggleMenu()">13&ordm; Sal&aacute;rio</a>
@@ -79,13 +79,13 @@ function buildHeaderHTML() {
                     <a href="${href('calculadoras/hora-extra')}" onclick="toggleMenu()">Hora Extra</a>
                     <a href="${href('calculadoras/porcentagem')}" onclick="toggleMenu()">Porcentagem</a>
                     <a href="${href('calculadoras/porcentagem-reversa')}" onclick="toggleMenu()">Porcentagem Reversa</a>
-                    <a href="${href('calculadoras/calc-cdb')}" onclick="toggleMenu()">CDB &amp; Renda Fixa</a>
-                    <a href="${href('calculadoras/calc-lca-vs-cdb')}" onclick="toggleMenu()">LCA vs CDB</a>
-                    <a href="${href('calculadoras/calc-lci-vs-cdb')}" onclick="toggleMenu()">LCI vs CDB</a>
-                    <a href="${href('calculadoras/calc-ir-investimentos')}" onclick="toggleMenu()">IR Investimentos</a>
-                    <a href="${href('calculadoras/calc-tesouro-direto')}" onclick="toggleMenu()">Tesouro Direto</a>
-                    <a href="${href('calculadoras/calc-price-sac')}" onclick="toggleMenu()">Price e SAC</a>
-                    <a href="${href('calculadoras/calc-imposto-renda')}" onclick="toggleMenu()">Imposto de Renda</a>
+                    <a href="${href('calculadoras/cdb')}" onclick="toggleMenu()">CDB &amp; Renda Fixa</a>
+                    <a href="${href('calculadoras/lca-vs-cdb')}" onclick="toggleMenu()">LCA vs CDB</a>
+                    <a href="${href('calculadoras/lci-vs-cdb')}" onclick="toggleMenu()">LCI vs CDB</a>
+                    <a href="${href('calculadoras/ir-investimentos')}" onclick="toggleMenu()">IR Investimentos</a>
+                    <a href="${href('calculadoras/tesouro-direto')}" onclick="toggleMenu()">Tesouro Direto</a>
+                    <a href="${href('calculadoras/price-sac')}" onclick="toggleMenu()">Price e SAC</a>
+                    <a href="${href('calculadoras/imposto-renda')}" onclick="toggleMenu()">Imposto de Renda</a>
                     <a href="${href('calculadoras/dividendos')}" onclick="toggleMenu()">Dividendos (FIIs)</a>
                 </div>
             </div>

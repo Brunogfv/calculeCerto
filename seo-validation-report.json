@@ -1,5 +1,5 @@
 {
-  "validated_at": "2026-04-28T12:31:41",
+  "validated_at": "2026-05-17T10:58:44",
   "pages_checked": 161,
   "passed": true,
   "results": [
@@ -571,6 +571,15 @@
       "has_placeholder_outside_scripts": false
     },
     {
+      "file": "artigos/financas/como-calcular-hora-extra.html",
+      "url": "/artigos/financas/como-calcular-hora-extra",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/artigos/financas/como-calcular-hora-extra",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
       "file": "artigos/financas/como-calcular-juros-compostos.html",
       "url": "/artigos/financas/como-calcular-juros-compostos",
       "http_status": 200,
@@ -594,15 +603,6 @@
       "http_status": 200,
       "redirected": false,
       "canonical": "https://portaldascontas.com.br/artigos/financas/funciona-cdb",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "artigos/financas/hora-extra.html",
-      "url": "/artigos/financas/hora-extra",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/artigos/financas/hora-extra",
       "canonical_ok": true,
       "has_placeholder_outside_scripts": false
     },
@@ -985,92 +985,11 @@
       "has_placeholder_outside_scripts": false
     },
     {
-      "file": "calculadoras/calc-cdb.html",
-      "url": "/calculadoras/calc-cdb",
+      "file": "calculadoras/cdb.html",
+      "url": "/calculadoras/cdb",
       "http_status": 200,
       "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-cdb",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "calculadoras/calc-imposto-renda.html",
-      "url": "/calculadoras/calc-imposto-renda",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-imposto-renda",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "calculadoras/calc-inflacao.html",
-      "url": "/calculadoras/calc-inflacao",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-inflacao",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "calculadoras/calc-investimento.html",
-      "url": "/calculadoras/calc-investimento",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-investimento",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "calculadoras/calc-ir-investimentos.html",
-      "url": "/calculadoras/calc-ir-investimentos",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-ir-investimentos",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "calculadoras/calc-lca-vs-cdb.html",
-      "url": "/calculadoras/calc-lca-vs-cdb",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-lca-vs-cdb",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "calculadoras/calc-lci-vs-cdb.html",
-      "url": "/calculadoras/calc-lci-vs-cdb",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-lci-vs-cdb",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "calculadoras/calc-poupanca-vs-investimento.html",
-      "url": "/calculadoras/calc-poupanca-vs-investimento",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-poupanca-vs-investimento",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "calculadoras/calc-price-sac.html",
-      "url": "/calculadoras/calc-price-sac",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-price-sac",
-      "canonical_ok": true,
-      "has_placeholder_outside_scripts": false
-    },
-    {
-      "file": "calculadoras/calc-tesouro-direto.html",
-      "url": "/calculadoras/calc-tesouro-direto",
-      "http_status": 200,
-      "redirected": false,
-      "canonical": "https://portaldascontas.com.br/calculadoras/calc-tesouro-direto",
+      "canonical": "https://portaldascontas.com.br/calculadoras/cdb",
       "canonical_ok": true,
       "has_placeholder_outside_scripts": false
     },
@@ -1210,11 +1129,47 @@
       "has_placeholder_outside_scripts": false
     },
     {
+      "file": "calculadoras/imposto-renda.html",
+      "url": "/calculadoras/imposto-renda",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/imposto-renda",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/inflacao.html",
+      "url": "/calculadoras/inflacao",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/inflacao",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
       "file": "calculadoras/inss.html",
       "url": "/calculadoras/inss",
       "http_status": 200,
       "redirected": false,
       "canonical": "https://portaldascontas.com.br/calculadoras/inss",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/investimento.html",
+      "url": "/calculadoras/investimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/investimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/ir-investimentos.html",
+      "url": "/calculadoras/ir-investimentos",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/ir-investimentos",
       "canonical_ok": true,
       "has_placeholder_outside_scripts": false
     },
@@ -1233,6 +1188,24 @@
       "http_status": 200,
       "redirected": false,
       "canonical": "https://portaldascontas.com.br/calculadoras/kmh-ms",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/lca-vs-cdb.html",
+      "url": "/calculadoras/lca-vs-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/lca-vs-cdb",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/lci-vs-cdb.html",
+      "url": "/calculadoras/lci-vs-cdb",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/lci-vs-cdb",
       "canonical_ok": true,
       "has_placeholder_outside_scripts": false
     },
@@ -1345,6 +1318,24 @@
       "has_placeholder_outside_scripts": false
     },
     {
+      "file": "calculadoras/poupanca-vs-investimento.html",
+      "url": "/calculadoras/poupanca-vs-investimento",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/poupanca-vs-investimento",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/price-sac.html",
+      "url": "/calculadoras/price-sac",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/price-sac",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
       "file": "calculadoras/regra-de-tres.html",
       "url": "/calculadoras/regra-de-tres",
       "http_status": 200,
@@ -1377,6 +1368,15 @@
       "http_status": 200,
       "redirected": false,
       "canonical": "https://portaldascontas.com.br/calculadoras/temperatura",
+      "canonical_ok": true,
+      "has_placeholder_outside_scripts": false
+    },
+    {
+      "file": "calculadoras/tesouro-direto.html",
+      "url": "/calculadoras/tesouro-direto",
+      "http_status": 200,
+      "redirected": false,
+      "canonical": "https://portaldascontas.com.br/calculadoras/tesouro-direto",
       "canonical_ok": true,
       "has_placeholder_outside_scripts": false
     },

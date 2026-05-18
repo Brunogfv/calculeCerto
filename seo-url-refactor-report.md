@@ -4,7 +4,7 @@
 
 - HTMLs processados: 161
 - Arquivos alterados: 163
-- Redirecionamentos 301 gerados: 803
+- Redirecionamentos 301 gerados: 827
 - Canonicals absolutas padronizadas para HTTPS e sem `.html`.
 - Links internos normalizados para URLs finais limpas.
 - Sitemap regenerado apenas com URLs finais indexáveis.
@@ -124,10 +124,10 @@
 - `artigos/financas/capitalizacao-composta.html`
 - `artigos/financas/carteira-de-investimento.html`
 - `artigos/financas/como-calcular-desconto-inss.html`
+- `artigos/financas/como-calcular-hora-extra.html`
 - `artigos/financas/como-calcular-juros-compostos.html`
 - `artigos/financas/como-funciona-poupanca.html`
 - `artigos/financas/funciona-cdb.html`
-- `artigos/financas/hora-extra.html`
 - `artigos/financas/imposto-renda-em-investimentos.html`
 - `artigos/financas/investir-cdb.html`
 - `artigos/financas/investir-pouco-dinheiro.html`
@@ -171,16 +171,7 @@
 - `calculadoras/aluguel-vs-compra.html`
 - `calculadoras/amortizacao.html`
 - `calculadoras/bhaskara.html`
-- `calculadoras/calc-cdb.html`
-- `calculadoras/calc-imposto-renda.html`
-- `calculadoras/calc-inflacao.html`
-- `calculadoras/calc-investimento.html`
-- `calculadoras/calc-ir-investimentos.html`
-- `calculadoras/calc-lca-vs-cdb.html`
-- `calculadoras/calc-lci-vs-cdb.html`
-- `calculadoras/calc-poupanca-vs-investimento.html`
-- `calculadoras/calc-price-sac.html`
-- `calculadoras/calc-tesouro-direto.html`
+- `calculadoras/cdb.html`
 - `calculadoras/churrasco.html`
 - `calculadoras/cimento.html`
 - `calculadoras/combustivel.html`
@@ -196,9 +187,15 @@
 - `calculadoras/gasto-calorico.html`
 - `calculadoras/hora-extra.html`
 - `calculadoras/imc.html`
+- `calculadoras/imposto-renda.html`
+- `calculadoras/inflacao.html`
 - `calculadoras/inss.html`
+- `calculadoras/investimento.html`
+- `calculadoras/ir-investimentos.html`
 - `calculadoras/juros.html`
 - `calculadoras/kmh-ms.html`
+- `calculadoras/lca-vs-cdb.html`
+- `calculadoras/lci-vs-cdb.html`
 - `calculadoras/media-final.html`
 - `calculadoras/medias.html`
 - `calculadoras/medidas-culinarias.html`
@@ -211,10 +208,13 @@
 - `calculadoras/pneus.html`
 - `calculadoras/porcentagem-reversa.html`
 - `calculadoras/porcentagem.html`
+- `calculadoras/poupanca-vs-investimento.html`
+- `calculadoras/price-sac.html`
 - `calculadoras/regra-de-tres.html`
 - `calculadoras/salario.html`
 - `calculadoras/tdee.html`
 - `calculadoras/temperatura.html`
+- `calculadoras/tesouro-direto.html`
 - `calculadoras/tinta.html`
 - `calculadoras/tmb.html`
 - `calculadoras/velocidade-media.html`

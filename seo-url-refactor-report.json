@@ -63,10 +63,10 @@
     "artigos/financas/capitalizacao-composta.html",
     "artigos/financas/carteira-de-investimento.html",
     "artigos/financas/como-calcular-desconto-inss.html",
+    "artigos/financas/como-calcular-hora-extra.html",
     "artigos/financas/como-calcular-juros-compostos.html",
     "artigos/financas/como-funciona-poupanca.html",
     "artigos/financas/funciona-cdb.html",
-    "artigos/financas/hora-extra.html",
     "artigos/financas/imposto-renda-em-investimentos.html",
     "artigos/financas/investir-cdb.html",
     "artigos/financas/investir-pouco-dinheiro.html",
@@ -110,16 +110,7 @@
     "calculadoras/aluguel-vs-compra.html",
     "calculadoras/amortizacao.html",
     "calculadoras/bhaskara.html",
-    "calculadoras/calc-cdb.html",
-    "calculadoras/calc-imposto-renda.html",
-    "calculadoras/calc-inflacao.html",
-    "calculadoras/calc-investimento.html",
-    "calculadoras/calc-ir-investimentos.html",
-    "calculadoras/calc-lca-vs-cdb.html",
-    "calculadoras/calc-lci-vs-cdb.html",
-    "calculadoras/calc-poupanca-vs-investimento.html",
-    "calculadoras/calc-price-sac.html",
-    "calculadoras/calc-tesouro-direto.html",
+    "calculadoras/cdb.html",
     "calculadoras/churrasco.html",
     "calculadoras/cimento.html",
     "calculadoras/combustivel.html",
@@ -135,9 +126,15 @@
     "calculadoras/gasto-calorico.html",
     "calculadoras/hora-extra.html",
     "calculadoras/imc.html",
+    "calculadoras/imposto-renda.html",
+    "calculadoras/inflacao.html",
     "calculadoras/inss.html",
+    "calculadoras/investimento.html",
+    "calculadoras/ir-investimentos.html",
     "calculadoras/juros.html",
     "calculadoras/kmh-ms.html",
+    "calculadoras/lca-vs-cdb.html",
+    "calculadoras/lci-vs-cdb.html",
     "calculadoras/media-final.html",
     "calculadoras/medias.html",
     "calculadoras/medidas-culinarias.html",
@@ -150,10 +147,13 @@
     "calculadoras/pneus.html",
     "calculadoras/porcentagem-reversa.html",
     "calculadoras/porcentagem.html",
+    "calculadoras/poupanca-vs-investimento.html",
+    "calculadoras/price-sac.html",
     "calculadoras/regra-de-tres.html",
     "calculadoras/salario.html",
     "calculadoras/tdee.html",
     "calculadoras/temperatura.html",
+    "calculadoras/tesouro-direto.html",
     "calculadoras/tinta.html",
     "calculadoras/tmb.html",
     "calculadoras/velocidade-media.html",
@@ -165,7 +165,7 @@
     "paginas/termos.html",
     "sitemap.xml"
   ],
-  "redirect_count": 803,
+  "redirect_count": 827,
   "redirect_examples": [
     [
       "http://www.portaldascontas.com.br/*",
@@ -428,6 +428,10 @@
       "/artigos/financas/como-calcular-desconto-inss"
     ],
     [
+      "/artigos/financas/como-calcular-hora-extra.html",
+      "/artigos/financas/como-calcular-hora-extra"
+    ],
+    [
       "/artigos/financas/como-calcular-juros-compostos.html",
       "/artigos/financas/como-calcular-juros-compostos"
     ],
@@ -438,10 +442,6 @@
     [
       "/artigos/financas/funciona-cdb.html",
       "/artigos/financas/funciona-cdb"
-    ],
-    [
-      "/artigos/financas/hora-extra.html",
-      "/artigos/financas/hora-extra"
     ],
     [
       "/artigos/financas/imposto-renda-em-investimentos.html",
@@ -808,524 +808,56 @@
       "/calculadoras/bhaskara"
     ],
     [
-      "/calculadoras/calc-cdb.html",
-      "/calculadoras/calc-cdb"
+      "/calculadoras/cdb.html",
+      "/calculadoras/cdb"
     ],
     [
-      "/calculadoras/calculadoras/calc-cdb.html",
-      "/calculadoras/calc-cdb"
+      "/calculadoras/calculadoras/cdb.html",
+      "/calculadoras/cdb"
     ],
     [
-      "/calculadoras/calculadoras/calc-cdb",
-      "/calculadoras/calc-cdb"
+      "/calculadoras/calculadoras/cdb",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/financas/calculadoras/calc-cdb.html",
-      "/calculadoras/calc-cdb"
+      "/artigos/financas/calculadoras/cdb.html",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/financas/calculadoras/calc-cdb",
-      "/calculadoras/calc-cdb"
+      "/artigos/financas/calculadoras/cdb",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/saude/calculadoras/calc-cdb.html",
-      "/calculadoras/calc-cdb"
+      "/artigos/saude/calculadoras/cdb.html",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/saude/calculadoras/calc-cdb",
-      "/calculadoras/calc-cdb"
+      "/artigos/saude/calculadoras/cdb",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/comparacao/calculadoras/calc-cdb.html",
-      "/calculadoras/calc-cdb"
+      "/artigos/comparacao/calculadoras/cdb.html",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/comparacao/calculadoras/calc-cdb",
-      "/calculadoras/calc-cdb"
+      "/artigos/comparacao/calculadoras/cdb",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/calculaveis/calculadoras/calc-cdb.html",
-      "/calculadoras/calc-cdb"
+      "/artigos/calculaveis/calculadoras/cdb.html",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/calculaveis/calculadoras/calc-cdb",
-      "/calculadoras/calc-cdb"
+      "/artigos/calculaveis/calculadoras/cdb",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/utilitarios/calculadoras/calc-cdb.html",
-      "/calculadoras/calc-cdb"
+      "/artigos/utilitarios/calculadoras/cdb.html",
+      "/calculadoras/cdb"
     ],
     [
-      "/artigos/utilitarios/calculadoras/calc-cdb",
-      "/calculadoras/calc-cdb"
-    ],
-    [
-      "/calculadoras/calc-imposto-renda.html",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-imposto-renda.html",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-imposto-renda",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-imposto-renda.html",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-imposto-renda",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-imposto-renda.html",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-imposto-renda",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-imposto-renda.html",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-imposto-renda",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-imposto-renda.html",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-imposto-renda",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-imposto-renda.html",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-imposto-renda",
-      "/calculadoras/calc-imposto-renda"
-    ],
-    [
-      "/calculadoras/calc-inflacao.html",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-inflacao.html",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-inflacao",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-inflacao.html",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-inflacao",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-inflacao.html",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-inflacao",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-inflacao.html",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-inflacao",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-inflacao.html",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-inflacao",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-inflacao.html",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-inflacao",
-      "/calculadoras/calc-inflacao"
-    ],
-    [
-      "/calculadoras/calc-investimento.html",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-investimento.html",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-investimento",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-investimento.html",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-investimento",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-investimento.html",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-investimento",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-investimento.html",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-investimento",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-investimento.html",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-investimento",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-investimento.html",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-investimento",
-      "/calculadoras/calc-investimento"
-    ],
-    [
-      "/calculadoras/calc-ir-investimentos.html",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-ir-investimentos.html",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-ir-investimentos",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-ir-investimentos.html",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-ir-investimentos",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-ir-investimentos.html",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-ir-investimentos",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-ir-investimentos.html",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-ir-investimentos",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-ir-investimentos.html",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-ir-investimentos",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-ir-investimentos.html",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-ir-investimentos",
-      "/calculadoras/calc-ir-investimentos"
-    ],
-    [
-      "/calculadoras/calc-lca-vs-cdb.html",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-lca-vs-cdb.html",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-lca-vs-cdb",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-lca-vs-cdb.html",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-lca-vs-cdb",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-lca-vs-cdb.html",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-lca-vs-cdb",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-lca-vs-cdb.html",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-lca-vs-cdb",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-lca-vs-cdb.html",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-lca-vs-cdb",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-lca-vs-cdb.html",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-lca-vs-cdb",
-      "/calculadoras/calc-lca-vs-cdb"
-    ],
-    [
-      "/calculadoras/calc-lci-vs-cdb.html",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-lci-vs-cdb.html",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-lci-vs-cdb",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-lci-vs-cdb.html",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-lci-vs-cdb",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-lci-vs-cdb.html",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-lci-vs-cdb",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-lci-vs-cdb.html",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-lci-vs-cdb",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-lci-vs-cdb.html",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-lci-vs-cdb",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-lci-vs-cdb.html",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-lci-vs-cdb",
-      "/calculadoras/calc-lci-vs-cdb"
-    ],
-    [
-      "/calculadoras/calc-poupanca-vs-investimento.html",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-poupanca-vs-investimento.html",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-poupanca-vs-investimento",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-poupanca-vs-investimento.html",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-poupanca-vs-investimento",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-poupanca-vs-investimento.html",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-poupanca-vs-investimento",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-poupanca-vs-investimento.html",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-poupanca-vs-investimento",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-poupanca-vs-investimento.html",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-poupanca-vs-investimento",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-poupanca-vs-investimento.html",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-poupanca-vs-investimento",
-      "/calculadoras/calc-poupanca-vs-investimento"
-    ],
-    [
-      "/calculadoras/calc-price-sac.html",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-price-sac.html",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-price-sac",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-price-sac.html",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-price-sac",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-price-sac.html",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-price-sac",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-price-sac.html",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-price-sac",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-price-sac.html",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-price-sac",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-price-sac.html",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-price-sac",
-      "/calculadoras/calc-price-sac"
-    ],
-    [
-      "/calculadoras/calc-tesouro-direto.html",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-tesouro-direto.html",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/calculadoras/calculadoras/calc-tesouro-direto",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-tesouro-direto.html",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/financas/calculadoras/calc-tesouro-direto",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-tesouro-direto.html",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/saude/calculadoras/calc-tesouro-direto",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-tesouro-direto.html",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/comparacao/calculadoras/calc-tesouro-direto",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-tesouro-direto.html",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/calculaveis/calculadoras/calc-tesouro-direto",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-tesouro-direto.html",
-      "/calculadoras/calc-tesouro-direto"
-    ],
-    [
-      "/artigos/utilitarios/calculadoras/calc-tesouro-direto",
-      "/calculadoras/calc-tesouro-direto"
+      "/artigos/utilitarios/calculadoras/cdb",
+      "/calculadoras/cdb"
     ],
     [
       "/calculadoras/churrasco.html",
@@ -2108,6 +1640,110 @@
       "/calculadoras/imc"
     ],
     [
+      "/calculadoras/imposto-renda.html",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/calculadoras/calculadoras/imposto-renda.html",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/calculadoras/calculadoras/imposto-renda",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/financas/calculadoras/imposto-renda.html",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/financas/calculadoras/imposto-renda",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/saude/calculadoras/imposto-renda.html",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/saude/calculadoras/imposto-renda",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/imposto-renda.html",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/imposto-renda",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/imposto-renda.html",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/imposto-renda",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/imposto-renda.html",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/imposto-renda",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/calculadoras/inflacao.html",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/calculadoras/calculadoras/inflacao.html",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/calculadoras/calculadoras/inflacao",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/financas/calculadoras/inflacao.html",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/financas/calculadoras/inflacao",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/saude/calculadoras/inflacao.html",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/saude/calculadoras/inflacao",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/inflacao.html",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/inflacao",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/inflacao.html",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/inflacao",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/inflacao.html",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/inflacao",
+      "/calculadoras/inflacao"
+    ],
+    [
       "/calculadoras/inss.html",
       "/calculadoras/inss"
     ],
@@ -2158,6 +1794,110 @@
     [
       "/artigos/utilitarios/calculadoras/inss",
       "/calculadoras/inss"
+    ],
+    [
+      "/calculadoras/investimento.html",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/calculadoras/calculadoras/investimento.html",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/calculadoras/calculadoras/investimento",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/financas/calculadoras/investimento.html",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/financas/calculadoras/investimento",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/saude/calculadoras/investimento.html",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/saude/calculadoras/investimento",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/investimento.html",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/investimento",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/investimento.html",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/investimento",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/investimento.html",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/investimento",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/calculadoras/ir-investimentos.html",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/calculadoras/calculadoras/ir-investimentos.html",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/calculadoras/calculadoras/ir-investimentos",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/financas/calculadoras/ir-investimentos.html",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/financas/calculadoras/ir-investimentos",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/saude/calculadoras/ir-investimentos.html",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/saude/calculadoras/ir-investimentos",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/ir-investimentos.html",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/ir-investimentos",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/ir-investimentos.html",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/ir-investimentos",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/ir-investimentos.html",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/ir-investimentos",
+      "/calculadoras/ir-investimentos"
     ],
     [
       "/calculadoras/juros.html",
@@ -2262,6 +2002,110 @@
     [
       "/artigos/utilitarios/calculadoras/kmh-ms",
       "/calculadoras/kmh-ms"
+    ],
+    [
+      "/calculadoras/lca-vs-cdb.html",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/calculadoras/calculadoras/lca-vs-cdb.html",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/calculadoras/calculadoras/lca-vs-cdb",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/financas/calculadoras/lca-vs-cdb.html",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/financas/calculadoras/lca-vs-cdb",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/saude/calculadoras/lca-vs-cdb.html",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/saude/calculadoras/lca-vs-cdb",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/lca-vs-cdb.html",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/lca-vs-cdb",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/lca-vs-cdb.html",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/lca-vs-cdb",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/lca-vs-cdb.html",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/lca-vs-cdb",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/calculadoras/lci-vs-cdb.html",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/calculadoras/calculadoras/lci-vs-cdb.html",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/calculadoras/calculadoras/lci-vs-cdb",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/financas/calculadoras/lci-vs-cdb.html",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/financas/calculadoras/lci-vs-cdb",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/saude/calculadoras/lci-vs-cdb.html",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/saude/calculadoras/lci-vs-cdb",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/lci-vs-cdb.html",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/lci-vs-cdb",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/lci-vs-cdb.html",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/lci-vs-cdb",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/lci-vs-cdb.html",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/lci-vs-cdb",
+      "/calculadoras/lci-vs-cdb"
     ],
     [
       "/calculadoras/media-final.html",
@@ -2888,6 +2732,110 @@
       "/calculadoras/porcentagem"
     ],
     [
+      "/calculadoras/poupanca-vs-investimento.html",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/calculadoras/calculadoras/poupanca-vs-investimento.html",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/calculadoras/calculadoras/poupanca-vs-investimento",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/financas/calculadoras/poupanca-vs-investimento.html",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/financas/calculadoras/poupanca-vs-investimento",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/saude/calculadoras/poupanca-vs-investimento.html",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/saude/calculadoras/poupanca-vs-investimento",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/poupanca-vs-investimento.html",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/poupanca-vs-investimento",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/poupanca-vs-investimento.html",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/poupanca-vs-investimento",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/poupanca-vs-investimento.html",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/poupanca-vs-investimento",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/calculadoras/price-sac.html",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/calculadoras/calculadoras/price-sac.html",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/calculadoras/calculadoras/price-sac",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/financas/calculadoras/price-sac.html",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/financas/calculadoras/price-sac",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/saude/calculadoras/price-sac.html",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/saude/calculadoras/price-sac",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/price-sac.html",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/price-sac",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/price-sac.html",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/price-sac",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/price-sac.html",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/price-sac",
+      "/calculadoras/price-sac"
+    ],
+    [
       "/calculadoras/regra-de-tres.html",
       "/calculadoras/regra-de-tres"
     ],
@@ -3096,6 +3044,58 @@
       "/calculadoras/temperatura"
     ],
     [
+      "/calculadoras/tesouro-direto.html",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/calculadoras/calculadoras/tesouro-direto.html",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/calculadoras/calculadoras/tesouro-direto",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/financas/calculadoras/tesouro-direto.html",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/financas/calculadoras/tesouro-direto",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/saude/calculadoras/tesouro-direto.html",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/saude/calculadoras/tesouro-direto",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/tesouro-direto.html",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/comparacao/calculadoras/tesouro-direto",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/tesouro-direto.html",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/calculaveis/calculadoras/tesouro-direto",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/tesouro-direto.html",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/artigos/utilitarios/calculadoras/tesouro-direto",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
       "/calculadoras/tinta.html",
       "/calculadoras/tinta"
     ],
@@ -3276,6 +3276,14 @@
       "/paginas/termos"
     ],
     [
+      "/artigos/financas/hora-extra",
+      "/artigos/financas/como-calcular-hora-extra"
+    ],
+    [
+      "/artigos/financas/hora-extra.html",
+      "/artigos/financas/como-calcular-hora-extra"
+    ],
+    [
       "/calculadoras/nota-para-passar",
       "/calculadoras/media-final"
     ],
@@ -3293,11 +3301,99 @@
     ],
     [
       "/calculadoras/aposentadoria",
-      "/calculadoras/calc-investimento"
+      "/calculadoras/investimento"
     ],
     [
       "/calculadoras/aposentadoria.html",
-      "/calculadoras/calc-investimento"
+      "/calculadoras/investimento"
+    ],
+    [
+      "/calculadoras/calc-juros",
+      "/calculadoras/juros"
+    ],
+    [
+      "/calculadoras/calc-juros.html",
+      "/calculadoras/juros"
+    ],
+    [
+      "/calculadoras/calc-cdb",
+      "/calculadoras/cdb"
+    ],
+    [
+      "/calculadoras/calc-cdb.html",
+      "/calculadoras/cdb"
+    ],
+    [
+      "/calculadoras/calc-imposto-renda",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/calculadoras/calc-imposto-renda.html",
+      "/calculadoras/imposto-renda"
+    ],
+    [
+      "/calculadoras/calc-inflacao",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/calculadoras/calc-inflacao.html",
+      "/calculadoras/inflacao"
+    ],
+    [
+      "/calculadoras/calc-investimento",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/calculadoras/calc-investimento.html",
+      "/calculadoras/investimento"
+    ],
+    [
+      "/calculadoras/calc-ir-investimentos",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/calculadoras/calc-ir-investimentos.html",
+      "/calculadoras/ir-investimentos"
+    ],
+    [
+      "/calculadoras/calc-lca-vs-cdb",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/calculadoras/calc-lca-vs-cdb.html",
+      "/calculadoras/lca-vs-cdb"
+    ],
+    [
+      "/calculadoras/calc-lci-vs-cdb",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/calculadoras/calc-lci-vs-cdb.html",
+      "/calculadoras/lci-vs-cdb"
+    ],
+    [
+      "/calculadoras/calc-poupanca-vs-investimento",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/calculadoras/calc-poupanca-vs-investimento.html",
+      "/calculadoras/poupanca-vs-investimento"
+    ],
+    [
+      "/calculadoras/calc-price-sac",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/calculadoras/calc-price-sac.html",
+      "/calculadoras/price-sac"
+    ],
+    [
+      "/calculadoras/calc-tesouro-direto",
+      "/calculadoras/tesouro-direto"
+    ],
+    [
+      "/calculadoras/calc-tesouro-direto.html",
+      "/calculadoras/tesouro-direto"
     ],
     [
       "/como-calcular-rentabilidade-investimentos",

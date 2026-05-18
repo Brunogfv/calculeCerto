@@ -16,9 +16,21 @@ REPORT_MD = Path("seo-url-refactor-report.md")
 VALIDATION_JSON = Path("seo-validation-report.json")
 VALIDATION_MD = Path("seo-validation-report.md")
 LEGACY_EXACT_ALIASES = {
+    "/artigos/financas/hora-extra": "/artigos/financas/como-calcular-hora-extra",
     "/calculadoras/nota-para-passar": "/calculadoras/media-final",
     "/calculadoras/equacao-1-grau": "/calculadoras/equacao-primeiro-grau",
-    "/calculadoras/aposentadoria": "/calculadoras/calc-investimento",
+    "/calculadoras/aposentadoria": "/calculadoras/investimento",
+    "/calculadoras/calc-juros": "/calculadoras/juros",
+    "/calculadoras/calc-cdb": "/calculadoras/cdb",
+    "/calculadoras/calc-imposto-renda": "/calculadoras/imposto-renda",
+    "/calculadoras/calc-inflacao": "/calculadoras/inflacao",
+    "/calculadoras/calc-investimento": "/calculadoras/investimento",
+    "/calculadoras/calc-ir-investimentos": "/calculadoras/ir-investimentos",
+    "/calculadoras/calc-lca-vs-cdb": "/calculadoras/lca-vs-cdb",
+    "/calculadoras/calc-lci-vs-cdb": "/calculadoras/lci-vs-cdb",
+    "/calculadoras/calc-poupanca-vs-investimento": "/calculadoras/poupanca-vs-investimento",
+    "/calculadoras/calc-price-sac": "/calculadoras/price-sac",
+    "/calculadoras/calc-tesouro-direto": "/calculadoras/tesouro-direto",
     "/como-calcular-rentabilidade-investimentos": "/artigos/financas/calcular-rentabilidade-investimento",
     "/como-funcionam-lci-lca": "/artigos/financas/lci-lca",
     "/como-calcular-porcentagem": "/artigos/financas/calcular-porcentagem",

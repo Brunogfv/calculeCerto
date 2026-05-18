@@ -14,19 +14,19 @@ function normalizarUrlInterna(url) {
     let normalized = String(url).trim();
     if (normalized.includes('${')) return '/';
     normalized = normalized.replace(/^https?:\/\/(?:www\.)?portaldascontas\.com\.br/i, '');
+    
+    // Remove query strings e fragmentos para normalização
+    normalized = normalized.split('?')[0].split('#')[0];
+    
     if (!normalized.startsWith('/')) normalized = `/${normalized.replace(/^\/+/, '')}`;
 
-    normalized = normalized.replace(/[},]+$/g, '');
-    normalized = normalized.replace(/\/calculadoras\/calc-juros$/i, '/calculadoras/juros');
-    normalized = normalized.replace(/^\/calc-juros$/i, '/calculadoras/juros');
-
+    // Remove .html e index.html se vierem de fontes externas ou caches
     if (normalized === '/index.html') return '/';
     if (normalized.endsWith('/index.html')) normalized = normalized.slice(0, -11) || '/';
     if (normalized.endsWith('.html')) normalized = normalized.slice(0, -5) || '/';
+    
+    // Remove barra final
     if (normalized.length > 1 && normalized.endsWith('/')) normalized = normalized.slice(0, -1);
-
-    normalized = normalized.replace(/\/calculadoras\/calculadoras\//g, '/calculadoras/');
-    normalized = normalized.replace(/^\/artigos\/[^/]+\/calculadoras\/([^/]+)$/, '/calculadoras/$1');
 
     return normalized || '/';
 }
