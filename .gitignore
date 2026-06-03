@@ -39,3 +39,11 @@ Thumbs.db
 
 # Google Search Console exports
 portaldascontas.com.br-Coverage-Drilldown-*/
+
+# Manutenção SEO (scripts de uso único)
+generate_sitemap.py
+refactor_urls.py
+update_sitemap.py
+seo_standardizer.py
+standardize_seo.py
+urls-para-reindexar.txt
