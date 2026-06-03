@@ -69,6 +69,46 @@ http://portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!
 /artigos/financas/hora-extra /artigos/financas/como-calcular-hora-extra 301
 /artigos/financas/hora-extra.html /artigos/financas/como-calcular-hora-extra 301
 
+# Ghost folder /artigos/investimentos/* (5xx fix from GSC)
+/artigos/investimentos/* /artigos/financas/:splat 301
+/artigos/investimentos/*.html /artigos/financas/:splat 301
+
+# Institutional pages without /paginas/ prefix (GSC pasta 4)
+/contato /paginas/contato 301
+/contato.html /paginas/contato 301
+/privacidade /paginas/privacidade 301
+/privacidade.html /paginas/privacidade 301
+/sobre /paginas/sobre 301
+/sobre.html /paginas/sobre 301
+
+# Artigos referenced without category prefix (GSC pasta 4)
+/imc-ideal-por-idade /artigos/saude/imc-ideal-por-idade 301
+/imc-ideal-por-idade.html /artigos/saude/imc-ideal-por-idade 301
+/o-que-e-renda-fixa /artigos/financas/o-que-e-renda-fixa 301
+/o-que-e-renda-fixa.html /artigos/financas/o-que-e-renda-fixa 301
+/o-que-e-renda-variavel /artigos/financas/o-que-e-renda-variavel 301
+/o-que-e-renda-variavel.html /artigos/financas/o-que-e-renda-variavel 301
+
+# Artigos with wrong category (GSC pasta 4)
+/artigos/financas/lci-ou-cdb.html /artigos/comparacao/lci-ou-cdb 301
+/artigos/financas/cdb-ou-tesouro-direto.html /artigos/comparacao/cdb-vs-tesouro-direto 301
+
+# termos.html is at /paginas/termos (GSC pasta 4)
+/termos /paginas/termos 301
+/termos.html /paginas/termos 301
+
+# Template literal leak (meus-calculos.html historical bug, GSC pasta 5)
+/\${escapeHtml(fav.url)} / 301
+
+# URLs with malformed }, suffix from old generator (GSC pasta 5)
+/artigos/comparacao/criptomoedas-ou-acoes}, /artigos/comparacao/criptomoedas-ou-acoes 301
+/artigos/comparacao/cdb-ou-debentures}, /artigos/comparacao/cdb-ou-debentures 301
+/artigos/financas/calcular-juros-emprestimos}, /artigos/financas/calcular-juros-emprestimos 301
+/artigos/financas/como-calcular-rendimento-investimentos}, /artigos/financas/calcular-rendimento-investimento 301
+/artigos/financas/quanto-rende-10000-reais-por-mes}, /artigos/calculaveis/quanto-rende-investir-10000-mes 301
+/artigos/financas/quanto-rende-2000-reais-por-mes}, /artigos/calculaveis/quanto-rende-investir-2000-mes 301
+/artigos/saude/imc-alto-riscos}, /artigos/saude/imc-alto 301
+
 # Redirect .html -> clean URL (Cloudflare aplica redirects antes de arquivos estaticos)
 /index.html / 301
 /*.html /:splat 301
