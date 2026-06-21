@@ -1,5 +1,6 @@
 node_modules/
 .vscode/
+scratch/
 
 # Logs
 logs/
@@ -10,40 +11,43 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
-# Temporary migration scripts and output files
+# AI and system hidden files
+.gemini/
+.antigravity/
+
+# === Scripts de migração/limpeza (uso único) ===
 check-artigos.js
 check.ps1
 migrate-to-dynamic.js
+migrate.py
 rebuild-index.js
+refactor_all.py
 fix*.ps1
 fix*.py
 fix*.js
 tmp*.py
-migrate*.py
 missing.json
 missing.txt
 links.txt
 out.txt
 test.txt
-seo-url-refactor-report.json
-seo-url-refactor-report.md
-
-# Pagefind index
-# (NÃO ignorar) — o Pagefind precisa ser publicado junto com o site.
-
-# AI and system hidden files
-.gemini/
-.antigravity/
-.DS_Store
-Thumbs.db
-
-# Google Search Console exports
-portaldascontas.com.br-Coverage-Drilldown-*/
-
-# Manutenção SEO (scripts de uso único)
 generate_sitemap.py
 refactor_urls.py
 update_sitemap.py
 seo_standardizer.py
 standardize_seo.py
 urls-para-reindexar.txt
+
+# === Relatórios gerados por testes ===
+relatorio-local.md
+relatorio-producao.md
+
+# === Relatórios e planos de SEO ===
+RELATORIO_*.md
+PLANO_CRESCIMENTO_PORTAL_DAS_CONTAS.md
+seo-validation-report.*
+seo-url-refactor-report.*
+
+# === Google Search Console exports ===
+portaldascontas.com.br-Coverage-Drilldown-*/
+

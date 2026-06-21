@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "pagefind": "^1.4.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
   }
 }
