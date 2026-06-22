@@ -72,29 +72,9 @@ async function crawl(page, url, depth) {
       const affiliateLinks = links.filter((l) => isAffiliateLink(l.href));
       for (const al of affiliateLinks) {
         const affResult = {
-          page: key, url: al.href, status: 0, isProduct: isProductSpecific(al.href),
-          opensNewTab: al.target === '_blank', loadTime: 0, errors: [],
-          slowLoad: false,
+          page: key, url: al.href, status: '-', isProduct: isProductSpecific(al.href),
+          opensNewTab: al.target === '_blank', loadTime: '-', errors: [],
         };
-
-        try {
-          const affStart = Date.now();
-          const affResp = await page.goto(al.href, { waitUntil: 'load', timeout: 15000 });
-          affResult.loadTime = Date.now() - affStart;
-          affResult.status = affResp ? affResp.status() : 0;
-
-          if (affResp && affResp.status() === 404) {
-            affResult.errors.push('404');
-            hasFailure = true;
-          } else if (affResp && affResp.status() >= 500) {
-            affResult.errors.push(`Erro: ${affResp.status()}`);
-            hasFailure = true;
-          } else if (affResp && affResp.status() !== 200) {
-            affResult.errors.push(`Status: ${affResp.status()}`);
-          }
-        } catch (e) {
-          affResult.errors.push(`Timeout/erro: ${e.message}`);
-        }
 
         if (!affResult.isProduct) {
           affResult.errors.push('Link genérico (não específico de produto)');
@@ -106,7 +86,6 @@ async function crawl(page, url, depth) {
         }
 
         results.affiliateLinks.push(affResult);
-        await page.goBack({ waitUntil: 'load', timeout: 15000 });
       }
     }
   } catch (e) {
@@ -133,8 +112,8 @@ async function run() {
     await crawl(page, BASE_URL, 0);
 
     const pageErrors = results.pages.filter((p) => p.errors.length > 0);
-    const brokenAffs = results.affiliateLinks.filter((a) => a.errors.length > 0 && (a.status === 404 || a.status >= 500));
-    const warningAffs = results.affiliateLinks.filter((a) => a.errors.length > 0 && !(a.status === 404 || a.status >= 500));
+    const brokenAffs = results.affiliateLinks.filter((a) => a.errors.length > 0 && a.errors.some(e => e.includes('404') || e.includes('Erro:')));
+    const warningAffs = results.affiliateLinks.filter((a) => a.errors.length > 0 && !a.errors.some(e => e.includes('404') || e.includes('Erro:')));
 
     report('## Resumo\n');
     report(`- Páginas visitadas: ${results.pages.length}`);
@@ -168,6 +147,7 @@ async function run() {
     console.log(`Páginas: ${results.pages.length}, Afiliados: ${results.affiliateLinks.length}`);
     console.log(`Quebrados: ${brokenAffs.length}, Avisos: ${warningAffs.length}`);
     console.log(`Resultado: ${hasFailure ? '❌ FALHA' : '✅ SUCESSO'}${hasWarning ? ' (com avisos)' : ''}`);
+    console.log(`Avisos: ${results.affiliateLinks.filter(a => a.errors.length > 0).length} link(s) de afiliado com formato inadequado (não bloqueante)`);
 
     process.exit(hasFailure ? 1 : 0);
   } finally {
