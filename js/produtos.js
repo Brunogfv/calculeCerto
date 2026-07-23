@@ -1,4 +1,4 @@
-// ARQUIVO: js/ads.js
+// ARQUIVO: js/produtos.js
 
 // 1. SEU "BANCO DE DADOS" DE PRODUTOS
 const bancoDeAnuncios = {

@@ -121,8 +121,4 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Carregar Anúncio (se a função existir)
-    if (typeof carregarAnuncio === 'function') {
-        carregarAnuncio('geral');
-    }
 });
