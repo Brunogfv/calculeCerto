@@ -22,27 +22,161 @@
         gtag('config', 'G-STVR24Q61S');
     </script>
 
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7285637994208303"
         crossorigin="anonymous"></script>
 
     <!-- Estilos Globais -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/juros.css">
-    <link rel="stylesheet" href="/css/meus-calculos.css">
-    <link rel="stylesheet" href="/css/pagefind.css">
+    <link rel="stylesheet" href="/css/style.min.8689fcf1.css">
+    <link rel="stylesheet" href="/css/juros.min.305be53c.css">
+    <link rel="stylesheet" href="/css/meus-calculos.min.150dc78a.css">
+    <link rel="stylesheet" href="/css/pagefind.min.95c2227c.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="../js/pagefind.js"></script>
-    <script type="module" src="../js/gerar-header.js"></script>
+    <script type="module" src="/js/gerar-header.min.8033ce15.js"></script>
 
     <title>Calculadora de Imposto de Renda e Renda Líquida | Portal das Contas</title>
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Portal das Contas">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Calculadora de Imposto de Renda e Renda Líquida | Portal das Contas">
+    <meta property="og:description" content="Calcule o valor líquido do seu salário ou rendimento após o desconto do Imposto de Renda. Utilize nossa calculadora de IRRF com base na tabela progressiva oficial 2024/2025.">
+    <meta property="og:url" content="https://portaldascontas.com.br/calculadoras/imposto-renda">
+    <meta property="og:image" content="https://portaldascontas.com.br/imgs/og-portal-das-contas.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Portal das Contas - Calculadoras online grátis">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculadora de Imposto de Renda e Renda Líquida | Portal das Contas">
+    <meta name="twitter:description" content="Calcule o valor líquido do seu salário ou rendimento após o desconto do Imposto de Renda. Utilize nossa calculadora de IRRF com base na tabela progressiva oficial 2024/2025.">
+    <meta name="twitter:image" content="https://portaldascontas.com.br/imgs/og-portal-das-contas.jpg">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
 
 <body data-theme="light">
-    <div id="header-container"></div>
+    <div id="header-container" style="display: contents;">
+<header class="header topo">
+    <div class="header-container">
+        <div class="logo">
+            <a href="/">
+                <svg style="width:24px;height:24px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"></path>
+                </svg>
+                Portal das Contas
+            </a>
+        </div>
+
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+
+        <nav class="menu" id="nav-menu">
+            <div class="menu-item">
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças &amp; Trabalho</a>
+                <div class="dropdown-menu columns-2">
+                    <a href="/calculadoras/juros" onclick="toggleMenu()">Juros &amp; Investimentos</a>
+                    <a href="/calculadoras/investimento" onclick="toggleMenu()">Simulador de Investimentos</a>
+                    <a href="/calculadoras/inflacao" onclick="toggleMenu()">Inflação (IPCA/IGP-M)</a>
+                    <a href="/calculadoras/poupanca-vs-investimento" onclick="toggleMenu()">Poupança vs Investimentos</a>
+                    <a href="/calculadoras/inss" onclick="toggleMenu()">INSS</a>
+                    <a href="/calculadoras/salario" onclick="toggleMenu()">Salário Líquido</a>
+                    <a href="/calculadoras/decimo-terceiro" onclick="toggleMenu()">13º Salário</a>
+                    <a href="/calculadoras/pj-vs-clt" onclick="toggleMenu()">PJ vs CLT (Qual é Melhor?)</a>
+                    <a href="/calculadoras/hora-extra" onclick="toggleMenu()">Hora Extra</a>
+                    <a href="/calculadoras/porcentagem" onclick="toggleMenu()">Porcentagem</a>
+                    <a href="/calculadoras/porcentagem-reversa" onclick="toggleMenu()">Porcentagem Reversa</a>
+                    <a href="/calculadoras/cdb" onclick="toggleMenu()">CDB &amp; Renda Fixa</a>
+                    <a href="/calculadoras/lca-vs-cdb" onclick="toggleMenu()">LCA vs CDB</a>
+                    <a href="/calculadoras/lci-vs-cdb" onclick="toggleMenu()">LCI vs CDB</a>
+                    <a href="/calculadoras/ir-investimentos" onclick="toggleMenu()">IR Investimentos</a>
+                    <a href="/calculadoras/tesouro-direto" onclick="toggleMenu()">Tesouro Direto</a>
+                    <a href="/calculadoras/price-sac" onclick="toggleMenu()">Price e SAC</a>
+                    <a href="/calculadoras/imposto-renda" onclick="toggleMenu()">Imposto de Renda</a>
+                    <a href="/calculadoras/dividendos" onclick="toggleMenu()">Dividendos (FIIs)</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde &amp; Pets</a>
+                <div class="dropdown-menu">
+                    <a href="/calculadoras/imc" onclick="toggleMenu()">IMC (Peso Ideal)</a>
+                    <a href="/calculadoras/tmb" onclick="toggleMenu()">Metabolismo (TMB)</a>
+                    <a href="/calculadoras/tdee" onclick="toggleMenu()">Gasto Calórico (TDEE)</a>
+                    <a href="/calculadoras/gasto-calorico" onclick="toggleMenu()">Queima de Exercícios</a>
+                    <a href="/calculadoras/agua" onclick="toggleMenu()">Água Diária</a>
+                    <a href="/calculadoras/pet-idade" onclick="toggleMenu()">Idade Pet (Nova!)</a>
+                    <a href="/calculadoras/parto" onclick="toggleMenu()">Data de Parto</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Imóveis &amp; Reforma</a>
+                <div class="dropdown-menu">
+                    <a href="/calculadoras/tinta" onclick="toggleMenu()">Pintura (Tinta)</a>
+                    <a href="/calculadoras/piso" onclick="toggleMenu()">Piso &amp; Azulejo</a>
+                    <a href="/calculadoras/cimento" onclick="toggleMenu()">Cimento &amp; Obra</a>
+                    <a href="/calculadoras/aluguel-vs-compra" onclick="toggleMenu()">Aluguel vs Compra (Novo!)</a>
+                    <a href="/calculadoras/amortizacao" onclick="toggleMenu()">Amortização (Novo!)</a>
+                    <a href="/calculadoras/energia" onclick="toggleMenu()">Consumo de Energia</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação &amp; Ciência</a>
+                <div class="dropdown-menu columns-2">
+                    <a href="/calculadoras/medias" onclick="toggleMenu()">Médias Escolares</a>
+                    <a href="/calculadoras/media-final" onclick="toggleMenu()">Nota para Passar (Média)</a>
+                    <a href="/calculadoras/cr" onclick="toggleMenu()">Coeficiente (CR)</a>
+                    <a href="/calculadoras/regra-de-tres" onclick="toggleMenu()">Regra de Três</a>
+                    <a href="/calculadoras/bhaskara" onclick="toggleMenu()">Bhaskara &amp; Funções</a>
+                    <a href="/calculadoras/equacao-primeiro-grau" onclick="toggleMenu()">Equação 1º Grau</a>
+                    <a href="/calculadoras/mmc-mdc" onclick="toggleMenu()">MMC e MDC</a>
+                    <a href="/calculadoras/conversor-unidades" onclick="toggleMenu()">Conversor de Medidas</a>
+                    <a href="/calculadoras/velocidade-media" onclick="toggleMenu()">Velocidade Média</a>
+                    <a href="/calculadoras/forca" onclick="toggleMenu()">Força (F=ma)</a>
+                    <a href="/calculadoras/kmh-ms" onclick="toggleMenu()">km/h para m/s</a>
+                    <a href="/calculadoras/temperatura" onclick="toggleMenu()">Temperaturas</a>
+                    <a href="/calculadoras/datas" onclick="toggleMenu()">Diferença de Datas</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Estilo de Vida</a>
+                <div class="dropdown-menu">
+                    <a href="/calculadoras/combustivel" onclick="toggleMenu()">Combustível</a>
+                    <a href="/calculadoras/pneus" onclick="toggleMenu()">Pneus &amp; Aro</a>
+                    <a href="/calculadoras/churrasco" onclick="toggleMenu()">Calculador de Churrasco</a>
+                    <a href="/calculadoras/festa" onclick="toggleMenu()">Cálculo de Festa</a>
+                    <a href="/calculadoras/pizza" onclick="toggleMenu()">Comparador de Pizza</a>
+                    <a href="/calculadoras/medidas-culinarias" onclick="toggleMenu()">Cozinha (Medidas)</a>
+                </div>
+            </div>
+
+            <a href="/artigos" onclick="toggleMenu()">Aprenda</a>
+
+            <a href="/paginas/sobre" onclick="toggleMenu()">Sobre</a>
+            <a href="/paginas/contato" onclick="toggleMenu()">Contato</a>
+            <a href="/meus-calculos" onclick="toggleMenu()" style="display:flex;align-items:center;gap:4px">📋 Meus Cálculos</a>
+        </nav>
+
+        <div class="search-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="search-input" id="site-search" placeholder="Busque..." autocomplete="off">
+            <div class="search-results" id="search-results-list"></div>
+        </div>
+
+        <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
+            <span id="theme-icon">🌙</span>
+        </button>
+    </div>
+</header>
+</div>
 
     <main>
         <div class="calculator-wrapper">
@@ -77,7 +211,9 @@
                         <label for="valor-deducao">Dedução (INSS/Outras) (R$)</label>
                         <input type="text" id="valor-deducao" placeholder="Ex: 500,00" oninput="formatarMoeda(this)">
                         <small style="font-size: 0.75rem; color: #64748b; display: block; margin-top: 4px;">
-                            Para salários: use a tabela do INSS. Para investimentos: geralmente 0.
+                            Para salários: informe o INSS. O desconto simplificado de R$ 607,20 é aplicado
+                            automaticamente quando for mais vantajoso. Para investimentos, use a calculadora de IR
+                            sobre investimentos.
                         </small>
                     </div>
                     <div class="input-group">
@@ -145,56 +281,63 @@
                         O imposto não incide sobre tudo o que você ganha. Primeiro, subtraímos o INSS (para CLT) e a
                         dedução por dependente. O que sobra é a "Base de Cálculo", sobre a qual aplicamos a alíquota.
                     </p>
-                    <div class="edu-formula">Base = Bruto - INSS - (Dependentes × 189,59)</div>
+                    <div class="edu-formula">Base = menor entre (Bruto - INSS - Dependentes × 189,59) e (Bruto - 607,20)</div>
                 </div>
 
                 <div class="edu-card" style="border-color: var(--cor-secundaria);">
-                    <h4 style="margin-top:0; color: var(--cor-secundaria);">Tabela Progressiva 2025</h4>
+                    <h4 style="margin-top:0; color: var(--cor-secundaria);">Tabela Progressiva 2026</h4>
                     <p style="font-size: 14px; color: var(--cor-texto-suave);">
                         Quanto maior a base de cálculo, maior a porcentagem de imposto. As faixas são atualizadas
                         anualmente.
                     </p>
                     <ul style="font-size: 12px; color: #475569; padding-left: 20px; line-height: 1.6;">
-                        <li>Até R$ 2.259,20: Isento</li>
-                        <li>7,5%: de R$ 2.259,21 a R$ 2.826,65</li>
+                        <li>Até R$ 2.428,80: Isento</li>
+                        <li>7,5%: de R$ 2.428,81 a R$ 2.826,65</li>
                         <li>15%: de R$ 2.826,66 a R$ 3.751,05</li>
                         <li>22,5%: de R$ 3.751,06 a R$ 4.664,68</li>
                         <li>27,5%: Acima de R$ 4.664,68</li>
                     </ul>
+                    <p style="font-size: 12px; color: #475569; margin-top: 10px;">
+                        Redutor 2026: até R$ 5.000 de renda mensal o imposto é zerado (redução de até R$ 312,89);
+                        entre R$ 5.000,01 e R$ 7.350 a redução é parcial; acima disso, não há redução.
+                    </p>
                 </div>
             </div>
 
             <section style="margin-top: 40px; padding-left: 25px;">
-                <h3 style="color: var(--cor-texto);">Exemplo Prático: Salário de R$ 4.000</h3>
+                <h3 style="color: var(--cor-texto);">Exemplo Prático: Salário de R$ 4.000 (2026)</h3>
                 <p style="color: var(--cor-texto-suave); line-height: 1.6;">
-                    João recebe <strong>R$ 4.000,00</strong> de salário bruto. Ele é CLT e pagou <strong>R$
-                        440,00</strong> de INSS. Ele não tem dependentes.
+                    José recebe <strong>R$ 4.000,00</strong> de salário bruto. Ele é CLT e pagou <strong>R$
+                        368,60</strong> de INSS. Ele não tem dependentes.
                 </p>
 
                 <ul style="color: var(--cor-texto-suave); font-size: 15px; line-height: 1.8;">
                     <li>
-                        <strong>Base de Cálculo:</strong> 4.000 - 440 = <strong>R$ 3.560,00</strong>.
+                        <strong>Desconto simplificado:</strong> R$ 607,20, mais vantajoso que os R$ 368,60 de INSS.
                     </li>
                     <li>
-                        <strong>Faixa do IR:</strong> R$ 3.560,00 está na faixa de <strong>22,5%</strong> (que vai de
-                        3.751,06 a 4.664,68? Não, 3560 está na faixa de 22.5%? Correção: 3560 está na faixa de 22.5%
-                        sim, pois o teto da faixa anterior é 3751.05? Não, aguarde.
-                        Faixa anterior (15%) vai até 3751.05. 3560 é menor que 3751. Logo, é faixa de 15%.
-                        *Correção no raciocínio para o exemplo:* 3.560,00 entra na 3ª faixa (15%).
+                        <strong>Base de Cálculo:</strong> 4.000,00 - 607,20 = <strong>R$ 3.392,80</strong>.
                     </li>
                     <li>
-                        <strong>Cálculo:</strong> (3.560 × 15%) - R$ 381,44 (dedução legal da tabela).
+                        <strong>Faixa do IR:</strong> R$ 3.392,80 está na 3ª faixa (<strong>15%</strong>), com parcela a
+                        deduzir de R$ 394,16.
                     </li>
                     <li>
-                        <strong>IRRF:</strong> 534,00 - 381,44 = <strong>R$ 152,56</strong>.
+                        <strong>Imposto pela tabela:</strong> (3.392,80 × 15%) - 394,16 = <strong>R$ 114,76</strong>.
                     </li>
                     <li>
-                        <strong>Líquido:</strong> 4.000 - 440 (INSS) - 152,56 (IR) = <strong>R$ 3.407,44</strong>.
+                        <strong>Redutor 2026:</strong> renda de até R$ 5.000 → redução de R$ 114,76, zerando o imposto.
+                    </li>
+                    <li>
+                        <strong>IRRF:</strong> <strong>R$ 0,00</strong>.
+                    </li>
+                    <li>
+                        <strong>Líquido:</strong> 4.000 - 368,60 (INSS) - 0 (IR) = <strong>R$ 3.631,40</strong>.
                     </li>
                 </ul>
                 <p style="color: var(--cor-secundaria); font-weight: 500; font-size: 14px;">
-                    💡 Veja como a dedução parcelada na tabela (o valor fixo que se subtrai) evita que o imposto seja
-                    muito alto no início de cada faixa.
+                    💡 A partir de 2026, quem recebe até R$ 5.000 por mês não paga Imposto de Renda. Entre R$ 5.000,01 e
+                    R$ 7.350, o desconto é parcial e diminui gradualmente até zerar.
                 </p>
             </section>
 
@@ -264,7 +407,7 @@
                 </h2>
 
                 <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px;">
-                    O <strong>Imposto de Renda (IR)</strong> brasileiro é um tributo <strong>progressivo</strong> — o que significa que quem ganha mais paga uma alíquota maior sobre o rendimento. Mas atenção: a alíquota mais alta não incide sobre <em>todo</em> o salário, apenas sobre a parte que ultrapassa cada faixa. A tabela mensal vigente em 2026 possui cinco faixas de tributação: rendimentos de até <strong>R$ 2.824,00</strong> são isentos; de R$ 2.825 a R$ 3.751, a alíquota é de <strong>7,5%</strong>; de R$ 3.752 a R$ 4.664, aplica-se <strong>15%</strong>; de R$ 4.665 a R$ 6.000, a faixa é de <strong>22,5%</strong>; e acima de R$ 6.000, a alíquota máxima é de <strong>27,5%</strong>. Essas faixas incidem sobre a <em>base de cálculo</em> — não sobre o salário bruto diretamente.
+                    O <strong>Imposto de Renda (IR)</strong> brasileiro é um tributo <strong>progressivo</strong> — o que significa que quem ganha mais paga uma alíquota maior sobre o rendimento. Mas atenção: a alíquota mais alta não incide sobre <em>todo</em> o salário, apenas sobre a parte que ultrapassa cada faixa. A tabela mensal vigente em 2026 possui cinco faixas de tributação: base de cálculo de até <strong>R$ 2.428,80</strong> é isenta; de R$ 2.428,81 a R$ 2.826,65, a alíquota é de <strong>7,5%</strong>; de R$ 2.826,66 a R$ 3.751,05, aplica-se <strong>15%</strong>; de R$ 3.751,06 a R$ 4.664,68, a faixa é de <strong>22,5%</strong>; e acima de R$ 4.664,68, a alíquota máxima é de <strong>27,5%</strong>. Essas faixas incidem sobre a <em>base de cálculo</em> — não sobre o salário bruto diretamente. Além disso, desde 2026 o redutor da Lei 15.270/2025 zera o imposto para rendimentos de até R$ 5.000 e reduz parcialmente até R$ 7.350.
                 </p>
 
                 <p style="color: var(--cor-texto-suave); font-size: 0.97rem; line-height: 1.8; margin-bottom: 0;">
@@ -386,13 +529,14 @@
 
     <!-- Scripts Externos do Template -->
 
-    <script src="../js/produtos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/produtos.min.73f1ff42.js"></script>
+    <script src="/js/fiscal-2026.min.f1c5c3ff.js"></script>
+    <script src="/js/vendor/chart-4.6.1.umd.min.js" defer></script>
 
     <!-- Script Específico da Calculadora de IR -->
     <script>
         let graficoIRInstance = null;
-        const DEDUCAO_DEPENDENTE = 189.59;
+        const DEDUCAO_DEPENDENTE = (window.TabelasFiscais2026 && TabelasFiscais2026.DEDUCAO_DEPENDENTE) || 189.59;
 
         function formatarMoeda(input) {
             let valor = input.value.replace(/\D/g, "");
@@ -426,40 +570,30 @@
                 return;
             }
 
-            // 3. Cálculos
-            // Base de Cálculo = Bruto - Deduções (INSS/Outras) - (Dependentes * 189.59)
+            // 3. Cálculos - tabela progressiva e redutor de 2026
+            // Base = Bruto - INSS/outras deduções - (Dependentes × 189,59)
+            // Quando há vínculo de trabalho, o desconto simplificado de R$ 607,20
+            // é aplicado automaticamente se for mais vantajoso (Lei 15.270/2025).
             const deducaoDependentes = numDependentes * DEDUCAO_DEPENDENTE;
-            const baseCalculo = Math.max(0, valorBruto - valorDeducao - deducaoDependentes);
+            const resultadoIR = calcularIRRF2026(
+                valorBruto,
+                valorDeducao + deducaoDependentes,
+                { usarDescontoSimplificado: valorDeducao > 0 || numDependentes > 0 }
+            );
 
-            // Tabela Progressiva IRRF 2024/2025
-            let aliquota = 0;
-            let deducaoParcelada = 0;
-            let faixaTexto = "Isento";
-
-            if (baseCalculo <= 2259.20) {
-                aliquota = 0;
-                deducaoParcelada = 0;
-                faixaTexto = "Isento (Até R$ 2.259,20)";
-            } else if (baseCalculo <= 2826.65) {
-                aliquota = 0.075;
-                deducaoParcelada = 169.44;
-                faixaTexto = "7,5% (Até R$ 2.826,65)";
-            } else if (baseCalculo <= 3751.05) {
-                aliquota = 0.15;
-                deducaoParcelada = 381.44;
-                faixaTexto = "15% (Até R$ 3.751,05)";
-            } else if (baseCalculo <= 4664.68) {
-                aliquota = 0.225;
-                deducaoParcelada = 662.77;
-                faixaTexto = "22,5% (Até R$ 4.664,68)";
-            } else {
-                aliquota = 0.275;
-                deducaoParcelada = 896.00;
-                faixaTexto = "27,5% (Acima de R$ 4.664,68)";
-            }
-
-            const valorImposto = Math.max(0, (baseCalculo * aliquota) - deducaoParcelada);
+            const baseCalculo = resultadoIR.baseCalculo;
+            const aliquota = resultadoIR.aliquota;
+            const valorImposto = resultadoIR.imposto;
             const valorLiquido = valorBruto - valorDeducao - valorImposto;
+
+            let faixaTexto = "Isento";
+            if (aliquota > 0) {
+                const percentual = (aliquota * 100).toLocaleString('pt-BR', { maximumFractionDigits: 1 });
+                faixaTexto = percentual + "%";
+                if (resultadoIR.reducao > 0) {
+                    faixaTexto += " (com redução 2026)";
+                }
+            }
 
             // Alíquota Efetiva: (Imposto Pago / Renda Bruta)
             let aliquotaEfetiva = 0;
@@ -480,7 +614,7 @@
             // 5. Atualizar Gráfico
             // O gráfico vai mostrar: O que é seu (Líquido + Deduções) vs O que é imposto
             // Vamos simplificar visualmente: Líquido vs Descontos Totais (Imposto + Deduções INSS)
-            const totalDescontos = valorImposto + valorDeducao + deducaoDependentes;
+            const totalDescontos = valorImposto + valorDeducao;
             atualizarGrafico(valorLiquido, totalDescontos);
 
             // --- SALVAR NO HISTÓRICO ---
@@ -570,6 +704,62 @@
             }
         }
     </script>
+<div id="footer-container">
+<footer style="background: #0f172a; border-top: 1px solid #e2e8f0; padding: 50px 20px; color: #cbd5f5; font-size: 0.9rem; margin-top: 60px;">
+
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; text-align: center;">
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <h3 style="color: #cbd5f5; margin-bottom: 15px;">Sobre o Portal das Contas</h3>
+
+                <p style="margin-bottom: 16px; line-height: 1.75;">
+                    O <strong style="color: #e2e8f0;">Portal das Contas</strong> nasceu da necessidade real de milhões
+                    de brasileiros que precisam fazer contas do dia a dia — seja para entender o desconto no holerite,
+                    calcular quantas latas de tinta comprar, ou descobrir se estão no peso saudável — sem ter de depender
+                    de planilhas complexas ou contratar um profissional. Somos um projeto 100% gratuito, desenvolvido
+                    com o propósito de democratizar o acesso à informação financeira, de saúde e de planejamento
+                    doméstico para todos os cidadãos brasileiros, independentemente de escolaridade ou renda.
+                </p>
+
+                <p style="margin-bottom: 16px; line-height: 1.75;">
+                    Nossa equipe acompanha de perto as mudanças na legislação previdenciária, trabalhista e tributária
+                    do Brasil para manter todas as calculadoras sempre atualizadas. Cada ferramenta é validada com base
+                    em fontes oficiais — como o Diário Oficial da União, portarias do Ministério da Previdência Social
+                    e publicações da Receita Federal — antes de ser disponibilizada ao público. Acreditamos que a
+                    confiabilidade dos dados é tão importante quanto a facilidade de uso: de nada adianta uma
+                    calculadora bonita se o resultado estiver errado.
+                </p>
+
+                <p style="margin-bottom: 20px; line-height: 1.75;">
+                    Valorizamos profundamente a privacidade dos nossos usuários. Por isso, nenhum dado inserido nas
+                    calculadoras é coletado, armazenado ou compartilhado com terceiros — tudo é processado localmente
+                    no seu próprio navegador. Se você tiver sugestões de novas ferramentas, encontrar algum erro em
+                    um cálculo ou simplesmente quiser entrar em contato, ficaremos muito felizes em ouvir você.
+                    O Portal das Contas é feito por brasileiros, para brasileiros, e cresce graças à participação
+                    ativa de quem o usa.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-weight: 600;">
+                    <a href="/paginas/sobre" style="color: var(--cor-primaria); text-decoration: none;">Quem
+                        Somos</a>
+                    <a href="/paginas/contato" style="color: var(--cor-primaria); text-decoration: none;">Fale
+                        Conosco</a>
+                    <a href="/paginas/privacidade" style="color: var(--cor-primaria); text-decoration: none;">Política de Privacidade</a>
+                    <a href="/paginas/termos" style="color: var(--cor-primaria); text-decoration: none;">Termos de
+                        Uso</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; margin-top: 30px; padding-top: 30px;">
+                <p>© 2026 Portal das Contas. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+                    Este site é apenas para fins informativos. Consulte sempre um profissional para decisões financeiras
+                    ou médicas.
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
 </body>
 
 </html>

@@ -1,42 +1,3 @@
-// function normalizarNumero (valor) {
-//     return parseFloat(valor.replace(",", "."));
-// }
-
-// function calcularDecimoTerceiro () {
-//     const salario = normalizarNumero(document.getElementById("salario").value);
-//     const meses = parseInt(document.getElementById("meses").value);
-
-//     const resultado = document.getElementById("resultado-juros");
-//     resultado.className = "";
-
-//     if (isNaN(salario) || salario <= 0 || isNaN(meses) || meses < 1 || meses > 12) {
-//         resultado.textContent = "Preencha os dados corretamente.";
-//         return;
-//     }
-
-//     const decimoBruto = (salario / 12) * meses;
-//     const primeiraParcela = decimoBruto / 2;
-
-//     let inss = decimoBruto * 0.08;
-//     const segundaParcela = decimoBruto - primeiraParcela - inss;
-
-//     resultado.innerHTML = `
-//         <strong> Resultado 13º salário:</strong><br><br>
-//         Valor Bruto: <strong>R$ ${decimoBruto.toFixed(2)}</strong><br>
-//         1ª parcela: R$ ${primeiraParcela.toFixed(2)}</strong><br>
-//         Desconto INSS (estimado): R$ ${inss.toFixed(2)}<br>
-//         2ª parcela: <strong> R$ ${segundaParcela.toFixed(2)}</strong>
-//     `;
-// }
-
-
-// function limparCampos () {
-//     document.getElementById("salario").value = "";
-//     document.getElementById("meses").value = "";
-//     document.getElementById("resultado-juros").innerHTML = "";
-// }
-
-// Carregar tema salvo
 if (localStorage.getItem('theme')) {
     document.body.setAttribute('data-theme', localStorage.getItem('theme'));
     document.getElementById('theme-icon').textContent = localStorage.getItem('theme') === 'light' ? '🌙' : '☀️';
@@ -61,10 +22,18 @@ function formatarMoeda(input) {
     input.value = valor;
 }
 
-// Normaliza número (de "1.250,00" para 1250.00 float)
+// Normaliza número aceitando tanto "1.250,00" quanto "1250.00"
+// (o input de salário é type="number", então o valor já vem com ponto decimal)
 function normalizarNumero(valorTexto) {
-    if (!valorTexto) return 0;
-    return parseFloat(valorTexto.replace(/\./g, "").replace(",", "."));
+    if (valorTexto === null || valorTexto === undefined) return 0;
+    if (typeof valorTexto === 'number') return isFinite(valorTexto) ? valorTexto : 0;
+
+    const texto = String(valorTexto).trim();
+    if (!texto) return 0;
+    if (texto.includes(',')) {
+        return parseFloat(texto.replace(/\./g, "").replace(",", ".")) || 0;
+    }
+    return parseFloat(texto) || 0;
 }
 
 // Formatador de saída BRL
@@ -76,21 +45,30 @@ const formatadorBRL = new Intl.NumberFormat('pt-BR', {
 function calcularDecimoTerceiro() {
     const salarioInput = document.getElementById("salario-bruto").value;
     const mesesInput = document.getElementById("meses-trabalhados").value;
+    const dependentesInput = document.getElementById("dependentes");
     const resultBox = document.getElementById("resultado-area");
 
     // Elementos de saída
     const elLiquido = document.getElementById("res-liquido");
     const elBruto = document.getElementById("res-bruto");
     const elInss = document.getElementById("res-inss");
+    const elIrrf = document.getElementById("res-irrf");
     const elP1 = document.getElementById("res-parcela1");
     const elP2 = document.getElementById("res-parcela2");
 
     const salario = normalizarNumero(salarioInput);
-    const meses = parseInt(mesesInput);
+    const meses = parseInt(mesesInput, 10);
+    const dependentes = dependentesInput
+        ? Math.max(0, parseInt(dependentesInput.value, 10) || 0)
+        : 0;
 
     // Validação
-    if (isNaN(salario) || salario <= 0 || isNaN(meses)) {
+    if (isNaN(salario) || salario <= 0) {
         alert("Por favor, preencha o salário corretamente.");
+        return;
+    }
+    if (isNaN(meses) || meses < 1 || meses > 12) {
+        alert("Informe de 1 a 12 meses trabalhados no ano.");
         return;
     }
 
@@ -98,11 +76,20 @@ function calcularDecimoTerceiro() {
     const decimoBruto = (salario / 12) * meses;
     const primeiraParcela = decimoBruto / 2;
 
-    // Estimativa simples de INSS (8% sobre o total do 13º)
-    const inss = decimoBruto * 0.08;
+    const deducaoDependente = (window.TabelasFiscais2026 && TabelasFiscais2026.DEDUCAO_DEPENDENTE) || 189.59;
 
-    const segundaParcela = decimoBruto - primeiraParcela - inss;
-    const totalLiquido = decimoBruto - inss;
+    // INSS 2026: tabela progressiva aplicada sobre o 13º bruto
+    const inss = typeof calcularINSS2026 === 'function'
+        ? calcularINSS2026(decimoBruto)
+        : decimoBruto * 0.08;
+
+    // IRRF 2026: tabela progressiva + desconto simplificado + redutor da Lei 15.270/2025
+    const irrf = typeof calcularIRRF2026 === 'function'
+        ? calcularIRRF2026(decimoBruto, inss + (dependentes * deducaoDependente)).imposto
+        : 0;
+
+    const segundaParcela = decimoBruto - primeiraParcela - inss - irrf;
+    const totalLiquido = decimoBruto - inss - irrf;
 
     // Exibir Resultados
     resultBox.style.display = "block";
@@ -110,6 +97,7 @@ function calcularDecimoTerceiro() {
     // Atualiza o HTML com valores formatados
     elBruto.textContent = formatadorBRL.format(decimoBruto);
     elInss.textContent = "- " + formatadorBRL.format(inss);
+    if (elIrrf) elIrrf.textContent = "- " + formatadorBRL.format(irrf);
     elP1.textContent = formatadorBRL.format(primeiraParcela);
     elP2.textContent = formatadorBRL.format(segundaParcela);
     elLiquido.textContent = formatadorBRL.format(totalLiquido);
@@ -125,7 +113,13 @@ function calcularDecimoTerceiro() {
 }
 
 function limparCampos() {
-    document.getElementById("salario").value = "";
-    document.getElementById("meses").value = "12";
-    document.getElementById("resultado-juros").style.display = "none";
+    const salario = document.getElementById("salario-bruto");
+    const meses = document.getElementById("meses-trabalhados");
+    const dependentes = document.getElementById("dependentes");
+    const resultado = document.getElementById("resultado-area");
+
+    if (salario) salario.value = "";
+    if (meses) meses.value = "12";
+    if (dependentes) dependentes.value = "";
+    if (resultado) resultado.style.display = "none";
 }

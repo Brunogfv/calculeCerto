@@ -47,7 +47,7 @@ function collectHtmlFiles(dir) {
       const full = path.join(dir, entry.name);
       const rel = path.relative(ROOT, full).replace(/\\/g, '/');
       if (entry.isDirectory()) {
-        if (['node_modules', '.git', '.vscode', 'scratch', 'pagefind', '.github'].includes(entry.name)) continue;
+        if (['node_modules', '.git', '.vscode', 'scratch', 'pagefind', '.github', 'dist', 'playwright-report', 'test-results', 'docs'].includes(entry.name)) continue;
         result.push(...collectHtmlFiles(full));
       } else if (entry.isFile() && entry.name.endsWith('.html')) {
         result.push(rel);

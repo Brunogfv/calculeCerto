@@ -1,25 +1,3 @@
-// --- TEMA & MENU ---
-// function alternarTema() {
-//     const body = document.body;
-//     const themeIcon = document.getElementById('theme-icon');
-//     const currentTheme = body.getAttribute('data-theme');
-
-//     if (currentTheme === 'light') {
-//         body.setAttribute('data-theme', 'dark');
-//         themeIcon.textContent = '☀️';
-//         localStorage.setItem('theme', 'dark');
-//     } else {
-//         body.setAttribute('data-theme', 'light');
-//         themeIcon.textContent = '🌙';
-//         localStorage.setItem('theme', 'light');
-//     }
-// }
-
-// if (localStorage.getItem('theme')) {
-//     document.body.setAttribute('data-theme', localStorage.getItem('theme'));
-//     document.getElementById('theme-icon').textContent = localStorage.getItem('theme') === 'light' ? '🌙' : '☀️';
-// }
-
 function toggleMenu() {
     document.getElementById('nav-menu').classList.toggle('active');
     document.querySelector('.overlay').classList.toggle('active');
