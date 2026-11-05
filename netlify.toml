@@ -4,9 +4,3 @@
 
 [build.environment]
   NODE_VERSION = "22"
-
-[build.processing]
-  skip_processing = false
-
-[build.processing.html]
-  pretty_urls = true

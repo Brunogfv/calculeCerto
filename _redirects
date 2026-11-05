@@ -106,7 +106,10 @@ http://portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!
 /artigos/financas/quanto-rende-2000-reais-por-mes}, /artigos/calculaveis/quanto-rende-investir-2000-mes 301
 /artigos/saude/imc-alto-riscos}, /artigos/saude/imc-alto 301
 
-# Redirect .html -> clean URL (força mesmo com arquivo estático existente)
+# Redirect .html -> clean URL (placeholders por profundidade)
 /index.html / 301!
 /*/index.html /:splat/ 301!
-/*.html /:splat 301!
+/:a.html /:a 301!
+/:a/:b.html /:a/:b 301!
+/:a/:b/:c.html /:a/:b/:c 301!
+/:a/:b/:c/:d.html /:a/:b/:c/:d 301!
