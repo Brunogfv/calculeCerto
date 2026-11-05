@@ -227,9 +227,9 @@ test.describe('Estrutura e SEO do site', () => {
         const redirects = read(path.join(ROOT, '_redirects'));
         assert(redirects.includes('/index.html / 301!'), '_redirects: regra /index.html ausente');
         assert(redirects.includes('/*/index.html /:splat/ 301!'), '_redirects: regra index.html ausente');
-        for (const regra of ['/:a.html /:a 301!', '/:a/:b.html /:a/:b 301!', '/:a/:b/:c.html /:a/:b/:c 301!']) {
-            assert(redirects.includes(regra), `_redirects: regra ${regra} ausente`);
-        }
+        assert(redirects.includes('# BEGIN HTML REDIRECTS'), '_redirects: bloco de redirects gerado ausente');
+        assert(redirects.includes('/calculadoras/inss.html /calculadoras/inss 301!'), '_redirects: redirect de calculadora ausente');
+        assert(redirects.includes('/artigos/financas/como-calcular-desconto-inss.html /artigos/financas/como-calcular-desconto-inss 301!'), '_redirects: redirect de artigo ausente');
         assert(!redirects.includes('escapeHtml'), '_redirects: regra escapeHtml ainda presente');
 
         const headers = read(path.join(ROOT, '_headers'));
