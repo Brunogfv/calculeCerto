@@ -51,3 +51,12 @@ seo-url-refactor-report.*
 # === Google Search Console exports ===
 portaldascontas.com.br-Coverage-Drilldown-*/
 
+# === Build de deploy e relatórios de teste ===
+dist/
+playwright-report/
+test-results/
+
+# === Relatórios históricos versionados em docs/ ===
+!docs/relatorios/
+!docs/relatorios/**
+

@@ -97,9 +97,6 @@ http://portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!
 /termos /paginas/termos 301
 /termos.html /paginas/termos 301
 
-# Template literal leak (meus-calculos.html historical bug, GSC pasta 5)
-/\${escapeHtml(fav.url)} / 301
-
 # URLs with malformed }, suffix from old generator (GSC pasta 5)
 /artigos/comparacao/criptomoedas-ou-acoes}, /artigos/comparacao/criptomoedas-ou-acoes 301
 /artigos/comparacao/cdb-ou-debentures}, /artigos/comparacao/cdb-ou-debentures 301
@@ -109,6 +106,7 @@ http://portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!
 /artigos/financas/quanto-rende-2000-reais-por-mes}, /artigos/calculaveis/quanto-rende-investir-2000-mes 301
 /artigos/saude/imc-alto-riscos}, /artigos/saude/imc-alto 301
 
-# Redirect .html -> clean URL (Cloudflare aplica redirects antes de arquivos estaticos)
-/index.html / 301
-/*.html /:splat 301
+# Redirect .html -> clean URL (força mesmo com arquivo estático existente)
+/index.html / 301!
+/*/index.html /:splat/ 301!
+/*.html /:splat 301!

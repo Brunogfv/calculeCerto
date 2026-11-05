@@ -3,6 +3,7 @@ name: Auditoria do Site
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -24,6 +25,19 @@ jobs:
       - name: Instalar navegadores do Playwright
         run: npx playwright install --with-deps chromium
 
+      - name: Rodar suíte permanente de testes
+        run: npm test
+
+      - name: Validar build de deploy
+        run: node scripts/prepare-deploy.js
+
+      - name: Salvar relatório do Playwright
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: relatorio-playwright
+          path: playwright-report
+
       - name: Rodar testes locais (HTML, links internos, console de erros JS)
         run: node scripts/test-local.js
 
@@ -38,6 +52,7 @@ jobs:
     name: Teste do site em produção (links de afiliado, performance)
     runs-on: ubuntu-latest
     needs: validacao-estatica
+    if: github.event_name != 'pull_request'
     steps:
       - name: Baixar código
         uses: actions/checkout@v7

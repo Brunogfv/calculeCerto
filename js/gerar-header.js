@@ -185,31 +185,25 @@ function injectGlobalScripts() {
     scAutoFav.src = siteUrl('js/favoritos-auto.js');
     document.head.appendChild(scAutoFav);
 
-    // [SEO] Carrega o auxiliar de SEO (Canonical, Robots, etc)
-    const scSeo = document.createElement('script');
-    scSeo.src = siteUrl('js/seo-helper.js');
-    document.head.appendChild(scSeo);
 }
 
 function injectHeader() {
     injectGlobalScripts();
-    const headerHTML = buildHeaderHTML();
 
+    // Header pré-renderizado no HTML: só inicializa comportamento.
+    if (document.querySelector('header.header.topo')) {
+        return;
+    }
+
+    const headerHTML = buildHeaderHTML();
     const wrapper = document.createElement('div');
     wrapper.innerHTML = headerHTML;
     const newHeader = wrapper.firstElementChild;
     if (!newHeader) return;
 
     const placeholder = document.getElementById('header-container');
-    const existing = document.querySelector('header.header.topo');
-
-    if (existing) {
-        existing.replaceWith(newHeader);
-        return;
-    }
-
     if (placeholder) {
-        placeholder.replaceWith(newHeader);
+        placeholder.appendChild(newHeader);
         return;
     }
 

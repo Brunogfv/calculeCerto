@@ -50,6 +50,13 @@ main {
     padding-top: 20px;
 }
 
+/* Título principal das calculadoras (h1) — mantém o visual do antigo h2 */
+.calc-header h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+    color: var(--cor-texto);
+}
+
 a {
     text-decoration: none;
     color: inherit;
