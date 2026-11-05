@@ -223,6 +223,19 @@ test.describe('Estrutura e SEO do site', () => {
         expect(contar(produtos, /rel="sponsored nofollow noopener"/g)).toBe(2);
     });
 
+    test('formulário de contato usa Netlify Forms', () => {
+        const contato = read(path.join(ROOT, 'paginas', 'contato.html'));
+        assert(/data-netlify=["']true["']/i.test(contato), 'contato: data-netlify ausente');
+        assert(/name=["']form-name["'][^>]*value=["']contato["']/i.test(contato), 'contato: form-name ausente');
+        assert(/action=["']\/obrigado["']/i.test(contato), 'contato: action /obrigado ausente');
+        assert(!/formsubmit\.co/i.test(contato), 'contato: formsubmit ainda referenciado');
+        assert(/name=["']consentimento["']/i.test(contato), 'contato: consentimento LGPD ausente');
+
+        const obrigado = read(path.join(ROOT, 'obrigado.html'));
+        assert(/noindex/i.test(obrigado), 'obrigado.html: noindex ausente');
+        assert(/rel=["']canonical["']/i.test(obrigado), 'obrigado.html: canonical ausente');
+    });
+
     test('_redirects e _headers consistentes', () => {
         const redirects = read(path.join(ROOT, '_redirects'));
         assert(redirects.includes('/index.html / 301!'), '_redirects: regra /index.html ausente');
@@ -239,5 +252,6 @@ test.describe('Estrutura e SEO do site', () => {
         assert(headers.includes('Cache-Control: public, max-age=31536000, immutable'), '_headers: cache immutable ausente');
         assert(!headers.includes('cdn.ampproject.org'), '_headers: CSP ainda permite AMP');
         assert(!headers.includes('cdn.jsdelivr.net'), '_headers: CSP ainda permite jsDelivr');
+        assert(!headers.includes('formsubmit.co'), '_headers: CSP ainda permite formsubmit');
     });
 });

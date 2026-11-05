@@ -18,6 +18,7 @@ Site estático de calculadoras online gratuitas para finanças, saúde, reformas
 ```
 .
 ├── index.html                  # Home
+├── obrigado.html               # Confirmação do formulário (noindex)
 ├── calculadoras/               # 51 calculadoras
 ├── artigos/                    # Artigos e CSS específico de artigos
 ├── paginas/                    # Sobre, contato, privacidade e termos
@@ -29,6 +30,7 @@ Site estático de calculadoras online gratuitas para finanças, saúde, reformas
 ├── scripts/
 │   ├── build-assets.js         # Minifica/versiona CSS/JS e atualiza o HTML
 │   ├── generate-sitemap.js     # Gera o sitemap a partir dos arquivos
+│   ├── generate-html-redirects.js # Gera redirects .html -> URL limpa
 │   ├── prepare-deploy.js       # Copia só os arquivos de produção para dist/
 │   ├── clean-build.js          # Limpa dist/ e pagefind/ antes do build
 │   ├── test-local.js           # Teste legado local com Playwright
@@ -79,7 +81,8 @@ Executa:
 1. Limpa `dist/` e `pagefind/`.
 2. Minifica e versiona CSS/JS (`scripts/build-assets.js`).
 3. Gera `sitemap.xml` (`scripts/generate-sitemap.js`).
-4. Gera o índice do Pagefind em `pagefind/` (apenas HTML de conteúdo).
+4. Gera os redirects `.html` → URL limpa (`scripts/generate-html-redirects.js`).
+5. Gera o índice do Pagefind em `pagefind/` (apenas HTML de conteúdo).
 
 ### Apenas assets
 
@@ -128,7 +131,7 @@ Suíte permanente com Playwright Test:
 npm test
 ```
 
-O comando executa `npm run build` e depois **34 testes**:
+O comando executa `npm run build` e depois **35 testes**:
 
 - Fiscal 2026: INSS, IRRF, redutor, 13º e exemplos oficiais.
 - Estrutura/SEO: header/footer, canonical/robots, assets versionados, OG/Twitter, JSON-LD, sitemap, imagens, favicon e afiliados.
@@ -205,5 +208,7 @@ Relatórios antigos de SEO, refatoração de URLs e auditoria estão em `docs/re
 
 - Site: https://portaldascontas.com.br/
 - Formulário: https://portaldascontas.com.br/paginas/contato
+- O envio usa **Netlify Forms** e redireciona para `/obrigado`.
+- Configure as notificações por e-mail em **Site settings → Forms → Form notifications** no Netlify.
 
 
