@@ -28,9 +28,8 @@ async function carregarResultados() {
     try {
         const siteBasePath = (() => {
             try {
-                const url = new URL(import.meta.url);
-                // `.../js/busca.js` -> `.../`
-                return url.pathname.replace(/\/js\/busca\.js$/, '/');
+                // `.../js/busca.min.<hash>.js` -> `.../`
+                return new URL('../', import.meta.url).pathname;
             } catch {
                 return '/';
             }
@@ -40,13 +39,15 @@ async function carregarResultados() {
             if (!url) return '';
             if (url.startsWith('http://') || url.startsWith('https://')) return url;
             const normalizedBase = siteBasePath.endsWith('/') ? siteBasePath : `${siteBasePath}/`;
+            let resolvido;
             if (url.startsWith('/')) {
-                if (normalizedBase !== '/' && !url.startsWith(normalizedBase)) {
-                    return normalizedBase.replace(/\/$/, '') + url;
-                }
-                return url;
+                resolvido = (normalizedBase !== '/' && !url.startsWith(normalizedBase))
+                    ? normalizedBase.replace(/\/$/, '') + url
+                    : url;
+            } else {
+                resolvido = normalizedBase + url;
             }
-            return normalizedBase + url;
+            return resolvido.replace(/index\.html$/i, '').replace(/\.html$/i, '');
         };
 
         const pagefindUrl = new URL('../pagefind/pagefind.js', import.meta.url);

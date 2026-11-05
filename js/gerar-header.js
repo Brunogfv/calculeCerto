@@ -270,7 +270,7 @@ function resolveResultUrl(rawUrl) {
     if (/^https?:\/\//i.test(url)) return url;
 
     // Pagefind costuma devolver caminhos com / no inicio; em hospedagem em subpasta isso quebra.
-    const clean = url.replace(/^\/+/, '');
+    const clean = url.replace(/^\/+/, '').replace(/index\.html$/i, '').replace(/\.html$/i, '');
     return siteUrl(clean);
 }
 

@@ -10,6 +10,14 @@ async function bloquearExternos(page) {
     });
 }
 
+function verificarHrefResultado(href) {
+    const url = new URL(href, BASE);
+    expect(url.origin).toBe(BASE);
+    expect(url.pathname).not.toContain('/js/');
+    expect(url.pathname).not.toMatch(/\.html$/i);
+    expect(url.pathname).toMatch(/^\/(artigos|calculadoras|paginas)(\/|$)/);
+}
+
 test.describe('Site — navegação e funcionalidades', () => {
     test('header e footer aparecem sem JavaScript', async ({ browser }) => {
         const context = await browser.newContext({ javaScriptEnabled: false });
@@ -41,6 +49,9 @@ test.describe('Site — navegação e funcionalidades', () => {
             () => page.locator('#search-results-list a').count(),
             { timeout: 20_000 }
         ).toBeGreaterThan(0);
+
+        const hrefHeader = await page.locator('#search-results-list a').first().getAttribute('href');
+        verificarHrefResultado(hrefHeader);
     });
 
     test('ofertas Mercado Livre e categorias vazias', async ({ page }) => {
@@ -128,6 +139,9 @@ test.describe('Site — navegação e funcionalidades', () => {
             () => page.locator('#results-list a').count(),
             { timeout: 20_000 }
         ).toBeGreaterThan(0);
+
+        const hrefBusca = await page.locator('#results-list a').first().getAttribute('href');
+        verificarHrefResultado(hrefBusca);
     });
 
     test('artigo com CSS versionado, header e footer', async ({ page }) => {

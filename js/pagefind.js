@@ -4,9 +4,8 @@ const searchResultsBox = document.getElementById('search-results-list');
 
 const siteBasePath = (() => {
     try {
-        const url = new URL(import.meta.url);
-        // `.../js/pagefind.js` -> `.../`
-        return url.pathname.replace(/\/js\/pagefind\.js$/, '/');
+        // `.../js/pagefind.min.<hash>.js` -> `.../`
+        return new URL('../', import.meta.url).pathname;
     } catch {
         return '/';
     }
@@ -20,15 +19,17 @@ function resolveSiteUrl(url) {
     if (url.startsWith('http://') || url.startsWith('https://')) return url;
 
     const normalizedBase = siteBasePath.endsWith('/') ? siteBasePath : `${siteBasePath}/`;
+    let resolvido;
 
     if (url.startsWith('/')) {
-        if (normalizedBase !== '/' && !url.startsWith(normalizedBase)) {
-            return normalizedBase.replace(/\/$/, '') + url;
-        }
-        return url;
+        resolvido = (normalizedBase !== '/' && !url.startsWith(normalizedBase))
+            ? normalizedBase.replace(/\/$/, '') + url
+            : url;
+    } else {
+        resolvido = normalizedBase + url;
     }
 
-    return normalizedBase + url;
+    return resolvido.replace(/index\.html$/i, '').replace(/\.html$/i, '');
 }
 
 async function getPagefind() {
