@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "build": "node scripts/clean-build.js && npm run build:assets && npm run build:sitemap && node scripts/generate-html-redirects.js && pagefind --site . --glob \"{index.html,calculadoras/**/*.html,artigos/**/*.html,paginas/*.html}\"",
+    "build": "node scripts/clean-build.js && npm run build:assets && npm run build:sitemap && node scripts/generate-html-redirects.js && node scripts/apply-accessibility.js && pagefind --site . --glob \"{index.html,calculadoras/**/*.html,artigos/**/*.html,paginas/*.html}\"",
     "build:assets": "node scripts/build-assets.js",
     "build:sitemap": "node scripts/generate-sitemap.js",
+    "a11y:apply": "node scripts/apply-accessibility.js",
     "build:deploy": "npm run build && node scripts/prepare-deploy.js",
     "test": "npm run build && playwright test",
     "test:ui": "playwright test --ui",

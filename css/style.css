@@ -50,6 +50,39 @@ main {
     padding-top: 20px;
 }
 
+main:focus {
+    outline: none;
+}
+
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 8px;
+    z-index: 10001;
+    padding: 10px 16px;
+    border-radius: 0 0 8px 8px;
+    background: #ffffff;
+    color: #1e3a8a;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    top: 8px;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
 /* Título principal das calculadoras (h1) — mantém o visual do antigo h2 */
 .calc-header h1 {
     font-size: 26px;
@@ -111,22 +144,47 @@ a {
     gap: 20px;
 }
 
-.menu a {
+.menu a,
+.menu-trigger {
     font-size: 15px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.9);
     position: relative;
-    padding: px 0;
+    padding: 0;
     transition: color 0.2s;
     white-space: nowrap;
 }
 
-.menu a:hover {
+.menu-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: 0;
+    font-family: inherit;
+    line-height: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu-chevron {
+    font-size: 10px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.menu-trigger[aria-expanded="true"] .menu-chevron {
+    transform: rotate(180deg);
+}
+
+.menu a:hover,
+.menu-trigger:hover {
     color: white;
 }
 
 /* Efeito de sublinhado animado */
-.menu a::after {
+.menu a::after,
+.menu-trigger::after {
     content: '';
     position: absolute;
     width: 0;
@@ -137,7 +195,9 @@ a {
     transition: width 0.3s ease;
 }
 
-.menu a:hover::after {
+.menu a:hover::after,
+.menu-trigger:hover::after,
+.menu-trigger[aria-expanded="true"]::after {
     width: 100%;
 }
 
@@ -185,7 +245,8 @@ a {
         gap: 12px;
     }
 
-    .menu a {
+    .menu a,
+    .menu-trigger {
         font-size: 13px;
     }
 }
@@ -378,7 +439,7 @@ nav .dropdown-menu {
 }
 
 /* Suporte a colunas para dropdowns densos (apenas desktop) */
-@media (min-width: 769px) {
+@media (min-width: 1251px) {
     nav .dropdown-menu.columns-2 {
         min-width: 440px;
         display: grid;
@@ -387,9 +448,10 @@ nav .dropdown-menu {
     }
 }
 
-/* Mostra ao passar o mouse (APENAS NO DESKTOP) */
-@media (min-width: 769px) {
-    nav .menu-item:hover .dropdown-menu {
+/* Mostra ao passar o mouse ou quando o botão está expandido (APENAS NO DESKTOP) */
+@media (min-width: 1251px) {
+    nav .menu-item:hover .dropdown-menu,
+    nav .menu-item > .menu-trigger[aria-expanded="true"] + .dropdown-menu {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
@@ -437,7 +499,8 @@ nav .dropdown-menu a:hover {
         width: 100%;
     }
 
-    nav .menu-item>a {
+    nav .menu-item>a,
+    nav .menu-item > .menu-trigger {
         display: block;
         position: relative;
         z-index: 2;
@@ -478,7 +541,8 @@ nav .dropdown-menu a:hover {
     }
 
     /* Classe auxiliar para abrir no mobile (via clique) */
-    nav .dropdown-menu.mobile-open {
+    nav .dropdown-menu.mobile-open,
+    nav .menu-item > .menu-trigger[aria-expanded="true"] + .dropdown-menu {
         opacity: 1 !important;
         visibility: visible !important;
         max-height: 2000px !important;
@@ -533,7 +597,8 @@ nav .dropdown-menu a:hover {
     }
 
     .menu a,
-    nav .menu-item>a {
+    nav .menu-item>a,
+    .menu-trigger {
         color: var(--cor-texto);
         font-size: 18px;
         padding: 12px 10px;
@@ -543,8 +608,16 @@ nav .dropdown-menu a:hover {
         /* Separador suave */
     }
 
+    .menu-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+
     /* Remove efeito desktop no mobile */
-    .menu a::after {
+    .menu a::after,
+    .menu-trigger::after {
         display: none;
     }
 
@@ -606,4 +679,38 @@ nav .dropdown-menu a:hover {
     font-weight: 700;
     color: var(--verde) !important;
     line-height: 1.35;
+}
+
+/* --- ACESSIBILIDADE --- */
+nav a[aria-current="page"] {
+    font-weight: 700;
+}
+
+nav .menu > a[aria-current="page"]::after,
+nav .menu-item > a[aria-current="page"]::after {
+    width: 100%;
+}
+
+nav .dropdown-menu a[aria-current="page"] {
+    color: var(--cor-primaria) !important;
+    font-weight: 700;
+}
+
+[data-theme="dark"] nav .dropdown-menu a[aria-current="page"] {
+    color: #93c5fd !important;
+}
+
+.card:focus-visible {
+    outline-offset: -3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

@@ -27,13 +27,13 @@
         crossorigin="anonymous"></script>
 
     <!-- Estilos Globais -->
-    <link rel="stylesheet" href="/css/style.min.8689fcf1.css">
+    <link rel="stylesheet" href="/css/style.min.1cd75b9a.css">
     <link rel="stylesheet" href="/css/juros.min.305be53c.css">
     <link rel="stylesheet" href="/css/meus-calculos.min.150dc78a.css">
     <link rel="stylesheet" href="/css/pagefind.min.95c2227c.css">
 
     <!-- OBRIGATÓRIO: type="module" é necessário para o import funcionar -->
-    <script type="module" src="/js/gerar-header.min.8033ce15.js"></script>
+    <script type="module" src="/js/gerar-header.min.9919cf5b.js"></script>
 
     <title>Calculadora de Imposto de Renda e Renda Líquida | Portal das Contas</title>
     <!-- Open Graph / Twitter -->
@@ -59,6 +59,7 @@
 </head>
 
 <body data-theme="light">
+    <a class="skip-link" href="#conteudo-principal" data-pagefind-ignore>Pular para o conteúdo principal</a>
     <div id="header-container" style="display: contents;">
 <header class="header topo">
     <div class="header-container">
@@ -71,114 +72,114 @@
             </a>
         </div>
 
-        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+        <button class="mobile-menu-btn" aria-label="Abrir menu" type="button" aria-controls="nav-menu" aria-expanded="false"><span aria-hidden="true" data-pagefind-ignore>☰</span></button>
 
-        <nav class="menu" id="nav-menu">
+        <nav class="menu" id="nav-menu" aria-label="Menu principal">
             <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Finanças &amp; Trabalho</a>
-                <div class="dropdown-menu columns-2">
-                    <a href="/calculadoras/juros" onclick="toggleMenu()">Juros &amp; Investimentos</a>
-                    <a href="/calculadoras/investimento" onclick="toggleMenu()">Simulador de Investimentos</a>
-                    <a href="/calculadoras/inflacao" onclick="toggleMenu()">Inflação (IPCA/IGP-M)</a>
-                    <a href="/calculadoras/poupanca-vs-investimento" onclick="toggleMenu()">Poupança vs Investimentos</a>
-                    <a href="/calculadoras/inss" onclick="toggleMenu()">INSS</a>
-                    <a href="/calculadoras/salario" onclick="toggleMenu()">Salário Líquido</a>
-                    <a href="/calculadoras/decimo-terceiro" onclick="toggleMenu()">13º Salário</a>
-                    <a href="/calculadoras/pj-vs-clt" onclick="toggleMenu()">PJ vs CLT (Qual é Melhor?)</a>
-                    <a href="/calculadoras/hora-extra" onclick="toggleMenu()">Hora Extra</a>
-                    <a href="/calculadoras/porcentagem" onclick="toggleMenu()">Porcentagem</a>
-                    <a href="/calculadoras/porcentagem-reversa" onclick="toggleMenu()">Porcentagem Reversa</a>
-                    <a href="/calculadoras/cdb" onclick="toggleMenu()">CDB &amp; Renda Fixa</a>
-                    <a href="/calculadoras/lca-vs-cdb" onclick="toggleMenu()">LCA vs CDB</a>
-                    <a href="/calculadoras/lci-vs-cdb" onclick="toggleMenu()">LCI vs CDB</a>
-                    <a href="/calculadoras/ir-investimentos" onclick="toggleMenu()">IR Investimentos</a>
-                    <a href="/calculadoras/tesouro-direto" onclick="toggleMenu()">Tesouro Direto</a>
-                    <a href="/calculadoras/price-sac" onclick="toggleMenu()">Price e SAC</a>
-                    <a href="/calculadoras/imposto-renda" onclick="toggleMenu()">Imposto de Renda</a>
-                    <a href="/calculadoras/dividendos" onclick="toggleMenu()">Dividendos (FIIs)</a>
+                <button type="button" class="menu-trigger" aria-expanded="false" aria-controls="submenu-1" aria-haspopup="true">Finanças &amp; Trabalho<span class="menu-chevron" aria-hidden="true" data-pagefind-ignore>▾</span></button>
+                <div class="dropdown-menu columns-2" id="submenu-1">
+                    <a href="/calculadoras/juros">Juros &amp; Investimentos</a>
+                    <a href="/calculadoras/investimento">Simulador de Investimentos</a>
+                    <a href="/calculadoras/inflacao">Inflação (IPCA/IGP-M)</a>
+                    <a href="/calculadoras/poupanca-vs-investimento">Poupança vs Investimentos</a>
+                    <a href="/calculadoras/inss">INSS</a>
+                    <a href="/calculadoras/salario">Salário Líquido</a>
+                    <a href="/calculadoras/decimo-terceiro">13º Salário</a>
+                    <a href="/calculadoras/pj-vs-clt">PJ vs CLT (Qual é Melhor?)</a>
+                    <a href="/calculadoras/hora-extra">Hora Extra</a>
+                    <a href="/calculadoras/porcentagem">Porcentagem</a>
+                    <a href="/calculadoras/porcentagem-reversa">Porcentagem Reversa</a>
+                    <a href="/calculadoras/cdb">CDB &amp; Renda Fixa</a>
+                    <a href="/calculadoras/lca-vs-cdb">LCA vs CDB</a>
+                    <a href="/calculadoras/lci-vs-cdb">LCI vs CDB</a>
+                    <a href="/calculadoras/ir-investimentos">IR Investimentos</a>
+                    <a href="/calculadoras/tesouro-direto">Tesouro Direto</a>
+                    <a href="/calculadoras/price-sac">Price e SAC</a>
+                    <a href="/calculadoras/imposto-renda">Imposto de Renda</a>
+                    <a href="/calculadoras/dividendos">Dividendos (FIIs)</a>
                 </div>
             </div>
 
             <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Saúde &amp; Pets</a>
-                <div class="dropdown-menu">
-                    <a href="/calculadoras/imc" onclick="toggleMenu()">IMC (Peso Ideal)</a>
-                    <a href="/calculadoras/tmb" onclick="toggleMenu()">Metabolismo (TMB)</a>
-                    <a href="/calculadoras/tdee" onclick="toggleMenu()">Gasto Calórico (TDEE)</a>
-                    <a href="/calculadoras/gasto-calorico" onclick="toggleMenu()">Queima de Exercícios</a>
-                    <a href="/calculadoras/agua" onclick="toggleMenu()">Água Diária</a>
-                    <a href="/calculadoras/pet-idade" onclick="toggleMenu()">Idade Pet (Nova!)</a>
-                    <a href="/calculadoras/parto" onclick="toggleMenu()">Data de Parto</a>
+                <button type="button" class="menu-trigger" aria-expanded="false" aria-controls="submenu-2" aria-haspopup="true">Saúde &amp; Pets<span class="menu-chevron" aria-hidden="true" data-pagefind-ignore>▾</span></button>
+                <div class="dropdown-menu" id="submenu-2">
+                    <a href="/calculadoras/imc">IMC (Peso Ideal)</a>
+                    <a href="/calculadoras/tmb">Metabolismo (TMB)</a>
+                    <a href="/calculadoras/tdee">Gasto Calórico (TDEE)</a>
+                    <a href="/calculadoras/gasto-calorico">Queima de Exercícios</a>
+                    <a href="/calculadoras/agua">Água Diária</a>
+                    <a href="/calculadoras/pet-idade">Idade Pet (Nova!)</a>
+                    <a href="/calculadoras/parto">Data de Parto</a>
                 </div>
             </div>
 
             <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Imóveis &amp; Reforma</a>
-                <div class="dropdown-menu">
-                    <a href="/calculadoras/tinta" onclick="toggleMenu()">Pintura (Tinta)</a>
-                    <a href="/calculadoras/piso" onclick="toggleMenu()">Piso &amp; Azulejo</a>
-                    <a href="/calculadoras/cimento" onclick="toggleMenu()">Cimento &amp; Obra</a>
-                    <a href="/calculadoras/aluguel-vs-compra" onclick="toggleMenu()">Aluguel vs Compra (Novo!)</a>
-                    <a href="/calculadoras/amortizacao" onclick="toggleMenu()">Amortização (Novo!)</a>
-                    <a href="/calculadoras/energia" onclick="toggleMenu()">Consumo de Energia</a>
+                <button type="button" class="menu-trigger" aria-expanded="false" aria-controls="submenu-3" aria-haspopup="true">Imóveis &amp; Reforma<span class="menu-chevron" aria-hidden="true" data-pagefind-ignore>▾</span></button>
+                <div class="dropdown-menu" id="submenu-3">
+                    <a href="/calculadoras/tinta">Pintura (Tinta)</a>
+                    <a href="/calculadoras/piso">Piso &amp; Azulejo</a>
+                    <a href="/calculadoras/cimento">Cimento &amp; Obra</a>
+                    <a href="/calculadoras/aluguel-vs-compra">Aluguel vs Compra (Novo!)</a>
+                    <a href="/calculadoras/amortizacao">Amortização (Novo!)</a>
+                    <a href="/calculadoras/energia">Consumo de Energia</a>
                 </div>
             </div>
 
             <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Educação &amp; Ciência</a>
-                <div class="dropdown-menu columns-2">
-                    <a href="/calculadoras/medias" onclick="toggleMenu()">Médias Escolares</a>
-                    <a href="/calculadoras/media-final" onclick="toggleMenu()">Nota para Passar (Média)</a>
-                    <a href="/calculadoras/cr" onclick="toggleMenu()">Coeficiente (CR)</a>
-                    <a href="/calculadoras/regra-de-tres" onclick="toggleMenu()">Regra de Três</a>
-                    <a href="/calculadoras/bhaskara" onclick="toggleMenu()">Bhaskara &amp; Funções</a>
-                    <a href="/calculadoras/equacao-primeiro-grau" onclick="toggleMenu()">Equação 1º Grau</a>
-                    <a href="/calculadoras/mmc-mdc" onclick="toggleMenu()">MMC e MDC</a>
-                    <a href="/calculadoras/conversor-unidades" onclick="toggleMenu()">Conversor de Medidas</a>
-                    <a href="/calculadoras/velocidade-media" onclick="toggleMenu()">Velocidade Média</a>
-                    <a href="/calculadoras/forca" onclick="toggleMenu()">Força (F=ma)</a>
-                    <a href="/calculadoras/kmh-ms" onclick="toggleMenu()">km/h para m/s</a>
-                    <a href="/calculadoras/temperatura" onclick="toggleMenu()">Temperaturas</a>
-                    <a href="/calculadoras/datas" onclick="toggleMenu()">Diferença de Datas</a>
+                <button type="button" class="menu-trigger" aria-expanded="false" aria-controls="submenu-4" aria-haspopup="true">Educação &amp; Ciência<span class="menu-chevron" aria-hidden="true" data-pagefind-ignore>▾</span></button>
+                <div class="dropdown-menu columns-2" id="submenu-4">
+                    <a href="/calculadoras/medias">Médias Escolares</a>
+                    <a href="/calculadoras/media-final">Nota para Passar (Média)</a>
+                    <a href="/calculadoras/cr">Coeficiente (CR)</a>
+                    <a href="/calculadoras/regra-de-tres">Regra de Três</a>
+                    <a href="/calculadoras/bhaskara">Bhaskara &amp; Funções</a>
+                    <a href="/calculadoras/equacao-primeiro-grau">Equação 1º Grau</a>
+                    <a href="/calculadoras/mmc-mdc">MMC e MDC</a>
+                    <a href="/calculadoras/conversor-unidades">Conversor de Medidas</a>
+                    <a href="/calculadoras/velocidade-media">Velocidade Média</a>
+                    <a href="/calculadoras/forca">Força (F=ma)</a>
+                    <a href="/calculadoras/kmh-ms">km/h para m/s</a>
+                    <a href="/calculadoras/temperatura">Temperaturas</a>
+                    <a href="/calculadoras/datas">Diferença de Datas</a>
                 </div>
             </div>
 
             <div class="menu-item">
-                <a href="javascript:void(0)" onclick="toggleMobileDropdown(this)">Estilo de Vida</a>
-                <div class="dropdown-menu">
-                    <a href="/calculadoras/combustivel" onclick="toggleMenu()">Combustível</a>
-                    <a href="/calculadoras/pneus" onclick="toggleMenu()">Pneus &amp; Aro</a>
-                    <a href="/calculadoras/churrasco" onclick="toggleMenu()">Calculador de Churrasco</a>
-                    <a href="/calculadoras/festa" onclick="toggleMenu()">Cálculo de Festa</a>
-                    <a href="/calculadoras/pizza" onclick="toggleMenu()">Comparador de Pizza</a>
-                    <a href="/calculadoras/medidas-culinarias" onclick="toggleMenu()">Cozinha (Medidas)</a>
+                <button type="button" class="menu-trigger" aria-expanded="false" aria-controls="submenu-5" aria-haspopup="true">Estilo de Vida<span class="menu-chevron" aria-hidden="true" data-pagefind-ignore>▾</span></button>
+                <div class="dropdown-menu" id="submenu-5">
+                    <a href="/calculadoras/combustivel">Combustível</a>
+                    <a href="/calculadoras/pneus">Pneus &amp; Aro</a>
+                    <a href="/calculadoras/churrasco">Calculador de Churrasco</a>
+                    <a href="/calculadoras/festa">Cálculo de Festa</a>
+                    <a href="/calculadoras/pizza">Comparador de Pizza</a>
+                    <a href="/calculadoras/medidas-culinarias">Cozinha (Medidas)</a>
                 </div>
             </div>
 
-            <a href="/artigos" onclick="toggleMenu()">Aprenda</a>
+            <a href="/artigos">Aprenda</a>
 
-            <a href="/paginas/sobre" onclick="toggleMenu()">Sobre</a>
-            <a href="/paginas/contato" onclick="toggleMenu()">Contato</a>
-            <a href="/meus-calculos" onclick="toggleMenu()" style="display:flex;align-items:center;gap:4px">📋 Meus Cálculos</a>
+            <a href="/paginas/sobre">Sobre</a>
+            <a href="/paginas/contato">Contato</a>
+            <a href="/meus-calculos" style="display:flex;align-items:center;gap:4px"><span aria-hidden="true" data-pagefind-ignore>📋</span> Meus Cálculos</a>
         </nav>
 
-        <div class="search-wrapper">
+        <div class="search-wrapper" role="search">
             <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" class="search-input" id="site-search" placeholder="Busque..." autocomplete="off">
-            <div class="search-results" id="search-results-list"></div>
+            <input type="search" class="search-input" id="site-search" placeholder="Busque..." autocomplete="off" aria-label="Buscar no site" aria-controls="search-results-list">
+            <div class="search-results" id="search-results-list" role="status" aria-live="polite" aria-label="Resultados da busca"></div>
         </div>
 
-        <button class="toggle-theme" onclick="alternarTema()" aria-label="Alternar tema">
-            <span id="theme-icon">🌙</span>
+        <button class="toggle-theme" aria-label="Alternar tema" type="button">
+            <span id="theme-icon" aria-hidden="true" data-pagefind-ignore>🌙</span>
         </button>
     </div>
 </header>
 </div>
 
-    <main>
+    <main id="conteudo-principal" tabindex="-1">
         <div class="calculator-wrapper">
             <div class="calc-card">
                 <div class="calc-header">
