@@ -1,4 +1,4 @@
-/* --- VARIÁVEIS E RESET --- */
+﻿/* --- VARIÃVEIS E RESET --- */
 :root {
     --cor-primaria: #2563eb;
     --cor-primaria-escura: #1e40af;
@@ -8,7 +8,7 @@
     --cor-card: #ffffff;
     --cor-texto: #1f2933;
     --cor-texto-suave: #64748b;
-    /* Cor mais moderna para texto secundário */
+    /* Cor mais moderna para texto secundÃ¡rio */
     --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     --sombra-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
     --transicao: all 0.3s ease;
@@ -83,7 +83,7 @@ body.menu-open {
     overflow: hidden;
 }
 
-/* Título principal das calculadoras (h1) — mantém o visual do antigo h2 */
+/* TÃ­tulo principal das calculadoras (h1) â€” mantÃ©m o visual do antigo h2 */
 .calc-header h1 {
     font-size: 26px;
     margin-bottom: 8px;
@@ -95,7 +95,7 @@ a {
     color: inherit;
 }
 
-/* --- NAVBAR (CABEÇALHO) --- */
+/* --- NAVBAR (CABEÃ‡ALHO) --- */
 .header {
     background: var(--cor-primaria);
     background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
@@ -130,7 +130,7 @@ a {
     white-space: nowrap;
 }
 
-/* Ícone simples ao lado do logo */
+/* Ãcone simples ao lado do logo */
 .logo svg {
     width: 24px;
     height: 24px;
@@ -201,7 +201,7 @@ a {
     width: 100%;
 }
 
-/* Botão Toggle Tema */
+/* BotÃ£o Toggle Tema */
 .toggle-theme {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -239,7 +239,7 @@ a {
     font-weight: normal;
 }
 
-/* --- AJUSTES DE ESPAÇAMENTO PARA TELAS MÉDIAS --- */
+/* --- AJUSTES DE ESPAÃ‡AMENTO PARA TELAS MÃ‰DIAS --- */
 @media (max-width: 1400px) {
     .menu {
         gap: 12px;
@@ -251,7 +251,7 @@ a {
     }
 }
 
-/* --- CONTAINER E SEÇÕES --- */
+/* --- CONTAINER E SEÃ‡Ã•ES --- */
 .container {
     max-width: 1500px;
     margin: 40px auto;
@@ -357,7 +357,7 @@ a {
     color: var(--cor-texto-suave);
     line-height: 1.5;
     flex-grow: 1;
-    /* Faz o texto ocupar o espaço para alinhar botões se houver */
+    /* Faz o texto ocupar o espaÃ§o para alinhar botÃµes se houver */
 }
 
 .seta {
@@ -406,9 +406,9 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* --- CORREÇÃO DO MENU DROPDOWN --- */
+/* --- CORREÃ‡ÃƒO DO MENU DROPDOWN --- */
 
-/* Garante que o pai dos dropdowns tenha posição relativa */
+/* Garante que o pai dos dropdowns tenha posiÃ§Ã£o relativa */
 nav .menu-item {
     position: relative;
 }
@@ -418,7 +418,7 @@ nav .menu-item>a::after {
     content: '';
 }
 
-/* Menu Dropdown (Escondido por padrão com transição suave) */
+/* Menu Dropdown (Escondido por padrÃ£o com transiÃ§Ã£o suave) */
 nav .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -430,11 +430,11 @@ nav .dropdown-menu {
     z-index: 9999;
     padding: 8px 0;
     border-top: 1px solid #f1f5f9;
-    /* Transição suave em vez de display:none */
+    /* TransiÃ§Ã£o suave em vez de display:none */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
 }
 
@@ -448,7 +448,7 @@ nav .dropdown-menu {
     }
 }
 
-/* Mostra ao passar o mouse ou quando o botão está expandido (APENAS NO DESKTOP) */
+/* Mostra ao passar o mouse ou quando o botÃ£o estÃ¡ expandido (APENAS NO DESKTOP) */
 @media (min-width: 1251px) {
     nav .menu-item:hover .dropdown-menu,
     nav .menu-item > .menu-trigger[aria-expanded="true"] + .dropdown-menu {
@@ -514,7 +514,7 @@ nav .dropdown-menu a:hover {
         opacity: 1 !important;
     }
 
-    /* No mobile, dropdown vira estático e controlado por clique */
+    /* No mobile, dropdown vira estÃ¡tico e controlado por clique */
     nav .dropdown-menu {
         position: static;
         width: 100%;
@@ -524,12 +524,12 @@ nav .dropdown-menu a:hover {
         /* Fundo levemente cinza para contraste */
         padding-left: 15px;
         border-radius: 0;
-        /* Escondido por padrão com transição */
+        /* Escondido por padrÃ£o com transiÃ§Ã£o */
         opacity: 0;
         visibility: hidden;
         max-height: 0;
         transform: none;
-        transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.4s ease;
+        transition: opacity 0.3s ease, max-height 0.4s ease;
         overflow: hidden;
         pointer-events: none;
     }
@@ -574,14 +574,14 @@ nav .dropdown-menu a:hover {
         top: 0;
         right: -100%;
         width: 80%;
-        /* Levemente maior para mais espaço */
+        /* Levemente maior para mais espaÃ§o */
         height: 100vh;
         background-color: var(--cor-card);
         flex-direction: column;
         justify-content: flex-start;
         /* Alinhado ao topo */
         align-items: flex-start;
-        /* Alinhado à esquerda */
+        /* Alinhado Ã  esquerda */
         gap: 0;
         /* Removido gap global para controle fino */
         padding: 80px 20px 40px 20px;
@@ -589,7 +589,7 @@ nav .dropdown-menu a:hover {
         transition: right 0.3s ease;
         z-index: 1001;
         overflow-y: auto;
-        /* Scroll se necessário */
+        /* Scroll se necessÃ¡rio */
     }
 
     .menu.active {
