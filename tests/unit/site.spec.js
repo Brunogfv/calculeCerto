@@ -236,6 +236,63 @@ test.describe('Estrutura e SEO do site', () => {
         assert(/rel=["']canonical["']/i.test(obrigado), 'obrigado.html: canonical ausente');
     });
 
+    test('acessibilidade estrutural do header e do conteúdo', () => {
+        for (const file of HTML_FILES) {
+            const html = read(file);
+            const name = rel(file);
+
+            const skip = html.match(/<a\s+class=["']skip-link["'][^>]*href=["']#([^"']+)["'][^>]*>/i);
+            assert(skip, `${name}: skip link ausente`);
+
+            const main = html.match(/<main\b[^>]*>/i);
+            assert(main, `${name}: main ausente`);
+            assert(new RegExp(`\\bid=["']${skip[1]}["']`, 'i').test(main[0]), `${name}: main sem o id do skip link`);
+            assert(/\btabindex=["']-1["']/i.test(main[0]), `${name}: main sem tabindex="-1"`);
+            assert(html.indexOf('skip-link') < html.indexOf('<header'), `${name}: skip link depois do header`);
+
+            const header = (html.match(/<header\s+class=["']header topo["'][\s\S]*?<\/header>/i) || [])[0];
+            assert(header, `${name}: header ausente`);
+            assert(!/\bonclick\s*=/i.test(header), `${name}: onclick no header`);
+            assert(!/javascript:void\(0\)/i.test(header), `${name}: javascript:void(0) no header`);
+            assert(/<nav\b[^>]*\bid=["']nav-menu["'][^>]*\baria-label=/i.test(header), `${name}: nav sem aria-label`);
+
+            assert(
+                /<button\b[^>]*class=["'][^"']*mobile-menu-btn[^"']*["'][^>]*\baria-expanded=["']false["']/i.test(header),
+                `${name}: hamburger sem aria-expanded`
+            );
+            assert(
+                /<button\b[^>]*class=["'][^"']*mobile-menu-btn[^"']*["'][^>]*\baria-controls=["']nav-menu["']/i.test(header),
+                `${name}: hamburger sem aria-controls`
+            );
+
+            const triggers = [...header.matchAll(/<button\b[^>]*class=["'][^"']*menu-trigger[^"']*["'][^>]*>/gi)].map(m => m[0]);
+            assert(triggers.length >= 5, `${name}: poucos menu-trigger (${triggers.length})`);
+
+            for (const trigger of triggers) {
+                assert(/\baria-expanded=["']false["']/i.test(trigger), `${name}: trigger sem aria-expanded`);
+                assert(/\baria-haspopup=["']true["']/i.test(trigger), `${name}: trigger sem aria-haspopup`);
+
+                const controls = (trigger.match(/\baria-controls=["']([^"']+)["']/i) || [])[1];
+                assert(controls, `${name}: trigger sem aria-controls`);
+                assert(new RegExp(`\\bid=["']${controls}["']`, 'i').test(header), `${name}: aria-controls sem alvo`);
+            }
+
+            assert(/<input\b[^>]*id=["']site-search["'][^>]*\baria-label=/i.test(header), `${name}: busca sem aria-label`);
+            assert(
+                /<div\b[^>]*id=["']search-results-list["'][^>]*\baria-live=["']polite["']/i.test(header),
+                `${name}: resultados sem aria-live`
+            );
+            assert(
+                /<button\b[^>]*class=["'][^"']*toggle-theme[^"']*["'][^>]*\btype=["']button["']/i.test(header),
+                `${name}: botão de tema sem type="button"`
+            );
+            assert(
+                /<span\b[^>]*id=["']theme-icon["'][^>]*\baria-hidden=["']true["']/i.test(header),
+                `${name}: ícone do tema sem aria-hidden`
+            );
+        }
+    });
+
     test('_redirects e _headers consistentes', () => {
         const redirects = read(path.join(ROOT, '_redirects'));
         assert(redirects.includes('/index.html / 301!'), '_redirects: regra /index.html ausente');

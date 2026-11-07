@@ -31,6 +31,7 @@ Site estático de calculadoras online gratuitas para finanças, saúde, reformas
 │   ├── build-assets.js         # Minifica/versiona CSS/JS e atualiza o HTML
 │   ├── generate-sitemap.js     # Gera o sitemap a partir dos arquivos
 │   ├── generate-html-redirects.js # Gera redirects .html -> URL limpa
+│   ├── apply-accessibility.js  # Skip link, ARIA e menu acessível em todos os HTMLs
 │   ├── prepare-deploy.js       # Copia só os arquivos de produção para dist/
 │   ├── clean-build.js          # Limpa dist/ e pagefind/ antes do build
 │   ├── test-local.js           # Teste legado local com Playwright
@@ -82,7 +83,8 @@ Executa:
 2. Minifica e versiona CSS/JS (`scripts/build-assets.js`).
 3. Gera `sitemap.xml` (`scripts/generate-sitemap.js`).
 4. Gera os redirects `.html` → URL limpa (`scripts/generate-html-redirects.js`).
-5. Gera o índice do Pagefind em `pagefind/` (apenas HTML de conteúdo).
+5. Aplica acessibilidade estrutural (`scripts/apply-accessibility.js`).
+6. Gera o índice do Pagefind em `pagefind/` (apenas HTML de conteúdo).
 
 ### Apenas assets
 
@@ -111,6 +113,22 @@ npm run build:sitemap
 
 Gera `sitemap.xml` a partir dos HTMLs reais, com URLs limpas, `/artigos/` com barra final, `lastmod` baseado em `dateModified` (artigos) ou data do arquivo, e exclusão de `busca`/`meus-calculos`.
 
+### Acessibilidade
+
+```bash
+npm run a11y:apply
+```
+
+Aplica em todos os HTMLs, de forma idempotente:
+
+- Skip link para `#conteudo-principal` e `tabindex="-1"` no `<main>`.
+- Botões acessíveis para os dropdowns, com `aria-expanded`, `aria-controls` e `aria-haspopup`.
+- `aria-label` no menu, na busca e no botão de tema.
+- Remoção dos `onclick` inline do header.
+- Live region nos resultados da busca e `aria-hidden` em ícones decorativos.
+
+O comando também roda automaticamente no `npm run build` antes do Pagefind.
+
 ### Busca (Pagefind)
 
 O índice fica em `pagefind/`. O comando `npm run build` já executa o Pagefind com um glob restrito às páginas de conteúdo, evitando indexar `dist/`, `node_modules` e páginas noindex.
@@ -131,11 +149,12 @@ Suíte permanente com Playwright Test:
 npm test
 ```
 
-O comando executa `npm run build` e depois **35 testes**:
+O comando executa `npm run build` e depois **43 testes**:
 
 - Fiscal 2026: INSS, IRRF, redutor, 13º e exemplos oficiais.
 - Estrutura/SEO: header/footer, canonical/robots, assets versionados, OG/Twitter, JSON-LD, sitemap, imagens, favicon e afiliados.
 - Navegação: header/footer sem JS, menu, tema, busca, ofertas Mercado Livre, cálculos, dependências dinâmicas e Pagefind.
+- Acessibilidade: skip link, dropdowns por teclado, foco visível, ARIA, live region e `aria-current`.
 - Chart.js local nas 13 páginas.
 - CSP sem violações.
 
