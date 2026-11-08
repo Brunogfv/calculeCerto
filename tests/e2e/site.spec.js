@@ -54,7 +54,7 @@ test.describe('Site — navegação e funcionalidades', () => {
         verificarHrefResultado(hrefHeader);
     });
 
-    test('ofertas Mercado Livre e categorias vazias', async ({ page }) => {
+    test('ofertas Mercado Livre e páginas sem anúncio', async ({ page }) => {
         await bloquearExternos(page);
 
         await page.goto('/calculadoras/imc.html', { waitUntil: 'domcontentloaded' });
@@ -62,21 +62,19 @@ test.describe('Site — navegação e funcionalidades', () => {
         await expect.poll(async () => {
             const href = await page.locator('#anuncio-dinamico a').first().getAttribute('href');
             return href || '';
-        }, { timeout: 20_000 }).toContain('mercadolivre');
+        }, { timeout: 20_000 }).toMatch(/mercadolivre|meli[.]la/);
         await expect(page.locator('#anuncio-dinamico img').first()).toHaveAttribute('loading', 'lazy');
 
-        await page.goto('/calculadoras/energia.html', { waitUntil: 'domcontentloaded' });
-        await expect.poll(
-            () => page.locator('#anuncio-dinamico').evaluate(el => getComputedStyle(el).display),
-            { timeout: 10_000 }
-        ).toBe('none');
+        await page.goto('/paginas/sobre.html', { waitUntil: 'domcontentloaded' });
+        await expect(page.locator('#anuncio-dinamico')).toHaveCount(0);
+        await expect(page.locator('.oferta-card')).toHaveCount(0);
 
         await page.goto('/', { waitUntil: 'domcontentloaded' });
         await page.locator('#anuncio-dinamico').scrollIntoViewIfNeeded();
         await expect.poll(async () => {
             const href = await page.locator('#anuncio-dinamico a').first().getAttribute('href');
             return href || '';
-        }, { timeout: 20_000 }).toContain('mercadolivre');
+        }, { timeout: 20_000 }).toMatch(/mercadolivre|meli[.]la/);
 
         const html = await page.locator('#anuncio-dinamico').innerHTML();
         expect(html).not.toMatch(/amazon|amzn\.to/i);

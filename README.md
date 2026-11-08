@@ -156,7 +156,7 @@ Ao carregar, o script:
 3. Renderiza a grade após o resultado e, no desktop, um rail sticky de 300px.
 4. Informa `Publicidade`/`Ofertas de parceiros` e envia eventos `ad_impression` e `clique_anuncio_afiliado` ao GA4.
 
-Para adicionar um produto, inclua-o em `bancoDeAnuncios` com um link específico do Mercado Livre e uma imagem local em `imgs/`. Páginas sem categoria (`energia`) continuam sem ofertas.
+Para adicionar um produto, inclua-o em `bancoDeAnuncios` com um link específico do Mercado Livre e uma imagem local em `imgs/`. Páginas sem uma categoria cadastrada continuam sem ofertas.
 
 ## Testes
 
@@ -166,7 +166,7 @@ Suíte permanente com Playwright Test:
 npm test
 ```
 
-O comando executa `npm run build` e depois **47 testes**:
+O comando executa `npm run build` e depois **48 testes**:
 
 - Fiscal 2026: INSS, IRRF, redutor, 13º e exemplos oficiais.
 - Estrutura/SEO: header/footer, canonical/robots, assets versionados, OG/Twitter, JSON-LD, sitemap, imagens, favicon e afiliados.
