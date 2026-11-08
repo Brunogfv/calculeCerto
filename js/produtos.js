@@ -13,72 +13,265 @@ function escaparHtml(valor) {
         .replace(/'/g, '&#39;');
 }
 
+const categoriasPagina = {
+    tdee: ['tmb'],
+    gasto_calorico: ['tmb'],
+    mmc_mdc: ['bhaskara'],
+    media_final: ['bhaskara'],
+    media_escolar: ['bhaskara'],
+    regra_tres: ['bhaskara'],
+    coeficiente_rendimento: ['bhaskara'],
+    equacao_primeiro_grau: ['bhaskara'],
+    porcentagem_reversa: ['porcentagem'],
+    kmh_ms: ['velocidade_media'],
+    'lci-cdb': ['juros'],
+    'lca-cdb': ['juros'],
+    cdb: ['juros'],
+    'tesouro-direto': ['juros'],
+    'poupanca-vs-investimentos': ['juros'],
+    investimentos: ['juros'],
+    dividendos: ['juros'],
+    'ir-investimentos': ['juros'],
+    'imposto-renda': ['juros'],
+    inflacao: ['juros'],
+    'price-sac': ['juros'],
+    hora_extra: ['salario'],
+    decimo_terceiro: ['salario'],
+    festas_variadas: ['churrasco', 'pizza'],
+    medidas_culinarias: ['temperatura', 'tmb'],
+    tinta: ['cimento', 'piso'],
+    conversor_unidades: ['porcentagem', 'geral']
+};
+
+const categoriasRelacionadas = {
+    inss: ['juros', 'datas'],
+    juros: ['inss', 'porcentagem'],
+    bhaskara: ['porcentagem', 'datas'],
+    forca: ['imc'],
+    pneus: ['combustivel'],
+    velocidade_media: ['combustivel', 'datas']
+};
+
+function obterLista(categoria) {
+    const categorias = new Set(categoriasPagina[categoria] || [categoria]);
+    for (const alias of Array.from(categorias)) {
+        for (const relacionada of categoriasRelacionadas[alias] || []) categorias.add(relacionada);
+    }
+
+    const vistos = new Set();
+    const lista = [];
+
+    for (const cat of categorias) {
+        for (const produto of bancoDeAnuncios[cat] || []) {
+            if (!produto || !produto.titulo || !produto.link) continue;
+            const chave = produto.titulo.trim().toLowerCase();
+            if (vistos.has(chave)) continue;
+            vistos.add(chave);
+            lista.push(produto);
+        }
+    }
+
+    return lista;
+}
+
+function selecionarProdutos(lista, quantidade, categoria) {
+    if (!lista.length) return [];
+
+    const semente = Array.from(String(categoria)).reduce((total, caractere) => total + caractere.charCodeAt(0), 0);
+    const dia = Math.floor(Date.now() / 86400000);
+    const inicio = (semente + dia) % lista.length;
+    const total = Math.min(quantidade, lista.length);
+    const selecionados = [];
+
+    for (let i = 0; i < total; i += 1) {
+        selecionados.push(lista[(inicio + i) % lista.length]);
+    }
+
+    return selecionados;
+}
+
+function criarCabecalhoOfertas(titulo) {
+    const cabecalho = document.createElement('div');
+    cabecalho.className = 'ofertas-cabecalho';
+
+    const tituloEl = document.createElement('div');
+    tituloEl.className = 'ofertas-titulo';
+    const selo = document.createElement('span');
+    selo.className = 'ofertas-selo';
+    selo.textContent = 'Publicidade';
+    tituloEl.appendChild(selo);
+
+    if (titulo) {
+        const texto = document.createElement('span');
+        texto.textContent = titulo;
+        tituloEl.appendChild(texto);
+    }
+
+    const aviso = document.createElement('span');
+    aviso.className = 'ofertas-aviso';
+    aviso.textContent = 'Ofertas de parceiros; podemos receber comissão.';
+
+    cabecalho.append(tituloEl, aviso);
+    return cabecalho;
+}
+
+function criarCardOferta(produto, categoria, slot) {
+    const artigo = document.createElement('article');
+    artigo.className = 'oferta-card';
+    artigo.dataset.slot = slot;
+
+    const titulo = escaparHtml(produto.titulo);
+    const etiqueta = escaparHtml(produto.etiqueta || 'Oferta');
+    const descricao = escaparHtml(produto.descricao);
+    const link = escaparHtml(produto.link);
+    const imagem = escaparHtml(produto.imagem);
+
+    artigo.innerHTML = `
+        <a class="oferta-imagem" href="${link}" target="_blank" rel="sponsored nofollow noopener" aria-label="Ver oferta: ${titulo}">
+            <img src="${imagem}" alt="${titulo}" width="300" height="230" loading="lazy" decoding="async">
+        </a>
+        <span class="oferta-etiqueta">${etiqueta}</span>
+        <h3 class="oferta-titulo">${titulo}</h3>
+        <p class="oferta-descricao">${descricao}</p>
+        <a class="oferta-botao" href="${link}" target="_blank" rel="sponsored nofollow noopener" aria-label="Ver oferta: ${titulo}">Ver oferta</a>
+    `;
+
+    artigo.querySelectorAll('a').forEach((linkEl) => {
+        linkEl.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'clique_anuncio_afiliado', {
+                    categoria_pagina: categoria,
+                    produto_titulo: produto.titulo,
+                    url_destino: produto.link,
+                    slot: slot
+                });
+            }
+        });
+    });
+
+    return artigo;
+}
+
+function criarSkeletonOfertas(quantidade, titulo) {
+    const fragmento = document.createDocumentFragment();
+    fragmento.appendChild(criarCabecalhoOfertas(titulo));
+
+    const grid = document.createElement('div');
+    grid.className = 'ofertas-grid ofertas-skeleton';
+
+    for (let i = 0; i < quantidade; i += 1) {
+        const card = document.createElement('div');
+        card.className = 'oferta-skeleton';
+        card.innerHTML = '<div class="oferta-skeleton-img"></div><div class="oferta-skeleton-linha"></div><div class="oferta-skeleton-linha curta"></div><div class="oferta-skeleton-botao"></div>';
+        grid.appendChild(card);
+    }
+
+    fragmento.appendChild(grid);
+    return fragmento;
+}
+
+function renderizarOfertas(container, produtos, categoria, slot, titulo) {
+    container.innerHTML = '';
+    container.classList.add('ofertas-container');
+    container.setAttribute('aria-label', 'Ofertas de parceiros');
+    container.appendChild(criarCabecalhoOfertas(titulo));
+
+    const grid = document.createElement('div');
+    grid.className = 'ofertas-grid';
+    produtos.forEach((produto) => grid.appendChild(criarCardOferta(produto, categoria, slot)));
+    container.appendChild(grid);
+
+    if (typeof gtag === 'function') {
+        gtag('event', 'ad_impression', {
+            categoria_pagina: categoria,
+            slot: slot,
+            produtos: produtos.map((produto) => produto.titulo)
+        });
+    }
+}
+
+function renderizarRail(rail, produto, categoria) {
+    rail.innerHTML = '';
+    rail.appendChild(criarCabecalhoOfertas('Oferta'));
+    rail.appendChild(criarCardOferta(produto, categoria, 'rail'));
+
+    if (typeof gtag === 'function') {
+        gtag('event', 'ad_impression', {
+            categoria_pagina: categoria,
+            slot: 'rail',
+            produtos: [produto.titulo]
+        });
+    }
+}
+
+function prepararLayoutOfertas(container) {
+    const card = container.closest('.calc-card');
+    if (!card) return null;
+
+    let wrapper = card.closest('.calculator-wrapper');
+
+    if (!wrapper && card.parentElement && card.parentElement.tagName === 'MAIN' && !document.querySelector('.bh-page')) {
+        wrapper = card.parentElement;
+    }
+
+    if (!wrapper) return null;
+
+    let rail = Array.from(wrapper.children).find((filho) => filho.classList && filho.classList.contains('ad-rail'));
+    if (rail) return rail;
+
+    const main = document.createElement('div');
+    main.className = 'calc-main';
+    while (wrapper.firstChild) main.appendChild(wrapper.firstChild);
+    wrapper.appendChild(main);
+
+    rail = document.createElement('aside');
+    rail.className = 'ad-rail';
+    rail.id = 'anuncio-lateral';
+    rail.setAttribute('aria-label', 'Publicidade');
+    wrapper.appendChild(rail);
+    wrapper.classList.add('layout-ofertas');
+
+    return rail;
+}
+
 function carregarAnuncio(categoria) {
     const container = document.getElementById('anuncio-dinamico');
     if (!container) return;
 
-    const lista = bancoDeAnuncios[categoria];
-    const displayOriginal = container.style.display;
-
-    if (!lista || !lista.length) {
+    const lista = obterLista(categoria);
+    if (!lista.length) {
         container.style.display = 'none';
         return;
     }
 
+    const main = container.closest('main');
+    const ehHome = !!main && main.classList.contains('container') && !container.closest('.calc-card') && !container.closest('.sidebar');
+    const largura = container.parentElement ? container.parentElement.clientWidth : window.innerWidth;
+    const totalPrincipal = ehHome ? 4 : (largura < 500 ? 2 : 3);
+    const totalSelecionado = totalPrincipal + (ehHome ? 0 : 1);
+    const selecionados = selecionarProdutos(lista, totalSelecionado, categoria);
+    const principais = selecionados.slice(0, totalPrincipal);
+    const extra = ehHome ? null : selecionados[totalPrincipal];
+    const titulo = ehHome ? '' : 'Ofertas relacionadas';
+
+    container.style.display = '';
+    container.classList.add('ofertas-container');
+    container.setAttribute('aria-label', 'Ofertas de parceiros');
+    container.innerHTML = '';
+    container.appendChild(criarSkeletonOfertas(principais.length, titulo));
+
+    if (extra) {
+        const rail = prepararLayoutOfertas(container);
+        if (rail) renderizarRail(rail, extra, categoria);
+    }
+
     const renderizar = () => {
-        const produto = lista[Math.floor(Math.random() * lista.length)];
-
-        const titulo = escaparHtml(produto.titulo);
-        const etiqueta = escaparHtml(produto.etiqueta);
-        const descricao = escaparHtml(produto.descricao);
-        const link = escaparHtml(produto.link);
-        const imagem = escaparHtml(produto.imagem);
-
-        const html = `
-        <div style="font-family: 'Inter', sans-serif; text-align: left;">
-            <span style="background: #dbeafe; color: #1e40af; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 10px;">
-                ${etiqueta}
-            </span>
-
-            <h4 style="margin: 0 0 8px 0; color: #1e293b; font-size: 1.1rem; line-height: 1.3;">
-                ${titulo}
-            </h4>
-
-            <a href="${link}" target="_blank" rel="sponsored nofollow noopener" style="text-decoration: none; display: block; margin-bottom: 12px;">
-                <div style="width: 100%; max-width: 300px; height: 230px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='#f59e0b'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='#e2e8f0'">
-                    <img src="${imagem}" alt="${titulo}" width="300" height="230" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
-                </div>
-            </a>
-
-            <p style="margin: 0 0 15px 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
-                ${descricao}
-            </p>
-
-            <a href="${link}" target="_blank" rel="sponsored nofollow noopener" style="display: block; width: 100%; text-align: center; background: #f59e0b; color: white; padding: 10px 0; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);">
-                Ver Detalhes
-            </a>
-        </div>
-        `;
-
-        container.innerHTML = html;
-        container.style.display = displayOriginal || '';
-
-        if (typeof gtag === 'function') {
-            container.querySelectorAll('a').forEach(function (linkEl) {
-                linkEl.addEventListener('click', function () {
-                    gtag('event', 'clique_anuncio_afiliado', {
-                        categoria_pagina: categoria,
-                        produto_titulo: produto.titulo,
-                        url_destino: produto.link
-                    });
-                });
-            });
-        }
+        renderizarOfertas(container, principais, categoria, ehHome ? 'home' : 'pos-resultado', titulo);
     };
 
     if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver(function (entries) {
-            if (entries.some(function (entry) { return entry.isIntersecting; })) {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
                 observer.disconnect();
                 renderizar();
             }

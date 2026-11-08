@@ -65,7 +65,7 @@ test.describe('Site — navegação e funcionalidades', () => {
         }, { timeout: 20_000 }).toContain('mercadolivre');
         await expect(page.locator('#anuncio-dinamico img').first()).toHaveAttribute('loading', 'lazy');
 
-        await page.goto('/calculadoras/decimo-terceiro.html', { waitUntil: 'domcontentloaded' });
+        await page.goto('/calculadoras/energia.html', { waitUntil: 'domcontentloaded' });
         await expect.poll(
             () => page.locator('#anuncio-dinamico').evaluate(el => getComputedStyle(el).display),
             { timeout: 10_000 }
