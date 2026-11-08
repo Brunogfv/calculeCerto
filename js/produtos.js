@@ -10,105 +10,105 @@ const catalogoNovo = {
             "titulo": "Kit de pintura Tigre 5 peças",
             "etiqueta": "PINTURA",
             "descricao": "Kit com 5 peças para preparar e aplicar a pintura com praticidade.",
-            "link": "https://meli.la/1xV2hdB",
+            "link": "https://www.mercadolivre.com.br/kit-de-pintura-tigre-multiuso-5-pecas-com-rolo-pincel-e-bandeja-1540/p/MLB26681364?matt_event_ts=1794176901340&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=f394349b-8bd6-41fd-ab48-7db9957d2836#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=87b2beef-2940-4d99-95dd-7bbfbea90596&tracking_id=a3f46e00-7fc2-49b5-ae7f-10ac10daadb4&c_id=/home/card-featured/element&c_uid=fc3d3017-2706-4c0b-b990-ffed4dfaf35a",
             "imagem": "/imgs/kit_pintura_tigre001.webp"
         },
         {
             "titulo": "Rolo de pintura antirrespingo",
             "etiqueta": "PINTURA",
             "descricao": "Aplicação mais limpa, com menos respingos na parede e no chão.",
-            "link": "https://meli.la/2k8mion",
+            "link": "https://www.mercadolivre.com.br/kit-pintura-3pecas-rolo-antirespingo-suporte-bandeja-tigre-1576/p/MLB24762376?pdp_filters=item_id%3AMLB5778686596&matt_event_ts=1794176889567&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=a735b35e-de13-4795-96fb-e31ede948efe#polycard_client=recommendations_home_affiliate-profile&wid=MLB5778686596&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=df942c76-0611-4280-ad2d-96880565e276&tracking_id=2ad60a2e-f64c-469c-88a3-971e474e66fa&c_id=/home/card-featured/element&c_uid=843e54ae-6f8a-4c1d-acec-629dab731347",
             "imagem": "/imgs/Rolo de pintura antirrespingo001.webp"
         },
         {
             "titulo": "Pincel profissional para parede",
             "etiqueta": "PINTURA",
             "descricao": "Pincel para recortes e detalhes com acabamento uniforme.",
-            "link": "https://meli.la/1deKVLT",
+            "link": "https://www.mercadolivre.com.br/kit-6-pincel-trincha-pintura-tinta-latex-acrilica-parede/up/MLBU3877301420?pdp_filters=item_id%3AMLB4570481965&matt_event_ts=1794176877733&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=1afe955f-3074-4a45-8233-84b0553d6e24#polycard_client=recommendations_home_affiliate-profile&wid=MLB4570481965&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=81b49f2a-f376-42bd-a0c5-db071a3f273b&tracking_id=78849dea-6e38-49e3-888d-4a4a953845c1&c_id=/home/card-featured/element&c_uid=ca7afa88-3a52-4cd7-9982-7dfdebb9dc87",
             "imagem": "/imgs/Kit 6 Pincel Trincha Pintura001.webp"
         },
         {
             "titulo": "Bandeja para tinta",
             "etiqueta": "PINTURA",
             "descricao": "Organize a tinta e facilite a aplicação com rolo.",
-            "link": "https://meli.la/1TRHEqP",
+            "link": "https://www.mercadolivre.com.br/bandeja-para-pintura-1000ml-grande-preta-castor/up/MLBU1963969625?pdp_filters=item_id%3AMLB1990328321&matt_event_ts=1794176864110&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=9c2413e6-f31b-41ec-bff6-6b2f718df3ee#polycard_client=recommendations_home_affiliate-profile&wid=MLB1990328321&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=d3e005dd-e85f-4a76-ae8f-c84e9287c550&tracking_id=939ae1d2-429b-4c6a-bfe3-ecb22e345b15&c_id=/home/card-featured/element&c_uid=d8c6570a-961a-49ed-9d41-b5a87a1ae3a6",
             "imagem": "/imgs/Bandeja para tinta001.webp"
         },
         {
             "titulo": "Extensor telescópico para rolo",
             "etiqueta": "PINTURA",
             "descricao": "Alcance áreas altas sem escada, com mais segurança.",
-            "link": "https://meli.la/2LDgc6E",
+            "link": "https://www.mercadolivre.com.br/prolongador-extensor-cabo-para-rolo-de-pintura-30m-tigre/p/MLB28556897?pdp_filters=item_id%3AMLB5641184248&matt_event_ts=1794176853099&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=a996e843-140a-409a-91a0-c4a086b00a1a#polycard_client=recommendations_home_affiliate-profile&wid=MLB5641184248&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=bb4d2023-82b7-4e0c-84c4-b686e1faa7e4&tracking_id=89252681-c26c-4310-b3f8-a5fc2b7ea26b&c_id=/home/card-featured/element&c_uid=c7101706-712e-47b2-ad95-bc498c91abd9",
             "imagem": "/imgs/Extensor telescópico para rolo001.webp"
         },
         {
             "titulo": "Fita crepe profissional 3M",
             "etiqueta": "PINTURA",
             "descricao": "Proteja rodapés, molduras e cantos durante a pintura.",
-            "link": "https://meli.la/1fmGYi7",
+            "link": "https://www.mercadolivre.com.br/scotchblue-3m-fita-crepe-profissional-24mm-x-50m/p/MLB26205955?matt_event_ts=1794176842470&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=57b242b6-4018-4dc5-967f-4918f98679e0#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=4210018b-3da2-48f2-b5ff-e3d7e2702e8a&tracking_id=841d9cda-2721-4f7d-8e9b-d0cc6163a4ae&c_id=/home/card-featured/element&c_uid=8fb754c6-9b68-43b1-b21c-f848cddd5625",
             "imagem": "/imgs/Fita crepe profissional 3M001.webp"
         },
         {
             "titulo": "Lona plástica para pintura",
             "etiqueta": "PINTURA",
             "descricao": "Proteja móveis e o piso contra respingos de tinta.",
-            "link": "https://meli.la/1dHeyHF",
+            "link": "https://www.mercadolivre.com.br/lona-plastica-4x30-metros-para-proteger-piso-na-pintura/p/MLB27938992?matt_event_ts=1794176828844&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=6c2d2384-aa5d-4b4d-9e18-318b20a9c0cd#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=7d658973-121a-49dd-a276-5dd9fe35fa48&tracking_id=462081d0-5179-4919-91d5-cf149466e7e0&c_id=/home/card-featured/element&c_uid=42c337da-2948-438c-925d-67b73a973f22",
             "imagem": "/imgs/Lona plástica para pintura001.webp"
         },
         {
             "titulo": "Kit de rolos de espuma",
             "etiqueta": "PINTURA",
             "descricao": "Rolos para acabamento liso em superfícies e detalhes.",
-            "link": "https://meli.la/18itVP2",
+            "link": "https://www.mercadolivre.com.br/rolo-de-espuma-compel-kit-com-3-pecas-5915cm/p/MLB29482314?matt_event_ts=1794176817224&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=ed390d2e-b53c-4af6-b93f-acc438fa2746#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=edf3cc3c-b3fe-44b3-9f64-a868d75beab4&tracking_id=20093949-aab5-4914-9c94-a315d773ec3e&c_id=/home/card-featured/element&c_uid=84fd8897-3733-4852-83fe-f7a65af04a9b",
             "imagem": "/imgs/Kit de rolos de espuma001.webp"
         },
         {
             "titulo": "Trincha para pintura",
             "etiqueta": "PINTURA",
             "descricao": "Trincha para cantos, molduras e áreas de difícil acesso.",
-            "link": "https://meli.la/1deKVLT",
+            "link": "https://www.mercadolivre.com.br/kit-6-pincel-trincha-pintura-tinta-latex-acrilica-parede/up/MLBU3877301420?pdp_filters=item_id%3AMLB4570481965&matt_event_ts=1794176806564&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=36c33778-08a4-4723-99df-25de8973ffc8#polycard_client=recommendations_home_affiliate-profile&wid=MLB4570481965&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=b1c56a08-097b-46fb-930b-91a695665089&tracking_id=fea996dc-438b-4ea2-85d0-40047c86f58e&c_id=/home/card-featured/element&c_uid=a4da3838-6234-40e1-bd3b-f82629d656f8",
             "imagem": "/imgs/Trincha para pintura001.webp"
         },
         {
             "titulo": "Espátula de aço",
             "etiqueta": "PINTURA",
             "descricao": "Remova imperfeições e prepare a superfície antes de pintar.",
-            "link": "https://meli.la/2wLJum4",
+            "link": "https://www.mercadolivre.com.br/kit-3-espatulas-aco-massa-corrida-gesso-pintor-profissional-multiuso-pintura-drywall-rejunte-cabo-emborrachado-reforma-construcao-raspar-superficie-tinta-parede-acabamento-pedreiro-guilbren-tools/p/MLB80563221?matt_event_ts=1794176795230&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=19873488-81fb-44b6-800d-8e75ccdb258e#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=8e2bcbb3-c117-45e1-87bb-63018cc078a5&tracking_id=59f7d1c9-542a-4d3c-bd87-e3c1add7475c&c_id=/home/card-featured/element&c_uid=3ded0975-57bb-4ef7-8726-4cd2c598a372",
             "imagem": "/imgs/Espátula de aço001.webp"
         },
         {
             "titulo": "Desempenadeira para massa",
             "etiqueta": "PINTURA",
             "descricao": "Aplique massa corrida e correções com mais precisão.",
-            "link": "https://meli.la/1AehZUZ",
+            "link": "https://www.mercadolivre.com.br/desempenadeira-inoxidavel-40cm-relics-massa-corrida/p/MLB26482212?matt_event_ts=1794176781463&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=2dceca80-8ba6-430a-b9dd-975c2ed5ddaf#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=65aec566-e36a-4720-bfca-8f9a8cc6c977&tracking_id=2aa3e8ba-1a7c-48e7-825c-dfe70b6c5ae6&c_id=/home/card-featured/element&c_uid=309e1843-5a6e-4842-a4d7-5c85a5cda3c7",
             "imagem": "/imgs/Desempenadeira para massa001.webp"
         },
         {
             "titulo": "Lixa para parede em pacote",
             "etiqueta": "PINTURA",
             "descricao": "Prepare a parede para receber a tinta e o acabamento.",
-            "link": "https://meli.la/1UTZ8TE",
+            "link": "https://www.mercadolivre.com.br/lixa-de-massa-parede-madeira-tigre-25-unidades-numero-100/p/MLB35527022?pdp_filters=item_id%3AMLB7639574796&matt_event_ts=1794176769137&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=1ca5fdd7-41c7-4ea0-a369-7f7d6146754e#polycard_client=recommendations_home_affiliate-profile&wid=MLB7639574796&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=b077a2ba-9b57-4df2-bda3-91bada6cebb7&tracking_id=13cfa456-1629-4245-8ec7-bf86aef5ba87&c_id=/home/card-featured/element&c_uid=80afc4b1-e836-4b38-bbcf-9e612762b129",
             "imagem": "/imgs/Lixa para parede em pacote001.webp"
         },
         {
             "titulo": "Suporte para rolo de pintura",
             "etiqueta": "PINTURA",
             "descricao": "Suporte resistente para rolos, com encaixe prático.",
-            "link": "https://meli.la/2SBZsSD",
+            "link": "https://www.mercadolivre.com.br/garfo-suporte-para-rolo-de-pintura-23cm-1301-tigre/p/MLB25555832?matt_event_ts=1794176758010&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=41bcdb54-73ba-4d17-84b8-cbea05e74758#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e9d2ea47-5893-4313-b45f-47f0cf93d0e9&tracking_id=95220632-08db-4abb-a73b-4798dc378196&c_id=/home/card-featured/element&c_uid=6169d8ca-aedf-49bd-b200-aa5b217d2aa0",
             "imagem": "/imgs/Suporte para rolo de pintura001.webp"
         },
         {
             "titulo": "Misturador de tinta para furadeira",
             "etiqueta": "PINTURA",
             "descricao": "Misture a tinta de forma homogênea usando sua furadeira.",
-            "link": "https://meli.la/25gGfnh",
+            "link": "https://www.mercadolivre.com.br/batedor-misturador-de-tinta-massa-argamassa-para-furadeira/p/MLB26916282?matt_event_ts=1794176746467&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=06917516-0aba-44b8-bce8-f80f752d81c8#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=565b90be-7c22-4d8c-859f-3c8419d507a6&tracking_id=dfd8466d-346a-4ebc-b84b-cb791d6b24b8&c_id=/home/card-featured/element&c_uid=36f116ae-af10-4430-8637-0881f6a5ede8",
             "imagem": "/imgs/Misturador de tinta para furadeira001.webp"
         },
         {
             "titulo": "Pulverizador elétrico de pintura",
             "etiqueta": "PINTURA",
             "descricao": "Aplique tinta com rapidez em paredes e superfícies.",
-            "link": "https://meli.la/2KrbHa9",
+            "link": "https://www.mercadolivre.com.br/pistola-de-pintura-e-pulverizadora-eletrica-portatil-hvlp-1250l-c5-bicos-e-acessorios-600w-tpp150-the-black-tools/p/MLB55899349?pdp_filters=item_id%3AMLB4206530759&matt_event_ts=1794176730278&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=83db6f56-8f37-4e4e-ae1d-b219c88d7118#polycard_client=recommendations_home_affiliate-profile&wid=MLB4206530759&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=15b058fa-010a-466a-a834-d5cf497d01f8&tracking_id=e4ff2e2e-7d54-4f6b-935e-26b507cc0400&c_id=/home/card-featured/element&c_uid=51fd24d8-577f-47ee-866f-fc118d3adab0",
             "imagem": "/imgs/Pulverizador elétrico de pintura001.webp"
         }
     ],
@@ -117,105 +117,105 @@ const catalogoNovo = {
             "titulo": "Espaçadores para piso",
             "etiqueta": "PISO",
             "descricao": "Mantenha o espaçamento uniforme entre as peças.",
-            "link": "https://meli.la/2CcgoBP",
+            "link": "https://www.mercadolivre.com.br/kit-nivelador-de-piso-max-amper-com-1000-espacadores-e-120-cunhas-slim-de-2mm/p/MLB46003166?pdp_filters=item_id%3AMLB4068580119&matt_event_ts=1794176718263&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=ba92a76f-aad6-4d80-96dc-2a1569702bf9#polycard_client=recommendations_home_affiliate-profile&wid=MLB4068580119&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=401f275e-99d0-46c8-8f73-04e45e06795f&tracking_id=aeb5f533-a255-4c3e-813c-47194f3d2c05&c_id=/home/card-featured/element&c_uid=947c5610-cabd-4f5f-b85d-ac7e10125af6",
             "imagem": "/imgs/Espaçadores para piso001.webp"
         },
         {
             "titulo": "Niveladores de porcelanato",
             "etiqueta": "PISO",
             "descricao": "Evite desníveis e deixe o assentamento alinhado.",
-            "link": "https://meli.la/2c41dih",
+            "link": "https://www.mercadolivre.com.br/1000-niveladores-espacadores-100-cunhas-porcelanato-pisos/up/MLBU3642685179?pdp_filters=item_id%3AMLB4339552367&matt_event_ts=1794176706833&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=8e1ea1b0-eab6-4eee-b739-5e448b9c9d1e#polycard_client=recommendations_home_affiliate-profile&wid=MLB4339552367&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=a7d7943e-55ca-4a41-a3ae-85c0bbb2d3b7&tracking_id=9821ff3c-3c0f-44cc-9b4c-c7a8a8c578f8&c_id=/home/card-featured/element&c_uid=57640b3f-d4b9-4f4f-8414-6d21ede6381c",
             "imagem": "/imgs/Niveladores de porcelanato001.webp"
         },
         {
             "titulo": "Alicate para nivelador de piso",
             "etiqueta": "PISO",
             "descricao": "Ajuste e remova niveladores com praticidade.",
-            "link": "https://meli.la/2UMc1zp",
+            "link": "https://www.mercadolivre.com.br/alicate-nivelador-de-piso-porcelanato-ceramica-assentar-amarelo/p/MLB69754947?matt_event_ts=1794176695375&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=6ff8d89f-4ac4-4a32-9924-0d4403a71938#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=2760a706-8210-4aef-bdee-a8d0d455e1ab&tracking_id=25f145bd-8ace-4c42-bd9e-a597eeecc473&c_id=/home/card-featured/element&c_uid=5be7f0fd-f1b4-465c-954d-bc4236caec0a",
             "imagem": "/imgs/Alicate para nivelador de piso001.webp"
         },
         {
             "titulo": "Cortador manual de piso",
             "etiqueta": "PISO",
             "descricao": "Cortes retos e precisos em pisos e revestimentos.",
-            "link": "https://meli.la/1cSHs1W",
+            "link": "https://www.mercadolivre.com.br/cortador-de-piso-azulejo-famastil-90cm-manual-trilho-duplo/p/MLB24324324?pdp_filters=item_id%3AMLB5204187353&matt_event_ts=1794176681912&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=d9a51d71-6016-4043-a608-0dd17f9e76ca#polycard_client=recommendations_home_affiliate-profile&wid=MLB5204187353&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=106d522f-1e5c-476c-b4b5-e24f0b488526&tracking_id=03d02988-fec1-4459-b4b0-9ce70e43ebb7&c_id=/home/card-featured/element&c_uid=b5488eca-9113-4255-b848-7203ac51cb3c",
             "imagem": "/imgs/Cortador manual de piso001.webp"
         },
         {
             "titulo": "Cortador profissional de porcelanato",
             "etiqueta": "PISO",
             "descricao": "Cortes profissionais em peças grandes e porcelanato.",
-            "link": "https://meli.la/1tBVzzW",
+            "link": "https://www.mercadolivre.com.br/cortador-riscador-de-piso-porcelanato-cortag-100cm-hd1000-g2/p/MLB60058712?pdp_filters=item_id%3AMLB6653091726&matt_event_ts=1794176667707&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=506f1357-e1dd-4baa-8460-621a0c0b55bb#polycard_client=recommendations_home_affiliate-profile&wid=MLB6653091726&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=365e31aa-fa57-499a-9c9f-f0ac497dd97c&tracking_id=15aa7079-32ac-4fd5-b113-07f2e4949a98&c_id=/home/card-featured/element&c_uid=53e78655-7336-4df0-aa70-9f087bf9c180",
             "imagem": "/imgs/Cortador profissional de porcelanato001.webp"
         },
         {
             "titulo": "Desempenadeira dentada",
             "etiqueta": "PISO",
             "descricao": "Aplique argamassa na espessura correta.",
-            "link": "https://meli.la/2zZ8U5o",
+            "link": "https://www.mercadolivre.com.br/desempenadeira-aco-dentada-regulavel-43cm-x-12cm-para-pisos/p/MLB26843245?pdp_filters=item_id%3AMLB4110512664&matt_event_ts=1794176655273&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=814112f9-c03a-4a88-8b29-5bbb5ac8d8a9#polycard_client=recommendations_home_affiliate-profile&wid=MLB4110512664&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=bf9ffbb6-61c7-4c7d-ac9f-7db6f59204c6&tracking_id=eb11a4de-58fe-447c-911f-e0384a964875&c_id=/home/card-featured/element&c_uid=cceadaaf-9c06-42ea-bb2f-c4fe0608cc79",
             "imagem": "/imgs/Desempenadeira dentada001.webp"
         },
         {
             "titulo": "Desempenadeira lisa",
             "etiqueta": "PISO",
             "descricao": "Alise e acabe a argamassa com uniformidade.",
-            "link": "https://meli.la/2WFpubN",
+            "link": "https://www.mercadolivre.com.br/desempenadeira-inox-flexivel-25cm-para-massa-corrida/p/MLB26237982?pdp_filters=item_id%3AMLB5476854928&matt_event_ts=1794176641300&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=e74b6f5e-df20-4ef0-9ca5-47363a015be2#polycard_client=recommendations_home_affiliate-profile&wid=MLB5476854928&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=2a54d00d-ab2e-45dd-82e5-f3f301491bda&tracking_id=dba2d049-1fa3-4f6a-b1db-7b82cc1edfab&c_id=/home/card-featured/element&c_uid=6c4810ba-25fb-455c-943c-d3b9c691022e",
             "imagem": "/imgs/Desempenadeira lisa001.webp"
         },
         {
             "titulo": "Martelo de borracha",
             "etiqueta": "PISO",
             "descricao": "Assente peças sem danificar o acabamento.",
-            "link": "https://meli.la/2MnFqMi",
+            "link": "https://www.mercadolivre.com.br/martelo-de-borracha-fertak-madeira-40mm-8oz-cabo-ergonomico/p/MLB27663514?pdp_filters=item_id%3AMLB5992197042&matt_event_ts=1794176622234&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=320f3097-81c6-45c2-86f6-99a32df4f04d#polycard_client=recommendations_home_affiliate-profile&wid=MLB5992197042&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=d71cc2d5-5886-4e06-97d0-f0ea363a7b7a&tracking_id=051a00c5-4cac-40e0-9c45-89c8c575aaf9&c_id=/home/card-featured/element&c_uid=ae39a231-afe7-4e9e-81a4-50a3f7179461",
             "imagem": "/imgs/Martelo de borracha001.webp"
         },
         {
             "titulo": "Ventosa para porcelanato",
             "etiqueta": "PISO",
             "descricao": "Manuseie peças grandes com mais segurança.",
-            "link": "https://meli.la/1VXCCF4",
+            "link": "https://www.mercadolivre.com.br/par-de-ventosa-dupla-alta-succao-90kg-porcelanato-marmore/up/MLBU4638611721?pdp_filters=item_id%3AMLB7371321240&matt_event_ts=1794176609503&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=c4571510-3c32-42a5-ab0d-4c7845e925cb#polycard_client=recommendations_home_affiliate-profile&wid=MLB7371321240&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=079b7e80-422e-4924-9d9f-ed0260ba6778&tracking_id=64b240d2-695a-4402-9d2f-4a2c8a41bd54&c_id=/home/card-featured/element&c_uid=16a3119f-44fc-4268-ab16-0368bf433bb5",
             "imagem": "/imgs/Ventosa para porcelanato001.webp"
         },
         {
             "titulo": "Kit de espaçadores e niveladores",
             "etiqueta": "PISO",
             "descricao": "Kit para alinhamento e espaçamento no assentamento.",
-            "link": "https://meli.la/1BKqdWg",
+            "link": "https://www.mercadolivre.com.br/kit-500-espacador-nivelador-100-cunhas-slim-porcelanato/up/MLBU3415249276?pdp_filters=item_id%3AMLB4198451173&matt_event_ts=1794176597664&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=6eb6be20-da99-4432-b593-dd646fa3812b#polycard_client=recommendations_home_affiliate-profile&wid=MLB4198451173&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=f3d07c30-1176-4c80-b292-34f99c3541c1&tracking_id=fb22b75d-ca08-49f9-9b9c-37a2e6515743&c_id=/home/card-featured/element&c_uid=95d64747-d15e-4980-ab95-62cd09eab5f5",
             "imagem": "/imgs/Kit de espaçadores e niveladores001.webp"
         },
         {
             "titulo": "Cruzeta para azulejo",
             "etiqueta": "PISO",
             "descricao": "Garanta juntas regulares entre azulejos.",
-            "link": "https://meli.la/2yVsnAC",
+            "link": "https://www.mercadolivre.com.br/kit-500-espacador-cruzeta-juntapiso-azulejo-20mm-cortag/p/MLB24660536?pdp_filters=item_id%3AMLB4018301495&matt_event_ts=1794176585194&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=d9fd4c05-c973-44bf-ae01-2bf1f4392750#polycard_client=recommendations_home_affiliate-profile&wid=MLB4018301495&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=fb30134c-0b1c-4623-8545-c7d8df345d39&tracking_id=8f97b4ee-e4ef-4683-bbce-f5fbc6af8169&c_id=/home/card-featured/element&c_uid=4e547248-9961-4b66-bb7c-3407d81567c4",
             "imagem": "/imgs/Cruzeta para azulejo001.webp"
         },
         {
             "titulo": "Disco diamantado para porcelanato",
             "etiqueta": "PISO",
             "descricao": "Corte porcelanato com precisão e menos quebras.",
-            "link": "https://meli.la/2cuy1QC",
+            "link": "https://www.mercadolivre.com.br/disco-cortag-diamantado-turbo-para-porcelanato-110mm-x-20mm-branco/p/MLB22611330?matt_event_ts=1794176574230&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=d36ebaec-2dd0-4bc2-b4f2-d6c8c2247f60#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=dabd68d3-423d-4152-a41e-a9496d5ab1d4&tracking_id=c9b1888f-128a-49b4-bae7-9f2e1702f8fb&c_id=/home/card-featured/element&c_uid=9adc9fed-b60b-4bea-b55d-99a1af50d7bf",
             "imagem": "/imgs/Disco diamantado para porcelanato001.webp"
         },
         {
             "titulo": "Serra copo diamantada",
             "etiqueta": "PISO",
             "descricao": "Faça furos em porcelanato e revestimentos.",
-            "link": "https://meli.la/15NbGsQ",
+            "link": "https://www.mercadolivre.com.br/serra-copo-60mm-diamantada-porcelanato-concreto-parede-pisos/p/MLB37497926?pdp_filters=item_id%3AMLB4643398147&matt_event_ts=1794176560376&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=ca7b898f-15ba-4f40-8679-c562a216cd4c#polycard_client=recommendations_home_affiliate-profile&wid=MLB4643398147&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=910442e6-62cd-4706-8b5c-e98fe391a5d6&tracking_id=d39d9fe7-576c-42e9-a82d-883bb177ea47&c_id=/home/card-featured/element&c_uid=3a397621-510a-4179-a7e1-5cb4f6160eef",
             "imagem": "/imgs/Serra copo diamantada001.webp"
         },
         {
             "titulo": "Misturador de argamassa",
             "etiqueta": "PISO",
             "descricao": "Misture argamassa e massa com mais eficiência.",
-            "link": "https://meli.la/13SBQjY",
+            "link": "https://www.mercadolivre.com.br/misturador-de-argamassa-fertak-12-15kg-haste-60cm-sds-para-furadeira/p/MLB28681278?matt_event_ts=1794176549298&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=e227289a-a4aa-4751-bff7-b39db951f33b#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=3fd7f39e-b332-450c-8510-e3fa005ff8b8&tracking_id=58605195-c839-4201-8bb6-9ab14eb43a0b&c_id=/home/card-featured/element&c_uid=273a16dc-14a4-4276-859e-78482ecc0cc8",
             "imagem": "/imgs/Misturador de argamassa001.webp"
         },
         {
             "titulo": "Régua de alumínio para construção",
             "etiqueta": "PISO",
             "descricao": "Confira nível e alinhamento durante a obra.",
-            "link": "https://meli.la/2sSLF1S",
+            "link": "https://www.mercadolivre.com.br/regua-reboco-pedreiro-2-metros-construcao-nivelar-massa/up/MLBU3233533702?pdp_filters=item_id%3AMLB3349215521&matt_event_ts=1794176537911&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=83e28e99-6c3d-4069-95d2-d9b9178b3807#polycard_client=recommendations_home_affiliate-profile&wid=MLB3349215521&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=16685f77-2887-4688-a832-8c9523a833a1&tracking_id=30c6ff74-cc35-498c-8d31-8577a6e2146e&c_id=/home/card-featured/element&c_uid=e50a8a0f-d675-44d2-8fbf-44a4918b35de",
             "imagem": "/imgs/Régua de alumínio para construção001.webp"
         }
     ],
@@ -224,70 +224,70 @@ const catalogoNovo = {
             "titulo": "Carrinho de mão reforçado",
             "etiqueta": "OBRA",
             "descricao": "Transporte areia, cimento e massa com resistência.",
-            "link": "https://meli.la/1tye4XB",
+            "link": "https://www.mercadolivre.com.br/carrinho-de-mao-chapa-20-extraforte-65l-tramontina-77714435/p/MLB28086824?pdp_filters=item_id%3AMLB7889579200&matt_event_ts=1794176521064&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=4214c2c2-ed0d-4ae5-951b-ba047079a633#polycard_client=recommendations_home_affiliate-profile&wid=MLB7889579200&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=86f5411a-8cad-4760-9f78-41b3d7546a81&tracking_id=f773bd1e-e7d5-4aef-9bbc-51dcb2ba707a&c_id=/home/card-featured/element&c_uid=c15bc136-4096-4947-a070-4b18af746c97",
             "imagem": "/imgs/Carrinho de mão reforçado001.webp"
         },
         {
             "titulo": "Pá quadrada",
             "etiqueta": "OBRA",
             "descricao": "Ideal para misturar e transportar materiais.",
-            "link": "https://meli.la/1tN5z1q",
+            "link": "https://www.mercadolivre.com.br/pa-sem-bico-quadrada-sem-cabo-top-tramontina-77464034/p/MLB26155718?pdp_filters=item_id%3AMLB5425379312&matt_event_ts=1794176509649&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=d2374dee-4e62-44d9-b346-67ad7b408fab#polycard_client=recommendations_home_affiliate-profile&wid=MLB5425379312&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=f0be3e22-0b53-4dc0-bbfb-936617200d3c&tracking_id=fdcb5b92-0b4b-4262-92e1-a0acaa14bf2b&c_id=/home/card-featured/element&c_uid=5a71fc84-ceef-4cac-ae42-9820b855c17e",
             "imagem": "/imgs/Pá quadrada001.webp"
         },
         {
             "titulo": "Pá de bico",
             "etiqueta": "OBRA",
             "descricao": "Ajuda a abrir valas e movimentar terra.",
-            "link": "https://meli.la/1rrgfN2",
+            "link": "https://www.mercadolivre.com.br/pa-de-bico-sem-cabo-n2-224x310mm-tramontina-77460024/up/MLBU1423580799?pdp_filters=item_id%3AMLB2104401502&matt_event_ts=1794176497634&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=0417e12a-1dac-4f59-928c-ed2dc697dc00#polycard_client=recommendations_home_affiliate-profile&wid=MLB2104401502&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=7793613b-1dbf-4b2d-8c5c-9aec015865ba&tracking_id=11c09b67-e600-4d65-9bfa-98eec567f256&c_id=/home/card-featured/element&c_uid=36cadb4c-fe53-41ec-bf48-d3ce3fdd0e7e",
             "imagem": "/imgs/Pá de bico001.webp"
         },
         {
             "titulo": "Colher de pedreiro",
             "etiqueta": "OBRA",
             "descricao": "Aplique e assente massa com acabamento.",
-            "link": "https://meli.la/15un3H7",
+            "link": "https://www.mercadolivre.com.br/colher-pedreiro-canto-reto-10-cabo-madeira-bellota-aco/p/MLB27857050?matt_event_ts=1794176486363&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=2247c8c6-cf6e-4a54-877c-450ace19fc96#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=20a871e0-39de-4869-a9b1-ac4b4d75fbbb&tracking_id=0c8e7e46-9dff-46aa-bfcf-cc7aa77f4660&c_id=/home/card-featured/element&c_uid=a8b1952c-df99-4ee6-93f1-7d1846dacfb1",
             "imagem": "/imgs/Colher de pedreiro001.webp"
         },
         {
             "titulo": "Betoneira 150 litros",
             "etiqueta": "OBRA",
             "descricao": "Misture concreto e argamassa com menos esforço.",
-            "link": "https://meli.la/1fCFV9r",
+            "link": "https://www.mercadolivre.com.br/betoneira-150-litros-monofasica-12cv-prime-com-kit-de-segu/p/MLB39405659?matt_event_ts=1794176475629&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=01965f8c-2b24-4217-853d-76417d347667#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e04660fd-5562-459d-bcf5-fa4c6426b68e&tracking_id=bbb8ba18-5dfb-450b-ab96-246b89865d28&c_id=/home/card-featured/element&c_uid=2040cb70-addb-4c27-ad99-43ddb9a512b0",
             "imagem": "/imgs/Betoneira 150 litros001.webp"
         },
         {
             "titulo": "Balde reforçado para construção",
             "etiqueta": "OBRA",
             "descricao": "Transporte água e massa com segurança.",
-            "link": "https://meli.la/1uhHvEB",
+            "link": "https://www.mercadolivre.com.br/balde-de-plastico-preto-12-l-extra-reforcado-4un-vonder/p/MLB45829470?matt_event_ts=1794176462805&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=7ee46446-dbfa-46a5-b900-42829b4d3183#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=6cca7689-8126-4a58-b889-d7aa8cdb93a9&tracking_id=71069b12-35de-4bf6-a6dd-b7e5930235e7&c_id=/home/card-featured/element&c_uid=4214bfb7-ed7a-46d6-ad20-e43efd641716",
             "imagem": "/imgs/Balde reforçado para construção001.webp"
         },
         {
             "titulo": "Masseira para argamassa",
             "etiqueta": "OBRA",
             "descricao": "Misture e transporte argamassa com praticidade.",
-            "link": "https://meli.la/1DaXZcH",
+            "link": "https://www.mercadolivre.com.br/kit-3-caixas-masseira-real-22l-plastico-reciclado-resistentes/p/MLB25721831?matt_event_ts=1794176449678&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=eeda29e6-9b69-4c43-ab00-7451bc0ffd1d#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=3f647248-9364-46c3-ad2c-1f1a9e8e498f&tracking_id=61d3d2e5-a6fa-4730-a404-63a8a2dc4a2d&c_id=/home/card-featured/element&c_uid=051c6350-b378-49b8-9a74-0020f34d72a9",
             "imagem": "/imgs/Masseira para argamassa001.webp"
         },
         {
             "titulo": "Régua vibratória para concreto",
             "etiqueta": "OBRA",
             "descricao": "Nivele e adense o concreto em lajes.",
-            "link": "https://meli.la/253i5QM",
+            "link": "https://www.mercadolivre.com.br/regua-vibratoria-para-concreto-motor-gasolina-profissional/up/MLBU5810167934?pdp_filters=item_id%3AMLB7939396578&matt_event_ts=1794176435859&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=7d24b652-d638-4ff6-a8da-290d9b150055#polycard_client=recommendations_home_affiliate-profile&wid=MLB7939396578&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=a899abb4-323e-4154-8916-fb4ab60d86c3&tracking_id=9355c369-5bf6-4692-a5e9-0548b95351e4&c_id=/home/card-featured/element&c_uid=3746a381-a053-4116-a9f3-0c59ff05204b",
             "imagem": "/imgs/Régua vibratória para concreto001.webp"
         },
         {
             "titulo": "Vibrador de concreto",
             "etiqueta": "OBRA",
             "descricao": "Elimine bolhas e deixe o concreto mais resistente.",
-            "link": "https://meli.la/2CJiXcd",
+            "link": "https://www.mercadolivre.com.br/kit-vibrador-concreto-1500w-com-mangote-mangueira-145mx35mm-127v-tvc650-the-black-tools/p/MLB51902171?pdp_filters=item_id%3AMLB4143332389&matt_event_ts=1794176422778&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=626dcf79-6be9-4a77-872f-ea633fe244f3#polycard_client=recommendations_home_affiliate-profile&wid=MLB4143332389&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=655e4b7f-028f-4a57-967b-7c1468ffb4be&tracking_id=781d5921-02e8-48ce-aa7a-db356dde213f&c_id=/home/card-featured/element&c_uid=c5ada2f9-2aed-4460-bddd-646bed804445",
             "imagem": "/imgs/Vibrador de concreto001.webp"
         },
         {
             "titulo": "Kit de ferramentas para pedreiro",
             "etiqueta": "OBRA",
             "descricao": "Kit com ferramentas essenciais para a obra.",
-            "link": "https://meli.la/2be6EKV",
+            "link": "https://www.mercadolivre.com.br/kit-ferramentas-obra-pedreiro-reforma-7-pecas-colher-broxa/up/MLBU2627702487?pdp_filters=item_id%3AMLB5148790718&matt_event_ts=1794176410608&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=b887471d-439a-407b-9c49-2ff265df7b33#polycard_client=recommendations_home_affiliate-profile&wid=MLB5148790718&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=40d6f703-9aba-4f9a-8090-d9000def4f24&tracking_id=e1898495-1eb8-47be-846b-480954d99ced&c_id=/home/card-featured/element&c_uid=011e85f9-dc88-4461-85cd-6731779c5f67",
             "imagem": "/imgs/Kit de ferramentas para pedreiro001.webp"
         }
     ],
@@ -296,84 +296,84 @@ const catalogoNovo = {
             "titulo": "Balança digital corporal simples",
             "etiqueta": "SA�aDE",
             "descricao": "Acompanhe seu peso com leitura simples e rápida.",
-            "link": "https://meli.la/2TcFoVs",
+            "link": "https://www.mercadolivre.com.br/balanca-digital-corporal-bioimpedancia-aplicativo-bluetooth-relaxmedic/p/MLB21814751?pdp_filters=item_id%3AMLB3225819794&matt_event_ts=1794176391005&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=eec9868b-61f8-4833-80ee-33b324859d34#polycard_client=recommendations_home_affiliate-profile&wid=MLB3225819794&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=c6451823-4f2e-430a-8204-0140a29d9634&tracking_id=2b05dcc0-8afb-460d-afa8-298f8c25922f&c_id=/home/card-featured/element&c_uid=e13a6c0f-85d9-4287-acee-77c0c43f829b",
             "imagem": "/imgs/Balança digital corporal simples001.webp"
         },
         {
             "titulo": "Balança de bioimpedância Bluetooth",
             "etiqueta": "SA�aDE",
             "descricao": "Acompanhe peso, gordura e massa muscular pelo celular.",
-            "link": "https://meli.la/14hLsYQ",
+            "link": "https://www.mercadolivre.com.br/balanca-digital-bioimpedancia-profissional-smart-imc-180kg-bluetooth-corporal-aparelho-alta-capacidade-aplicativo-app-para-android-e-para-ios-balanca-de-banheiro-academia/p/MLB54514525?pdp_filters=item_id%3AMLB4189368533&matt_event_ts=1794176378778&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=b665c3e1-6913-4687-b1ff-88b87b656378#polycard_client=recommendations_home_affiliate-profile&wid=MLB4189368533&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=af145028-ee6d-4724-9d78-a4326cf47d9a&tracking_id=a0217b57-9d21-44dc-baa2-6d8811237aaf&c_id=/home/card-featured/element&c_uid=f9428eca-0355-4617-a982-f2a9295866d8",
             "imagem": "/imgs/Balança de bioimpedância Bluetooth001.webp"
         },
         {
             "titulo": "Balança profissional Omron",
             "etiqueta": "SA�aDE",
             "descricao": "Medição confiável para acompanhar sua evolução.",
-            "link": "https://meli.la/2vMfwLe",
+            "link": "https://www.mercadolivre.com.br/balanca-corporal-bioimpedancia-omron-hbf-270t1-control/up/MLBU3760370915?pdp_filters=item_id%3AMLB6439268720&matt_event_ts=1794176367730&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=bb5c66f2-816a-4344-a7a9-08a18e908457#polycard_client=recommendations_home_affiliate-profile&wid=MLB6439268720&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e2e69c42-4b02-44b8-81b8-c1bbd7dbe1b9&tracking_id=7ae425a1-4f7b-4bd3-a849-3b59501b0c41&c_id=/home/card-featured/element&c_uid=f05c8fd3-b165-4beb-a717-a95adbcc44f7",
             "imagem": "/imgs/Balança profissional Omron001.webp"
         },
         {
             "titulo": "Balança de bioimpedância 8 sensores",
             "etiqueta": "SA�aDE",
             "descricao": "Análise corporal mais completa em casa.",
-            "link": "https://meli.la/2jhAgDn",
+            "link": "https://www.mercadolivre.com.br/balanca-de-bioimpedancia-8-sensores-relaxmedic-digital-preto/p/MLB64134227?pdp_filters=item_id%3AMLB6156594588&matt_event_ts=1794176354566&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=72aecb7e-21fa-4e26-851e-c6f8569996af#polycard_client=recommendations_home_affiliate-profile&wid=MLB6156594588&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=3a3bd7f5-3c21-49cb-8fe7-710a5d79ebdc&tracking_id=b3e3991d-1881-48d3-85ba-04b4b32a3e75&c_id=/home/card-featured/element&c_uid=5ef094b9-5c30-4174-8665-a69c502be958",
             "imagem": "/imgs/Balança de bioimpedância 8 sensores001.webp"
         },
         {
             "titulo": "Fita métrica corporal",
             "etiqueta": "SA�aDE",
             "descricao": "Meça cintura, quadril e outras medidas com precisão.",
-            "link": "https://meli.la/2mQzJ9D",
+            "link": "https://www.mercadolivre.com.br/fita-metrica-flexivel-150cm-corporal-cintura-braco-abdominal/p/MLB2101887706?pdp_filters=item_id%3AMLB3977004969&matt_event_ts=1794176341349&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=6296b51e-466d-4271-b5cc-57fba885e5a1#polycard_client=recommendations_home_affiliate-profile&wid=MLB3977004969&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=ff1e0760-0dde-4867-a926-a5533b08ad89&tracking_id=370e90ec-8fe3-42c3-8250-196ca78e85e9&c_id=/home/card-featured/element&c_uid=c4ea5a74-e0a9-4b46-8f8f-21169c2cfeb8",
             "imagem": "/imgs/Fita métrica corporal001.webp"
         },
         {
             "titulo": "Adipômetro para avaliação corporal",
             "etiqueta": "SA�aDE",
             "descricao": "Acompanhe a gordura corporal com precisão.",
-            "link": "https://meli.la/2ejgbfr",
+            "link": "https://www.mercadolivre.com.br/fitmetria-adipometro-plicometro-clinico-medidor-de-gordura-corporal-cor-preto/p/MLB50806029?matt_event_ts=1794176329801&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=7431456c-bf06-43fb-aafd-98189c554313#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=431c2139-298b-409f-a483-5eb9123775d1&tracking_id=42cfc7a3-2968-48e5-ba09-2f1ff72b2f29&c_id=/home/card-featured/element&c_uid=380f1cb9-39b0-46fd-841d-1a05603fb8cd",
             "imagem": "/imgs/Adipômetro para avaliação corporal001.webp"
         },
         {
             "titulo": "Balança digital de cozinha",
             "etiqueta": "SA�aDE",
             "descricao": "Pese alimentos e controle porções com precisão.",
-            "link": "https://meli.la/1nSkLGL",
+            "link": "https://www.mercadolivre.com.br/baianca-digitai-cozinha-fitness-inox-10kg-aiimentos-visor-grande-aita-precisao-pesar-dieta-portatil-profissionai-e-domestico-confeitaria-nutricionai-ingredientes-foods-prateada-pilha-nixzen/p/MLB56724952?pdp_filters=item_id%3AMLB4212908651&matt_event_ts=1794176315599&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=2ea54e65-b5d2-464f-9c97-f9458f672f52#polycard_client=recommendations_home_affiliate-profile&wid=MLB4212908651&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=04dcb0a8-0e96-4df1-a862-041677b38dff&tracking_id=3de79c21-3467-4c40-bf5f-ac2274a83e5f&c_id=/home/card-featured/element&c_uid=bdfd404c-887b-4a15-bd59-53c4e0757f68",
             "imagem": "/imgs/Balança digital de cozinha001.webp"
         },
         {
             "titulo": "Kit de mini bands",
             "etiqueta": "SA�aDE",
             "descricao": "Treine força e mobilidade em casa.",
-            "link": "https://meli.la/31zGj5f",
+            "link": "https://www.mercadolivre.com.br/kit-5-faixa-elastica-super-mini-band-extensor-elastico-para-treino-resistencia-funcional-academia-ginastica-yoga-esporte-banda-extra-forte-de-treinamento-pilates-fisioterapia-alegria/p/MLB81044141?pdp_filters=item_id%3AMLB4418108869&matt_event_ts=1794176300317&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=ad722621-e8d4-4a95-b74f-f4967bb018ae#polycard_client=recommendations_home_affiliate-profile&wid=MLB4418108869&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=ec40526f-82a4-4dfa-ac4a-cf79ad0b83df&tracking_id=b9b40c71-2c75-43bd-8578-75e520c43466&c_id=/home/card-featured/element&c_uid=b39660af-2273-458c-91e5-7fcef0a4a49f",
             "imagem": "/imgs/Kit de mini bands001.webp"
         },
         {
             "titulo": "Faixa elástica de resistência",
             "etiqueta": "SA�aDE",
             "descricao": "Adicione resistência aos exercícios em casa.",
-            "link": "https://meli.la/2YLWNA4",
+            "link": "https://www.mercadolivre.com.br/kit-mini-band-3-cores-everlast/p/MLB27061998?pdp_filters=item_id%3AMLB4850687803&matt_event_ts=1794176289512&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=c9301b1f-1653-4f34-8430-619ca9dc9c02#polycard_client=recommendations_home_affiliate-profile&wid=MLB4850687803&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=a9c8cb4f-f027-4e12-a378-ecb16d748607&tracking_id=79be8184-925d-4198-a8de-6b4fb0eb4ed4&c_id=/home/card-featured/element&c_uid=3642795d-f237-4c17-af83-b07ddf141936",
             "imagem": "/imgs/Faixa elástica de resistência001.webp"
         },
         {
             "titulo": "Tapete de yoga",
             "etiqueta": "SA�aDE",
             "descricao": "Mais conforto e apoio para treinos e alongamentos.",
-            "link": "https://meli.la/1HLuMJ8",
+            "link": "https://www.mercadolivre.com.br/tapete-yoga-pilates-180m-x-53cm-x-10mm-colchonete-grosso-antiderrapante-para-atividades-fisicas-preto-rdj/p/MLB27766318?matt_event_ts=1794176276983&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=4277cda3-9a3b-4f08-88d6-9c21085eec92#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=bdc11117-f433-4856-9125-92fbb91fb105&tracking_id=e03e6eca-d733-4788-adc8-d1a5a7952484&c_id=/home/card-featured/element&c_uid=ac7bcfa7-2c40-4713-b313-4ef3ed56a4b2",
             "imagem": "/imgs/Tapete de yoga001.webp"
         },
         {
             "titulo": "Colchonete de exercícios",
             "etiqueta": "SA�aDE",
             "descricao": "Conforto para treinos e exercícios no chão.",
-            "link": "https://meli.la/1qmdbpn",
+            "link": "https://www.mercadolivre.com.br/colchonete-profissional-preto-academia-exercicios-pilates-yoga-funcional-abdominais-tapete-ginastica-fitness-espuma-resistente-antiderrapante-impermavel-confortavel-portatil-uso-domestico-e-ar-livre/up/MLBU3500392687?pdp_filters=item_id%3AMLB4262977735&matt_event_ts=1794176265160&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=d74ad8a9-fca8-4b5a-b9f0-677008d5d1d5#polycard_client=recommendations_home_affiliate-profile&wid=MLB4262977735&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=a04625ae-0a2f-473e-bac5-19f5d2231ae2&tracking_id=99ac45b9-2e03-4359-8908-4dbc62fac2f4&c_id=/home/card-featured/element&c_uid=fd765ce1-2bde-4db2-94e6-bed7daa45c25",
             "imagem": "/imgs/Colchonete de exercícios001.webp"
         },
         {
             "titulo": "Corda de pular",
             "etiqueta": "SA�aDE",
             "descricao": "Treino cardiovascular rápido e prático.",
-            "link": "https://meli.la/1GDXxiZ",
+            "link": "https://www.mercadolivre.com.br/corda-de-pular-speed-rope-3m-profissional-academia-fit-com-rolamento-duplo-cabo-de-aco-e-pegadores-emborrachados-ajustavel/p/MLB57465316?pdp_filters=item_id%3AMLB3931431227&matt_event_ts=1794176252013&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=72d98299-f924-4dd4-899b-9fd2bae0be43#polycard_client=recommendations_home_affiliate-profile&wid=MLB3931431227&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=dcc1d184-263c-4df4-b468-9bb3ad97d736&tracking_id=1e06bd41-abb1-4f42-8430-49368661146e&c_id=/home/card-featured/element&c_uid=9371e7e6-332f-46ee-bb19-299b2d00b5d2",
             "imagem": "/imgs/Corda de pular001.webp"
         }
     ],
@@ -382,56 +382,56 @@ const catalogoNovo = {
             "titulo": "Garrafa de água 1 litro",
             "etiqueta": "HIDRATA�!ÒO",
             "descricao": "Leve sua água para o dia a dia.",
-            "link": "https://meli.la/1D84BLR",
+            "link": "https://www.mercadolivre.com.br/garrafa-termica-inox-1-litro-agua-gelada-quente-com-vedacao-cor-prata/p/MLB27816689?matt_event_ts=1794176237921&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=dc720bd1-f45c-4888-a490-9b5458ba9873#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=32ebf4db-f39a-4080-a98f-531355e08fe1&tracking_id=21956741-9b13-4544-9829-79af9f9689aa&c_id=/home/card-featured/element&c_uid=0d7790af-09fc-412f-8d92-7e0f3e317a31",
             "imagem": "/imgs/Garrafa de água 1 litro001.webp"
         },
         {
             "titulo": "Squeeze de academia 2 litros",
             "etiqueta": "HIDRATA�!ÒO",
             "descricao": "Mantenha a hidratação durante os treinos.",
-            "link": "https://meli.la/2LeDAWM",
+            "link": "https://www.mercadolivre.com.br/garrafa-termica-inox-a-vacuo-2-litros-squeeze-academia-agua/up/MLBU3417884243?pdp_filters=item_id%3AMLB5698069432&matt_event_ts=1794176222492&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=95445911-1704-45d8-8e06-2658da904b6b#polycard_client=recommendations_home_affiliate-profile&wid=MLB5698069432&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=b5401ad4-0a5b-470a-9c56-259b72211106&tracking_id=7b4c1882-370a-43ee-8198-984020c104a3&c_id=/home/card-featured/element&c_uid=c1cdf7e0-5fb0-496a-8da3-5a4563d5bd9c",
             "imagem": "/imgs/Squeeze de academia 2 litros001.webp"
         },
         {
             "titulo": "Garrafa com marcação de horários",
             "etiqueta": "HIDRATA�!ÒO",
             "descricao": "Lembretes visuais para beber água ao longo do dia.",
-            "link": "https://meli.la/15ses6j",
+            "link": "https://www.mercadolivre.com.br/garrafa-motivacional-300ml-com-marcacao-de-horario-plastica/up/MLBU3909866470?pdp_filters=item_id%3AMLB6625565150&matt_event_ts=1794176208721&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=2fecd540-cda1-4096-802f-019ff670f131#polycard_client=recommendations_home_affiliate-profile&wid=MLB6625565150&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=7a326a59-1200-4de7-b767-2b7ef58f98ed&tracking_id=1a8ee190-fc4b-4efa-a12a-3fff4ca5d63f&c_id=/home/card-featured/element&c_uid=1075cebb-23a6-4a6f-9909-4f8b81986bab",
             "imagem": "/imgs/Garrafa com marcação de horários001.webp"
         },
         {
             "titulo": "Garrafa térmica de inox",
             "etiqueta": "HIDRATA�!ÒO",
             "descricao": "Mantenha a água gelada por mais tempo.",
-            "link": "https://meli.la/2Bo4XAD",
+            "link": "https://www.mercadolivre.com.br/garrafa-termica-1000ml-aco-inox-304-gelo-18h-quente-12h-com-alca-paracord-cor-preta-j252/p/MLB66698869?matt_event_ts=1794176193102&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=c0376001-9142-47f3-896a-ddf57f9228e5#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=260bfce5-2199-4144-bd75-709b6b764567&tracking_id=a3c09842-9e57-4d3a-bd3b-61cc7b9b0073&c_id=/home/card-featured/element&c_uid=9354cb28-af73-471b-b3a6-42be30136f49",
             "imagem": "/imgs/Garrafa térmica de inox001.webp"
         },
         {
             "titulo": "Copo térmico com tampa",
             "etiqueta": "HIDRATA�!ÒO",
             "descricao": "Beba na temperatura certa em qualquer lugar.",
-            "link": "https://meli.la/2WQJ1ea",
+            "link": "https://www.mercadolivre.com.br/termolar-uniq-copo-termico-380ml-cafe-cha-preto/p/MLB19716786?matt_event_ts=1794176178890&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=3cf29adb-8936-4931-9513-f370e7b81cf4#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=c57e0c93-c52a-4e73-8392-7aa6d9f80d03&tracking_id=f79f49b9-159f-40a6-a29c-b8c8dbc31ebc&c_id=/home/card-featured/element&c_uid=172b26b7-469a-4e07-9bb0-8c2668ff9f70",
             "imagem": "/imgs/Copo térmico com tampa001.webp"
         },
         {
             "titulo": "Filtro de água portátil",
             "etiqueta": "HIDRATA�!ÒO",
             "descricao": "Água filtrada com praticidade em casa ou na rua.",
-            "link": "https://meli.la/2VGS5yx",
+            "link": "https://www.mercadolivre.com.br/mini-filtro-de-agua-portatil-ao-ar-livre-100000-galoes/up/MLBU3841157773?pdp_filters=item_id%3AMLB6466363908&matt_event_ts=1794176165637&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=8afb29e5-0cad-476d-a020-0ba19c415b51#polycard_client=recommendations_home_affiliate-profile&wid=MLB6466363908&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=089f0c03-fbb4-4b4b-96df-1c5ffcb7933d&tracking_id=211f065a-9f52-49ee-b5f5-20bc456d3e7a&c_id=/home/card-featured/element&c_uid=c159d78e-d8c1-4ae0-a2d6-32fbeb332551",
             "imagem": "/imgs/Filtro de água portátil001.webp"
         },
         {
             "titulo": "Jarra com filtro de água",
             "etiqueta": "HIDRATA�!ÒO",
             "descricao": "Filtre a água da torneira de forma prática.",
-            "link": "https://meli.la/1yaFPtv",
+            "link": "https://www.mercadolivre.com.br/jarra-purificadora-de-agua-ulfer-bacfree-elimina-bacterias-cor-branco/p/MLB54416152?matt_event_ts=1794176151993&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=b243a30c-622d-4640-b79b-f84e450145c4#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=dbf19bf2-8ce9-4df9-98f3-59e419d5ce83&tracking_id=2ecce89b-e56b-4c17-a000-c046eebdc1d4&c_id=/home/card-featured/element&c_uid=6f19861c-1d38-4c4d-aab9-a99867c43882",
             "imagem": "/imgs/Jarra com filtro de água001.webp"
         },
         {
             "titulo": "Dispenser de água para geladeira",
             "etiqueta": "HIDRATA�!ÒO",
             "descricao": "Água fresca e fácil de servir.",
-            "link": "https://meli.la/13yEFrJ",
+            "link": "https://www.mercadolivre.com.br/plasutil-pote-reservatorio-de-agua-geladeira-torneira-6l-preto/p/MLB26395676?pdp_filters=item_id%3AMLB4445938906&matt_event_ts=1794176137694&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=623ae39e-75d5-437b-b38e-d6015b6dac5a#polycard_client=recommendations_home_affiliate-profile&wid=MLB4445938906&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e2da1eb1-4a3d-4b41-b7e0-07272918f456&tracking_id=e1213c24-2fc5-403b-b70a-c5afa84ad63d&c_id=/home/card-featured/element&c_uid=7922f0e1-b003-4a70-99ea-ed7d44573db0",
             "imagem": "/imgs/Dispenser de água para geladeira001.webp"
         }
     ],
@@ -440,70 +440,70 @@ const catalogoNovo = {
             "titulo": "Almofada para gestante",
             "etiqueta": "MATERNIDADE",
             "descricao": "Mais conforto para dormir e descansar na gestação.",
-            "link": "https://meli.la/1cLZz6F",
+            "link": "https://produto.mercadolivre.com.br/MLB-2636537421-travesseiro-gestante-de-corpo-gravida-almofada-amamentaco-_JM?searchVariation=174490738685&matt_event_ts=1794176102509&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=5a16b8ec-66c2-41de-92e3-4fca3ff1a256#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=a58a11f6-a98d-4fa8-b4a7-2d9dab1e30b2&tracking_id=829218e3-a38f-4d1f-99fa-534642eae98c&c_id=/home/card-featured/element&c_uid=475731cb-e179-4639-bc09-9b977c4616a6",
             "imagem": "/imgs/Almofada para gestante001.webp"
         },
         {
             "titulo": "Travesseiro de corpo para gestante",
             "etiqueta": "MATERNIDADE",
             "descricao": "Apoio para o corpo e alívio de pressão.",
-            "link": "https://meli.la/1PziZMi",
+            "link": "https://www.mercadolivre.com.br/travesseiro-de-corpo-gestante-u-com-fronha-100-algodao-cor-travesseiro-cinza/p/MLB74503438?matt_event_ts=1794176083467&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=c7c1f313-d353-4685-8278-028780d19925#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=410c3737-c52e-4921-b335-667af805d0db&tracking_id=a2423782-6f30-44e6-b096-eb8c69f0983a&c_id=/home/card-featured/element&c_uid=5f3ca996-1487-476d-967d-17dab81f5441",
             "imagem": "/imgs/Travesseiro de corpo para gestante001.webp"
         },
         {
             "titulo": "Bolsa maternidade",
             "etiqueta": "MATERNIDADE",
             "descricao": "Organize os itens da maternidade em um só lugar.",
-            "link": "https://meli.la/1MmDHZD",
+            "link": "https://www.mercadolivre.com.br/kit-bolsa-maternidade-bebe-mala-menina/up/MLBU595811359?pdp_filters=item_id%3AMLB6456397968&matt_event_ts=1794176070344&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=47ac7889-ebad-42fa-aa4c-b89e8133d0c7#polycard_client=recommendations_home_affiliate-profile&wid=MLB6456397968&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=06b3107e-a760-4600-a2ff-1e7354e5dd03&tracking_id=4fce4540-a432-498d-8467-533e15d0f16c&c_id=/home/card-featured/element&c_uid=37b48864-a6a4-4311-908f-e98b810c6fb3",
             "imagem": "/imgs/Bolsa maternidade001.webp"
         },
         {
             "titulo": "Mochila maternidade impermeável",
             "etiqueta": "MATERNIDADE",
             "descricao": "Leve os itens do bebê com proteção e praticidade.",
-            "link": "https://meli.la/2vbBHse",
+            "link": "https://www.mercadolivre.com.br/mochila-maternidade-bolsa-bebe-termica-com-berco-e-trocador/up/MLBU3991940896?pdp_filters=item_id%3AMLB6816257910&matt_event_ts=1794176057599&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=39e2af84-ce55-42cb-bcea-5cdac44b7ad4#polycard_client=recommendations_home_affiliate-profile&wid=MLB6816257910&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=79b63238-dc61-4829-b3d4-22b768e6b542&tracking_id=64de0999-ab4f-4f44-a71c-4af5a501f37e&c_id=/home/card-featured/element&c_uid=cb74b6b9-4128-4d57-bf67-f1843a7cc8f1",
             "imagem": "/imgs/Mochila maternidade impermeável001.webp"
         },
         {
             "titulo": "Almofada de amamentação",
             "etiqueta": "MATERNIDADE",
             "descricao": "Apoio para uma amamentação mais confortável.",
-            "link": "https://meli.la/2a48kYK",
+            "link": "https://produto.mercadolivre.com.br/MLB-1622655981-almofada-amamentaco-firme-e-confortavel-_JM?matt_event_ts=1794175953252&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=350cae0a-44fb-4724-90b5-af666a7e6619#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=5872f1d1-2212-4aeb-9c18-ae96b254add8&tracking_id=75194592-2606-4281-87ef-112fbeb51f84&c_id=/home/card-featured/element&c_uid=4ca3a220-dca3-4c79-868f-f2f551f9e6c0",
             "imagem": "/imgs/Almofada de amamentação001.webp"
         },
         {
             "titulo": "Trocador portátil de bebê",
             "etiqueta": "MATERNIDADE",
             "descricao": "Troque o bebê com higiene em qualquer lugar.",
-            "link": "https://meli.la/2U7hZdw",
+            "link": "https://www.mercadolivre.com.br/trocador-little-joys-bebe-c-bolsos-e-porta-fraldas-portatil/up/MLBU2986913589?pdp_filters=item_id%3AMLB3963954761&matt_event_ts=1794175937928&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=c3e1112b-6d03-413a-977d-37d515c60418#polycard_client=recommendations_home_affiliate-profile&wid=MLB3963954761&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=fa784262-8637-48ad-80e4-e0f482ac13b8&tracking_id=4a0e558f-35fa-4d2b-86ca-12e777a5c022&c_id=/home/card-featured/element&c_uid=04840bb2-94ed-4e59-931c-e02591fd3e8e",
             "imagem": "/imgs/Trocador portátil de bebê001.webp"
         },
         {
             "titulo": "Organizador de fraldas",
             "etiqueta": "MATERNIDADE",
             "descricao": "Mantenha fraldas e acessórios organizados.",
-            "link": "https://meli.la/1PYkki7",
+            "link": "https://www.mercadolivre.com.br/bolsa-cesto-organizador-bebe-fraldas-mamadeira-maternidade/up/MLBU4512483125?pdp_filters=item_id%3AMLB4975211987&matt_event_ts=1794175923586&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=64674eaa-7e58-4aaf-9658-2d47107dbbee#polycard_client=recommendations_home_affiliate-profile&wid=MLB4975211987&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e6454644-b783-486a-b9c9-ac52d0b48b6c&tracking_id=3db55f99-cd56-486c-b568-a1ccf70aed89&c_id=/home/card-featured/element&c_uid=0dc3f5ce-83a8-49f9-8bd1-6eb1d4a64e3c",
             "imagem": "/imgs/Organizador de fraldas001.webp"
         },
         {
             "titulo": "Kit de higiene para bebê",
             "etiqueta": "MATERNIDADE",
             "descricao": "Itens essenciais para a higiene do bebê.",
-            "link": "https://meli.la/1qVJALW",
+            "link": "https://www.mercadolivre.com.br/kit-higiene-cuidados-bebe-azul-recem-nascido-completo-13-pecas-bolsa-maternidade-termometro-digital-aspirador-nasal-escova-pente-cortador-de-unha-azul-menino-cha-de-bebe-presente-louis-riel-acustico/p/MLB80257466?pdp_filters=item_id%3AMLB6423436686&matt_event_ts=1794175909828&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=52e08a37-a534-443f-89bb-e337fff0a348#polycard_client=recommendations_home_affiliate-profile&wid=MLB6423436686&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=7474547b-5823-497e-aa86-f94a6c008fb1&tracking_id=e20fe32c-2214-4cfc-8c11-1702a87c0d7b&c_id=/home/card-featured/element&c_uid=0a8b4aae-663d-438e-af81-594afd1cfa30",
             "imagem": "/imgs/Kit de higiene para bebê001.webp"
         },
         {
             "titulo": "Termômetro digital infantil",
             "etiqueta": "MATERNIDADE",
             "descricao": "Meça a temperatura do bebê com rapidez.",
-            "link": "https://meli.la/22YtH9i",
+            "link": "https://www.mercadolivre.com.br/termometro-clinico-digital-de-braco-g-tech-infantil-e-adulto/up/MLBU3265259673?pdp_filters=item_id%3AMLB5470181774&matt_event_ts=1794175890375&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=1b80ecc2-2f0e-413e-90e7-823c795a8335#polycard_client=recommendations_home_affiliate-profile&wid=MLB5470181774&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=9425dd66-c1d0-48f9-aa89-e50d43293b9a&tracking_id=a87bdc1b-c677-46e7-8819-e4c29953cea8&c_id=/home/card-featured/element&c_uid=cd04a4a6-971c-40cd-8ac7-f8961aaa3f99",
             "imagem": "/imgs/Termômetro digital infantil001.webp"
         },
         {
             "titulo": "Kit organizador de maternidade",
             "etiqueta": "MATERNIDADE",
             "descricao": "Organize a mala e os itens do bebê.",
-            "link": "https://meli.la/2rVgBpC",
+            "link": "https://www.mercadolivre.com.br/kit-6-saquinhos-maternidade-multiuso-organizador-tag-trocas/up/MLBU1482628744?pdp_filters=item_id%3AMLB4941062760&matt_event_ts=1794175876819&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=3a073f9b-b960-40d0-bb2b-c21cb6a71cb6#polycard_client=recommendations_home_affiliate-profile&wid=MLB4941062760&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=49794777-5f13-4d7d-a6d0-635d81fcf307&tracking_id=db709cfd-8808-4245-9250-f573a1fd8dff&c_id=/home/card-featured/element&c_uid=af8eb770-6ff3-4eb0-bcaa-de6eff0d4ee4",
             "imagem": "/imgs/Kit organizador de maternidade001.webp"
         }
     ],
@@ -512,14 +512,14 @@ const catalogoNovo = {
             "titulo": "Calculadora de mesa 12 dígitos",
             "etiqueta": "CÁLCULOS",
             "descricao": "Cálculos rápidos para o dia a dia e o trabalho.",
-            "link": "https://meli.la/13XEdzH",
+            "link": "https://www.mercadolivre.com.br/calculadora-de-mesa-12-digitos-mx12b-casio-cor-preto/p/MLB39311124?matt_event_ts=1794175862015&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=9da76318-a386-4e25-8ff9-47b306afa8fb#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=fe6cfcae-b400-44ff-8cb8-83006a1c269c&tracking_id=acd51a80-833f-4ecf-8d08-2d588a96b8c2&c_id=/home/card-featured/element&c_uid=026960d9-3933-4ae0-b014-95f7f70ee5db",
             "imagem": "/imgs/Calculadora de mesa 12 dígitos001.webp"
         },
         {
             "titulo": "Calculadora científica Casio",
             "etiqueta": "CÁLCULOS",
             "descricao": "Funções avançadas para estudos e cálculos.",
-            "link": "https://meli.la/1mtEGWE",
+            "link": "https://www.mercadolivre.com.br/calculadora-cientifica-casio-fx-991lacw-classwiz/p/MLB23027132?pdp_filters=item_id%3AMLB6422811976&matt_event_ts=1794175639815&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=8aff86f3-4425-4a66-a703-5aaae035841c#polycard_client=recommendations_home_affiliate-profile&wid=MLB6422811976&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=ab7a6164-138f-433b-b496-3814b6f2c5f8&tracking_id=18e5596d-7b55-44e5-b9a5-42c52aa2f192&c_id=/home/card-featured/element&c_uid=e67db916-849b-470d-bb0e-064aff91b062",
             "imagem": "/imgs/Calculadora científica Casio001.webp"
         }
     ],
@@ -528,28 +528,28 @@ const catalogoNovo = {
             "titulo": "Calculadora financeira HP 12C",
             "etiqueta": "FINAN�!AS",
             "descricao": "Cálculos financeiros para investimentos e financiamentos.",
-            "link": "https://meli.la/2WKcv8o",
+            "link": "https://www.mercadolivre.com.br/calculadora-financeira-hp-12c-engenharia-contas-130-funcoe-cor-dourado/p/MLB60122864?matt_event_ts=1794175843517&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=8562233e-b669-4a46-b7b3-f3c9cbed184e#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=da009db7-8268-42f8-8f14-a9532c5e70f2&tracking_id=f8e1427f-201e-46d4-a416-9742f0861f61&c_id=/home/card-featured/element&c_uid=4e65398f-36d5-4dcf-99bd-dbc671196abc",
             "imagem": "/imgs/Calculadora financeira HP 12C001.webp"
         },
         {
             "titulo": "Cofre eletrônico",
             "etiqueta": "FINAN�!AS",
             "descricao": "Proteja documentos e valores importantes.",
-            "link": "https://meli.la/2EtZvtV",
+            "link": "https://www.mercadolivre.com.br/cofre-eletronico-digital-senha-ou-chave-23x17x17-contelux/p/MLB70052416?matt_event_ts=1794175802566&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=9a7d192c-d483-4137-8b54-aca44e41d7a9#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=0943a5df-4a08-495b-a5c9-559a9278762f&tracking_id=5d6870ea-0bc7-4899-9ae2-25f4653a3ba3&c_id=/home/card-featured/element&c_uid=26a1abe9-0087-498e-8de2-d31ab0f2dd48",
             "imagem": "/imgs/Cofre eletrônico001.webp"
         },
         {
             "titulo": "Agenda financeira",
             "etiqueta": "FINAN�!AS",
             "descricao": "Planeje e acompanhe seus compromissos financeiros.",
-            "link": "https://meli.la/2jsPkxa",
+            "link": "https://www.mercadolivre.com.br/caderno-de-controle-financeiro-minhas-contas-organizadas/up/MLBU1717601033?pdp_filters=item_id%3AMLB2185708848&matt_event_ts=1794175669503&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=d41857b0-b002-4e43-add3-5858ef669046#polycard_client=recommendations_home_affiliate-profile&wid=MLB2185708848&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=f6c46aa5-a12a-4b21-b356-c8ddbd82e005&tracking_id=6bbfa27f-1bd7-48a7-9212-3e9bb6fe7e26&c_id=/home/card-featured/element&c_uid=e401a6fe-f560-4f23-99a1-135206bf771b",
             "imagem": "/imgs/Agenda financeira001.webp"
         },
         {
             "titulo": "Quadro branco de planejamento",
             "etiqueta": "FINAN�!AS",
             "descricao": "Organize metas e orçamento de forma visual.",
-            "link": "https://meli.la/1DxwjoT",
+            "link": "https://www.mercadolivre.com.br/quadro-de-planejamento-branco-90x60cm-aviso-planejar-semana/p/MLB2072176011?pdp_filters=item_id%3AMLB3256974942&matt_event_ts=1794175653902&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=d6941c32-4fce-4bb4-96a8-4d2cbab83098#polycard_client=recommendations_home_affiliate-profile&wid=MLB3256974942&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=2d87c157-98ff-46ed-948d-b770e6bd2ae8&tracking_id=34c1676c-a557-47cd-a63c-f505a6053a16&c_id=/home/card-featured/element&c_uid=d16e14b6-1bf5-40c4-b365-6564c1a3144a",
             "imagem": "/imgs/Quadro branco de planejamento001.webp"
         }
     ],
@@ -558,56 +558,56 @@ const catalogoNovo = {
             "titulo": "Planner financeiro mensal",
             "etiqueta": "TRABALHO",
             "descricao": "Organize o orçamento e as metas do mês.",
-            "link": "https://meli.la/1JLgHAQ",
+            "link": "https://www.mercadolivre.com.br/planner-controle-financeiro-diario-capa-dura-espiral-duplo/up/MLBU5056638027?pdp_filters=item_id%3AMLB7575206936&matt_event_ts=1794175829702&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=6560f060-312c-451a-8570-b8f9c0963d81#polycard_client=recommendations_home_affiliate-profile&wid=MLB7575206936&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=4731ad76-e535-4023-b593-5c6582e74707&tracking_id=d363f0b4-b9c0-411f-89b8-91f22f6c19e6&c_id=/home/card-featured/element&c_uid=f60ffb8a-c5c2-4925-92ea-15ef97d1bab1",
             "imagem": "/imgs/Planner financeiro mensal001.webp"
         },
         {
             "titulo": "Caderno de controle de gastos",
             "etiqueta": "TRABALHO",
             "descricao": "Acompanhe receitas e despesas de forma simples.",
-            "link": "https://meli.la/2StEpM9",
+            "link": "https://www.mercadolivre.com.br/planejador-financeiro-minhas-contas-organizadas-capa-dura/up/MLBU1981778216?pdp_filters=item_id%3AMLB4820590823&matt_event_ts=1794175816472&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=5844912e-24ff-4190-8a04-9438c535594b#polycard_client=recommendations_home_affiliate-profile&wid=MLB4820590823&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=8a6204bd-4221-479c-9a09-2444d0125b6e&tracking_id=c9a7b27b-d30c-4e67-a096-05d906d2a8ff&c_id=/home/card-featured/element&c_uid=1cfe3e94-57ad-4d2c-9126-893c78129b7d",
             "imagem": "/imgs/Caderno de controle de gastos001.webp"
         },
         {
             "titulo": "Organizador de contas a pagar",
             "etiqueta": "TRABALHO",
             "descricao": "Mantenha contas e vencimentos em ordem.",
-            "link": "https://meli.la/2W3cNyP",
+            "link": "https://www.mercadolivre.com.br/caderno-organizacional-contas-pagar/up/MLBU3079712507?pdp_filters=item_id%3AMLB4010260433&matt_event_ts=1794175688858&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=e94d3dc8-e78a-4f08-85e3-0adb9462d29f#polycard_client=recommendations_home_affiliate-profile&wid=MLB4010260433&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=5369f7eb-ee8b-4230-9281-7c6319f4f00f&tracking_id=af9bf73c-6286-4dc5-a281-d096b7f72c5b&c_id=/home/card-featured/element&c_uid=4151c4ea-15af-477b-b3e1-97480b616982",
             "imagem": "/imgs/Organizador de contas a pagar001.webp"
         },
         {
             "titulo": "Organizador de mesa",
             "etiqueta": "TRABALHO",
             "descricao": "Mantenha documentos e acessórios organizados.",
-            "link": "https://meli.la/1n6bBqZ",
+            "link": "https://www.mercadolivre.com.br/organizador-de-mesa-meu-numero-em-metal-com-4-compartimentos-preto/p/MLB67424105?matt_event_ts=1794175626138&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=2775ee60-c885-4197-9a33-b95e50150534#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=dfeab896-4362-40df-8055-5ec6bd7626dd&tracking_id=e01b9619-a66a-4b22-9ee9-fb4e308a56ea&c_id=/home/card-featured/element&c_uid=09829e39-fc95-43a6-a305-1ea4d4cae3cc",
             "imagem": "/imgs/Organizador de mesa001.webp"
         },
         {
             "titulo": "Suporte ergonômico para notebook",
             "etiqueta": "TRABALHO",
             "descricao": "Melhore a postura e o conforto no trabalho.",
-            "link": "https://meli.la/2pzqfX8",
+            "link": "https://www.mercadolivre.com.br/suporte-de-aluminio-ajustavel-dobravel-para-notebook/p/MLB68244387?pdp_filters=item_id%3AMLB6647443664&matt_event_ts=1794175609163&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=25b3705b-52e7-41f3-828c-b390b5f42d1e#polycard_client=recommendations_home_affiliate-profile&wid=MLB6647443664&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=0e5ebc08-958c-4224-b9ff-a82cc4054877&tracking_id=faa1e7fc-174e-4900-bd93-93d2cb54ff4a&c_id=/home/card-featured/element&c_uid=7dfb34b4-661a-4873-9075-6feea2a3ff2f",
             "imagem": "/imgs/Suporte ergonômico para notebook001.webp"
         },
         {
             "titulo": "Mouse sem fio",
             "etiqueta": "TRABALHO",
             "descricao": "Mais liberdade e praticidade no trabalho.",
-            "link": "https://meli.la/2A4Zfus",
+            "link": "https://www.mercadolivre.com.br/mouse-sem-fio-bluetooth-logitech-m240-grafite/p/MLB28247341?matt_event_ts=1794175595129&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=d8f20198-f9b7-4436-b4b6-05ec4c54ab3c#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=321b5cab-eca4-49e7-9c1e-d7559733dd01&tracking_id=920b1362-e2f3-42db-9f3a-1a09f48341e0&c_id=/home/card-featured/element&c_uid=006b6c9d-4684-45bc-ac53-13de5f1a2694",
             "imagem": "/imgs/Mouse sem fio001.webp"
         },
         {
             "titulo": "Teclado sem fio",
             "etiqueta": "TRABALHO",
             "descricao": "Digite com conforto e menos fios.",
-            "link": "https://meli.la/1Ctbsvb",
+            "link": "https://www.mercadolivre.com.br/teclado-sem-fio-intelbras-tsi50-clique-silencioso/p/MLB23955839?pdp_filters=item_id%3AMLB5774842808&matt_event_ts=1794175581520&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=dc700bb3-8fcd-4394-ac01-223d6d946e08#polycard_client=recommendations_home_affiliate-profile&wid=MLB5774842808&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=6bd51359-3822-441d-9581-7b0a1e1e9749&tracking_id=9cef15b8-4eaf-4448-84be-b711f314f1db&c_id=/home/card-featured/element&c_uid=2a1aadb9-ac42-4b4c-ac3d-4aeb6ba60812",
             "imagem": "/imgs/Teclado sem fio001.webp"
         },
         {
             "titulo": "Luminária de mesa LED",
             "etiqueta": "TRABALHO",
             "descricao": "Ilumine a leitura e o trabalho com conforto.",
-            "link": "https://meli.la/1zKzJ9D",
+            "link": "https://www.mercadolivre.com.br/luminaria-de-mesa-dapon-articulada-abajur-modelo-pixar-com-base-e-garra-cor-preto/p/MLB22949617?pdp_filters=item_id%3AMLB6582852158&matt_event_ts=1794175564721&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=cb9c5e44-9547-4d61-b00a-9bdfc1725ea2#polycard_client=recommendations_home_affiliate-profile&wid=MLB6582852158&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=88325453-08bb-4b1d-b4d9-b3bbf18c0a43&tracking_id=b187b65a-9f43-43f5-8588-5d9d8c8c8c43&c_id=/home/card-featured/element&c_uid=bfa2d273-f48d-4d79-91df-a57ffd06df88",
             "imagem": "/imgs/Luminária de mesa LED001.webp"
         }
     ],
@@ -616,7 +616,7 @@ const catalogoNovo = {
             "titulo": "Pasta sanfonada de documentos",
             "etiqueta": "DOCUMENTOS",
             "descricao": "Organize documentos e comprovantes previdenciários.",
-            "link": "https://meli.la/2t295AM",
+            "link": "https://www.mercadolivre.com.br/pasta-sanfonada-plastica-a4-12-div-preto-dello-executiva/p/MLB22549882?pdp_filters=item_id%3AMLB5054933648&matt_event_ts=1794175788141&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=8a1b7b55-7325-48bd-beee-c918514bd999#polycard_client=recommendations_home_affiliate-profile&wid=MLB5054933648&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=bfc6f531-0450-475d-affe-457d3e69dc48&tracking_id=125fe5a5-59c4-4519-8bb8-20cbedc85d96&c_id=/home/card-featured/element&c_uid=0ef7df3a-f67e-49c7-8bd7-c1420dc0d03b",
             "imagem": "/imgs/Pasta sanfonada de documentos001.webp"
         }
     ],
@@ -625,70 +625,70 @@ const catalogoNovo = {
             "titulo": "Medidor de consumo elétrico de tomada",
             "etiqueta": "ECONOMIA",
             "descricao": "Descubra quanto cada aparelho consome.",
-            "link": "https://meli.la/1Gz8vrT",
+            "link": "https://www.mercadolivre.com.br/medidor-de-consumo-energia-eletrica-para-tomada-safiratec-bivolt-3600w-16a-para-geladeira-ar-condicionado-air-fryer/p/MLB24123784?matt_event_ts=1794175549423&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=df8b6e71-0a11-4fef-bfd7-290432a0c4a1#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=74a2565c-0c33-44c9-8cd8-a032c3da6f10&tracking_id=31be5b7e-7804-4a05-b64e-708b909b9321&c_id=/home/card-featured/element&c_uid=983a32bc-ab6e-433a-9b0f-c2c4972aa067",
             "imagem": "/imgs/Medidor de consumo elétrico de tomada001.webp"
         },
         {
             "titulo": "Tomada inteligente Wi-Fi com medição",
             "etiqueta": "ECONOMIA",
             "descricao": "Ligue e acompanhe o consumo pelo celular.",
-            "link": "https://meli.la/1rfP5Ho",
+            "link": "https://www.mercadolivre.com.br/tomada-inteligente-wifi-10a-ekaza-medidor-de-consumo-smart-alexa-google-tuya-smart-life-110v/p/MLB23491995?pdp_filters=item_id%3AMLB7349038868&matt_event_ts=1794175534055&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=7f442b0b-9e42-4cb2-9e92-444c6def5430#polycard_client=recommendations_home_affiliate-profile&wid=MLB7349038868&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=f4dd16ca-bb4e-445a-94e9-16505bcf4c31&tracking_id=d31cf1b4-c222-4461-80d7-4a3bd7c6aeec&c_id=/home/card-featured/element&c_uid=939c611c-e445-4236-ac07-3219990818a5",
             "imagem": "/imgs/Tomada inteligente Wi-Fi com medição001.webp"
         },
         {
             "titulo": "Lâmpada LED econômica",
             "etiqueta": "ECONOMIA",
             "descricao": "Iluminação com menor consumo de energia.",
-            "link": "https://meli.la/2WBmGzL",
+            "link": "https://www.mercadolivre.com.br/kit-10-lampada-led-bulbo-philips-9w-branco-quente-3000k-e27-100240v/p/MLB63419872?matt_event_ts=1794175520044&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=3cb9336f-c92c-441c-8472-7167835ccd33#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=93c54bbb-3ec5-4994-95ae-5fcafc7c8724&tracking_id=6a261669-aa13-4221-b500-c092a8c4a12e&c_id=/home/card-featured/element&c_uid=67350435-7821-43dc-93cc-776d54e2a457",
             "imagem": "/imgs/Lâmpada LED econômica001.webp"
         },
         {
             "titulo": "Kit de lâmpadas LED",
             "etiqueta": "ECONOMIA",
             "descricao": "Troque a iluminação e reduza o consumo.",
-            "link": "https://meli.la/29GMDQa",
+            "link": "https://www.mercadolivre.com.br/10-lampada-led-economica-9w60w-6500k-philips-luz-branco-frio/p/MLB46359096?pdp_filters=item_id%3AMLB4455913149&matt_event_ts=1794175504892&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=166ca956-2d62-4c2e-ab15-dba10be42549#polycard_client=recommendations_home_affiliate-profile&wid=MLB4455913149&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=493e47b8-909c-4935-a457-4346e1730fbd&tracking_id=031675b8-9be3-4edb-be8c-f98ad3bd00f7&c_id=/home/card-featured/element&c_uid=53a08b1c-af9f-4624-b11e-acb181d24c1a",
             "imagem": "/imgs/Kit de lâmpadas LED001.webp"
         },
         {
             "titulo": "Sensor de presença para iluminação",
             "etiqueta": "ECONOMIA",
             "descricao": "Acenda a luz apenas quando houver movimento.",
-            "link": "https://meli.la/2fUJwWW",
+            "link": "https://www.mercadolivre.com.br/interruptor-sensor-presenca-iluminacao-intelbras-espi-180-e-/p/MLB41287441?matt_event_ts=1794175490722&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=418c4c99-b6e2-47cb-b481-9fde17400758#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=7c14cdb1-5f26-4132-8ba9-c465881a0f7e&tracking_id=f1ac1e20-910d-4ddf-9854-8b2d24fefcab&c_id=/home/card-featured/element&c_uid=4363f47e-da21-4b21-815a-7cf5077f563d",
             "imagem": "/imgs/Sensor de presença para iluminação001.webp"
         },
         {
             "titulo": "Temporizador digital de tomada",
             "etiqueta": "ECONOMIA",
             "descricao": "Programe aparelhos e evite consumo desnecessário.",
-            "link": "https://meli.la/22Pn4z9",
+            "link": "https://www.mercadolivre.com.br/temporizador-digital-exbom-para-automacao-residencial-e-piscina-16-programas/p/MLB23277164?matt_event_ts=1794175457631&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=7ddfa36e-4f7f-45f2-aca1-111dfa83db8c#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=a810ffef-a8e3-4ea9-858a-49405c9f0d68&tracking_id=9a518366-64fa-40f6-a34b-d525056051f9&c_id=/home/card-featured/element&c_uid=b7162ff8-c7c4-4ab6-8779-f77064a3e726",
             "imagem": "/imgs/Temporizador digital de tomada001.webp"
         },
         {
             "titulo": "Interruptor inteligente Wi-Fi",
             "etiqueta": "ECONOMIA",
             "descricao": "Controle a iluminação pelo celular.",
-            "link": "https://meli.la/1MpyUxw",
+            "link": "https://www.mercadolivre.com.br/interruptor-inteligente-wifi-novadigital-mini-1ch-16a-alexa/up/MLBU1445024188?pdp_filters=item_id%3AMLB3252795227&matt_event_ts=1794175442288&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=6ca52f4e-4e29-4ea5-bede-0525b8312ff9#polycard_client=recommendations_home_affiliate-profile&wid=MLB3252795227&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=d0c0192b-89b7-4faf-a6a9-9c1a8e939677&tracking_id=de5fd2ef-9b2f-468d-ac0d-92c50e14eac0&c_id=/home/card-featured/element&c_uid=cc944146-7ead-4f7e-b1a1-ac80501a222b",
             "imagem": "/imgs/Interruptor inteligente Wi-Fi001.webp"
         },
         {
             "titulo": "Medidor de energia para quadro elétrico",
             "etiqueta": "ECONOMIA",
             "descricao": "Acompanhe o consumo geral da instalação.",
-            "link": "https://meli.la/2qzgC8h",
+            "link": "https://www.mercadolivre.com.br/medidor-de-energia-eletrica-digital-monofasico-hiking-dds238-4-100a/p/MLB54325853?pdp_filters=item_id%3AMLB7275086868&matt_event_ts=1794175425251&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=e5a40b52-0800-441f-87f5-4e1314ab3d3d#polycard_client=recommendations_home_affiliate-profile&wid=MLB7275086868&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=269ecc46-d5f2-41bd-a1cb-5aa6cf9ed5fc&tracking_id=f9499620-fb50-41c0-86f1-b4c29e41ad63&c_id=/home/card-featured/element&c_uid=102b4e48-1239-40b6-b71f-4fdcffeabf64",
             "imagem": "/imgs/Medidor de energia para quadro elétrico001.webp"
         },
         {
             "titulo": "Fita LED com controlador",
             "etiqueta": "ECONOMIA",
             "descricao": "Iluminação eficiente e decorativa.",
-            "link": "https://meli.la/2cYgdgi",
+            "link": "https://www.mercadolivre.com.br/fita-led-ws2811-5m-enderecavel-300-leds-ip20-controladora/up/MLBU2209248299?pdp_filters=item_id%3AMLB3050471175&matt_event_ts=1794175411015&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=7bacc679-6483-42a4-86a2-22d6194240d8#polycard_client=recommendations_home_affiliate-profile&wid=MLB3050471175&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=00ed7c26-64fe-43a9-ad6a-c5a3d1f72c7c&tracking_id=197d950a-9dba-4412-8601-a77e6582584a&c_id=/home/card-featured/element&c_uid=9818569e-01da-48f0-903f-7d7b38942879",
             "imagem": "/imgs/Fita LED com controlador001.webp"
         },
         {
             "titulo": "Plugue inteligente com monitoramento",
             "etiqueta": "ECONOMIA",
             "descricao": "Automatize aparelhos e acompanhe o consumo.",
-            "link": "https://meli.la/2MQgXbt",
+            "link": "https://www.mercadolivre.com.br/tomadas-inteligente-wifi-16a-bivolt-smart-plug-com-monitoramento-de-energia-compativel-alexa-googlehome-tuya-smart-life-controle-remoto-app-automacao-residencial-casa-inteligente-branco-forestory/p/MLB68020194?matt_event_ts=1794175384427&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=a3b5edcb-e3c0-4ab6-b597-8ff0ca4cb94a#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=64789bff-d77f-4da3-84e7-5bdd839decd7&tracking_id=cddf069b-701c-4bf3-8221-23847dac0e42&c_id=/home/card-featured/element&c_uid=710b34a3-a626-485d-84e2-e5bbc6387062",
             "imagem": "/imgs/Plugue inteligente com monitoramento001.webp"
         }
     ],
@@ -697,35 +697,35 @@ const catalogoNovo = {
             "titulo": "Compressor de ar portátil 12V",
             "etiqueta": "AUTO",
             "descricao": "Calibre os pneus em qualquer lugar.",
-            "link": "https://meli.la/2Ga3vH8",
+            "link": "https://www.mercadolivre.com.br/compressor-de-ar-eletrico-portatil-importway-iwmca30020-0082hp/p/MLB19043150?pdp_filters=item_id%3AMLB4288163933&matt_event_ts=1794175163875&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=4674dead-088d-43b8-bb6c-62b228f61403#polycard_client=recommendations_home_affiliate-profile&wid=MLB4288163933&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=dac962f9-eb85-493f-88cb-2add9a116ed0&tracking_id=fee22f34-a4ab-46b7-b5df-c0d63d8c0e0e&c_id=/home/card-featured/element&c_uid=819573d4-7eb9-4f45-b6f1-4f0c0a5070dd",
             "imagem": "/imgs/Compressor de ar portátil 12V001.webp"
         },
         {
             "titulo": "Calibrador digital de pneus",
             "etiqueta": "AUTO",
             "descricao": "Mantenha a pressão correta e economize combustível.",
-            "link": "https://meli.la/1naGP7L",
+            "link": "https://www.mercadolivre.com.br/mini-compressor-digital-portatil-cartel-barber-shop-para-carro-moto-e-bicicleta-com-calibrador-digital-inflador-eletrico-de-pneus-12v-display-lcd-lanterna-led-compacto-e-recarregavel-preto/p/MLB74438571?pdp_filters=item_id%3AMLB6673403614&matt_event_ts=1794175150192&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=59d260cd-0076-46ae-8f1c-b980c43a663c#polycard_client=recommendations_home_affiliate-profile&wid=MLB6673403614&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=3ac01a4b-b832-4b5c-a639-dac5995d9265&tracking_id=d3431ab2-b32c-4c98-b265-6edcadc8ffee&c_id=/home/card-featured/element&c_uid=663f5c8c-d18c-4564-83c4-7fbc6fbe9bf0",
             "imagem": "/imgs/Calibrador digital de pneus001.webp"
         },
         {
             "titulo": "Scanner automotivo OBD2 Bluetooth",
             "etiqueta": "AUTO",
             "descricao": "Diagnostique falhas do veículo pelo celular.",
-            "link": "https://meli.la/1TtzBsC",
+            "link": "https://www.mercadolivre.com.br/scanner-automotivo-bluetooth-obd2-eml-327-android-ios-obdii/up/MLBU1458199008?pdp_filters=item_id%3AMLB3716085244&matt_event_ts=1794175130454&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=4803bc7c-165e-4f28-8dc7-3c6e79da45a8#polycard_client=recommendations_home_affiliate-profile&wid=MLB3716085244&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=2f4d0181-211b-4cfb-9499-4d9ba36687b8&tracking_id=eaf6a1b5-72e7-44de-bdd3-fa46f0c54e86&c_id=/home/card-featured/element&c_uid=ec10d86d-8b02-4378-b13b-d4bb67aba798",
             "imagem": "/imgs/Scanner automotivo OBD2 Bluetooth001.webp"
         },
         {
             "titulo": "Medidor digital de pressão dos pneus",
             "etiqueta": "AUTO",
             "descricao": "Confira a calibragem com precisão.",
-            "link": "https://meli.la/1s4mk3f",
+            "link": "https://www.mercadolivre.com.br/medidor-digital-pressao-p-pneus-mdp-151-vonder/p/MLB65916503?pdp_filters=item_id%3AMLB6826373514&matt_event_ts=1794175113239&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=3f280f8d-530e-43d9-aaa1-8a4e7dedc4a1#polycard_client=recommendations_home_affiliate-profile&wid=MLB6826373514&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=16934ddf-f46e-48e6-a35b-b136ebb210dc&tracking_id=997f1760-c938-4fd3-85e5-e3915f117b46&c_id=/home/card-featured/element&c_uid=44e422a1-940c-4185-9fab-cd4b222facd1",
             "imagem": "/imgs/Medidor digital de pressão dos pneus001.webp"
         },
         {
             "titulo": "Suporte de celular automotivo",
             "etiqueta": "AUTO",
             "descricao": "Use o GPS com segurança no carro.",
-            "link": "https://meli.la/15RUCAb",
+            "link": "https://www.mercadolivre.com.br/suporte-de-celular-veicular-automotivo-360-universal-ajustavel-com-ventosa-gruda-no-painel-vidro-parabrisa-para-gps-encaixe-giratorio-articulado-com-trava-automatica-anti-queda-para-carro-caminhao/p/MLB38802877?pdp_filters=item_id%3AMLB6175281792&matt_event_ts=1794174818761&matt_d2id=ec6538f8-2468-4774-bde6-8039367292f6&matt_tracing_id=d29502c0-f0c5-4d6a-914d-356157e0ce66#polycard_client=recommendations_home_affiliate-profile&wid=MLB6175281792&sid=recommendations-landings-me&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=26288835&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=b6cb23e8-9cb3-4d58-9f08-b85064d0eef8&tracking_id=590463b9-0132-4328-8475-47002d53afa7&c_id=/home/card-featured/element&c_uid=60b9706d-ef05-4023-8e59-b5438558aedd",
             "imagem": "/imgs/Suporte de celular automotivo001.webp"
         }
     ]
