@@ -181,7 +181,7 @@ test.describe('Estrutura e SEO do site', () => {
 
     test('todas as imagens referenciadas existem', () => {
         const arquivos = FILES.filter(f => /\.(html|js|css|json)$/i.test(f));
-        const regex = /(?:https?:\/\/[^\/\s"']+)?\/(?:\.\.\/)?imgs\/([^"'\s<>)]+)/g;
+        const regex = /(?:https?:\/\/[^\/\s"']+)?\/(?:\.\.\/)?imgs\/([^"'<>)]+)/g;
 
         for (const file of arquivos) {
             const content = read(file);

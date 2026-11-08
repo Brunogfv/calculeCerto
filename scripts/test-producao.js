@@ -18,7 +18,9 @@ function isAffiliateLink(url) {
 function isProductSpecific(url) {
   const u = url.toLowerCase();
   if (u.includes('amazon')) return /\/dp\//.test(u);
-  if (u.includes('mercadolivre')) return /\/p\//.test(u);
+  if (u.includes('mercadolivre')) {
+    return /\/p\/MLB/i.test(u) || /\/up\/MLBU/i.test(u) || /produto\.mercadolivre\.com\.br\/MLB-/i.test(u) || /[?&](?:wid|item_id)=MLB/i.test(u);
+  }
   return u.includes('/dp/') || u.includes('/p/') || /[?&]p=/i.test(u);
 }
 

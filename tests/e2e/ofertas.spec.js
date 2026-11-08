@@ -74,4 +74,14 @@ test.describe('Ofertas — grade relacionada e rail lateral', () => {
         await expect(page.locator('#anuncio-lateral')).toHaveCount(0);
         await expect(page.locator('.layout-ofertas')).toHaveCount(0);
     });
+
+    test('energia tem ofertas específicas de consumo', async ({ page }) => {
+        await bloquearExternos(page);
+        await page.setViewportSize({ width: 1366, height: 900 });
+        await page.goto('/calculadoras/energia.html', { waitUntil: 'domcontentloaded' });
+
+        const container = await contarOfertas(page);
+        await expect.poll(() => container.locator('.oferta-card').count()).toBeGreaterThanOrEqual(3);
+        await expect(container.locator('.oferta-etiqueta').first()).toHaveText('ECONOMIA');
+    });
 });
