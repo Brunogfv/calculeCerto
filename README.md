@@ -141,6 +141,23 @@ npm run build:deploy
 
 Roda o build completo e prepara `dist/` com apenas os arquivos de produção (HTML, assets com hash, imagens, Pagefind, `_headers`, `_redirects`, sitemap etc.). Fontes, testes, scripts, docs e `node_modules` ficam fora do deploy.
 
+### Ofertas e publicidade
+
+O catálogo fica em `js/produtos.js`:
+
+- `bancoDeAnuncios`: produtos por categoria, com título, descrição, imagem e link de afiliado.
+- `categoriasPagina`: apelidos das calculadoras que não têm categoria própria (ex.: `tdee` → `tmb`, `imposto-renda` → `juros`).
+- `categoriasRelacionadas`: categorias complementares usadas quando a principal tem poucos itens.
+
+Ao carregar, o script:
+
+1. Deduplica produtos por título.
+2. Escolhe 3 ofertas no desktop (2 no mobile) e 4 na home, com rotação diária.
+3. Renderiza a grade após o resultado e, no desktop, um rail sticky de 300px.
+4. Informa `Publicidade`/`Ofertas de parceiros` e envia eventos `ad_impression` e `clique_anuncio_afiliado` ao GA4.
+
+Para adicionar um produto, inclua-o em `bancoDeAnuncios` com um link específico do Mercado Livre e uma imagem local em `imgs/`. Páginas sem categoria (`energia`) continuam sem ofertas.
+
 ## Testes
 
 Suíte permanente com Playwright Test:
@@ -149,11 +166,12 @@ Suíte permanente com Playwright Test:
 npm test
 ```
 
-O comando executa `npm run build` e depois **43 testes**:
+O comando executa `npm run build` e depois **47 testes**:
 
 - Fiscal 2026: INSS, IRRF, redutor, 13º e exemplos oficiais.
 - Estrutura/SEO: header/footer, canonical/robots, assets versionados, OG/Twitter, JSON-LD, sitemap, imagens, favicon e afiliados.
 - Navegação: header/footer sem JS, menu, tema, busca, ofertas Mercado Livre, cálculos, dependências dinâmicas e Pagefind.
+- Ofertas: grade relacionada, aliases de categoria, rail sticky no desktop e layout mobile.
 - Acessibilidade: skip link, dropdowns por teclado, foco visível, ARIA, live region e `aria-current`.
 - Chart.js local nas 13 páginas.
 - CSP sem violações.
