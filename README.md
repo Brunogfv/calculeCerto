@@ -158,6 +158,12 @@ Ao carregar, o script:
 
 Para adicionar um produto, inclua-o em `bancoDeAnuncios` com um link específico do Mercado Livre e uma imagem local em `imgs/`. Páginas sem uma categoria cadastrada continuam sem ofertas.
 
+## Analytics
+
+O módulo **Portal das Contas Analytics** está em desenvolvimento na branch `feat/portal-analytics`. A Fase 2 (banco e endpoint de coleta) está documentada em [`docs/analytics/fase-2.md`](docs/analytics/fase-2.md), incluindo configuração do Neon, variáveis de ambiente, migrações, testes e feature flag.
+
+A ingestão permanece desligada (`ANALYTICS_INGEST_ENABLED=false`) até a implementação do consentimento na Fase 3.
+
 ## Testes
 
 Suíte permanente com Playwright Test:

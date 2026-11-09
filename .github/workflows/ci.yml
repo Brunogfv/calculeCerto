@@ -93,3 +93,44 @@ jobs:
             https://portaldascontas.com.br/calculadoras/imc
           uploadArtifacts: true
           temporaryPublicStorage: true
+
+  analytics-backend:
+    name: Analytics backend (PostgreSQL temporário)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: portal_analytics_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      NODE_ENV: test
+      TEST_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/portal_analytics_test
+      ANALYTICS_TEST_DB: '1'
+      RATE_LIMIT_HMAC_SECRET: segredo-somente-para-ci-com-32-bytes
+      ALLOWED_ORIGINS: http://127.0.0.1:8765
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v7
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Aplicar migrações no PostgreSQL temporário
+        run: npm run db:migrate:test
+
+      - name: Rodar testes de analytics
+        run: npm run test:analytics

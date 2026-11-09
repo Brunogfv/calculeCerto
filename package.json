@@ -5,12 +5,19 @@
     "build:sitemap": "node scripts/generate-sitemap.js",
     "a11y:apply": "node scripts/apply-accessibility.js",
     "build:deploy": "npm run build && node scripts/prepare-deploy.js",
+    "db:migrate:test": "node scripts/migrate.mjs --test",
+    "db:migrate:prod": "node scripts/migrate.mjs --production",
+    "db:cleanup:rate-limits:test": "node scripts/cleanup-rate-limits.mjs --test",
+    "test:analytics": "node --test tests/analytics/validation.spec.mjs tests/analytics/rate-limit.spec.mjs tests/analytics/collect.integration.spec.mjs",
     "test": "npm run build && playwright test",
     "test:ui": "playwright test --ui",
     "test:report": "playwright show-report"
   },
   "dependencies": {
-    "pagefind": "^1.4.0"
+    "pagefind": "^1.4.0",
+    "pg": "^8.23.1",
+    "ua-parser-js": "^2.0.10",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",

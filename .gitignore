@@ -2,6 +2,11 @@ node_modules/
 .vscode/
 scratch/
 
+# Analytics — segredos locais
+.env
+.env.*
+!.env.example
+
 # Logs
 logs/
 *.log
