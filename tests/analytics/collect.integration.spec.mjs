@@ -80,7 +80,7 @@ suite('collect — integração com PostgreSQL de teste', () => {
     });
 
     beforeEach(async () => {
-        await pool.query('TRUNCATE visitors, sessions, pageviews, events, affiliate_clicks, rate_limits RESTART IDENTITY CASCADE');
+        await pool.query('TRUNCATE visitors, sessions, pageviews, events, affiliate_clicks, ingest_events, rate_limits RESTART IDENTITY CASCADE');
     });
 
     test('não grava nada enquanto a ingestão estiver desligada', async () => {
@@ -216,5 +216,81 @@ suite('collect — integração com PostgreSQL de teste', () => {
         assert.equal(resposta.status, 202);
         const session = (await pool.query('SELECT is_test FROM sessions WHERE session_id = $1', [p.session_id])).rows[0];
         assert.equal(session.is_test, true);
+    });
+
+    test('permite múltiplos eventos legítimos na mesma sessão', async () => {
+        const sessionId = crypto.randomUUID();
+        const visitorId = 'v_' + crypto.randomBytes(12).toString('hex');
+
+        const pageA = payload('pageview');
+        const pageB = payload('pageview');
+        pageA.session_id = sessionId; pageA.visitor_id = visitorId;
+        pageB.session_id = sessionId; pageB.visitor_id = visitorId;
+
+        const clickA = payload('affiliate_click', { product: 'Produto A', category: 'imc', slot: 'pos-resultado' });
+        const clickB = payload('affiliate_click', { product: 'Produto B', category: 'imc', slot: 'rail' });
+        clickA.session_id = sessionId; clickA.visitor_id = visitorId;
+        clickB.session_id = sessionId; clickB.visitor_id = visitorId;
+
+        const calcA = payload('calculator_complete', { calculator: 'IMC' });
+        const calcB = payload('calculator_complete', { calculator: 'IMC' });
+        calcA.session_id = sessionId; calcA.visitor_id = visitorId;
+        calcB.session_id = sessionId; calcB.visitor_id = visitorId;
+
+        for (const evento of [pageA, pageB, clickA, clickB, calcA, calcB]) {
+            assert.equal((await handler(request(evento))).status, 202);
+        }
+
+        const session = (await pool.query('SELECT * FROM sessions WHERE session_id = $1', [sessionId])).rows[0];
+        const pageviews = (await pool.query('SELECT count(*)::int AS n FROM pageviews WHERE session_id = $1', [sessionId])).rows[0].n;
+        const clicks = (await pool.query('SELECT count(*)::int AS n FROM affiliate_clicks WHERE session_id = $1', [sessionId])).rows[0].n;
+        const events = (await pool.query('SELECT count(*)::int AS n FROM events WHERE session_id = $1', [sessionId])).rows[0].n;
+
+        assert.equal(session.pageview_count, 2);
+        assert.equal(session.event_count, 4);
+        assert.equal(pageviews, 2);
+        assert.equal(clicks, 2);
+        assert.equal(events, 4);
+    });
+
+    test('deduplica event_id globalmente entre pageview e evento', async () => {
+        const page = payload('pageview');
+        const calc = payload('calculator_complete', { calculator: 'IMC' });
+        calc.event_id = page.event_id;
+        calc.session_id = page.session_id;
+        calc.visitor_id = page.visitor_id;
+
+        assert.equal((await handler(request(page))).status, 202);
+        assert.equal((await handler(request(calc))).status, 202);
+
+        assert.equal((await pool.query('SELECT count(*)::int AS n FROM pageviews')).rows[0].n, 1);
+        assert.equal((await pool.query('SELECT count(*)::int AS n FROM events')).rows[0].n, 0);
+        assert.equal((await pool.query('SELECT count(*)::int AS n FROM ingest_events')).rows[0].n, 1);
+        const session = (await pool.query('SELECT pageview_count, event_count FROM sessions WHERE session_id = $1', [page.session_id])).rows[0];
+        assert.equal(session.pageview_count, 1);
+        assert.equal(session.event_count, 0);
+    });
+
+    test('rejeita session_id reutilizado por outro visitante', async () => {
+        const first = payload('pageview');
+        assert.equal((await handler(request(first))).status, 202);
+
+        const second = payload('pageview');
+        second.session_id = first.session_id;
+        second.visitor_id = 'v_' + crypto.randomBytes(12).toString('hex');
+        assert.equal((await handler(request(second))).status, 400);
+
+        assert.equal((await pool.query('SELECT count(*)::int AS n FROM pageviews')).rows[0].n, 1);
+        const session = (await pool.query('SELECT visitor_id FROM sessions WHERE session_id = $1', [first.session_id])).rows[0];
+        assert.equal(session.visitor_id, first.visitor_id);
+    });
+
+    test('exige segredo HMAC com pelo menos 32 bytes', async () => {
+        const curto = createCollectHandler({
+            getPool: () => pool,
+            env: { ...envBase, RATE_LIMIT_HMAC_SECRET: 'curto' }
+        });
+        assert.equal((await curto(request(payload()))).status, 503);
+        assert.equal((await pool.query('SELECT count(*)::int AS n FROM sessions')).rows[0].n, 0);
     });
 });

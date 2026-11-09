@@ -16,6 +16,13 @@ import { parseCollectPayload } from './validation.mjs';
 
 const BOT_INICIAL = 'INDETERMINADO';
 
+class SessionVisitorMismatchError extends Error {
+    constructor() {
+        super('session_visitor_mismatch');
+        this.code = 'session_visitor_mismatch';
+    }
+}
+
 export function createCollectHandler({ getPool, env = process.env, now = () => new Date() }) {
     const config = readConfig(env);
 
@@ -24,7 +31,7 @@ export function createCollectHandler({ getPool, env = process.env, now = () => n
             return emptyResponse(204, { 'X-Analytics-Status': 'disabled' });
         }
 
-        if (!config.hmacSecret) {
+        if (!config.hmacSecret || Buffer.byteLength(config.hmacSecret, 'utf8') < 32) {
             return jsonResponse(503, { error: 'analytics_not_configured' });
         }
 
@@ -87,6 +94,23 @@ export function createCollectHandler({ getPool, env = process.env, now = () => n
             }
 
             await withTransaction(pool, async (client) => {
+                const existente = await client.query(
+                    'SELECT visitor_id FROM sessions WHERE session_id = $1',
+                    [payload.session_id]
+                );
+                if (existente.rowCount > 0 && existente.rows[0].visitor_id !== payload.visitor_id) {
+                    throw new SessionVisitorMismatchError();
+                }
+
+                const ingerido = await client.query(
+                    `INSERT INTO ingest_events (event_id, event_name, received_at)
+                     VALUES ($1, $2, $3)
+                     ON CONFLICT (event_id) DO NOTHING
+                     RETURNING event_id`,
+                    [payload.event_id, payload.event, recebidoEm]
+                );
+                if (ingerido.rowCount === 0) return;
+
                 await client.query(
                     `INSERT INTO visitors (visitor_id, first_seen_at, last_seen_at)
                      VALUES ($1, $2, $2)
@@ -257,6 +281,9 @@ export function createCollectHandler({ getPool, env = process.env, now = () => n
 
             return jsonResponse(202, { ok: true });
         } catch (erro) {
+            if (erro instanceof SessionVisitorMismatchError) {
+                return jsonResponse(400, { error: 'session_visitor_mismatch' });
+            }
             console.error('analytics_collect_error', erro?.code || 'unknown');
             return jsonResponse(503, { error: 'analytics_unavailable' });
         }

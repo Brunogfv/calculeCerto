@@ -17,9 +17,10 @@ function obterUrl() {
     }
 
     if (modoProducao) {
-        if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL ausente.');
+        const url = process.env.MIGRATION_DATABASE_URL || process.env.DATABASE_URL;
+        if (!url) throw new Error('MIGRATION_DATABASE_URL ou DATABASE_URL ausente.');
         if (process.env.NODE_ENV === 'test') throw new Error('Migração de produção bloqueada em NODE_ENV=test.');
-        return process.env.DATABASE_URL;
+        return url;
     }
 
     if (!process.env.TEST_DATABASE_URL) throw new Error('TEST_DATABASE_URL ausente para migração de teste.');
