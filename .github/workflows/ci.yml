@@ -20,7 +20,7 @@ jobs:
           node-version: '22'
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
 
       - name: Instalar navegadores do Playwright
         run: npx playwright install --with-deps chromium
@@ -30,6 +30,9 @@ jobs:
 
       - name: Validar build de deploy
         run: node scripts/prepare-deploy.js
+
+      - name: Verificar isolamento B1
+        run: npm run test:isolation
 
       - name: Salvar relatório do Playwright
         if: always()
@@ -66,7 +69,7 @@ jobs:
           node-version: '22'
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
 
       - name: Instalar navegadores do Playwright
         run: npx playwright install --with-deps chromium
@@ -103,7 +106,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: portal_analytics_test
+          POSTGRES_DB: validation_b1_test
         ports:
           - 5432:5432
         options: >-
@@ -113,7 +116,7 @@ jobs:
           --health-retries 5
     env:
       NODE_ENV: test
-      TEST_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/portal_analytics_test
+      TEST_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/validation_b1_test
       ANALYTICS_TEST_DB: '1'
       RATE_LIMIT_HMAC_SECRET: segredo-somente-para-ci-com-32-bytes
       ALLOWED_ORIGINS: http://127.0.0.1:8765
@@ -127,10 +130,56 @@ jobs:
           node-version: '22'
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
+
+      - name: Preparar roles PostgreSQL de teste
+        run: npm run db:roles:test
 
       - name: Aplicar migrações no PostgreSQL temporário
         run: npm run db:migrate:test
 
       - name: Rodar testes de analytics
         run: npm run test:analytics
+
+  b1-artifact-linux:
+    name: B1 artifact and deploy gate (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v7
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Instalar dependências B1
+        run: npm ci --no-audit --no-fund
+        working-directory: validation-b1
+
+      - name: Instalar navegador do consentimento B1
+        run: npx playwright install --with-deps chromium
+        working-directory: validation-b1
+
+      - name: Build B1 isolado
+        run: npm run sync:shared && npm run build
+        working-directory: validation-b1
+
+      - name: Testes B1, contrato, adversarial e symlink
+        run: |
+          set -o pipefail
+          node --test --test-concurrency=1 --test-reporter=tap \
+            tests/shared-manifest.spec.mjs \
+            tests/b1.spec.mjs \
+            tests/artifact.spec.mjs \
+            tests/gate.spec.mjs | tee /tmp/b1-tests.tap
+          ! grep -q '# SKIP' /tmp/b1-tests.tap
+        working-directory: validation-b1
+
+      - name: Consentimento B1
+        run: npm run test:browser
+        working-directory: validation-b1
+
+      - name: Build e validacao do gate sem publicar
+        run: npm run deploy:b1 -- --check
+        working-directory: validation-b1

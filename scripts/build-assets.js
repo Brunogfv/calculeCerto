@@ -15,7 +15,7 @@ const MODULES = new Set([
 
 
 
-const IGNORAR_HTML = /(^|[\\/])(node_modules|scratch|pagefind|\.git|Coverage)([\\/]|$)/i;
+const IGNORAR_HTML = /(^|[\\/])(node_modules|scratch|pagefind|\.git|Coverage|validation-b1)([\\/]|$)/i;
 
 function rel(...parts) {
     return path.join(...parts).replace(/\\/g, '/');

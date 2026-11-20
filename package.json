@@ -1,14 +1,18 @@
 {
   "scripts": {
-    "build": "node scripts/clean-build.js && npm run build:assets && npm run build:sitemap && node scripts/generate-html-redirects.js && node scripts/apply-accessibility.js && pagefind --site . --glob \"{index.html,calculadoras/**/*.html,artigos/**/*.html,paginas/*.html}\"",
+    "build": "node scripts/clean-build.js && node scripts/apply-analytics.js && npm run build:assets && npm run build:sitemap && node scripts/generate-html-redirects.js && node scripts/apply-accessibility.js && pagefind --site . --glob \"{index.html,calculadoras/**/*.html,artigos/**/*.html,paginas/*.html}\"",
+    "analytics:apply": "node scripts/apply-analytics.js",
     "build:assets": "node scripts/build-assets.js",
     "build:sitemap": "node scripts/generate-sitemap.js",
     "a11y:apply": "node scripts/apply-accessibility.js",
     "build:deploy": "npm run build && node scripts/prepare-deploy.js",
+    "db:roles:test": "node scripts/test-db.mjs",
     "db:migrate:test": "node scripts/migrate.mjs --test",
     "db:migrate:prod": "node scripts/migrate.mjs --production",
     "db:cleanup:rate-limits:test": "node scripts/cleanup-rate-limits.mjs --test",
-    "test:analytics": "node --test tests/analytics/validation.spec.mjs tests/analytics/rate-limit.spec.mjs tests/analytics/collect.integration.spec.mjs",
+    "db:cleanup:html-capture:test": "node scripts/cleanup-html-capture.mjs --test",
+    "test:isolation": "node scripts/check-b1-isolation.mjs",
+    "test:analytics": "node --test --test-concurrency=1 tests/analytics/validation.spec.mjs tests/analytics/rate-limit.spec.mjs tests/analytics/classifier.spec.mjs tests/analytics/capture-policy.spec.mjs tests/analytics/capture-edge.spec.mjs tests/analytics/capture-hardening.spec.mjs tests/analytics/imports.spec.mjs tests/analytics/capture-performance.spec.mjs tests/analytics/cleanup-retention.spec.mjs tests/analytics/cleanup-manual.spec.mjs tests/analytics/rate-limit-config.spec.mjs tests/analytics/collect.integration.spec.mjs tests/analytics/capture.integration.spec.mjs",
     "test": "npm run build && playwright test",
     "test:ui": "playwright test --ui",
     "test:report": "playwright show-report"

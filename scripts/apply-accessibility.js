@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const IGNORAR = /(^|[\\/])(node_modules|dist|pagefind|playwright-report|test-results|docs|tests|scripts|\.git)([\\/]|$)/i;
+const IGNORAR = /(^|[\\/])(node_modules|dist|pagefind|playwright-report|test-results|validation-b1|docs|tests|scripts|\.git)([\\/]|$)/i;
 const SKIP_TEXT = 'Pular para o conteúdo principal';
 const MAIN_ID = 'conteudo-principal';
 

@@ -3,7 +3,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const ARQUIVO = path.join(ROOT, '_redirects');
-const IGNORAR = /(^|[\\/])(node_modules|scratch|pagefind|\.git|Coverage|dist|tests|scripts|docs|playwright-report|test-results)([\\/]|$)/i;
+const IGNORAR = /(^|[\\/])(node_modules|scratch|pagefind|\.git|Coverage|dist|tests|scripts|docs|playwright-report|test-results|validation-b1)([\\/]|$)/i;
 const BEGIN = '# BEGIN HTML REDIRECTS (gerado por scripts/generate-html-redirects.js)';
 const END = '# END HTML REDIRECTS';
 

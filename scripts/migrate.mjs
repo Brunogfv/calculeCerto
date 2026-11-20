@@ -31,7 +31,7 @@ function obterUrl() {
 
     const nomeBanco = new URL(process.env.TEST_DATABASE_URL).pathname.replace(/^\//, '');
     if (!/test/i.test(nomeBanco)) {
-        throw new Error('O banco de teste precisa ter "test" no nome (ex.: portal_analytics_test).');
+        throw new Error('O banco de teste precisa ter "test" no nome (ex.: validation_b1_test).');
     }
 
     return process.env.TEST_DATABASE_URL;

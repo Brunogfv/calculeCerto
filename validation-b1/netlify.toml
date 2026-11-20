@@ -1,0 +1,11 @@
+[build]
+  command = "node scripts/build.mjs"
+  publish = "dist"
+  edge_functions = "netlify/edge-functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--omit=dev --ignore-scripts"
+
+[functions]
+  directory = "netlify/functions"

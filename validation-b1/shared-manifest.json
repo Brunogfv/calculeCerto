@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "files": {
+    "netlify/functions/capture-html.mjs": {
+      "source_sha256": "669c39813063e968ffb2f4c0fff6cc946b57d657928e4d06f396e240ee77c999",
+      "copied_sha256": "669c39813063e968ffb2f4c0fff6cc946b57d657928e4d06f396e240ee77c999"
+    },
+    "netlify/functions/cleanup-html-capture.mjs": {
+      "source_sha256": "c9f7dd040042c575644b89268dea897652760019a7113a08290e801a7e193a3a",
+      "copied_sha256": "c9f7dd040042c575644b89268dea897652760019a7113a08290e801a7e193a3a"
+    },
+    "netlify/functions/_lib/capture-handler.mjs": {
+      "source_sha256": "b87766d6e0390a0d5e14be34454d8431a3b07d647b4e350b313ccf2630eb4ca1",
+      "copied_sha256": "b87766d6e0390a0d5e14be34454d8431a3b07d647b4e350b313ccf2630eb4ca1"
+    },
+    "netlify/functions/_lib/capture-config.mjs": {
+      "source_sha256": "89a7de54fda9e0d508fa5dc5bc9c6dc310b369fad6d877bbe2d1139fb4f44730",
+      "copied_sha256": "89a7de54fda9e0d508fa5dc5bc9c6dc310b369fad6d877bbe2d1139fb4f44730"
+    },
+    "netlify/functions/_lib/capture-validation.mjs": {
+      "source_sha256": "9c053c7473e49a71808fd1e678a5b113b24dc9c508b85c784fd9b54ac9c1e788",
+      "copied_sha256": "9c053c7473e49a71808fd1e678a5b113b24dc9c508b85c784fd9b54ac9c1e788"
+    },
+    "netlify/functions/_lib/cleanup-html-capture.mjs": {
+      "source_sha256": "1bbdf4e1a316f2752ce0e8c060695d539d600293b307838bcd1397c8acd12564",
+      "copied_sha256": "1bbdf4e1a316f2752ce0e8c060695d539d600293b307838bcd1397c8acd12564"
+    },
+    "netlify/functions/_lib/cleanup-retention.mjs": {
+      "source_sha256": "228c2e45b29d0c60e78957bcd31c0460f7a07ed5e5783715ce9b1dcd597da819",
+      "copied_sha256": "228c2e45b29d0c60e78957bcd31c0460f7a07ed5e5783715ce9b1dcd597da819"
+    },
+    "netlify/functions/_lib/db.mjs": {
+      "source_sha256": "6f153a461ebcc7b5689100e7a9ab6c1662de6244f9d0ba51e5838633cdc94820",
+      "copied_sha256": "6f153a461ebcc7b5689100e7a9ab6c1662de6244f9d0ba51e5838633cdc94820"
+    },
+    "netlify/functions/_lib/http.mjs": {
+      "source_sha256": "818468e1e8e7e66d42a18c719b1068dfbfd7f6a37511d6c8315073e27f131929",
+      "copied_sha256": "818468e1e8e7e66d42a18c719b1068dfbfd7f6a37511d6c8315073e27f131929"
+    },
+    "netlify/edge-functions/html-capture.js": {
+      "source_sha256": "655a1bb9c52f204e822e24a96d6edb58217766649f266d3fa332ed2c6a5d9e86",
+      "copied_sha256": "655a1bb9c52f204e822e24a96d6edb58217766649f266d3fa332ed2c6a5d9e86"
+    },
+    "netlify/edge-functions/_lib/edge-capture.mjs": {
+      "source_sha256": "7a66cff0702b1263f7f125946f70205cae1e866a2eaafdf8a6083e15cce41bf1",
+      "copied_sha256": "7a66cff0702b1263f7f125946f70205cae1e866a2eaafdf8a6083e15cce41bf1"
+    },
+    "netlify/edge-functions/_lib/capture-policy.mjs": {
+      "source_sha256": "81de026b4035ed295d007a31f25416f2716bdf5e01575eada0cddf68ce1e1c85",
+      "copied_sha256": "81de026b4035ed295d007a31f25416f2716bdf5e01575eada0cddf68ce1e1c85"
+    },
+    "netlify/edge-functions/_lib/capture-limits.mjs": {
+      "source_sha256": "ab59256ddbc958cd1b19761d3605c94cd6790b2fc9f664d251d66c2d192b19bd",
+      "copied_sha256": "ab59256ddbc958cd1b19761d3605c94cd6790b2fc9f664d251d66c2d192b19bd"
+    },
+    "netlify/edge-functions/_lib/capture-signature.mjs": {
+      "source_sha256": "fb5a4c94cf8f9fc08e19b2b0e0be3cdb2c8feb0fda2b4b6ac999d74be7f5adfa",
+      "copied_sha256": "fb5a4c94cf8f9fc08e19b2b0e0be3cdb2c8feb0fda2b4b6ac999d74be7f5adfa"
+    },
+    "netlify/edge-functions/_lib/edge-env.mjs": {
+      "source_sha256": "e349d2068e92cfee886344ea6ac1f701f58add0cc9334a4782ec59b8f540f21c",
+      "copied_sha256": "e349d2068e92cfee886344ea6ac1f701f58add0cc9334a4782ec59b8f540f21c"
+    },
+    "netlify/edge-functions/_lib/classifier.mjs": {
+      "source_sha256": "2f6c3020fe4b2189974ed21d30399ed55140f312faebb2d7801d19ca7503a42b",
+      "copied_sha256": "2f6c3020fe4b2189974ed21d30399ed55140f312faebb2d7801d19ca7503a42b"
+    }
+  }
+}

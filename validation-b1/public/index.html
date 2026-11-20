@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="referrer" content="no-referrer">
+    <title>Ambiente de validação técnica — Portal das Contas</title>
+    <link rel="stylesheet" href="/b1.css">
+    <script src="/b1-consent.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Ambiente técnico de validação</h1>
+        <p class="aviso">
+            Esta página existe apenas para validar a captura técnica de documentos HTML.
+            Não é o Portal das Contas, não contém calculadoras, anúncios ou conteúdo para o público
+            geral e não deve ser indexada.
+        </p>
+
+        <section aria-labelledby="consent-title">
+            <h2 id="consent-title">Consentimento de analytics</h2>
+            <p>
+                O controle abaixo grava apenas a preferência local usada pelo teste. Nenhum evento é
+                enviado pelo navegador antes do consentimento. A captura, quando habilitada no
+                servidor, ocorre na próxima navegação para esta página.
+            </p>
+            <div class="acoes">
+                <button type="button" id="b1-accept">Aceitar analytics</button>
+                <button type="button" id="b1-reject">Recusar</button>
+                <button type="button" id="b1-withdraw">Retirar consentimento</button>
+                <button type="button" id="b1-reload">Recarregar para testar</button>
+            </div>
+            <p id="b1-status" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section aria-labelledby="diag-title">
+            <h2 id="diag-title">Diagnóstico local</h2>
+            <dl>
+                <dt>Cookie de consentimento</dt>
+                <dd id="b1-cookie">—</dd>
+                <dt>Preferência local</dt>
+                <dd id="b1-storage">—</dd>
+                <dt>DNT/GPC</dt>
+                <dd id="b1-privacy">—</dd>
+                <dt>Coletor no navegador</dt>
+                <dd>Nenhuma requisição automática, sendBeacon, XHR ou fetch é feita por esta página.</dd>
+                <dt>Endpoint de servidor</dt>
+                <dd>Coleta interna protegida por HMAC; o caminho não é exibido nesta página.</dd>
+            </dl>
+            <p class="nota">
+                O estado das flags de captura e a configuração do banco pertencem ao ambiente de
+                deploy e não são exibidos nesta página.
+            </p>
+        </section>
+
+        <p class="rodape">
+            <a href="/validacao-encerrada.html">Página de encerramento do ambiente</a>
+        </p>
+    </main>
+</body>
+</html>

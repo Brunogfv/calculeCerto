@@ -1,0 +1,27 @@
+{
+  "name": "portal-contas-b1-validation",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ambiente publico minimo e isolado para validacao da captura HTML do Portal das Contas.",
+  "scripts": {
+    "sync:shared": "node scripts/sync-shared.mjs",
+    "build": "node scripts/build.mjs",
+    "package:deploy": "npm run sync:shared && npm run build && node scripts/package-deploy.mjs",
+    "deploy:b1": "node scripts/deploy-b1.mjs",
+    "test": "node --test --test-concurrency=1 tests/shared-manifest.spec.mjs tests/b1.spec.mjs tests/artifact.spec.mjs tests/gate.spec.mjs",
+    "test:browser": "node --test tests/browser-consent.spec.mjs",
+    "test:all": "npm run sync:shared && npm run build && npm test && npm run test:browser"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "pg": "8.23.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "netlify-cli": "27.20.0",
+    "playwright": "1.64.1"
+  }
+}

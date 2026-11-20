@@ -6,15 +6,14 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { createCollectHandler } from '../../netlify/functions/_lib/collect-handler.mjs';
 import { createPool } from '../../netlify/functions/_lib/db.mjs';
+import { prepararRolesTeste, validarConfiguracaoTeste } from '../../scripts/test-db.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const testUrl = process.env.TEST_DATABASE_URL;
 const nomeBanco = testUrl ? new URL(testUrl).pathname.replace(/^\//, '') : '';
-const isolado = !!testUrl
-    && process.env.ANALYTICS_TEST_DB === '1'
-    && process.env.NODE_ENV !== 'production'
-    && testUrl !== process.env.DATABASE_URL
-    && /test/i.test(nomeBanco);
+const configurado = !!testUrl && process.env.ANALYTICS_TEST_DB === '1';
+if (configurado) validarConfiguracaoTeste(testUrl);
+const isolado = configurado && /test/i.test(nomeBanco);
 
 const suite = isolado ? describe : describe.skip;
 const ORIGIN = 'http://127.0.0.1:8765';
@@ -66,7 +65,8 @@ suite('collect — integração com PostgreSQL de teste', () => {
     let pool;
     let handler;
 
-    before(() => {
+    before(async () => {
+        await prepararRolesTeste(testUrl);
         execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'migrate.mjs'), '--test'], {
             env: { ...process.env, TEST_DATABASE_URL: testUrl, ANALYTICS_TEST_DB: '1' },
             stdio: 'pipe'
