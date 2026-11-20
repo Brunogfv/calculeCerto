@@ -1,0 +1,14 @@
+# Deterministic text checkouts for CI and the B1 integrity contract.
+validation-b1/** text eol=lf
+netlify/**/*.mjs text eol=lf
+netlify/**/*.js text eol=lf
+scripts/*.mjs text eol=lf
+scripts/*.js text eol=lf
+tests/analytics/*.mjs text eol=lf
+tests/unit/*.js text eol=lf
+tests/e2e/*.js text eol=lf
+db/migrations/*.sql text eol=lf
+css/*.css text eol=lf
+js/*.js text eol=lf
+.github/workflows/*.yml text eol=lf
+package.json text eol=lf

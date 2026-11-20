@@ -4,7 +4,7 @@ const { test, expect } = require('@playwright/test');
 
 const ROOT = path.resolve(__dirname, '../..');
 const SITE = 'https://portaldascontas.com.br';
-const IGNORAR = /(^|[\\/])(node_modules|scratch|pagefind|\.git|Coverage|dist|tests|scripts|docs|playwright-report|test-results)([\\/]|$)/i;
+const IGNORAR = /(^|[\\/])(node_modules|scratch|pagefind|\.git|Coverage|dist|tests|scripts|docs|playwright-report|test-results|validation-b1|netlify)([\\/]|$)/i;
 
 function walk(dir) {
     let out = [];
