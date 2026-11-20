@@ -6,6 +6,14 @@ const { chromium } = require('playwright');
 const PORT = 3679;
 const ROOT = path.resolve(__dirname, '..');
 const REPORT = path.join(ROOT, 'relatorio-local.md');
+const EXCLUDED_SEGMENTS = new Set([
+  'node_modules', '.git', '.vscode', 'scratch', 'pagefind', '.github',
+  'dist', 'playwright-report', 'test-results', 'docs', 'validation-b1'
+]);
+
+function isExcludedPath(relativePath) {
+  return relativePath.split(/[\\/]/).some((segment) => EXCLUDED_SEGMENTS.has(segment));
+}
 
 const mime = {
   '.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css',
@@ -40,15 +48,15 @@ function startServer() {
   });
 }
 
-function collectHtmlFiles(dir) {
+function collectHtmlFiles(dir, root = ROOT) {
   const result = [];
   try {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
-      const rel = path.relative(ROOT, full).replace(/\\/g, '/');
+      const rel = path.relative(root, full).replace(/\\/g, '/');
+      if (isExcludedPath(rel)) continue;
       if (entry.isDirectory()) {
-        if (['node_modules', '.git', '.vscode', 'scratch', 'pagefind', '.github', 'dist', 'playwright-report', 'test-results', 'docs'].includes(entry.name)) continue;
-        result.push(...collectHtmlFiles(full));
+        result.push(...collectHtmlFiles(full, root));
       } else if (entry.isFile() && entry.name.endsWith('.html')) {
         result.push(rel);
       }
@@ -279,7 +287,11 @@ async function run() {
   process.exit(hasFailure ? 1 : 0);
 }
 
-run().catch((err) => {
-  console.error('Erro fatal:', err);
-  process.exit(1);
-});
+module.exports = { collectHtmlFiles, extractInternalLinks, isExcludedPath };
+
+if (require.main === module) {
+  run().catch((err) => {
+    console.error('Erro fatal:', err);
+    process.exit(1);
+  });
+}
