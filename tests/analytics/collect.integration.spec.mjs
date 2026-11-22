@@ -125,6 +125,44 @@ suite('collect — integração com PostgreSQL de teste', () => {
         assert.equal(Object.hasOwn(page, 'values'), false);
     });
 
+    test('nao persiste User-Agent bruto e mantem somente classificacao derivada', async () => {
+        const uaSintetico = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 SyntheticUA/9.9';
+        const p = payload();
+        assert.equal((await handler(request(p, { 'User-Agent': uaSintetico }))).status, 202);
+
+        const session = (await pool.query('SELECT * FROM sessions WHERE session_id = $1', [p.session_id])).rows[0];
+        assert.equal(Object.prototype.hasOwnProperty.call(session, 'user_agent'), false);
+        assert.equal(session.browser, 'Chrome');
+        assert.equal(session.os, 'Windows');
+        assert.equal(session.device_type, 'desktop');
+        assert.equal(JSON.stringify(session).includes('SyntheticUA'), false);
+
+        const colunas = (await pool.query(
+            `SELECT column_name FROM information_schema.columns
+             WHERE table_schema = 'public' AND lower(column_name) LIKE '%user_agent%'`
+        )).rows.map((linha) => linha.column_name);
+        assert.deepEqual(colunas, []);
+    });
+
+    test('erro de persistencia nao registra User-Agent bruto em log', async () => {
+        const logs = [];
+        const original = console.error;
+        console.error = (...args) => logs.push(args.map(String).join(' '));
+        try {
+            const falha = createCollectHandler({
+                getPool: () => ({
+                    query: async () => { throw Object.assign(new Error('db synthetic'), { code: '42501' }); }
+                }),
+                env: envBase
+            });
+            const resposta = await falha(request(payload(), { 'User-Agent': 'SyntheticUALog/1.0' }));
+            assert.equal(resposta.status, 503);
+            assert.equal(logs.some((linha) => linha.includes('SyntheticUALog')), false);
+        } finally {
+            console.error = original;
+        }
+    });
+
     test('deduplica pageview pelo event_id', async () => {
         const p = payload();
         assert.equal((await handler(request(p))).status, 202);
