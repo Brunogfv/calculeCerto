@@ -80,11 +80,12 @@ npm run build
 Executa:
 
 1. Limpa `dist/` e `pagefind/`.
-2. Minifica e versiona CSS/JS (`scripts/build-assets.js`).
-3. Gera `sitemap.xml` (`scripts/generate-sitemap.js`).
-4. Gera os redirects `.html` → URL limpa (`scripts/generate-html-redirects.js`).
-5. Aplica acessibilidade estrutural (`scripts/apply-accessibility.js`).
-6. Gera o índice do Pagefind em `pagefind/` (apenas HTML de conteúdo).
+2. Aplica o bloco de analytics/consentimento em todos os HTMLs (`scripts/apply-analytics.js`).
+3. Minifica e versiona CSS/JS (`scripts/build-assets.js`).
+4. Gera `sitemap.xml` (`scripts/generate-sitemap.js`).
+5. Gera os redirects `.html` → URL limpa (`scripts/generate-html-redirects.js`).
+6. Aplica acessibilidade estrutural (`scripts/apply-accessibility.js`).
+7. Gera o índice do Pagefind em `pagefind/` (apenas HTML de conteúdo).
 
 ### Apenas assets
 
@@ -160,9 +161,17 @@ Para adicionar um produto, inclua-o em `bancoDeAnuncios` com um link específico
 
 ## Analytics
 
-O módulo **Portal das Contas Analytics** está em desenvolvimento na branch `feat/portal-analytics`. A Fase 2 (banco e endpoint de coleta) está documentada em [`docs/analytics/fase-2.md`](docs/analytics/fase-2.md), incluindo configuração do Neon, variáveis de ambiente, migrações, testes e feature flag.
+O módulo **Portal das Contas Analytics** está em desenvolvimento na branch `feat/portal-analytics`. A Fase 2 (banco e endpoint de coleta) está documentada em [`docs/analytics/fase-2.md`](docs/analytics/fase-2.md), incluindo configuração do Neon, variáveis de ambiente, migrações, testes e feature flag. A Fase 3 (consentimento, Consent Mode v2, collect no navegador e privacidade) está em [`docs/analytics/fase-3.md`](docs/analytics/fase-3.md). O bloco de consentimento é aplicado no build por `scripts/apply-analytics.js`.
 
-A ingestão permanece desligada (`ANALYTICS_INGEST_ENABLED=false`) até a implementação do consentimento na Fase 3.
+A ingestão permanece desligada (`ANALYTICS_INGEST_ENABLED=false`) até a validação da Fase 3 e autorização explícita. O banner e o coletor são aplicados no build, mas o endpoint segue respondendo `204` sem gravar enquanto a flag estiver desligada.
+
+O plano técnico da Fase 4 (captura HTML no edge, identificação de automações e classificação de tráfego) está em [`docs/analytics/fase-4-plano.md`](docs/analytics/fase-4-plano.md), com as decisões em [`docs/analytics/fase-4-decisoes.md`](docs/analytics/fase-4-decisoes.md) e a LIA em [`docs/analytics/fase-4-lia.md`](docs/analytics/fase-4-lia.md).
+
+A Fase 4 está implementada **somente em ambiente local/teste**: Edge Function `html-capture`, Function interna `capture-html`, classificador compartilhado, migrations de teste `003` a `005`, cookie de consentimento `pca_edge_consent`, roles restritas `analytics_runtime`/`analytics_cleanup`, limpeza transacional e Scheduled Function de retenção (`HTML_CAPTURE_CLEANUP_ENABLED=false`). `EDGE_CAPTURE_ENABLED`, `EDGE_ANALYTICS_ENABLED` e `EDGE_SECURITY_ENABLED` permanecem desligadas; não há deploy, migração de produção ou ativação. A entrega local e as limitações estão em [`docs/analytics/fase-4-implementacao.md`](docs/analytics/fase-4-implementacao.md); o procedimento isolado de homologação está em [`docs/analytics/fase-4-homologacao.md`](docs/analytics/fase-4-homologacao.md).
+
+A Fase 5F.1.1 investigou a comunicação Edge → Function em projeto privado, a exposição de variáveis no Edge, o cookie de consentimento, timeout, limite de payload e o plano financeiro mínimo. O relatório e as correções locais estão em [`docs/analytics/fase-5f-1-1-investigacao.md`](docs/analytics/fase-5f-1-1-investigacao.md). Conclusão principal: **não há bypass documentado de SSO**; a homologação privada não consegue validar o caminho Edge → Function sem mudança de arquitetura ou de visibilidade. Nenhuma flag foi alterada.
+
+A revisão independente da Fase 5F.1.2 está em [`docs/analytics/fase-5f-1-2-auditoria-independente.md`](docs/analytics/fase-5f-1-2-auditoria-independente.md). Ela corrigiu a assinatura para cobrir `key-id`, timestamp, nonce e corpo, alinhou o critério de segredo em bytes UTF-8, endureceu o parser de timeout e exige HTTP `202` como sucesso. A recomendação é **aprovado com pendências**; nenhuma validação remota foi executada.
 
 ## Testes
 
@@ -172,8 +181,9 @@ Suíte permanente com Playwright Test:
 npm test
 ```
 
-O comando executa `npm run build` e depois **48 testes**:
+O comando executa `npm run build` e depois **59 testes** (48 existentes + 11 de consentimento/cookie). A suíte de analytics é executada separadamente com `npm run test:analytics`; ela cobre classificador, edge, HMAC, replay, concorrência, retenção, falhas, allowlist de ambiente, limite de payload e timeout. A contagem varia conforme as suítes de integração com PostgreSQL de teste estiverem habilitadas.
 
+- Consentimento e Consent Mode v2: primeiro acesso, aceitar, recusar, personalizar, retirar, DNT/GPC, ordem das tags, eventos de calculadora/afiliado, endpoint indisponível e mobile.
 - Fiscal 2026: INSS, IRRF, redutor, 13º e exemplos oficiais.
 - Estrutura/SEO: header/footer, canonical/robots, assets versionados, OG/Twitter, JSON-LD, sitemap, imagens, favicon e afiliados.
 - Navegação: header/footer sem JS, menu, tema, busca, ofertas Mercado Livre, cálculos, dependências dinâmicas e Pagefind.
@@ -187,6 +197,8 @@ Comandos auxiliares:
 ```bash
 npm run test:ui
 npm run test:report
+npm run test:analytics
+npm run db:cleanup:html-capture:test
 ```
 
 Testes legados:

@@ -65,3 +65,6 @@ test-results/
 !docs/relatorios/
 !docs/relatorios/**
 
+
+# Neon CLI local project context
+.neon

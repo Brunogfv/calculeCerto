@@ -172,7 +172,8 @@ jobs:
             tests/shared-manifest.spec.mjs \
             tests/b1.spec.mjs \
             tests/artifact.spec.mjs \
-            tests/gate.spec.mjs | tee /tmp/b1-tests.tap
+            tests/gate.spec.mjs \
+            tests/deploy-simulation.spec.mjs | tee /tmp/b1-tests.tap
           ! grep -q '# SKIP' /tmp/b1-tests.tap
         working-directory: validation-b1
 
