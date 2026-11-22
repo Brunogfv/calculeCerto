@@ -37,6 +37,34 @@
       "source_sha256": "818468e1e8e7e66d42a18c719b1068dfbfd7f6a37511d6c8315073e27f131929",
       "copied_sha256": "818468e1e8e7e66d42a18c719b1068dfbfd7f6a37511d6c8315073e27f131929"
     },
+    "netlify/functions/collect.mjs": {
+      "source_sha256": "0d65acf24915f4d1ab8747a7dde9005184fc7c995c85f6c8762e0cf8f3b30617",
+      "copied_sha256": "0d65acf24915f4d1ab8747a7dde9005184fc7c995c85f6c8762e0cf8f3b30617"
+    },
+    "netlify/functions/_lib/collect-handler.mjs": {
+      "source_sha256": "493f883aa2ab84c604485cf16f7b8d845f2247dc18d2f4d940d62df8284c497b",
+      "copied_sha256": "493f883aa2ab84c604485cf16f7b8d845f2247dc18d2f4d940d62df8284c497b"
+    },
+    "netlify/functions/_lib/attribution.mjs": {
+      "source_sha256": "259a54308b78cae7c0e27d6fc5e4a6d1b1d0c193f42b67232c521ff0d88f1586",
+      "copied_sha256": "259a54308b78cae7c0e27d6fc5e4a6d1b1d0c193f42b67232c521ff0d88f1586"
+    },
+    "netlify/functions/_lib/config.mjs": {
+      "source_sha256": "b3287910c34f3b41e5c38436c547f8923894333b01a4b26af6b5f2ce7c4d58e9",
+      "copied_sha256": "b3287910c34f3b41e5c38436c547f8923894333b01a4b26af6b5f2ce7c4d58e9"
+    },
+    "netlify/functions/_lib/rate-limit.mjs": {
+      "source_sha256": "4ba850f691719cb56c5266121fc4420a37a4a8ea0048d3a1a7b1881717e5736b",
+      "copied_sha256": "4ba850f691719cb56c5266121fc4420a37a4a8ea0048d3a1a7b1881717e5736b"
+    },
+    "netlify/functions/_lib/user-agent.mjs": {
+      "source_sha256": "988e598ab6883fe6893b4fa0a81742b175829596dd51d9ac187f727709acb523",
+      "copied_sha256": "988e598ab6883fe6893b4fa0a81742b175829596dd51d9ac187f727709acb523"
+    },
+    "netlify/functions/_lib/validation.mjs": {
+      "source_sha256": "3d966e7e06ed047ff282886a6375b17ecb676c02c7b7b4061ab738fdf2081126",
+      "copied_sha256": "3d966e7e06ed047ff282886a6375b17ecb676c02c7b7b4061ab738fdf2081126"
+    },
     "netlify/edge-functions/html-capture.js": {
       "source_sha256": "655a1bb9c52f204e822e24a96d6edb58217766649f266d3fa332ed2c6a5d9e86",
       "copied_sha256": "655a1bb9c52f204e822e24a96d6edb58217766649f266d3fa332ed2c6a5d9e86"

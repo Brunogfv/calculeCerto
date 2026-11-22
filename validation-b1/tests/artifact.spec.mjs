@@ -10,6 +10,8 @@ import {
     criarPacote,
     validarPacote,
     validarFontesB1,
+    digestArtefato,
+    criarManifestoIntegridade,
     STATIC_ALLOWLIST,
     FUNCTION_ALLOWLIST,
     EDGE_ALLOWLIST
@@ -19,15 +21,15 @@ function diretorioTemporario() {
     return fs.mkdtempSync(path.join(os.tmpdir(), 'b1-artifact-test-'));
 }
 
-test('fontes B1 nao contem collect nem redirects/headers herdados', () => {
+test('fontes B1 contem collect e nao contem redirects/headers herdados', () => {
     const fontes = validarFontesB1();
     assert.deepEqual(fontes.funcoes, [...FUNCTION_ALLOWLIST].sort());
     assert.deepEqual(fontes.edge, [...EDGE_ALLOWLIST].sort());
-    assert.equal(fontes.funcoes.includes('collect.mjs'), false);
+    assert.equal(fontes.funcoes.includes('collect.mjs'), true);
     assert.equal(fontes.publico.includes('_redirects'), false);
 });
 
-test('pacote B1 contem exatamente o contrato minimo', () => {
+test('pacote B1 contem exatamente o contrato completo', () => {
     const destino = diretorioTemporario();
     try {
         const { dir, manifest } = criarPacote({ destino });
@@ -38,8 +40,8 @@ test('pacote B1 contem exatamente o contrato minimo', () => {
         assert.equal(estaticos.includes('_redirects'), false);
 
         const funcoes = fs.readdirSync(path.join(dir, 'netlify', 'functions')).sort();
-        assert.deepEqual(funcoes, ['_lib', 'capture-html.mjs', 'cleanup-html-capture.mjs']);
-        assert.equal(funcoes.includes('collect.mjs'), false);
+        assert.deepEqual(funcoes, ['_lib', 'capture-html.mjs', 'cleanup-html-capture.mjs', 'collect.mjs']);
+        assert.equal(funcoes.includes('collect.mjs'), true);
 
         const edge = fs.readdirSync(path.join(dir, 'netlify', 'edge-functions')).sort();
         assert.deepEqual(edge, ['_lib', 'html-capture.js']);
@@ -51,20 +53,59 @@ test('pacote B1 contem exatamente o contrato minimo', () => {
         assert.doesNotMatch(toml, /[A-Za-z]:\\/);
 
         assert.equal(Object.keys(manifest.static).length, 7);
-        assert.equal(Object.keys(manifest.functions).length, 9);
+        assert.equal(Object.keys(manifest.functions).length, 16);
         assert.equal(Object.keys(manifest.edge_functions).length, 7);
-        assert.equal(JSON.stringify(manifest).includes('collect.mjs'), false);
+        assert.equal(JSON.stringify(manifest).includes('collect.mjs'), true);
     } finally {
         fs.rmSync(destino, { recursive: true, force: true });
     }
 });
 
-test('pacote rejeita collect introduzido fora do contrato', () => {
+test('manifesto de integridade lista arquivos, tamanhos, hashes e ambiente', () => {
+    const destino = diretorioTemporario();
+    try {
+        const { dir } = criarPacote({ destino });
+        const digest = digestArtefato(dir);
+        const manifesto = criarManifestoIntegridade({
+            dir,
+            digest,
+            siteId: '9cd7034f-5691-46af-8030-d70f7ed52ca7',
+            status: 'validated_only',
+            executionId: 'execucao-teste',
+            now: new Date('2026-11-20T12:00:00.000Z'),
+            nodeVersion: 'v22.0.0',
+            netlifyCliVersion: '27.20.0'
+        });
+
+        assert.equal(manifesto.schema_version, 1);
+        assert.equal(manifesto.execution_id, 'execucao-teste');
+        assert.equal(manifesto.validated_at, '2026-11-20T12:00:00.000Z');
+        assert.equal(manifesto.site.id, '9cd7034f-5691-46af-8030-d70f7ed52ca7');
+        assert.equal(manifesto.package.artifact_sha256, digest);
+        assert.equal(manifesto.package.counts.static, 7);
+        assert.equal(manifesto.package.counts.functions, 16);
+        assert.equal(manifesto.package.counts.edge_functions, 7);
+        assert.equal(manifesto.package.counts.config, 1);
+        assert.equal(manifesto.package.counts.metadata, 1);
+        assert.equal(manifesto.package.total_files, 32);
+        assert.equal(manifesto.package.files.length, 32);
+        assert.equal(manifesto.package.files.some((item) => item.path.includes('collect')), true);
+        assert.equal(manifesto.package.files.some((item) => item.path.includes('validation-b1')), false);
+        assert.equal(manifesto.package.files.every((item) => item.bytes > 0 && /^[a-f0-9]{64}$/.test(item.sha256)), true);
+        assert.equal(manifesto.tooling.node, 'v22.0.0');
+        assert.equal(manifesto.tooling.netlify_cli, '27.20.0');
+        assert.equal(JSON.stringify(manifesto).includes('postgresql://'), false);
+    } finally {
+        fs.rmSync(destino, { recursive: true, force: true });
+    }
+});
+
+test('pacote rejeita Function introduzida fora do contrato', () => {
     const destino = diretorioTemporario();
     try {
         criarPacote({ destino });
-        fs.writeFileSync(path.join(destino, 'netlify', 'functions', 'collect.mjs'), 'export default () => {};\n');
-        assert.throws(() => validarPacote(destino), /collect/);
+        fs.writeFileSync(path.join(destino, 'netlify', 'functions', 'rogue.mjs'), 'export default () => {};\n');
+        assert.throws(() => validarPacote(destino), /Functions B1/);
     } finally {
         fs.rmSync(destino, { recursive: true, force: true });
     }
@@ -198,6 +239,32 @@ test('publicacao oficial exige --confirm e nao publica sem validacao', () => {
     assert.match(result.stderr, /--check|--confirm/);
 });
 
+
+test('ignora recursos canonicos quando a raiz contem rogue function, redirects e headers', () => {
+    const base = diretorioTemporario();
+    try {
+        const b1 = B1_ROOT;
+        const fixture = path.join(base, 'validation-b1');
+        fs.cpSync(path.join(b1, 'public'), path.join(fixture, 'public'), { recursive: true });
+        fs.cpSync(path.join(b1, 'dist'), path.join(fixture, 'dist'), { recursive: true });
+        fs.cpSync(path.join(b1, 'netlify'), path.join(fixture, 'netlify'), { recursive: true });
+        fs.copyFileSync(path.join(b1, 'netlify.toml'), path.join(fixture, 'netlify.toml'));
+        fs.mkdirSync(path.join(base, 'netlify', 'functions'), { recursive: true });
+        fs.writeFileSync(path.join(base, 'netlify', 'functions', 'rogue-root.mjs'), 'export default () => {};\n');
+        fs.writeFileSync(path.join(base, '_redirects'), '/* /index.html 200\n');
+        fs.writeFileSync(path.join(base, '_headers'), '/*\n  X-Root: inherited\n');
+
+        const destino = path.join(base, 'pacote');
+        const { dir, manifest } = criarPacote({ destino, sourceRoot: fixture });
+        assert.equal(manifest.static['_headers'], 'b98b4793ac11cc100247dcc06d9131a81833d61a070b3654254868c96fff9f92');
+        assert.equal(fs.existsSync(path.join(dir, 'dist', '_redirects')), false);
+        assert.equal(fs.existsSync(path.join(dir, 'netlify', 'functions', 'collect.mjs')), true);
+        assert.equal(fs.existsSync(path.join(dir, 'netlify', 'functions', 'rogue-root.mjs')), false);
+        assert.equal(fs.readFileSync(path.join(dir, 'dist', '_headers'), 'utf8').includes('X-Root'), false);
+    } finally {
+        fs.rmSync(base, { recursive: true, force: true });
+    }
+});
 
 test('rejeita chave duplicada no manifesto', () => {
     const destino = criarPacoteTemporario();

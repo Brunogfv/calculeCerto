@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+﻿import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
@@ -21,13 +21,28 @@ export const STATIC_ALLOWLIST = Object.freeze([
 export const FUNCTION_ALLOWLIST = Object.freeze([
     'capture-html.mjs',
     'cleanup-html-capture.mjs',
+    'collect.mjs',
+    '_lib/attribution.mjs',
     '_lib/capture-config.mjs',
     '_lib/capture-handler.mjs',
     '_lib/capture-validation.mjs',
     '_lib/cleanup-html-capture.mjs',
     '_lib/cleanup-retention.mjs',
+    '_lib/collect-handler.mjs',
+    '_lib/config.mjs',
     '_lib/db.mjs',
-    '_lib/http.mjs'
+    '_lib/http.mjs',
+    '_lib/rate-limit.mjs',
+    '_lib/user-agent.mjs',
+    '_lib/validation.mjs'
+]);
+
+export const BUNDLED_FUNCTIONS_DIR = 'netlify/functions-bundled';
+
+export const BUNDLED_FUNCTION_ALLOWLIST = Object.freeze([
+    'capture-html.zip',
+    'cleanup-html-capture.zip',
+    'collect.zip'
 ]);
 
 export const EDGE_ALLOWLIST = Object.freeze([
@@ -44,9 +59,7 @@ const FORBIDDEN_STATIC = Object.freeze([
     '_redirects'
 ]);
 
-const FORBIDDEN_FUNCTION = Object.freeze([
-    'collect.mjs'
-]);
+const FORBIDDEN_FUNCTION = Object.freeze([]);
 
 const SECRET_PATTERNS = Object.freeze([
     'postgresql://',
@@ -264,6 +277,168 @@ export function validarFontesB1(sourceRoot = B1) {
     return { funcoes, edge, publico };
 }
 
+export function validarBundledFunctions(pacoteRoot) {
+    const bundleDir = path.join(pacoteRoot, BUNDLED_FUNCTIONS_DIR);
+    if (!fs.existsSync(bundleDir)) throw new Error('Pacote de Functions empacotadas ausente.');
+    const arquivos = arquivosRelativos(bundleDir);
+    diferencaEsperada([...BUNDLED_FUNCTION_ALLOWLIST].sort(), arquivos, 'Functions empacotadas');
+    return arquivos;
+}
+
+function runtimeArquivos(pacoteRoot) {
+    const entradas = [];
+    for (const nome of ['package.json', 'package-lock.json']) {
+        const arquivo = path.join(pacoteRoot, nome);
+        if (fs.existsSync(arquivo)) entradas.push({ relativo: nome, raiz: pacoteRoot });
+    }
+    const nodeModules = path.join(pacoteRoot, 'node_modules');
+    if (fs.existsSync(nodeModules)) {
+        for (const relativo of arquivosRelativos(nodeModules)) {
+            entradas.push({ relativo: path.posix.join('node_modules', relativo), raiz: pacoteRoot });
+        }
+    }
+    return entradas;
+}
+
+export function digestArtefato(pacoteRoot) {
+    const fontes = [
+        ['dist', path.join(pacoteRoot, 'dist')],
+        ['functions', path.join(pacoteRoot, 'netlify', 'functions')],
+        ['edge_functions', path.join(pacoteRoot, 'netlify', 'edge-functions')]
+    ];
+    const bundleDir = path.join(pacoteRoot, BUNDLED_FUNCTIONS_DIR);
+    if (fs.existsSync(bundleDir)) {
+        fontes.push(['bundled_functions', bundleDir]);
+    }
+    const entradas = [];
+    for (const [categoria, raiz] of fontes) {
+        for (const relativo of arquivosRelativos(raiz)) {
+            entradas.push(`${categoria}/${relativo}\u0000${hashArquivo(path.join(raiz, relativo))}`);
+        }
+    }
+    for (const item of runtimeArquivos(pacoteRoot)) {
+        entradas.push(`runtime/${item.relativo}\u0000${hashArquivo(path.join(item.raiz, item.relativo))}`);
+    }
+    entradas.push(`config\u0000${hashArquivo(path.join(pacoteRoot, 'netlify.toml'))}`);
+    return crypto.createHash('sha256').update(`${entradas.sort().join('\n')}\n`).digest('hex');
+}
+
+export function validarHandoff({ dir, digest }) {
+    if (!hashValido(digest)) throw new Error('Digest do artefato ausente ou invalido.');
+    validarPacote(dir);
+    const atual = digestArtefato(dir);
+    if (atual !== digest) throw new Error('Artefato divergente do digest validado.');
+    return atual;
+}
+
+export function criarManifestoIntegridade({
+    dir,
+    digest,
+    siteId,
+    status = 'validated_only',
+    executionId = crypto.randomUUID(),
+    now = new Date(),
+    nodeVersion = process.version,
+    netlifyCliVersion = '27.20.0'
+} = {}) {
+    if (!hashValido(digest)) throw new Error('Digest do artefato ausente ou invalido.');
+    validarPacote(dir);
+    if (digestArtefato(dir) !== digest) throw new Error('Artefato divergente ao gerar o manifesto.');
+    const fontes = [
+        ['static', path.join(dir, 'dist')],
+        ['functions', path.join(dir, 'netlify', 'functions')],
+        ['edge_functions', path.join(dir, 'netlify', 'edge-functions')]
+    ];
+    const bundleDir = path.join(dir, BUNDLED_FUNCTIONS_DIR);
+    if (fs.existsSync(bundleDir)) {
+        fontes.push(['bundled_functions', bundleDir]);
+    }
+    const files = [];
+    const counts = {};
+    let totalBytes = 0;
+    for (const [categoria, raiz] of fontes) {
+        const relativos = arquivosRelativos(raiz);
+        counts[categoria] = relativos.length;
+        for (const relativo of relativos) {
+            const arquivo = path.join(raiz, relativo);
+            const bytes = fs.statSync(arquivo).size;
+            totalBytes += bytes;
+            files.push({
+                category: categoria,
+                path: `${categoria === 'static'
+                    ? 'dist'
+                    : categoria === 'functions'
+                        ? 'netlify/functions'
+                        : categoria === 'edge_functions'
+                            ? 'netlify/edge-functions'
+                            : BUNDLED_FUNCTIONS_DIR}/${relativo}`,
+                bytes,
+                sha256: hashArquivo(arquivo)
+            });
+        }
+    }
+    const runtime = runtimeArquivos(dir);
+    if (runtime.length) {
+        counts.runtime = runtime.length;
+        for (const item of runtime) {
+            const arquivo = path.join(item.raiz, item.relativo);
+            const bytes = fs.statSync(arquivo).size;
+            totalBytes += bytes;
+            files.push({
+                category: 'runtime',
+                path: item.relativo,
+                bytes,
+                sha256: hashArquivo(arquivo)
+            });
+        }
+    }
+    const config = path.join(dir, 'netlify.toml');
+    const manifest = path.join(dir, 'package-manifest.json');
+    const adicionar = (category, nome, arquivo) => {
+        const bytes = fs.statSync(arquivo).size;
+        totalBytes += bytes;
+        files.push({ category, path: nome, bytes, sha256: hashArquivo(arquivo) });
+    };
+    adicionar('config', 'netlify.toml', config);
+    adicionar('metadata', 'package-manifest.json', manifest);
+    counts.config = 1;
+    counts.metadata = 1;
+    files.sort((a, b) => a.path.localeCompare(b.path));
+    return {
+        schema_version: 1,
+        execution_id: executionId,
+        validated_at: now.toISOString(),
+        scope: 'B1-local-pre-publication',
+        site: {
+            id: siteId || null,
+            name: 'portal-contas-validation-b1'
+        },
+        package: {
+            contract_version: 1,
+            artifact_sha256: digest,
+            package_manifest_sha256: hashArquivo(manifest),
+            config_sha256: hashArquivo(config),
+            counts,
+            total_files: files.length,
+            total_bytes: totalBytes,
+            files
+        },
+        tooling: {
+            node: nodeVersion,
+            netlify_cli: netlifyCliVersion,
+            platform: process.platform
+        },
+        gate: {
+            status
+        },
+        limitations: [
+            'Integridade local nao prova sozinha o conteudo publicado no Netlify.',
+            'A verificacao pos-upload deve comparar os arquivos publicados ou seus hashes.',
+            'O manifesto nao contem valores de variaveis, secrets ou credenciais.'
+        ]
+    };
+}
+
 export function validarPacote(pacoteRoot, contractPath = CONTRACT_PATH) {
     const contrato = carregarContrato(contractPath);
     const manifesto = carregarManifesto(pacoteRoot);
@@ -305,7 +480,7 @@ export function validarPacote(pacoteRoot, contractPath = CONTRACT_PATH) {
     return { estaticos, funcoes, edge: edgeArquivos };
 }
 
-export function criarPacote({ destino, sourceRoot = B1 } = {}) {
+export function criarPacote({ destino, sourceRoot = B1, bundledFunctions = null, runtimeDeps = null } = {}) {
     if (!destino) throw new Error('Destino do pacote ausente');
     const stage = path.resolve(destino);
     fs.rmSync(stage, { recursive: true, force: true });
@@ -322,6 +497,19 @@ export function criarPacote({ destino, sourceRoot = B1 } = {}) {
         path.join(stage, 'netlify', 'edge-functions'),
         { recursive: true }
     );
+    if (bundledFunctions) {
+        fs.cpSync(bundledFunctions, path.join(stage, BUNDLED_FUNCTIONS_DIR), { recursive: true });
+    }
+    if (runtimeDeps) {
+        for (const nome of ['package.json', 'package-lock.json']) {
+            const origem = path.join(runtimeDeps, nome);
+            if (fs.existsSync(origem)) fs.cpSync(origem, path.join(stage, nome));
+        }
+        const nodeModules = path.join(runtimeDeps, 'node_modules');
+        if (fs.existsSync(nodeModules)) {
+            fs.cpSync(nodeModules, path.join(stage, 'node_modules'), { recursive: true });
+        }
+    }
 
     fs.writeFileSync(path.join(stage, 'netlify.toml'), [
         '[build]',
@@ -353,7 +541,10 @@ export function criarPacote({ destino, sourceRoot = B1 } = {}) {
     );
 
     validarPacote(stage);
+    if (bundledFunctions) validarBundledFunctions(stage);
     return { dir: stage, manifest };
 }
 
 export { B1 };
+
+

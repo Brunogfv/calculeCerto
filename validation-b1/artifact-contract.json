@@ -1,24 +1,31 @@
 {
   "version": 1,
   "static": {
-    "_headers": "cacc628a492bc6a3f232ccf9664133735de4394e739bb78d9ced8a64ebbc7839",
+    "_headers": "b98b4793ac11cc100247dcc06d9131a81833d61a070b3654254868c96fff9f92",
     "b1-consent.js": "cc8d70bfa7f647fe4ccf8c8540cebce6f609515d164a03fc0fab7693d3096236",
     "b1.css": "b09bebfa6bdec67cf3c79da7f18087930cbb5e8d0095c5e03711200ff8e0f8b1",
-    "build-manifest.json": "8db479438bb17b7475dae72d0bbb0d86487749c89c01cf1dbb5157cbe88fde29",
+    "build-manifest.json": "b1f900bd853a8d20c4ef3d53b37d3a477bc35db18145a24f24b327099b832fae",
     "index.html": "d5c59888a9cd679c08ae3d961be7595bdd0adc18c0917a949945a3b37352f63c",
     "robots.txt": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
     "validacao-encerrada.html": "1f6d5884b1a2f4a74f0dfad6ccf82a72a7db949883fbd23a873e524f0ddf964f"
   },
   "functions": {
+    "_lib/attribution.mjs": "259a54308b78cae7c0e27d6fc5e4a6d1b1d0c193f42b67232c521ff0d88f1586",
     "_lib/capture-config.mjs": "89a7de54fda9e0d508fa5dc5bc9c6dc310b369fad6d877bbe2d1139fb4f44730",
     "_lib/capture-handler.mjs": "b87766d6e0390a0d5e14be34454d8431a3b07d647b4e350b313ccf2630eb4ca1",
     "_lib/capture-validation.mjs": "9c053c7473e49a71808fd1e678a5b113b24dc9c508b85c784fd9b54ac9c1e788",
     "_lib/cleanup-html-capture.mjs": "1bbdf4e1a316f2752ce0e8c060695d539d600293b307838bcd1397c8acd12564",
     "_lib/cleanup-retention.mjs": "14c57306c6ad3995b60793850e1489a710d978c674951848ca2e3f79825fdaba",
+    "_lib/collect-handler.mjs": "493f883aa2ab84c604485cf16f7b8d845f2247dc18d2f4d940d62df8284c497b",
+    "_lib/config.mjs": "b3287910c34f3b41e5c38436c547f8923894333b01a4b26af6b5f2ce7c4d58e9",
     "_lib/db.mjs": "6f153a461ebcc7b5689100e7a9ab6c1662de6244f9d0ba51e5838633cdc94820",
     "_lib/http.mjs": "818468e1e8e7e66d42a18c719b1068dfbfd7f6a37511d6c8315073e27f131929",
+    "_lib/rate-limit.mjs": "4ba850f691719cb56c5266121fc4420a37a4a8ea0048d3a1a7b1881717e5736b",
+    "_lib/user-agent.mjs": "988e598ab6883fe6893b4fa0a81742b175829596dd51d9ac187f727709acb523",
+    "_lib/validation.mjs": "3d966e7e06ed047ff282886a6375b17ecb676c02c7b7b4061ab738fdf2081126",
     "capture-html.mjs": "669c39813063e968ffb2f4c0fff6cc946b57d657928e4d06f396e240ee77c999",
-    "cleanup-html-capture.mjs": "c9f7dd040042c575644b89268dea897652760019a7113a08290e801a7e193a3a"
+    "cleanup-html-capture.mjs": "c9f7dd040042c575644b89268dea897652760019a7113a08290e801a7e193a3a",
+    "collect.mjs": "0d65acf24915f4d1ab8747a7dde9005184fc7c995c85f6c8762e0cf8f3b30617"
   },
   "edge_functions": {
     "_lib/capture-limits.mjs": "ab59256ddbc958cd1b19761d3605c94cd6790b2fc9f664d251d66c2d192b19bd",

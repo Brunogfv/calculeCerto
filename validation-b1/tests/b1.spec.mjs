@@ -10,6 +10,7 @@ import { createCaptureHandler } from '../netlify/functions/_lib/capture-handler.
 import { montarMensagemAssinada } from '../netlify/edge-functions/_lib/capture-signature.mjs';
 import { CAPTURE_MAX_BODY_BYTES, excedeLimiteCorpo } from '../netlify/edge-functions/_lib/capture-limits.mjs';
 import { parseConsentCookie } from '../netlify/edge-functions/_lib/capture-policy.mjs';
+import * as collectModule from '../netlify/functions/collect.mjs';
 import { COMPARTILHADOS } from '../scripts/shared-files.mjs';
 
 const B1 = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -93,8 +94,8 @@ function handlerComPoolProibido(env = {}) {
     });
 }
 
-test('lista compartilhada mantém exatamente 16 arquivos esperados', () => {
-    assert.equal(COMPARTILHADOS.length, 16);
+test('lista compartilhada mantém exatamente 23 arquivos esperados', () => {
+    assert.equal(COMPARTILHADOS.length, 23);
 });
 
 test('cópias compartilhadas são idênticas aos módulos canônicos', () => {
@@ -149,7 +150,20 @@ test('headers e robots restringem indexação e recursos', () => {
     assert.match(headers, /X-Robots-Tag:\s*noindex, nofollow, noarchive/i);
     assert.match(headers, /Content-Security-Policy:/i);
     assert.match(headers, /default-src 'none'/i);
-    assert.match(headers, /connect-src 'none'/i);
+    assert.match(headers, /script-src 'self'/i);
+    assert.match(headers, /style-src 'self'/i);
+    assert.match(headers, /img-src 'none'/i);
+    assert.match(
+        headers,
+        /connect-src 'self' https:\/\/portal-contas-validation-b1\.netlify\.app(?:;|$)/i
+    );
+    assert.match(headers, /base-uri 'none'/i);
+    assert.match(headers, /form-action 'none'/i);
+    assert.match(headers, /frame-ancestors 'none'/i);
+    const csp = (headers.match(/Content-Security-Policy:\s*([^\n]+)/i) || [])[1] || '';
+    assert.doesNotMatch(csp, /\*/);
+    assert.doesNotMatch(csp, /connect-src[^;\n]*https:\s/i);
+    assert.doesNotMatch(csp, /portaldascontas\.com\.br/i);
     assert.match(robots, /User-agent:\s*\*/i);
     assert.match(robots, /Disallow:\s*\//i);
 });
@@ -293,4 +307,12 @@ test('handler B1 rejeita HMAC inválido, nonce divergente e corpo grande sem ban
     assert.equal((await handler(request('x'.repeat(8193)))).status, 413);
     assert.equal((await handlerComPoolProibido({ EDGE_ANALYTICS_ENABLED: 'false' })(request(p))).status, 204);
     assert.equal((await handlerComPoolProibido({ EDGE_INGEST_SECRET: '' })(request(p))).status, 503);
+});
+
+
+test('B1 expoe collect em /api/collect e mantem UA bruto fora do handler', () => {
+    assert.equal(collectModule.config.path, '/api/collect');
+    assert.equal(typeof collectModule.default, 'function');
+    const fonte = fs.readFileSync(path.join(B1, 'netlify', 'functions', '_lib', 'collect-handler.mjs'), 'utf8');
+    assert.doesNotMatch(fonte, /user_agent/i);
 });
