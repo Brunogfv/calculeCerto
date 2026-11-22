@@ -130,13 +130,13 @@ export function createCollectHandler({ getPool, env = process.env, now = () => n
                         landing_path, exit_path, referrer, referrer_host, source, medium, campaign,
                         utm_source, utm_medium, utm_campaign, utm_term, utm_content,
                         device_type, browser, os, screen_width, screen_height, language,
-                        country_code, user_agent, is_test, consent_version, updated_at
+                        country_code, is_test, consent_version, updated_at
                     ) VALUES (
                         $1, $2, $3, $3, $4,
                         $5, $6, $7, $8, $9, $10, $11,
                         $12, $13, $14, $15, $16,
                         $17, $18, $19, $20, $21, $22,
-                        $23, $24, $25, $26, now()
+                        $23, $24, $25, now()
                     )
                     ON CONFLICT (session_id) DO UPDATE SET
                         last_seen_at = GREATEST(sessions.last_seen_at, EXCLUDED.last_seen_at),
@@ -169,7 +169,6 @@ export function createCollectHandler({ getPool, env = process.env, now = () => n
                         payload.context?.screen?.height || null,
                         payload.context?.language || null,
                         country,
-                        ua,
                         isTest,
                         payload.consent.version || null
                     ]
