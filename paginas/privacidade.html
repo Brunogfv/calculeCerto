@@ -35,6 +35,21 @@
     <meta name="twitter:title" content="Política de Privacidade | Portal das Contas">
     <meta name="twitter:description" content="Política de Privacidade do Portal das Contas. Saiba como usamos cookies e protegemos seus dados.">
     <meta name="twitter:image" content="https://portaldascontas.com.br/imgs/og-portal-das-contas.jpg">
+<!-- pca-analytics:start -->
+<link rel="stylesheet" href="/css/analytics.min.5198db7f.css" data-pca-analytics-css>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+});
+</script>
+<script src="/js/analytics.min.53aca874.js" defer data-pca-analytics-js></script>
+<!-- pca-analytics:end -->
 </head>
 
 <body data-theme="light">
@@ -160,7 +175,7 @@
     <main id="conteudo-principal" class="page-content" tabindex="-1">
         <div class="text-card">
             <h1>Política de Privacidade</h1>
-            <p class="data-atualizacao">Última atualização: 20 de maio de 2026</p>
+            <p class="data-atualizacao">Última atualização: 9 de novembro de 2026</p>
 
             <p>No <strong>Portal das Contas</strong>, acessível a partir de portaldascontas.com.br, uma de nossas
                 principais prioridades é a privacidade de nossos visitantes. Este documento descreve os tipos de
@@ -171,24 +186,46 @@
                 inseridos nas calculadoras (como peso, salário e datas). Além disso, coletamos automaticamente algumas
                 informações técnicas de acesso:</p>
             <ul>
-                <li><strong>Endereço de Protocolo de Internet (IP):</strong> para análise de tráfego e segurança.</li>
+                <li><strong>Endereço IP:</strong> processado por provedores de infraestrutura e segurança para operar o
+                    site; o analytics próprio não armazena o IP completo, usando apenas um HMAC temporário no limite de
+                    taxa.</li>
                 <li><strong>Tipo de navegador e sistema operacional:</strong> para garantir compatibilidade das
                     ferramentas.</li>
                 <li><strong>Páginas visitadas:</strong> para entender quais ferramentas são mais utilizadas e aprimorar
                     nossos serviços.</li>
             </ul>
 
-            <h2>2. Google Analytics e Google AdSense (Cookies)</h2>
-            <p>Utilizamos serviços do Google para compreender o comportamento dos usuários no site e exibir anúncios
-                relevantes.</p>
+            <h2>2. Analytics, Publicidade e Consent Mode</h2>
+            <p>O Portal das Contas usa duas categorias de tecnologias não essenciais, controladas por você:</p>
             <ul>
-                <li><strong>Google Analytics:</strong> utilizamos cookies para coletar dados anônimos sobre o uso do
-                    site, auxiliando na identificação de erros e na melhoria da experiência do usuário.</li>
-                <li><strong>Google AdSense:</strong> utilizamos cookies para exibir anúncios de terceiros. O Google pode
-                    usar cookies para personalizar anúncios com base em visitas anteriores a este e a outros sites. Você
-                    pode configurar seu navegador para recusar cookies, mas isso pode afetar a funcionalidade de algumas
-                    páginas.</li>
+                <li><strong>Analytics:</strong> nosso coletor próprio registra eventos pseudônimos de navegação e uso
+                    (página, sessão, engajamento, início/conclusão de calculadora e clique em oferta afiliada). Não
+                    coletamos os valores digitados nem os resultados dos cálculos. O IP completo não é armazenado; o
+                    limite de taxa usa um HMAC temporário. Quando o Google Analytics 4 está instalado, ele recebe os
+                    eventos de página condicionados ao consentimento de analytics.</li>
+                <li><strong>Publicidade:</strong> o Google AdSense pode usar cookies e dados para anúncios
+                    personalizados. Sem consentimento, anúncios limitados/contextuais ainda podem aparecer, mas o Google
+                    recebe os sinais de consentimento negados.</li>
             </ul>
+            <p>Usamos o <strong>Google Consent Mode v2</strong>. Por padrão, <code>analytics_storage</code>,
+                <code>ad_storage</code>, <code>ad_user_data</code> e <code>ad_personalization</code> ficam
+                <strong>negados</strong>. O modo avançado pode enviar sinais sem cookies antes da escolha, sem
+                identificar você. Ao escolher analytics, liberamos <code>analytics_storage</code>; ao escolher
+                publicidade, liberamos os três sinais de anúncios. As escolhas são independentes.</p>
+            <p>O banner oferece <strong>Aceitar tudo</strong>, <strong>Recusar opções não essenciais</strong> e
+                <strong>Personalizar</strong>. Você pode reabrir as preferências pelo link
+                <strong>Preferências de privacidade</strong> no rodapé, alterar ou retirar o consentimento a qualquer
+                momento. Ao retirar o consentimento de analytics, apagamos os identificadores locais
+                <code>pca_vid</code> e <code>pca_sid</code> e paramos a coleta. A retirada interrompe apenas a coleta
+                futura; eventos já armazenados não são apagados automaticamente. Para solicitar acesso, correção ou
+                exclusão, use o canal indicado na seção 14. Respeitamos também
+                <strong>Do Not Track (DNT)</strong> e <strong>Global Privacy Control (GPC)</strong>, que desativam
+                analytics e publicidade personalizada.</p>
+            <p>A escolha fica armazenada localmente em <code>pca_consent_v1</code>, com versão e as duas categorias.
+                Ela é mantida até você alterá-la ou limpar os dados do navegador. Eventos analíticos são
+                mantidos pelo período necessário às finalidades de análise, segurança e melhoria do site, observadas as
+                obrigações legais; dados agregados podem ser mantidos por mais tempo e o rate limit tem retenção curta.
+                A coleta é processada por Netlify Functions e por banco PostgreSQL na Neon.</p>
             <p>Para mais informações sobre como o Google utiliza cookies em publicidade, acesse:
                 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">
                     https://policies.google.com/technologies/ads
@@ -221,8 +258,9 @@
                 utilizadas exclusivamente para responder à sua solicitação.</p>
 
             <h2>8. Uso de Cookies</h2>
-            <p>Utilizamos cookies para armazenar preferências do usuário, como tema claro ou escuro, e para melhorar a
-                experiência de navegação em visitas futuras.</p>
+            <p>Utilizamos cookies e armazenamento local para preferências essenciais, como tema claro ou escuro, e para
+                guardar sua escolha de consentimento. Analytics e publicidade personalizada só são ativados conforme a
+                sua escolha no banner ou nas preferências de privacidade.</p>
 
             <h2>9. Uso de Serviços de Terceiros</h2>
             <p>Podemos utilizar serviços de terceiros para hospedagem, análise de dados e publicidade. Esses
@@ -249,12 +287,15 @@
 
             <h2>14. Direitos do Usuário</h2>
             <p>Você tem o direito de solicitar acesso, correção ou exclusão de seus dados pessoais. Para exercer esses
-                direitos, entre em contato conosco pelo e-mail informado na seção de contato. As solicitações serão
-                respondidas em até 30 dias.</p>
+                direitos, entre em contato pelo formulário em
+                <a href="/paginas/contato">/paginas/contato</a> ou pelo e-mail informado nessa página. As solicitações
+                serão respondidas em até 30 dias.</p>
 
-            <h2>15. Consentimento</h2>
-            <p>Ao continuar utilizando o Portal das Contas, você concorda com esta Política de Privacidade e com o
-                tratamento das informações conforme descrito neste documento.</p>
+            <h2>15. Consentimento e Escolhas</h2>
+            <p>O uso de analytics e de publicidade personalizada depende da sua escolha. Você pode aceitar tudo, recusar
+                as opções não essenciais ou personalizar cada categoria. A recusa não impede o acesso às calculadoras e
+                pode ser alterada a qualquer momento pelo link <strong>Preferências de privacidade</strong> no rodapé.
+                Quando aplicável, prevalecem também os sinais DNT e GPC do seu navegador.</p>
         </div>
 
     </main>
