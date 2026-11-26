@@ -71,6 +71,12 @@ http://portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!
 /artigos/financas/hora-extra /artigos/financas/como-calcular-hora-extra 301
 /artigos/financas/hora-extra.html /artigos/financas/como-calcular-hora-extra 301
 
+# Slugs antigos sem arquivo atual (404 no GSC) -> canonical 200
+/artigos/financas/como-comecar-investir-pouco-dinheiro /artigos/financas/investir-pouco-dinheiro 301
+/artigos/financas/como-comecar-investir-pouco-dinheiro.html /artigos/financas/investir-pouco-dinheiro 301
+/artigos/saude/como-reduzir-imc-forma-saudavel /artigos/saude/como-reduzir-imc-saudavel 301
+/artigos/saude/como-reduzir-imc-forma-saudavel.html /artigos/saude/como-reduzir-imc-saudavel 301
+
 # Ghost folder /artigos/investimentos/* (5xx fix from GSC)
 /artigos/investimentos/* /artigos/financas/:splat 301
 
