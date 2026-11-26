@@ -300,6 +300,8 @@ test.describe('Estrutura e SEO do site', () => {
         assert(redirects.includes('# BEGIN HTML REDIRECTS'), '_redirects: bloco de redirects gerado ausente');
         assert(redirects.includes('/calculadoras/inss.html /calculadoras/inss 301!'), '_redirects: redirect de calculadora ausente');
         assert(redirects.includes('/artigos/financas/como-calcular-desconto-inss.html /artigos/financas/como-calcular-desconto-inss 301!'), '_redirects: redirect de artigo ausente');
+        assert(redirects.includes('/artigos/financas/como-comecar-investir-pouco-dinheiro.html /artigos/financas/investir-pouco-dinheiro 301'), '_redirects: redirect do slug antigo de investir-pouco-dinheiro ausente');
+        assert(redirects.includes('/artigos/saude/como-reduzir-imc-forma-saudavel.html /artigos/saude/como-reduzir-imc-saudavel 301'), '_redirects: redirect do slug antigo de imc-saudavel ausente');
         assert(!redirects.includes('escapeHtml'), '_redirects: regra escapeHtml ainda presente');
 
         const headers = read(path.join(ROOT, '_headers'));
