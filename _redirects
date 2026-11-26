@@ -4,18 +4,20 @@ https://www.portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!
 http://portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!
 
 # Legacy duplicated calculator paths (from migration errors)
-/calculadoras/calculadoras/*.html /calculadoras/:splat 301
-/calculadoras/calculadoras/* /calculadoras/:splat 301
-/artigos/financas/calculadoras/*.html /calculadoras/:splat 301
-/artigos/financas/calculadoras/* /calculadoras/:splat 301
-/artigos/saude/calculadoras/*.html /calculadoras/:splat 301
-/artigos/saude/calculadoras/* /calculadoras/:splat 301
-/artigos/comparacao/calculadoras/*.html /calculadoras/:splat 301
-/artigos/comparacao/calculadoras/* /calculadoras/:splat 301
-/artigos/calculaveis/calculadoras/*.html /calculadoras/:splat 301
-/artigos/calculaveis/calculadoras/* /calculadoras/:splat 301
-/artigos/utilitarios/calculadoras/*.html /calculadoras/:splat 301
-/artigos/utilitarios/calculadoras/* /calculadoras/:splat 301
+# Netlify nao suporta "*" no meio do caminho (ex.: *.html) e ":splat" preserva a
+# extensao. Usamos ":slug" (1 segmento) e tratamos primeiro o caso duplicado
+# aninhado, para nao gerar cadeia de 3 saltos.
+/calculadoras/calculadoras/:slug /calculadoras/:slug 301
+/artigos/financas/calculadoras/calculadoras/:slug /calculadoras/:slug 301
+/artigos/saude/calculadoras/calculadoras/:slug /calculadoras/:slug 301
+/artigos/comparacao/calculadoras/calculadoras/:slug /calculadoras/:slug 301
+/artigos/calculaveis/calculadoras/calculadoras/:slug /calculadoras/:slug 301
+/artigos/utilitarios/calculadoras/calculadoras/:slug /calculadoras/:slug 301
+/artigos/financas/calculadoras/:slug /calculadoras/:slug 301
+/artigos/saude/calculadoras/:slug /calculadoras/:slug 301
+/artigos/comparacao/calculadoras/:slug /calculadoras/:slug 301
+/artigos/calculaveis/calculadoras/:slug /calculadoras/:slug 301
+/artigos/utilitarios/calculadoras/:slug /calculadoras/:slug 301
 
 # Renamed/moved pages (old URL -> new canonical URL)
 /calculadoras/nota-para-passar /calculadoras/media-final 301
