@@ -73,7 +73,6 @@ http://portaldascontas.com.br/* https://portaldascontas.com.br/:splat 301!
 
 # Ghost folder /artigos/investimentos/* (5xx fix from GSC)
 /artigos/investimentos/* /artigos/financas/:splat 301
-/artigos/investimentos/*.html /artigos/financas/:splat 301
 
 # Institutional pages without /paginas/ prefix (GSC pasta 4)
 /contato /paginas/contato 301
