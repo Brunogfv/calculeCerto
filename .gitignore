@@ -60,6 +60,7 @@ portaldascontas.com.br-Coverage-Drilldown-*/
 dist/
 playwright-report/
 test-results/
+.netlify/
 
 # === Relatórios históricos versionados em docs/ ===
 !docs/relatorios/
