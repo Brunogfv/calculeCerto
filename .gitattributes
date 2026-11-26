@@ -12,3 +12,6 @@ css/*.css text eol=lf
 js/*.js text eol=lf
 .github/workflows/*.yml text eol=lf
 package.json text eol=lf
+calculadoras/*.html text eol=lf
+asset-manifest.json text eol=lf
+sitemap.xml text eol=lf
